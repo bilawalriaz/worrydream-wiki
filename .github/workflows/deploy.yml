@@ -29,11 +29,23 @@ jobs:
       - name: Clone Quartz
         run: |
           git clone --depth 1 https://github.com/jackyzha0/quartz.git /tmp/quartz
-          cd /tmp/quartz
-          npm ci
+
+      - name: Install Quartz dependencies
+        working-directory: /tmp/quartz
+        run: npm ci
+
+      - name: Initialize Quartz with obsidian template
+        working-directory: /tmp/quartz
+        run: |
+          npx quartz create \
+            --template obsidian \
+            --links shortest \
+            --baseUrl bilawalriaz.github.io/worrydream-wiki \
+            --strategy new
 
       - name: Prepare content
         run: |
+          rm -rf /tmp/quartz/content/*
           mkdir -p /tmp/quartz/content/entities
           mkdir -p /tmp/quartz/content/concepts
           cp -r entities/* /tmp/quartz/content/entities/
