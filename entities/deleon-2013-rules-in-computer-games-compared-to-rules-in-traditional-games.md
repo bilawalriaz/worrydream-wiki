@@ -1,0 +1,67 @@
+---
+title: DeLeon 2013 - Rules in Computer Games Compared to Rules in Traditional Games
+created: 2026-06-10
+updated: 2026-06-10
+type: entity
+tags: [computing-history, hci, physics, cognitive-science]
+sources: [raw/papers/DeLeon_2013_-_Rules_in_Computer_Games_Compared_to_Rules_in_Traditional_Games.txt]
+confidence: high
+---
+
+# DeLeon 2013 - Rules in Computer Games Compared to Rules in Traditional Games
+
+## Core Thesis
+DeLeon's paper argues for a fundamental ontological difference between the rules governing computer games and those governing traditional, non-computer games (sports, board games, tabletop RPGs). The core thesis is not merely that computer games are *mediated* by technology, but that the very *nature* of their rules is categorically different. In traditional games, rules are artificial, socially constructed constraints that players voluntarily accept—a "pact" requiring a "lusory attitude" (as per Bernard Suits). Enforcement is human, fallible, and based on agreed-upon penalties. In computer games, the vast majority of what players experience as "rules" are not social contracts but *enforced realities*. They function like the laws of physics: they are automated, absolute, non-negotiable, and part of the system's material reality. The player cannot meaningfully "cheat" against the game's core physics or interaction logic; they can only work within or around its implemented realities. This shift from rules-as-social-convention to rules-as-computed-physics has profound implications for game design, player psychology, and the extrapolation of game studies theory from analog to digital contexts.
+
+## Historical Context
+This paper emerged from a specific debate within game studies in the early 2010s. It was a period when the field was grappling with foundational concepts originally developed for analyzing sports and board games (e.g., Huizinga's "magic circle," Suits' "lusory attitude") and applying them to the new, dominant medium of computer games.
+
+The direct catalyst was Michael Liebe's 2008 critique of Salen and Zimmerman's application of the magic circle to digital games. Liebe argued that in digital adaptations (like computerized solitaire), the rules aren't something players *choose* to enter into; the system only permits legal moves. The magic circle concept, which emphasizes the voluntary entry into a rule-bound space, was therefore being misapplied. DeLeon builds on Liebe's insight but pushes it further. He notes that Liebe's example (a turn-based card game) misses the crucial dimension of *real-time spatial interaction*. A physical sport like soccer is governed by both explicit rules (no handball) and implicit physical laws (gravity, friction). In a computer simulation of soccer, both sets of constraints must be programmatically defined and enforced by the same automated system, thereby collapsing the distinction between them.
+
+The paper was thus intervening in a scholarly conversation about the applicability of 20th-century humanities-based game theory to a 21st-century computational medium. It sought to provide a clearer vocabulary for discussing the unique properties of interactive, rule-based software.
+
+## Key Contributions
+1.  **The "Physics vs. Society" Analogy:** The paper's central and most enduring contribution is the clear metaphor that rules in computer games operate more like *laws of physics*, while rules in traditional games operate like *laws of society*. This reframes the player-game relationship from one of social contract to one of environmental navigation.
+2.  **Identification of a Difference in Kind:** DeLeon moves beyond claims of mere difference in degree (e.g., "computer rules are automated") to assert a difference in *kind*. This categorical shift necessitates caution when applying theories derived from one domain to the other.
+3.  **Highlighting the Real-Time/Spatial Dimension:** Building on and correcting Juul's analysis, DeLeon emphasizes that the "laws of physics" in computer games specifically govern *real-time spatial interactions* (avatar movement, projectile trajectories, environmental reactions). This is what distinguishes them most acutely from turn-based or discrete digital games and makes the analogy to physical sports so apt.
+4.  **The "Anti-Magic Circle" Property:** Computer game rules, being enforced realities, fundamentally undermine the traditional concept of the magic circle. Players don't need a special *attitude* to be subject to the rules; the rules are inescapable properties of the system's material. This echoes and extends Liebe's argument into the realm of continuous, physical simulation.
+
+## Methodology
+The argument is **theoretical and polemical**, structured through a series of carefully constructed analogies and comparisons.
+*   **Thought Experiment:** The paper opens with a compelling, concrete example—the tape maze versus the airport dash—to intuitively illustrate the difference between artificial rules (tape you can step over) and enforced physical constraints (walls and crowds you cannot).
+*   **Engagement with Key Theorists:** It systematically engages with canonical texts in game studies: Huizinga (magic circle), Suits (lusory attitude), and Juul (rules vs. physics in simulations). This situates the argument within the established discourse while demonstrating where existing models break down.
+*   **Analytical Correction:** DeLeon uses Juul's own observation not as a final conclusion, but as a point of departure for a deeper analysis. He argues Juul's formulation is "expressed backwards," correcting it to assert that in computer games, explicit rules are implemented *at the same level as* physics, not that physics must be implemented *as if it were* a rule.
+*   **Empirical Grounding:** Throughout, the argument is grounded in specific, recognizable examples from both traditional games (soccer, golf, board games) and computer games (Pac-Man, Half-Life 2, Candy Box). This anchors the abstract theory in observable player experience.
+
+## Influence
+The paper is a significant node in the ongoing discourse about the ontology of digital games. Its influence can be traced in several directions:
+*   **Game Design Theory:** It provides a foundational concept for designers, helping to clarify the different *types* of constraints they create. The distinction informs design decisions about player agency, difficulty, and the nature of challenge—whether it should stem from navigating simulated physics or from mastering and respecting abstract social rules.
+*   **Game Studies Pedagogy:** The paper is frequently cited in discussions about the need to update or re-evaluate classic game theory for the digital age. It's a key text in arguments that the medium of computer games isn't just a new delivery system for old game concepts but a fundamentally different phenomenon.
+*   **Philosophy of Interactive Media:** It contributes to broader discussions about the nature of rule-based systems and simulation, resonating with work on software studies and platform studies. The idea of "enforced realities" extends beyond games to any interactive software environment.
+*   **Connection to HCI & Simulation:** The paper's core insight—that rules can be part of the simulated environment's "physics"—connects deeply to human-computer interaction and the design of training simulators, where the goal is often to internalize the "feel" of a real-world system's constraints, not its formal regulatory rules.
+
+## Connections to Other Papers in the Collection
+*   **Bush 1945 (As We May Think):** Bush envisioned a future where information is manipulated in a dynamic, associative "memex." DeLeon's analysis describes a specific class of interactive information systems (computer games) where the rules of manipulation are not social but are *hard-coded into the information itself* as its interactive physics.
+*   **Engelbart 1962 (Augmenting Human Intellect):** Engelbart sought tools to augment human capability through structured, symbol-based interaction. DeLeon's framework analyzes a powerful form of such augmentation: interactive simulations where the "rules" are the constraints and affordances of a model, training intuition through direct manipulation of a computed reality.
+*   **Papert 1980 (Mindstorms):** Papert championed learning through interaction with objects whose behaviors are governed by programmable rules (Logo turtles). DeLeon's paper provides a precise theoretical lens for understanding *how* the rules of such educational microworlds function. The turtle's movement is not subject to a social contract but to its programmed geometry—its "physics."
+*   **Anderson 1972 (More is Different):** Anderson argued that complex systems exhibit emergent properties not reducible to their lower-level components. DeLeon's rules-as-physics are the fundamental-level laws of a game's universe. The gameplay experience—the strategy, emotion, and social interaction (even if single-player)—is an emergent phenomenon arising from players interacting with these hard-coded fundamental rules.
+*   **Lockhart 2002 (A Mathematician's Lament):** Lockhart criticizes math education for teaching formal procedures (social rules) divorced from intuitive reality. Interestingly, DeLeon describes computer games as a medium where formal rules and intuitive reality are *fused*. A well-designed game makes its underlying "physics" (mathematical model) feel intuitive and real, embodying the kind of experiential learning Lockhart advocates for, albeit in a non-mathematical domain.
+
+## Modern Relevance
+DeLeon's framework is arguably more relevant today than in 2013, given the rise of sophisticated real-time simulations, physics-based gameplay, and large language models (LLMs) that operate with their own emergent "rules."
+*   **AI as Rule-System:** Modern generative AI can be understood through this lens. The "rules" governing an AI's output are not social conventions but the encoded patterns and constraints of its training data and model architecture—a kind of statistical physics. Users don't negotiate with an AI; they navigate the fixed (though opaque) realities of its system.
+*   **Simulation & Training:** In fields from surgery to aviation, high-fidelity simulators are used because their enforced rules *are* the physics of the real world. Mastery comes from internalizing these real constraints, not just memorizing procedural checklists (social rules). DeLeon's analysis underpins the pedagogical value of such simulations.
+*   **Interactive Knowledge Systems:** This distinction is crucial for designing AI assistants or knowledge management tools. Is the tool a repository governed by strict, transparent, non-negotiable retrieval algorithms (rules-as-physics), or is it a collaborative space governed by social protocols of inquiry and citation (rules-as-society)? The most effective systems often blend both.
+*   **Metaverse & VR Design:** As we build more persistent virtual worlds, DeLeon's distinction becomes a key design choice: what aspects of the world will be governed by hard-coded "physics" (e.g., flight mechanics, damage models) and what will be governed by social norms and moderation (rules-as-society)? The former defines the possibility space; the latter governs interaction within it.
+
+## Key Quotes
+1.  **"Rules in computer games are more like laws of physics, rules in non-computer games are more like laws of society."**
+    *   *The paper's central, most distilled thesis. It reframes the entire comparative analysis by locating the source of constraint in the system's material reality versus its social agreement.*
+2.  **"The limitations are actual, not artificial, in that the player may be truly, physically unable to access the game's next content on account of being unable to work around the inflexible constraints."**
+    *   *This specifies the consequence of rules-as-physics. It's not about shame or social penalty, but about literal access being gated by the computed state of the system.*
+3.  **"In terms of the player's interaction with the rules playing a computer game has more in common with running through an airport than navigating taped lines."**
+    *   *The paper's most powerful analogy. It transfers the intuition from the thought experiment to the player's lived experience of navigating complex, rule-governed environments.*
+4.  **"Rather than framing it as indicating that physics must be implemented as though these dynamics were explicit rules, in terms of the underlying properties and player experience what happens is closer to saying that the explicit rules must be implemented at the same level as physical and biological dynamics."**
+    *   *This is DeLeon's precise correction of Juul, elevating the status of explicit rules from social convention to an integral part of the world's material fabric.*
+5.  **"Because rule enforcement is automated in a computer game, the rules can be learned through playing experimentally."**
+    *   *This highlights a critical consequence: the shift from prescriptive learning (memorizing rules) to exploratory learning (probing a system's physics). This property makes computer games powerful tools for intuitive understanding.*
