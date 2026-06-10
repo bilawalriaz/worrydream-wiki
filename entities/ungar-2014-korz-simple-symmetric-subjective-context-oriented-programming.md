@@ -1,0 +1,68 @@
+---
+title: Ungar 2014 - Korz Simple, Symmetric, Subjective, Context-Oriented Programming
+created: 2026-06-10
+updated: 2026-06-10
+type: entity
+tags: [computing-history, programming-languages, physics, education]
+sources: [raw/papers/Ungar_2014_-_Korz_Simple,_Symmetric,_Subjective,_Context-Oriented_Programming.txt]
+confidence: high
+---
+
+# Ungar 2014 - Korz Simple, Symmetric, Subjective, Context-Oriented Programming
+
+## Core Thesis
+The paper argues that the fundamental problem of programming language design is managing multiple, orthogonal dimensions of variation in a software system. Object-oriented programming (OOP) elegantly handles a single dimension (the object identity) but becomes cumbersome when a second dimension is introduced (e.g., different behavior for different contexts or platforms). Existing solutions like design patterns, aspect-oriented programming (AOP), or context-oriented programming (COP) add new, heavy constructs (aspects, layers) to the language. The core thesis is that a more powerful and flexible computational model can be built by synthesizing three older, separate concepts into a new primitive: **(1) multiple dispatch**, **(2) implicit/contextual arguments**, and **(3) a slot-based model**. This synthesis eliminates the fixed notion of an "object" as a container, replacing it with a multidimensional "slot space." In this model, computation is guided by a "context" of implicit coordinates, and what appears as an "object" is a subjective, temporary aggregation of slots that match that context. The result is a language that is simpler in its core primitives yet more expressive and evolvable for systems requiring variation along many dimensions.
+
+## Historical Context
+The paper positions Korz at the intersection of two long-standing trends in programming language evolution: the refinement of object orientation and the search for mechanisms to handle cross-cutting concerns.
+
+**The OOP Limitation:** OOP, descended from Simula and popularized by Smalltalk, models systems as collections of objects with identity, state, and behavior. This works well for a single "is-a" or "has-a" hierarchy. However, as Ungar notes, when a second dimension of variation appears (e.g., "what to do if assertions are enabled?" or "how to behave on a mobile device vs. a server?"), OOP requires ad-hoc, non-local solutions like the Visitor pattern, Strategy pattern, or complex inheritance mixins. These solutions tangle concerns and make the code harder to evolve.
+
+**The Search for Context:** The field of Context-Oriented Programming (COP) emerged to address this directly, proposing that language runtimes should have an implicit notion of a "context" that could be used to dynamically select behavioral variants. The standard implementation of COP is through "layers" or "aspects" that can be pushed onto and popped from a context stack. While powerful, this introduces a new, asymmetric concept (the layer) and a new management mechanism.
+
+**A Self-like Reduction:** Ungar draws a direct lineage from the creation of the Self language. Self reformulated Smalltalk's object model using a smaller, more primitive set of concepts (prototypal inheritance, slots, parent pointers) from which classes and other constructs could be derived as patterns. Similarly, Korz seeks to reformulate OOP and COP using a smaller set of primitives: the **slot** and the **multidimensional context**. The paper is part of a tradition of language design that seeks elegance through conceptual reduction.
+
+## Key Contributions
+1.  **The Subjective Object:** Korz's most radical contribution is the redefinition of the object. An object is not a fixed container for slots. Instead, a **coordinate** provides identity, and a **slot** pertains to multiple coordinates. The grouping of slots into a coherent "object" is **subjective**; it depends on the context (the set of active dimensions and their bound coordinates) at the point of message send. Different contexts perceive different sets of slots as forming the same "object."
+2.  **A Unified Computational Model:** The paper presents a unified model where object-oriented programming, procedural programming, and context-oriented programming are not separate paradigms with different mechanisms, but special cases of a single, general mechanism.
+    *   **Procedural:** A zero-dimensional context (no implicit arguments).
+    *   **Object-Oriented:** A one-dimensional context where the single dimension is analogous to `self` or `this`.
+    *   **Context-Oriented:** A multi-dimensional context where additional dimensions (e.g., `assertions`, `platform`) provide implicit arguments for dispatch.
+3.  **Elimination of Layers:** By making context variation a native, first-class part of the dispatch mechanism itself, Korz eliminates the need for the separate "layer" construct found in other COP languages. Variations are just methods whose **slot guards** include additional dimension-coordinate constraints.
+4.  **The Slot Guard as a Multi-Dimensional Pattern:** A slot guard, of the form `{dimension ≤ coordinate, ...} selector(params)`, becomes a powerful pattern for specifying in which contexts a piece of code or data is active. The `≤` operator denotes "is a descendant of," providing inheritance-like relationships along each dimension.
+5.  **IDE-Centric Development:** The paper acknowledges that working in a subjective, multidimensional space is cognitively challenging. It argues that an IDE is not a convenience but an essential part of the model, responsible for helping the programmer manage complexity by providing dynamic, controllable views that isolate subspaces and enforce a temporary "dominance" of certain dimensions for clarity.
+
+## Methodology
+The methodology is **theoretical and design-oriented**, following the tradition of programming language research papers. It proceeds as follows:
+1.  **Analogical Framing:** It opens with a powerful analogy from physics (Newtonian vs. Einsteinian mechanics) to frame OOP as a limited theory needing a more general one for new conditions.
+2.  **Incremental Example:** It uses a classic, simple example (a stack) and incrementally applies Korz features to demonstrate how a new dimension of variation (assertion checking) can be added non-invasively.
+3.  **Formal Definition:** It provides a clear, if abstract, language definition for Korz, specifying the runtime components (slot space, context, dispatch algorithm).
+4.  **Comprehensive Example:** It presents a more complex case study (a file system with logging, caching, and platform variations) to demonstrate the model's claimed power in managing multiple, intersecting dimensions.
+5.  **Prototype Implementation:** It grounds the theory in practice by describing a prototype built atop the Self language and environment, demonstrating feasibility. The methodology is therefore **design-through-implementation**.
+
+## Influence
+As a 2014 paper from IBM Research, Korz's direct citation impact is academic. Its influence is more conceptual, contributing to ongoing discussions in:
+*   **Language Design:** It stands as a reference point for attempts to unify OOP and COP and for models based on multiple dispatch (like the CLOS/Metaobject Protocol, though with a different emphasis). It informs research into adaptive and context-aware languages.
+*   **Modularity and Software Evolution:** It provides a theoretical framework for thinking about systems that must evolve along unforeseen dimensions of variation. Its ideas resonate with work on software product lines and feature-oriented programming.
+*   **The Subjectivity of Abstraction:** Its most enduring idea may be the philosophical one: that the "objects" in our software are not discovered, objective entities, but are subjective constructs imposed by the programmer's perspective (context). This connects to broader philosophical discussions in computing.
+
+## Connections to Other Papers in the Collection
+*   **Bush 1945 (As We May Think):** Bush envisioned a "memex" where information is linked and trailed by association. Korz's "sea of slots" with subjective, context-dependent connections is a computational analog for software constructs, not just documents.
+*   **Engelbart 1962 (Augmenting Human Intellect):** Engelbart's framework for augmenting human capabilities through tools aligns with Korz's reliance on IDE support. Korz acknowledges that the raw computational model is too complex for direct human manipulation and requires an augmenting interface to manage the multidimensional space.
+*   **Kay 1972 (Personal Computer):** Kay's vision of the computer as a "dynamic medium" for personal expression connects to Korz's emphasis on fluid, evolving software. Korz provides a computational substrate where the "medium" of code can more easily change its properties and behaviors.
+*   **Backus 1978 (FP):** Backus critiqued the "von Neumann bottleneck" and the complexity of stateful, assignment-based languages, proposing a functional model. While Korz is fundamentally stateful and object-like, it shares Backus's goal of reducing conceptual complexity. It attacks the problem not by removing state, but by reorganizing how state and behavior are located and accessed.
+*   **Anderson 1972 (More is Different):** Anderson's point that higher-level sciences require new, autonomous concepts despite being built on lower-level ones is mirrored in Ungar's argument. Korz argues that a true COP requires a new computational model (the slot space), not just new patterns or libraries added onto existing OOP.
+*   **Hofstadter 2001 (Analogy):** Hofstadter explores how the mind perceives similarity and creates concepts through analogy. Korz's "subjective objects" are a formalized, computational instance of this: the grouping of slots into an "object" is an act of perceptual analogy made by the runtime, based on the current context.
+
+## Modern Relevance
+*   **AI and Adaptive Systems:** Modern AI systems, especially those using large language models or reinforcement learning, are inherently contextual. Their behavior is shaped by vast, implicit "contexts" (training data, prompt context, memory). Korz provides a programming model metaphor for building software that interfaces with such systems, where the "behavior" of a component can dynamically reconfigure based on a rich, multidimensional context vector.
+*   **Knowledge Graphs and Knowledge Management:** A Korz slot space resembles a knowledge graph, where nodes (coordinates) are connected by edges (slots) labeled by selectors. The concept of subjective, context-driven views over this graph is directly relevant to building adaptive knowledge management systems that present different facets of the same underlying data depending on the user's role or task.
+*   **Microservices and Cloud-Native Architectures:** Modern distributed systems are composed of services that must behave differently in different deployment contexts (region, load level, feature flags). Korz's model offers a principled way to think about this: each service is not a single object but a collection of behaviors (slots) that are subjectively composed at runtime based on a deployment context.
+*   **Hypermedia and Dynamic Documents:** For work in the Hyperflash vein, Korz offers a computational model for the document itself. A "document object" could be seen as a subjective aggregation of slots (text, code, data, interaction handlers) whose composition and behavior change based on an implicit context (user device, user state, linked data sources).
+
+## Key Quotes
+1.  **"Object-oriented programming does a great job for ontologies with a single dimension of variation, but creaks and groans when a second dimension enters the picture."** - *This is the paper's core problem statement, succinctly identifying the limitation of the dominant paradigm.*
+2.  **"A slot pertains to a number of coordinates instead of being contained by a single object."** - *This single line encapsulates the model's radical break from 50 years of object-oriented thinking, where containment is fundamental.*
+3.  **"There is no dominant decomposition, and no dimension holds sway over any other."** - *This speaks to the philosophical commitment of the design: true symmetry and flexibility require abandoning any privileged hierarchy, even the "this" or "self" dimension.*
+4.  **"When moving from Smalltalk to Self, some of the language concepts, such as classes, became organizational patterns, such as traits. Likewise, when moving from some other context-oriented language to Korz, some of the language concepts, such as objects and layers, become organizational patterns."** - *This places Korz in a historical lineage of "conceptual compression" in language design, aiming for a more powerful core.*
+5.  **"It seems that Korz's particular combination of concepts, each well-known from the past, is indeed more powerful than the sum of its parts."** - *The paper's conclusion, highlighting that innovation often comes not from inventing new primitives, but from synthesizing existing ones in a novel, synergistic way.*

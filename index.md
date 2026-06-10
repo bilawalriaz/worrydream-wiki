@@ -2,23 +2,352 @@
 
 > Content catalog. Every wiki page listed under its type with a one-line summary.
 > Read this first to find relevant pages for any query.
-> Last updated: 2026-06-10 | Total pages: 10
+> Last updated: 2026-06-10 | Total pages: 342
 
 ## Entities
 
-- [[anderson-1972-more-is-different]] - Reductionism does not imply constructionism; broken symmetry as emergence mechanism (Anderson, 1972)
-- [[backus-1978-can-programming-be-liberated]] - The von Neumann bottleneck and functional programming as alternative (Backus, 1978)
-- [[bush-1945-as-we-may-think]] - The Memex vision: mechanized associative information retrieval (Bush, 1945)
-- [[engelbart-1962-augmenting-human-intellect]] - H-LAM/T framework for augmenting human capability through computing (Engelbart, 1962)
-- [[feynman-1974-cargo-cult-science]] - Scientific integrity and the danger of form without substance (Feynman, 1974)
-- [[hofstadter-2001-analogy-as-core-of-cognition]] - Analogy as the fundamental mechanism of cognition, not a variety of it (Hofstadter, 2001)
-- [[kay-1972-personal-computer-for-children]] - The Dynabook vision: computer as creative medium for children (Kay, 1972)
-- [[lockhart-2002-mathematicians-lament]] - Mathematics as art destroyed by standardized education (Lockhart, 2002)
-- [[papert-1980-mindstorms]] - Constructionism, turtle geometry, and learning by making (Papert, 1980)
-- [[thurston-1994-on-proof-and-progress-in-mathematics]] - Mathematics is about human understanding, not formal proof (Thurston, 1994)
+- [[abelson-1999-amorphous-computing]] - Abelson 1999 - Amorphous Computing
+- [[air-force-1960-air-force-office-of-scientific-research]] - Air Force 1960 - Air Force Office of Scientific Research
+- [[alexander-1965-a-city-is-not-a-tree]] - Alexander 1965 - A City Is Not A Tree
+- [[allen-conn-2003-powerful-ideas-in-the-classroom]] - Allen-Conn 2003 - Powerful Ideas in the Classroom
+- [[altmann-1989-hamilton-rodrigues-and-the-quaternion-scandal]] - altmann-1989-hamilton-rodrigues-and-the-quaternion-scandal
+- [[amarel-1966-on-the-mechanization-of-creative-processes]] - Amarel 1966 - On the Mechanization of Creative Processes
+- [[anderson-1972-more-is-different]] - Anderson 1972 - More is Different
+- [[armstrong-2003-making-reliable-distributed-systems-in-the-presence-of-software-errors]] - armstrong-2003-making-reliable-distributed-systems-in-the-presence-of-software-errors
+- [[arnold-1997-interview-lui]] - Arnold 1997 - Interview (Lui)
+- [[arnold-1997-on-teaching-mathematics]] - Arnold 1997 - On Teaching Mathematics
+- [[backus-1978-can-programming-be-liberated-from-the-von-neumann-style]] - Backus 1978 - Can Programming Be Liberated from the von Neumann Style
+- [[backus-1978-can-programming-be-liberated]] - Backus 1978 - Can Programming Be Liberated from the von Neumann Style?
+- [[barber-1961-resistance-by-scientists-to-scientific-discovery]] - Barber 1961 - Resistance by Scientists to Scientific Discovery
+- [[bardini-2002-chronicle-of-the-death-of-a-laboratory]] - Bardini 2002 - Chronicle of the Death of a Laboratory
+- [[barthes-1971-from-work-to-text]] - Barthes 1971 - From Work to Text
+- [[barton-1961-a-new-approach-to-the-functional-design-of-a-new-computer]] - Barton 1961 - A New Approach to the Functional Design of a New Computer
+- [[barton-1965-the-interrelation-between-programming-languages-and-machine-organization]] - Barton 1965 - The Interrelation Between Programming Languages and Machine Organization
+- [[barut-1980-stable-particles-as-building-blocks-of-matter]] - Barut 1980 - Stable particles as building blocks of matter
+- [[barut-1991-self-field-papers]] - Barut 1991 - Self-field papers
+- [[barut-1998-a-personal-tribute-dowling]] - Barut 1998 - A Personal Tribute (Dowling)
+- [[beck-1989-a-laboratory-for-teaching-object-oriented-thinking]] - Beck 1989 - A Laboratory For Teaching Object-Oriented Thinking
+- [[bennett-1973-logical-reversibility-of-computation]] - Bennett 1973 - Logical Reversibility of Computation
+- [[bennett-1988-notes-on-the-history-of-reversible-computation]] - Bennett 1988 - Notes on the history of reversible computation
+- [[betzig-2014-single-molecules-cells-and-super-resolution-optics]] - Betzig 2014 - Single Molecules, Cells, and Super-Resolution Optics
+- [[bezanson-2012-julia-a-fast-dynamic-language-for-technical-computing]] - Bezanson 2012 - Julia, A Fast Dynamic Language for Technical Computing
+- [[bezanson-2015-abstraction-in-technical-computing]] - Bezanson 2015 - Abstraction in Technical Computing
+- [[blasjo-2022-operationalism-an-interpretation-of-the-philosophy-of-ancient-greek-geometry]] - Blasjo 2022 - Operationalism, An Interpretation of the Philosophy of Ancient Greek Geometry
+- [[bolt-1979-spatial-data-management]] - Bolt 1979 - Spatial Data Management
+- [[bolt-1980-put-that-there]] - Bolt 1980 - Put That There
+- [[borning-1981-the-programming-language-aspects-of-thinglab]] - Borning 1981 - The Programming Language Aspects of ThingLab
+- [[borwein-2001-aesthetics-for-the-working-mathematician]] - Borwein 2001 - Aesthetics for the Working Mathematician
+- [[brennan-1990-conversation-with-and-through-computers]] - Brennan 1990 - Conversation With and Through Computers
+- [[brennan-1998-the-grounding-problem-in-conversations-with-and-through-computers]] - Brennan 1998 - The Grounding Problem in Conversations With and Through Computers
+- [[brooks-1986-no-silver-bullet]] - Brooks 1986 - No Silver Bullet
+- [[brown-1981-dynamic-program-building]] - Brown 1981 - Dynamic Program Building
+- [[bruner-1960-the-process-of-education]] - Bruner 1960 - The Process of Education
+- [[bruner-1965-man-a-course-of-study]] - Bruner 1965 - Man, A Course of Study
+- [[burnham-1970-software-information-technology-its-new-meaning-for-art]] - Burnham 1970 - Software, Information Technology, Its New Meaning for Art
+- [[bush-1931-the-differential-analyzer]] - Bush 1931 - The Differential Analyzer
+- [[bush-1945-as-we-may-think-with-engelbart-notes]] - Bush 1945 - As We May Think (with Engelbart notes)
+- [[bush-1945-as-we-may-think]] - Bush 1945 - As We May Think
+- [[bush-2010-quantum-mechanics-writ-large]] - Bush 2010 - Quantum mechanics writ large
+- [[buxton-2005-interaction-at-lincoln-laboratory-in-the-1960]] - Buxton 2005 - Interaction at Lincoln Laboratory in the 1960
+- [[cardelli-2005-abstract-machines-of-systems-biology]] - cardelli-2005-abstract-machines-of-systems-biology
+- [[carriero-1989-linda-in-context]] - Carriero 1989 - Linda in Context
+- [[caves-2001-quantum-probabilities-as-bayesian-probabilities]] - Caves 2001 - Quantum probabilities as Bayesian probabilities
+- [[chappell-2016-geometric-algebra-a-natural-representation-of-three-space]] - Chappell 2016 - Geometric Algebra, A natural representation of three-space
+- [[chiou-2001-a-marriage-of-convenience-the-founding-of-the-mit-artificial-intelligence-laboratory]] - Chiou 2001 - A Marriage of Convenience, The Founding of the MIT Artificial Intelligence Laboratory
+- [[clark-d-1988-the-design-philosophy-of-the-darpa-internet-protocols]] - Clark D 1988 - The Design Philosophy of the DARPA Internet Protocols
+- [[clark-d-1990-architectural-considerations-for-a-new-generation-of-protocols]] - Clark D 1990 - Architectural Considerations for a New Generation of Protocols
+- [[clark-h-1991-grounding-in-communication]] - Clark H 1991 - Grounding in Communication
+- [[clark-w-1986-the-linc-was-early-and-small]] - Clark W 1986 - The LINC was early and small
+- [[cockburn-2007-a-review-of-overviewdetail-zooming-and-focuscontext-interfaces]] - Cockburn 2007 - A Review of Overview+Detail, Zooming, and Focus+Context Interfaces
+- [[cohn-2012-comics-linguistics-and-visual-language]] - Cohn 2012 - Comics, Linguistics, and Visual Language
+- [[collins-2000-tacit-knowledge-trust-and-the-q-of-sapphire]] - Collins 2000 - Tacit Knowledge, Trust, and the Q of Sapphire
+- [[conway-j-2013-interview-schleicher]] - Conway J 2013 - Interview (Schleicher)
+- [[conway-l-2012-reminiscences-of-the-vlsi-revolution]] - Conway L 2012 - Reminiscences of the VLSI Revolution
+- [[cook-2000-how-complex-systems-fail]] - Cook 2000 - How Complex Systems Fail
+- [[costikyan-2002-i-have-no-words-and-i-must-design]] - Costikyan 2002 - I Have No Words and I Must Design
+- [[cramer-2020-symmetry-transactions-and-the-mechanism-of-wave-function-collapse]] - Cramer 2020 - Symmetry, Transactions, and the Mechanism of Wave Function Collapse
+- [[crowe-2002-history-of-vector-analysis]] - Crowe 2002 - History Of Vector Analysis
+- [[deleon-2013-rules-in-computer-games-compared-to-rules-in-traditional-games]] - DeLeon 2013 - Rules in Computer Games Compared to Rules in Traditional Games
+- [[devlin-2013-what-is-mathematics]] - Devlin 2013 - What is mathematics
+- [[diamond-1987-the-worst-mistake-in-the-history-of-the-human-race]] - Diamond 1987 - The Worst Mistake in the History of the Human Race
+- [[disessa-1986-boxer-a-reconstructible-computational-medium]] - diSessa 1986 - Boxer, A Reconstructible Computational Medium
+- [[dodge-2006-pssc-physics-by-one-who-saw-it-from-beginning-to-end]] - Dodge 2006 - PSSC Physics, By One Who Saw It from Beginning to End
+- [[doerfler-2009-the-lost-art-of-nomography]] - Doerfler 2009 - The Lost Art of Nomography
+- [[druin-1988-noobie-the-animal-design-playstation]] - Druin 1988 - Noobie, the Animal Design Playstation
+- [[egan-2001-why-education-is-so-difficult-and-contentious]] - Egan 2001 - Why education is so difficult and contentious
+- [[egan-2003-some-cognitive-tools-of-literacy]] - Egan 2003 - Some cognitive tools of literacy
+- [[egan-2007-learning-in-depth]] - Egan 2007 - Learning in depth
+- [[ehrenberg-1977-rudiments-of-numeracy]] - Ehrenberg 1977 - Rudiments of Numeracy
+- [[engelbart-1960-games-that-teach-the-fundamentals-of-computer-operation]] - Engelbart 1960 - Games That Teach the Fundamentals of Computer Operation
+- [[engelbart-1962-augmenting-human-intellect-typeset]] - Engelbart 1962 - Augmenting Human Intellect (typeset)
+- [[engelbart-1962-augmenting-human-intellect]] - Engelbart 1962 - Augmenting Human Intellect
+- [[engelbart-1972-advanced-intellect-augmentation-techniques]] - Engelbart 1972 - Advanced Intellect-Augmentation Techniques
+- [[engelbart-1992-toward-high-performance-organizations]] - Engelbart 1992 - Toward High-Performance Organizations
+- [[engelbart-2003-improving-our-ability-to-improve]] - Engelbart 2003 - Improving Our Ability to Improve
+- [[england-2007-john-perrys-neglected-critique-of-kelvins-age-for-the-earth]] - England 2007 - John Perry's neglected critique of Kelvin's age for the Earth
+- [[fairbairn-2016-oral-history-laws]] - Fairbairn 2016 - Oral History (Laws)
+- [[fearnley-sander-1979-hermann-grassmann-and-the-creation-of-linear-algebra]] - Fearnley-Sander 1979 - Hermann Grassmann and the Creation of Linear Algebra
+- [[fenton-1989-playground-an-object-oriented-simulation-system-with-agent-rules-for-children-of-all-ages]] - fenton-1989-playground-an-object-oriented-simulation-system-with-agent-rules-for-children-of-all-ages
+- [[ferguson-1977-the-minds-eye-nonverbal-thought-in-technology]] - Ferguson 1977 - The Mind's Eye, Nonverbal Thought in Technology
+- [[feynman-1974-cargo-cult-science]] - Feynman 1974 - Cargo Cult Science
+- [[flexner-1939-the-usefulness-of-useless-knowledge]] - Flexner 1939 - The Usefulness of Useless Knowledge
+- [[froehner-1993-quantum-mechanics-how-weird-for-bayesians]] - Froehner 1993 - Quantum Mechanics, How Weird For Bayesians
+- [[gabriel-2012-the-structure-of-a-programming-language-revolution]] - Gabriel 2012 - The Structure of a Programming Language Revolution
+- [[gaver-1989-the-sonicfinder]] - Gaver 1989 - The SonicFinder
+- [[gelernter-1992-coordination-languages-and-their-significance]] - Gelernter 1992 - Coordination Languages and their Significance
+- [[gillespie-1959-introduction-to-a-diderot-pictorial-encyclopedia-of-trades-and-industry]] - Gillespie 1959 - Introduction to A Diderot Pictorial Encyclopedia of Trades and Industry
+- [[goldman-1975-the-need-for-basic-research-in-industry]] - Goldman 1975 - The need for basic research in industry
+- [[goldstein-1981-pie-four-reports]] - Goldstein 1981 - PIE four reports
+- [[goodstein-1994-the-big-crunch]] - Goodstein 1994 - The Big Crunch
+- [[goody-1963-the-consequences-of-literacy]] - Goody 1963 - The Consequences of Literacy
+- [[green-1828-the-application-of-mathematical-analysis]] - Green 1828 - The Application of Mathematical Analysis
+- [[griswold-1971-the-snobol4-programming-language]] - Griswold 1971 - The SNOBOL4 Programming Language
+- [[gull-1993-imaginary-numbers-are-not-real]] - Gull 1993 - Imaginary Numbers are not Real
+- [[hadamard-1945-the-psychology-of-invention-in-the-mathematical-field]] - Hadamard 1945 - The psychology of invention in the mathematical field
+- [[hamming-1968-one-mans-view-of-computer-science]] - Hamming 1968 - One Man's View of Computer Science
+- [[hamming-1980-the-unreasonable-effectiveness-of-mathematics]] - Hamming 1980 - The Unreasonable Effectiveness of Mathematics
+- [[hamming-1997-the-art-of-doing-science-and-engineering]] - Hamming 1997 - The Art of Doing Science and Engineering
+- [[hamming-1998-mathematics-on-a-distant-planet]] - Hamming 1998 - Mathematics on a Distant Planet
+- [[heeffer-2011-historical-objections-against-the-number-line]] - heeffer-2011-historical-objections-against-the-number-line
+- [[henderson-1982-functional-geometry]] - Henderson 1982 - Functional Geometry
+- [[hestenes-1983-quantum-mechanics-from-self-interaction]] - Hestenes 1983 - Quantum Mechanics from Self-Interaction
+- [[hestenes-1986-secrets-of-genius]] - Hestenes 1986 - Secrets of Genius
+- [[hestenes-1987-toward-a-modeling-theory-of-physics-instruction]] - hestenes-1987-toward-a-modeling-theory-of-physics-instruction
+- [[hestenes-1995-a-modeling-method-for-high-school-physics-instruction]] - Hestenes 1995 - A Modeling Method for high school physics instruction
+- [[hestenes-1995-modeling-software-for-learning-and-doing-physics]] - Hestenes 1995 - Modeling Software for learning and doing physics
+- [[hestenes-2002-reforming-the-mathematical-language-of-physics]] - Hestenes 2002 - Reforming the Mathematical Language of Physics
+- [[hestenes-2003-spacetime-physics-with-geometric-algebra]] - Hestenes 2003 - Spacetime Physics with Geometric Algebra
+- [[hestenes-2006-notes-for-a-modeling-theory-of-science-cognition-and-instruction]] - Hestenes 2006 - Notes for a Modeling Theory of Science, Cognition and Instruction
+- [[hestenes-2012-interview-tasar]] - Hestenes 2012 - Interview (Tasar)
+- [[hestenes-2016-the-genesis-of-geometric-algebra-a-personal-retrospective]] - Hestenes 2016 - The Genesis of Geometric Algebra, A Personal Retrospective
+- [[hewitt-1973-a-universal-modular-actor-formalism-for-artificial-intelligence]] - Hewitt 1973 - A Universal Modular Actor Formalism for Artificial Intelligence
+- [[hillis-1985-the-connection-machine]] - Hillis 1985 - The Connection Machine
+- [[hoare-1981-the-emperors-old-clothes]] - Hoare 1981 - The Emperors Old Clothes
+- [[hofstadter-2001-analogy-as-core-of-cognition]] - Hofstadter 2001 - Analogy as the Core of Cognition
+- [[hofstadter-2001-analogy-as-the-core-of-cognition]] - Hofstadter 2001 - Analogy as the Core of Cognition
+- [[hollan-1992-beyond-being-there]] - Hollan 1992 - Beyond Being There
+- [[hollan-1995-pad]] - Hollan 1995 - Pad++
+- [[hopper-1952-the-education-of-a-computer]] - Hopper 1952 - The Education of a Computer
+- [[housman-1892-introductory-lecture]] - Housman 1892 - Introductory Lecture
+- [[hudak-2007-a-history-of-haskell-being-lazy-with-class]] - Hudak 2007 - A History of Haskell, Being Lazy With Class
+- [[hughes-1990-why-functional-programming-matters]] - Hughes 1990 - Why Functional Programming Matters
+- [[hunt-2015-maxwell-measurement-and-the-modes-of-electromagnetic-theory]] - Hunt 2015 - Maxwell, Measurement, and the Modes of Electromagnetic Theory
+- [[hutchins-1985-direct-manipulation-interfaces]] - Hutchins 1985 - Direct Manipulation Interfaces
+- [[hutchins-1985-how-a-cockpit-remembers-its-speeds]] - Hutchins 1985 - How a Cockpit Remembers Its Speeds
+- [[ingalls-1978-the-smalltalk-76-programming-system]] - Ingalls 1978 - The Smalltalk-76 Programming System
+- [[ingalls-1988-fabrik-a-visual-programming-environment]] - Ingalls 1988 - Fabrik, A Visual Programming Environment
+- [[ingalls-1997-back-to-the-future]] - Ingalls 1997 - Back to the Future
+- [[ingalls-2020-the-evolution-of-smalltalk]] - Ingalls 2020 - The Evolution of Smalltalk
+- [[iverson-1991-a-personal-view-of-apl]] - Iverson 1991 - A Personal View of APL
+- [[jacobson-1995-how-to-kill-the-internet]] - Jacobson 1995 - How to Kill the Internet
+- [[jaynes-1984-the-evolution-of-carnots-principle]] - Jaynes 1984 - The Evolution of Carnot's Principle
+- [[jaynes-1988-clearing-up-mysteries]] - Jaynes 1988 - Clearing up Mysteries
+- [[jaynes-1990-probability-in-quantum-theory]] - jaynes-1990-probability-in-quantum-theory
+- [[jaynes-1990-scattering-of-light-by-free-electrons]] - Jaynes 1990 - Scattering of Light by Free Electrons
+- [[jaynes-1991-notes-on-present-status-and-future-progress]] - Jaynes 1991 - Notes on Present Status and Future Progress
+- [[jaynes-1992-the-gibbs-paradox]] - Jaynes 1992 - The Gibbs Paradox
+- [[jefferson-1985-virtual-time]] - jefferson-1985-virtual-time
+- [[jefferson-1987-distributed-simulation-and-the-time-warp-operating-system]] - Jefferson 1987 - Distributed Simulation and the Time Warp Operating System
+- [[johnson-1989-the-xerox-star-a-retrospective]] - Johnson 1989 - The Xerox Star, a Retrospective
+- [[kay-1968-flex-a-flexible-extendable-language]] - Kay 1968 - FLEX, A Flexible Extendable Language
+- [[kay-1972-a-personal-computer-for-children-of-all-ages]] - Kay 1972 - A Personal Computer for Children of All Ages
+- [[kay-1972-personal-computer-for-children]] - Kay 1972 - A Personal Computer for Children of All Ages
+- [[kay-1975-personal-computing]] - Kay 1975 - Personal Computing
+- [[kay-1976-personal-dynamic-media-lrg]] - Kay 1976 - Personal Dynamic Media (LRG)
+- [[kay-1977-microelectronics-and-the-personal-computer]] - Kay 1977 - Microelectronics and the Personal Computer
+- [[kay-1977-personal-dynamic-media]] - Kay 1977 - Personal Dynamic Media
+- [[kay-1990-interview-the-machine-that-changed-the-world]] - Kay 1990 - Interview (The Machine That Changed The World)
+- [[kay-1990-panel-roundtable-in-multimedia]] - Kay 1990 - Panel (Roundtable in Multimedia)
+- [[kay-1994-a-bicycle-for-the-mind-redux]] - Kay 1994 - A bicycle for the mind redux
+- [[kay-1995-powerful-ideas-need-love-too]] - Kay 1995 - Powerful Ideas Need Love Too
+- [[kay-1996-revealing-the-elephant]] - Kay 1996 - Revealing the Elephant
+- [[kay-1997-technology-and-powerful-ideas]] - Kay 1997 - Technology and Powerful Ideas
+- [[kay-2001-software-art-engineering-mathematics-or-science]] - Kay 2001 - Software - Art, Engineering, Mathematics, or Science
+- [[kay-2004-the-center-of-why]] - Kay 2004 - The Center of Why
+- [[kay-2005-enlightened-imagination-for-citizens]] - Kay 2005 - Enlightened Imagination for Citizens
+- [[kay-2006-steps-proposal]] - Kay 2006 - STEPS proposal
+- [[kay-2007-children-learning-by-doing]] - Kay 2007 - Children Learning by Doing
+- [[kay-2007-steps-2007-progress-report]] - Kay 2007 - STEPS 2007 Progress Report
+- [[kay-2007-the-real-computer-revolution-hasnt-happened-yet]] - Kay 2007 - The Real Computer Revolution Hasn’t Happened Yet
+- [[kay-2008-oral-history-spicer]] - Kay 2008 - Oral History (Spicer)
+- [[kay-2010-programming-and-programming-languages]] - Kay 2010 - Programming and Programming Languages
+- [[kay-2012-steps-2012-progress-and-final-nsf-report]] - Kay 2012 - STEPS 2012 Progress and Final NSF Report
+- [[kay-2013-what-is-a-dynabook]] - Kay 2013 - What is a Dynabook
+- [[kell-2013-the-operating-system-should-there-be-one]] - Kell 2013 - The operating system, should there be one
+- [[kennedy-1956-administration-of-research-in-a-research-corporation]] - Kennedy 1956 - Administration of Research in a Research Corporation
+- [[kita-2003-jcr-lickliders-vision-for-the-ipto]] - Kita 2003 - J.C.R. Licklider's Vision for the IPTO
+- [[klemmer-2006-how-bodies-matter]] - Klemmer 2006 - How Bodies Matter
+- [[krasner-1983-smalltalk-80-bits-of-history-words-of-advice]] - Krasner 1983 - Smalltalk-80 Bits of History, Words of Advice
+- [[kurlander-1991-editable-graphical-histories-the-video]] - Kurlander 1991 - Editable Graphical Histories, the Video
+- [[kurlander-1992-a-history-based-macro-by-example-system]] - Kurlander 1992 - A History-Based Macro By Example System
+- [[kurlander-1993-graphical-editing-by-example]] - Kurlander 1993 - Graphical Editing by Example
+- [[kurlander-1993-inferring-constraints-from-multiple-snapshots]] - Kurlander 1993 - Inferring Constraints from Multiple Snapshots
+- [[lamport-2003-the-future-of-computing-logic-or-biology]] - Lamport 2003 - The Future of Computing, Logic or Biology
+- [[lampson-1983-hints-for-computer-system-design]] - Lampson 1983 - Hints for Computer System Design
+- [[landauer-1961-irreversibility-and-heat-generation-in-the-computing-process]] - Landauer 1961 - Irreversibility and Heat Generation in the Computing Process
+- [[landauer-1994-zig-zag-path-to-understanding]] - Landauer 1994 - Zig-Zag Path to Understanding
+- [[landauer-1996-the-physical-nature-of-information]] - Landauer 1996 - The physical nature of information
+- [[landin-1966-the-next-700-programming-languages]] - Landin 1966 - The Next 700 Programming Languages
+- [[lapham-1994-the-eternal-now]] - Lapham 1994 - The Eternal Now
+- [[latour-1986-visualisation-and-cognition]] - Latour 1986 - Visualisation and Cognition
+- [[le-goc-2016-zooids-building-blocks-for-swarm-user-interfaces]] - Le Goc 2016 - Zooids, Building Blocks for Swarm User Interfaces
+- [[lenat-1975-beings-knowledge-as-interacting-experts]] - Lenat 1975 - Beings, Knowledge as Interacting Experts
+- [[lenat-1982-heuretics-theoretical-and-experimental-study-of-heuristic-rules]] - Lenat 1982 - Heuretics, Theoretical and Experimental Study of Heuristic Rules
+- [[lenat-1983-why-am-and-eurisko-appear-to-work]] - Lenat 1983 - Why AM and Eurisko Appear to Work
+- [[lenat-2008-voice-of-the-turtle]] - Lenat 2008 - Voice of the Turtle
+- [[leslie-1987-pretense-and-representation]] - Leslie 1987 - Pretense and Representation
+- [[licklider-1960-man-computer-symbiosis]] - Licklider 1960 - Man-Computer Symbiosis
+- [[licklider-1962-online-man-computer-communication]] - Licklider 1962 - Online Man-Computer Communication
+- [[licklider-1963-members-and-affiliates-of-the-intergalactic-computer-network]] - Licklider 1963 - Members and Affiliates of the Intergalactic Computer Network
+- [[licklider-1965-libraries-of-the-future]] - Licklider 1965 - Libraries of the Future
+- [[licklider-1968-interactive-information-processing-retrieval-and-transfer]] - Licklider 1968 - Interactive Information Processing, Retrieval, and Transfer
+- [[licklider-1968-the-computer-as-communication-device]] - Licklider 1968 - The Computer as Communication Device
+- [[licklider-1988-oral-history-aspray]] - Licklider 1988 - Oral History (Aspray)
+- [[liljedahl-2004-mathematical-discovery-hadamard-resurected]] - Liljedahl 2004 - Mathematical Discovery, Hadamard Resurected
+- [[linc-1965-convocation-on-the-mississippi]] - LINC 1965 - Convocation on the Mississippi
+- [[lions-1977-a-commentary-on-the-sixth-edition-unix-operating-system]] - Lions 1977 - A Commentary on the Sixth Edition UNIX Operating System
+- [[lockhart-2002-a-mathematicians-lament]] - Lockhart 2002 - A Mathematician's Lament
+- [[lockhart-2002-mathematicians-lament]] - Lockhart 2002 - A Mathematician's Lament
+- [[luzin-1998-the-evolution-of-function-part-ii]] - Luzin 1998 - The Evolution of Function, Part II
+- [[maloney-1995-directness-and-liveness-in-morphic]] - Maloney 1995 - Directness and Liveness in Morphic
+- [[mansinghka-2014-venture-a-higher-order-probabilistic-programming-platform-with-programmable-inference]] - Mansinghka 2014 - Venture, a higher-order probabilistic programming platform with programmable inference
+- [[maslow-1943-a-theory-of-human-motivation]] - Maslow 1943 - A Theory of Human Motivation
+- [[maxwell-2006-tracing-the-dynabook]] - Maxwell 2006 - Tracing the Dynabook
+- [[mccarthy-1979-history-of-lisp]] - McCarthy 1979 - History of Lisp
+- [[mcculloch-1943-a-logical-calculus-of-the-ideas-immanent-in-nervous-activity]] - McCulloch 1943 - A Logical Calculus of the Ideas Immanent in Nervous Activity
+- [[mcluhan-1969-interview-playboy]] - McLuhan 1969 - Interview (Playboy)
+- [[mead-1996-oral-history-cohen]] - Mead 1996 - Oral History (Cohen)
+- [[mead-2000-interview-youngblood]] - Mead 2000 - Interview (Youngblood)
+- [[mead-2001-interview-american-spectator]] - Mead 2001 - Interview (American Spectator)
+- [[mead-2013-the-nature-of-light-what-are-photons]] - Mead 2013 - The Nature of Light, What are Photons
+- [[mead-2020-oral-history-zierler]] - Mead 2020 - Oral History (Zierler)
+- [[mead-2022-neuromorphic-engineering-in-memory-of-misha-mahowald]] - Mead 2022 - Neuromorphic Engineering, In Memory of Misha Mahowald
+- [[mead-2023-engineering-view-of-gravitation]] - Mead 2023 - Engineering View of Gravitation
+- [[meltzer-2011-active-learning-instruction-in-physics]] - Meltzer 2011 - Active-Learning Instruction in Physics
+- [[meltzer-2015-a-brief-history-of-physics-education-research-among-university-students]] - Meltzer 2015 - A Brief History of Physics Education Research Among University Students
+- [[mermin-1999-how-not-to-create-tigers]] - Mermin 1999 - How Not to Create Tigers
+- [[meyer-1989-the-new-culture-of-software-development]] - Meyer 1989 - The New Culture of Software Development
+- [[meyer-1990-tools-for-the-new-culture]] - Meyer 1990 - Tools for the New Culture
+- [[miller-1994-the-open-society-and-its-media]] - Miller 1994 - The Open Society and Its Media
+- [[miller-2006-robust-composition]] - Miller 2006 - Robust Composition
+- [[minsky-1961-steps-toward-artificial-intelligence]] - Minsky 1961 - Steps Toward Artificial Intelligence
+- [[minsky-1967-why-programming-is-a-good-medium-for-expressing-poorly-understood-and-sloppily-formulated-ideas]] - Minsky 1967 - Why programming is a good medium for expressing poorly understood and sloppily-formulated ideas
+- [[mody-2010-test-objects-and-other-epistemic-things]] - Mody 2010 - Test objects and other epistemic things
+- [[mohsen-1973-charge-transfer-in-overlapping-gate-charge-coupled-devices]] - Mohsen 1973 - Charge Transfer in Overlapping Gate Charge-Coupled Devices
+- [[moore-1966-autotelic-responsive-environments-and-exceptional-children]] - Moore 1966 - Autotelic Responsive Environments and Exceptional Children
+- [[moore-1991-forth-the-early-years]] - Moore 1991 - Forth, The Early Years
+- [[moseley-2006-out-of-the-tar-pit]] - Moseley 2006 - Out of the Tar Pit
+- [[mueller-prove-2002-vision-and-reality-of-hypertext]] - Mueller-Prove 2002 - Vision and Reality of Hypertext
+- [[murray-1988-how-the-leopard-gets-its-spots]] - Murray 1988 - How the Leopard Gets Its Spots
+- [[myers-1998-scripting-graphical-applications-by-demonstration]] - Myers 1998 - Scripting Graphical Applications by Demonstration
+- [[negroponte-1976-an-idiosyncratic-systems-approach-to-interactive-graphics]] - Negroponte 1976 - An Idiosyncratic Systems Approach to Interactive Graphics
+- [[nelson-d-1982-city-building-education]] - Nelson D 1982 - City Building Education
+- [[nelson-g-2006-natural-language-semantic-analysis-and-interactive-fiction]] - Nelson G 2006 - Natural Language, Semantic Analysis and Interactive Fiction
+- [[nelson-g-2008-inform-7-the-program]] - Nelson G 2008 - Inform 7, The Program
+- [[nelson-g-2014-prompter-a-domain-specific-language-for-versu]] - Nelson G 2014 - Prompter, A Domain-Specific Language for Versu
+- [[nelson-g-2020-narrascope-2020-talk]] - Nelson G 2020 - Narrascope 2020 talk
+- [[nelson-p-2018-activities-and-classroom-demonstrations-in-biological-physics]] - Nelson P 2018 - Activities and Classroom Demonstrations in Biological Physics
+- [[nelson-p-2023-electromagnetic-phenomena]] - Nelson P 2023 - Electromagnetic Phenomena
+- [[nelson-t-1974-computer-lib-dream-machines]] - Nelson T 1974 - Computer Lib, Dream Machines
+- [[netz-2002-counter-culture-towards-a-history-of-greek-numeracy]] - Netz 2002 - Counter Culture, Towards a History of Greek Numeracy
+- [[nielsen-1993-noncommand-user-interfaces]] - Nielsen 1993 - Noncommand User Interfaces
+- [[noll-2015-memories-a-personal-history-of-bell-telephone-laboratories]] - Noll 2015 - Memories, A Personal History of Bell Telephone Laboratories
+- [[noyes-1958-memoir-pauling]] - Noyes 1958 - Memoir (Pauling)
+- [[nrc-1999-funding-a-revolution-government-support-for-computing-research]] - nrc-1999-funding-a-revolution-government-support-for-computing-research
+- [[ong-1985-writing-is-a-technology-that-restructures-thought]] - Ong 1985 - Writing is a Technology that Restructures Thought
+- [[oppenheimer-1968-a-rationale-for-a-science-museum]] - Oppenheimer 1968 - A Rationale for a Science Museum
+- [[oppenheimer-1980-exhibit-conception-and-design]] - Oppenheimer 1980 - Exhibit Conception and Design
+- [[ornstein-2002-computing-in-the-middle-ages]] - Ornstein 2002 - Computing in the Middle Ages
+- [[owens-1986-vannevar-bush-and-the-differential-analyzer]] - Owens 1986 - Vannevar Bush and the Differential Analyzer
+- [[papert-1980-mindstorms-1st-ed]] - Papert 1980 - Mindstorms, 1st ed
+- [[papert-1980-mindstorms]] - Papert 1980 - Mindstorms
+- [[papert-1990-computer-criticism-vs-technocentric-thinking]] - Papert 1990 - Computer Criticism vs. Technocentric Thinking
+- [[papert-2000-whats-the-big-idea-toward-a-pedagogy-of-idea-power]] - Papert 2000 - Whats the Big Idea, Toward a Pedagogy of Idea Power
+- [[parc-1971-parc-papers-for-pendery-and-planning-purposes]] - PARC 1971 - PARC Papers for Pendery and Planning Purposes
+- [[pearl-2014-understanding-simpsons-paradox]] - Pearl 2014 - Understanding Simpson's Paradox
+- [[perkins-1997-inventing-the-lisa-user-interface]] - Perkins 1997 - Inventing the Lisa User Interface
+- [[pike-2000-systems-software-research-is-irrelevant]] - Pike 2000 - Systems Software Research is Irrelevant
+- [[piumarta-2010-points-of-view]] - Piumarta 2010 - Points of View
+- [[postman-1998-five-things-we-need-to-know-about-technological-change]] - Postman 1998 - Five Things We Need to Know About Technological Change
+- [[proebsting-2000-tangible-program-histories]] - Proebsting 2000 - Tangible Program Histories
+- [[purcell-1976-life-at-low-reynolds-number]] - Purcell 1976 - Life at low Reynolds number
+- [[radul-2009-propagation-networks]] - Radul 2009 - Propagation Networks
+- [[repenning-2006-collaborative-diffusion-programming-antiobjects]] - Repenning 2006 - Collaborative Diffusion, Programming Antiobjects
+- [[resnick-2013-the-somerville-steam-academy-innovation-plan]] - Resnick 2013 - The Somerville STEAM Academy Innovation Plan
+- [[richardson-1992-looking-at-proteins]] - Richardson 1992 - Looking at proteins
+- [[schachman-2012-alternative-programming-interfaces-for-alternative-programmers]] - Schachman 2012 - Alternative Programming Interfaces for Alternative Programmers
+- [[schmandt-1981-the-intelligent-voice-lnteractive-interface]] - Schmandt 1981 - The Intelligent Voice-lnteractive Interface
+- [[scientific-american-1966-information-june-1966]] - Scientific American 1966 - Information (June 1966)
+- [[scott-2018-oral-history-holmes]] - Scott 2018 - Oral History (Holmes)
+- [[seeman-1988-physical-models-for-exploring-dna-topology]] - Seeman 1988 - Physical Models for Exploring DNA Topology
+- [[seeman-2006-architecture-with-gideon-a-program-for-design-in-structural-dna-nanotechnology]] - Seeman 2006 - Architecture with GIDEON, a program for design in structural DNA nanotechnology
+- [[seeman-2011-oral-history-mccray]] - Seeman 2011 - Oral History (McCray)
+- [[shannon-1946-communication-theory-of-secrecy-systems]] - Shannon 1946 - Communication Theory of Secrecy Systems
+- [[shannon-1948-a-mathematical-theory-of-communication]] - Shannon 1948 - A Mathematical Theory of Communication
+- [[shannon-1956-the-bandwagon]] - Shannon 1956 - The Bandwagon
+- [[shneiderman-1983-direct-manipulation-a-step-beyond-programming-languages]] - Shneiderman 1983 - Direct Manipulation, A Step Beyond Programming Languages
+- [[sibum-1995-reworking-the-mechanical-value-of-heat]] - Sibum 1995 - Reworking the Mechanical Value of Heat
+- [[simon-1970-human-problem-solving-the-state-of-the-theory-in-1970]] - Simon 1970 - Human Problem Solving, The State of the Theory in 1970
+- [[smaldino-2013-human-cumulative-cultural-evolution-as-a-form-of-distributed-computation]] - Smaldino 2013 - Human Cumulative Cultural Evolution as a Form of Distributed Computation
+- [[smith-da-2003-croquet-a-collaboration-system-architecture]] - Smith DA 2003 - Croquet, A Collaboration System Architecture
+- [[smith-dc-1975-pygmalion]] - Smith DC 1975 - Pygmalion
+- [[smith-dc-1982-designing-the-star-user-interface]] - Smith DC 1982 - Designing the Star User Interface
+- [[smith-r-1987-experiences-with-the-alternate-reality-kit-an-example-of-the-tension-between-literalism-and-magic]] - Smith R 1987 - Experiences With The Alternate Reality Kit, An Example of the Tension Between Literalism and Magic
+- [[sokoloff-2007-realtime-physics-active-learning-labs-transforming-the-introductory-laboratory]] - Sokoloff 2007 - RealTime Physics, active learning labs transforming the introductory laboratory
+- [[spohrer-1998-atg-education-research-the-authoring-tools-thread]] - Spohrer 1998 - ATG Education Research, The Authoring Tools Thread
+- [[strassmann-2008-the-computers-nobody-wanted-my-years-with-xerox]] - Strassmann 2008 - The Computers Nobody Wanted, My Years With Xerox
+- [[sussman-1999-robust-design-through-diversity]] - Sussman 1999 - Robust Design through Diversity
+- [[sussman-2007-building-robust-systems]] - Sussman 2007 - Building Robust Systems
+- [[sutherland-1963-sketchpad-a-man-machine-graphical-communication-system]] - Sutherland 1963 - Sketchpad, A Man-Machine Graphical Communication System
+- [[sutherland-1963-sketchpad-dissertation]] - Sutherland 1963 - Sketchpad (dissertation)
+- [[sutherland-1965-the-ultimate-display]] - Sutherland 1965 - The Ultimate Display
+- [[sutherland-1970-computer-displays]] - Sutherland 1970 - Computer Displays
+- [[sutherland-1996-technology-and-courage]] - Sutherland 1996 - Technology and Courage
+- [[sutherland-2012-the-tyranny-of-the-clock-short]] - Sutherland 2012 - The Tyranny of the Clock (short)
+- [[sutherland-2012-the-tyranny-of-the-clock]] - Sutherland 2012 - The Tyranny of the Clock
+- [[swinehart-1985-the-structure-of-cedar]] - Swinehart 1985 - The Structure of Cedar
+- [[swineheart-1986-a-structural-view-of-the-cedar-programming-environment]] - Swineheart 1986 - A Structural View of the Cedar Programming Environment
+- [[symbolics-1982-genera-concepts]] - Symbolics 1982 - Genera Concepts
+- [[taylor-2008-oral-history-mcjones]] - Taylor 2008 - Oral History (McJones)
+- [[teitelman-1984-the-cedar-programming-environment-a-midterm-report-and-examination]] - Teitelman 1984 - The Cedar Programming Environment, A Midterm Report and Examination
+- [[tesler-2012-a-personal-history-of-modeless-text-editing-and-cut-copy-paste]] - Tesler 2012 - A Personal History of Modeless Text Editing and Cut-Copy-Paste
+- [[thurston-1990-mathematical-education]] - Thurston 1990 - Mathematical Education
+- [[thurston-1994-on-proof-and-progress-in-mathematics]] - Thurston 1994 - On Proof and Progress in Mathematics
+- [[travers-1994-recursive-interfaces-for-reactive-objects]] - Travers 1994 - Recursive Interfaces for Reactive Objects
+- [[travers-1996-programming-with-agents]] - Travers 1996 - Programming with Agents
+- [[trefethen-1992-the-definition-of-numerical-analysis]] - Trefethen 1992 - The Definition of Numerical Analysis
+- [[trefethen-2005-ten-digit-algorithms]] - Trefethen 2005 - Ten Digit Algorithms
+- [[trefethen-2013-review-of-visual-complex-functions]] - Trefethen 2013 - review of Visual Complex Functions
+- [[turing-1936-on-computable-numbers-with-an-application-to-the-entscheidungsproblem]] - Turing 1936 - On Computable Numbers, with an Application to the Entscheidungsproblem
+- [[turner-d-2012-some-history-of-functional-programming-languages]] - Turner D 2012 - Some History of Functional Programming Languages
+- [[turner-f-2017-dont-be-evil]] - Turner F 2017 - Don't Be Evil
+- [[turner-f-2018-the-arts-at-facebook]] - Turner F 2018 - The arts at Facebook
+- [[ungar-1991-self-the-power-of-simplicity]] - Ungar 1991 - Self, The Power of Simplicity
+- [[ungar-2007-self-hopl]] - Ungar 2007 - Self (HOPL)
+- [[ungar-2014-korz-simple-symmetric-subjective-context-oriented-programming]] - Ungar 2014 - Korz Simple, Symmetric, Subjective, Context-Oriented Programming
+- [[vannevar-bush-symposium-1995-closing-panel]] - Vannevar Bush Symposium 1995 - Closing Panel
+- [[wadge-1995-lucid-the-dataflow-programming-language]] - Wadge 1995 - Lucid, the Dataflow Programming Language
+- [[wadler-2014-propositions-as-types]] - Wadler 2014 - Propositions As Types
+- [[ware-2008-rand-and-the-information-evolution]] - Ware 2008 - RAND and the Information Evolution
+- [[watts-1998-collective-dynamics-of-small-world-networks]] - Watts 1998 - Collective dynamics of 'small-world' networks
+- [[weiler-1997-that-aint-the-way-i-heard-it]] - Weiler 1997 - That Ain't the Way I Heard It
+- [[wigner-1960-the-unreasonable-effectiveness-of-mathematics-in-the-natural-sciences]] - Wigner 1960 - The Unreasonable Effectiveness of Mathematics in the Natural Sciences
+- [[wilkes-1970-conversational-access-to-a-2048-word-machine]] - Wilkes 1970 - Conversational Access to a 2048-Word Machine
+- [[wilson-d-2012-designing-for-the-pleasures-of-disputation]] - Wilson D 2012 - Designing for the Pleasures of Disputation
+- [[wilson-m-2002-six-views-of-embodied-cognition]] - Wilson M 2002 - Six views of embodied cognition
+- [[wirth-2005-project-oberon]] - Wirth 2005 - Project Oberon
+- [[wolf-1995-the-curse-of-xanadu]] - Wolf 1995 - The Curse of Xanadu
+- [[yaeger-2006-vivarium-history]] - Yaeger 2006 - Vivarium History
+- [[yariv-1999-oral-history-cohen]] - Yariv 1999 - Oral History (Cohen)
+- [[yeo-2007-before-memex]] - Yeo 2007 - Before Memex
+- [[zhang-2004-representations-in-distributed-cognitive-tasks]] - Zhang 2004 - Representations in Distributed Cognitive Tasks
+- [[ziman-1969-the-band-structure-problem]] - Ziman 1969 - The Band Structure Problem
+- [[zwicky-1974-remembering-zwicky]] - Zwicky 1974 - Remembering Zwicky
 
 ## Concepts
 
-## Comparisons
-
-## Queries
+- [[anti-reductionism-and-emergence]] - anti-reductionism-and-emergence
+- [[mathematics-as-understanding]] - mathematics-as-understanding
+- [[programming-paradigms-and-vision]] - Programming Paradigms: From Von Neumann to Functional to Object-Oriented
+- [[scientific-integrity-and-rigor]] - scientific-integrity-and-rigor
+- [[tools-for-thought]] - Tools for Thought: From Memex to AI
