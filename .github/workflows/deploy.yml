@@ -52,8 +52,11 @@ jobs:
           cp -r concepts/* /tmp/quartz/content/concepts/
           cp index.md /tmp/quartz/content/
 
-      - name: Copy config
-        run: cp quartz.config.yaml /tmp/quartz/quartz.config.yaml
+      - name: Copy config and custom styles
+        run: |
+          cp quartz.config.yaml /tmp/quartz/quartz.config.yaml
+          mkdir -p /tmp/quartz/quartz/styles
+          cp -r quartz/styles/* /tmp/quartz/quartz/styles/
 
       - name: Build
         working-directory: /tmp/quartz

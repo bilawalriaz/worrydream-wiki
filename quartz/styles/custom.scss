@@ -1,0 +1,473 @@
+// Hyperflash Dark Theme for WorryDream Wiki
+// Inspired by hyperflash.uk and hyfl.uk design language
+
+// ============================================
+// Override Quartz CSS custom properties
+// ============================================
+
+:root {
+  // Force dark mode always
+  --light: #09090b !important;
+  --lightgray: #1a1a1e !important;
+  --gray: #3a3a42 !important;
+  --darkgray: #a1a1aa !important;
+  --dark: #fafafa !important;
+  --secondary: #3b82f6 !important;
+  --tertiary: #60a5fa !important;
+  --highlight: rgba(59, 130, 246, 0.12) !important;
+  --textHighlight: rgba(59, 130, 246, 0.25) !important;
+
+  // Typography
+  --headerFont: "Inter", -apple-system, BlinkMacSystemFont, sans-serif !important;
+  --bodyFont: "Inter", -apple-system, BlinkMacSystemFont, sans-serif !important;
+  --codeFont: "JetBrains Mono", "SF Mono", "Fira Code", monospace !important;
+}
+
+// ============================================
+// Global resets and base styles
+// ============================================
+
+html {
+  background: #09090b !important;
+  color-scheme: dark !important;
+}
+
+body {
+  background: #09090b !important;
+  color: #e4e4e7 !important;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// ============================================
+// Sidebar styling
+// ============================================
+
+.sidebar.left {
+  background: #09090b !important;
+  border-right: 1px solid rgba(255, 255, 255, 0.06) !important;
+}
+
+.sidebar.right {
+  background: #09090b !important;
+  border-left: 1px solid rgba(255, 255, 255, 0.06) !important;
+}
+
+// Page title in sidebar
+.page-title {
+  color: #fafafa !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.02em !important;
+}
+
+// Explorer tree
+.explorer {
+  .folder-title,
+  .file-title {
+    color: #a1a1aa !important;
+    font-size: 0.85rem !important;
+    &:hover {
+      color: #fafafa !important;
+    }
+  }
+  .folder-outer:not(:last-child) {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04) !important;
+  }
+}
+
+// ============================================
+// Article content
+// ============================================
+
+.article-header {
+  h1 {
+    color: #fafafa !important;
+    font-weight: 800 !important;
+    letter-spacing: -0.03em !important;
+    line-height: 1.1 !important;
+    font-size: 2.5rem !important;
+  }
+}
+
+.article-body {
+  color: #d4d4d8 !important;
+  line-height: 1.8 !important;
+  font-size: 1rem !important;
+
+  h1, h2, h3, h4, h5, h6 {
+    color: #fafafa !important;
+    font-weight: 700 !important;
+    letter-spacing: -0.02em !important;
+    margin-top: 2rem !important;
+    margin-bottom: 0.75rem !important;
+  }
+
+  h2 {
+    font-size: 1.5rem !important;
+    padding-bottom: 0.5rem !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
+  }
+
+  h3 {
+    font-size: 1.25rem !important;
+  }
+
+  p {
+    margin-bottom: 1rem !important;
+  }
+
+  a {
+    color: #60a5fa !important;
+    text-decoration: none !important;
+    border-bottom: 1px solid rgba(96, 165, 250, 0.3) !important;
+    transition: border-color 0.2s, color 0.2s !important;
+    &:hover {
+      color: #93c5fd !important;
+      border-bottom-color: #93c5fd !important;
+    }
+  }
+
+  strong {
+    color: #fafafa !important;
+    font-weight: 600 !important;
+  }
+
+  em {
+    color: #a1a1aa !important;
+  }
+
+  blockquote {
+    background: rgba(255, 255, 255, 0.02) !important;
+    border-left: 3px solid #3b82f6 !important;
+    padding: 1rem 1.5rem !important;
+    margin: 1.5rem 0 !important;
+    border-radius: 0 8px 8px 0 !important;
+    color: #a1a1aa !important;
+    p {
+      margin-bottom: 0 !important;
+    }
+  }
+
+  code {
+    background: rgba(255, 255, 255, 0.06) !important;
+    color: #60a5fa !important;
+    padding: 0.15em 0.4em !important;
+    border-radius: 4px !important;
+    font-size: 0.9em !important;
+    font-family: "JetBrains Mono", "SF Mono", monospace !important;
+  }
+
+  pre {
+    background: #111113 !important;
+    border: 1px solid rgba(255, 255, 255, 0.06) !important;
+    border-radius: 8px !important;
+    padding: 1.25rem !important;
+    overflow-x: auto !important;
+    margin: 1.5rem 0 !important;
+    code {
+      background: none !important;
+      color: #d4d4d8 !important;
+      padding: 0 !important;
+      font-size: 0.85rem !important;
+    }
+  }
+
+  ul, ol {
+    padding-left: 1.5rem !important;
+    margin-bottom: 1rem !important;
+    li {
+      margin-bottom: 0.4rem !important;
+      &::marker {
+        color: #3b82f6 !important;
+      }
+    }
+  }
+
+  table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+    margin: 1.5rem 0 !important;
+    th {
+      background: rgba(255, 255, 255, 0.04) !important;
+      color: #fafafa !important;
+      font-weight: 600 !important;
+      text-align: left !important;
+      padding: 0.75rem 1rem !important;
+      border-bottom: 2px solid rgba(255, 255, 255, 0.08) !important;
+      font-size: 0.85rem !important;
+      text-transform: uppercase !important;
+      letter-spacing: 0.05em !important;
+    }
+    td {
+      padding: 0.75rem 1rem !important;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.04) !important;
+      color: #d4d4d8 !important;
+    }
+    tr:hover td {
+      background: rgba(255, 255, 255, 0.02) !important;
+    }
+  }
+
+  hr {
+    border: none !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.06) !important;
+    margin: 2rem 0 !important;
+  }
+
+  img {
+    border-radius: 8px !important;
+    border: 1px solid rgba(255, 255, 255, 0.06) !important;
+  }
+}
+
+// ============================================
+// Cards and metadata
+// ============================================
+
+.content-meta {
+  color: #71717a !important;
+  font-size: 0.85rem !important;
+  font-family: "JetBrains Mono", monospace !important;
+}
+
+.tag {
+  background: rgba(59, 130, 246, 0.1) !important;
+  color: #60a5fa !important;
+  border: 1px solid rgba(59, 130, 246, 0.2) !important;
+  border-radius: 999px !important;
+  padding: 2px 10px !important;
+  font-size: 0.75rem !important;
+  font-family: "JetBrains Mono", monospace !important;
+  transition: all 0.2s !important;
+  &:hover {
+    background: rgba(59, 130, 246, 0.2) !important;
+    border-color: rgba(59, 130, 246, 0.4) !important;
+  }
+}
+
+// ============================================
+// Search
+// ============================================
+
+.search {
+  input {
+    background: rgba(255, 255, 255, 0.04) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    border-radius: 8px !important;
+    color: #fafafa !important;
+    padding: 0.5rem 1rem !important;
+    font-size: 0.85rem !important;
+    transition: border-color 0.2s !important;
+    &::placeholder {
+      color: #52525b !important;
+    }
+    &:focus {
+      border-color: #3b82f6 !important;
+      outline: none !important;
+      box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.15) !important;
+    }
+  }
+  .search-results {
+    background: #111113 !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    border-radius: 8px !important;
+    .search-result {
+      padding: 0.75rem 1rem !important;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.04) !important;
+      &:hover {
+        background: rgba(255, 255, 255, 0.04) !important;
+      }
+      .search-result-title {
+        color: #fafafa !important;
+        font-weight: 600 !important;
+      }
+      .search-result-content {
+        color: #71717a !important;
+        font-size: 0.85rem !important;
+      }
+    }
+  }
+}
+
+// ============================================
+// Graph view
+// ============================================
+
+.graph {
+  background: rgba(255, 255, 255, 0.02) !important;
+  border: 1px solid rgba(255, 255, 255, 0.06) !important;
+  border-radius: 12px !important;
+  overflow: hidden !important;
+}
+
+// ============================================
+// Backlinks
+// ============================================
+
+.backlinks {
+  .backlink-card {
+    background: rgba(255, 255, 255, 0.02) !important;
+    border: 1px solid rgba(255, 255, 255, 0.06) !important;
+    border-radius: 8px !important;
+    padding: 0.75rem 1rem !important;
+    margin-bottom: 0.5rem !important;
+    transition: border-color 0.2s !important;
+    &:hover {
+      border-color: rgba(255, 255, 255, 0.12) !important;
+    }
+    a {
+      color: #60a5fa !important;
+      font-weight: 500 !important;
+    }
+  }
+}
+
+// ============================================
+// Table of Contents
+// ============================================
+
+.toc {
+  .toc-heading {
+    color: #71717a !important;
+    font-size: 0.75rem !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.08em !important;
+    font-weight: 600 !important;
+    margin-bottom: 0.75rem !important;
+  }
+  a {
+    color: #71717a !important;
+    font-size: 0.85rem !important;
+    &:hover {
+      color: #60a5fa !important;
+    }
+    &.active {
+      color: #3b82f6 !important;
+      font-weight: 500 !important;
+    }
+  }
+}
+
+// ============================================
+// Footer
+// ============================================
+
+.footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.06) !important;
+  padding: 2rem 0 !important;
+  color: #52525b !important;
+  font-size: 0.8rem !important;
+  a {
+    color: #71717a !important;
+    &:hover {
+      color: #60a5fa !important;
+    }
+  }
+}
+
+// ============================================
+// Breadcrumbs
+// ============================================
+
+.breadcrumb-component {
+  .breadcrumb-link {
+    color: #71717a !important;
+    font-size: 0.8rem !important;
+    &:hover {
+      color: #60a5fa !important;
+    }
+  }
+  .breadcrumb-separator {
+    color: #3a3a42 !important;
+  }
+}
+
+// ============================================
+// Callouts (Obsidian-style)
+// ============================================
+
+.callout {
+  background: rgba(255, 255, 255, 0.02) !important;
+  border: 1px solid rgba(255, 255, 255, 0.06) !important;
+  border-radius: 8px !important;
+  padding: 1rem 1.25rem !important;
+  margin: 1.5rem 0 !important;
+  .callout-title {
+    color: #fafafa !important;
+    font-weight: 600 !important;
+  }
+  .callout-content {
+    color: #a1a1aa !important;
+  }
+}
+
+// ============================================
+// Dark mode toggle hidden (always dark)
+// ============================================
+
+.darkmode {
+  display: none !important;
+}
+
+// ============================================
+// Scrollbar styling
+// ============================================
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+  &:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+}
+
+// ============================================
+// Selection
+// ============================================
+
+::selection {
+  background: rgba(59, 130, 246, 0.3) !important;
+  color: #fafafa !important;
+}
+
+// ============================================
+// Transitions
+// ============================================
+
+* {
+  transition-property: background-color, border-color, color !important;
+  transition-duration: 0.15s !important;
+  transition-timing-function: ease !important;
+}
+
+// ============================================
+// Index page special styling
+// ============================================
+
+.frontmatter {
+  display: none !important;
+}
+
+// Popovers (link previews)
+.popover {
+  background: #111113 !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: 12px !important;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5) !important;
+  .popover-inner {
+    color: #d4d4d8 !important;
+    .popover-title {
+      color: #fafafa !important;
+    }
+  }
+}
