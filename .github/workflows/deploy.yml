@@ -1,0 +1,64 @@
+name: Deploy WorryDream Wiki to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Clone Quartz
+        run: |
+          git clone --depth 1 https://github.com/jackyzha0/quartz.git /tmp/quartz
+          cd /tmp/quartz
+          npm ci
+
+      - name: Prepare content
+        run: |
+          mkdir -p /tmp/quartz/content/entities
+          mkdir -p /tmp/quartz/content/concepts
+          cp -r entities/* /tmp/quartz/content/entities/
+          cp -r concepts/* /tmp/quartz/content/concepts/
+          cp index.md /tmp/quartz/content/
+
+      - name: Copy config
+        run: cp quartz.config.yaml /tmp/quartz/quartz.config.yaml
+
+      - name: Build
+        working-directory: /tmp/quartz
+        run: npx quartz build
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: /tmp/quartz/public
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
