@@ -1,0 +1,1453 @@
+Why AM and Eurisko Appear to Work 
+Douglas B. Lenat 
+Heuristic Programming Project 
+Stanford University 
+Stanford, Ca. 
+ABSTRACT 
+Seven years ago, the AM program was constructed 
+as 
+an experiment 
+in 
+learning by discovery. 
+Its source of 
+power was a large body of heuristics, rules which guided 
+it 
+toward 
+fruitful 
+topics 
+of 
+investigation, 
+toward 
+profitable 
+experiments 
+to perform, 
+toward 
+plausible 
+hypotheses 
+and definitions. 
+Other heuristics evaluated 
+those discoveries 
+for utility 
+and “interestingness”, 
+and 
+they were added to AM’s vocabulary of concepts. 
+AM’s 
+ultimate limitation 
+apparently 
+was due to its Inability to 
+discover new, powerful, domain-specific 
+heuristics for the 
+various new fields it uncovered. 
+At that time, it seemed 
+straight-forward 
+to simply add Heuretics 
+(the study of 
+heuristics) as one more field in which to let AM explore, 
+observe, define, and develop. 
+That task -- learning new 
+heuristics by discovery -- turned out to be much more 
+difficult than was realized initially, and we have just now 
+achieved some successes at it. Along the way, it became 
+clearer why AM had succeeded 
+in the first place, and 
+why it was so difficult 
+to use the same paradigm 
+to 
+discover 
+new heuristics. 
+This paper 
+discusses those 
+recent insights. 
+They spawn questions about “where the 
+meaning 
+really resides” in the concepts discovered 
+by 
+A?/I. 
+This leads to an appreciation 
+of the crucial and 
+unique role of representation 
+in theory fomlation, 
+a role 
+intolling 
+the relationship 
+bet\% een Form and Content. 
+What AlI Really Did 
+In essence, 
+AM was an automatic 
+programming 
+system, whose primitive actions produced modifications 
+to pieces of Lisp code, predicates which represented 
+the 
+characteristic 
+functions of various math concepts. 
+For 
+instance, AM had a frame that represented 
+the concept 
+LIST-EQUAL, 
+a predicate that checked any two Lisp list 
+structures to see whether or not they were equal (printed 
+out the same way). 
+That frame had several slots: 
+NAME: 
+LIST-EOUAL 
+IS-A: 
+( 
+GEN'L: 
+SPEC: 
+I 
+FAST-AI-G: 
+( 
+RECUR-ALG: 
+( 
+PREDItATE 
+FUNCTION 
+OP BINARY-PREDICATE 
+BINARY-FUNCTION 
+BINARY-OP 
+ANYTHING) 
+SET-EQUAL 
+BAG-EQUAL 
+OSET-EQUAL 
+STRUC-EQUAL) 
+LIST-OF-EQ-ENTRIES 
+LIST-OF-ATOMS-EQUAL 
+LAMBDA 
+(x y) 
+(EQUAL x y)) 
+EQ) 
+LAMBDA 
+(x y) 
+(COND 
+If"" ,6",',"" xl (ATOM Y)) 
+(EQ x Y)) 
+. 
+\ 
+(LIST-EQUAL 
+(CAR x) (CAR y)) 
+DOMAIN: 
+fk:S~-VLA:SJE 
+(LIST-EQUAL 
+(CDR x) (CDR y)))))) 
+RANGE: 
+WORTH: 
+720 
+John Seely Brown 
+Cognitive and Instructional Sciences 
+Xerox PARC 
+Palo Alto, Ca. 
+Of central 
+importance 
+is the RECUR-ALG 
+slot, 
+which contains 
+a recursive 
+algorithm 
+for computing 
+LIST-EQUAL 
+of two input lists x and y. That algorithm 
+recurs along both the CAR and CDR directions of the 
+list structure, 
+until it finds the leaves (the atoms), at 
+M’hich point it checks that each leaf in N is identicallq 
+equal to the corresponding 
+node in 1. If an\ recursive 
+call on LIST-EQUAL 
+signals KIL, the entiie result is 
+KlL, otherwise the result is T. During one NM task, it 
+sought for examplss of LIST-EQUAL 
+in action, and a 
+heuristic 
+accomodated 
+by 
+pickin 
+random 
+pairs 
+of 
+examples of LIST, plugging them m for x and y, and 
+running the algorithm. 
+Needless to say, very’ few of those 
+executions returned T (about 2%, as there i\ere about 50 
+examples of LIST at the time). 
+Another heuristic noted 
+that this was extremely IOM (though nonzero), so it might 
+be worth defining new predicates by slightly- generalizing 
+LIST-EQUAL; 
+that is, copy its algorithm and weaken it 
+so that it returns T more often. 
+When that task was 
+chosen from the agenda, another heuristic said that one 
+way to generalize 
+a definition 
+with 
+two conjoined 
+recursive 
+calls was simply 
+to eliminate 
+one of them 
+entirely, or to replace the AND by an OR. 
+In one run 
+(in June. 
+1976) AM then 
+defined 
+these three 
+new 
+predicates: 
+’ 
+L-E-1: 
+(LAMBDA 
+(x y) 
+(COND 
+ItOR 
+(ATOM 
+x) (ATOM 
+y)) 
+(EQ x Y)) 
+(L-E-l 
+(CDR x) (CDR y))] 
+L-E-3: 
+(LAMBDA 
+(x y) 
+(COND 
+[{OR ((OARTOM x) (ATOM Y)) 
+(EQ x Y)) 
+(L-E-3 
+(CAR x 
+(CAR y 
+(L-E-3 
+(CDR x 
+(CDR y 
+1 
+] 
+The first of these, L-E-1, has had the recursion in the 
+CAR direction removed. 
+All it checks for now is that, 
+when elements 
+are stripped off each list. the tKo lists 
+become null at exactI\ the same time. 
+That is, L-E-l is 
+noM the predicate 
+be might call Same-Length. 
+The second 
+of these, 
+L-E-2, has had 
+the CDR 
+recursion removed. 
+When run on tM.0 lists of atoms, it 
+checks that the first elements 
+of each list are equal. 
+When run on arbitrary lists, it checks that they have the 
+same number 
+of leading left parentheses, 
+and then that 
+the atom that then appears in each is the same. 
+The third of these is more difficult to characterize in 
+words. It is of course tnore general than both L-E-l and 
+L-E-2; if x and y are equal in length then L-E-3 would 
+236 
+From: AAAI-83 Proceedings. Copyright ©1983, AAAI (www.aaai.org). All rights reserved. 
+return T, as it would if they had the same first element, 
+etc. This disjunction 
+propogates to all levels of the list 
+structure. 
+so that L-E-3 would return 
+true for 
+x = (A (B C D) E F) and y = (Q (B)) or even y = (Q 
+(W X Y)). 
+Perhaps this predicate 
+is most concisely 
+described 
+by its Lisp definition. 
+A few points 
+are important 
+to make 
+from this 
+example. 
+First, note that AM does not make changes at 
+random, it is driven by empirical 
+findings (such as the 
+rarity of LIST-EQUAL 
+returning 
+T) to suggest specific 
+directions in which to change particular concepts (such as 
+deciding to generalize LIST-EQUAL). 
+However, once 
+haking reached this eminently 
+reasonable 
+goal, it then 
+reverts to a more or less syntactic mutation 
+process to 
+achieve 
+it. 
+(Ch 
+g 
+an ing AND 
+to OR, eliminating 
+a 
+conjunct from an AKD, etc.) 
+See [Green et al., 741 for 
+background 
+on 
+this 
+style 
+of 
+code 
+synthesis 
+and 
+modification. 
+Second, note that all three derived predicates are at 
+least a priori plausible 
+and interesting 
+and valuable. 
+The! 
+are not trivial (such as al\ia>s returning 
+T, or 
+al\i,ays returning 
+!j hat LIST-EQUAL 
+returns), and et en 
+the 
+strangest 
+of them 
+(L-E-3) 
+is genuinely 
+worth 
+exploring 
+for a minute. 
+Third, note that one of the three (L-E-2) is familiar 
+and useful (stime leading element), and another one (L- 
+E-l) is familiar and of the utmost significance 
+(same 
+length). 
+AM quickly derived from L-E-l a function we 
+would call LESGTH 
+and a set of canonical lists of each 
+possible length ( ( ), (T), (T T), (T T T), (T T T T), etc.: 
+i.e., a set isomorphic 
+to the natural 
+numbers). 
+By 
+restricting 
+list operations 
+(such as APPEND) 
+to these 
+canonical 
+l+ts, AM derived 
+the common 
+arithmetic 
+functions 
+(in 
+this 
+case, addition), 
+and 
+soon 
+began 
+exploring elementary 
+number 
+theory. 
+So these simple 
+mutations 
+sometimes 
+led to dramatic 
+discoveries. 
+This 
+simple-minded 
+scheme 
+worked 
+almost 
+embarassingly 
+well. 
+Why was that? 
+Originally, 
+we 
+attributed it to the power of heuristic search (in defining 
+specific goals such as “generalize LIST-EQUAL”) 
+and to 
+the density of worthwhile math concepts. 
+Recently, we 
+have come to see that it is, in part, the density 
+of 
+worthwhile math concepts as represented in Lisp that is 
+the crucial factor. 
+The Significance of AN’s Representation 
+of Math 
+Concepts 
+It was only because 
+of the intimate 
+relationship 
+between 
+Lisp 
+and 
+Vlathematics 
+that 
+the 
+mutation 
+operators 
+(loop 
+unwinding, 
+recursion 
+elimination, 
+composition, argument elimination. 
+function substitution, 
+etc.) turned out to j ield a high “hit rate” of \,iable, useful 
+new math concepts when applied to prei iousl!--known, 
+useful 
+math 
+concepts-- 
+concepts 
+represented 
+as Lisp 
+functions. 
+But no such deep relationship existed between 
+Lisp and 
+Heuretics. 
+and 
+15 hen 
+the basic automatic 
+programming 
+(mutations) 
+operators 
+N ere applied 
+to 
+viable, useful heuristics, 
+they almost alwal s produced 
+useless (often worse than useless) new heuristic 
+rules. 
+To rephrase that: 
+a math concept C was represented 
+in AM by its characteristic 
+function, which in turn was 
+represented 
+as a piece of Lisp code stored 
+on the 
+Algorithms slot of the frame labelled “C”. 
+This would 
+typically take about 4-S lines to write down, of which 
+only 1-3 lines were the “meat” of the function. 
+Syntactic 
+mutation of such tiny Lisp programs led to meaningful, 
+related Lisp programs, 
+which in turn lvere often the 
+characteristic function for some meaningful, 
+related math 
+concept. 
+But taking a two-page program (as many of the 
+AV heuristics were coded) and makmg a small syntactic 
+mutation 
+is doomed to almost alwa!Vs giving garbage as 
+the result. 
+It’s akin to causing a point mutation 
+in an 
+organism’s DKA (by bombardins 
+it with radiation, say): 
+in the case of a very simple mlcroorganism, 
+there is a 
+reasonable chance of producing a triable, altered mutant. 
+In the case of a higher animal, 
+however, such point 
+mutations 
+are almost universally 
+deleterious. 
+We 
+pay 
+careful 
+attention 
+to 
+making 
+our 
+representations 
+fine-grained 
+enough to capture 
+all the 
+nuances of the concepts they stand for (at least, all the 
+properties we can think of), but we rarely worry about 
+making 
+those 
+representations 
+too flexible, 
+too fme- 
+grained. 
+But that is a real problem: 
+such a “too-fine- 
+grained” representation 
+creates syntactic distinctions 
+that 
+don’t reflect semantic distinctions 
+-- distinctions 
+that are 
+meaningful 
+in the domain. 
+For instance, in cpdin$ a 
+piece of knov,ledge 
+for MYCIN, in u7hich an lteratlon 
+was to be performed, it was once necessary to use several 
+rules to achieve the desired effect. The ph),sicians (both 
+the experts and the end-users) could not make head or 
+tail of such rules indi\iduallj-, 
+since the doctors didn’t 
+break their knowledge 
+down below the level at which 
+iteration 
+was a primitive. 
+As another 
+example, 
+in 
+representing 
+a VLSI design heuristic H as a two-page 
+Lisp 
+program, 
+enormous 
+structure 
+and 
+detail 
+were 
+added -- details that are meaningless 
+as far as capturing 
+its meaning 
+as a piece of VLSI knowledge (e.g., lots of 
+named local variables being bound and updated; 
+many 
+operations 
+which 
+were 
+conceptually 
+an 
+indivisible 
+primitive part of H were coded as several lines of Lisp 
+which contained 
+dozens of distinguishable 
+(and hence 
+mutable) 
+function 
+calls: 
+etc.) 
+Those 
+details 
+were 
+meaningful 
+(and necessary) to H’s implementation on a 
+particular architecture. 
+Of course, ne can never directly 
+mutate the meaning of a concept, we can only mutate the 
+structural for-t?? of that concept as embedded 
+in some 
+representation 
+scheme. 
+Thus, 
+there 
+is 
+never 
+any 
+guarantee 
+that 
+we 
+aren’t 
+just 
+mutating 
+some 
+“implementation 
+detail” that is a consequence 
+of the 
+representation, 
+rather than some genuine 
+part of the 
+concept’s intensionality. 
+But there 
+are even 
+more 
+serious 
+representations 
+issues. 
+In terms of the syntax of a given language, it is 
+straightforward 
+to define a collection of mutators 
+that 
+produce minimal generalizations 
+of a given Lisp function 
+by 
+systematic 
+modifications 
+to 
+its 
+implementation 
+structure (e.g., removing a conjunct, 
+replacing AXD by 
+OR, finding a NOT and specializing its argument, 
+etc.) 
+Structural 
+generalizations 
+produced 
+in this \\ay can be 
+guaranteed 
+to generalize the extension of function, 
+and 
+that necessarih. produces a generalization 
+of its intension, 
+its meaning. 
+-i‘herein lies the lure of the AM and Eurisko 
+paradigm. 
+\Ve noif understand 
+that that lure conceals a 
+dangerous barb: minimal generalizations 
+defined over a 
+function’s 
+structural 
+encoding 
+need 
+not 
+bear 
+much 
+relationship 
+to 
+minimal 
+intensional 
+generalizations, 
+especially if these functions are computational 
+objects as 
+opposed to mathematical 
+entities. 
+237 
+Better Representations 
+Since 
+1976, one 
+of us 
+has 
+attempted 
+to 
+get 
+EURISKO (the descendant of AM; see [Lenat 82,83a,b]) 
+to learn new heuristics the same way it learns new math 
+concepts. 
+For five years, that effort achieved mediocre 
+results. 
+Gradually, 
+the way we represented 
+heuristics 
+changed, from two opaque lumps of Lisp code (a one- 
+page long IF part and a one-page long THEN part) into 
+a new language in which the statement of heuristics is 
+more natural: it appears more spread out (dozens of slots 
+replacing the IF and THEN), but the length of the values 
+in each IF and THEN is quite small, and the total size of 
+all those values put together is still much smaller (often 
+an order of magnitude) than the original two-page lumps 
+were. 
+It is not merely 
+the shortening 
+of the code that is 
+important 
+here, 
+but 
+rather 
+the 
+fact that 
+this 
+new 
+vocabulary of slots provides a functional decomposition of 
+the original two-page program. 
+A single mutation in the 
+n& 
+representation 
+now “macro 
+expands” 
+into many 
+coordinnted small mutations 
+at the Lisp code level: 
+conversely. most \:leaningless small changes at the Lisp 
+level can’t e\‘en be expressed in terms of changes to the 
+higher-order 
+language. This is akin to the uay biological 
+evolution 
+makes 
+use of the gejle as a meaningful 
+functional 
+unit, and gets great milage from rearranging 
+and copy-and-edit’ing 
+it. 
+A heuristic 
+in EURISKO 
+is now -- like a math 
+concept always was in AM -- a collection of about twenty 
+or more slots, each filled with a line or two worth of code 
+(or often just an atom or two). 
+By employing this new 
+language, the old property that A-M satisfied fortuitously 
+is once again satisfied: the primitive syntactic mutation 
+operators 
+usually 
+now produce 
+meaningful 
+semantic 
+variants of what they operate on. 
+Partly by design and 
+partly by evolution, 
+a language has been constructed 
+in 
+which heuristics are represented naturally, just as Church 
+and McCarthy 
+made the lambda 
+calculus and Lisp a 
+language in which math characteristic functions could be 
+represented 
+naturally. 
+Just as the Lisp<-->Math “match” 
+helped AM to work, to discover math concepts, the new 
+“match” helps Eurisko to discover heuristics. 
+In getting Eurisko to work in domains other than 
+mathematics, we have also been forced to develop a rich 
+set of slots for each domain (so that any one value for a 
+slot of a concept will be small) and provide a frame that 
+contains information 
+about that slot (so it can be used 
+meaningfully 
+by the program). 
+This combination 
+of 
+small size, meaningful 
+functional 
+decomposition, 
+plus 
+explicitly stored information 
+about each type of slot, 
+enables the AM-Eurisko 
+scheme to function adequately. 
+It has already done so for domains such as the design of 
+three dimensional 
+VLSI chips, the desi.gn of fleets for a 
+futuristic nai al wargame, and for lnterhsp programming. 
+We believe that such a natural representation 
+should 
+be sought 
+b> anypne 
+building 
+an expert system for 
+domain X: if M,hat IS bei?g built is intended to form new 
+theories about X, then it IS a necessity, not a luxury. 
+That 
+is, it is necessary 
+to find a way of representing 
+X’s 
+concepts as a structure whose pieces are each relatively 
+small and unstructured. 
+In many cases, an existing 
+representation 
+will suffice, but if the “leaves” are large, 
+simple 
+methods 
+will not 
+suffice 
+to transform 
+and 
+combine them into new, meaningful 
+“leaves”. This is the 
+primary retrospective 
+lesson ue ha\.e gleaned from our 
+study of AM. 
+We have applied it to getting Eurisko to 
+discover heuristics. and are beginning 
+to get Eurisko to 
+discover such new languages, to automatically 
+modify its 
+vocabulary 
+of slots. 
+To date. there are three cases in 
+which Eurisko has successfully and fruitfully split a slot 
+into more specialized subslots. 
+One of those cases was in 
+the domain of designing three dimensional 
+VLSI circuits, 
+where the Terminals 
+slot was automatically 
+split into 
+InputTerminals, 
+OutputTerminals, 
+and 
+SetsOfWhich- 
+ExactlyOneElementMustBeAnOutputTerminal. 
+The central 
+argument 
+here is the following: 
+(1) “Theories” 
+deal with the meaning, the content of a 
+body of concepts, 
+whereas 
+“theory 
+formation” 
+is of 
+necessity limited to working on form, on the structures 
+that represent 
+those concepts in some scheme. 
+(2) This makes the mapping between form and content 
+quite important 
+to the success of a theory formation 
+effort (be it by humans 
+or machines). 
+(3) Thus it’s important to find a representation 
+in which 
+the form<-->content mapping is as natural (i.e., efficient) 
+as possible, a representation 
+that mimics (analogicall\) 
+the conceptual 
+underpinnings 
+of the task domain b&g 
+theorized 
+about. 
+This 
+is akin 
+to 
+Brian 
+Smith’s 
+recognition 
+of the 
+desire 
+to 
+achisle 
+a categorical 
+alignment 
+betljeen 
+the 
+syntax 
+and 
+semantics 
+of a 
+computational 
+language. 
+(4) Exploring “theorb formation” therefore frames -- and 
+forces us to study -- the mapping 
+between 
+form and 
+content. 
+(5) This is especially true for those of us in AI who wish 
+to 
+build 
+theory 
+formation 
+programs, 
+because 
+that 
+mapping is vital to the ultimate successful performance 
+of our programs. 
+Where does the meaning reside? 
+We speak of our progr‘ams knowing something, 
+e.g. 
+ANs 
+knowing about the List-Equal concept. But in what 
+sense does A-V know it? 
+Although 
+this question 
+may 
+seem a bit adolescent, 
+we believe that in the realm of 
+theory formation (and learning s!,srems), answers to this 
+question are crucial, for otherwise what does it mean to 
+say that the system has “discovered” 
+a new concept? 
+In 
+fact, many of the controversies 
+over A;M stem from 
+confusions about this one issue -- admittedly, confusions 
+in our own understanding 
+of this issue as well as others’. 
+and 
+In AM and Eurisko, a concept C is simuly;eously 
+somewhat 
+redundantly 
+represented 
+two 
+fundamentally 
+different ways. 
+The first way is via its 
+characteristic function (as stored on the Algorithms and 
+Domain/Range 
+slots of the frame for C). This provides a 
+meani?g 
+relative to the WOJ it is interpreted, but since 
+there 1s a single unchanging 
+EVAL, this provides 
+a 
+unique interpretation 
+of C. The second way a concept is 
+specified 
+is more declaratilel!.. 
+\ ia slots that contain 
+corzstraiuts on the meaning: 
+Generalizations, 
+Examples, 
+ISA. 
+For 
+instance, 
+if b’e specify 
+that 
+D 
+is 
+a 
+Generalization 
+of C (i.e., 
+D is an 
+entr1 
+on 
+C’s 
+Generalizations 
+slot). 
+then 
+by 
+the 
+semantics 
+of 
+“Generalizations” 
+all entries on C’s Examples slot oucht 
+to cause D’s Algorithm 
+to return T. 
+Such constrai& 
+squeeze the set of possible meanings of C but rarely to a 
+single point. 
+That is. multiple interpretations 
+based just 
+on these underdetermined 
+constraints 
+are still possible. 
+Sotice that each scheme has its ow’n unique advantage. 
+The characteristic 
+function 
+provides 
+a complete 
+and 
+238 
+succinct 
+characterization 
+that 
+can both 
+be executed 
+efficiently and operated 011. The descriptive information 
+about 
+the 
+concept, 
+although 
+not 
+providing 
+a 
+“characterization” 
+instead 
+provides 
+the grist to guide 
+control 
+of 
+the 
+mutators, 
+as well 
+as jogging 
+the 
+imagination 
+of human 
+users of the program by forcing 
+them to do the disambiguation 
+themselves! Both of these 
+uses capitalize on the ambiguities. 
+We will return to this 
+point in a moment but first let us consider how meaning 
+resides in the characteristic 
+function 
+of a concept. 
+It is beyond the scope of this paper to detail how 
+meaning 
+per se resides in a procedural 
+encoding 
+of a 
+characteristic 
+function. But two comments are in order. 
+First, it is obvious that the meaning 
+of a characteristic 
+function is always relative to the interpreter 
+(theory) for 
+the given language in which the function is. In this case, 
+the interpreter can be succintly7 specified by the EVAL of 
+the given Lisp system. 
+But the 
+meaning 
+also resides, 
+in 
+part, 
+in 
+the 
+“meaning” 
+of the data structures 
+(i.e. what they are 
+meant to denote in the “world”) that act as arguments to 
+that algorithm. 
+For example. the math concept List- 
+Equal takes as its arguments two lists. 
+That concept is 
+represented 
+by a LISP predicate, n,hich takes as rts two 
+arguments two structures that both are lists and (trivially) 
+represent lists. That predicate (the LAhlBDA expression 
+niven earlier for List-Equal) assumes that its arguments 
+till never need “dots” to represent them (i.e., that at all 
+levels the CDR of any subexpression 
+is either NIL or 
+nonatomic), 
+it assumes that there is no circular 
+list 
+structure in the arguments, etc. This representation, 
+too, 
+proved well-suited for leading quickly to a definition 
+of 
+natural numbers 
+(just by doing a substitution 
+of T for 
+an\.thing in a Lisp list), and that unary representation 
+was 
+critical to AM’s discovering 
+arithmetic 
+and elementary 
+number 
+theory. 
+If somehow a place-value 
+scheme for 
+representing 
+numbers 
+had developed, 
+then the simple 
+route 
+AM 
+followed 
+to 
+discover 
+arithmetic 
+(simply 
+applying Set-theoretic functions to “numbers” and seeing 
+what happened) 
+would not have worked at all. It’s fine 
+to ask what happens when you apply BagUnion to three 
+and two, so long as they’re represented as (T T T) and (T 
+Tj: the result is (T T T T T). i.e. the number five in our 
+unary representation. 
+Try applying BagUnion to 3 and > 
+(or to any two Lisp atoms) and you’d get NIL, which IS 
+no help at all. Using bags of T’s for numbers is ta 
+into the same source of power as Gelernter 
+11963 P 
+ping 
+did; 
+namely, the power of having an analogic representation, 
+one in which there is a closeness between 
+the data 
+structures 
+employed 
+and 
+the 
+abstract 
+concept 
+it 
+represents -- again, an issue of the relationship 
+between 
+form and function. 
+Thus, 
+to some extent, 
+even when discussing 
+the 
+meaning 
+of a concept as portrayed 
+in its characteristic 
+function, there is some aspect of that meaning 
+that we 
+must attribute 
+to it. namely that aspect that has to do 
+with how w’e wish to interpret 
+the data structures 
+it 
+operates on. That is, although 
+the system in principle 
+contains 
+a complete 
+characterizatton 
+of 
+what 
+the 
+operators 
+of 
+the 
+language 
+mean 
+(the 
+system 
+has 
+embedded 
+within itself a representation 
+of EVAL -- a 
+representation 
+that is, in principle, 
+modifiable 
+by the 
+system itself) the system nevertheless contains no theory 
+as to what the data structures denote. 
+Rather, ,ve (the 
+human observers) attribute meaning to those structures. 
+AM (and any AI program) is merely a model, and by 
+watching it we place a particular 
+interpretation 
+on that 
+model, 
+though 
+many 
+alternatives 
+may 
+exist. 
+The 
+representation 
+of a concept by a Lisp encoding 
+of its 
+characteristic 
+function 
+may very well admit only one 
+interpretation 
+(given a fixed EVAL, a fixed set of data 
+structures 
+for 
+arguments, 
+etc.) 
+But 
+most 
+human 
+observers looked not at that function 
+but rather at the 
+underconstrained declarative information 
+stored on slots 
+with 
+names 
+like 
+Domain/Range, 
+HowCreated, 
+Generalizations, 
+ISA, Examples, and so on. 
+We find it 
+provocative that the most useful heuristics in Eurisko -- 
+the ones which provide the best control guidance -- have 
+triggering conditions which are also based only on these 
+same underconstraining slots. 
+Going over the history of AM, we realize that in a 
+more fundamental 
+way we -- the human observers -- play 
+another 
+crucial 
+role 
+in attributing 
+“meaning” 
+to a 
+discovery in AM. How is that? As is clear from the fact 
+that Eurisko has often sparked insights and discoveries, 
+the clearest sense of meaning may be said to reside in the 
+way its output jogs our (or other observers’) memory, the 
+way it forces us to attribute 
+some meaning 
+to what it 
+claims 
+is a disco\,eryv. 
+Two examples, 
+drawn 
+from 
+Donald 
+Knuth’s experiences 
+in looking o\er traces of 
+AIM’s behavior, will illustrate the two kinds of “filling in” 
+that is done b! human 
+beings: 
+(i) See AM s definition of highly composite numbers, 
+plus its claim that they. are interesting, and (for a very 
+different reason than the program) notice that they 
+are interesting; 
+(ii) See a definition of partitioning 
+sets (an operation 
+that was never judged to be interesting by AM after it 
+defined 
+and studied 
+it), recognize 
+that 
+it is the 
+definition 
+of a familiar, 
+worthwhile 
+concept, 
+and 
+credit the program 
+with rediscovering 
+it. 
+While 
+most 
+of 
+A-M’s discoveries 
+were judged 
+interesting 
+or not interesting 
+in accord with human 
+judgements, 
+and for similar reasons, errors of these two 
+types did occur occasionally, 
+and indeed errors of the 
+first type have proven to be a major source of synergy in 
+using Eurisko. To put this cynicall!. the more a working 
+scientist bears his control knoivlsdge 
+(audit trail) to his 
+colleagues and students, 
+the more accurately they can 
+interpret the meaning of his statements and discoveries, 
+but the less like/j, they w?ll be to come up (via being 
+forced to work to find an interpretation) 
+with different, 
+and perhaps more interesting, 
+interpretations. 
+Conclusion 
+We halve taken a retrospective 
+look at the kind of 
+activity 
+AaM carried 
+out. 
+Although 
+we generally 
+described it as “exploring in the space of math concepts”, 
+what it actually was doing from moment to moment was 
+“syntactically 
+mutating 
+small Lisp programs”. 
+Rather 
+than disdaining it for that reason, we saw that that was its 
+salvation, its chief source of pow’er, the reason it had such 
+a high hit rate: AM was exploiting 
+the natural 
+tie 
+between 
+Lisp and mathematics. 
+We ha\,e seen the dependence 
+of AM’s performance 
+upon its representation 
+of math concepts’ characterisitic 
+functions in Lisp, and in turn their dependence 
+upon the 
+Lisp representation 
+of their arguments, and in both cases 
+their dependence 
+upon 
+the semantics of Lisp, and in all 
+239 
+those &es the depkndence upon the obser\ler’s frame of 
+reference. 
+The largely fortuitous 
+“impedance 
+match” 
+between all four of these, in AM, enabled it to proceed 
+with great speed for a while, until it moved into a less 
+well balanced 
+state. 
+One of the most crucial requirements 
+for a learning 
+system, especially one that is to learn by discoverv, is that 
+of an 
+adequate 
+representation. 
+The 
+paradigm 
+for 
+machine 
+learning 
+to date has been limited to learning 
+new expressions 
+in some more or less well defined 
+language (even though, as in AM’s case, the vocabulary 
+may increase over time, and, as in Eurisko’s case, even 
+the grammar 
+might expand occasionally). 
+well 
+If the language 
+or representation 
+employed 
+is not 
+matched to the domain objects and operators, the 
+heuristics that do exist will be long and awkwardly stated, 
+and the discovery of new ones in that representation 
+may 
+be nearly impossible. 
+As an example, consider that 
+Eurisko 
+began 
+with a small vocabulary 
+of slots for 
+describing heuristics (If, Then), and over the last several 
+years it has been necessary (in order to obtain reasonable 
+performance) 
+to evolve two orders of magnitude 
+more 
+kinds of slots that heuristics could have, many of them 
+domain-dependent, 
+many. of them proposed by Eurisko 
+itself. 
+Another example 1s simply the amount of effort 
+we must expend 
+to add a new domain 
+to Eurisko’s 
+repertoire, 
+much of that effort involving 
+choosing and 
+adjusting 
+a set of new domain-specific 
+slots. 
+The chief bottleneck 
+in building 
+large AI programs, 
+such as expert systems, is recognized as being knowled e 
+acquisition. 
+There are two major problems to tackle: $ i) 
+building 
+tools to facilitate the man-machine 
+interface, 
+and 
+(ii) 
+finding 
+ways 
+to 
+dynamically 
+devise 
+an 
+appropriate 
+representation. 
+Much work has focused on 
+the former of these, but our experience with AM and 
+Eurisko 
+indicates 
+that the latter is just 
+as serious a 
+contributor 
+to the bottleneck, 
+especially 
+in building 
+theory formation systems. 
+Thus, our current research is 
+to get Eurisko to automatically 
+extend its vocabulary of 
+slots, to maintain the naturalness 
+of its representation 
+as 
+new (sub)domains 
+are uncovered 
+and explored. 
+This 
+paper has raised the aiarm; another longer one [Lenat 
+83b] discusses the approach we’re following and progress 
+to date. 
+Acknowledgements 
+EURISKO 
+is written 
+in -- and relies upon 
+-- RLL 
+[Lenat&Greiner 
+801 and Interlisp-D. 
+We wish to thank 
+XEROX PARC’s CIS and Stanford Unii.ersity’s HPP for 
+providing 
+superb 
+environments 
+(intellectual, 
+physical, 
+and computational) 
+in which to work. Financial support 
+is provided by ONR, ARPA, and XEROX. 
+We thank 
+Saul Amarel and Danny Bobrow for useful comments on 
+this work. 
+References 
+DeKleer, 
+J., and 
+J. S. Brown 
+“Foundations 
+of 
+Envisioning”, 
+Proc. AAAI-82, NCAI, 
+Carnegie-Mellon 
+U., Pittsburgh, 
+Pa., 1982. 
+Feigenbaum, 
+Edward 
+A., “The 
+Art of Artificial 
+Intellig.ence”, 
+Proc. Fijih IJCAI, 
+August, 
+1977, MIT, 
+Cambndge, 
+Mass., p. 1014. 
+Glerenter, 
+H., 
+“Realization 
+of 
+Geometry 
+Theorem 
+Proving Machine”, 
+in (Feigenbaum 
+and Feldman, 
+eds.) 
+Computers and Thought, McGraw-Hill, 
+N.Y., 1963, 134- 
+52. 
+Green, Cord&, 
+Richard Waldinger, 
+David Barstow, 
+Robert Elschlager, Douglas Lenat, Brian VcCune, 
+David 
+Shaw, and Louis Steinberg, Progress Report on Program 
+Understanding SJlstems, AIM-240, STAN-CS-74-444, 
+AI 
+Lab, Stanford, 
+Ca., August, 
+1974. 
+Hayes-Roth, 
+Frederick, 
+Donald 
+Waterman, 
+and 
+Douglas Lenat (eds.), Building Expert Systems, Addison- 
+Wesley, 1983. 
+Lenat, Douglas B., “On Automated Scientific Theory 
+Formation: 
+A Case Study Using the AM Program,” 
+in 
+(Jean Hayes, Donald Michie, and L. I. Mikulich, 
+eds.) 
+Machine Intelligence 9, 
+I\;ew York: Halstead Press, a 
+division of John Wiley & Sons, 1979, pp. 251-283. 
+Lenat, Douglas B., and Russel D. Greiner, 
+“RLL: A 
+Representation 
+Language Language,” 
+Proc. of the First 
+Annual IVCAI, Stanford, 
+August, 
+1980. 
+Lenat, Douglas 
+B., “The Nature 
+of Heuristics”, 
+J. 
+Artl$icial Intelligence, 
+19, 2, October, 
+1982. 
+Lenat, Douglas B., “The Nature of Heuristics II”, J. 
+Art$cial 
+Intelligence 
+21, March, 
+1983a. 
+Lenat, Douglas B., “The Nature of Heuristics III”, J. 
+ArtiJicial Intelligence 
+21, March, 1983b. 
+Polya, G., 
+Press, 1945. 
+How to Solve It, 
+Princeton 
+University 
+Smith, 
+Brian, 
+“Reflection 
+and 
+Semantics 
+in 
+a 
+Procedural 
+LaFguage”, M.I.T. Laboratory 
+for Computer 
+Science Technical Report TR-272, Cambridge, Ma., 1982 

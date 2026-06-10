@@ -1,0 +1,1119 @@
+Alan Kay
+Learning Research @POUgs
+Xerox Palo Alto Research Center
+Palo Alto, Californis, WA
+Invited Paper:
+Meeting on 20 Years of Compueei-  Science
+Institute di Elaborazione d&a Pn/ormazione,  PBS& ITALY
+-/
+DATE
+12-JUN-75  10:19:38
+I
+I
+PAGE 2
+/’
+J’
+Invited Paper:
+/’
+Meeting on 20 Years of Computer Science
+Znstituto  di Eloborazione  della Znformazione, PI&I, ITALY
+Personal Computing
+by
+Alan Kay
+Learning Research  Croup
+Xerox Palo Alto Research Center
+Introduction
+Imagine having your own self-contained knowledge manipulator in a portable package the size and
+shape of an ordinary notebook. How would you use it if it had enough power to outrace your
+senses of sight and hearing, enough capacity to store for later retrieval thousands of page-equivalents
+of reference materials, poems, letters, recipes, drawings, animations, musical scores, waveforms,
+dynamic simulations, and anything else you would like to create, remember, and change?
+Several years ago, we crystallized these long-held desires into a design idea for a personal dynamic
+medium called the Dynubook. We felt that the hardware power for the Dynabook would be
+inevitably available in ten years time, but there was no reason to believe that it would be easily usable
+by its millions of potential owners if progress in man-computer communication continued at its present
+rate.
+In particular, we wanted our range of users to include children from age 5 or 6 and ‘noncomputer
+adults’ such as secretaries, librarians, architects, musicians, housewives, doctors, and so on. We felt
+strongly that the major design problems of the Dynabook lay in the area of communication
+rather than in new hardware architectures.
+Since it is very difficult to design such an integrated and comprehensive system ‘Aristotle fashion’
+(from one’s hammock); we, with others at PARC, designed and built a number of stand-alone
+self-contained ZrLterint  Dynabooks in order to have a solid test-bed for our ideas. These machines
+are the environment for our experimental communications medium, Smalltalk. Both the
+Interim Dynabooks and Smalltalk have been used by children and adults.
+The Dynabook Mockup
+The Interim Dynabook
+DATE
+12-JUN-75 10:19:38
+Design Background
+‘The first attempt at designing this kind of higher-level personal n~etan~ediunr was the
+de:relopment of the FLEX Machine in 1967-69[1,2,31.  Much of the hard:rnre  and software was
+successful from the standpoint of computer scier,ce  state-of-the-art research but, a? is so often the
+case, lacked sufficient expressive power to be truly useful to a11 ordinary user. At that time started to
+appear Papert and Fcurzeig’s[g,lO,i  l] pioneering lvork having to do with helping kids learn
+how to think by giving them an environment in which thinking is both fun and rewarding.
+A Drawing of the FLEX Machine
+A 
+Turrle 
+Ena..
+,- “$I
+Shown On Its Own Display Screen
+*c ‘T.L.,,
+8-=  x-4
+c a .  1968[3]
+&s&-
+?‘hey chose a time-shared computer and devised a simple though comprehensive  language, called*;
+__
+v:hich combined some of the best features of .JOSS[  161 and LISP[ 18). Using LOGO, the
+children  (ranging in age from 8- 12 years) learned to control a number of exciting activities: a robot
+turtle which can draw, a faster CRT version of the turtle, and a simple music generator.
+The LOGO work radiates a comptllirr,u excitement in several directions.
+First. the children really can program the turtle and the music box to do serious things. The programs
+use symbols to stand for objects, contain loops and recursions, require a fair amount of visualization of
+alternate strategies before a tactic is chosen, and involve interactive discovery and removal of ‘bugs’ in
+:heir ic?eas. As Papert points out, the children are performing real mathematical acts of a kind,
+scope, and level not ever achieved by many college graduates.
+Second, the kids love it! The interactivqc nature of the dialogue, the fact that they are in control,
+the feeling that they are doing real things rather than playing with toys or working out
+‘sc’hool’  problems, the pictorial and auditory nature of their results, all contribute a tremendous sense
+cf accomplishment to their experience. Their attention spans are measured in hours rather than
+minutes.
+After seeing the faces of children  suddenly drscovering that they are “doers” acting on the world,
+rather than “things” being acted upon, it WCLS clear that the next attempt to design a person&
+con?puter should be done with children strongly in mind.
+First, having children as users would throw sharply into focus the expressive communication problems
+x;hich  had caused difficulty with the FLEX Machine. In addition, it might be possible to discover why
+the LOGO kids had certain difficulties of their own hnvin g to do with naming and parameters, with
+partitioning their problems reasonably, and why they appeared to reach a plateau: they could design
+and write certain kinds of constructive programs but never quite got to the point where they could do a
+reai system.
+Second, children really need more computing and expressive power than most adults are willing to
+settle for when using a time-sharing system; the best that time-sharing can offer directly is slow
+control of crude wire-frame green-tinted graphics aml (even cruder) square-wave ‘musical’ tones. The
+kids, on the other hand, are used to high-bar:dwidth media such as as finger-paints, water colors,
+color TV, real musical instruments, and hi-fi records. If the ‘medium is the message’, then the
+message cf low bandwidth time-sharing is ‘blah’!
+J
+DATE
+12-JUN-75  10:19:38
+PAGE 4
+Our Approach
+At the outset, we decided to admit that the design of a truly useful dynamic medium for everyday use
+was a hard but extremely  worthwhile problem which would require both many years and several
+complete interim hardware/software systems to be designed, built, and tested. Approach:
+1. Conceptualize a “Holy Grail” version of what the eventual Dynabook should be like in the future,
+This image will provide a rallying point and goal which will remind us of what we are trying to do
+while the sometimes grubby spadework of producing intermediate systems is in progress.
+An extrapolation (and compression) of the FLEX hIachine[4].
+2. Do the research in human factors, psychology of perception, physics, and language design which is
+prerequisite to any serious attempt at an interim system.
+Very few displays have been designed using any knowledge of the human visual system nor have many
+artificial languages been developed on non-Indo  European models.
+An overview of what the Dynabook should be like, including display needs
+and principles for language design, are found inC4].
+3. Design an interim version of the Dynabook, and build a considerable number of them.
+We felt that this step and the next one are the critical ones in our research. We had to get to the kids
+and adults as quickly as possible so as not to be led astray by our own assumptions and hopes.
+4. Make the medium of communication as simple and powerful as possible.
+It should be qualitatively sirnpler and qualitatively more powerful than (say) LOGO. It should be
+qualitatively more expressive than the best state-of-the-art “grown-up” programming language for
+serious system design. It should be as “neutral” as possible to all conceivable simulations.
+5. Explore the usefulness of such a system with a large number of short range projects involving many
+users, ages 4 to 60, from vurying backgrounds, and with different needs and goals.
+This phase would involve developing all manner of simulated media, both old and new; finding ways to
+teach the ideas in the system; do user studies, experiment with peer-group teaching (e.g. 13 year olds
+teaching 12 year olds), and so on.
+Some of the projects we have undertaken arc explored in [6,7,8].
+6. Re-extend the system in the light of our previous study and start to think about tlre next interim
+version.
+One of our guiding philosophies has been to do many working versions rather than to attempt a
+long-range ‘complete solution’ in one fell swoop and risk not ever getting a working system.
+7. Our current plans are to set up a community resource center containing a number of the interim
+Dynabook systems for both open- and closed-shop use near school and playground ‘traffic’ patterns.
+In order to find out some of the things we would like to know about how children and adults think
+about their world, we really need to concluct a series of longitudinal studies which investigate hoiv
+daily and casual use of a dynamic medium affect people’s way of doing things (and their lives).
+We currently expect to start setting up this facility in the very mar future.
+DATE
+12-JUN-75  10:19:38
+The Interim Dynab~k and Smalltalk .
+The Interim Dynabooh is 8 completely self-contained system, dcsigrwd
+simulations and human factors experiments. To the u;er, it nr,l~,lrs  a>
+inserted a disk memory containing about :500 lunge-c~ll;ivalt:nti  of mar
+very crisp high resolution B&W CRT or a !owcr resol.ition  high-cluality
+Other input  devices hclutle  a standard typowriter  keyboard, a ‘chord’ keyboard (for sending
+simultaneous signals), a ‘mouse’  (which inputs position as it is moved about on the table), and
+varieties of organ-like keyboards for playing music. New input devices such as these may be easily
+attached, usually without buildin,q a hardware interface for them.
+Inserting A Disk Memory
+The Music Keyboards
+The Typing Keyboard
+The Mouse
+Chord Keyboard on Left, Mouse on Right
+/DATE
+12-JUN-75 10:19:38
+PAGE 6
+J
+Visual output is through the display, auditory output is obtained from a built in digital-to-analog
+converter connected to a standard hi-fi amplifier and speakers.
+High Resolution B and W Display
+I
+Amplifier and Speaker
+We will see in the next section that the Znterim Dynabook is powerful enough to be able to
+produce real-time half-tone video animation, and real-time multiple-voice musical-tone synthesis.
+Smalltalk is a very simple, comprehensive way of simulating dynamic models. The built-in primitives
+of most programming languages (such as numbers, files, data structures, etc.), in Smalltalk, are
+actually simulations built from more comprehensive ideas, including stutcs-in-process,
+communication using messages, and classes and instances.
+j Two of its basic goals are that simple things should be very simple, one should not have to read a
+manual to do obvious things; and, complex things should be very possible, comprehensive
+interactive systems should be easily programmed without ‘hair or prayer’.
+As will be seen later in the paper, Smalltalk is a successful ‘extensible language’ because it focuses
+squarely on representing the meanings of things through descriptions and gets its
+syntactic extensibility ‘for free’.
+Smalltalk’s main lineage can be traced to a combination of new control ideas found in CDL, with FLEX
+and its precursors: Sketchpad, SIMULA, JOSS, and the B5000 [18,1-3,12-16-J.
+pears
+9-JUN-75 10:05:49
+PACE 7
+BeFore we discuss the ideas behind our current system, we present a sample portfolio of some of the
+projects which kids and adufts have created in the past two years.
+This was the first real system  done by any OF our children; there have since been many more. The
+child did not see any of our painting programs while working on this. She, very early in her
+introduction to Smalltalk,  decided that one or&t to be able to paint if the motese could tell
+the pen where to go, ouer and QWP. She came in the next morning, wrote the program, and
+it worked the first time. After that, she became positively ingenious in finding ways to turn every
+possible programmatic situation into a way to paint. The idea of having various kinds of brushes and
+paints was hers; the notion of having a ‘menus  of the available repetoire was suggested by us, &be
+method for achieving  the menu was designed and programmed by her.
+This was the first indication to us that the-building blocks OF Smalltalk  actuallv  were more powerful
+and easier to use for the naive programmer than the more conventional ‘noun/v
+structure/function’) primitive ideas of most current proerammina  svstems.
+erb’ (‘4 tta
+A CPloroograplly/DrPdmintora  System
+This child next designed a class of dancers which could be controlled singly and together, then
+choreographed them into a variety of dances. Next, she designed a ‘marionette’ class which bad wrist,
+elbow, shoulder, ankle, knee, and hip joints. Two of these more sophisticated figures are used for her
+real-time badminton simulation.
+/ pears
+9-JUN-75 14:43:56
+PAGE 8
+/
+/
+An BPlustratiow System: Progre~mmecl By cx PB-yecer  old
+This is one of the most complex systems done by ople of our children. The graphic objects can be located,
+rotated, scaled, can have any number 0% sides, are any color which the system can produce, and the
+entire system is controlled by prompting menus. Note also the ‘light buttons” on the objects which are
+sites %QP ‘grabbing” and moving and object with the mouse.
+),’
+/
+DATE
+12-JUN-75 10:19:38
+PAGE 9
+r
+Spacewar: Programmed by 10-l Z-year olds
+Spacewar blossoms spontaneously wherever a graphics display is connected to a digital computer. There
+lln~,c been many  different versions done by the kids in the past several years, ranging from peaceful
+moon landings and fleets of cargo ships, to the full fledged game. Star fields (complete with novae and
+supsrnovae)  for111  an interesting  background.
+._._ --_ =--_-
+DATE
+12-JUN-75 10:19:38
+.L
+A Flight Simulator: Programmed by a 15-year old.
+This rather complex system uses an actual flight model which the studrnt found in an introductory
+book on aeronautics. The artificial horizon is at the top of the panel Lvith the degrees-of-bank OVOP  it.
+The ‘stick’, pedals, and throttle can all be grabbed by the mouse. The sequence shows the plane in a
+slow roll which is then corrected by manipulating the stick.
+r-- -.__._ ----ExL- 
+-
+j
+-/DATE
+12-JUN-75  10:19:38
+PAGE 11
+J
+Windows and Different Fonts for Different Effects
+The flight simulator shown previously used Smalltalk windows for displaying instrument values
+and the horizon. Each window has as its content a Smalltalk object; they can be moved, stretched,
+overlapped, and edited.
+One of our goals was not to be worse than paper in any important way. The Dynctbooh  is flexible to
+the point of allowing its owner to describe just how knowledge is to be viewed, including tailor-made
+printing quality fonts. Any character font can be described as a matrix of black and white dots. The
+corners of the dots will not be perceived at normal viewing distance if the light level from the display is
+high enough and the resolution is sufficient. Here we see a font in the process of being created and
+displays of text in some of the fonts which are available.
+DATE
+12-JUN-75  10:19:38
+I
+Filing and Editing
+Every description in the Dynabooh can be retrieved, shown, and edited in a completely uniform
+way. Each class of objects (text, pictures,  forzts, morlies, choruses) responds to the message
+shoru by invoking its own method for showing itself on the screen. The displayed objects actively
+watch for the the cursor to enter their boundaries, and if it does, the message edit is sent to the
+object. In a manner similar to the show message, each class of objects can respond to the message
+edit in its own appropriate fashion.
+If the object is text, an easy to use and modify ‘modeless’ text editor with automatic justification is
+invoked. Drawings and paintings have their own simple editors, as do musical  scores, timbres, etc. A
+docttment  is simply a collection of related objects which may be automatically crossfiled by
+contents including title, author, date range, selected keys, and anything else the owner desires. A new
+class of objects may be added to a document in a completely independent fashion because no part of the
+system has to be informed; instead, the new class simply adopts the conventional protocol of being able
+to respond to the standard messages show, hnscursor, edit with useful local methods for
+achieving these goals.
+The current version of this system is able to automaticaliy  crossfile tens of thousands of objects
+including textual documents indexed by content, the Smalltalle system itself, personal records,
+books, and so on. As shown in the examples, retrieval is done by simply filling in as much as is known
+ahout  the document into a blank template; the system will retrieve a collection of documents which fit
+the description.
+A Blank Document Ciass Template
+The Document is Found
+Reversed Text Indicates Submerged Parts
+Filling in Identity Fields (any known combination, will do),
+Invoking a Menu and Asking for a Retrieve
+A Menu is Invoked at Bottom Margin
+We want to make the template wider . . . . .
+Showing the Document Where to Put The Right Margin
+The Widened Document
+Note Automatic Justification
+/DATE
+12-JUN-75  10:19:38
+PAGE 14
+Moving Into The First Drawing
+Changing The Arrow
+DATE
+12-JUN-75 10:19:38
+Opening up the Submerged Parts
+Grabbing More
+lirplry
+I
+(.PI
+MVll,
+91.
+Disk I
+Replacement is Automatic
+(without command)
+/I
+/
+pears
+9-JUN-7  5 16: 13: 10
+PACIE 15
+Curves
+Smalllalh  has a class of turtles which can crawl about OII the screen leaving (or not) a
+variable width track of colored ink. A lurtle has a localion,  n direction, a
+tip-statc(up or down), nn ink-color, a boundary (which clips itj9 and any other
+properties the owner might like. A rrirtle can be turned a relative anglep  can go a
+distance in its direcPion,  cara goi% a location, and so on.
+A powerful idea (borrowed from LOGO> is that the turtle is coordinate free, in that going
+and turning are completely  relative to the eurtWs  current state. The erlrtle  thus
+lives in curwtuorld. A straight line has O-curvature, a circle has constant-curvature, linearly
+changing curvature generates beautiful smooth curves. This may be contrasted with the cartesian
+world in which 0 generates 8, a ramp generates B line, and a quadratic is required for circles and
+simple curves,
+DATE
+12-JUN-75  10: 19:38
+PAGE 16
+Anirn,?tion  a n d  bIusic
+Animation, music, and programming can be thought of as different sensory uiccus of tlynamic
+processes. Their common structural form is apparent in Smalltalk, tvhich provides a neutral
+framework for expressing these ideas. All of the systems are equally controllable by ‘hand’ or by
+program; drawing/painting are dire&ad by the mouse or with curve and area programs; musical
+events are initiated with a piano-like keyboard or from a dynamic ‘score’. Timbres are the ‘paint’ of
+musical expression as they contain the quality ar.d mood which different instruments bring to an
+orchestration.
+A Picture Animation System Programmed by Animators
+Several professional animators visited us with a long-held dream for a ‘magic-slate’ which would
+allow them to create high-quality animations by simple (and literally) “waving their hands”. They
+wanted to paint pictures into an already running animation in order to take maximum advantage
+of the ‘phi’ effect (which causes the main action of animation to be the change between
+DATE
+12-JUN-75 10:19:38
+An Audio ,\nimation System Programmed by Musicians
+Animation can be considered  to be the coordinated parallel control througlr  time of visual images.
+Likewise, a system for representing and controll~
+strong analogies to the visual world. Music is the
+changes) which can be pnintecl  different colors  (timbre cl~nngcs); it has synchronization
+and coordination, and a very close relationship between audio and spatial visualization.
+Timbre Syrdcsis
+We use several methods for real-time production of high-quality timbres; both allow arbitrary
+transients, rnany indepcndcnt  parallel voices, and are completely produced by programs: no special
+hardware is used. The most interesting of these was developed [ 10,201  and allows independent dynamic
+control of the spectrum, the frequency, the amplitude, and the particular collection of partials which
+will be heard.
+An instance of a timbre class showing
+the amplitude change and spectral
+change (clotted lines) over several seconds
+of time. The area between the vertical lines
+will be repeated until the note ceases.
+imi,-.---- -- 
+- 
+- 
+- 
+- 
+- 
+-
+\-- -.I --I \- \-- \-. L- --I \-_- Jim--
+; \
+! i
+1 
+!;
+‘, -\.
+“8
+I 
+/ ’
+! 
+‘;
+L-_
+t.-----
+Now the ratio of modulation is changed to emphasize
+only the odd harmonics: producing a ‘clarinet’
+Now a frequency deviation is drawn to
+. 
+.
+__
+Here is what the (somewhat strange looking but
+produce an initial portamento followed
+good sounding) wave looks like on a ‘scope.’
+by a sharp vibrato.
+We reach in and grab the spectrum control.
+We want it to ‘bump’ in the beginning, and
+then gradually increase.
+Here, the ratio of modulation is changed to emphasize
+all harmonic partials: producing a ‘trumpet’.
+Di\TE
+12-JUN-75 10:19:38
+PAGE 19
+I
+-
+- --- y -
+-3
+- 
+-
+---- -’
+. . -
+---~
+Move it to ‘d’.
+There are two ‘thirds’ in chord.
+Double the octave
+‘Slice’ the score, and...
+=....- -1
+t --2--
+- - . - -----
+. . . . .
+. . . -
+3
+Pitch Dursticn m Rrc*k Sync A~II
+Hw Bxkup Bcguum~  QIUC Cc y Shdt cv
+. . . c-- C~lltrIC, --I-- cxl’J--,
+stretch it to there, so . . .
+-
+=
+--
+---
+. . . . . . . .
+--
+-- -
+---
+-----
+. --
+= . ..- -
+-
+- 
+-
+. . . . . - . . . . . . . . . . . . . . . . .
+._.. . . .
+. . . . . .
+=-
+- - -
+C-
+. . . . . . . . . . . . . . . . . . . . -
+we get ritard.
+These systems have a number of benefits for both children and adults:
+The semantics are easy to understand since they intentionally are anthropomorphisms from the real
+world. The strong similarities between the audio and visual worlds, and between the arts and the
+sciences, are emphasized because a single vernacular which actually works in both worlds is used
+for description.
+Chiidren can gain skill and coordination by learning how to draw and play. The systems will show and
+replay for them what they just tried, then allow them to compare their efforts to a more expert model,
+much in the manner of tennis or skiing instruction.
+The arts and skills of composing images changing in time can be learned in parallel with the acquisition
+of muscular expertise since much of the ‘dirty work’ is automated. This is not a prosthetic but an
+amplifier.
+I
+F
+DATE
+12-JUN-75  10:19:38
+Sccra Capture und Editing 1: Dynamic Capture und Score Production.
+This is a musical score capture system written by a novice progr;tI:lmcr v/ho is an experienced musician.
+’
+Thn system produces n display of a conventional  rnu$ical scort’ dtrx:!ly from data obtained  by
+.
+playfng the music keyboard in real-time.
+The Captured Score
+Playing it in.
+Score Capture and Editing 2: A Comprehensive Music Editor
+Standard musical notation has a number of drawbacks: a large number of symbols must be
+remembered, articulation can’t easily be shown (without cluttering with rests), precise duration
+control is very tedious to notate, the staff is biased towards certain keys, and it is hard for kids to see
+that similar sounding chords are really the same. Accordingly, most of our music editing is done in
+terms of a simpler notation which uses length to show duration.
+c’
+r’l
+-1
+-
+--M
+-
+-.
+-
+-
+-
+--
+A played-in score.
+t
+5;
+=j
+-
+-
+-
+-’
+-
+-,
+-
+-
+-.
+I
+-
+-i
+-.
+-,
+=;
+-
+-
+-
+---?- 
+=
+-
+-
+-
+-
+Playing test notes with mouse
+This is the one!
+Grab another!
+DATE
+12-JUN-75  10:10:38
+It :i-ill be very difficult, and also rather unesthetic, to develop a prosthetic which attempts to
+unl2rstancl  explanations and descriptions given by people who do not really understand the things they
+a re trying to describe.
+It seenzs much more becLutiful to show that people can be amazingly more effectiue at dealing with
+tilo:‘r world if they lam some powerful techniques  und skills (perhaps with the aid of mediu) for
+vis:ta!izing, part-c!r ,d-whole-ing, planning, symbolizing, manipulating, and avoiding debugging.
+Some Principles \ti+ Use in Teaching
+These ideas are fo::..:i in many places and many cultures. We came to them from our own experiences,
+the Suzuki violin m:.:!lod,  0. I<. Moore, Piaget, Furth, Bruner, Minsky, Papert,  and others.
+7. Listen to the studxt.
+Since we believe that teaching involves helping a student adapt his knowledge structures to a new
+situation, we can guarantee ourselves (not to mention the stltdent) an unpleasant journey if we don’t
+try to understand these gossamer schema at the outset.
+Many of the current ways that things are done in Smalltalk  come directly from listening
+to the kids. SInnlltnlk,
+as an ‘extensible system, can easily ‘be’ any kind of tool that we
+wish. We ourselves have remolded it several times.
+2. IVcver teach anytiLing  which has to be unlearned later.
+In our csperience, humans are very poor at unlearning any kincl of skill, whether it be muscular or
+mcr.:al. ‘This principle is we!1 undcratood by every teacher of music. ‘Tempting analogies’ which later
+come back Lo haunt are esp&ally  to be avoided.
+We teach ‘straight’ Smalltalk, the very same system which adults learn. The very first
+examples and methods to which the kids are exposed resemble strongly the most
+sophisticated adult systems.
+3. i’izver pace CL student in a wccy that will require future remediation.
+Principle 2. basically says: don’t simplify to the point of a lie; Principle 3. is a corollary of this which
+states: don’t put the student into a situation where h c will feel dumb and inept because a good enough
+fou-dation  has not yet been laid. Most kids do not understand the distinctions between skill, structure,
+and intelligence any better than adults do and are apt to feel stupid rather than unskilled
+in ne:v situations.
+4. Hook OIL to existing fruitful structures when possible; if unfruitful concepts exist, don’t unteach
+them, rather supply completely fresh orthogonal concepts.
+&lost  kids know about dictionaries and looking up the meaning of a word. The meaning can be an
+explanation of a passive relationship or a dynamic act. In fact, every idea in mathematics and in
+;;rogramming  can be easily explained in dictionary oriented terms alone; this is a fruitful, useful
+coilcept,  and it ma!tes sense  to use it with kids.
+,%lan~’ other ‘natural language’ linguistic structures are ultimately dcacIZy antI we avoid them.
+l,:xzmples arc: ‘nouns’, ‘verbs’, ‘pronouns’, inflections, and their counterparts in most programming
+lz~r.,-l~ar~s:  data structures, functions and control structures, variables, tagging type to names, etc.
+Instead, we immediately give children a running example which clirectly exhibits the more fruitful
+notions of stutcs-in-process communicating-with-messages found in Smalltalk.
+5. Do not look over the student’s shoulder.
+Aside from the obvisus reason of avoiding ‘putting the student under the gun’, there is also a great
+difierence  between performing and creating. In music, this is known as the difference
+her:rve:n improvising and composing (and a greater diff erence  could hardly be found, as any
+musician will attest). We are much more interested in the design-oriented and planning processes
+associated with unhurried goal-directed reflection than in the more shallow though flashy effects
+obtained by virtuoso ‘thinking on onc*s feet’.
+Vr’e capture every action which a student makes and can replay their session for our eyes later. We tell
+every student that we do this, but the process cf capture is completely invisible  and thus rapidly
+f
+DATE
+12-JUN-75 10: 19:38
+Our Experience With Naive Users
+PAGE 20
+Smalltalk users have included children, ages 6 -15, and adults, both computer sophisticates and
+1
+noncomputer specialists.
+Although we have not followed enough children long enough to deterlnine
+whether their experience with Smalltalk has qualitatively changed their ways of viewing and
+7
+thinking about the worid, we have reached a number of subjective conclusions from our experience.
+,I First and foremost, the ability to prop-cm is an inherent legacy of humankind. Everyone can do it.
+Using Radia Perlman’s Rutton Box[i.l]  we have seen children of three and four years old
+consciously plan and ‘write’ symbolic procedures for drawing pictures. Eight year olds do simulations
+of moon landings, ten year olds do their own SPACI%v’AR,  twelve year olds design and implernezt  entire
+systems for illustration, choreography, and simulation. One of our 15 year olds has recently finished
+an interactive flight simulator of fair complexity (it uses an aerodynamic model for moving from one
+state to the next). Secretaries have successfully planned and added new ‘features’ to editing and
+retrieval systems, artists, who have tried and failed in the past (with BASIC, etc.), have been able to
+translate some of their yearnings into running simulations of their ideas.
+It is only remarkable that some Ijeople find this remarkable.
+Programming is the act of communicating descriptions of processes symbolically, the very same act as
+with ‘natural’ language. We should be able to guess confidently that most of the problems encountered
+will be those of a linguistic nature (e.g., as with learning French) rather than being due to
+intellectual problems on the part of the learner.
+Second, we have seen a clear sepuration between tl1.e skills associated with programming and debugging,
+and those having to do with design.
+An analogy: Smalltalk can be likened to an extensible Tinker Toy (Thinker Toy?) set. It contains a few
+simple ideas, some already built struts and connectors, and some moldable plastic for making
+unanticipated building blocks; it has been obvious to all of our users as to how these may be
+used to build simple desired structures. Nor have they had any trouble with the mechanics of
+molding new structural elements (this is easy and automatic in Smalltalk).
+We can imagine children enjoying themselves immensely with a Tinker Toy set (as indeed they do),
+and, in the process, they learn valuable, more general ideas about how things connect together and can
+be manipulated in the 3-D world.
+Children appear to have the same kind of experience in the ‘Thought-D’ world provided by Sma!!talk.
+An adult structural designer may use his Tinker Toy set to test out a new idea for an arched span for a
+new kind of bridge. The designer, after a few trials, will successfully span a large area with his Tinker
+Toy model, and there will be no lack of motivation for extending the Tinker Toy set in the process.
+Computer systems designers have found Smalltalk to be a exceedingly easy to use, friendly way to bring
+their (sometimes very complex) ideas to life.
+Suppose now that we bring an adult to the Tinker Toy set. After successfully making a few ‘kid-type’
+models the adult decides to make a huge bridge. A massive failure results, and we can confidently
+assign the reason not to any lack of ‘intelligence’ on the part of the adult. but rather to an innocence of
+design knowledge having to dc with large structures. After all, it took a collection of the ‘smartest’
+designers and builders more than 5000 years to invent the catenary arch and buttress --- ideas any
+child can read about and understand today.
+‘Nonprogramming’ ad&s have no trou,ble programming in Smalltalk.  They do run into difficulty
+when they attempt projects whcse structure they really don’t ILnderstand  in any terms.
+This parable illustrates one of the leading red-herrings concernin g the cult of intellignce  in current
+pedagogical thought: an incredible confusion between performance, skill, and ‘innate ability’.
+Our method for teaching children and adults about programming. coupled with Smalltalk’s simple and
+very neutral basis for describing dynamic situations, has eliminated many of the usual ‘linguistic’
+problems having to do with vocabulary, place-holding, abstraction, grammar, etc., and has allowed us
+to get closer to the ‘real problems’ which concern themselves with the kind of visualizations,
+structures and skills the fledgling designer brings to this new area.
+All of tllis suggests tlLat tlLe primary goal of a teacher (after learning to listen) is to find ways
+to help learners develop in their he;& a good set of methods centered about the understanding
+of exsting designs und the creation of new oites.
+DATE
+IF!-JUN-75  10:19:38
+PAGE 22
+ignored.
+6. Teach and Show hZultiplt? Perspectives of Situations.
+A typical problem with fledgling designers of all ages is a strong tendency to commit all of their short
+term memory to a given perspective of a Situation. If it happens to hC an unfruitful view it mity be very
+difficult for them to ‘bail out’ or even tell that it is unproductive. \Ve feel that the Piagetian example
+of the tilted glass is much more the result of lack of practice in multiple viewing than the result of
+physiological immaturity.
+One of the striking things about design methodology is that ‘simultaneous’ use of a perspective and
+its &al is remarkably more rewarding than using either separately.
+A very global example is the duality of wholes-as-collections-of-parts found in Western science
+und wholes-as-wholes found in Eastern philosophic thought.
+The former has an important dualistic aspect itself: analytic (or top-down) vs. synthetic
+(or bottom-up); both of these emphasize differences and boundaries: a corpuscular
+theory. The Eastern philosophy emphasizes samenesses  and cormcciion:  a field
+theory. As more complex systems are studied, the apparent differences between the two schools of
+thought blur in the underlying sameness that characterizes duals.
+The human nervous system vroduces reactions in both directions:
+A ‘linear’ theory, useful for simple models such as walls made tram  bricks, I~IIS tiown caci~y  in 11wre
+interesting domains. A typical reaction of those whose prime mcthodo!ogy  is centered about the linear
+model is to attempt to ‘patch’ (or add epicycles to) the description rather than to recenter their
+inner vision.
+A linear theory of the Taj Mahal is that the bricks were brought to the clearing and added together
+until the building appeared! It is very hard to see how the design process for the Taj Mahal (or of a
+human embryo) can be fruitfully characterized as a collection of patches on simple assembly notions.
+Relativistic philosophy, on the other hand, is much more a grand combination of the two points of
+view: Every thing is every other thing because they are just local geometric states of the ‘same’
+space, and conversely,  there is a both a field lag and an attenuation associated with relative
+distances and speeds which makes the concepts of objects, ancl parts reasonable to consider.
+We try, partly in the spirit of principle 2, to show children about both aspects of design thought right
+from the very beginning of their experience with Smalltalk.
+DATE
+12-JUN-75 10:19:38
+Humans  arld M e d i a
+‘Devices’ which variously store, retrieve. or Innnipulate  knowledge in the form of messages
+embedded in a mcdil~~r hat;e been in existence for thousanc!s  of years. People use them to
+communicate ideas anti esthetic feelings both to others and back to themselves. Although
+thinking goes on in one’s head, external media serve to materialize thoughts and, through feedback,
+augment the actual paths which thinking follows. Methods discovered in one medium frequently
+provide powerful metaphors which contribute new perspectives for notions in other media.
+Every message is a simulation  of some idea. It may be representational or abstract, isolated or in
+context, static or dynamic. The particular essence of a medium is very dependent on the way
+messages are embedded, changed, and viewed.
+Computers were originally designed to do arithmetic computation; a powerful idea was the notion of
+controlling the computation from a description of the algorithm held in a writable  store. Even
+more powerful is this corollary:
+TlLe content of the computer is descriptions of processes; the ability of
+computers to simulate the details of any descriptive model means that the computer,
+viewed as cc medtum itself, can be all other media if the embedding and viewing
+methods are sufficiently well provided.
+This ‘pocket universe’ (a metaphor we like) needs an epistemology if not a metaphysics.
+Some Observations Which Led To Smalltalk
+The basic I)rinciple  of recursive design is: make the parts have fhe sume power and capabilities
+as the whole.
+The ‘whole’ is a digital co:nputer,  a black-box to which we send messages and receive
+replies, which contains state-in-process.
+From the outside, we don’t know very much about the m,.-(hods  which the black box uses to send back
+replies. When we request:
+sine 30
+we don’t know whether the reply is computed by table-lookup,  Chebyshev approximation, a summed
+series, or a combination of these. And, in fact, we don’t really care, as long as the expected reply comes
+back consistantly, quickly, and without irrterfcsing with other things we may also be doing.
+The principle of separating desire (a semantic notion) from method (a pragmatic notion) is
+central to Smalltalk.
+It is interesting to note that none of the parts of most programming languages, ‘data
+structures’, ‘functions’, and ‘control structures’ have the same power as the whole; instead
+they are dilutions of the idea of a computer.
+The Five Simple Ideas of Smalltalk
+1. There are only objects.
+The numbers 3, 4.5, 1.2-I5el4 are each objects; so are the words: this,
+identifier, sine, file3-l; so is the collection:  (this is a collection of words); and the literal
+piece  of text: ‘IILis  is a piece of text’.
+2. Each object has memory.
+In fact, each object is in charge of its knowledge, how it is represented, and how it may be used. Each
+object has some way to distinguish itself from other objects. For instance, the object representing the
+number 3 might have in its memory the magnitude ‘3’ stored in some fashion; the object
+representing the number 4.5 could use the same or a different technique to remember the
+magnitude ‘4.5’.
+3. Objects communicate with each other by sending and receiving messages.
+The first three ideas constitute a recursion on the notion of a computer. Idea (3.) actually includes idea
+(2.) but both have been included for clarity.
+l?
+/
+.I
+DATE
+12-JUN-75  10:19:38
+PAGE 24
+* /
+In Smalltalk, a mes-age is sent to an object by first stating the object, then the message.
+1
+3 sign
+sends to the object ‘3’, a message consisting of the word ‘sign’. The response to a message is entirely up
+to the receiver. WC might hope that a ‘+’ will be sent back consistantly  from each number of positive
+magnitude.
+,1 ‘powerful idea’ is the notion of grouping objects which have similar properties into classes so
+that they may be discussed in general. In Smalltalk we currently find the aclditional two ideas:
+1. Every object belongs to a class.
+A class is thus an object  (from 1.); there also must be a class: class (from 4.). ‘Obvious’ classes
+include numbers, words, collections, files, text. More exotic classes include font characters,
+pictures, pens, sets, paragrapirs, windows, documents, timbres, voices, choruses, and of course,
+class class, whose members contain the definitions of numbers, words, and so on.
+Part of the memory of each object in Smalltalk is the knowledge of its class membership.
+5. !I cltrss is the collection of receivers for legal messages to objects in the class, coupled loith
+methods for producing a reply.
+There are many ways to accomplish idea 5. We have tried sevcral[3,8,9]. Our current approach
+has a minimum of mystery and requires a minimum of faith in order to understand and use classes.
+To define a class description, we use the notion of a dictionary containing entries, each one of which is a
+detector and replier for a particular message. A class description is thus just one of the
+many kinds of documents handled by the information system described previously.
+An entry in the class description of number might be:
+which means,
+the 
+then
+if the
+is less
+then
+r e t u r n  a
+o t h e r w i s e  a
+literal
+current
+than
+to the
+literal
+return to
+i
+i teral
+word
+member
+zero
+s e n d e r  p l u s
+the sende
+minus
+of number
+sign
++ 
+( 
+Self
+co 
+)o 
+(77
+‘+’ 
+) 
+l?
+J-t
+I
+Children and Smalltalk
+Our basic approach to teaching Smalltalk to both adults and children is tp show them a simple,
+rl;nning example of a Smalltalk class and the objects which belong to *t. After they ‘play’ with it for a
+\\llilr, we get them to ‘guess’ the class definition, and finally they add a new feature to the
+description. In the procrss  of editing an already running program. the new users learn quite a
+fe\v things about the form of a description which :ve would otherwise have to explain in a
+mysterious manner.
+I
+First. we get them to type:
+@joe + box
+c
+l
+A square appears on the screen. We say: “You’ve just made a box called ‘joe’ “.
+Now they try:
+cl
+joe grow 30
+and the box ‘joe’ grows accordingly. We say: “You’ve just sent a message to ‘joe’ that it understands,
+and it responded accordingly”.
+0
+joe turn 45
+.+
+DATE
+12-JUN-75  10:19:38
+PAGE 25
+This is another message that ‘joe’  understands.
+eaclrtime  (joe turn 25)
+Now the student has made a simple ‘movie’ which can be terminated via the ‘escape’ key.
+t?jill + box
+Another square appears on the screen.
+jill grow -10
+‘jill’  becomes smaller.
+jill turn 50
+‘jill’ turns just as ‘joe’ did. Evide.ntly  ‘jil1’ and ‘joe’  can receive similar messages and produce similar
+responses.
+jill is ?
+box
+‘jill’  sends back the answer ‘box’ when asked what kind of object she represents.
+jot is ?
+box
+So does ‘joc’.
+eachtime : joe turn 25. jill turn - 11.
+produces a two object animation with a limited plot.
+Now we get the children to ‘guess’ what the general description of the class ‘box’ might look like.
+They have seen five example transactions: make-a-new-one, grow, turm, draw, undrax, each
+invokes a different set of actions. Since we have been using the word ‘message it is not difficult for the
+children to ‘guess’ that there will be at least five sections to ‘box’,
+each dealing with a particular
+action. The idea of ‘looking’ at the message to see what’s there is introduced. Finally, we ask them to
+type:
+show box
+to see what the description of ‘box’ really looks like:
+@box + class : size tilt positionleft positiondown
+properties of a box
+t-
+isnew j (GSpositionleft + 300.
+initial position
+$m;itioOndown  + 100.
+initial position
+i f 
+.
+G%ize f 50.
+initial heading
+initial size
+SELF draw.
+cause new object to appear on screen
+lr SELF)
+send hack our new object to sender
+c;fdraw  ;, (0 penup
+tell 0 to pick the pen up (no marks)
+goto positionleft positiondown
+travel to the new position
+turn tilt
+turn to the heading for this box
+pcndrr.
+p u t  tllc  pen down ( t o  make  nwks)
+do 4 (8 go size turn 90)) II raw n sqr?nrc in now orientation
+qundraw  + (a’s ink f- white.
+SELF draw.
+o’s ink c black.
+Qgrow C. (SELF undraw.
+G+size f- size f 1.
+SELF draw)
+*turn + /SELF undraw.
+turn turtle’s ink to white
+draw with  w h i t e  t o  CT;LSO sllapc
+reset ink hack to black
+erase oruselves at old position
+increase size by value  from message
+redrox  ourselves with new size
+eras.2 oursclvcs at old position
+DATE
+12-JUN-75  10:19:38
+PAGE 26
+C?tilt f tilt -t 1.
+incressa tilt by value from message
+SELF draw).
+redraw ourselves with new tilt
+shows the various messages that can be sent to any member of the class box.
+The various iconic symbols were made up by the first group of children that we taught to program in
+order to clarify important ideas in their minds.
+8
+:
+isnew
+SELF
+The kids prefered  to use Q to indicate a literal symbol since in its typical
+use:
+@joe
+(meaning the literal symbol ‘joe’ rather than what (or who) ‘joe’ may
+stand for), the hand points directly at the symbol itself.
+We might guess that:
+C?joe  6 box
+means that we are sending the literal symbol ‘joe’  the message: + box. What
+happens is that ‘joe* looks up his meaning and changes it to the reply sent
+back by ‘box’ (which, of course, is a new instance of ‘box’).
+means that the following symbols will be local properties of each created
+object. In the ‘class’ human, we might find the property ‘eye-color’; each
+instance of human would have a local value (say) ‘blue’ or ‘brown’.
+is a test to see if a new irlstance is to be created. This a much simpler and less
+mysterious way to do initialization than with an infinite loop and ‘pause’.
+will skip the next object if seen by ‘false’. i.e. 3<4 =r (‘yesyes’) will have
+value ‘yesyes’.
+since there are typically many instances, SELF stands for the one currently
+receiving the message.
+replies back to the original ‘sender’ of the message.
+‘looks’ in the message to ‘see’ if a literal word is there. Its reply is true or
+false allowing it to be tested with ‘3’.
+a symbol which stands for one of the many available Smalltalk turtles.
+this symbol means receive the value of the next set of things in the message.
+Instead of trying to get the children to understand this definition in any crisp Cay, we tell them a
+little bit about isnew, 3, SEL.“, 8, +, 0, 1 and almost nothing about C?’ and I:‘. Then we ask
+them to see if they can imagine how they could get any box to move to some place on the screen.
+They use grow and turn as models. Their first articulation of the new method is usually
+very much like:
+*move 3 [SELF undraw.
+. ..something to change the position....
+SELF dralu)
+They say:
+If ourself sees the word ‘move in the message, then we get ourself to undraw (because we are going
+somewhere else), we do something to change our knowledge of where we are, then we redraw ourself
+[just like in ‘grow’ or ‘move’).
+Now they look closer at. the names at the top of the description, the first two of which have already
+been used for ‘size’ and ‘tilt’. ‘positionleft’ and ‘positiondown’ look very hopeful (especially with
+some hints from us). Now they arc ready to understand ‘draw- and the turtle (8). ‘I’hey see that the
+DATE
+12-JUN-75  10:19:38
+turtle picks its pen up, goes to ‘positionleft’ and ‘positiondown’, then puts its pen down and draws a
+square (they find out the latter by trying it themself).
+It really looks as though they just need to change ‘positionleft’ and ‘postitiondown’ by receiving new
+numbers from the message exactly unalogous to the previous examples. They write:
+*move 3 (SEI,E’  undraw.
+@positionleft  t 8.
+@positiondown  t 8.
+SELF draw)
+Instead of getting them to learn about the editor at this point, we provide them with a simple class
+which does the update called: addto. So they actually type:
+addto box (+$move 3 (SELF undraw.
+GPpositionleft  + 8.
+@positiondown  + 8.
+SELF draw))
+This works very nicely when  they try:
+joe move 400 100
+1Ve take as long as necessary to get to this point with the children (usually 1 or 2 sessions). Although
+there is quite a strain on their short-term memories, the benefits are tremendous compared to more
+atomic bottom-up approaches. From here there are many paths that can be followed:
+1Ve ask them to try:
+mou.se left
+344
+mouse down
+112
+ar,cl their abbreviations:
+ml
+md
+3.!4
+112
+These are the mouse locations expressed as ‘left’ and ‘down’ offsets from the upper right hand corner
+of the screen. They try:
+joe move ml md
+and ‘joe’ goes where they point! &lany children spontaneously ‘see’ that they can use ‘eachtime’ to do
+these operations continuously:
+eaclrtime (joe move ml md)
+and ‘joe’  follows! Even more interesting, many see that they can ‘paint’ if they just were to remove
+thz ‘SELF undraw.’ line from their previous definition. They are now ready for the editor which
+handles tile programs in a structured way and automatically makes sure that parenthetic levels are
+consistant. When this is clone,  they have made a controllable ‘brush’ which can take on various sizes
+and orientations (by doing ‘grow’ and ‘turn’). Moreover, they know that they can create a large
+number of tailored brushes and give them names.
+The power of classes and instances nolo starts to make itself felt.
+Our children usually spend about 6 to 8 sessions explorin g in this fruitful neighborhood. This is
+important because our experience indicates that learning to program progresses in little leaps with
+intervening ‘plateaus’, where, for a \Fhilc,  it is difficult for the students  to ‘see’ new things. Then
+they do and another leap takes place.
+This reminds us very much of the typical progression involved in
+acquiring skill at playing music or sports. Since the plateau areas are very important, it is necessary
+to make sure that there are plenty of fun things to do while the inner ‘coordination’ is being built.
+Otherwise, it is possible for boredom to set in before enough skill is obtained to really make the new
+area intrinsically interesting.
+7/
+J D A T E
+12-JUN-75  10:19:X?
+PAGE 28
+The children typically will manipulate every part of the ‘box’ description. They change the ‘shape’
+routine to draw triangles and other polygons and thus learn about ‘turtle geometry’ by the back door.
+They may make the ‘shape maker’ another class entirely and add another parameter, ‘shape’, to the
+box description.
+After a while, rocket-ship and airplane shapes replace the polygons. New messages are added, like:
+fly, bounce, open, close,  and so on. They discover that they only have to continuously add some small
+constant number to the position holders to get an animation with simple linear motion.
+Everything, without exception, in Smalltalk is represented as active instances of classes, and,
+the ‘box’ class is an ‘archetype’ of most of the already ezistin,= Smalltalk classes. Numbers, the
+turtle, dictionary structures, ‘collection baskets’, schedulers, all look very much like ‘bon’. When
+the children are ready to invent classes of their own, they have not only a bag of tricks but a fairly
+comprehensive methodology for representing their own ideas.
+We feel this is why they are able  to handle many of the notions involved with systems design at such
+an early age and comparitively  low level of sophistication.
+Artificial Languages vs. Automatic Programming
+This paper is about Personal Computers for Personal Computing by noncomputer professionals of
+all ages. We would characterize our approach to be that of providing very powerful means to express a
+user’s clesircs and methods through an artificial language rather than to supply a system for
+automatic programming[22],  although the distinction between the two areas is not as crisp
+as it might be.
+h’ot too many years ago, FORTRAN and ALGOL, were hailed as ‘automatic programming’ systems
+because they automated many nasty assembly code tasks, such as subroutines, arithmetic evaluation,
+storage allocation, files, and input-output.
+In this limited sense, Smalltalk is an ‘automatic programming’ language since it handles many more
+of the background needs  of a user than ‘higher-level’ languages of the sixties. However, ‘automatic
+programming ’ in the seventies has a different  connotation which constrasts  rather sharply with the
+‘artificial language’ approach to building running programs.
+Automatic Programming vs.
+Artificial Language
+Sloppy (natural) discourse
+Clear (rather crisp) discourse
+‘Intelligence’: (quasi)-human model
+Simplicity, Consistancy,  Generality
+Knowledge of Problem Domain
+Knowledge about the nature of Description
+Natural Language Semantics
+Model-Descriptive Semantics
+(Nouns, Verbs, . ..)
+(states-in-process, communication, ..,)
+Declarative
+Some imperative sequences
+We like the latter, not only.because  it work s, but because it is a ‘convivial tool’ (in the sense of
+Illich): the innards of a system such as Smalltalk are more available and non-intimidating to the user
+for perusal and modification than that of a Model T Ford in the 20’s.
+We don’t like natural language programming and clescription very much because we feel that most
+natural languages lack clarity and focus (they were after all invented to talk about farming and
+cows).
+A remarkable exception to this is Jong.gwo-hush  or Mandarin Chinese, whose features and
+signs are the most ‘orthogonally’ organised of any human tongue. In the Indo-European  sense of the
+words, Chinese has no inflections, nouns, verbs, or prepositions. There is a remarkably small basic
+vocabulary and a simple syntax of great expressive and metaphorical power.
+In a progression starting with Sanskrit, to Latin, to the Romance Languages; English is more like
+Chinese than any of them and becoming  more so every century.
+Conclusions
+We feel that a promising future for human-human and human-machine communication will bc the
+devclopement of a simple human-oriented artificial language with great expressive power. It is needed
+for the same reasons which brought forth mathematics (as an artificial laquage) in the 16-20
+centuries: not only are there new ideas and \vays of looking at them afoot in the world, but the old
+framewor!cs debilitate their cxprcssion and communication.
+DATE
+12-JUN-75 10:19:38
+Smalltalk is nowhere near what is needed; it shows just enough of what the future might be like to
+motivate further designs.
+especially to Dan Ingalls who brought the ideas of Smalltalk to robust life, Adele Goldberg who
+zestfully managed the kids and a thousand other things, Chris Jeffers ‘properties person’
+extraordinary (who alone knows where everything is), and to all the people in the Learning Research
+Group and elsewhere in PARC who worked hard on Smalltalk and the Interim Dynabook.
+From the Learning Research Group
+Permanent Stuff
+Adele Goldberg
+Dan Ingalls
+Chris Jeffers
+Alan Kay
+Diana bierry
+John Shoch
+Dick Shoup
+Visitors
+Ron Baecker
+Dennis Burke (age 12)
+Barbara Dcutsch
+Marian Goldeen (age 13)
+Susan Hammett  (age 12)
+Bruce Horn (age 15)
+Tom FIorsley
+Lisa Jack (age 12)
+Ted Kaehlcr
+Kathy llansficld (age 12)
+Eric lvlartin
+Steve Purcell
+Dave Robson
+Steve Saunders
+Bob Shur
+Dave Smith
+Bonnie Tenenbaum
+Steve 1Vcyer
+From Other Groups at PARC
+Patriclc Baudelaire
+David Boggs
+Bill Bowman
+Larry Clark
+Jim Cucinitti
+Peter Deutsch
+Bill English
+Bob Fle::al
+Ralph Kimball
+Bob Metcnlfe
+Ed McCreight
+Mike Overton
+Alvy Ray Smith
+Bob Sproull
+Larry Teslcr
+Chuck Thacker
+Truett Thach
+;ji
+DXTE
+12-JUN-75  10:19:38
+I
+PAGE 30
+References
+[l] Kay, Alan, FLEX: an extensible simulation language which can be directly executed by
+computer. Computer Science Note, Septcrnher, 1965, University of Utah, Salt Lake City.
+[Z] ---------, FLEX, a flexible extensible language. MS. Thesis. Dept. Com. Sci., May 1968,
+University of Utah.
+[3] ---------, The Reactive Engine. Ph.D. Thesis. Dept. Corn. Sci., Sept. 1969, University of
+Utah.
+[4] ---------, A personal computer for children of all ages. Proceedings of the ACM National
+Conference. August 1972, Boston.
+[5] ---------, A dynamic medium for creative thought. Proceeding of the Nationat Council of
+Teachers of English Conf. November 1972, Minneapolis.
+[6] ---------, Goldberg, Adele (editors), and the Learning Research Group, Dynamic Personal
+l?ledia. (in press June 1975), Xerox Palo Alto Research Center.
+173 Goldberg, Adele, Smalltalk and kids --commentaries. PARC-LRG-3, June 1974, Xerox Palo
+Alto Research Center.
+[S] ---------, Classroom communication media, ACM SIGCUE TOPICS in Instructional Computing,
+Vol 1, Teacher Education, Jan. 1975, (with Bonnie Tenenhaum).
+[9] Feurzcig, W., et. al., Programming-Languages as a conceptual framework for teaching
+muthematics.  Final report on BUN Logo Project, June 30, 197 1.
+[ 10) Papert, S., Teaching children thinking, ZFZP Conference on Computer Education, 1970,
+Amsterdam: North IIolland.
+[ 1 l] Papert, S., Teach children to be mathematicians versus teaching about mathematics, Inter.
+Jcur. Math. Educ. Sci. Tech., Vol 3, 249-262, 1972.
+[ 12 J Sutherland, Ivan, SKETCIIPAD:  a man-machine graphical communication system, MIT
+Lincoln Laboratory TR 296, May 1965.
+[ 131 Dahl, O-J, et.al., SIhlULA, an a!gol based simulation language, CACM, IX, 9, Sept. 19GG.
+[I43 ---------, SIMULA--common base language, Norwegian Computing Center, Oslo, Norway,
+1970.
+[ 153 Shaw, C., JOSS: a designer’s view of an experimental on-line computing system, AF’IPS
+Conference Proceedings, XXVI, I, Fall, 1964.
+[16] Barton, R. S., A new approach to the functional design of a digital computer. Proc. WJCC,
+1961.
+[ 171 Fisher, D. A., Control structures for programming languuges, Ph.D. Thesis,
+Carnegie-Mellon University, Pittshurg, 1970.
+[18) McCarthy, J., et. al., LISP 1.5 Progrummer’s  Manual, Cambridge: MIT Press, 1962.
+[ 191 Chowning, J., The synthesis of comples  audio spectra by means of frequency modulation.
+J. Audio Eng. Sot. 21, pp 526-534, 1973
+[ZO] Saunders, S., Improved Fhl audio synthesis methods for real-time digital music generation.
+ACM Comp. Sci. Conference, 1975, Washington, D.C.
+[21] Balzer, R., Automatic Programming. USC/ISI,  RR-73-l
+f

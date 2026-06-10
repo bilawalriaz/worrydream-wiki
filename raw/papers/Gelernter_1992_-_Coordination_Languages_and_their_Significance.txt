@@ -1,0 +1,3112 @@
+Coordination 
+languages 
+and their 
+Significance 
+e can build a complete 
+programming 
+model 
+o”t 
+of two separate 
+pieces-the 
+computation 
+model and the cwnlination 
+model The computation 
+mcdel allows program- 
+mers to build a single 
+computational activity: 
+a single-threaded, step- 
+at-a-time computation. 
+The 
+coordination 
+model is the glue that binds separate 
+activities 
+into 
+an ensemble. 
+An 
+ordinary computation language (e.g., 
+Fortran) 
+embodies some computa- 
+tion model. A coordination language 
+embodies 
+a coordination 
+model; it 
+provides operations 
+to LE& com- 
+putational activities and to support 
+communicaation among them. 
+Our approach to coordination has 
+been developed in the framework of 
+a system called Linda? 
+Linda 
+is 
+not a programming 
+language. Kahn 
+and Miller write that “Linda is best 
+not thought of as a language-but 
+rather as an extension that can be 
+added to nearly 
+any language 
+to 
+enable process creation, communica- 
+tion, and synchronizatio~27].” 
+We 
+? would rather say that Linda is a coor- 
+z din&on 
+language. 
+It is one of two 
+- components that together make up a 
+: complete programming 
+language. 
+uI (The 
+suggestion 
+that 
+traditional 
+; pmgxumning languages are iumzpl& 
+z is intentional.) 
+Y 
+0 
+A comwtation 
+model and a cc&& 
+: might 
+also be separated 
+into two 
+; distinct 
+languages, 
+in which case 
+_ 
+: programmers 
+choose one of each: 
+‘ 
+one computation 
+language 
+plus 
+one coordination language equals a 
+complete 
+programming 
+system. 
+Kahn and Miller contend the first 
+alternative is better. The heart of 
+their comments is the observation 
+that: 
+Both camps are striving for 
+uniformity, 
+but of different 
+sorts. The CLP [Concurrent 
+Logic 
+Programming] 
+camp 
+strives for uniformity within a 
+language 
+while 
+the 
+Linda 
+camp strives for uniformity 
+acrOss languages [27]. 
+We believe that the second alterna- 
+tive is better. We also believe that 
+the distinction between the “inte- 
+gration” and the “separation” ap- 
+proach goes well beyond the (ad- 
+mittedly important) points raised 
+by Kahn and Miller. It involves a 
+whole range of pragmatic issues, 
+and some deep questions about the 
+nature and likely evolution of pro- 
+gramming 
+environments 
+besides. 
+We advance a series of claims in re- 
+sponse to Kahn and Miller’s argu- 
+ment for integration: 
+1. Asynchronous ensembles are the 
+dominating intellectual issue in the 
+emerging era of computer systems 
+research-the 
+era of 
+dime-store 
+processors and densely intercon- 
+nected computer jungles. Diversity 
+among an ensemble’s elements- 
+diversity with respect to language, 
+hardware platform, physical loca- 
+tion, eve” basic computing model- 
+will be “ornal in the new era. 
+2. The 
+fundamental 
+problems 
+posed by ensembles-the 
+problems 
+of 
+coordination 
+among 
+active 
+agents-are 
+best understood as or- 
+thogonal to the problems of compu- 
+tation, as addressed by conven- 
+tional programming languages. 
+3. We can (and ought to) define 
+“general purpose coordination lan- 
+guages” on analogy with general 
+purpose 
+computing 
+languages. 
+Our article “Linda in Context” appeared in 
+the April ,989 issue of cumIn”nirahanr 
+,a. p. 
+4441. According 10 CDmmentS 
+by Kenneth 
+Kahn and Mark Miller ,271, the article gcner- 
+ated a ““wry of electronic 
+discussions.” 
+This 
+article represent3 
+a full rrsponnc 
+t0 Kahn and 
+Miller’s tho”ght-pm”olting 
+critique. 
+These coordmation languages sup- 
+port a full range of ensembles, 
+from parallel applications through 
+distributed systems through time- 
+coordinated ensembles and a range 
+of others. The problems of ensem- 
+ble building in general, in other 
+words, constitute a well-formed and 
+important intellectual unity. 
+If these claims are barn out, they 
+make a compelling case for separa- 
+tion. 
+Next, we briefly discuss the first 
+(and least controversial) point. In 
+the following sections, we explain 
+our basic claims with respect to or- 
+thogonality and generality, discuss 
+Kahn and Miller’s case for integra- 
+tion, then present the argument for 
+separation. 
+Ensembles 
+and their 
+Signlflcance 
+We will detine an oqnchronozlr 
+en- 
+semble (ensemble, for short) as a col- 
+lection of asynchronous activities 
+that communicate. An activity is a 
+program, proass, 
+thread or any 
+agent capable in principle of simu- 
+lating a Turing Machine. It could 
+be a person; it could be (recur- 
+sively) another whole ensemble. 
+Computations 
+that are 
+struc- 
+tured explicitly as sets of communi- 
+cating processes will (obviously) be 
+ensembles. So we have included 
+parallel applications (designed to 
+run fast on many processors), dis- 
+tributed systems (designed t” man- 
+age physically dispersed hardware) 
+and many operating systems (struc- 
+tured as ensembles in order to cope 
+with the asynchronous simultaneity 
+of devices). But the ensemble cate- 
+gory is far broader. The definition 
+does not restrict communication to 
+communication-through-space-a 
+collection 
+of 
+programs 
+running 
+during disjoint intervals and com- 
+municating through time, generally 
+via a tile system, constitutes a highly 
+significant kind of ensemble. When 
+a computation and a person com- 
+municate, we have another impor- 
+tant type of ensemble. In short, 
+ensembles are fundamental 
+and 
+ubiquitous in computing. 
+An ensemble is a natural breed- 
+tng ground for heterogeneity. A 
+program that needs contributions 
+from different machines, or differ- 
+ent computing 
+models (i.e., syn- 
+chronous and asynchronous paral- 
+lelism), 
+will 
+naturally 
+be 
+an 
+ensemble. Give” their strong mod- 
+ularity, ensembles are a natural 
+medium for multilanguage applica- 
+tions as well. 
+Finally, ensembles are the best- 
+adapted inhabitants of the evolving 
+hardware environment: the densely 
+intertwined computer jungle that is 
+taking root everywhere. In this de- 
+veloping 
+environment, 
+computa- 
+tions will rarely stay cooped up in- 
+side a single computer. They will 
+interact with-draw 
+services from 
+and supply services to-other 
+com- 
+putations on other machines. Users 
+will regularly choose to focus whole 
+skeins of a”tonomous 
+computers 
+on a single problem. 
+Ensembles of all sorts dominate 
+the near-term future of computing. 
+Figuring out how to build and un- 
+derstand them will become (if it is 
+not already) the central problem of 
+systems research. 
+Basic Claims 
+Building ensembles equals coordi- 
+nating 
+separate 
+computations. 
+There 
+is nothing new about our 
+contention that ensembles and co- 
+ordination 
+are important. 
+Kahn 
+and Miller’s own work on open sys- 
+tems and their linguistic require- 
+ments [Z], 
+along with other work 
+in the open systems area (e.g., on 
+Actors [Z]), has played a leading 
+role in bringing these issues to the 
+attention of systems researchers. 
+Our 
+(more 
+controversial) 
+claims 
+are: 
+1. Orthagonality. It is possible and 
+desirable to treat coordination as 
+orthogonal to computation for pur- 
+poses of building programs. 
+2. Generality. It is possible and de- 
+sirable t” define coordination in such 
+a way that it applies to wery asyn- 
+chronous software ensemble, from 
+massively 
+parallel, 
+fine-grained 
+applications 
+through 
+coarser- 
+grained 
+parallelism through dis- 
+c 
+0LDI.r 
+tributed, 
+heterogeneous 
+and 
+time- 
+coordinated 
+systems. 
+The concept 
+of a coordination 
+lan- 
+guage 
+follows 
+from 
+these 
+claims. 
+We introduced 
+this term 
+to desig- 
+nate the linguistic 
+embodiment 
+of a 
+coordination 
+model. 
+The 
+issue 
+is 
+not mere nomenclature. 
+Our inten- 
+tion is to identify 
+Linda and systems 
+in its class as complete 
+languages 
+in 
+their 
+own 
+righti, 
+not 
+mere 
+extensions 
+to 
+some 
+existing 
+base 
+language. 
+Complete 
+language 
+means 
+a com- 
+plete 
+coordination 
+language 
+of 
+course, 
+the embodiment 
+of a com- 
+prehensive 
+coordination 
+model. 
+C is a complete 
+computation 
+lan- 
+guage, 
+though 
+it lacks intrinsic 
+sup- 
+port for process 
+creation 
+and inter- 
+process 
+communication. 
+Linda 
+is a 
+complete 
+coordination 
+language, 
+although 
+it offers 
+no support 
+for 
+arbitrary 
+computations. 
+We might 
+call C an extension 
+to Linda 
+as rea- 
+sonably 
+as Linda 
+is called an exten- 
+sion to C. But neither 
+description 
+is 
+accurate, 
+because 
+Linda 
+and C are, 
+in concept, 
+unrelated 
+and orthogo- 
+nal. 
+What 
+is a coordination 
+language 
+for? Is it not true 
+that a computa- 
+tion 
+language 
+is useful 
+by itself, 
+while a coordination 
+language 
+can 
+only be used in combination 
+with a 
+computation 
+language? 
+And 
+does 
+this not compromise 
+our claim that 
+the two are conceptually 
+orthogo- 
+nal? 
+No: a computation 
+language 
+by 
+itself is useless. 
+A computation 
+must 
+communicate with its environment 
+or 
+it serves no purpose. 
+And the envi- 
+ronment, 
+insofar 
+as it must 
+ulti- 
+mately 
+be a person 
+or people, 
+can 
+only he an active agent. 
+A computa- 
+tion 
+must 
+perform 
+operations 
+whose purpose 
+is to get information 
+from 
+or convey 
+it to the environ- 
+ment, 
+and 
+these 
+operations 
+are a 
+coordination 
+language-often 
+of a 
+highly 
+restricted, 
+specialized 
+or ad 
+hoc 
+sort, 
+but 
+a coordination 
+lan- 
+guage 
+nonetheless. 
+In 
+the 
+most 
+primitive 
+case, 
+a program 
+might 
+spin while a user 
+manually 
+keys a 
+NdClDnAaC 
+bit string 
+into a register. 
+The coor- 
+dination 
+language 
+in this case con- 
+sists of operations 
+like set the front- 
+panel 
+switches, 
+read the accumula- 
+tor, spin awaiting 
+keyboard-buffer 
+full. 
+Not 
+much; 
+but these 
+opera- 
+tions 
+do 
+provide 
+a 
+mechanism 
+whereby 
+two 
+separate, 
+asynchro- 
+nous 
+activities-the 
+program 
+and 
+the person-can 
+communicate. 
+Any 
+computation 
+language 
+in- 
+cludes 
+a sort 
+of degenerate 
+coor- 
+dination 
+language 
+in the 
+form 
+of 
+global 
+variables 
+and 
+argument- 
+passing: 
+the separate 
+parts of a pro- 
+gram communicate 
+with each other 
+by using 
+these 
+mechanisms, 
+But 
+coordination 
+is not merely 
+informa- 
+tion-exchange; 
+the essence 
+of our 
+definition 
+(and of the word’s intui- 
+tive English 
+meaning) 
+involves 
+in- 
+formation 
+exchange 
+among 
+active 
+agents. 
+A coordination 
+language 
+must allow one active agent 
+to con- 
+vey information 
+to another 
+whose 
+state is evolving 
+and unpredictable. 
+Assignment 
+and parameter 
+passing 
+are insufficient. 
+In a broader 
+setting, 
+an operat- 
+ing 
+system 
+defines 
+a coordination 
+language 
+for 
+the 
+benefit 
+of 
+the 
+computations 
+it supports. 
+Compu- 
+tations 
+need 
+operating 
+systems 
+be- 
+cause 
+they 
+need 
+to be tethered 
+to 
+other asynchronous 
+activities 
+and to 
+create 
+new activities. 
+The 
+lifelines 
+that 
+tie a computation 
+to the out- 
+side world 
+are (by definition) 
+the 
+province 
+of 
+a coordination 
+lan- 
+guage. 
+Computations 
+need 
+to be 
+tethered 
+to users 
+outside 
+the 
+ma- 
+chine 
+(the 
+operating 
+system 
+pro- 
+vides 
+I/O). 
+They 
+need 
+to he teth- 
+ered 
+to other 
+activities, 
+distant 
+in 
+time 
+as well as (or instead 
+of) in 
+space-activities 
+that 
+preceded 
+or 
+will follow them. The operating 
+sys- 
+tem supports 
+files. They 
+need to be 
+tethered 
+to 
+other 
+computations 
+across a network. 
+They need to syn- 
+chronize 
+their 
+activities 
+(thus, 
+im- 
+plicitly, to communicate) 
+with other 
+computations 
+that 
+share 
+the same 
+machine. 
+By providing 
+a process 
+model, 
+and 
+allocating 
+system 
+re- 
+sources 
+in such a way that activities 
+can exist, the operating 
+system 
+car- 
+ries out the basic 
+“create 
+activity” 
+LliSO 
+n 
+E 
+nsembles 
+of all sorts dom- 
+inate the near- 
+term future of 
+computing. 
+Figw 
+ing out hour to 
+build and under- 
+stand them uuill 
+become the cen- 
+tral problem of 
+Systems research. 
+99 
+role of a coordination 
+language. 
+Operating 
+systems tend to pro- 
+vide these functions 
+in messy, ad hoc 
+ways. 
+Communication 
+through 
+time via the tile system does not in 
+the least resemble (so far as the syn- 
+tax and semantics of operations 
+of- 
+fered to the programmer 
+are con- 
+cerned) 
+communication 
+with 
+another 
+process 
+via shared 
+table 
+and semaphore, 
+or communication 
+across a network via message. And 
+the coordination 
+language 
+defined 
+by the operating 
+system is likely to 
+be strictly an interpreted language, 
+not a compiled language. We do not 
+generally 
+feed 
+programs 
+into 
+a 
+“computation 
+compiler” 
+and also, 
+separately, 
+an “operating 
+system” 
+compiler, 
+which 
+would 
+generate 
+customized 
+code for all external 
+interactions. 
+We rely on standard 
+prepackaged 
+libraries 
+instead. 
+But 
+despite all this nonuniformity 
+and 
+ad hocness, the operating 
+system 
+exists to create 
+activities, 
+and 
+to 
+support 
+their 
+coordination 
+with 
+other activities: 
+hence its primary 
+function 
+is to implement 
+a coordi- 
+nation language. The major part of 
+any 
+operating 
+system 
+might 
+be 
+thrown out and replaced by an inte- 
+grated, 
+general-purpose 
+coordina- 
+tion language. 
+In fact, this view of operating 
+systems might induce some intellec- 
+tual 
+coherence 
+in an 
+important 
+field that lacks all vestiges of it at 
+present. 
+In sum, we cannot 
+do anything 
+useful with a coordination 
+language 
+standing 
+alone. 
+However, 
+we can- 
+not do anything 
+useful with a mere 
+computation 
+language 
+either. 
+All 
+useful 
+computing 
+depends 
+on a 
+combination 
+of the two. 
+Generalltv as a Consequence 
+of OrthogonaliW 
+Generality-our 
+second 
+claim-is 
+suggested 
+by orthogonality. 
+The 
+fact that we can separate computa- 
+tion 
+and 
+coordination 
+does 
+not 
+mean that, in principle, 
+we might 
+not choose to cover the coordina- 
+tion spectrum 
+with a million sepa- 
+rate languages 
+instead 
+of a single 
+integrated 
+one. 
+But the general- 
+100 
+purpose 
+computing 
+language 
+is a 
+recognized, 
+useful 
+idea. It seems 
+reasonable 
+to 
+posit 
+a 
+general- 
+purpose 
+coordination 
+language 
+as 
+well. 
+We have staked our claims, and 
+we turn now to defending 
+them. 
+Why Separatlon? 
+Why Generallty? 
+Aside from Linda, 
+few other sys- 
+tems accept the idea of a separate, 
+conceptually 
+self-contained 
+coordi- 
+nation 
+language. 
+But, 
+in effect, 
+most current approaches 
+reject sep- 
+aration. 
+If I accept separation, 
+I might 
+nonetheless 
+reject 
+generality: 
+I 
+might provide 
+a cwrdination 
+lan- 
+guage designed 
+for parallel appli- 
+cations 
+exclusively, 
+or distributed 
+systems, or whatever. 
+Generality 
+is almost 
+uniuerxzll~ 
+rejected. 
+The 
+parallel-applications 
+and 
+the distributed-systems 
+com- 
+munities 
+are (by now) almost com- 
+pletely disjoint. And as a rule, nei- 
+ther 
+community 
+finds 
+much 
+interest in the broader coordination 
+issues 
+discussed 
+earlier-time- 
+wise coordination, 
+heterogeneity, 
+software-human 
+communication. 
+There 
+are pragmatic 
+reasons 
+why 
+this should 
+be so; but there 
+are 
+strong 
+logical reasons 
+(and some 
+pragmatic 
+ones 
+as well) 
+why it 
+should not. 
+Opposing Sewatlon 
+and 
+Generalltv 
+Kahn and Miller ably state the case 
+for integration: 
+Concurrent 
+logic 
+program- 
+ming 
+(CLP) has traditionally 
+been 
+addressing 
+another 
+problem 
+[as distinct from the 
+problems 
+Linda 
+addresses]: 
+namely how can one design a 
+single 
+language 
+which is ex- 
+pressive, simple, clean and ef- 
+ficient 
+for 
+general 
+purpose 
+parallel computing? 
+There 
+is just one way to com- 
+municate 
+in CLP, not as in 
+Linda where there is a dialect 
+specific way of communicating 
+in the small 
+and 
+the tuple 
+space way of communicating 
+at the next level [47]. 
+In other words, why worry about 
+two separate tooltn3xes (a computa- 
+tion and a coordination 
+box) when 
+you can have one? A fair question. 
+(Of course, from our point of view, 
+communication is something 
+that in- 
+volves separate 
+activities; 
+a sin@ 
+process does not communicate 
+with 
+itself. Routines 
+within one process 
+pass information 
+back and forth, 
+but without confronting 
+the prob- 
+lems of coordination 
+among 
+asyn- 
+chronous 
+activities. 
+The 
+“intra- 
+process communication” 
+that Kahn 
+and Miller implicitly assume is com- 
+munication 
+in the sense that tossing 
+a ball up and 
+down 
+is juggling. 
+Nonetheless, 
+this is a matter of deli- 
+nition, and they are obviously enti- 
+tled to their own.) 
+We do not know of any equally 
+concise attack OD generality 
+in our 
+sense. So we will supply 
+one, an 
+argument 
+that (we believe) 
+many 
+researchers 
+would accept. 
+True, 
+in some ultimate 
+logical 
+sense “communication 
+is communi- 
+cation,” but the pragmatic 
+needs of 
+(say) the distributed-system 
+builder 
+are very different 
+from the needs 
+of a parallel-applications 
+developer. 
+Accordingly, 
+it is natural 
+that com- 
+pletely different 
+models have been 
+developed 
+to meet those needs. 
+For example, distributed 
+systems 
+often 
+rely on remote 
+procedure 
+call. RPC is, in fact, a near-standard 
+in this domain. 
+For the builder 
+of 
+parallel 
+applications, 
+on the other 
+hand, RPC is an unmitigated 
+disas- 
+ter. It is fundamentally 
+wrong 
+in 
+concept: 
+parallel 
+programmers 
+want to keep processes busy, want 
+them to generate 
+data and then get 
+rid of it as quickly as possible. 
+A 
+communication 
+model 
+based 
+on 
+sending 
+parameters 
+to some rou- 
+tine, then awaiting 
+a reply (while 
+twiddling 
+your 
+thumbs) 
+is rarely 
+useful 
+in parallel 
+programming- 
+to the extent that it ix heavily used 
+in some 
+code, 
+those 
+are 
+strong 
+grounds 
+for suspicion. 
+The rest of this article presents 
+arguments 
+in favor of separation 
+and generality, or (in other words) 
+of the idea of a general-purpose 
+coordination language. 
+These arguments are: 
+l In favor of separation: portabdq 
+in a broad sense; and support for 
+heterogeneity. 
+l In favor of generality: economy, 
+flexibility and intellectual focw. 
+Separation: 
+Portability 
+and 
+Heterogeneity 
+Portability 
+means reusability, or 
+recycle-ability in a broad sense. We 
+would like to recycle applications, 
+implementations, 
+programming 
+tools and (maybe above all) pro- 
+grammer expertise to the fullest 
+extent possible. When moving from 
+one platform to a different one, m 
+from one parallelism model to a 
+different one, 07 from one comput- 
+ing language to a different one, we 
+would like to retain as much as pos- 
+sible. An integrated language sacri- 
+fices computing-language portabil- 
+ity completely, and in many cases 
+compromises the other varieties. 
+Given 
+some 
+C programmers, 
+Scheme programmers and Prolog 
+programmers, all of whom need to 
+develop 
+parallel applications, we 
+could recommend three indepen- 
+dent, tailor-made parallel variants 
+of these languages-for 
+example 
+Concurrent C [16], Multilisp [19] 
+and Parlog [26]. Alternatively, we 
+could note that the machinery re- 
+quired for explicit parallelism is 
+always the same, no matter what the 
+base language: to get parallelism, 
+we must be able to create and coor- 
+dinate 
+simultaneous 
+execution 
+threads. Given this observation, we 
+can outfit all three groups in essen- 
+tially the same way: we supply them 
+with C-Linda, Schema-Linda and 
+Prolog-Linda. In so doing we make 
+it easier for them to switch base lan- 
+guages, simplify the job of teaching 
+parallelism, and allow implementa- 
+tion and tool-building 
+investment 
+to be focused on a single coordina- 
+tion model. 
+The underlying premise is per- 
+haps even more important: an XYZ 
+programmer who needs to develop 
+parallel applications will be sup- 
+plied not with a new language, but 
+with a dialect that is as much like 
+XYZ as possible. 
+Heterogeneity is a generalization 
+of portability. If our system works 
+on X 01 Y, then it may very well 
+work for X and 
+Y. Certainly it is a 
+better candidate for linking X and 
+Y than some other model that is X- 
+or Y-specific. Because a coordina- 
+tion language is not committed to 
+any base computing language, it 
+can work in principle with all of 
+them, and tie programs in many 
+languages together. Likewise with 
+respect 
+to 
+mixed-machine 
+or 
+mixed-model heterogeneity. 
+Parallelism. 
+SpecMcally 
+Before we shift focus to coordina- 
+tion in general, we need to consider 
+how these arguments apply specifi- 
+cally to the domain that served as 
+Kahn and Miller’s main focus, and 
+has been ours as well: models, tools 
+and methods for parallel applica- 
+tions programming. 
+There are two radically different 
+ways to support parallelism. 
+Approach I: 
+(a) Define all new languages 
+for 
+parallel 
+programming 
+(CSP was one of the first and 
+remains one of the most influ- 
+ential); or 
+(b) generalize 
+the semantic 
+model of some base language 
+to produce a new and com- 
+plete parallel language (as in 
+Multilisp [19], the concurrent 
+logic languages, concurrent 
+Smalltalk [IO] and many oth- 
+ers); or 
+(c) sidestep the whole issue, by 
+using sophisticated compiler 
+or 
+runtime 
+technology 
+to 
+achieve parallel execution of 
+programs 
+that lack explicit 
+parallelism. 
+This 
+approach 
+includes work on parallelism 
+compilers and on parallel exe- 
+cution of conventional func- 
+tional or logic languages. 
+What these approaches share is 
+the lack of any coordination model 
+A 
+side from 
+Linda, few other 
+systems accept 
+the idea of a sep- 
+arate, conceptually 
+self-contained 
+coordination 
+lan- 
+guage. But, in 
+effect, most cur- 
+rent approaches 
+reject separation. 
+1Ol 
+@SC. 
+Instead, they supply a single, 
+unified 
+programming 
+model 
+(which may include the tools neces- 
+sary to achieve coordination 
+as one 
+part of an integrated 
+approach). 
+The other approach 
+to parallelism 
+is: 
+Approach 
+II: 
+Define an independent 
+coor- 
+dination 
+model; 
+this 
+model 
+can be added to any base lan- 
+guage with no change to the 
+base language semantics. 
+Linda falls into the Approach 
+II 
+category. Dongarra and Sorenson’s 
+Schedule 
+[ 111 is another 
+example. 
+(Schedule, 
+in turn, 
+is related 
+to 
+Babb’s 
+work 
+on 
+coarse-grain 
+dataflow [4].) Strand is an example 
+that approaches 
+the problem from 
+a 
+logic-programming 
+viewpoint 
+(151. Linda is the only advocate of 
+generality in this group: the others 
+focus on parallelism specifically (al- 
+though concurrent 
+logic program- 
+ming 
+has a consistent 
+secondary 
+interest 
+in distributed 
+systems as 
+well). 
+This 
+is not 
+a criticism- 
+merely a matter of differing 
+foci. 
+Kahn 
+and 
+Miller’s 
+comments 
+amount 
+(fundamentally) 
+to a criti- 
+cism 
+of 
+Approach 
+11 from 
+the 
+standpoint 
+of Approach 
+I. 
+Under the first approach, 
+paral- 
+lelism is regarded 
+as a generaliza- 
+tion of some base language’s com- 
+puting model (if it is regarded 
+at 
+all). 
+In 
+the 
+second-particularly 
+Linda’s 
+version 
+of the 
+second- 
+parallelism 
+is a specialization 
+of a 
+more 
+general 
+phenomenon, 
+the 
+problem 
+of coordination 
+in all its 
+guises. 
+There 
+is no 
+clear 
+right 
+and 
+wrong 
+between 
+these 
+two; 
+bath 
+approaches have been used success- 
+fully. How do we evaluate them? 
+First, consider Approach 
+Ia and 
+b. Kahn and Miller argue that these 
+approaches 
+offer 
+one toolbox 
+in- 
+stead of two. We do not denigrate 
+this 
+argument 
+from 
+conceptual 
+economy. Such an argument 
+is ex- 
+ceptionally important. 
+It should be 
+overridden 
+only in return for intel- 
+lectual leverage of a decisive kind. 
+We believe that portability, 
+reus- 
+ability and heterogeneity 
+constitute 
+this kind of overriding 
+advantage. 
+We also believe that, by sacrificing 
+conceptual 
+economy 
+in the small, 
+we will regain it in the large, when 
+we unify the coordination 
+tools re- 
+quired 
+for 
+parallel 
+programming 
+with a broad range of others. These 
+arguments leave our respect for the 
+basic principle of Kahn and Miller’s 
+argument 
+undiminished. 
+Obvi- 
+ously, each programmer 
+will decide 
+the issue individually. 
+Next, consider Approach 
+Ic (im- 
+plicit parallelism) versus Approach 
+II. The starting point for much of 
+this work, particularly on implicitly- 
+parallel functional 
+languages, 
+was 
+the contention 
+that explicit parallel- 
+ism would prove too difficult 
+for 
+programmers 
+to 
+manage. 
+“The 
+potential performance 
+of this kind 
+of 
+architecture 
+is 
+enormous,” 
+Turner 
+wrote in 1984, referring 
+to 
+parallel 
+machines, 
+“but how can 
+they be programmed? 
+An idea that 
+can 
+be 
+dismissed 
+more 
+or 
+less 
+straight away is that we should take 
+some conventional 
+sequential 
+lan- 
+guage and add facilities for explic- 
+itly creating and co-ordinating 
+pro- 
+cesses. This 
+may work where the 
+number 
+of processes 
+is small, but 
+when we are talking about thou- 
+sands and thousands 
+of indepen- 
+dent processes, this cannot possibly 
+be under the conscious control of 
+the programmer” 
+[28 p. 101. Al- 
+though 
+the field is still immature, 
+the 
+evidence 
+to 
+date 
+suggests 
+strongly that this contention is false, 
+or at any rate misleading. 
+Signiii- 
+cant numbers 
+of parallel machines 
+have been installed and see routine 
+use by programmers 
+who use ex- 
+plicitly parallel methods. Currently 
+these architectures 
+are more likely 
+to involve tens or hundreds 
+than 
+thousands 
+of processors, 
+but why 
+existing 
+techniques 
+should 
+sud- 
+denly fail at the transition from (let 
+us say) a “r-Cube to a lo-Cube 
+is 
+unclear. 
+The fallacy in Turner’s statement 
+has proven 
+to be the underlying 
+assumption 
+that 
+somehow 
+each 
+process in an ensemble will be cre- 
+ated separately 
+and treated 
+as an 
+individual. In the context of large- 
+scale Linda programs, 
+which usu- 
+ally involve many identical worker 
+processes, 
+or 
+processes 
+each 
+of 
+which 
+computes 
+one 
+piece 
+of a 
+large, 
+aggregate 
+data 
+structure 
+(turning into the result upon com- 
+pletion), Turner’s 
+statement makes 
+no more sense than the claim that 
+“DO 
+loops 
+may work 
+for 
+small 
+numbers of iterations, but when we 
+are talking 
+about 
+thousands 
+and 
+thousands of iterations, this cannot 
+possibly 
+be under 
+the 
+conscious 
+control 
+of the programmer 
+” 
+Of course it can’t, but so what? To 
+specify explicitly does not mean to 
+specify individually. 
+In evaluating 
+Approach 
+I as a 
+whole, there 
+is a final pragmatic 
+factor 
+to keep 
+in mind 
+as well. 
+Those who work actively at the in- 
+terface 
+between 
+computer 
+science 
+and real computation 
+are aware of 
+the fact that most “real” parallel 
+applications 
+begin life not as blank 
+sheets of paper, but as serial pro- 
+grams that run too slowly. If we 
+were asked for help in parallelizing 
+a large serial code, and we opened 
+the discussion from our side by say- 
+ing “first thing, throw out every line 
+of this program 
+and rewrite it in 
+(say) Miranda,” the response would 
+likely be unprintable. 
+Not because 
+real-world 
+programmers 
+are 
+too 
+stupid to understand 
+the beauties 
+of these brave new languages. 
+It is 
+merely that they have better things 
+to do with their time than rewrite 
+code that already works, unless the 
+advantages 
+of doing so are over- 
+whelming. They rarely are. 
+Of course many parallel applica- 
+tions are built from 
+scratch, 
+and 
+their 
+numbers 
+will increase. 
+But 
+forcing 
+new languages 
+on parallel 
+programmers 
+clearly 
+complicates 
+the transition 
+to parallelism. 
+Cenerallty: 
+Economy. 
+Flexlblllty and Intellectual 
+FOCUS 
+We turn now to basic claim number 
+two: in principle, 
+you can use the 
+same coordination 
+language 
+that 
+you rely on for parallel applications 
+c 
+OLOAI 
+programming 
+when 
+you 
+develop 
+distributed 
+systems. 
+You can 
+use 
+the same 
+model 
+in building 
+(or at 
+any rate 
+conceptualizing-design- 
+ing the programmer 
+interface 
+to) a 
+tile system. 
+You can use the same 
+model, 
+again, in building 
+heteroge- 
+neous 
+applications. 
+And 
+you 
+can 
+use the same model 
+for implement- 
+ing basic human-machine 
+commu- 
+nication. 
+This 
+approach 
+does 
+not 
+accord 
+with current 
+practice, 
+to say 
+the least. 
+Before 
+we consider 
+why 
+you might 
+want to do this, we need 
+to consider 
+whether 
+(in basic design 
+terms) 
+the whole thing 
+is even pos- 
+sible. 
+We are arguing 
+on behalf 
+of a 
+class of systems, 
+not Linda 
+specifi- 
+ally. 
+But it is convenient 
+to use 
+Linda 
+as an 
+example. 
+All 
+these 
+forms 
+of communication 
+are sub- 
+sumed, 
+in 
+logical 
+terms, 
+by 
+the 
+Linda 
+model. 
+They 
+are not all sup- 
+ported 
+adequately 
+by 
+current 
+implimentations; 
+but that’s another 
+question. 
+The 
+first question 
+is: can 
+you design a general-purpose 
+coor- 
+dim&on 
+language? 
+The 
+Linda 
+model 
+has been 
+de- 
+scribed 
+often, 
+and 
+we will not re. 
+peat 
+the 
+description 
+here. 
+How 
+ever, 
+in 
+brief 
+outline, 
+Linda 
+provides 
+an associative 
+object mem- 
+ory, conceived 
+as a kind of stretchy 
+envelope. 
+Processes 
+in Linda 
+in- 
+habit 
+this envelope, 
+called 
+a tuple 
+space. When 
+they have information 
+to 
+communicate, 
+they 
+generate 
+tuple-structured 
+data 
+objects 
+and 
+release 
+them 
+into 
+the 
+envelope. 
+When 
+they need 
+information, 
+they 
+may read a data 
+object 
+or cmuume 
+one, 
+as the context 
+requires. 
+Ob- 
+jects are described 
+for purposes 
+of 
+reading 
+or consumption 
+by an asso- 
+ciative 
+naming 
+scheme 
+that 
+oper- 
+ates 
+like 
+“select” 
+in 
+a relational 
+database. 
+Processes 
+turn into tuple- 
+structured 
+data 
+objects, 
+indistin- 
+guishable 
+from 
+all the 
+rest, 
+when 
+they are done 
+computing. 
+The sys- 
+tem 
+as 
+described 
+is 
+supported 
+commercially 
+on a broad 
+range 
+of 
+platforms. 
+Current 
+research 
+imple- 
+mentations 
+(epitomized 
+by Jagan- 
+nathan’s 
+Schema 
+Linda 
+[ZO]) sup- 
+port 
+multiple 
+iirst~lass 
+tuple 
+spaces: 
+whole 
+tuple 
+spaces 
+can ap- 
+pear 
+as tuple 
+fields; whole 
+tuple 
+spaces 
+may be manipulated 
+as unit 
+objects. 
+The 
+preceding 
+is 
+brief 
+and 
+sketchy, 
+but it is sufficient 
+to moti- 
+vate our claim that Linda 
+can sup- 
+port 
+all forms 
+of communication 
+listed 
+earlier. 
+Inter-process 
+com- 
+munication, 
+of the sort that parallel 
+applications 
+and 
+distributed 
+sys- 
+tems 
+both 
+require, 
+is realized 
+in 
+terms 
+of 
+distributed 
+data 
+struc- 
+tures. 
+Information-producing 
+pro- 
+cesses build 
+data structures 
+out of 
+tup1es; 
+information-consuming 
+processes 
+read 
+or ccmsume 
+those 
+structures. 
+(In 
+the 
+simplest 
+case, 
+such a structure 
+is merely 
+a single 
+tuple.) 
+The 
+technique 
+is discussed 
+at length 
+in [8, 91. 
+RPC is trivial to simulate: 
+the “in- 
+voke 
+procedure” 
+operation 
+is im- 
+plemented 
+by a “generate 
+parame- 
+ters” object followed 
+by a “consume 
+result” 
+operation. 
+The 
+remotely 
+invoked 
+procedure 
+becomes 
+a pro- 
+cess which repeatedly 
+accepts 
+a pa- 
+rameter 
+object, 
+invokes 
+the called- 
+for procedure 
+locally and then gen- 
+erates 
+a 
+result 
+object. 
+(The 
+converse, 
+by the way, is not true. 
+Linda 
+operations 
+cannot 
+be trans- 
+lated 
+directly 
+into 
+RPCs-which 
+procedure 
+would 
+they invoke? 
+Not 
+some hypothetical 
+object store pro- 
+cedure, 
+because 
+runtime 
+efficiency 
+is mandatory 
+for parallel 
+applica- 
+tions, 
+and we cannot 
+allow central- 
+ized bottlenecks. 
+Nor can we allow 
+Linda’s 
+asynchronous, 
+nonblocking 
+“generate 
+object” 
+operation 
+to 
+block 
+until 
+a remote 
+prcxedure 
+generates 
+a logically pointless 
+reply. 
+Nor can we readily 
+support 
+Linda’s 
+view of processes 
+as incipient 
+data 
+objects 
+in this framework.) 
+Linda’s 
+boundaries 
+as a +rallel 
+appbcations 
+tool 
+continue 
+to ex- 
+pand. 
+For 
+example, 
+one 
+recent 
+Linda 
+application 
+in financial 
+anal- 
+ysis 
+successfully 
+uses 
+the 
+owner- 
+computes 
+model 
+of data 
+parallel- 
+ism. 
+Jagannathan 
+and 
+Philbin’s 
+STING 
+system 
+supports 
+tine- 
+grained 
+Linda 
+programs, 
+currently 
+on shared-memory 
+multiprocessors 
+but 
+with 
+a 
+port 
+to 
+distributed- 
+E 
+i 
+s 
+0 
+n 
+memory 
+environments 
+planned. 
+It 
+promises 
+to 
+expand 
+significantly 
+the 
+range 
+of program 
+struct”res 
+that 
+can be expressed 
+cleanly 
+and 
+implemented 
+efficiently 
+using 
+the 
+Linda coordination 
+model 
+[Zl]. Sci- 
+entific 
+Computing 
+Associates 
+now 
+supports 
+For&m-Linda 
+as well as 
+C-Linda. 
+The 
+“Piranha” 
+system, 
+which executes 
+Linda 
+programs 
+on 
+conventional 
+local networks 
+in such 
+a way that 
+idle 
+workstations 
+may 
+join 
+an ongoing 
+computation, 
+and 
+participating 
+workstations 
+may 
+withdraw 
+quickly 
+when 
+their 
+own- 
+ers need them, 
+runs on 60 worksta- 
+tions in the Yale Computer 
+Science 
+Department 
+and has been 
+used 
+to 
+execute 
+a variety 
+of 
+production 
+applications. 
+At 
+several 
+recem 
+workshops 
+(notably 
+Re&wch 
+direc- 
+tions in high-level pm&l 
+langvqes, 
+which 
+focussed 
+on Unity, 
+Gamma 
+and Linda 
+[24], and Linda-L& 
+Sys- 
+terns and Thtir Implemcntatiom 
+[%I), 
+Linda-related 
+projects 
+addressed 
+to 
+a broad 
+range 
+of other 
+program- 
+ming 
+styles was presented. 
+Linda 
+is inherently 
+a (distrib- 
+uted) 
+file-system 
+and 
+database 
+model 
+as well, because 
+tuples 
+are 
+persistent 
+objects. 
+A tuple space is a 
+son of tile: objects 
+can be added 
+to 
+and read 
+from 
+the file; tuples 
+are 
+immutable, 
+but they 
+are modified 
+in effect 
+by removing 
+an old one 
+and reinstating 
+an updated 
+version. 
+Associative 
+addressing 
+makes 
+it 
+possible 
+to organize 
+the tuples 
+in a 
+“file” as an indexed 
+stream 
+of bytes 
+(one byte per tuple); 
+such tiles can 
+also hold 
+a heterogeneous 
+stream 
+of arbitrary 
+records, 
+or an unor- 
+dered 
+collection 
+of objects. 
+They 
+can hold 
+processes 
+(incipient 
+tup- 
+les) as well as data objects. 
+Thus 
+we 
+might, 
+for example, 
+store 
+a librar- 
+ian daemon 
+inside 
+a mail tile, and 
+so on. On the use of Linda 
+in data- 
+base 
+setting, 
+see 
+Anderson 
+and 
+Shasha’s 
+work 
+on 
+“Persistent 
+Linda,” 
+which 
+supports 
+transac- 
+tions 
+and 
+some 
+other 
+extensions 
+that are useful 
+in this domain 
+131. 
+Linda 
+is logically 
+suited 
+to lan- 
+guage-heterogeneous 
+applications: 
+the 
+Linda 
+coordination 
+model 
+makes no reference 
+to any particu- 
+103 
+lar host computing language. Obvi- 
+ously, this statement begs the hard 
+question of type compatibility- 
+each language puts data objects cre- 
+ated according to its own type sys- 
+tem in the tuples it generates. But If 
+we define some common (stripped- 
+down) type system, the Linda oper- 
+ations make it possible for processes 
+in many languages to collaborate on 
+production and consumption of a 
+single shared data structure, make 
+it possible for a prcxess in one lan- 
+guage to consume the residue (the 
+tuple left behind upon completion 
+of the computation) of a process 
+expressed in another language, and 
+so on. Linda supports basic man- 
+machine communication insofar as 
+a user, using a Linda command in- 
+terpreter, can dump objects into 
+tuple space, read or retrieve them 
+directly. 
+The fact that all this holds in ccm- 
+cept does not mean, of course, that 
+it holds in practice. For example: 
+the RPC community has invested 
+considerable effort in deftning the 
+meaning of its ccmstruct in the 
+presence of various failures, and in 
+developing 
+implementations 
+that 
+are robust in the face of network 
+faults. The fragmentary coordina- 
+tion language defined by the typical 
+file system is supported by an im- 
+plementation 
+optimized 
+to 
+the 
+needs of I/O interfaces, to security 
+and authentication requirements, 
+and so on. These issues are not con- 
+fronted by current Linda imple- 
+mentations which target parallel 
+applications where runtime perfor- 
+mance (not reliability, security and 
+so on) is the driving consideration. 
+Still, it is vital not to loose sight of 
+the underlying question. In this 
+section we ask not what has been im- 
+@mented but what might be and ought 
+to be imphetied. 
+The fact that cur- 
+rent RPC implementations are well- 
+suited to the pragmatics of distrib- 
+uted systems is, for now, formida- 
+ble and important. But obviously, 
+the same sort of research effort that 
+led to a reliability semantics for 
+RPC could (and will, we expect) 
+lead to the same sort of thing in the 
+Linda context, or in the framework 
+of smne other general-purpose co- 
+ordination language. A number of 
+interesting projects have already 
+addressed important aspects of the 
+reliable Linda problem /for exam- 
+ple, [5] and [23]). (Given our own 
+steadily-increasing focus on local 
+networks as parallel machines [l], 
+we will also be confronting many of 
+these issues.) Likewise for issues of 
+file systems, databases and so on. 
+In short, a general-purpose coor- 
+dination language 
+is possible in 
+concept. But is it a good idea? 
+GeN2lltv: 
+ECOnOmy 
+and Flexlblllty 
+Conceptual economy is a principle 
+of great importance: 
+Kahn and 
+Miller made this argument (as have 
+many others in recent millennia), 
+and we accepted 
+it. We would 
+rather have a single coordination 
+tooltmx than many separate ones. 
+The practical gain from concep- 
+tual economy is fle&lity. 
+Simple, 
+economical languages tend to be 
+supple and powerful, complex ones 
+tend to be rigidly 
+inflexible-a 
+stubborn fact that emerges scream- 
+ing from programming 
+language 
+history, only to be repeatedly ig- 
+nored. (Our 
+recent textbook 
+on 
+programming language design [ 181 
+discusses this issue at length.) By 
+proposing 
+a 
+single, 
+general- 
+purpose coordination language we 
+are filling in the blanks that sepa- 
+rate massive parallelism from task- 
+level parallelism or distributed sys- 
+tems-leaving 
+ourselves 
+with 
+a 
+clean 
+and continuous 
+spectrum 
+stretching from one end of the co- 
+ordination world to the other. Two 
+posslblhtles-interpolation 
+and 
+extrapolation-follow. 
+We 
+get 
+strong support and a conceptual 
+basis for applications that do not tit 
+precisely into any one category. 
+Also, we can smoothly extend our 
+knowledge of coordination outward 
+beyond the software world alto- 
+gether, into the domain of ensem- 
+bles in general-including, 
+for ex- 
+ample, human ones. 
+Consider two active research proj- 
+ects in our group, one dealing with 
+realtime data fusion (the trellis [12, 
+14]), the other with expert data- 
+bases (the FGP machine [13, 171). 
+The trellis is a software architec- 
+ture that uses parallelism for clar- 
+ity, insofar as parallelism allows us 
+to impose a uniform framework on 
+a wide-ranging collection of sepa- 
+rate programs, and speed, insofar 
+as parallelism allows us to guaran- 
+tee sufftcient execution resources to 
+meet realtime deadlines. But the 
+project does not stop with the trellis 
+program itself. Factor et al. [I41 
+describe the front-end 
+visualizer 
+running on a graphics workstation. 
+In the complete system we envision, 
+Linda supports parallelism in the 
+trellis which runs on a parallel ma- 
+chine. 
+It 
+supports 
+uniprocessor 
+concurrency 
+within the graphics 
+workstation (processes that manage 
+subsidiary windows require 
+data 
+from 
+the main display-manager 
+process). It also supports distrib- 
+uted 
+system communication 
+be- 
+tween the workstation and the trel- 
+lis. The 
+first two parts of 
+this 
+picture, parallelism and uniproces- 
+sor concurrency, are complete, and 
+the third is current research. 
+Question: Why should we accept 
+three 
+toolboxes, 
+one for 
+parallel 
+applications (say, message passing), 
+one for uniprocessor concurrency 
+(for example, shared memory with 
+locks), and one for tram-network 
+communication 
+(say, RPC), when 
+logically Linda works well in all 
+three cases? And what do we call 
+this program, anyway? A parallel 
+application? A distributed system? 
+Clearly it’s an ememble 
+pure and 
+simple. 
+The FGP project poses a similar 
+question. Its database manipulation 
+component is computationally ex- 
+pensive for large databases, and is 
+now being parallelized. But the full 
+system goes beyond a single in- 
+stance of the program: the goal is to 
+support the expert examination of 
+a local database running on a local 
+workstation or PC, and a simultane- 
+ous examination of a much larger 
+(public) database to be executed on 
+a parallel machine. In a medical 
+c 
+oI‘a*r 
+domain, for example, rhe clinnan 
+runs a local search against his own 
+patient database while simultane- 
+ously searching a hospital’s much 
+larger case repository. Some of the 
+requisite communication has to do 
+with parallelism and some with dis- 
+tributed systems, but logically it is 
+all the same. Why should we use 
+two separate communication 
+sys- 
+tems when we only need one? 
+These 
+projects 
+refuse 
+to 
+be 
+neatly categorized; 
+they squirm 
+wherever 
+you 
+put them. They 
+clearly require coordination 
+tools 
+that are powerful enough to work 
+in many settings. And there is noth- 
+ing unique about our research ef- 
+fort in this regard. Mixed-mode 
+ensembles will be normal and wide- 
+spread in the future. 
+EXtrapOlation 
+Once we have identified coordina- 
+tion as a topic that we can discuss in 
+general, we can consider applying 
+our knowledge of software ensem- 
+bles to the construction of other 
+kinds of ensembles-human 
+ones, 
+for example. 
+(The 
+questions we 
+face in this new area are similar to 
+the ones Thomas Malone poses in 
+his provocative work on coordina- 
+tion theory [P5].) 
+For example: communication in 
+Linda is based on distributed data 
+stmctures, oi- shared structures such 
+as streams and arrays that are built 
+out of tuples. Processes communi- 
+cate via these shared structures. But 
+in principle, 
+people 
+might also 
+communicate this way. We might 
+imagine a tuple space surrounded 
+by people who release, read and 
+retrieve 
+tuples directly. Alterna- 
+tively, each person might be repre- 
+sented by a software agent-a 
+pro- 
+cess inside of tuple space-that 
+is 
+active on his behalf. 
+We can now build information- 
+sharing software 
+in which each 
+tuple 
+is an information 
+object. 
+Many diverse, sometimes complex 
+questions and requirements have 
+simple solutions in terms of distrib- 
+uted data structures. 
+Another example exists in multi- 
+ple tuple space Linda systems. Mul- 
+tiple tuple spaces are useful in 
+structuring software, but they are 
+also a natural mechanism for build- 
+ing a hierarchical “conceptual land- 
+scape” to describe a project or orga- 
+nization. When users want to know 
+something about Linda itself, for 
+example, we might refer them to a 
+nest of tuple spaces that captures 
+the system’s conceptual structure. 
+Within the global Linda space are 
+tuple spaces holding documenta- 
+tion, code, reports, or perhaps run- 
+ning programs. Each of these con- 
+tains appropriate subspaces in turn. 
+We arrive at a structure that resem- 
+bles a hierarchical file system, ex- 
+cept that the objects being orga- 
+nized are full-fledged tuple spaces. 
+They may contain processes (dae- 
+moos or visiting agents) as well as 
+data objects. 
+A final example: in [S] we use the 
+term “Turingware” 
+to refer to an 
+ensemble incorporating people and 
+processes, in such a way that no ele- 
+ment knows or cares whether the 
+others with which it deals are pro- 
+cesses or people. One current proj- 
+ect involves a Turingware version 
+of the trellis architecture discussed 
+earlier. 
+In short: when we introduce 
+general-purpose 
+coordination 
+models, the resultant broadening of 
+intellectual scope is wide-ranging 
+and considerable. 
+Intellectual Focus 
+The idea of a general-purpose co- 
+ordination model directs attention 
+to the fact that there is such a topic 
+as ensemble building in general, 
+and that it is a fundamental issue 
+for computer science. 
+Programming 
+languages 
+have 
+traditionally treated I/O, the file 
+system and the relationship 
+be- 
+tween a user’s program and the 
+surrounding environment as out- 
+side the bounds of a computing 
+model, an area for recourse to 
+extra-linguistic library routines or 
+ad hoc 
+extensions. 
+(Of early lan- 
+guages, Cob4 and APL were each 
+partial exceptions in different ways, 
+but neither was influential in this 
+respect.) Thus Algol 60, for exam- 
+Ei.90” 
+A 
+general- 
+purpose 
+coordination 
+language 
+is possible in 
+concept. 
+But is 
+it a good idea? 
+105 
+pie, has no provision for l/O; it as- 
+sumes that I/O will be handled by 
+hand-coded external routines. 
+Consider 
+a Gedankenexperimnt 
+based on a” anti-Algal: 
+this lan- 
+guage makes no provision for com- 
+puting values; it assumes that val- 
+“es will be computed by external 
+library routines. It is precisely a 
+coordination language, capable of 
+expressing 
+interactions 
+between 
+running programs and users, the 
+generation, storage and retrieval of 
+persistent objects in a file system, 
+and the coordination of multiple 
+activities into a single ensemble. 
+If 1960 had see” the definition 
+of anti-Algol instead of Algal, we 
+might have developed 
+a set of 
+value-computing tools as unsystem- 
+atic and ad hoc as our present coor- 
+dination tools. Of course, this sce- 
+nario was impossible, not only on 
+obvious 
+pragmatic 
+grounds 
+but 
+because of the existence in recur- 
+sive function theory of a simple and 
+comprehensive model of computa- 
+tion. But the experiment 
+should 
+give us at least a moment’s pause, 
+because the current direction of 
+computing 
+makes it appear that 
+anti-Algol and not Algol might ulti- 
+mately prove the more important 
+language. 
+I” 
+a” age where prepackaged 
+software 
+is cheap and for 
+sale 
+everywhere (no doubt there will be 
+software vending machines before 
+long), the programmer’s main task 
+will shift decisively in the direction 
+of 
+gluing 
+cmnponmtr togethn- 
+building ensembles. (Modern 
+It’s 
+have shifted the digital designer’s 
+role in the same way, towards the 
+gluing-together and away from the 
+synthesis of components.) 
+Furthermore, a general coordi- 
+nation model is the basic mental 
+constrxt 
+that we require in order 
+to distinguish programming 
+from 
+mathematics. Every 
+computation 
+language is a fancy Turing 
+Ma- 
+chine. But programmers 
+do not 
+deal in the mere evaluation of ex- 
+pressions, precisely because asyn- 
+chronous ensembles are the funda- 
+mental fact of programming. Even 
+when we deal with a conventional, 
+106 
+deterministic, single-threaded 
+ap- 
+plication, the user plus the com- 
+puter constitutes a two-part asyn- 
+chronous ensemble. An ensemble is 
+the natural outgrowth of the inevi- 
+table asynchronism in any human- 
+computer system. Why not three or 
+n activities instead of two? 
+It would be nice to have a theo- 
+retical foundation for general ccmr- 
+dination. We would like to see the 
+following characteristics in such a 
+model. First, a simple definition of 
+computational 
+space 
+and 
+time 
+where a point in space is identified 
+with a single locus of control (or a 
+single Turing 
+Machine), 
+and a 
+point in time is defined as the cur- 
+rent states of many loci or TMs. 
+Second, a model that becomes a 
+TM when projected onto the time 
+axis at some spatial point, and be- 
+comes 
+a 
+“current 
+coordination 
+state” when projected 
+onto 
+the 
+space axis at some temporal point. 
+From our standpoint, a “current 
+coordination state” is (the current, 
+frozen state of) a tuple space: a TM 
+and a tuple space are orthogonal 
+elements in computational 
+time- 
+space. 
+Conclusions 
+A broad research effort aimed at 
+the 
+development 
+of 
+general- 
+purpose coordination languages is 
+long overdue. The tangible result 
+would be a tool of great power and 
+significance. The 
+intangible 
+one 
+would be a better understanding of 
+the rcmt problems of computer sci- 
+ence. There appears to be a” “n- 
+spoken consensus in much of the 
+research 
+community 
+that every 
+twist and turn in the hardware de- 
+velopment path, particularly where 
+parallel machines or networks are 
+concerned, calls for a new language 
+or programming model, a new de- 
+sign, new implementation and new 
+coding methods. In the long run, 
+this approach is intellectually crip- 
+pling. What are the fuv&rn.enlal 
+guestions here? 
+Although we have used the Kahn 
+and Miller comments as a foil for 
+this exposition of our basic prem- 
+ises, our work is, in fact, closely al- 
+lied to theirs. The issues they raise 
+in their “Open Systems” paper [PZ] 
+are important, and the dynamic, 
+evolving and open-ended 
+systems 
+they envision will become increas- 
+ingly central to systems research. 
+Our thinking about Linda and its 
+evolution has been strongly influ- 
+enced by their work. 
+Linda 
+obviously 
+shares much 
+with other coordination-language 
+projects, 
+particularly 
+with 
+Don- 
+garra and Sorenson’s Schedule (at 
+any rate with respect to basic “n- 
+derpinnings). 
+We also see strong 
+similarities between our approach 
+and the work of Bisiani, Forin and 
+Ambriola 
+on 
+heterogeneity 
+and 
+coordination [6, 71. In general we 
+see computation and programming 
+languages as areas in which further 
+progress will be slow, incremental 
+and, in many cases, of marginal 
+importance to working program- 
+mers. Coordination languages are a 
+field of potentially great signifi- 
+cance. 
+A 
+growing 
+“umber 
+of 
+groups will play major roles in this 
+work. 
+ACkOOWledgeIUWS 
+The 
+authors thank Paolo 
+Cian- 
+carini, Mark Day, Suresh Jagan- 
+“atha”, 
+Steven 
+Lucco, 
+Thomas 
+Malone and Ross Overbeek for illu- 
+minating comments about the ideas 
+in this article. q 
+References 
+I. Arango, M.. Berndt, D., Carriero, 
+N., Gelernter, D. and Gilmore, D. 
+Adventures with network Linda. 
+s”perco*pllt. Rev. IO, 3 (Oct. 1990) 
+42-46. 
+3. Anderson, 6. and Shasha, D. Persis- 
+tent Linda: Linda + Transactions + 
+Query Processing. I” Research Direc- 
+lions in H&h-Lewl 
+Par&l 
+Lan- 
+pp. 
+D. LeMetayer, ed. (Mont 
+Saint-Michel: IRISA-INRIA. June 
+1991): Springer Verlag (forthcom- 
+ing). 
+4. B.&h, R.G. Parallel processing with 
+large grain data flow techniques. 
+I.?.% C0nlpu.J. 
+17 (1984) 55-61. 
+3. Bakke”, D.E. and Richard D. 
+Schlichting. Tolerating Failures in 
+the Bag-of-Tasks Programming 
+Paradigm. In Proc. of the 2Ist Inf. 
+Symp. 
+Fault-T&ran1 
+Computing, 
+Montreal, 
+Canada 
+(June 
+1991), 
+248-255. 
+, i. Biriani. R. and Forin, A. Multilan- 
+guage 
+parallel 
+programming 
+on 
+heterogeneous 
+machines. 
+IEEE 
+Tmrrr. Con+ 37,s (Aug. 1988) 930- 
+945. 
+7. Bisiani, 
+R., 
+Lecouat, 
+F. 
+and 
+Ambriola, 
+V. A tool to coordinate 
+tools. IEEE So&we 
+(Nov. 
+1988) 
+17-25. 
+8. Carriero, 
+N. and 
+Gelernter, 
+D. 
+Linda in context, Commun. ACM 32, 
+4 (Apr. 1989) 444-458. 
+9. Carriero, N. and Gelernter, 
+D. How 
+10 Wile Parallel Program: 
+A First 
+Coune. MIT Press (1990). 
+IO. Dally, W.J. Object-oriented 
+concur- 
+rent programming 
+in CST, in Proc. 
+Third 
+Conf. on Hypercube 
+Con- 
+current 
+Computers 
+and Applica- 
+tions, (1988) p, 33. 
+II. Dongarra, J.J., Sorenson, 
+D.C. and 
+Brewer, P. Tools and Methodology 
+for Programming 
+Parallel Proces- 
+sors, in Aspem of Computation on 
+Asynchronow Prorersors, M. Wright, 
+Ed. (North Holland, 1988) pp. 125- 
+138. 
+IS. Factor, M. The Process Trellis Soft- 
+ware 
+Architecture 
+for 
+Parallel, 
+Ral-Time 
+Monitors. 
+Yale Univ. 
+Dept. Comp. Sci., PhD. Dissertation 
+(Oct. 1990) 
+IS. Fertig, S. and Gelernter, 
+D. A Soft- 
+ware Architecture 
+for 
+Acquiring 
+Knowledge 
+from Cases. I” Pmt. of 
+the Inlem5lionol Joint Conference on 
+Atiificial Inlclltgemr, Sidney, Austra- 
+lia, Aug. 1991. 
+14. Factor, M., Gelernter, 
+D., Kolb, C., 
+Miller, P. and Sittig, D. Real-Time 
+Data Fusion in the ICU. IEEE Com- 
+puler, Nov. 1991, 45-55. 
+15. Foster, I. and Taylor, S. Strand: New 
+Conceppts in Parallel 
+Programming. 
+Prentice-Hall 
+(Englewood 
+Cliffs. 
+NJ, 1989). 
+16. Gehani, 
+N. and Roone, W.D. The 
+Conmwenr C Programming Language. 
+Silicon Press, 1989. 
+17. Gelernter, 
+D. Multiple tuple spaces 
+in Linda, in PARE 
+‘89. E. Odjik, 
+M. 
+Rem 
+and 
+J.-C. 
+Syre, 
+Eds. 
+Springer-Verlag: 
+1989, 20-27. 
+IS. Gelernter, 
+D. and Jagannathan, 
+S. 
+Progmmming Lingutitia 
+MIS Press, 
+1996. 
+19. Halstead, R. Multilisp: A language 
+for co”c”rre”t 
+symbolic computa- 
+do”. ACM Trims. Pmg. Lang. and 
+Sys., Oct. 1985. 
+SO. Jagannathan, 
+S. Optimizing 
+Analy- 
+sis for First-Class Tuple Spaces. In 
+Languages and compilers for Parallel 
+Campuring 
+II. 
+D. Gelernter, 
+T. 
+Gross, A. Nicola” and D. Padua, 
+Eds. MIT PressiPitman 
+Publishing, 
+1991 (forthcoming). 
+2,. Jagannathan, 
+S. and Philbin, J. Pre- 
+liminaq 
+STING benchmarks. 
+NEC 
+Institute Princeton 
+Internal Memo. 
+randurn, Dec. 1991. 
+22. Kahn, KM. and Miller, MS. Lan- 
+guage Design and Open Systems, in 
+7% 
+Ecology of Conrputation. 
+B. 
+Huberman”, 
+Ed., (North Holland, 
+1988) 291-314. 
+23. Kambhatla, 
+S. and Walpole, J. Re- 
+covery with limited replay: Fault- 
+tolerant processes in Linda. Oregon 
+Grad. Inst. Dept. CSE TR CSiE 90. 
+019 (Sept. 1990). 
+25 Malone, T.W. What is coordination 
+theory? MIT Center for Info. Sys- 
+tems Res. Working Paper 182 (Feb. 
+1988). 
+26. Ringwood, 
+GA. Parlog 
+and the 
+dining logicians, Cornnun. ACM 31, 
+1 (Jan. 1988) 10-25. 
+27. Technical correspondence. 
+Linda in 
+context. Commun. ACM 32, IO (Oct. 
+1989) 1244-1258. 
+28. Turner, 
+D.A. Recursion 
+Equations 
+as a Programming 
+Language. 
+in 
+Functiml 
+Progmmming and ib Appli- 
+rations. J, Darlington, 
+P. Henderson 
+and D.A. Turner, 
+Eds. Cambridge 
+University 
+Press (1982) pp. 1-28. 
+29. Wilson, G. ed., Liti-Like 
+Syskm 
+and 
+Their 
+ImplcmenUim 
+(Edin- 
+burgh 
+Parallel Computation 
+Cen- 
+tre,J”“e 
+1991,. 
+CR Categories 
+and Subject Descrip 
+tom: D. 1.3 [Programming 
+Techniques]: 
+Concurrent 
+Programming; 
+D.3.2 [Pro. 
+gramming 
+Ianyagea]: 
+Language Clas- 
+silicadons-parallel 
+Inngages: 
+D.3.3: 
+Language Constr”ctr 
+GmeraI 
+Terms: 
+Coordination, 
+En- 
+sembles, Parallelism, Languages 
+Additiomd 
+Key Words and Phnes: 
+Coordination 
+languages, 
+Linda 
+Abut 
+the Authors: 
+NICHOLAS 
+CARRIER0 
+is an associ- 
+ate research scientist in the Department 
+of Computer 
+Science at Yale University 
+and a research 
+scientist 
+at Sxientific 
+Computing 
+Associates, 
+New 
+Haven, 
+Coo”. 
+His research 
+interests 
+include 
+parallelism, 
+compiler 
+techniques 
+and 
+programming 
+languages. 
+DAVID GELERNTER 
+is an associate 
+professor 
+of computer 
+science at Yale 
+University. 
+His research 
+interests 
+in- 
+clude 
+parallelism, 
+programming 
+lan- 
+guages and artiftcial intelligence. 
+Authors’ Present Addran: 
+Department 
+of Computer 
+Science, Yale University, 
+New Have”, 
+CT 06520, carriero@cs. 
+yalced”, 
+gelernter@cs.yale. 
+ed”. 
+Linda ir a registered mademark of Scientific 
+Computing Associates. New Haven, Con”. 
+Permission to copy without fee all or part of 
+this material is granted Provided that the 
+copies are not made or distributed for direct 
+commercial advantage, the ACM copyright 
+notice and the title of the publication and its 
+date appear, and notice is-given that copying 
+is by Permission of the Association for 
+Computing Machinery To copy otherwise, or 
+to republish, requires a fee and/or specific 
+permission. 

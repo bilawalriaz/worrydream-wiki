@@ -1,0 +1,572 @@
+Proceedings of DiGRA 2013: DeFragging Game Studies 
+© 2013 Chris DeLeon & Digital Games Research Association DiGRA. Personal and educational classroom 
+use of this paper is allowed, commercial use requires specific permission from the author. 
+Rules in Computer Games Compared 
+to Rules in Traditional Games 
+Chris DeLeon 
+Georgia Institute of Technology 
+85 5th Street Northwest, Atlanta, GA 30308 
+816-351-5557 
+cdeleon3@gatech.edu 
+ABSTRACT 
+Michael Liebe argues that Salen and Zimmerman's interpretation of Huizinga's magic 
+circle does not apply to computer games. Liebe's insight reveals not only a different 
+relation for computer games to the magic circle, but also hints at a difference in the nature 
+of rules in computer games. Jesper Juul's comparison of non-digital sports to simulations 
+of those sports highlights a missing aspect in understanding how rules in computer games 
+are of a different nature than those of non-computer games: rules as flexibly defining 
+real-time spatial interactions. Rules in computer games are more like laws of physics, 
+rules in non-computer games are more like laws of society. 
+Besides meta rules such as tournament arrangements, only a handful of "rules" - as the 
+word is applied to non-computer games - exist for nearly all computer games. Moreover, 
+such rules are largely the same: use standard input, and don't alter the game. 
+Keywords 
+rules, game design, board games, sports, computer games 
+INTRODUCTION1 
+Definitions for the word rules in the context of game design vary by source and purpose. 
+My intent here is not to argue that we should or should not use the word rule in certain 
+ways, nor is my aim to suggest that some particular definition of rule is somehow 
+superior to another. I aim to highlight instead that no matter how we choose to use terms, 
+there is a difference of kind between rules in computer games and rules in non-computer 
+games, and that because this is a difference in kind there may be issues with 
+automatically extrapolating what we know from the study of one to the study of the other. 
+I will begin by conveying through example precisely what use of the term rule I am 
+attempting to contrast between computer games and non-computer games. 
+If I lay tape on the ground to create a large, intricate maze of lines, I can then declare as a 
+rule that you, the maze runner, are not allowed step over or move any tape. To add 
+interest, I might then put a prize at one far corner of the maze – let's say an Atari 2600 
+autographed by Nolan Bushnell – that will be yours if and only if you can reach it without 
+violating the rules. I'll then walk you directly to the opposite corner, right across the tape, 
+because since the game has not yet started, while putting you in position I am not yet 
+enforcing our one rule. After the game begins, crossing the tape will result in your being 
+denied the prize, even if you manage to physically reach it. To add challenge to the game, 
+we'll add a second rule: you have 45 seconds or less after the start of your motion to reach 
+ 
+ 
+-- 2  -- 
+the prize - without crossing or moving any tape of course - and if you take too long, you'll 
+again have no rightful claim to the prize. We just made a simple game with two rules. 
+These rules are artificial. Note that in this scenario you, as the maze runner, are fully 
+capable of stepping over or pulling up tape. You can even pick up and walk away with 
+the prize after taking more than 45 seconds to reach it, ignoring my desperate pleas to 
+please play by the rules we agreed upon. I might then report your act of theft to the police 
+- they serve, after all, as referees for similarly artificial, agreed upon rules, in the role of 
+connecting rule violators to a system of assessment and application of artificially imposed 
+penalties. To clarify that distinction: if a police officer pulled you over for speeding and 
+handed you a ticket, you in that situation received an artificial punishment for violating 
+an artificial (at least in this sense) rule; by contrast had your car rolled over and exploded 
+as a consequence of speeding, that would instead constitute an actual punishment having 
+more to do with laws/rules of physics than with artificial laws and artificial punishments. 
+Adhering to the two rules in this game is a matter of choice: a pact for the player to 
+accept with either me as the referee and/or with his or her own self by a sense of honor 
+and sportsmanship. For the maze runner, there is temptation to cheat, and the possibility 
+of acting on that temptation is real because the game's rules are artificial. Meanwhile as 
+referee, my role in enforcing the rules is also a matter of choice and ability. I perhaps 
+could be bribed to take advantage of the artificiality of these rules by selectively 
+overlooking their enforcement, just this one time. Even if both player and referee fully 
+intend to respect the rules, both may yet fail to do so on account of imprecise judgment: 
+due to a moment of lapsed attention we both may be genuinely unsure of whether you 
+accidentally stepped on or over a line, or unable to agree with any certainty on whether 
+the run took 44.8 or 46.2 seconds based on when, fumbling with a stopwatch, the timer 
+started or stopped in relation to the runner's actual start or completion of the maze. 
+How would an activity like this one be different were it not artificial? Now for 
+comparison let's make the "prize" in question boarding an airplane before it taxis onto the 
+runway for takeoff. Instead of tape on the ground that the runner has to pretend is 
+impassible, there are now real, physical obstacles in the form of other travelers, walls, and 
+miscellaneous other blockages that cannot be trivially moved through nor removed 
+without significant work and time-consuming effort. No one needs to referee this game. 
+Whether we even accept calling this real-life situation a game is a matter of semantics. 
+However what is not a mere matter of definitions is that this experience has several 
+important differences for the runner when compared to the artificial tape maze, and those 
+differences are at the core similar to the differences between what we casually call rules 
+in computer games in contrast to what we casually call rules in non-computer games. 
+RULES, PLAYER KNOWLEDGE, AND EFFORT TO NOT CHEAT 
+In running through the tape maze, the runner needs to understand up front that crossing 
+the tape is forbidden, and care must be taken to avoid crossing these lines. This restriction 
+reflects one of the aspects that Bernard Suits (1978) identifies as a central quality of a 
+game: rules (in the terms Suits uses, "constitutive rules") are introduced to force a player 
+to use inefficient means to achieve their goal. Soccer players are not allowed to simply 
+pick up the ball and run with it, but this rule is necessary because physically, they are 
+capable of doing this. A golfer must move the ball using a club, rather than lifting and 
+dropping the ball into the next hole to progress toward a state of completion. A simple 
+rule prevents our maze runner from running straight toward the prize, and that rule is 
+necessary only because the player is capable of crossing over tape. The need for players 
+ 
+ 
+-- 3  -- 
+to accept this restriction against the most efficient means of reaching the end state is what 
+Suits refers to as a lusory attitude. 
+In running through the airport, the runner does not need to respect an artificial rule about 
+not going through walls. Mental energy is not required to recognize and accept a “rule” 
+for this because constraints provided by physical obstacles cannot easily be cheated nor 
+overlooked. These are the laws of physics, not laws made and enforced by a governing 
+party. The main constraints used to define this situation are not artificial, but actual. Such 
+limits are not subject to flawed, inconsistent, subjective interpretation, as in the case of 
+human referees, umpires, and competitors attempting to keep a player's action in 
+alignment with rules. There is no temptation to cheat, because it isn’t out of mere good 
+conscience nor fear of being caught cheating that the runner avoids going through walls, 
+teleporting, halting time, nor boarding the plane after it departs. 
+If we look closer at the airport situation for rules, there are indeed some of the same type 
+as those from the tape maze, meaning that the player is capable of breaking these certain 
+rules, and player understanding plus self-regulation is necessary to avoid such violations 
+at the risk of facing artificially imposed consequences for doing so. These rules exist 
+before and outside of our airport game. Examples include social convention (don't scream 
+in people's faces to make them move out of your way), government law (don't assault 
+anyone blocking your path, and obey any requests made by security agents), and airport 
+policy (don't hop gates, don't attempt to break through glass or drywall, present a proper 
+boarding pass and approved form of ID at the appropriate stations prior to boarding). 
+Though, at least as I defined the task here, the runner still technically succeeds in the 
+airport game by merely getting onto the plane before takeoff, even if as a result of their 
+actions he or she then promptly gets arrested before taxi or right after the plane lands. 
+In terms of the player's interaction with the rules playing a computer game has more in 
+common with running through an airport than navigating taped lines. The walls in Pac-
+Man (Namco 1980) are not imagined to have significance, in the way that we respect tiles 
+on a chessboard or playfield boundaries in a sport; the player is no more able to move 
+through Pac-Man walls than through airport walls, even less so in fact since the game 
+offers no capability akin to smashing drywall. It is not out of respect for rules that players 
+decrease in-game health when avatars stand too close to explosion events, nor out of a 
+sense of sportsmanship and voluntary submission to rules that we return to the start of a 
+level when a game's level timer runs out. The limitations are actual, not artificial, in that 
+the player may be truly, physically unable to access the game's next content on account of 
+being unable to work around the inflexible constraints. Rather than a plane taking off at a 
+fixed time, rendering a late runner unable to board it, instead the computer game's state in 
+memory changes after time or health runs out, such that the player is unable to access 
+whatever content or in-game action and opportunities are programmed to follow. 
+In "There is No Magic Circle: On the Difference Between Computer Games and 
+Traditional Games", Michael Liebe (2008) argues that Salen and Zimmerman's (2004) 
+application of Huizinga's (1938) magic circle does not apply to computer games. His 
+argument is centered on an observation similar to the one presented in this paper's 
+opening example: whereas in a non-computer game, in Liebe's case solitaire played with 
+a deck of cards, the player has to understand, accept, and abide by the game's rules in 
+order to play, for a digital adaptation - computerized solitaire - the only virtual actions 
+possible are those consistent with the non-digital game's artificial rules. This makes it an 
+option for players to learn how to play by probing a computer game's "rule" system 
+ 
+ 
+-- 4  -- 
+through trail and error, feeling out limitations. As Liebe puts it, "the computer adaptation 
+of the game transforms the theoretical restrictions into practical ones." The Suits concept 
+of lusory attitude is therefore unnecessary for a computer game; players need not accept 
+rules to be subject to them. However as a side effect of selecting for his key example a 
+turn-based game of discrete decision (solitaire/cards), rather than a real-time game of 
+continuous action (sport/real-time), though his point is well-made the case does not reveal 
+some of the significant differences and properties arising from computer rule automation. 
+RULES LIKE LAWS OF NATURE, NOT LIKE LAWS OF SOCIETY 
+In Half-Real, Juul (2011) makes a critical distinction, that I will argue here is correct but 
+expressed backwards, between rules in real soccer compared to those of virtual soccer: 
+"Though the rules of soccer only state the dimensions of the playing 
+field, the ball's specifications, what the players can and cannot do, and 
+the conditions for winning, the game of soccer is also governed by the 
+laws of physics - the air resistance of the ball, gravity, the condition of 
+the grass, and the limits of human anatomy... the video game adaptation 
+requires that the laws of physics and the human anatomy be explicitly 
+implemented in the programming on the same level as the explicit rules 
+of the game: a computer-based soccer game needs to implement the 
+physics of the players and the soccer pitch as well as the rules of the 
+game." 
+In other words: when we describe physical soccer as a collection of rules, such rules will 
+include goal measurements, time intervals, and scoring conditions, in addition to 
+constraints on possible player action - such as a non-goalie position touching the ball 
+directly with hands - and defining in-game penalties or consequences in the event of such 
+rules being violated and caught. Real soccer rules would not, as Juul points out, include 
+precise description of how an air-filled ball behaves when rolled over grass, how a 
+player's body coordinates muscular action to run or kick, and the properties of vision in 3-
+dimensional space. Juul's solution to this incongruity is to conclude that these physical 
+circumstances must be implemented at the same level as the game's rules. What is subtly 
+lost in making this distinction is that within a computer game, a game's explicit rules 
+operate at the same level as physical laws. Rather than framing it as indicating that 
+physics must be implemented as though these dynamics were explicit rules, in terms of 
+the underlying properties and player experience what happens is closer to saying that the 
+explicit rules must be implemented at the same level as physical and biological dynamics. 
+Like the laws of physics or anatomy, rules in computer games are not subject to imperfect 
+detection by corruptible referee, and with relatively few exceptions specific to sport 
+simulations, they generally cannot willfully be cheated by the player2. 
+An observation made by Karen Sideman's Game Design address in 2000, as documented 
+in Salen and Zimmerman's Rules of Play (2004), is that because rule enforcement is 
+automated in a computer game, the rules can be learned through playing experimentally. 
+In some computer games, such as Candy Box (Aniwey 2013), playing to learn how to 
+play is a core part of the game experience, rather than simply a way to skip the need for a 
+period of reading instructions or receiving explicit guidance on how to play. In Chris 
+Crawford's Art of Computer Game Design (1982), he noted that in computer games 
+there's little or no room for dispute of rule enforcement or interpretation as tends to 
+happen in board games, and further that because computers can perform many orders of 
+magnitude more more precise, consistent, and objective evaluations per second than a 
+ 
+ 
+-- 5  -- 
+human player or observer, a computer game can support rule definitions much more 
+complicated than those of a board game (or written rules for sport) that need to be basic 
+enough to be fully grasped and enforced by humans. This doesn't simply create the 
+possibility for a much faster or more complex board game, however, it introduces the 
+potential for completely different implementations of physics, or differences in the 
+behavior of vision (camera, rendering) affecting what information is available to the 
+player, in ways that non-computer games cannot necessarily replicate. Rules that are easy 
+to learn may have value in non-digital games, since players must learn all the rules, 
+whereas digital game rules can be complex beyond expected comprehension without 
+posing a problem, as with AI rules for ghosts (Birch 2010) in Pac-Man (Namco 1980). 
+Because of this speed of rule execution, the differences between game design for 
+computer games may be rules at a much more granular level. The fundamental nature of 
+vision and information representation, in the sense of what feedback the player receives 
+to respond to, doesn't need to be implemented to match the real experience of vision and 
+other senses available for non-computer games. Time does not need to be implemented in 
+a realistic way, as is central to a digital game like Braid (Number None, Inc, 2008). 
+"Physics" interactions in Breakout (Atari 1976) include the ball moving through bricks 
+after each collision until hitting the paddle or back wall, reflecting vertically even from 
+hitting brick sides, ball speed changes with no physical explanation, and paddle-ball 
+collision responses segmented to enable ball control while promoting risky play. At the 
+time these may partly have been compromises to limited hardware, however as they have 
+gameplay implications different from an accurate physical simulation, a contemporary 
+designer might still prefer similar feature implementation by choice rather than necessity. 
+Differences in the most fundamental behaviors of collision interactions in computer 
+games distinguish the core gameplay of many classic platformers. Differences include 
+whether characters can move through one another, or stand on one another character's 
+head as in Super Mario Bros 2 (Nintendo 1988) and what happens when the character 
+underneath moves. Player characters respond differently to being hit by enemy projectiles 
+while jumping over dangerous gaps in Castlevania (Konami 1986), Ninja Gaiden 
+(Techmo 1988), Mega Man (Capcom 1987), and Code Name:Viper (Capcom 1990). In 
+some cases the player avatar gets knocked backwards, in others there's an immediate loss 
+of horizontal speed causing the player to drop straight down, and in others still the player 
+continues along the same trajectory while temporarily flashing to indicate a brief 
+protective state. In Steve Swink's Game Feel (2008) considerable attention is given to 
+investigating the sensation created for a player based on a player avatar's physical 
+movement behaviors and camera motions relative to player position, neither of which are 
+game aspects that can be reasonably varied for a non-computer game. 
+While it's true that Mario in Super Mario Bros (Nintendo 1985) and Sonic in Sonic the 
+Hedgehog (Sonic Team 1991) can both defeat many enemies by jumping on them, 
+articulating that specific rule about a collision event is far less revealing about the 
+primary differences in playing these two games than investigating the more granular 
+computer "rules" at the level of physical pseudo-simulation, driving the different nature 
+of running, jumping, and midair movement control of these iconic characters. This is 
+again not a type of rule differentiation possible for a non-computer game, in which 
+jumping by a human being will (aside from games on special surfaces, like trampoline 
+dodgeball - and even then, happening within the same "physics engine") be subject to the 
+same physical laws of the universe and same mechanical functionality of human 
+anatomy. As Sherry Turkle explained in Video Games and Computer Holding Power 
+ 
+ 
+-- 6  -- 
+(1984), whereas a physical game such as pinball is limited to the physics of reality, digital 
+games are not subject to the same constraint, and this opens up greater variety in 
+gameplay possible within computer games. See Table 1 for a brief summary of 
+comparison between computer game rules, more like laws of nature/physics, in contrast 
+to non-computer game rules, more like laws of society/government. 
+ 
+Laws of 
+Nature 
+(Physics or 
+Anatomy) 
+Computer 
+Game Rules 
+(Console, 
+Web, PC) 
+Non-Computer 
+Game Rules 
+(Sports, Board, 
+Card Games) 
+Laws of 
+Society 
+(Police, 
+Legislators) 
+Players 
+need 
+to 
+explicitly learn the 
+rules and consciously 
+obey them to avoid 
+disallowed actions 
+No 
+No 
+Yes3 
+Yes 
+It's possible for the 
+player to violate the 
+rule, by accident or 
+by strategic intention 
+No 
+No 
+Yes 
+Yes 
+Rule definition and 
+rule violation must be 
+at a pace and fidelity 
+fully knowable and 
+detectable by human 
+perception/attention 
+No 
+No 
+Yes 
+Yes 
+Players of the game 
+could enumerate the 
+game's 
+rules 
+well 
+enough for someone 
+else to recreate it 
+No 
+No 
+Yes 
+Yes, at least 
+to the extent 
+they affect 
+us day-to-
+day 
+Table 1: Comparison between Laws of Nature, Computer Game Rules, Non-
+Computer Game Rules, and Laws of Society 
+The first and last rows in particular have potential implications on the idea, growing in 
+popularity among researchers and independent developers, of using a computer game to 
+convey a complex system by embodying the system in a game's programming. Because a 
+player can play a computer game without explicitly knowing its rules - the computer will 
+bear the bulk of "understanding" - it's often possible for a player to discover a successful 
+strategy or technique that removes the need for deeper, more detailed knowledge of the 
+system. This leads to achieving a win or a completion state for the game without learning 
+many of the automated rules programmed into the system. For example if the player 
+determines that repeatedly performing a certain special move fairly consistently leads to 
+victory, or that simply being able to find and repeatedly use a specific item consistently 
+leads to victory, other aspects of the game may go without being experienced or directly 
+learned in action. Even though a computer game may fully embody a complex system of 
+relations in its programmed rules, the player may be able to learn through trial and error 
+ 
+ 
+-- 7  -- 
+the minimum necessary to win without knowing or reasoning about of the game's 
+underlying behaviors. The full exploration and discussion of this particular issue in 
+relation to computer rules is beyond the scope of this paper, but it's my hope that I or 
+someone else may investigate it more fully on another occasion. 
+"NON-COMPUTER GAME RULES" ATOP COMPUTER GAMES 
+If I'm playing a videogame with friends, or in a tournament setting, and we decide then 
+that (depending upon the game) playing as Voldo, using the BFG, or spawn camping are 
+not allowed, those are examples of rules in the same sense as we describe rules for non-
+computer games. Players are capable of violating such rules, and a penalty might be 
+determined for anyone caught in violation. Consequently players have to be aware of 
+these kinds of rules, and must consciously devote some amount of attention or habit 
+development toward obeying them. If instead we toggle an option in the settings for a 
+game cart to disable a character or weapon that we deem unfair, as Super Smash Bros. 
+(Nintendo 1999) allows players to do for which power-ups appear during play, while this 
+can be described metaphorically as a rule change note the structural difference in relation 
+to player experience: since using the forbidden item in play is no longer possible, players 
+do not need to be made aware of this rule nor allocate any attention toward adhering to it. 
+Notwithstanding these meta rules created by players applying special restrictions for 
+house rules or tournament regulations, computer games have only a handful of rules that 
+are of similar nature to those of non-computer games. Players have the ability the ignore 
+or deliberate violate these rules, and doing so might lead their achievement in a game to 
+be regarded as illegitimate by peers: 
+Rule 1. The game is to be interacted with only by standard input controllers4, in other 
+words, not for example via the use of a memory intercept tool (Game Genie, Pro Action 
+Replay, Game Shark, GDB) or a network message intercept/modification tool (spoofing 
+submissions to a global high scores leaderboard), special emulator abilities (Save State, 
+Load State), or physical hardware hacking (custom adjustments to an arcade board) to 
+manually alter memory states or skip/redirect program execution relative to that 
+experienced by other players limiting their interactions to those with standard controllers. 
+Rule 2. The physical integrity of the hardware is not to be violated. The player should not 
+open up the game controller, game cart, game system, television, speaker, or other 
+peripheral in any attempt to gain an advantage through wiring changes or automation. 
+Rule 3. The player should be directly and independently responsible for the actions made 
+during the game, not having some other person (a substitute player, akin to cheating on a 
+standardized test by having someone else take the exam in ones place) or a programmed 
+bot perform gameplay actions on their behalf (as for example using an aim-bot to 
+improve the ease of successful gameplay maneuvers). In games involving strategic 
+decisions, even having another player offering assistance with choices during play could 
+fail this test by proxy, though in games emphasizing quick reactions a corner coach akin 
+to one from boxing or collegiate wrestling might be considered fair if available to both 
+players and known as an option in advance. 
+Rule 4. If playing against other players, the other players should not be disturbed outside 
+of the game (blocking his or her view of the screen, physically taking away or unplugging 
+his or her controller), nor unfairly distracted within the game by meta commands that are 
+not part of the core gameplay (ex. repeatedly toggling pause during a local game). 
+ 
+ 
+-- 8  -- 
+Rule 5. Mod community notwithstanding - and even then only when all players involved 
+have identical installations of the modifications - the computer game should be played as 
+released and/or patched by the developer (no modifications made to local textures or level 
+data to aid visibility), and save data files should be affected only through gameplay 
+within the game (not using hex editors nor trainer programs to spoof progress in a game). 
+Each of these reflect rules, established loosely by social convention among peers or by 
+explicitly written regulations for tournaments, that players are capable of violating to 
+achieve an advantage likely to be regarded as unfair and in violation of the game as 
+designed. Outside of a tournament circumstances or online play, adhering to these types 
+of rules is a matter of personal choice, guided for example by a sense of personal pride in 
+accomplishment or social pressure over being considered a cheater, but certain social 
+contexts or player types may accept indulging in violating them for sake of novelty. 
+Other than these rules listed, however, as long as the player interacts with the game only 
+by pressing buttons on the controller, it's unlikely that the player even has the option of 
+violating any rules of the game, at least in the same way that a player of a board game or 
+real sport may attempt actions disallowed or not specifically allowed by game rules. The 
+computer game presents a simulated universe in which the only actions possible through 
+the input are those actions that constitute valid maneuvers within the game's construction. 
+To return to the Suits notion of rules as forcing inefficient play by making a golfer rely on 
+the golf club to achieve the goal, the central rule of computer games is then that the 
+player is supposed to rely only on the controller during play to achieve the goal state. 
+Within the game, the player does not need to know nor accept any artificial inefficiency 
+imposed by the rules. Such inefficiencies are real in their constraining of player actions, 
+no less than an athlete's inability to run untouched through another player's body. 
+From this perspective, in which the player can for the most part freely experiment with 
+the available means of input without concern for learning nor accidentally violating the 
+rules, playing a videogame might be understood more like untangling a blacksmith 
+puzzle. Blacksmith puzzles, a style of folk toys, present challenges such as removing a 
+steel ring from horseshoes chained together, or separating steel nails twisted into a knot. 
+Short of physically breaking a chain or hacksawing rings and nails, players are free to 
+experiment with testing the full range of possible actions, until win state is achieved. This 
+relationship may seem like a stretch, especially between such a simple mechanical puzzle 
+and a modern cinematic digital game, however the connection is somewhat more easily 
+made between a simple LCD handheld game like the early Nintendo Game-and-Watch 
+series of toys, in which the player fiddles with relatively few input actions (all, by 
+construction, allowed by the game) in response to the visually countable number of states 
+displayed directly on the device until an end state in the game's memory is achieved. 
+CONCLUSION 
+This distinction is, I believe, mostly relevant to computer games that take input in real-
+time (rather than turn-based) while simulating motions in continuous virtual space. As 
+observed earlier in the paper about Liebe's choice of comparing a non-computer version 
+of a card game to a computerized version of the same game, relatively few of the 
+potential implications of a machine's speed of rule evaluation become evident when 
+investigating a game genre that artificially mimics rule scenarios understandable and 
+(self-)enforceable by human participants. By shifting the focus to simulation of a sport, 
+building off of Juul's comparison between real and virtual soccer, I sought to stress the 
+ 
+ 
+-- 9  -- 
+importance of variability in physical simulation within digital space. This is of interest 
+because, as Turkle noted, this variability is often only possible within digital games. 
+Major qualities and aspects of a player experiences with what we refer to as rules for non-
+computer games seem to be unlike those qualities and aspects of rules in computer 
+games. Whether the player needs to learn all the rules to play, whether any rules can be 
+violated by choice or even accident, and whether the rules need to be written at a pace 
+and level of simplicity perceptible and enforceable by human attention roughly parallels 
+the difference between a person's experience with physical laws as compared to a person's 
+experience with society's laws. One possible effect of this is that how we think about, 
+design, and discuss rules for computer games, at least for real-time parts that take place in 
+simulated continuous space, may bear more similarity to the ways that we understand and 
+work with physical laws at a continuous mathematical level, having somewhat less to do 
+than is widely assumed with the authorship and discussion of rules for games of pure 
+probability and turn-based decision-making, that being the usual context for board, card, 
+or other paper game rules. Even comparisons drawn to rules for sports may be generally 
+inadequate due to those sports rules always being built atop the same physical, temporal, 
+and representational foundations, around actions within the same limits of bodily 
+dexterity, and the need for rules that can be fully comprehended by players and officials. 
+I'm hopeful that with the interest and engagement of other researchers on this matter of 
+the differences between rules in computer games and rules in non-computer games, 
+additional implications for how we practice or study computer game design might be 
+further be developed. To the extent that aspects of computer games can simulate many 
+aspects of non-computer games, I do not mean to doubt that study of non-computer 
+games has relevance and value as an approach for understanding certain qualities of 
+computer games. My interest is only in adding to the conversation additional 
+investigation into this other more alien side of game construction as a matter of 
+deliberately designing to explore the potential for unreal physical, temporal, and spatial 
+flexibility in the simulation medium, not merely as a historical anomaly to work within 
+technological limitations but also as a matter open to design choice by game developers. 
+ACKNOWLEDGMENTS 
+I would like to thank Dr. Janet Murray, Dr. Celia Pearce, Dr. Brian Magerko, and Patrick 
+Coursey for their encouragement to pursue researching and writing about this topic. 
+ENDNOTES 
+1 The opening argument of this paper and a few related points are repurposed and 
+adapted from two entries I wrote in early 2011 for my blog, HobbyGameDev.com, titled 
+"Games Are Artificial. Videogames Are Not. Games Have Rules. Videogames Do Not." 
+and my follow-up entry, "Videogames and Rules." 
+2 One genre in particular tends to have exceptions to this: in sports-based games, players 
+are often given a way to perform maneuvers that are in violation of the real game's rules, 
+yielding in-game consequences. This better simulates events that take place during the 
+non-computer game, where such forbidden actions are possible and occasionally 
+executed. In a basketball game this might include goal tending, or fouling from overly 
+aggressive attempts to steal the ball. However the digital game player still cannot violate 
+rules that lack well-defined consequences within the game activity, for example removing 
+one's clothing, counting a shot for more points than the rules indicate it's worth, or 
+ 
+ 
+-- 10  --
+                                                                                                                                                 
+secretly putting petroleum jelly on the ball to affect its properties during play. Likewise in 
+a computer game simulating hockey players overly aggressive in their attempts to steal 
+the puck may wind up in the penalty box, or in a simulated fistfight on the ice. Because 
+these types of violations tend to be fairly genre specific, I have not attempted to address 
+them further here, although I think it's a subject for further exploration. If hockey had 
+been originally authored as a computer game, rather than as a non-computer game, would 
+player input have even been allowed that would land anyone in the penalty box? 
+3 A common argument in response to this point is the possibility that a player of soccer 
+could, in theory, walk onto the field knowing nothing about the game, and then try to play 
+based on observation of other players, or in response to referee punishments. This option 
+to observe other players in action is still a form of learning from others - if on the other 
+hand every player came onto the field with no knowledge of the sport, such a strategy 
+would be less likely to yield a sensible scene based solely upon referee interruptions. On 
+the other side of this argument, special techniques in a fighting game or techniques in a 
+real-time strategy game may be more quickly learned from another player or by reading 
+an instruction guide rather than sheer trial and error. There is admittedly a continuum at 
+work in terms of what types of rules need to or typically are learnt upfront rather than 
+through experimentation. The main point is that there is a difference in the practicality, 
+frequency of, and expectation of learning to play only through trial and error as opposed 
+to learning from another person, the former being more common in the case of computer 
+games. This is likely made more feasible from the significantly reduced number of 
+actions possible with a controller than with the full human body in play. This may have 
+roots in product design dating back to arcade games where a player had to be able to 
+quickly understand the bare minimum of how to play (in pinball for example, learning 
+that the ball should be kept on the field, and how to operate plunger and flippers), after 
+which trial and error or simply messing about can be used as a way to learn more 
+specifics about the particular game's motions, scoring, and causal event relationships. 
+4 Whether the use of a controller with turbo settings, a mouse with superior resolution 
+and extra buttons, or more expensive and elaborate hardware (ex. high-end flight sticks 
+and throttles with yaw peddles for flight simulators, arcade sticks for fighting games) 
+constitutes cheating is an area of disagreement among players, particularly when players 
+are using input devices that have different capabilities. The SN ProgramPad by InterAct 
+for Super Nintendo represents one extreme on this spectrum. That controller features 
+programmable buttons which, with a single press, execute for a player any pre-recorded 
+sequence of input events to execute special moves in fighting games like Street Fighter II 
+(Capcom 1993) without room for player error while trying to perform the sequence under 
+pressure. Similarly in Quake (id Software 1996), online deathmatch players, myself 
+included once, used specially prepared configuration files with keys bound to perform 
+macros with timed sequences so that a single key could be used to consistently execute 
+actions such as rocket jumping (the act of propelling oneself to a higher platform by 
+jumping up and firing a rocket down with the right timing to be propelled by the 
+explosion while taking minimal damage), though since this was somewhat more common 
+then among online PC players it seemed a little less questionable than using an SN 
+ProgramPad to play Street Fighter II. For input fairness, symmetry in capability between 
+player equipment or configuration, or perhaps offering all players the same choices (ex. 
+between standard gamepad or arcade stick for fighting game competitions), might be 
+more important than necessarily reflecting the hardware's default input or original 
+ 
+ 
+-- 11  --
+                                                                                                                                                 
+developer's intention. Further exploration of this question is outside the scope of this 
+initial research, however as it's a central part of thinking about rules for computer games 
+of the sort that can be knowingly violated by players, it's another subject I believe ripe for 
+further contemplation. Such work might begin with investigation of e-sports regulations. 
+BIBLIOGRAPHY 
+Atari (1976) Breakout [Arcade] Atari. 
+Aniwey (2013) Candy Box [PC Computer, Online Game] Aniwey. Played 1 May 
+2013. 
+Birch, C. (2010) Understanding Pac-Man Ghost Behavior. Available at 
+http://gameinternals.com/post/2072558330/understanding-pac-man-ghost-
+behavior (accessed May 2013) 
+Capcom (1990) Code Name: Viper [NES], Capcom. Japan. 
+Capcom (1987) Mega Man [NES], Capcom. Japan. 
+Capcom (1991) Street Fighter II [Super Nintendo, Console Game] Capcom. 
+Japan: played 2 May 2013. 
+Crawford, C. (1984) The Art of Computer Game Design. Berkeley, CA: 
+Osborne/McGraw-Hill.  
+Huizinga, J. (1938) Homo Ludens: A Study of the Play-element in Culture. 
+Boston: Beacon. 
+id Software (1996) Quake [PC Computer game] GT Interactive. 
+Juul, J. (2005) Half-Real: Video Games between Real Rules and Fictional 
+Worlds. Cambridge, MA: MIT. 
+Konami (1986) Castlevania [NES], Konami. Japan. 
+Liebe, M. (2008) “There Is No Magic Circle: On the Difference between 
+Computer Games and Traditional Games.” Proc. of the Philosophy of 
+Computer Games. Available at http://opus.kobv.de/ubp/volltexte/2008/2459/ 
+(accessed May 2013) 
+Namco (1980) Pac-Man. [Arcade], Namco. Japan. 
+Nintendo (1985) Super Mario Bros. [NES], Nintendo. Japan. 
+Nintendo (1988) Super Mario Bros. 2 [NES], Nintendo. Japan. 
+Nintendo (1999) Super Smash Bros. [Nintendo 64], Nintendo. Japan. 
+Number None, Inc. (2008) Braid [XBox 360], Microsoft Game Studios. 
+Salen, Katie and Eric Zimmerman (2003) Rules of Play: Game Design 
+Fundamentals Cambridge, MA: MIT. 
+Sideman, K. (2000) Game Design Address. 
+Sonic Team (1991) Sonic the Hedgehog [Genesis], Sega. 
+Suits, B. (1978) The Grasshopper: Games, Life, and Utopia. Toronto: University 
+of Toronto. 
+Swink, S. (2009) Game Feel: A Game Designer’s Guide to Virtual Sensation. 
+Amsterdam: Morgan Kaufmann/Elsevier. 
+Tecmo (1988) Nina Gaiden [NES], Tecmo. 
+Turkle, S. (2003) “Video Games and Computer Holding Power.” In New Media 
+Reader, edited by Noah Wardrip-Fruin and Nick Montfort, 499-513. 
+Cambridge, MA: MIT.  

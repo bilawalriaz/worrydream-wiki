@@ -1,0 +1,2980 @@
+The Lost Art of Nomography
+457
+On Jargon
+The Lost Art of Nomography
+Ron Doerﬂer
+Naperville, IL
+http://www.myreckonings.com
+rondoerfler@myreckonings.com
+Introduction
+Nomography, truly a forgotten art, is the graphical representation of
+mathematicalrelationshipsorlaws(theGreekword forlawisnomos). These
+graphs are variously called nomograms (the term used here), nomographs,
+alignment charts, and abacs. This area of practical and theoretical math-
+ematics was invented in 1880 by Maurice d’Ocagne (1862–1938) and used
+extensively into the 1970s to provide engineers with fast graphical calcula-
+tions of complicated formulas to a practical precision.
+50.0
+60.0
+70.0
+80.0
+90.0
+45.0
+55.0
+65.0
+75.0
+85.0
+95.0
+u
+−10.0
+0.0
+10.0
+20.0
+30.0
+40.0
+−5.0
+5.0
+15.0
+25.0
+35.0
+45.0
+w
+−8.0
+−7.0
+−6.0
+−5.0
+−4.0
+−3.0
+−2.0
+−1.0
+0.0
+1.0
+2.0
+3.0
+v
+(0.67u −28.6) −2.3(v + 2.7) = w
+Figure 1. A nomogram for a simple linear equation.
+The simplest nomogram consists of three or more straight or curved
+scales, each representing a function of a single variable appearing in an
+equation. Figure 1 shows such a nomogram for a linear equation in three
+variables. A straightedge is placed across these scales at known values of
+the variables, and an unknown variable is found as the value crossed on
+TheUMAPJournal30 (4) (2009)457–493. c⃝Copyright2009by COMAP, Inc. All rightsreserved.
+Permission to make digital or hard copies of part or all of this work for personal or classroom use
+is granted without fee provided that copies are not made or distributed for proﬁt or commercial
+advantage and that copies bear this notice. Abstracting with credit is permitted, but copyrights
+for components of this work owned by others than COMAP must be honored. To copy otherwise,
+to republish, to post on servers, or to redistribute to lists requires prior permission from COMAP.
+458
+The UMAP Journal
+30.4 (2009)
+its scale. We will see that this style of nomogram can also be constructed
+for much more complicated equations. Nomograms are generally drawn
+for equations having three or more variables, where the equivalent graphs
+would consist of families of curves or 3D plots. The startling simplicity of
+nomograms is apparent by comparison to these multivariable graphs.
+Along with the mathematics involved, a great deal of ingenuity went
+into the design of nomograms to increase their utility as well as their pre-
+cision. Many books were written on nomography and then driven out of
+print with the spread of computers and calculators. Nomograms are some-
+times observed in the wild today, but in a modern setting they seem odd
+and strangely old-fashioned. But an unusual one provokes interest because
+of the technical, even artistic, creativity apparent in its design. And there
+is much creativity: The theory of nomograms draws “on every aspect of
+analytic, descriptive, and projective geometries, the several ﬁelds of alge-
+bra, and other mathematical ﬁelds” [Douglass and Adams 1947]. In fact,
+two nomograms for the same equation can look vastly different, depend-
+ing on the inspiration of the designers. Looking through publications of
+nomograms evokes the feel of browsing an artist’s portfolio.
+Slide rules were manual calculators contemporary with nomograms,
+and they are familiar today from their appearance; but most engineers have
+never seen a nomogram and wouldn’t know what to do with one if they
+did. A slide rule is designed to provide basic arithmetic operations to solve
+a wide variety of equations with a sequence of steps, while the traditional
+nomogram is designed to solve a speciﬁc equation in one step. Although
+nomograms are not common today, it’s interesting to note that the quiet,
+less ﬂashy nomogram has in fact outlived the more popular slide rule.
+This article describes why nomograms work and how they are con-
+structed from scratch. We ﬁrst review designs based on geometric rela-
+tionships, then radically advance the possible designs through the use of
+determinants, and end with transformations that can be applied to cus-
+tomize a nomogram for precise and compact use.
+Geometric Design
+Nomograms composed of straight scales can be designed by analyzing
+their geometric properties, and a variety of interesting nomograms can be
+constructed from these derivations. Certainly, the designs in this section are
+the most prevalent types of nomograms. The examples here are presented
+as small ﬁgures, but in practice the nomograms would be printed on large
+sheets of paper with much ﬁner tickmark spacing for greater precision.
+The Lost Art of Nomography
+459
+Parallel-Scale Nomograms
+Figure 2 shows the basic parallel-scalenomogramfor calculatinga value
+f3(w) as the sum of two functions f1(u) and f2(v):
+f1(u) + f2(v) = f3(w).
+a
+b
+m1f1(u)
+m3f3(w)
+m2f2(v)
+isopleth
+baseline
+Figure 2. Derivation for a parallel-scale nomogram.
+Each function is plotted on a vertical scale using a corresponding scaling
+factor (sometimes called a scale modulus)—m1, m2, or m3—that provides a
+conveniently-sized nomogram. The diagonal line represents the straight-
+edge solution of the nomogram and is called an index line or isopleth. By
+similar triangles,
+m1f1(u) −m3f3(w)
+a
+= m3f3(w) −m2f2(v)
+b
+,
+m1f1(u) + (a/b)m2f2(v) = (1 + a/b)m3f3(w).
+To arrive at the original equation f1(u) + f2(v) = f3(w), we cancel out
+all the terms involving m, a, and b, which is accomplished by setting
+m1 = (a/b)m2 = (1 + a/b)m3.
+The left two terms of this relationship determine the relative scaling of the
+two outer scales, and the third term provides the scaling of the middle scale
+as
+m1
+m2
+= a
+b ,
+m3 =
+m1m2
+m1 + m2
+.
+The baseline does not have to be perpendicular to the scales for the
+similar-triangle proportion to be valid.
+460
+The UMAP Journal
+30.4 (2009)
+We have a = b for the case where the middle scale is located halfway
+between the outer scales, and in this case m1 = m2 and m3 = m1/2. For a
+small outer scale, we can change its scaling factor m to increase its length,
+which shifts the middle line toward the other outer scale. In fact, if the
+unknown scale w has a very small range, it can be moved outside of the
+two other scales to lengthen it.
+Additions to u, v, or w simply shift the scale values up or down. Mul-
+tipliers of u, v, and w multiply the value when drawing the scales (they
+are not included in the values of m in the above calculations). Negating
+a variable simply reverses the up/down direction of that scale; and if two
+variables are negated, their scales can simply be swapped.
+This looks like a lot of work to create a nomogramto solve a simple linear
+equation. But in fact plotting logarithmic rather than linear scales expands
+the use of parallel-scale nomograms to very complicated equations! The
+use of logarithms allows multiplications to be represented by additions
+and powers to be represented by multiplications: log cd = log c + log d
+and log cd = d log c.
+So an equation such as f1(u) × f2(v) = f3(w) can
+be converted to log f1(u) + log f2(v) = log f3(w) and plotted as a parallel-
+scale nomogram with logarithmic scales.
+Let’s create a nomogram for the equation
+(1.2D + 0.47)0.68(0.91T)3/2 = N
+as shown in Figure 3. We assume that the engineering ranges that we are
+interested in are 1.0 < D < 8.0 and 1.0 < T < 2.0.
+We ﬁrst convert the equation to logarithmic form as
+0.68 log(1.2D + 0.47) + 1.5 log T = log N −1.5 log 0.91.
+We will plot D, T, and N from our formulas above for u, v and w. To
+ﬁnd the scaling factors, we divide the ﬁnal desired height of the D- and
+T-scales (say, 11 in. for both) by their ranges (maximum −minimum).
+m1 =
+11
+0.68 log[1.2(8.0) + 0.47] −0.68 log[1.2(1.0) + 0.47] = 20.73,
+m2 =
+11
+1.5 log 2.0 −1.5 log 1.0 = 24.36,
+m3 =
+m1m2
+m1 + m2
+= 11.20.
+Let’s set the width of the chart to 6 in.:
+a
+b = m1
+m2
+= 0.851,
+a = 0.851b;
+a + b = 6,
+0.851b + b = 6;
+yielding b = 3.241 in., a = 2.759 in.
+The Lost Art of Nomography
+461
+1.0
+2.0
+3.0
+4.0
+5.0
+6.0
+7.0
+8.0
+1.5
+2.5
+3.5
+4.5
+5.5
+6.5
+7.5
+D
+2.0
+3.0
+4.0
+5.0
+6.0
+7.0
+8.0
+9.0
+10.0
+11.0
+1.5
+2.5
+3.5
+4.5
+5.5
+6.5
+7.5
+8.5
+9.5
+10.5
+11.5
+N
+1.0
+1.1
+1.2
+1.3
+1.4
+1.5
+1.6
+1.7
+1.8
+1.9
+2.0
+T
+N = (1.2D + 0.47)0.68(0.91T)3/2
+Figure 3. A parallel-scale nomogram for a nonlinear equation.
+WedrawtheD-scaleontheleftwithabaselinevalueof1.0andtickmarks
+spaced out as
+20.73 ×
+£
+0.68 log(1.2D + 0.47) −0.68 log
+°
+1.2(1.0) + 0.47
+¢§
+,
+which will result in an 11-in. scale. Then 6 in. to the right of it, we draw the
+T-scale with a baseline value of 1.0 and tickmarks spaced out as
+24.36(1.5 log T −1.5 log 1.0).
+Finally, 2.759 in. to the right of the D-scale (a bit left of center), we draw the
+N-scale with a baseline of
+£
+1.2(1.0) + 0.47
+§0.68£
+0.91(1.0)
+§1.5 = 1.230
+and tickmarks spaced out as 11.20
+£
+log N −1.5 log(0.91)
+§
+.
+We arrive at the nomogram in Figure 3, where a straightedge connecting
+values of D and T crosses the middle scale at the correct solution for N. In
+fact, any two of the variables will produce the third. This is a surprising
+feature of nomograms: They can calculate a solution for a variable that
+might be impossible to isolate algebraically. The result here is a deceptively
+simple diagram for solving a fairly complicated equation.1
+1Most nomograms in this article were drawn with the PyNomo open-source software, available
+free from http://www.pynomo.org.
+462
+The UMAP Journal
+30.4 (2009)
+N or Z Charts
+A nomogram such as in Figure 4 is called an N chart or Z chart because
+of its shape. The slanting middle scale joins the baseline values of the two
+outer scales (which now run in opposite directions). The middle line can
+slant in either direction by ﬂipping the diagram, and it can be just a partial
+section anchored at one end or ﬂoating in the middle if the entire scale is not
+needed in the problem, thus appearing, as Douglass [1947] puts it, “rather
+more spectacular” to the casual observer. An N chart can be used to solve
+a three-variable equation involving a division:
+f3(w) = f1(u)
+f2(v).
+Z
+Length L
+m1f1(u)
+f3(w)
+m2f2(v)
+isopleth
+Figure 4. Derivation for an N chart.
+By similar triangles,
+m1f1(u)
+m2f2(v) =
+Z
+L −Z .
+Substituting f3(w) for f1(u)/f2(v) and rearranging terms yields the dis-
+tance along the diagonal for tickmarks corresponding to f3(w):
+Z =
+Lf3(w)
+(m2/m1) + f3(w).
+The f3(w)-scale does not have a uniform scaling factor m3 as before. We
+could have designed a parallel-scale nomogram with logarithmic scales to
+plot this division, but the N chart performs this with linear scales for u
+and v and it was once a real chore to create logarithmic scales. Also, the
+outer scales of the N chart sometimes need to be linear in order to attach
+additional scales in a compound nomogram with additional variables.
+The Lost Art of Nomography
+463
+An example of an N chart is shown in Figure 5 for the volume of a
+cylinder V = πr2h, where we arrange the formula in division form as
+h = V/π
+r2 .
+0.0
+100.0
+200.0
+300.0
+V
+1.0
+2.0
+3.0
+4.0
+5.0
+r
+5.0
+6.0
+7.0
+8.0
+9.0
+10.0
+20.0
+0.0
+1.0
+2.0
+3.0
+4.0
+5.0
+h
+Volume of a Cylinder: V = πr2h
+Figure 5. An N chart for the volume of a cylinder.
+For 0 < V/π < 125, 0 < r < 5, 0 < h < 5, and a 10-in.-high nomogram,
+m1 = 10/125 = 0.08 and m2 = 10/25 = 0.4. For an 8-in. width, we ﬁnd
+the length of the diagonal h-scale from L =
+√
+82 + 102 = 12.806. Then the
+tickmarks for h are located a distance along the diagonal of
+Z =
+12.806h
+0.4/0.08 + h.
+Finally, we multiply the V/π-scale values by π in order to plot V .
+Much more complicated formulas are also easily accommodated. An
+N chart is often ﬂipped so the diagonal runs in the opposite direction. It
+is also possible to slide the outer scales of an N chart up or down without
+changing the tickmark spacing of the Z-scale as it rotates due to its attached
+464
+The UMAP Journal
+30.4 (2009)
+ends (because similar triangles still result), producing a nomogram with a
+Z-scale perpendicular to the outer scales, as shown later in Figure 16 on
+p. 475.
+Proportional Nomograms
+The proportional chart solves an equation in four unknowns of the type
+f1(u)
+f2(v) = f3(w)
+f4(t) .
+(1)
+If we take our earlier N chart diagram and add a second isopleth that in-
+tersects the Z line at the same point as the ﬁrst, we have by similar triangles
+in Figure 6:
+m1f1(u)
+m2f2(v) = m3f3(w)
+m4f4(t) .
+m4f4(t)
+Figure 6. Derivation for a proportional nomogram.
+This relation matches (1) if we choose the scaling of the outer scales such
+that
+m1
+m2
+= m3
+m4
+.
+We then overlay two variables on each outer scale with this ratio of scaling
+factors, as shown in Figure 7 for the ideal gas law pV = nRT expressed as
+a proportion V/T = nR/p, where the constant R = 0.0821 L-atm/mol-K.
+We design a 10-in.-tall nomogram for the ranges 0 < V < 10 (m1 = 1.000),
+0 < T < 353 (m2 = 0.0283), and 0 < nR < 0.1642 (m3 = 60.90). We ﬁnd
+m4 = m3m2/m1 = 1.725. Finally, we divide the nR-scale values by the
+constant R in order to plot n (and here the nomogram is reﬂected so that
+the diagonal runs in the opposite direction).
+The Lost Art of Nomography
+465
+0.0
+1.0
+2.0
+3.0
+4.0
+5.0
+6.0
+7.0
+8.0
+9.0
+10.0
+V
+(liters)
+0.0
+100.0
+200.0
+300.0
+50.0
+150.0
+250.0
+350.0
+T
+(K)
+0.0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+0.8
+0.9
+1.0
+1.1
+1.2
+1.3
+1.4
+1.5
+1.6
+1.7
+1.8
+1.9
+2.0
+n
+(moles)
+0.0
+1.0
+2.0
+3.0
+4.0
+5.0
+0.5
+1.5
+2.5
+3.5
+4.5
+5.5
+p
+(atm)
+Ideal Gas Law: pV = nRT
+V
+n
+p
+T
+Figure 7. A proportional nomogram for the ideal gas law.
+Another type of proportional chart uses crossed lines within a boxed
+area, as shown in Figure 8 for the law of sines of a triangle. Again, the
+scaling factors for the four variables are given by m1/m2 = m3/m4. As
+in the previous example, this nomogram contains a key demonstrating its
+use.
+But there are other types of proportional charts, as shown in Figure 9.
+• The ﬁrst type derives from the previous example after a set of sides
+is bent at opposite angles, because similar triangles still exist for any
+parallelogram.
+• In the next two types, the isopleth is drawn between two scale variables,
+then moved parallel until it spans the third variable value and the fourth
+unknown variable.
+• In the last type, the second isopleth is drawn perpendicular rather than
+parallel to the ﬁrst one, which is generally superior because a right angle
+(such as the corner of a sheet of paper) is much more common than
+parallel rulers.
+466
+The UMAP Journal
+30.4 (2009)
+1.0
+2.0
+3.0
+4.0
+5.0
+6.0
+7.0
+8.0
+9.0
+10.0
+A
+0
+10
+20
+30
+40
+50
+60
+70
+80
+α ◦
+1.0
+2.0
+3.0
+4.0
+5.0
+6.0
+7.0
+8.0
+9.0
+10.0
+B
+0
+10
+20
+30
+40
+50
+60
+70
+80
+β ◦
+Law of Sines:
+——– = ——–
+A
+sin α
+B
+sin β
+A
+B
+β
+α
+Figure 8. A proportional nomogram for the law of sines.
+90°
+u
+w
+v
+t
+u
+w
+v
+t
+u
+w
+v
+t
+u
+w
+v
+t
+Figure 9. Additional designs for proportional nomograms (after Johnson [1952]).
+The Lost Art of Nomography
+467
+Concurrent-Scale Nomograms
+The concurrent-scale nomogram solves an equation of the type
+1
+f1(u) +
+1
+f2(v) =
+1
+f3(w).
+The effective resistance of two parallel resistors is given by this equation,
+as are other problems such as capacitance and lens focal lengths in series.
+A geometric exercise shows that the scaling factors for the scale arrange-
+ment of Figure 10 must meet the following conditions:
+m1 = m2 =
+m3
+2 cos A.
+Here A is the angle between the u-scale and the w-scale and also the angle
+between the v-scale and the w-scale. The scaling factor m3 corresponds to
+the w-scale. The zeros of the scales must meet at the vertex. If the angle
+A is chosen to be 60◦, then 2 cos A = 1 and the three scaling factors are
+identical, as is the case in Figure 10. Often the angle A = 45
+◦is chosen,
+since a rectangular nomogram is a better ﬁt on the printed page.
+0
+100
+200
+300
+400
+500
+600
+700
+800
+900
+1000
+50
+150
+250
+350
+450
+550
+650
+750
+850
+950
+R1
+0
+100
+200
+300
+400
+500
+600
+700
+800
+900
+1000
+50
+150
+250
+350
+450
+550
+650
+750
+850
+950
+R2
+100
+200
+300
+400
+500
+600
+700
+800
+900
+1000
+50
+150
+250
+350
+450
+550
+650
+750
+850
+950
+R = R1 ∥R2
+Equivalent Resistance of Two Resistors in Parallel
+1/R = 1/R1 + 1/R2
+Figure 10. A concurrent nomogram for two resistors in parallel.
+468
+The UMAP Journal
+30.4 (2009)
+Compound Nomograms
+A compound nomogram can solve an equation of four or more variables
+by concatenating a series of three-variable nomograms of any type.
+The ﬁrst step is to break the equation into parts in three variables that are
+equal to one another. The equation f1(u) + f2(v) + f3(w) = f4(t) can be
+rearranged as f1(u) + f2(v) = f4(t) −f3(w). We create a new intermediate
+variable k to equal this latter quantity. We can draw a parallel-scale nomo-
+gram for f1(u) + f2(v) = k without marking scale values on the k-scale.
+Then a second parallel-scale nomogram for f4(t) −f3(w) = k is drawn us-
+ing the same k-scale. The blank k-scale is called a pivot line, and often longer
+scales result when the pivot line is the middle scale of at least one of the
+nomograms. Figure 11 shows such a compound parallel-scale nomogram
+for centripetal force F = mv2/r.
+1.0
+2.0
+3.0
+4.0
+5.0
+v
+m/sec
+10
+1
+2
+4
+20
+m
+kg
+1.0
+10.0
+100.0
+0.1
+0.2
+0.4
+0.6
+2.0
+4.0
+6.0
+20.0
+40.0
+60.0
+200.0
+300.0
+500.0
+F
+N
+Pivot
+10.0
+1.0
+2.0
+3.0
+4.0
+5.0
+6.0
+7.0
+8.0
+9.0
+r
+m
+10
+3
+20
+40
+lbs
+10.0
+4.0
+5.0
+6.0
+7.0
+8.0
+9.0
+ft/sec
+10.0
+4.0
+5.0
+6.0
+7.0
+8.0
+9.0
+20.0
+30.0
+ft
+0.10
+1.00
+10.00
+100.00
+0.02
+0.04
+0.06
+0.20
+0.40
+0.60
+2.00
+4.00
+6.00
+20.00
+40.00
+60.00
+200.00
+400.00
+lbs
+Centripetal Force: F = mv2/r
+Figure 11. A compound parallel-scale nomogram for centripetal force.
+To solve the 4-variable equation
+1/f1(u) + 1/f2(v) + 1/f3(w) = 1/f4(t),
+the equation is rearranged as
+1/f1(u) + 1/f2(v) = 1/k,
+1/k + 1/f3(w) = 1/f4(t).
+The Lost Art of Nomography
+469
+A compound nomogram for 1/R1 + 1/R2 + 1/R3 = 1/R is shown in Fig-
+ure 12. The intermediate k-scale is labeled R1 k R2, and the 60◦angles used
+in this nomogram cause the R-scale (R1 k R2 k R3) to coincide with the R2-
+scale. The original R1-scale can be used for a fourth resistor in parallel. We
+can seesaw back and forth to add additional parallel resistors, and we can
+slide along the scales to add resistors in series.
+0
+100
+200
+300
+400
+500
+600
+700
+800
+900
+1000
+50
+150
+250
+350
+450
+550
+650
+750
+850
+950
+R1
+100
+200
+300
+400
+500
+600
+700
+800
+900
+1000
+50
+150
+250
+350
+450
+550
+650
+750
+850
+950
+R2
+100
+200
+300
+400
+500
+600
+700
+800
+900
+1000
+50
+150
+250
+350
+450
+550
+650
+750
+850
+950
+R1 ∥R2
+0
+100
+200
+300
+400
+500
+600
+700
+800
+900
+1000
+50
+150
+250
+350
+450
+550
+650
+750
+850
+950
+R3
+R1 ∥R2 ∥R3
+Equivalent Resistance of Three Resistors in Parallel
+1/R = 1/R1 + 1/R2 + 1/R3
+Figure 12. A concurrent nomogram for three resistors in parallel.
+Designing with Determinants
+It happens that a brief knowledge of determinantsoffers a powerful way
+of designing very elegant and sophisticated nomograms, ones that contain
+curved scales or grids of scales. A determinant is denoted by vertical bars
+along the sides of a matrix of values or functions. The determinant of a
+3 × 3 matrix
+√a11
+a12
+a13
+a21
+a22
+a23
+a31
+a32
+a33
+!
+is denoted
+ØØØØØ
+a11
+a12
+a13
+a21
+a22
+a23
+a31
+a32
+a33
+ØØØØØ
+and is the quantity given by
+a11a22a33 + a12a23a31 + a13a21a32 −a13a22a31 −a11a23a32 −a12a21a33.
+470
+The UMAP Journal
+30.4 (2009)
+Two common methods of ﬁnding a determinant without memorizing
+this formula are shown in Figure 13:
+• In the ﬁrst method, the ﬁrst two columns of the determinant are copied
+to the end and diagonals are drawn as shown. The products of the terms
+under each diagonal are added or subtracted as indicated to ﬁnd the
+determinant.
+• Alternatively, thedeterminantcanbefoundbymentallywrappingthedi-
+agonals around to cross the needed terms, shown as the second method.
+a11
+a21
+a31
+a12
+a22
+a32
+a13
+a23
+a33
+a11
+a21
+a31
+a12
+a22
+a32
++
++
++
+_
+_
+_
+a11
+a21
+a31
+a12
+a22
+a32
+a13
+a23
+a33
+_
+_
+_
++
++
++
+Figure 13. Two methods of ﬁnding a determinant.
+There are just a few rules about manipulatingdeterminantsthat we need
+to know. The ﬁrst two are true for determinants in general, but the third
+and fourth apply only to determinants whose value is 0:
+1. We can interchange any two rows or any two columns.
+2. We can multiply or divide all the values in any row (or column) by a
+number (including 1) and add them to their corresponding values in
+another row (or column).
+3. We can multiply or divide all the values in any row or column by a
+number. (Generally, thevalueof thedeterminantis multipliedor divided
+by that number, since every term has a member from each row and
+column; but because we will always work with determinants that are
+equal to zero, our determinants are unchanged.)
+4. We can change the signs of all the terms in any row or column, for the
+same reason as above.
+We will see later that there are some transformation operations that can
+also be applied to our determinants.
+Now consider Figure 14 showing three curvilinear scales and an iso-
+pleth. Similar-triangle relations give
+y3 −y1
+x3 −x1
+= y2 −y1
+x2 −x1
+= y3 −y2
+x3 −x2
+Any two parts of this equation can be manipulated to the determinant
+expansion above and therefore we can write it as
+The Lost Art of Nomography
+471
+(x1,y1)
+(x2,y2)
+(x3,y3)
+X
+y
+Figure 14. Similar triangle relations for three collinear points.
+ØØØØØ
+x1
+y1
+1
+x2
+y2
+1
+x3
+y3
+1
+ØØØØØ = 0.
+The x- and y-elements can be interpreted as the x- and y-values of f1(u),
+f2(v), and f3(w). To plot a three-variablenomogramfrom this determinant,
+we need to arrange terms so that
+• each row involves only one variable (i.e., x1 and y1 are functions of u
+only, x2 and y2 are functions of v only, and x3 and y3 are functions of w
+only);
+• the last column is all 1s; and
+• the determinant is the equation of the nomogram.
+A determinant such as this is said to be in standard nomographic form. The
+u-scale is then plotted by the parametric functions in the ﬁrst row, where
+the functions x1 and y1 are used to calculate the (x, y)-coordinate for each
+value of u on the scale.
+For example, the determinant
+ØØØØØ
+0
+u
+1
+1
+−v2
+1
+w
+w
+1
+ØØØØØ = 0
+expands to the equation uw + w + v2w −u = 0, or w = u/(u + v2 + 1) as
+an equation plotted as a nomogram. Here the x-coordinate of the u-scale is
+always 0, so the u-scale is a vertical scale at x = 0 with y-values equal to the
+u-values over its range. The v-scale is a vertical scale at x = 1 with y-values
+of −v2 over the range of v. The w-scale has x- and y-values equal to w, so it
+turns out to be a diagonal scale that passes through the origin if the range
+of the w-scale includes w = 0. The nomogram is plotted in Figure 15 for
+positive values of the variables.
+472
+The UMAP Journal
+30.4 (2009)
+0.0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+0.8
+0.9
+1.0
+u
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+0.8
+0.9
+1.0
+v
+0.01
+0.10
+0.00
+0.05
+0.20
+0.30
+0.40
+0.50
+w
+w = u/(u + v2 + 1)
+Figure 15. A nomogram for w = u/(u + v2 + 1).
+Straight-Scale Nomograms Using Determinants
+On pp. 460–461, we created a parallel-scale nomogram for the equation
+(1.2D + 0.47)0.68(0.91T)3/2 = N by using geometric relationships. We can
+express the logarithmic form of this as
+0.68 log(1.2D + 0.47) + 1.5 log T −(log N −1.5 log 0.91) = 0.
+This is an equation of the form f1(u) + f2(v) −f3(w) = 0, so let’s ﬁnd a
+determinant that produces this general form. Nomography books often
+suggest educated guesswork to ﬁll in an initial determinant, which is kind
+of fun, but we’ll use a consistent procedure. Nevertheless, converting this
+initial determinant to standard nomographic form still requires ingenuity.
+If we set A = f1(u) and B = f2(v), then we have
+The Lost Art of Nomography
+473
+A × 1 + B × 0 −f1(u) = 0
+from
+A = f1(u),
+A × 0 + B × 1 −f2(v) = 0
+from
+B = f2(v),
+A × 1 + B × 1 −f3(w) = 0
+from
+f1(u) + f2(v) −f3(w) = 0.
+This set of simultaneous equations can be expressed in determinant form
+as
+ØØØØØØ
+1
+0
+−f1(u)
+0
+1
+−f2(v)
+1
+1
+−f3(w)
+ØØØØØØ
+= 0.
+This expression meets our criteria that the determinant produces the orig-
+inal equation and each row contains functions of only one variable. But
+we also want the ﬂexibility to introduce scaling factors m1 and m2 for the
+u- and v-scales so they will ﬁt our paper. We can add the scaling factors
+without changing the determinant as follows:
+ØØØØØØØØØ
+1
+0
+−m1f1(u)
+0
+1
+−m2f2(v)
+1
+m1
+1
+m2
+−f3(w)
+ØØØØØØØØØ
+= 0.
+Now we can use the rules for manipulating determinants to cast the
+determinant into standard nomographic form. Below are the results when
+we
+• add the second column to the ﬁrst [1/m1 + 1/m2 = (m1 + m2)/m1m2],
+• multiply the third row by m1m2/(m1 + m2), and then
+• multiply the third column by −1 and swap the columns around.
+ØØØØØØØØØ
+1
+0
+−m1f1(u)
+1
+1
+−m2f2(v)
+m1 + m2
+m1m2
+1
+m2
+−f3(w)
+ØØØØØØØØØ
+= 0
+=⇒
+ØØØØØØØØ
+1
+0
+−m1f1(u)
+1
+1
+−m2f2(v)
+1
+m1
+m1 + m2
+−m1m2
+m1 + m2
+f3(w)
+ØØØØØØØØ
+= 0
+474
+The UMAP Journal
+30.4 (2009)
+=⇒
+ØØØØØØØØ
+0
+m1f1(u)
+1
+1
+m2f2(v)
+1
+m1
+m1 + m2
+m1m2
+m1 + m2
+f3(w)
+1
+ØØØØØØØØ
+= 0.
+Now the determinant is in standard nomographic form. The scaling factors
+of m1 and m2 result in a scaling factor for the w-scale of m1m2/(m1 + m2),
+as we found earlier from our geometric derivation.
+We had calculated
+m1 = 20.73 and m2 = 24.36 before to make the u- and v-scales 11 in. long
+for the given ranges, giving m3 = 11.20. This determinant also shows that
+we place the u-scale vertically at x = 0 and the v-scale vertically at x = 1,
+withthew-scaleatx = m1/(m1 + m2) = 0.4597; butinfactwecanmultiply
+the ﬁrst column by 6 to get a width of 6 in., and in that case the w-scale lies
+vertically at x = 2.759 in., so we end up with exactly the same nomogram
+we found in Figure 3 on p. 461 using geometric methods.
+This was a bit of work, but we have found a universal determinant
+in standard nomographic form for the equation f1(u) + f2(v) −f3(w) = 0,
+includingscalingfactors. Infact, agreatdealofeffortwasexertedinthepast
+to match particular forms of equations directly to standard nomographic
+determinant forms.
+Let’s derive an N chart for division using determinants. We can rear-
+range the equation w = u/v to u −vw = 0. We set A = u and B = v to
+get
+A × 1 + B × 0 −u = 0,
+A × 0 + B × 1 −v = 0,
+A × 1 −B × w −0 = 0,
+ØØØØØ
+1
+0
+−u
+0
+1
+−v
+1
+−w
+0
+ØØØØØ = 0.
+One possiblestandard determinantthat we can construct usingour rules
+is
+ØØØØØØØØ
+0
+u
+1
+1
+−v
+1
+w
+w + 1
+0
+1
+ØØØØØØØØ
+= 0.
+This is plotted as the nomogram in Figure 16. If we had speciﬁed ranges
+of u and v that included negative values, the nomogram would have ap-
+peared as a ﬁgure H, but here we see an N chart with a perpendicular
+middle line. We could use a shear transformation on our determinant as
+described later to yield an N chart with the more familiar angled middle
+scale, which allows longer scales for the same overall nomogram size.
+The Lost Art of Nomography
+475
+0.0
+1.0
+2.0
+3.0
+4.0
+5.0
+6.0
+7.0
+8.0
+9.0
+10.0
+u
+0.0
+1.0
+2.0
+3.0
+4.0
+5.0
+6.0
+7.0
+8.0
+9.0
+10.0
+11.0
+12.0
+13.0
+14.0
+15.0
+16.0
+17.0
+18.0
+19.0
+20.0
+v
+0.1
+1.0
+10.0
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+0.8
+2.0
+3.0
+4.0
+6.0
+50.0
+w
+0.01
+0.05
+w = u/v
+Figure 16. A nomogram for w = u/v.
+Curved-Scale Nomograms Using Determinants
+Determinants are most useful when one or more of the u-, v-, and w-
+scales is curved. The quadratic equation w2 + uw + v = 0 can be repre-
+sented as the ﬁrst determinant below, and with the determinant rules we
+can arrive at the standard nomographic form shown in the second deter-
+minant [Adams 1964; Otto 1963]:
+ØØØØØØ
+1
+0
+−u
+0
+1
+−v
+w
+1
+w2
+ØØØØØØ
+= 0
+=⇒
+ØØØØØØØØØ
+−u
+1
+1
+v
+0
+1
+w2
+w −1
+w
+w −1
+1
+ØØØØØØØØØ
+= 0.
+The u-scale runs linearly in the negative direction along the line y = 1.
+The v-scale runs linearly in the positive direction with the same scale along
+the line y = 0. These are shown in Figure 17, in which the positive root w1
+of the quadratic equation can be found on the curved scale (the other root
+is u + w1).
+A similar curved-scale nomogram is given in Figure 18 for the equation
+M = (T −N)/T 2, or MT 2 −T + N = 0. This can be readily cast as the
+ﬁrst determinant below and then manipulated into standard nomographic
+476
+The UMAP Journal
+30.4 (2009)
+0.0
+1.0
+2.0
+3.0
+4.0
+5.0
+6.0
+7.0
+8.0
+9.0
+10.0
+0.5
+1.5
+2.5
+3.5
+4.5
+5.5
+6.5
+7.5
+8.5
+9.5
+u
+−10.0
+−9.0
+−8.0
+−7.0
+−6.0
+−5.0
+−4.0
+−3.0
+−2.0
+−1.0
+0.0
+−9.5
+−8.5
+−7.5
+−6.5
+−5.5
+−4.5
+−3.5
+−2.5
+−1.5
+−0.5
+v
+−10.0
+−9.0
+−8.0
+−7.0
+−6.0
+−5.0
+−4.0
+−3.0
+−2.0
+−1.0
+−10.5
+−9.5
+−8.5
+−7.5
+−6.5
+−5.5
+−4.5
+−3.5
+−2.5
+−1.5
+−0.5
+w
+w2 + uw + v = 0
+Figure 17. A curved-scale nomogram for solving a quadratic equation (after Adams [1964] and
+Otto [1963]).
+−1.0
+−0.9
+−0.8
+−0.7
+−0.6
+−0.5
+−0.4
+−0.3
+−0.2
+−0.1
+0.0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+0.8
+0.9
+1.0
+N
+−4.0
+−3.0
+−2.0
+−1.0
+0.0
+1.0
+2.0
+3.0
+4.0
+−2.5
+−1.5
+−0.5
+0.5
+1.5
+2.5
+3.5
+T
+−1.0
+−0.9
+−0.8
+−0.7
+−0.6
+−0.5
+−0.4
+−0.3
+−0.2
+−0.1
+0.0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+0.8
+0.9
+1.0
+M
+M = (T −N)/T 2
+Figure 18. A curved-scale nomogram.
+The Lost Art of Nomography
+477
+form as the second:
+ØØØØØ
+T 2
+1
+−T
+1
+0
+−M
+0
+1
+−N
+ØØØØØ = 0
+=⇒
+ØØØØØØØØØ
+0
+N
+1
+T 2
+T 2 + 1
+T
+T 2 + 1
+1
+1
+M
+1
+ØØØØØØØØØ
+= 0.
+It’s possible to have two or three curved scales, depending on how the
+determinant works out, and it is possible to have two or all three curves
+overlap exactly.
+The equation for the velocity of water ﬂowing from a
+rectangular opening in a vertical wall is
+v = 2
+3
+p
+2g
+√
+h3/2
+1
+−h3/2
+2
+h1 −h2
+!
+.
+We can write this in metric units as 0.338vh1 −0.338vh2 −h3/2
+1
++ h3/2
+2
+= 0,
+and we can verify that this equation is equivalent to the ﬁrst determinant
+equation below.
+Dividing the left column by h1h2 and swapping rows
+provides the form plotted in Figure 19 [Soreau 1902].
+ØØØØØØØ
+h1
+h1/2
+2
+1
+0
+0.338v
+1
+h2
+h1/2
+1
+1
+ØØØØØØØ
+= 0
+=⇒
+ØØØØØØØØØØØ
+0
+0.338v
+1
+1
+h1
+h1/2
+1
+1
+1
+h2
+h1/2
+2
+1
+ØØØØØØØØØØØ
+= 0.
+Here the h1- and h2-scales lie exactly on the same curve. They could
+have separate tickmarks on this curve if they had different scales, but here
+they have the same scaling factor. Actually, the two sides of the scales are
+used for different ranges for greater versatility; so v, h1, and h2 should use
+either the left or right sides of the scales but not both. It also turns out that
+if there is a solution (v, h1, h2), then there is also a solution (kv, k2h1, k2h2)
+for any k. This feature increases the range and also allows us to move (if
+needed) into an area of the curve that is not as ﬂat between our h1- and h2-
+values. In fact, the h1- and h2-values are four times as large in the second
+range, and the v values are twice as large, for this reason.
+Otto [1963] provides an interesting alternate determinant for the equa-
+tion f1(u) + f2(v) + f3(w) = f1(u)f2(v)f3(w):
+478
+The UMAP Journal
+30.4 (2009)
+20
+30
+40
+50
+60
+70
+80
+90
+25
+35
+45
+55
+65
+75
+85
+h1, h2 (cm)
+1.6
+1.7
+1.8
+1.9
+2.0
+2.1
+2.2
+2.3
+2.4
+2.5
+2.6
+2.7
+2.8
+2.9
+3.0
+3.1
+3.2
+3.3
+3.4
+3.5
+3.6
+3.7
+3.8
+3.9
+4.0
+v (m/s)
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+18
+20
+22
+24
+0.8
+0.9
+1.0
+1.1
+1.2
+1.3
+1.4
+1.5
+1.6
+1.7
+1.8
+1.9
+2.0
+Water ﬂow through a rectangular
+opening in a vertical wall
+v = (2/3)√2g(h3/2
+1
+−h3/2
+2
+)/(h1 −h2)
+v = theoretical velocity (m/s)
+h1,h2 = heights of horizontal sides of opening (m)
+Note: Use left or right sides of scales
+Figure 19. A nomogram for the water ﬂow through a rectangular opening in a vertical wall (after
+Soreau [1902]).
+ØØØØØØØØØØØØØ
+2
+f1(u)2 + 4
+f1(u)
+f1(u)2 + 4
+1
+2
+f2(v)2 + 4
+f2(v)
+f2(v)2 + 4
+1
+2
+3
+1
+3f3(w)
+1
+ØØØØØØØØØØØØØ
+= 0.
+The nomogram for the particular equation of this type u + v + w = uvw
+is shown in Figure 20, where again two of the three scales overlap.
+There is a very interesting determinant that can be created for the equa-
+tion f1(u)f2(v)f3(w) = 1 [Otto 1963]:
+ØØØØØØØØØØØØØØ
+−f1(u)
+f1(u)3 −1
+−f1(u)2
+f1(u)3 −1
+1
+−f1(v)
+f2(v)3 −1
+−f2(v)2
+f2(v)3 −1
+1
+−f3(w)
+f3(w)3 −1
+−f3(w)2
+f3(w)3 −1
+1
+ØØØØØØØØØØØØØØ
+= 0.
+The Lost Art of Nomography
+479
+−10
+−8
+−6
+−5
+−4
+−3
+−2
+−1
+0
+1
+2
+3
+4
+5
+6
+8
+10
+−4.5
+−3.5
+−2.5
+−1.5
+−0.5
+0.5
+1.5
+2.5
+3.5
+4.5
+u, v
+−10
+−8
+−6
+−5
+−4
+−3
+−2
+−1
+0
+1
+2
+3
+4
+5
+6
+8
+10
+−4.5
+−3.5
+−2.5
+−1.5
+−0.5
+0.5
+1.5
+2.5
+3.5
+4.5
+−10
+−6
+−4
+−3
+−2
+−1
+−2.5
+−1.5
+w
+1
+2
+3
+4
+6
+10
+u + v + w = uvw
+Figure 20. A nomogram for u + v + w = uvw (after Otto [1963]).
+For uvw = 1, all three scales coincide and have the same scaling factor, and
+it turns out that the equation for this curve is x3 + y3 −xy = 0 (called the
+folium of Descartes). This nomogram is shown in Figure 21.
+Grid Nomograms Using Determinants
+A single, non-compound nomogram for an equation of 4 to 6 variables
+can be created if the determinant in standard nomographic form contains
+functions of no more than two variables per row. The single scale for a
+one-variable row is replaced by a grid of scales for values of each of the two
+variables, resulting in a grid nomogram.
+Celestial Observations
+For example, consider the astronomical relationship between the az-
+imuth Z and declination D of a celestial body, the latitude L of an ob-
+server, and the altitude H of the body as seen by the observer [Adams 1964;
+d’Ocagne 1899; Roschier and Makkonen 2009]:
+cos Z = sin D −sin H sin L
+cos H cos L
+,
+480
+The UMAP Journal
+30.4 (2009)
+2.0
+3.0
+4.0
+5.0
+8.0
+20.0
+2.5
+3.5
+u, v, w
+−20.0
+−8.0
+−5.0
+−4.0
+−3.0
+−2.0
+−1.0
+−2.5
+−1.5
+−0.5
+0.5
+0
+y
+x
+uvw = 1
+Figure 21. A nomogram in the form of the folium of Descartes for uvw = 1 (after Otto [1963]).
+or
+cos Z cos H cos L −sin D + sin H sin L = 0.
+Setting A = cos Z and B = sin D, we have
+A × 1 + N × 0 −cos Z = 0,
+A × 0 + B × 1 −sin D = 0,
+A × cos H cos L −B × 1 + sin H sin L = 0,
+and consequently
+ØØØØØØØ
+1
+0
+−cos Z
+0
+1
+−sin D
+cos H cos L
+−1
+sin H sin L
+ØØØØØØØ
+= 0
+=⇒
+The Lost Art of Nomography
+481
+=⇒
+ØØØØØØØØØØØ
+0
+cos Z
+1
+1
+1 + cos H cos L
+−sin H sin L
+1 + cos H cos L
+1
+1
+−sin D
+1
+ØØØØØØØØØØØ
+= 0.
+The nomogram for this equation is shown in Figure 22, where the inter-
+section of the appropriate H and L curves serves as one scale value, with
+H = L corresponding to the point on the common curve along the enve-
+lope. The sample isopleth relates the values D = 10◦, H = 65◦, L = 30◦,
+and Z = 139.8◦or 220.0◦. There are two possible values of Z for the same
+reason that the sun is at the same altitude twice a day, once in the morning
+and once in the afternoon. It turns out that the H and L curves on the grid
+are interchangeable except that H is always taken as positive.
+0
+20
+30
+40
+50
+60
+70
+80
+90
+100
+110
+120
+130
+140
+150
+160
+180
+25
+35
+45
+55
+65
+75
+85
+95
+105
+115
+125
+135
+145
+155
+Z(◦)
+−90
+−70
+−60
+−50
+−40
+−30
+−20
+−10
+0
+10
+20
+30
+40
+50
+60
+70
+90
+−65
+−55
+−45
+−35
+−25
+−15
+−5
+5
+15
+25
+35
+45
+55
+65
+D(◦)
+180
+200
+210
+220
+230
+240
+250
+260
+270
+280
+290
+300
+310
+320
+330
+340
+360
+205
+215
+225
+235
+245
+255
+265
+275
+285
+295
+305
+315
+325
+335
+Celestial Navigation
+cos Z = (sin D −sin H sin L)/(cos H cos L)
+H(◦)
+L(◦)
+85◦
+80◦
+75◦
+70◦
+65◦
+60◦
+50◦
+40
+30
+Z = Azimuth of celestial body
+D = Declination of celestial body
+H = Altitude of celestial body
+L = Latitude of observer
+Figure 22. A grid nomogram for celestial navigation (after Adams [1964], d’Ocagne [1899], and
+Roschier and Makkonen [2009]).
+482
+The UMAP Journal
+30.4 (2009)
+Trajectory of a Projectile
+The trajectory of a projectile neglecting air friction can be represented
+by a grid nomogram [Hoelscher et al. 1958]. The relevant equation is
+Y = X tan A −
+gX2
+2V 2
+0 cos2 A,
+where A is the initial angle, V0 is the initial velocity, Y is the height, and g
+is the acceleration due to gravity. Hoelscher derives the determinant and
+plots a family of curves for the nomogram of this equation, one for each
+value of A. However, we present it as a grid nomogram in Figure 23 (with
+work done on scaling the x-axis and the y-axis to square up the output for
+the given ranges).
+ØØØØØØØØØ
+g
+2V 2
+0
+0
+1
+Y
+X
+0
+tan A
+1
+X
+cos2 A
+ØØØØØØØØØ
+= 0
+=⇒
+ØØØØØØØØØØ
+g
+2V 2
+0
+0
+1
+Y
+1
+1
+X tan A cos2 A
+X2 + cos2 A
+cos2 A
+X2 + cos2 A
+1
+ØØØØØØØØØØ
+= 0.
+1
+2
+3
+4
+10
+1.5
+2.5
+0.8
+0.9
+1.1
+1.2
+1.3
+1.4
+0.85
+0.95
+1.05
+1.15
+1.25
+V0
+(in 1000 ft/sec)
+−2
+−1
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+−1.5
+−0.5
+0.5
+1.5
+2.5
+3.5
+4.5
+5.5
+6.5
+7.5
+8.5
+9.5
+Y
+(in 1000 ft)
+0◦
+10◦
+20◦
+30◦
+40◦
+50◦
+60◦
+4
+6
+8
+10
+12
+14
+16
+18
+20
+22
+24
+26
+28
+30
+32
+36
+40
+Projectile Trajectory Without Air Friction
+Y = X tan A −gX2/(2V 2
+0 cos2 A)
+X (in 1000 ft)
+A◦
+Figure 23. A grid nomogram for projectile trajectory neglecting air friction (after Hoelscher et al.
+[1958]).
+The Lost Art of Nomography
+483
+Transformations
+In addition to producing sophisticated nomograms, the use of deter-
+minants offers one other major advantage. Often the scaling factors of
+variables have to be manipulated to get a nomogram that uses all the avail-
+able area and yet stretches portions of the curves that are most in need of
+accuracy; alternatively, there may be a need to bring distant points (even
+at inﬁnity) into a compact nomogram. This can be done by substitutions
+of the elements of the determinant or by multiplying the entire determi-
+nant by standard translation or rotation matrices. Let’s look at the types of
+transformations that can be used for a nomogram.
+Translation
+We can translate the nomogram by adding an offset to all elements in
+the x column or all elements in the y column of the determinant:
+xn →xn + c,
+yn →yn + d.
+Rotation
+We can rotate the nomogram about the origin of the axes by an angle θ
+(positive for counter-clockwise rotation) by replacing each element in the
+x column and each element in the y column with
+xn →xn sin θ + yn cos θ,
+yn →xn cos θ −yn sin θ.
+Stretch
+We can stretch the nomogram by multiplying all elements in the x col-
+umn or all elements in the y column of the determinant by a factor.
+xn →cxn,
+yn →dyn.
+Shear
+A shear is a slewing of perpendicular axes to oblique axes or vice versa.
+This interpretation is perhaps best understood by referring to Figure 24
+showing a shear from one set of axes to another, in which the x0-axis is
+canted at an angle θ to the x-axis but the y0-axis aligns with the y-axis. For
+this case,
+xn →xn cos θ,
+yn →yn + xn sin θ.
+Figure 24 on the next page shows the effect of shearing the nomogram
+in Figure 19 on p. 478. It turns out that a shear angle of θ = 2.0◦lifts the
+tail of the curve for h1 and h2 and allows the v-scale to expand to the full
+height of the nomogram for greater precision of that scale. However, here
+we use θ = 4.0◦to provide greater curvature of the tail for greater precision
+in h1 and h2. Shear can also be used to convert a traditional N chart with a
+slanting middle line (as in Figure 5 on p. 463) to one with a perpendicular
+middle line (as in Figure 16 on p. 475) and vice versa.
+484
+The UMAP Journal
+30.4 (2009)
+X’
+y
+X
+!
+(xn,yn)
+(x’n,y’n)
+20
+30
+40
+50
+60
+70
+80
+90
+25
+35
+45
+55
+65
+75
+85
+h1, h2 (cm)
+1.6
+1.7
+1.8
+1.9
+2.0
+2.1
+2.2
+2.3
+2.4
+2.5
+2.6
+2.7
+2.8
+2.9
+3.0
+3.1
+3.2
+3.3
+3.4
+3.5
+3.6
+3.7
+3.8
+3.9
+4.0
+v (m/s)
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+16
+18
+20
+22
+24
+0.8
+0.9
+1.0
+1.1
+1.2
+1.3
+1.4
+1.5
+1.6
+1.7
+1.8
+1.9
+2.0
+Water
+w through a rectangular
+opening in a vertical wall
+v = (2/ 3) "2g(h3/ 2
+1
+# h3/ 2
+2
+)/ (h1 # h2)
+v = theoretical velocity (m/s)
+h1,h2 = heights of horizontal sides of opening (m)
+Note: Use le$ or right sides of scales
+o
+Figure 24. Shearing to an oblique x-axis and its effect on the nomogram in Figure 19.
+Projection
+In Figure 25, a projection uses a point P (called the center of perspectivity)
+to project rays through points of a nomogram in the xy-plane to map them
+onto the yz-plane (also called the x0y0-plane), foreshortening or magnifying
+lines in varying amounts in the x0 and y0 directions.
+X
+y
+z
+P
+X
+y
+z
+P
+(a)
+(b)
+S’
+Figure 25. Projection onto the yz-plane through a point P a) not located under a nomogram and
+b) located under a scale.
+In Figure 25a, the projection has the beneﬁcial effect of increasing the
+size of the third scale to match that of the others. In Figure 25b, the point
+P is located beneath the nomogram; and it is apparent that points nearly
+above P are more widely separated than others in the projection, resulting
+in something of a magnifying-lens effect on that area of the nomogram.
+We can also see the curious effect of the center of the nomogram being
+The Lost Art of Nomography
+485
+cast outside of the two outer scales. Projection can be used in either case
+to spread scales in areas of the nomogram for which greater accuracy is
+important, so it is a very important tool. For P at any location (xP, yP, zP),
+we have
+xn →
+zPxn
+xn −xP
+,
+yn →yPxn −xPyn
+xn −xP
+.
+Looking back at our celestial navigation nomogram in Figure 22 on
+p. 481, we see that the curves are quite crowded for lower altitudes H and
+latitudes L. A second nomogram for these ranges would be very beneﬁcial.
+From our determinant for this nomogram (pp. 480–481), we glean that the
+pointed end of the grid lies at (0.5, 0); so if we place a projection point P
+at, say, (0.47, 0, −0.5), we will magnify the area near the point to spread
+the scales out in that area for drawing ﬁner divisions. The result of this
+projection is shown in Figure 26, where the grid now lies outside the other
+scales.
+0
+20
+30
+40
+50
+60
+70
+80
+90
+100
+110
+120
+130
+140
+150
+160
+180
+25
+35
+45
+55
+65
+75
+85
+95
+105
+115
+125
+135
+145
+155
+Z(◦)
+−90
+−70
+−60
+−50
+−40
+−30
+−20
+−10
+0
+10
+20
+30
+40
+50
+60
+70
+90
+−55
+−45
+−35
+−25
+−15
+−5
+5
+15
+25
+35
+45
+55
+65
+D(◦)
+180
+200
+210
+220
+230
+240
+250
+260
+270
+280
+290
+300
+310
+320
+330
+340
+360
+205
+215
+225
+235
+245
+255
+265
+275
+285
+295
+305
+315
+325
+335
+Celestial Navigation
+cos Z = (sin D −sin H sin L)/(cos H cos L)
+H(◦)
+L(◦)
+5◦
+10◦
+15◦
+20◦
+25◦
+30◦
+35◦
+40◦
+50◦
+60◦
+Z = Azimuth of celestial body
+D = Declination of celestial body
+H = Altitude of celestial body
+L = Latitude of observer
+Figure 26. The celestial navigation nomogram from Figure 22 after projection through the point
+(0.47, 0.0, −0.5), providing greater accuracy for lower altitudes H.
+486
+The UMAP Journal
+30.4 (2009)
+Figure 27 is a portion of the projectile trajectory nomogram of Figure 23
+on p. 482 after projection through P = (2, 0.5, −1) to magnify it for large
+distances X. The Y -scale is also extended to the more negative distances
+as required for the larger X. Points above P are projected to inﬁnity, so
+only half of the nomogram is shown (the other half maps to the left of the
+vertical scales).
+1
+2
+3
+10
+1.5
+2.5
+0.8
+0.9
+0.75
+0.85
+0.95
+1.05
+V0
+(in 1000 ft/sec)
+−15
+−14
+−13
+−12
+−11
+−10
+−9
+−8
+−7
+−6
+−5
+−4
+−3
+−2
+−1
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+−14.5
+−13.5
+−12.5
+−11.5
+−10.5
+−9.5
+−8.5
+−7.5
+−6.5
+−5.5
+−4.5
+−3.5
+−2.5
+−1.5
+−0.5
+0.5
+1.5
+2.5
+3.5
+4.5
+5.5
+6.5
+7.5
+8.5
+9.5
+Y
+(in 1000 ft)
+0◦
+10◦
+20◦
+30◦
+40◦
+50◦
+60◦
+28
+30
+32
+34
+36
+38
+40
+Projectile Trajectory Without Air Friction
+Y = X tan A −gX2/(2V 2
+0 cos2 A)
+X (in 1000 ft)
+A◦
+Figure 27. A portion of the projectile trajectory nomogram in Figure 23 after projection through
+the point (2,0.5,-1), providing greater accuracy for longer distances X.
+A Transformation Exercise
+Epstein [1958] suggests a transformation exercise for the reader that we
+will undertake. A determinant representing the equation q2 −aq + b = 0
+can be constructed as
+The Lost Art of Nomography
+487
+ØØØØØØ
+q
+q−1
+q2
+q−1
+1
+1
+a
+1
+0
+b
+1
+ØØØØØØ
+= 0.
+This nomogram appears in Figure 28 plotted on an xy-grid for refer-
+ence. Eliminating q between the x- and y-elements of the ﬁrst row of the
+determinant, we arrive at x2 −xy + y = 0, demonstrating that the q-scale
+is in fact a hyperbola. However, the layout of the q-scale is problematic, as
+the two halves stretch toward inﬁnity very quickly and it is not possible to
+accurately locate q-points for isopleths near the asymptotes of the hyper-
+bola. So we will transform this nomogram into one in which the q-scale is
+ﬁnite.
+x(t)
+y(t)
+1.5
+2
+2.5
+3
+3.5
+4
+4.5
+5
+5.5
+6
+q
+−6
+−5.5
+−5
+−4.5
+−4
+−3.5
+−3
+−2.5
+−2
+−1.5
+−1
+−0.5
+0
+0.5
+q
+−5
+−4
+−3
+−2
+−1
+0
+1
+2
+3
+4
+5
+6
+7
+a
+−5
+−4
+−3
+−2
+−1
+0
+1
+2
+3
+4
+5
+6
+7
+b
+Figure 28. Original nomogram for q2 −aq + b = 0.
+First, we rotatethe nomogramclockwisebyθ = 45◦and stretch it in both
+dimensions by
+√
+2, for a reason that will become apparent in the next trans-
+formation. The rotation plus stretch transforms the original nomogram (a)
+to (b) in Figure 29.
+488
+The UMAP Journal
+30.4 (2009)
+x(t)
+y(t)
+q
+q
+a
+b
+x(t)
+y(t)
+q
+a
+b
+x(t)
+y(t)
+q
+a
+b
+x(t)
+y(t)
+q
+a
+b
+(b)
+(c)
+(d)
+(e)
+(f)
+x(t)
+y(t)
+q
+a
+b
+x(t)
+y(t)
+q
+q
+a
+b
+(a)
+Figure 29. Transformation sequence for a nomogram of q2 −aq + b = 0.
+xn →xn + yn,
+yn →−xn + yn;
+ØØØØØØØØØ
+q2 + q
+q −1
+q
+1
+a + 1
+a −1
+1
+b
+b
+1
+ØØØØØØØØØ
+= 0.
+We rotated the nomogram because we want a vertical line (say, x = 1) that
+does not intersect the hyperbola. A projection transformation can convert
+a scale with two branches (like this hyperbola) into a single connected scale
+(an ellipse) if a straight line separating the two branches is projected to
+inﬁnity, that is, if the line is parallel to the yz-plane (which x = 1 is) and the
+projection point P is located directly above or below it in its z-value (see
+Figure 25b). Choosing P = (1, −1, 1), we ﬁnd that an ellipse magically
+appears in (c).
+The Lost Art of Nomography
+489
+xn →
+xn
+xn −1,
+yn →−xn −yn
+xn −1 ;
+ØØØØØØØØØØØØ
+q2 + q
+q2 + 1
+−2q2
+q2 + 1
+1
+a + 1
+a
+−2
+1
+b
+b −1
+−2b
+b −1
+1
+ØØØØØØØØØØØØ
+= 0.
+Now let’s shear the nomogram so that the b-scale lies on the y-axis while
+keepingthea-scaleparalleltothex-axis. Weareshearingtothey-axisrather
+than to the x-axis as described earlier for shear; and for a b-scale slope of
+−0.5, we arrive at (d).
+xn →xn + yn/2,
+yn →yn;
+ØØØØØØØØØØØØ
+q
+q2 + 1
+−2q2
+q2 + 1
+1
+1
+a
+−2
+1
+0
+−2b
+b −1
+1
+ØØØØØØØØØØØØ
+= 0.
+Now we’ll translate the nomogram upward by 2 to place the intersection
+point on the origin as in (e) and shrink the nomogram in the y-direction by
+a factor of 2 to get a circular q-scale as in (f).
+xn →xn,
+yn →(yn + 2)/2;
+ØØØØØØØØØØØØ
+q
+q2 + 1
+1
+q2 + 1
+1
+1
+a
+0
+1
+0
+−1
+b −1
+1
+ØØØØØØØØØØØØ
+= 0.
+Figure 30 is the plot of the ﬁnal determinant, a very distinctive circular
+nomogram. The entire range of q from −∞to +∞is now represented in
+a ﬁnite area; and certainly the range less than 1.5, which veered to inﬁnity
+in our original nomogram, is nicely accessible. The larger numbers are not
+as accessible, but the ranges can be skewed to spread out to any range by
+490
+The UMAP Journal
+30.4 (2009)
+q
+−10
+−1
+−0.1
+0
+0.1
+1
+10
+−50
+−6
+−4
+−3
+−2
+−0.9
+−0.8
+−0.7
+−0.6
+−0.5
+−0.4
+−0.3
+−0.2
+−0.05
+0.05
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+0.8
+0.9
+2
+3
+4
+6
+50
+−15
+−3.5
+−2.5
+−1.5
+−0.65
+−0.55
+−0.45
+−0.35
+−0.25
+−0.15
+0.15
+0.25
+0.35
+0.45
+0.55
+0.65
+1.5
+2.5
+3.5
+15
+10
+2
+3
+4
+5
+6
+50
+2.5
+3.5
+15
+a
+−10
+−50
+−6
+−5
+−4
+−3
+−2
+−1
+−15
+−3.5
+−2.5
+−1.5
+1
+1.5
+−1
+−9
+−5
+−4
+−3
+−2
+−0.8
+−0.6
+−0.5
+−0.4
+−0.3
+−0.2
+−2.5
+−1.5
+−0.15
+b
+0.1
+0.01
+0.05
+0.2
+0.15
+0.25
+10
+4
+5
+6
+7
+4.5
+15
+0.1
+0.01
+0.05
+0.2
+0.15
+0.25
+q2 −aq + b = 0
+Figure 30. A circular nomogram for q2 −aq + b = 0 (after Epstein [1958]).
+multiplying the original equation by a constant. We could have stopped
+at any of the nomograms containing an ellipse, but it is easier to draft the
+circle.
+It’s interesting to play around with a straightedge on the circular nomo-
+gram that we derived above to see that it works. In particular, an isopleth
+through a value of a and a value of b will just touch the q-circle if the dis-
+criminant a2 −4b from the quadratic formula is 0, providing the repeated
+real root. When the discriminant is less than zero, the isopleth misses the
+q-circle, denoting no real roots; and when the discriminant is greater than
+zero, the isopleth crosses the two real roots on the q-circle.
+In fact, if you eliminate the a-scale, then the b-scale represents the prod-
+uct of two numbers on the q-circle, because if we have two solutions q1 and
+q2 for the equation q2 −aq + b = 0, then the equation can be written as
+(q −q1)(q −q2) = 0. Multiplying this out and equating terms to the orig-
+inal equation, we ﬁnd that b = q1q2 and a = q1 + q2. It turns out that any
+three-line parallel-scale nomogram can be transformed into a nomogram
+with two scales on a circle and one on a line, although the scales on the
+The Lost Art of Nomography
+491
+circle generally do not have the same values and require tickmarks on each
+side of the circumference.
+Transformations can also be performed by multiplying a transforma-
+tion matrix times the matrix of the nomogram determinant and taking the
+determinant of the result. Two or more transformations can be combined
+by multiplying their transformation matrices. (It often happens that after
+such a matrix multiplication, the nomogram determinant needs to be ma-
+nipulated again into the standard nomographic form.) For example, the
+transformation matrices for rotation and projection are
+√cos θ
+−sin θ
+0
+sin θ
+cos θ
+0
+0
+0
+1
+!
+and
+√−xP
+0
+0
+yP
+zP
+0
+0
+0
+−xP
+!
+.
+It is possible to use matrix multiplication to map a trapezoidal shape
+(suchastheboundariesofanomogramthatdoesnotoccupyafullrectangle)
+into a rectangular shape. This would increase the accuracy of the scales that
+can be expanded to ﬁll the sheet of paper. Consider the following matrix
+multiplication:
+√k11
+k12
+k13
+k21
+k22
+k23
+k31
+k32
+k33
+!
+×
+√xu
+yu
+1
+xv
+yv
+1
+xw
+yw
+1
+!
+.
+By the rules of matrix multiplication and some manipulation of the re-
+sult, each y0 and x0 in the resulting matrix can be represented as
+x0 = xk11 + yk21 + k31
+xk13 + yk23 + k33
+,
+y0 = xk12 + yk22 + k32
+xk13 + yk23 + k33
+.
+Now, if we want to remap an area such that the points (x1, y1), (x2, y2),
+(x3, y3) and (x4, y4) map to, say, the rectangle (0, 0), (0, a), (b, 0) and (b, a),
+we insertthe ﬁnalandinitialx- andy-valuesintothe formulasabove, giving
+us eight equations in nine unknown k-values. So we choose one k, solve
+for the other eight k-values, multiply the original determinant by the k-
+matrix and convert it back to standard nomographic form, and replot the
+nomogram. It’s not a lot of fun, really, but it demonstrates the efforts that
+were once devoted to nomography.
+Conclusion
+Nomograms are fascinating artifacts in the history of mathematics, the
+culmination of efforts over many years to invent graphical calculators for
+scientiﬁc and engineering use. Basic nomographic designs exist for most
+forms of equations, more designs than are presented here, and transforma-
+tions can customize them for greatest ease of use.
+492
+The UMAP Journal
+30.4 (2009)
+Today, the use of nomograms is scattered at best. There are many sim-
+ple nomograms that doctors can use to quickly assess probabilities and
+attributes such as the body-mass index (BMI), and some science and engi-
+neering articles include nomograms. There is also a smattering of engineer-
+ing nomograms found as supplements in catalogs by manufacturers. But
+there could be more applications of these where convenience and speed are
+paramount. Popular calculations such as exercise time and type vs. calo-
+ries could be distributed on paper and customized by users with penciled
+additions. Medical patients could take nomograms home to post on refrig-
+erators to consult and record information on; and paper organizers might
+include tax, tip, and mileage calculators. Mortgage and compound-interest
+calculations are a snap for anyone with a corresponding nomogram.
+With a modern slant, nomograms could easily be incorporated into the
+colorful infographics that are so popular today. Nomograms that took days
+to analyze and draft on paper in the past can be generated in seconds on a
+computer and transformed interactively to produce radically different and
+innovative designs.
+But nomograms have an intrinsic charm beyond their practical use. The
+more-beautiful ones attract interest with their mix of technical and artistic
+ﬂair, much as unusual sundials draw people—in fact, the sun’s shadow
+across curves on some sundial faces can be considered an isopleth. As
+a calculating aid, nomograms can solve very complicated formulas with
+amazing ease. As a curiosity, nomograms provide a satisfying, hands-on
+application of interesting mathematics in an engaging, creative activity.
+References
+Adams, Douglas P. 1964. Nomography: Theory and Application. Hamden,
+CT: Archon.
+Douglass, Raymond D., and Douglas P. Adams. 1947. Elements of Nomog-
+raphy. New York: McGraw-Hill.
+Epstein, L. Ivan. 1958. Nomography. New York: Interscience Publishers.
+Hoelscher, Randolph P., Joseph N. Arnold, and Stanley H. Pierce. 1958.
+Graphic Aids in Engineering Computation. New York: McGraw-Hill.
+Johnson, Lee H. 1952. Nomography and Empirical Equations. New York: John
+Wiley and Sons.
+d’Ocagne, Maurice. 1899. Trait´e de nomographie. Paris: Gauthier-Villars.
+Otto, Edward. 1963. Nomography. New York: Macmillan.
+Roschier, Leif, andTapaniMakkonen. StarNavigation. http://www.pynomo.
+org/wiki/index.php/example:Star_navigation. Accessed 10 Sep-
+tember 2009.
+The Lost Art of Nomography
+493
+Soreau, Rodolphe. 1902. Contribution ´a la th´eorie et aux applications de la
+nomographie. Paris: Ch. B`eranger.
+About the Author
+Ron Doerﬂer is a systems engineer in the Defen-
+sive Systems Division of the Northrop Grumman
+Corporation in Rolling Meadows, IL. He is the au-
+thor of a book on mental calculation, Dead Reckoning:
+Calculating Without Instruments (1993). He writes es-
+says on the history of science for his blog, “Dead
+Reckonings: Lost Art in the Mathematical Sciences,”
+at http://www.myreckonings.com/wordpress .
+494
+The UMAP Journal
+30.4 (2009)

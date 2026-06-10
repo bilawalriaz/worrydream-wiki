@@ -1,0 +1,2696 @@
+Designing the Star User Interface 
+The Star user interface adheres rigorously to a small set of 
+principles designed to make the system seem friendly by 
+simplifying the human-machine interface. 
+In April 1981, Xerox announced 
+the 8010 Star Information System, a 
+new personal computer designed for 
+offices. Consisting of a processor, a 
+large display, a keyboard, and a 
+cursor-control device (see photo I), it 
+is intended for business professionals 
+who handle information. 
+Star is a multifunction system com- 
+bining document creation, data pro- 
+cessing, and electronic filing, mailing, 
+and printing. Document creation in- 
+cludes text editing and formatting, 
+graphics editing, mathematical for- 
+mula editing, and page layout. Data 
+processing deals with homogeneous, 
+relational databases that can be 
+sorted, filtered, and formatted under 
+user control. Filing is an example of a 
+network service utilizing the Ethernet 
+local-area network (see references 9 
+and 13). Files may be stored on a 
+work station's disk, on a file server on 
+About the Authors 
+These five Xerox employees have worked on 
+the Star user interface project for the past five 
+years. Their academic backgrounds are in com- 
+puter science and psychology. 
+Dr. David Canfield Smith, Charles Irby, 
+Ralph Kimball, and Bill Verplank 
+Xerox Corporation 
+3333 Coyote Hill Rd. 
+Palo Nto, CA 94304 
+Eric Harslem 
+Xerox Corporation 
+El Segundo, CA 90245 
+the work station's network, or on a 
+file server on a different network. 
+Mailing permits users of work sta- 
+tions to communicate with one 
+another. Printing utilizes laserdriven 
+raster printers capable of printing 
+both text and graphics. 
+As Jonathan Seybold has written, 
+'This is a very different product: Dif- 
+ferent because it truly bridges word 
+processing and typesetting functions; 
+different because it has a broader 
+range of capabilities than anything 
+which has preceded it; and different 
+because it introduces to the commer- 
+cial market radically new concepts in 
+human engineering." (See reference 
+15.) 
+The Star user interface adheres 
+rigorously to a small set of design 
+principles. These principles make the 
+system seem familiar and friendly, 
+simplify the human-machine interac- 
+tion, unify the nearly two dozen func- 
+tional areas of Star, and allow user 
+experience in one area to apply in 
+others. In reference 17, we presented 
+an overview of the features in Star. 
+Here, we describe the principles 
+behind those features and illustrate 
+the principles with examples. This 
+discussion is addressed to the 
+designers of other computer pro- 
+grams and systems-large and small. 
+Star Architecture 
+Before describing Star's user inter- 
+face, several essential aspects of the 
+Star architecture should be pointed 
+out. Without these elements, it would 
+have been impossible to design an 
+interface anything like the present 
+one. 
+The Star hardware was modeled 
+after the experimental Xerox Alto 
+computer (see reference 19). Like 
+Alto, Star consists of a Xerox- 
+developed, high-bandwidth, MSI 
+(medium-scale integration) processor; 
+local disk storage; a bit-mapped 
+display screen having a 72dots-per- 
+inch, resolution; a pointing device 
+called the "mouse"; and a connection 
+to the Ethernet network. Stars are 
+higher-performance machines than 
+Altos, being about three times as fast, 
+having 512K bytes of main memory 
+(versus 256K bytes on most Altos), 10 
+242 
+A~rill982 O BYTE Publications lnc 
+Circle 26 on inquiry card. 
+MODELIII WITH 2DISK DRIVES ( U K  RAM) .............. S17U.06 
+DRIVE0 
+INTERNAL 
+DRIVE 2 
+DRIVE 3 
+EXTERNAL 
+EXTERNAL 
+4OTraL 
+sn9.95 
+.SS.m 
+Photo 1: A Star work station showing the processor, display, keyboard, and mouse. ' ' 
+Photo 2: The Star keyboard and mouse. Note the two buttons on top of thi mouse. 
+or 29 megabytes of disk memory (ver- 
+sus 2.5 megabytes), a 10%- by 
+13 %-inch display screen (versus 10 ?h 
+by 8 inches), and a 10-megabits-per- 
+second Ethernet (versus 3 megabits). 
+Typically, Stars, like Altos, are 
+linked via Ethernets to each other and 
+to shared file, mail, and print servers. 
+Communication servers connect 
+Ethernets to one another either direct- 
+ly or over telephone lines, enabling 
+internetwork communication. (For a 
+detailed description of the Xerox Alto 
+computer, see the September 1981 
+BYTE article 'The Xerox Alto Com- 
+puter" by Thomas A. Wadlow on 
+page 58.) 
+The most important ingredient of 
+the user interface is the bit-mapped 
+display screen. Both Star and Alto 
+devote a portion of main memory to 
+the screen: 100K bytes in Star, 50K 
+bytes (usually) in Alto. Every screen 
+dot can be individually turned on or 
+off by setting or resetting the cor- 
+responding bit in memory. It should 
+be obvious that this gives both com- 
+puters an excellent ability to portray 
+visual images. We believe that all im- 
+pressive office systems of the future _, 
+will have bit-mapped displays., 
+Memory cost will soon be insignifi- 
+-8 
+cant enough that they will be feasible I + 
+even in home computers. Visual com- 4 ! 
+munication is effective, and it can't be ,!, 
+exploited without graphics flexibility. 
+Tiwe must be a way k change 
+do% on the screen quickly. Star has a 
+high memory bandwidth, about 90 
+megahertz (MHz). 
+The entire Star 
+screen is repainted from memory 39 
+times per second, about a 50-MHz 
+data rate between memory and the 
+screen. This would swamp most com- 
+puter memories. However, since 
+Star's memory is double-ported, 
+refreshing the display does not ap- 
+preciably slow down processor 
+memory access. Star also has separate 
+logic devoted solely to refreshing the 
+SITTING 
+PRETTY 
+You can use just about any desk for a 
+computer terminal stand. But with 
+CF&A, yoli're sitting pretty. Our full 
+rangeaf desks, workstations, and ter- 
+' mine1 stands are designed to accom- 
+modate a variety of computer equip 
+ment. Choose from our Classic Series 
+desks, DR Series desks and enclo- 
+sures, specialtyitems like our Apple11 . 
+desk, or a univeisal piinter stand. 
+You'll be sitting pretty with attractive 
+color selections, durable construc- 
+tion, versatile configurations, useful 
+options, competitive prices, qulczk 
+delivery, and personal service. It's our 
+, way of doing business. 
+Computer Furniture and 
+Accessories, Inc. 
+1441 West 13-d 
+Street 
+Qardena, CA 90249 
+(21 3) 327-771 0 
+246 
+Ap " - 3 2  0 BYTE Publications Inc 
+display. Finally, special microcode 
+has been written to assist in changing 
+the contents of memory. quickly, per- 
+I 
+I 
+mitting a variety of screen processing 
+that would not otherwise be practical 
+(see reference 8). 
+People need a way to quickly point 
+to items on the screen. Cursor step 
+keys are too slow; nor are they 
+suitable for graphics. Both Star and 
+Alto use a pointing device called the 
+mouse (see photo 2). First developed 
+at Stanford Research Institute (see 
+reference 06), Xerox's version has a 
+ball on the bottom that turns as the 
+mouse slides over a flat surface such 
+as a table. Electrobics sense the ball 
+rotation and guide a cursor on the 
+screen in corresponding motions. The 
+mouse possesses several important 
+attribute% 
+*It is a ''Fitts's law" device, That is, 
+after some practice you can point 
+with a mouse as quickly and easily as 
+you can with the tip of your finger. 
+The limitations on pointing speed are 
+those inherent in the human nervous 
+system (see references 3 and 7). 
+.It stays where it was left when you 
+are not touching it. It doesn't have to 
+be picked up like a light pen or stylus. 
+.It has buttons on top that can be 
+sensed under program control. The 
+buttons let you point to and interact 
+with objects on the screen in a variety 
+of ways. 
+Every Star and Alto has its own 
+hard disk for local storage of pro- 
+grams and data. This enhances their 
+personal name, providing consistent 
+accws' to information raardless of 
+how'ntmy.other:ma~bi~es 
+are on the 
+I
+.
+ 
+network or what anyone else is da- 
+ing. Larger programs can be written, 
+using the disk for swapping. 
+The Ethernet lets both ,Stars and 
+Altos have a distributed architecture. 
+Each hachine is connected to an 
+Ethernet. Other machines on the 
+Ethernet 
+are 
+dedicated 
+as 
+"serversn-machines 
+that are at- 
+tached to a resource and provide ac- 
+cess to that resource. 
+Star Design Methodology 
+We have learned from Star the im 
+portance of formulating the fun 
+damental concepts (the user's concep 
+tual model) before software is writ- 
+ten, rather than tacking on a user in- : 
+terface afterward. Xerox devoted 
+about thirty work-years to the design 
+of the Star user interface. It was 
+designed before the functionality of 
+the system was fully decided. It was 
+even designed before the computer 
+hardware was built. We worked for 
+two years before we wrote a single 
+line of actual product software. 
+Jonathan Seybold put it this way, 
+''Most system design efforts start with 
+hardware specifications, follow this 
+with a set of functional specifications 
+for the software, then try to f
+i
+i
+ 
+out a logical user interface and com- 
+mand structure. The Star project 
+' 
+started the other way around: the 
+paramount coniern was to define a 
+conceptqal model of how the user 
+would relate to the system. Hardware 
+and software followed from this." 
+(See reference 15.') 
+In fact, before we even began 
+designing the model, we developed a 
+methodology by which we would do 
+the design. Our methodology report 
+(see reference 10) stated: 
+One of the most troublesome and 
+least understood aspects of interactive 
+systems is the user interface. In the 
+design of user interfaces, we are con- 
+cerned with several issues: the provi- 
+sion of languages by which users can 
+express their commands to the com- 
+puter; the design of display representa- 
+tions that show the state of the system 
+to the user; and other more abstract 
+issuesthat affect the user's understand- 
+ing of the system's behavior. Many of 
+these issues are highly subjective and 
+are therefore often addressed in an ad 
+hoc fashion. We believe, however, 
+that more rigorous approaches ta user 
+interface design can be developed. . . . 
+These design methodologies are all 
+unsatisfactory for the same basic 
+reasoli: they all omit an essential step 
+that must precede the design of any 
+successful user interface, namely task 
+analysis. By this we mean the analysis 
+of the task performed by the user, or 
+users, prior to introducing the pro- 
+posed computer system. Task analysis 
+involves establishing who the users 
+are, what their goals are in performing 
+the task, what information they use in 
+performing it, what information they 
+generate, and what methods they 
+employ. The descriptions of input and 
+output information should include an 
+analysis of the various objects, or in- 
+dividual types of information entity, 
+employed by the user. . . . 
+The purpose of task analysis is to 
+simplify the remaining stages in user 
+interface design. The current task 
+description, with its breakdown of the 
+information objects and methods 
+presently employed, offers a starting 
+point for the definition of a corre- 
+sponding set of objects and methods to 
+be provided by the computer system. 
+The idea behind this phase of design is 
+to build up a new task environment for 
+the user, in which he can work to ac- 
+coniplish the same goals as before, sur- 
+rounded now by a different set of ob- 
+jects, and employing new methods. 
+Prototyping is another crucial ele- 
+ment of the design process. System 
+designers should be prepared to im- 
+plement the new or difficult concepts 
+and then to throw away that code 
+when doing the actual implementa- 
+tion. As Frederick Brooks says, the 
+question "is not whether to build a 
+pilot system and throw it away. You 
+will do that. The only question is 
+whether to plan in advance to build a 
+throwaway, or to promise to deliver 
+the throwaway to customers. . . . 
+Hence plan to throw one away; you 
+will, anyhow. " (See reference 2.) The 
+Alto sewed as a valuable prototype 
+for Star. Over a thousand Altos were 
+eventually built. Alto users have had 
+several thousand work-years of ex- 
+perience with them over a period of 
+eight years, making Alto perhaps the 
+7 working day RUSH service 
+FREE demo samples 
+Quality design 
+Very COMPETITIVE PRICES 
+Personalized assistance 
+FREE shipping - in continental U.S. 
+COMPLIMENTARY quotes on 
+custom forms 
+1 
+ CHECKS 
+A 
+Currently providing forms support 
+A 
+L 
+for: 
+I 
+Systems Plus 
+Vector 
+TCS 
+Alpha Micro 
+Radio Shack 
+Insoft 
+IMS Continental 
+DIBS 
+Libra 
+Structured Systems Group 
+Peachtree 
+Anchor 
+Accounting Plus 
+BPI 
+Designer 
+MCI 
+Graham Dorian 
+MCBA 
+Durango 
+Dynabyte 
+I 
+Call NOW for FREE sample forms 
+packet. Your customer service 
+representative is waiting to assist 
+you with your continuous forms 
+1 needs! 
+. . .a 
+any other continuous 
+forln YOU may need! (@ Checks 8384 Hercules St. 
+- 
+To-Go La Mesa, CA 92041 
+largest prototyping effort ever. 
+Dozens of experimental programs 
+were written for the Alto by members 
+of the Xerox Palo Alto Research 
+Center. Without the creative ideas of 
+the authors of those systems, Star in 
+its present form would have been im- 
+possible. In addition, we ourselves 
+programmed various aspects of the 
+Star design on Alto, but all of it was 
+"throwaway" code. Alto, with its bit- 
+mapped display screen, was powerful 
+enough to implement and test OUI 
+ideas on visual interaction. 
+Some types of concepts are in- 
+herently difficult for people to grasp. 
+Without being too formal about it, 
+our experience before and during the 
+Star design led us to the following 
+classification: 
+Easy 
+Hard 
+concrete 
+abstract 
+visible 
+invisible 
+copying 
+creating 
+choosing 
+filling in 
+recognizing 
+generating 
+editing 
+programming 
+interactive 
+batch 
+The characteristics on the left were in- 
+corporated into the Star user's con- 
+ceptual model. The characteristics on 
+the right we attempted to avoid. 
+Principles Used 
+The following main goals were pur- 
+sued in designing the Star user inter- 
+face : 
+familiar user's conceptual model 
+*seeing and pointing versus remem- 
+bering and typing 
+*what you see is what you get 
+*universal commands 
+consistency 
+simplicity 
+modeless interaction 
+user tailorability 
+We will discuss each of these in turn. 
+Familiar User's Conceptual Model 
+A user's conceptual model is the set 
+of concepts a person gradually ac- 
+quires to explain the behavior of a 
+system, whether it be a computer 
+system, a physical system, or a 
+hypothetical system. It is the model 
+developed in the mind of the user that 
+enables that person to understand 
+and interact with the system. The first 
+task for a system designer is to decide 
+what model is preferable for users of 
+the system. This extremely important 
+step is often neglected or done poor- 
+ly. The Star designers devoted several 
+work-years at the outset of the proj- 
+ect discussing and evolving what we 
+considered an appropriate model for 
+an office information system: the 
+metaphor of a physical office. 
+The designer of a computer system 
+can choose to pursue familiar 
+analogies and metaphors or to in- 
+troduce entirely new functions requir- 
+ing new approaches. Each option has 
+advantages and disadvantages. We 
+decided to create electronic counter- 
+parts to the physical objects in an of- 
+fice: paper, folders, file cabinets, mail 
+boxes, and so on-an 
+electronic 
+metaphor for the office. We hoped 
+this would make the electronic 
+"world" seem more familiar, less 
+alien, and require less training. (Our 
+initial experiences with users have 
+confirmed this.) We further decided 
+to make the electronic analogues be 
+concrete objects. Documents would 
+be more than file names on a disk; 
+they would also be represented by 
+pictures on the display screen. They 
+would be selected by pointing to them 
+with the mouse and clicking one of 
+the buttons. Once selected, they 
+would be moved, copied, or deleted 
+by pushing the appropriate key. 
+Moving a document became the elec- 
+tronic equivalent of picking up a 
+piece of 
+paper and walking 
+somewhere with it. To file a docu- 
+ment, you would move it to a picture 
+of a file drawer, just as you take a 
+physical piece of papqr to a physical 
+, --' 
+1 *A 
+file cabinet. 
+1 P ir ;- 
+The reason that the user's concep- 
+tual model should be decided first 
+Good management decisions are 
+crucial to the success of any business, 
+But frequently, business problems are 
+too complex for off-the-cuff evaluation 
+These problems are often met with 
+guesswork and inaccuracy. 
+decisions which 
+,optimizing an objective subject to some 
+, number of constraints. 
+An investment broker may try to 
+solutlon to these problems often means 
+the difference between profit and loss. 
+or, directly from: 
+P.O. Box 1628 
+Technical Hot Line: 
++ 
+'r 
+. t52 
+April 1982 0 
+BYTE Publicatiom mc 
+' 
+, -. 
+\ '  
+' . 
+1
+-
+, .
+Figure 1: In-basket and out-basket icons. The in-basket contains an envelope indicating 
+that mail has been received. (This figure was taken directly from the Star screen. 
+Therefore, the text appears at screen resolution.) 
+I 
+'1ke DSUO 'Ierminal Controller makes your LA36 
+perform like a DECwritera III, 
+The Datasouth DS1U) gives your DECwriterm I1 the hi 
+speed printing 
+and versatile performance features of the DECwriteraD e 
+I1 at only a frac- 
+tion of the cost. The DS120 is a plug compatible replacement for your 
+LA36 logic board which can be installed in minutes. Standard features 
+include: 
+C 
+165 cps bidirectional printing 
+RS232 interface 
+Horizontal & Vertical Tabs 
+20 rnA Current Loop interface 
+Page Length Selection 
+Top of Form 
+11O-4800 baud operation 
+Adjustable Margins 
+1000 character print buffer 
+Double wide characters 
+X-on, X-off protocol 
+Parity selection 
+Self Test 
+Optional APL character set 
+Over 5,000 DS120 units are now being used by customers ranging from 
+the Fortune 500 to personal computing enthusiasts. In numerous instal- 
+lations, entire networks of terminals have been upgraded to take advan- 
+tage of today's higher speed data 
+communications &rvic&. LSI - 
+microprocessor electronics 
+and stirict quality control en- 
+sure dependable performance 
+for years to come. When ser- 
+vice is required, we will 
+respond promptly and effec- 
+tively. Best of all, we can de- 
+liver immediately through 
+our nationwide network of 
+distributors. Just give us a 
+call for all the details. - 
+0 
+computer torpor- 
+4740 Dwight Evans Road Charlotte, North Carolina 28210 7041523-8500 
+I- 
+-pril1982 0 
+B Y E  Publications Inc 
+Circle 139 on inquiry card. 
+when designing a system is that the 
+approach adopted changes the func- 
+tionality of the system. An example is 
+electronic mail. Most electronic-mail 
+systems draw a distinction between 
+messages and files to be sent to other 
+people. Typically, one program sends 
+messages and a different program 
+handles file transfers, each with its 
+own interface. But we observed that 
+offices make no such distinction. 
+Everything arrives through the mail, 
+from one-page memos to books and 
+reports, from intraoffice mail to inter- 
+national mail. Therefore, this became 
+part of 
+Star's physical-office 
+metaphor. Star users mail documents 
+of any size, from one page to many 
+pages. Messages are short documents, 
+just as in the real world. User actions 
+are the same whether the recipients 
+are in the next office or in another 
+country. 
+A physical metaphor can simplify 
+and clarify a system. In addition to 
+eliminating the artificial distinctions 
+of 
+traditional computers, it can 
+eliminate commands by taking ad- 
+vantage of more general concepts. 
+For example, since moving a docu- 
+ment on the screen is the equivalent 
+of picking up a piece of paper and 
+walking somewhere with it, there is 
+no "send mail" command. You sim- 
+ply move it to a picture of an out- 
+basket. Nor is there a "receive mail" 
+command. New mail appears in the 
+in-basket as it is received. When new 
+mail is waiting, an envelope appears 
+in the picture of the in-basket (see 
+figure 1). This is a simple, familiar, 
+nontechnical approach to computer 
+mail. And it's easy once the physical- 
+office metaphor is adopted! 
+While we want an analogy with the 
+physical world for familiarity, we 
+don't want to limit ourselves to its 
+capabilities. One of the raisons d'Ctre 
+for Star is that physical objects do not 
+provide people with enough power to 
+manage the increasing complexity of 
+the "information age." For example, 
+we can take advantage of the corn-. 
+puter's ability to search rapidly by 
+providing a search function for its 
+electronic file drawers, thus helping 
+to solve the long-standing problem of 
+lost files. 
+k r , ;  . 
+* '  
+q,; 
+., 
+8. 
+fi' 
+h., ! 
+>-f 
+kikj, 
+b .-,'. 
+p: ' 
+,,a
+A. 
+._.I ', . 
+h::,;,.. 
+. 
+,. . 
+gi; 
+; 
+k.;. 
+' 
+B . . ': 
+, A , -  
+'. .. 
+f a; 
+The "Desktop" 
+Every user's initial view of Star is 
+the 'Desktop," which resembles the 
+top of an office desk, together with 
+surrounding furniture and equip- 
+ment. It represents your working en- 
+vironment-where your current proj- 
+ects and accessible resources reside. 
+On the screen are displayed pictures 
+of familiar office objects, such as 
+documents, folders, file drawers, in- 
+baskets, and out-baskets. These ob- 
+jects are displayed as small pictures or 
+#,. icons," as shown in figure 2. 
+YOU can "open" an icon to deal 
+with what it represents. This enables 
+you to read documents, inspect the 
+contents of folders and file drawers, 
+see what mail you have received, etc. 
+When opened, an icon expands into a 
+'lirger form called a "window," which 
+displays the icon's contents. Win- 
+dows are the principal mechanism for 
+displaying and manipulating infor- 
+mation. 
+The Desktop "surface" is displayed 
+as a distinctive gray pattern. This 
+restful design makes the icons and 
+windows on it stand out crisply, 
+minimizing eyestrain. The surface is 
+organized as an array of one-inch 
+squares, 14 wide by 11 high. An icon 
+can be placed in any square, giving a 
+maximum of 154 icons. Star centers 
+an icon in its square, making it easy 
+to line up icons neatly. The Desktop 
+always occupies the entire display 
+screen; even when windows appear 
+on the screen, the ~ e s k t o p  
+continues 
+to exist "beneath them. 
+. 
+- 
+The Desktop is the principal Sta~ 
+technique for realizing the physical 
+office metaphor. The icons on it are 
+visible, concrete embodiments of the 
+corresponding physical objects. Star 
+users are encouraged to think of the 
+objects on the Desktop in physical 
+terms. Therefore, you can move the 
+icons around to arrange your 
+Desktop as you wish. 
+(Messy 
+Desktops are certainly possible, just 
+as in real life.) Two icons cannot oc- 
+cupy the same space (a basic law of 
+physics). Although moving a docu- 
+ment to a Desktop resource such as a 
+printer involves transferring the 
+document icon to the same square as 
+the printer icon, the printer im- 
+mediately "absorbs" the document, 
+queuing it for printing. You can leave 
+XEROX STAR User-Interfaces 
+DOCUMENT OBJECTS 
+Documtnt 
+Record File 
+File Drawer 
+paragraph "-.,.. 
+In- and 8:lut-Bajketr 
+Footnote 
+Select 
+Adjust 
+UNIVERSAL COMMANDS 
+:how Prspotie; 
+Copy Propertie: 
+. 
+. 
+Figure 2: A Desktop as it appears on the Stur screen. Several commonly used icons appear across the top of the screen, including 
+documents fo seme as "fom-pd" sources for letters, memos and hlank waver. An open window displaying a document containing 
+an illustration is also shown, 
+t56 
+Apd 1982 O B Y E  Publications lnc 
+I 
+. . 
+P-, 
+3
+We Were Here Yeeterday... 
+I 
+We Will Be Here Tomorrow 
+(With Support & Service For You!J 
+LlST 
+64k QD $3275 
+~ 4 1 9 5  
+' ' g ~ ~ ~ ~ 1 3 1  
+25 
+- 
+-- 
+PRINTERS 
+HARD DISKS I c o w  11 . . . . . . . . . . . . . . . . . . . . . . . .  n 9 s  
+-- - 
+5mb for IBM, Superbrain, S-100,) EPSON MX80 ~ a r a l l e ~ .  
+. . . . . . . . . . . . . .  .$479 
+Zenith, TRS-80 .II & Ill, Xerox, 
+Apple. 
+CORVUS 
+Call For Prices 
+TANDON S/S O/O 
+IBM COMPATIBLE. . . . . .  .'225 
+TANOON 01s 010. ...... .'350 
+TANOON 100-4 80 track. . .  .'a00 
+EPSON ~ ~ 1 0 0 .  
+. . . . . . . . . . . . . . . . . .  .$ 
+Clt0h F10 40 cps parallel * . . . . . . . . . .  .$I 
+NEC 7710, 7730 * . . . . . . . . . . . . . . .  $2 
+NEC 3510 rs232 * . . . . . . . . . . . . . . . . .  $1 
+DATA SOUTH 180 cps. . . . . . . . . . . . . . .  $1 
+OKIOATA 82A. . . . . . . . . . . . . . . . . . . . .  S 
+MPI 886 120 cps. . . . . . . . . . . . . . . . . . . .  S 
+MPI 99G L.C. dscenders . . . . . . . . . . . . .  .$ 
++Tractors Available. . . . . . . . . . . . . . . .  
+$ 
+SUPERBRAIN ADD-ON 
+S/S, 0/0 w/power supply, cable, case. 
+software, one drive. t 
+TERMINALS 
+I 
+Many brands available. 
+Call for ~rices. 
+I 
+* 
+I 
+SOFTWARE 
+DISKETTES 
+DYSAN 
+5'/4" S/S, O/D 
+BOX OF 10 * 
+SUPERBRAIN 
+S-100 Bus Adapter 
+LIST $595 '476 
+SUPERBRAIN LlST $90 
+Parallel Port $76 
+LlST $205 
+SBE Prom 
+5155 
+C Basic 11. . . . . . . . . .  
+M Basic 80. . . . . . .  .I276 
+MT Pascal. . . . . . . .  .I430 
+Fortran 80. . . . . . . . .  '460 
+Cobol 8 0 . .  . . . . . . .  .'bbO 
+M Basic Compiler. . .  '328 
+ACCT. Plus. . . . . . . .  '386 
+Word Star. . . . . . . .  .'306 
+Supercalc . . . . . . . . .  '261 
+0-Base 11. . . . . . . . . .  '600 
+6RAPHlGS 
+For SUPERBRAIN 
+. . .  
+Graphics Board. 
+. 
+Symbol Generator. .I200 
+. . .  
+Graphics Plotter. 
+.I200 
+3-0 Graphics. . . . . .  .I400 
+. . . .  
+Surface Plotter. 
+.I460 
+Graphics Terminal 
+Emulator . . . . . . . . . .  '460 
+Toll-Free Ordrrine 1-800-426-2662 
+For Information CaI (206) 453-8159 
+Mall and telephone orders only. Mastercharge, VISA add 3%. COD Certified check under 
+51000. All Dricss FOB origin. Send lor cataloa. Mall all correspondence to P.O. Box 3952, 
+Bellevue, WA 98009 
+PACIFIC rn"VTER BROKERS 
+- - - - - - - - 
+- - - - - - 
+P.O. Box 3952, Belkvue, WA 98009 
+documents on your Desktop in- 
+definitely, just as on a real desk, or 
+you can file them away in folders or 
+file drawers. Our intention and hope 
+is that users will intuit things to do 
+with icons, and that those things will 
+indeed be part of the system. This will 
+happen if: 
+(a) Star models the real world ac- 
+curately enough. Its similarity with 
+the office environment preserves your 
+familiar way of working and your ex- 
+isting concepts and knowledge. 
+(b) sufficient uniformity is in the 
+system. Star's principles and 
+"generic" commands (discussed 
+below) are applied throughout the 
+system, allowing lessons learned in 
+one area to apply to others. 
+The model of a physical office pro- 
+vides a simple base from which learn- 
+ing can proceed in an incremental 
+fashion. You are not exposed to 
+entirely new concepts all at once. 
+Much of your existing knowledge is 
+embedded in the base. 
+In a functionally rich system, it is 
+probably not possible to represent 
+everything in terms of a single model. 
+There may need to be more than one 
+model. For example, Star's records- 
+processing facility cannot use the 
+physical-office model because 
+physical offices have no "records pro- 
+cessing" 
+worthy of 
+the name. 
+Therefore, we invented a different 
+model, a record file as a collection of 
+fields. A record can be displayed as a 
+row in a table or as filled-in fields in a 
+form. Querying is accamplished by 
+filling in a blank example of a record 
+with predicates describing the desired 
+values, which is philosophically 
+similar to Zloof's "Query-by- 
+Example" (see reference 21). 
+Of course, the number of different 
+user models in a system must be kept 
+to a minimum. And they should not 
+overlap; a new model should be in- 
+troduced only when an existing one 
+does not cover the situation. 
+Seeing and Pointing 
+A well-designed system makes 
+everything relevant to a task visible 
+on the screen. It doesn't hide things 
+under CODE + key combinations or 
+258 
+April 1982 O BYTE Publications Inc 
+Circle 318 on inquiry card. 
+force you to remember conventions. 
+That burdens your memory. During 
+conscious thought, the brain utilizes 
+several levels of memory, the most 
+important being the "short-term 
+memory." Marly studies have ana- 
+lyzed the short-term memory and its 
+role in thinking. Two conclusions 
+stand out: (1) conscious thought deals 
+with concepts ' in the short-term 
+memory (see reference 1) and (2) 
+the capacity of the short-term 
+memory is limited (see reference 14). 
+When everything being dealt with in 
+a computer system is visible, the 
+display screen relieves the load on the 
+short-term memory by acting as a sort 
+of "visual cache." Thinking becomes 
+easier.and more productive. A well- 
+designed computer system can actual- 
+ly improve the quality of your think- 
+ing (see reference 16). In addition, 
+visual communication is often more 
+efficient than linear communication; 
+a picture is worth a thousand words. 
+A subtle thing happens when 
+everything is ' visible: the display 
+becomes reality. The user model 
+becomes identical with what is qn the 
+screen. Objects can be understood 
+purely in terms of 
+their visible 
+characteristics. Actions can b i  
+understood in terms of their effects on 
+the screen. This lets users conduct ex- 
+periments to test, verify, and expand 
+their understanding-the 
+essence, of 
+experimental science. 
+In Star, we have tried to make the 
+objects and actions in the system visi- 
+ble. Everything to be dealt with and 
+all commands and effects have a visi- 
+6ie representation on the display 
+screen pr on the keyboard. You never 
+have to remember that, for example, 
+CODE+Q does something in one 
+context and something different in 
+another context. In fact, our desire to 
+eliminate this possibility led us to 
+r 
+For The Best In Price, Selection and Delivery, 
+- 
+Call Now TOLL FREE 
+80~~368m3404 
+. . . . . . .  $ 709 
+(In VA, Call Collect 7Q3-327-8695) 
+AMPEX*lNTERTEC:TS INSTRUMENTS.GENERAL DATA 
+rn - 
+C~~M.*ANDERSON 
+J A ~ Q ~ O N * C .  
+ITOH.QUME 
+BEEHIVE* 
+QUME: 
+. . .  
+DATASOUT~QIABLO.CENTRONICS 
+,. 
+! 
+NEC 
+PRENTICE 
+Data Trak 5 
+$325 or 2 for $599 
+gIEim 
+DIABLO: 
+Data Trak 8 . . $549 or 2 for $1 049 
+INTERTEC: 
+. . . . . . . . . . .  
+63041 02 RO 
+$1 995 
+Superbrain QD . . . . . . . . . .  $2995 
+'BISYNC-80 RJE . . . . . . . .  .$ 769 
+AMPEX: 
+Wordstar. . . . . . . . . . . . . . .  .$ 31'9 
+d'ialogue 30 . . .  : . . . . . . . .  $ 775 
+Data Star . . . . . . . . . . . . . .  $ 21 5 
+DATASOUTH: . . . . . . . . . .  
+Dialogue80 . . . . . . . . . . .  .$ 939 
+Cobol 
+.$ 789 
+. . . . . . . . . . . . . . . .  
+NEC: 
+BEEHIVE: (SMART DISPLAY) 
+Forms 2 (Cobol Gen.) . . . .  .$ 179 
+. . . . . . . . . . . . .  
+7710 . . . . . . . . . . . . . . . . . .  $2196 
+. . . . . . . . . . . . . . . . . .  $ 745 
+Mail Merge 
+$ 99 
+DM5 
+7715 . . . . .  .Call for Spacial Price 
+DMSA . . . . . . . . . . . . . . . . .  $ 930 
+Spell Guard . . . . . . . . . . . .  $ 229 
+7730 . . . . . . . . . . . . . . . . .  .$21g6 1 ~ ~ 3 1 0  
+(3101 Emulator) . . 
+7720 . . . . .  .Call for S~ecial 
+. . . . . . . . . . . . . . . .  
+. $1 095 I 
+Plan 80 
+$ 249 
+............. 
+~ r ~ c e  NOTE: IBM and Burroughs compatible ter- 
+Super Calc 
+$ 249 
+Price 1 minala available. Please inquire. 
+............. 
+--- 
+a .--.. 
+Milestone 
+.$ 249 
+7725 . . . . .  .call for ~beciai 
+Std. Forms Tractor . . . . . . .  $ 200 
+Bi-Dir. Forms Tractor ..... $ 300 
+CENTRONICS: 
+739-1 (Parallel) . . . . . . . . . .  $ 649 
+739-3 (Serial)Call for Special Price 
+QUME: 
+Sprint 5,55RO . . . . . . . . .  .$2339 
+Sprint 5,55KSR . . . . . . . . . .  .Call 
+Sprint 9,45RO, 
+Limited Panel . . . . . . .  .$I845 
+Full Panel . . . . . . . . . . .  $1969 
+I RS449 cables to vour order. and 
+C. ITOH 
+CIT 101 . . . . . . . . . . . . . . . .  $1 350 
+TEXAS INSTRUMENTS: 
+745 Standard . . . . . . . . . . .  
+g I ~ Y V  
+. . . . . . . . . . . . . .  
+81 0 Basic 
+$1 249 
+810Package . . . . . . . . . . . .  
+$1439 
+820 Package RO Package . $1 61 0 
+. . . . . . . .  
+820 RSR Package 
+.Call 
+. . . . . . . . . . .  
+840 RO Basic 
+$ 795 
+840 RO Tractor Feed Pkg. . $1 059 
+Most items are in stock now. In addi- 
+tion, we can make EIA RS232 or 
+1 
+supply you with hbbons, phnter 
+stand*, print wheels, thimbles for 
+I all 
+mnrc 
+printers 
+itcma. listed. 
+CALL And 
+MOW- 
+many, many 
+1 
+Add 2% for shipping and insurance. Superbrain 
+1 
+shipped fraight collect. VISA and Mastercards 
+welcomed; add 9% for credit card purchases. 
+Virainia residents. add 4% Sales Tax. For fastest 
+- . - - ~  
+~
+-
+~
+~
+-
+ 
+- 
+- -  --. 
+delivery, send certified check, money order or 
+bank-wire transfer. Sorry, no C.O.D. orders. All 
+CUA c-..-..- T---*-- 
+.@ .inn ( STAR: 
+. 
+' 
+equipment is in factory-cartons with manufac- 
+---- 
+. 
+- . .- I turers' warranty. Prices subject to change without 
+~ i - ~ i r .  
+~orms 
+~ractor . . . . .  $ 199 I suu tlaua . . . . . . . . . . . . . .  yj 1 4 ~  I notice. 
+-I 
+I 
+-I -- -. 
+--' 
+5 - 
+- 4 
+Terminals Terrific, Incorporated,P.q. Box 490, FallsChurch, YA 22046,800-368-3404 
+- .. (In VA, Call Go!ect 703-237-8695). 
+- 
+Circle 278 o n  Inquiry card. 
+/ 6 
+CALIFORNIA COMPUTER SYSTEMS 
+Sl 0 0  
+la2 32K STATIC RAM A & T; 200 NSEC . . .  ..$629.00 
+I06 64K DYNAMIC RAM A & T.. .......... $548.95 
+. . . . . . . . . . .  
+100 S-100 MAIN FRAM A 8 T 
+$379.95 
+122 FLOPPY DISC WITH CP/M 2.2'" . . . . . . .  $329.95 
+1101 280 CPU A & T.. . . . . . . . . . . . . . . . . . .  $249.95 
+'101 4 SERIAL 110 A & T. ............... $291.95 
+'I8A 2 SERIAL 2 PARALLEL A 8 T. . . . . . . .  $305.95 
+'20A 4 PARALLEL A 8 T.. ............... $214.95 
+lOT0 BOAR08 WW ....................... $39.95 
+LE PROOUCTS 
+14A 12K ROMlPROM. ................... $68.50 
+144A CALENOAW.CLOCK, . . . . . . . . . . . . . . . .  $106.95 
+1401 PROGRAMMABLE TIMER.. ........... $98.50 
+l70A A TO 0 CONVERTER ............... $105.95 
+llOA GPlB (IE 488) INTERFACE.. ......... $265.95 
+'101 ASYNC SERIAL.. .................. $125.95 
+................... 
+'ItA SYNC SERIAL.. 
+$153.95 
+'2OA PARALLEL STANDARD. .............. $98.95 
+'LOB PARALLEL CENTRONICS.. ... : ....... $98.95 
+11 11 ARITHMETIC PROCESSOR WIDISC. .... $342.95 
+ll lC ARITHMETIC PROCESSOR WIROM . . $342.95 
+iOOA WW BOARD.. . . . . . . . . . . . . . . . . . . . . . .  
+$22.95 
+ilOA SOLDERTAIL BOARD.. . . . . . . . . . . . . . .  $23.95 
+I S 1 0 0  PROOUCTS 
+I 
+CB-2 280 PROCESSOR BOARD. 
+. . . . . . . . . . . .  
+........ 
+KIT 
+$1 98.95. A 8 T 
+: $269.95 
+VBlC 64 x 16 VIDEO. PCBO.. . . . . . . . . . . . . . .  $32.95 
+KIT ........... ,8153.95, A 8 T  . . . . . . . .  .$I9995 
+YES 80 CHARACTER VIDEO 4MHZ. 
+KIT . . . . . . . . . . . .  $345.95, A 8 T . . . . . . . . .  $425.95 
+104 2 PARALLEL 2 SERIAL PCBD . . . . . . . . . .  $32.95 
+. . . . . . . . .  
+KIT ............ $155.95. A 8 T 
+$194.95 
+PB-1 2708.2716 PROGRAMMER BOARD. 
+KIT ............ $135.95. A 8 T . . . . . . . . .  S185.95 
+APPLE PROOUCTS 
+AIO SERIAUPARALLEL INTERFACE. 
+. . . . . . . . . .  
+KIT.. . . . . . . . . . .  $125.95. A 8 T 
+S155.95 
+AS10 SERIAL 110 
+........... 
+I KIT . 
+. 
+$87.95, A d  T 
+S97.95 
+I 
+........ 
+APIO PARALLEL 10 W/O CABLES 
+KIT.. 
+$67.95 
+A 8 T.. ..... $87.95 
+BOAROS WlTH HlKO8 PARTS 
+MEI-3 32K STATIC RAM. PCBD.. . . . . . . . . . . . .  $36.95 
+. . . . . .  
+.... 
+KIT LESS RAM.. 
+$95.95. A 8 T.. 
+$135.95 
+CPU-2 Z80 PROCESSOR. PCBO.. . . . . . . . . . . . . .  $32.95 
+KIT LESS ROM.. ...... $109.95. A 8 T.. .... $149.95 
+Ell-2 16K132K EPROM. PCBO.. . . . . . . . . . . . . .  $32.95 
+KIT LESS ROM.. . . . . . . .  $65.95, A 8 T.. .... $99.95 
+FPE-1 FRONT PANEL PCBD . . . . . . .  
+$48.50 
+KIT ............. $144.95, A 8 T .......... $184.95 
+. . . .  
+OMB-12 13 SLOT MOTHER BOARD. PCBO.. 
+$39.95 
+. .  
+KIT. ............ $95.95. A 8  T.. . . . . .  ,. $135.95 
+.................................... 
+~ O K O ~  
+MONDAY-FRIDAY. 8:W TO 12:W. 1 :00 TO 5 3 0  
+THURSDAYS. 8:00 TO 9
+:
+~
+ 
+P.M. 
+(41 5) 728-91 2 1  
+P.O. BOX 955 
+EL GRANADA, CA 9401 8 
+PLEASE SEN0 FOR IC XiSTOR AND COMPUTER PARTS LlSl 
+VISA u MASTERCHARGE Send amount Mlbn. mledra* number. 
+exporatm date and s~pn yar or& Wax postape wll be &&a 
+mt a I- 
+custom, plskca use chaw, & s k s  m
+h
+ 
+o r . p ~ t a ~  
+maay or& 
+Omsmiw U m  ml be a w w w L  Way lor m k s  to 
+deaf. CaW rasldanls add 6% tu Uonv back 30-day ouarantee We 
+canm~ 
+amp1 r~uw 
+lC's that have b w n w a d  to m c e s ~ t  
+10 
+chaw wlhart mllce $20.00 BIIIDIB o
+h
+ $2 00 unb chqrlr on 
+Ir*n Itu Y u  ItO.00. 
+- 
+;:;: . 
+-- 
+?$ 
+F o n t  
+:::: 
+cla~;icl= 
+~ i t a n l s o l d  
+Ilctter~othicl5cientific 
+1 5 c i e n t i f i c ~ h i n  I X ~ I  
+.I.- $$ 
+,.,. 
+Size 
+,:.: 
+81101C8[113118 231 
+& 
+I..' 
+.:( Fa- 
+I I 
+Figure 3: The property sheet for text characters. 
+abolish the CODE key. (We have yet 
+to see a computer system with a 
+CODE key that doesn't violate the 
+principle of visibility . ) You never in- 
+voke a command or push a key and 
+have nothing visible happen. At the 
+very least, a message is posted ex- 
+plaining that the command doesn't 
+work in this context, or it is not im- 
+plemented, or there is an error. It is 
+disastrous to the user's model when 
+you invoke an action and the system 
+does nothing in response. We have 
+seen people push a key several times 
+in one system or another trying to get 
+a response. They are not sure whether 
+the system has 'heard" them or not. 
+Sometimes the system is simply 
+throwing away their keystrokes. 
+Sometimes it is just slow and is queu- 
+ing the keystrokes; you can imagine 
+the unpredictable behavior that is 
+possible. 
+We have already mentioned icons 
+and windows as mechanisms for 
+making the concepts in Star visible. 
+Other such mechanisms are Star's 
+property and option sheets. Most ob- 
+jects in Star have properties. A prop- 
+erty sheet is a two-dimensional, form- 
+like environment that displays those 
+properties, Figure 3 shows the 
+character property sheet. It appears 
+on the screen whenever you make a 
+text selection and push the PROPER- 
+TIES key. It contains such properties 
+as type font and size; bold, italic, 
+underline, and strikeout face; and 
+superscript/subscript positioning. In- 
+stead of having to remember the 
+properties of characters, the current 
+settings of those properties, and, 
+worst of all, how to change those 
+properties, property sheets simply 
+show everything on the screen. All 
+the options are presented. To change 
+one, you point to it with the mouse 
+and push a button. Properties in ef- 
+fect are displayed in reverse video. 
+This mechanism is used for all 
+properties of all objects in the system. 
+Star contains a couple of hundred 
+properties. To keep you from being 
+overwhelmed with information, 
+property sheets display only the 
+properties relevant to the type of ob- 
+ject currently selected (e.g., 
+character, paragraph, page, graphic 
+line, formula element, frame, docu- 
+ment, or folder). This is an example 
+of "progressive disclosure": hiding 
+complexity until it is needed. It is also 
+one of the clearest examples of how 
+an emphasis on visibility can reduce 
+the amount of remembering and typ- 
+ing required. 
+Property sheets may be thought of 
+as an alternate representation for ob- 
+:N TIRE DOCL 
+Circle 56 on inquiry ca 
+200 cps bidirectional printing 
+50 cps proportional mode 
+Enhanced / emphasized print 
+Dot-addressable graphics 
+Tractor/friction feed up to 16" 
+Program-selectable character size 
+Microline Printers 
+Orders Only: CALL (800)-343-0726 
+'What you see is what you get" (or display screens. It is never possible to 
+, 
+I WYSIWYG) refers to the situation in get an exact representation of a 
+NEC Printers 
+NEC PC-8023A-C .........,... uw 
+Epson Prinfers 
+MX-80 ~/GRAFTRAX.. 
+.......... $474= 
+UX-80/F-T.. ................. $56988 
+MX-80/F-T ~/GRAFTRAX. 
+$61 9= 
+........ 
+MX-lOO ................... .; 9719m 
+G
+R
+A
+~
+ 
+..................... $
+8
+~
+ 
+Centronics Prinks 
+CENTRONICS 
+739 (Parallel) ....... $ 5 3 F  
+CENTRONICS 
+739 (RS-232-C) 
+$Wm 
+...... 
+2-Color Adapter.. ............. $6988 
+C. /to h Printers 
+C.lToH 
+I ............... 5284a 
+CATOH PRO WRITER w/3K buffer 
+(parallel and serial) 
+$ 6 3 F  
+. 
+........... 
+C.ITOH F-10 DNSY WHEEL 
+(40cps). .................... $1564= 
+cables and interfaces 
+available for 
+Apple, Atari, CBM/PET, and TRS-80 
+microcomputers 
+Orders & Information: 
+CALL (603)-673-8857 
+., 
+We Occept 
+surcharge 
+credit 
+which the display screen portrays an printed page on the screen since most 
+cards-No charge for UPS shipping 
+Stock shipments next day-All equip- 
+accurate rendition of the printed screens have only 50 to 100 dots per 
+ment factory fresh w/MFG warranty 
+page. In systems having such inch (72 in Star), while most printers 
+MCW 
+rvbied M &go 
+capabilities as multiple fonts and have higher resolution. 'Completely 
+HIGH TECHNOLOGY AT AFFORDABLE PRICES 
+variable line spacing, WYSIWYG re- accurate character positioning is not 
+Figure 4: The option sheet for the Find command showing both the Search and 
+Substitute options. The last two lines of options appear only when CHANGE IT is 
+turned on. 
+jects. ~h~ screen shows you the ,,isi- 
+WYSIWYG is a simplifying tech- 
+ble characteristics of objects, such as nique for documentcreation systems. 
+the type font of text characters or the All composition is done on the 
+names of icons. Property sheets show screen. It eliminates the iterations 
+you the underlying structure of ob- 
+that plague users of document com- 
+jects as they 'make this structure visi- pilers. You can examine the ap- 
+ble and accessible. 
+pearance of a page on the screen and 
+Invisibility also plagues the com- 
+make changes until it looks right. The 
+mands in some systems. Commands printed page will look the same (see 
+often have several arguments and op- figure 5). Anyone who has used a 
+tions that you must remember with 
+document compiler or post-processor 
+no assistance from the system. Star knows how valuable WYSIWYG is. 
+addresses this problem with option 
+The first powerful WYSIWYG editor 
+sheets (see figure 4), a twodimen- was Bravo, an experimental editor 
+sional, form-like environment that developed for Alto at the Xerox Palo 
+displays the arguments to commands. Alto Research Center (see reference 
+It serves the same function for com- 
+12). The text-editor aspects of Star 
+mand arguments that property sheets were derived from Bravo. 
+do for object properties. 
+Trade-offs are involved in 
+WYSIWYG editors, chiefly having to 
+What You See Is What You Get 
+do with the lower resolution of 
+HE BOTTOM I 
+quires a bit-mapped display because possible. Nor is it usually possible to 
+only that has sufficient graphic power 
+represent shape differences for fonts 
+to render those characteristics ac- smaller than eight points in size since 
+12 Johnson Street, Milford WH a 0 5 5  
+cur at el^. 
+i 
+there are too few dots per character to 
+801 0 Star Information System 
+1 IS 0 
+User-Interf ace Design 
+To niake it easy to compose text and graphics, 
+to do electronic filing. printing, arid mailing 
+. 311 at the same wurkst.3tion, require? a 
+rel.rolutionary n;:e r-inte dace de;:ign, 
+50 
+Bit- mctp di..~n~x.y 
+- E:adi of the 827,3!3 2 dn ts 1111 
+the scree11 is rn:arll:lect to a bit in meritor::; 
+thus, 
+arbitrarily complb:.: im:ages 
+be diq11:q;eti. 
+STAR displq!:s 
+all f ~ ~ r i t s  
+arid gr:aphics a s  tiley 
+t rill .b 
+printed, In :ad~:iitiori, familiar office 
+obje~::ts such as do~::ume nts, f alders, file 
+0 
+drwx-ers and in-baskets are portrayed as 
+rel::og~izzil:~le 
+im:ages, 
+Frle rrt.ows - A unicjue pointing del.rice that: 
+shorter pror~,lction 
+nUes 
+allo\x*.s the user to quickly select aryj text, 
+- * 
+pr:.3~1:lhic 
+IS 
+or office 1:1]1j!jel:lt or1 ~ l e  
+diq11~!{, . 
+E:,~erience :at Kero:.: with protot;,q~e work- 
+stratio 11s 
+& I : I - - ~ . ~ ~  sli13 rte r productin n tim as 
+See and Point 
+:allti 1~1we 
+r cc~sts, m e  fl:~llo.~x~-irig 
+eqnatio n 
+e:.qIresses tklis,$ 
+All Star functi~:~-ns 
+are 1.risible to ~ l e  
+user on 
+the keyb~:~ard 
+or on tkle sc.reen, ?he user does 
+filing and retriel~al k!; 
+~1e"irig tk~em \xv*ith 
+I C 
+#XI &<: 
+a 
+die mouse and tou&ing tlie ,.~OVE,, CQPY, 
+c',y'l 
+I '. ...' - - 11:13 
++ n .4;cy 
+DELETE or FPr:rPERTIE5 c~~mrnarid 
+keys, Text 
+and graphics are edited yvitli the same keys, 
+: L  T J 
+i= 1 
+off ice objects 
+,MOUSE: select 
+obiects- menus 
+ICWBQ411D. -c 
+m y c c w  
+Star users :are likely to do more 13f their ow11 
+composition :and layout, controlling the entire 
+process including printing and distrik~ution. 
+Text and Graphics 
+TI] replace t;,yese tting, Star offers :a I:J~I:I~I::E: 
+11f 
+t;,qje f~:~nts 
+and sizes, from 8 pl:~ irlt to 24 point, 
+H+_rr is i sent+n-~c.f 
+8 y:ht t&. 
+H -  
+MY : 1:. '-.. 
+4 ... 
+Ielt~e:c 
+l:,f 10 -pl&t text., 
+Here is :x zerlte~lce of 12-point te:.:t. 
+Heye i.3 a senter-18::e ~::,f 14-1:,oint te:.!:t. 
+Here i s  a sentence o f  18-point 
+text. 
+lgure 5: A Star document showing multicolumn text, graphics, and formulas. This is the way the document appears on the screen. It 
+also the way it will print (at higher resolution, of course). 
+266 
+AprU 1982 0 BYTE F'ubUcatiom lnc 
+Circle 140 on Inquiry card. 
+be recognizable. Even 10-point ("nor- 
+mal" size) fonts may be uncomfort- 
+ably small on the screen, necessitating 
+a magnified mode for viewing text. 
+WYSIWYG requires very careful 
+design of the screen fonts in order to 
+keep text on the screen readable and 
+attractive. Nevertheless, the increase 
+in productivity made possible by 
+WYSIWYG editors more than 
+a 
+outweighs these difficulties. 
+Universal Commands 
+Star has a few commands that can 
+be used throughout the system: 
+MOVE, COPY, DELETE, SHOW 
+PROPERTIES, COPY PROPERTIES, 
+AGAIN, UNDO, and HELP. Each 
+performs the same way regardless of 
+the type of object selected. Thus, we 
+call them "universal" or "generic" 
+commands. For example, you follow 
+the same set of actions to move text in 
+a document and to move a line in an 
+. 
+illustration or a document in a folder: 
+select the object, push the MOVE 
+key, and indicate a destination. 
+(HELP and UNDO don't use a selec- 
+tion.) Each generic command has a 
+key devoted to it on the keyboard. 
+These commands are far more 
+basic than the commands in other 
+computer systems. They strip away 
+the extraneous application-specific 
+semantics to get at the underlying 
+principles. Star's generic commands 
+derive from fundamental computer- 
+science concepts because they also 
+underlie operations in programming 
+languages. For example, much pro- 
+gram manipulation of data structures 
+involves moving or copying values 
+from one data structure to another. 
+Since Star's generic commands em- 
+body fundamental underlying con- 
+cepts, they are widely applicable. 
+Each command fills a variety of 
+needs, meaning fewer commands are 
+required. This simplicity is desirable 
+in itself, but it has another subtle ad- 
+vantage: it makes it easy for users to 
+form a model of the system. People 
+can use what they understand. Just as 
+progress in science derives from sim- 
+BYTEWRITER 
+DAISY WHEEL PRINTER 
+LETTER QUALITY PRINTER AND TYPEWRITER 
+IN ONE PACKAGE 
+The BYTEWRITER is a new Olivetti Praxis 30 electronic typewriter 
+with a micro-processor controlled driver added internally. 
+L 
+A 
+I 
+$795 
+plus shipping 
+Dealer 
+Inquiries 
+Invited 
+FEATURES 
+Underlining 10, 12, or 15 characters per inch switch selectable 
+2nd keyboard 
+with foreign grammar symbols switch selectable 
+Changeable type daisy wheel 
+Centronics-compatible parallel input operates with TRS-80, Ap le, Osborne, IBM 
+and others 
+Cartrid e rlbbon 
+Typewriter operation with not&ng to disconnect 
+Service from any 0fivetti dealer 
+Self test program built in. 
+BYTE WRITER 
+1 25 NORTHVIEW RD.. ITHACA, N.Y. 14850 
+(607) 
+272- 
+1 132 
+Praxis .70 Is a tmdemark of Ollvettl Corp 
+TRS-80 is a tmdemark of Tandy Corp. 
+BYTEWRITER is a trademark of Williams Laboratories 
+pie, clear theories, progress in the 
+usability of computers is coming to 
+depend on simple, clear user inter- 
+faces. 
+MOVE is the most powerful com- 
+mand in the system. It is used during 
+text editing to rearrange letters in a 
+word, words in a sentence, sentences 
+in a paragraph, and paragraphs in a 
+document. It is used during graphics 
+editing to move picture elements, 
+such as lines and rectangles, around 
+in an illustration. It is used during 
+formula editing to move mathemati- 
+cal structures, such as summations 
+and integrals, around in an equation. 
+It replaces the conventional "store 
+file" and "retrieve file" commands; 
+you simply move an icon into or out 
+of a file drawer or folder. It eliminates 
+the "send mail" and "receive mail" 
+commands; you move an icon to an 
+out-basket or from an in-basket. It 
+replaces the ''print" command; you 
+move an icon to a printer. And so 
+on. MOVE strips away much of the 
+historical clutter of computer com- 
+mands. It is more fundamental than 
+the myriad of commands it replaces. 
+It is simultaneously more powerful 
+and simpler. 
+Much simplification comes from 
+Star's object-oriented interface. The 
+action of setting properties also re- 
+places a myriad of commands. For ex- 
+ample, changing paragraph margins 
+is a command in many systems. In 
+Star, you do it by selecting a 
+paragraph object and setting its 
+MARGINS property. (For more in- 
+formation on object-oriented lan- 
+guages, see the August 1981 BYTE.) 
+Consistency 
+Consistency asserts that mecha- 
+nisms should be used in the same way 
+wherever they occur. For example, if 
+the left mouse button is used to select 
+a character, the same button should 
+be used to select a graphic line or an 
+icon. Everyone agrees that consisten- 
+cy is an admirable goal. However, it 
+is perhaps the single hardest 
+characteristic of all to achieve in a 
+computer system. In fact, in systems 
+of even moderate' complexity, con- 
+sistency may not be well defined. 
+A question that has defied consen- 
+m
+r
+ Apd 1982 O BY232 Publiutio~ lnc 
+' 
+Clrcle 70 on inquiry card. 
+t 
+p . 4 ;  
+. - .  
+I 
+t
+.
+ 
+r,, 
+., 
+r 
+i 
+I 2  
+T 
+' .. 
+Clrcle 294 on inquiry card. - 
+sus in Star is what should happen to a 
+document after it has been printed. 
+Recall that a user prints a document 
+by selecting its icon, invoking 
+MOVE, and designating a printer 
+icon. The printer absorbs the docu- 
+ment, queuing it for printing. What 
+happens to that document icon after 
+printing is completed? The two 
+plausible alternatives are: 
+1. The system deletes the icon. 
+2. The system does not delete the 
+icon, which leads to several further 
+alternatives: 
+2a. The system puts the icon back 
+where it came from (i.e., where it 
+was before MOVE was invoked). 
+2b. The system puts the icon at an 
+arbitrary spot on the Desktop. 
+2c. The system leaves the icon in 
+the printer. You must move it out 
+of the printer explicitly. 
+The consistency argument for the 
+first alternative goes as follows: when 
+you move an icon to an out-basket, 
+the system mails it and then deletes it 
+from your Desktop. When you move 
+an icon to a file drawer, the system 
+files it and then deletes it from your 
+Desktop. Therefore, when you move 
+an icon to a printer, the system 
+should print it and then delete it from 
+your Desktop. Function icons should 
+behave consistently with one 
+another. 
+The consistency argument for the 
+second alternative is: the user's con- 
+ceptual model at the Desktop level is 
+the physical-office metaphor. Icons 
+are supposed to behave similarly to 
+their physical counterparts. It makes 
+sense that icons are deleted after they 
+are mailed because after you put a 
+piece of paper in a physical out- 
+basket and the mailperson picks it up, 
+it is gone. However, the physical 
+analogue for printers is the office 
+copier, and there is no notion of 
+deleting a piece of paper when you 
+make a copy of it. Function icons 
+should behave consistently with their 
+physical counterparts. 
+There is no one right answer here. 
+Both arguments emphasize a dimen- 
+sion of consistency. In this case, the 
+dimensions happen ta overlap. We 
+eventually chose alternative 2a for 
+the following reasons: 
+1. Model dominance-The 
+physi- 
+cal metaphor is the stronger model at 
+the Desktop level. Analogy with 
+physical counterparts does form the 
+basis for people's understanding of 
+what icons are and how they behave. 
+Argument 1 advocates an implicit 
+model that must be learned; argu- 
+ment 2 advocates an explicit model 
+that people already have when they 
+are introduced to the system. Since 
+people do use their existing knowl- 
+edge when confronted with new sit- 
+uations, the design of the system 
+should be based on that knowledge. 
+This is especially important if people 
+are to be able to intuit new uses for 
+the features they have learned. 
+2. Pragmatics-It 
+is dangerous to 
+delete things when users don't expect 
+it. The first time a person labors over 
+a document, gets it just right, prints 
+it, and finds that it has disappeared, 
+that person is going to become very 
+nervous, not to mention angry. We 
+also decided to put it back where it 
+came from (2a instead of 2b or 2c) for 
+the pragmatic reason that this in- 
+volves slightly less wqrk on the user's 
+part. 
+3. Seriousness-When 
+you file or 
+mail an icon, it is not deleted entirely 
+from the system. It still exists in the 
+file drawer or in the recipients' in-bas- 
+kets. If you want it back, you can 
+move it back out of the file drawer or 
+send a message to one of the recip- 
+ients asking to have a copy sent back. 
+Deleting after printing, however, is 
+final; if you move a document to a 
+printer and the printer deletes it, that 
+document is gone for good. 
+One way to get consistency into a 
+system is to adhere to paradigms for 
+operations. By applying a successful 
+way of working in one area to other 
+areas, a system acquires a unity that 
+is both apparent and real. Paradigms 
+that Star uses are: 
+@Editing-Much of what you do in 
+Star can be thought of as editing, In 
+addition to the conventional text, 
+graphics, and formula editing, you 
+manage your files by editing filing 
+windows. You arrange your working 
+environment by editing your Desk- 
+top. You alter properties by editing 
+property sheets. Even programming 
+can be thought of as editing data 
+structures (see reference 16). 
+.Information 
+retrieval-A 
+lot of 
+I
+I 
+The HOMEBRAINTM is a ded- 
+W E  HOM E BRA1 NTM 
+1s 
+EVALUATETHE 
+HOMEBRAIN"" 
+icated microcomputer system in a 
+Order NOW BY CaMng TOM-~mr 
+stand-alone package. HOME- 
+BRAIN'S'" 110 potential exceeds 
+the First Total Home 
+i.eoe22a.202e EXT. 332 
+300 channels. 
+Control Computer 
+Lines Open 8 AM TO 6 PM C.S.T. 
+Communicate w~th Me HOMEBRAIN " 
+Just give us your Name, Shipping. Address 
+uslng ywr personal computer RS232 Inter- 
+and Visa or Mastercard number and we 
+ACHIEVE TOTAL 
+face 
+will charge the $750.00 purchase prlce, 
+HOMEBRAIN " controls your home using 
+plus $20.00 shlpp~ng (N.J. residents add 
+HOME CONTROL 
+nu232 
+your define lcglc sequences 
+5% sales tax to your account. Or, SEND* 
+A - 32 Channels 
+Log~c d~agrams. tlmers, counters, alarm 
+your qHHECd* or MONEY ORDER* to. 
+Buffered Input 
+clocks, calendars, are directly implemented 
+Energy Management 
+B -8 Relay Output 
+by the HOMEBRAIN 
+microprocessor 
+HYPERTEK, INC 
+Home Security 
+C -Un~nterruptable 
+HOMEBRAIN rn logs controlled operating 
+30-4 FARM ROAD 
+Power Supply 
+tlmes for the month 
+SOMERVILLE, NEW JERSEY 08876 
+Lighting Control 
+Safety Monitoring 
+-CPU, Cornrnun'ca- 
+The HOMEBRAlNn 
+operates totally ~nde- 
+^Send~ng your chack wll qual~fy you for an 
+tlOnss 256 Channel 
+pendent of your personal com uter Crashlng 
+lNTRODUCTORY REBATE of 
+Appliance Control 
+AC Wireless con- 
+p
+r
+ 
+computer w ~ n o t  
+crash H~MEBRAIN 
+m 
+trot 
+eaving your home defenseles~ 
+Allow 6.8 weeks for delivery 
+270 
+April 1982 O B Y E  Publications Inc 
+Figure 6: The keyboard-interpretation window serves as the source of characters that may be entered from the keyboard. The 
+character set shown here contains a variety of office symbols. 
+power can be gained by applying in- 
+formatipn-retrieval techniques to in- 
+formation wherever it exists in a sys- 
+tem. Star broadens the definition of 
+"database." In addition to the tradi- 
+tional notion as represented by its 
+record files, Star views file drawers as 
+databases of documents, in-baskets as 
+databases of mail, etc. This teaches' 
+users to think of information retrieval 
+as a general tool applicable through- 
+out the system. 
+copying-star 
+elevates the concept 
+of "copying" to a high level: that of a 
+paradigm for creating. In all the vari- 
+BASF-DPS 
+DATA 
+TRAC 
+C-10 
+G20 
+BLANK COMPUTER CASSETTES 
+UNIVERSAL INDUSTRY ACCEPTANCE 
+MONEY BACK GUARANTEE 
+ous domains of star, you create by 
+copying. Creating something out of 
+nothing is a difficult task. Everyone 
+has observed that it is easier to 
+modify an e~istjng document or pro- 
+gram than to write it originally. 
+Picasso once said, 'The most awful 
+thing for a painter is the white can- 
+vas . . . To copy others is nec- 
+essary." (See reference 20.) Star 
+makes a serious attempt to alleyiate 
+the problem of the "white canvas" by 
+making copying a practical aid to 
+creation. For example, you create 
+new icons by copying existing ones. 
+Graphics are created by copying 
+existing graphic images and modify- 
+ing them. In a sense, you can even 
+type characters in Star's 216-character 
+set by "copying" them from keyboard 
+windows (see figure 6). 
+These paradigms change the very 
+way you think. They lead to new 
+habits and models of behavior that 
+are more powerful and productive. 
+They can lead to a human-machine 
+synergism. 
+Star obtains additional consistency 
+by using the class and subclass no- 
+LENGTH 1 DOZEN 
+2 DOZEN 
+s - 4 s  
+----- 5rn---153-~Q, 
+C-20 
+10.00 
+18.00 
+Shipping: 1 doz. $2. 2doz. $3.50 addt'l. doz.. $1 
+Calif residents add 6% sales tax 
+Circk$444 on i&ry 
+card. 
+C~rcle 238 on lnqulry card. 
+Circle 80 on inquiry card. 
+A d  lM 5 
+B n E  PuBHcat~ons lnc 
+I 
+tions of Simula (see reference 4) and 
+distinctions that occur in some sys- 
+with than intricate ones. 
+%Iff: 
+..--. 
+*. 
+Smalltalk (see reference 11). The 
+tems. 
+Another way to achieve simplicity 
+clearest example of this is classifying 
+icons at a higher level into data icons 
+and function icons. Data icons repre- 
+sent objects on which actions are per- 
+formed. Currently, the three types 
+(i.e., subclasses) of data icons are 
+documents, folders, and record files. 
+Function icons represent objects that 
+perform actions. Function icons are 
+of many types, with more being 
+added as the system evolves: file 
+drawers, in- and out-baskets, 
+printers, floppy-disk drives, calcula- 
+r tors, terminal emulators, etc. 
+b In general, anything that can be 
+, done to one data icon can be done to 
+9 all, regardless of its type, size, or 
+location. All data icons can be 
+'a moved, copied, deleted, filed, mailed, 
+(ji printed, opened, closed, and a variety 
+P of other operations applied. Most 
+C function icons will accept any data 
+. I . , icon; for example, you can move any 
+data icon to an out-basket. This use 
+iJ ot; the class concept in the user-inter- 
+fa'ce design reduces the artificial 
+Simplicity 
+Simplicity is another principle with 
+which no one can disagree. Obvious- 
+ly, a simple system is better than a 
+complicated one if they have the same 
+capabilities. Unfortunately, the world 
+is never as simple as that. Typically, a 
+trade-off exists between easy novice 
+use and efficient expert use. The two 
+goals are not always compatible. In 
+Star, we have tried to follow Alan 
+Kay's maxim: "simple things should 
+be simple; complex things should be 
+possible." To do this, it was some- 
+times necessary to make common 
+things simple at the expense of un- 
+common things being harder. Sim- 
+plicity, like consistency, is not a 
+clear-cut principle. 
+One way to make a system appear 
+simple is to make it uniform and con- 
+sistent, as we discussed earlier. 
+Adhering to those principles leads to 
+a simple user's model. Simple models 
+are easier to understand and work 
+is to minimize the redundancy b a 
+system. Having two or more ways to 
+do something increases the complexi- 
+ty without increasing the capabilities. 
+The ideal system would have a mini- 
+mum of powerful commands that ob- 
+tained all the desired functionality 
+and that did not overlap. That was 
+the motivation for Star's "generic" 
+commands. But again the world is not 
+so simple. General mechanisms are 
+often inconvenient for high-frequen- 
+cy actions. For example, the SHOW 
+PROPERTIES command is Star's gen- 
+eral mechanism for changing prop- 
+erties, but it is too much of an inter- 
+ruption during typing. Therefore, we 
+added keys to optimize the changing 
+of 
+certain character properties: 
+BOLD, ITALICS, UNDERLINE, 
+SUPERSCRIPT, 
+SUBSCRIPT, 
+LARGER/SMALLER 
+(font), 
+CENTER (paragraph). These signifi- 
+cantly speed up typing, but they don't 
+add any new functionality. In this 
+case, wq felt the trade-off was worth 
+f 
+\ 
+DlSCOU NT TRS-80@ Computers 
+We have the Largest Inventory in the Central 
+United States. Discount prices on all 
+software and accessories for 'your TRS-80 
+computer needs. 
+I 
+Model II 
+I 
+- 8 Megabyte 
+BUY 
+DIRECT 
+Toll Free Order: 
+* No out of state Taxes 
+1-800-835-9056 
+* Immediate Shipment 
+Kansas Residents: 
+* Severcil Payment Methods 
+1-800-362-9091 
+* ~ i r e c t  
+Buying 
+Hard Disk 
+(Primary) 
+26-4 150. 
+Jimscot, Inc. 
+WRITE TODAY FOR YOUR 
+P.O. Box 607 - 1023 N. Kansas 
+'39940° 
+FREE CATALOG! 
+Liberal, Ks. 67901 
+TRS-80 is a Registered Trademark of Tandy Corporation 
+it because typing is a frequent activi- 
+ty. 'Minimum redundancy" is a good 
+but not absolute guideline. 
+In general, it is better to introduce 
+new general mechanisms by which 
+"experts" can obtain accelerators 
+rather than add a lot of special one- 
+purpose-only features. Star's mecha- 
+nisms are discussed below under 
+'User Tailorability." 
+Another way to have the system as 
+a whole appear simple is to make 
+each of its parts simple. In particular, 
+the system should avoid overloading 
+the semantics of the parts. Each part 
+should be kept conceptually clean. 
+Sometimes, this may involve a major 
+redesign of the user interface. An ex- 
+ample from Star is the mouse, which 
+has been used on the Alto for eight 
+years. Before that, it was qsed on the 
+NLS system at Stanford Research Inr 
+stitute (see reference 5). All of those 
+mice have three buttons on top. Star 
+has only two. q
+y
+ did we depart 
+from "tradition"? We observed that 
+the dozens of Alto programs all had 
+different semantics for the mouse but- 
+tons. Some used them one way, some 
+another. There was no consistency 
+between systems. Sometimes, there 
+was not even consistency within a 
+system. For example, Bravo uses the 
+mouse , buttonss for selecting text, 
+scrolling windows, and creating and 
+deleting windows, depending on 
+where the cursor is when you push a 
+mouse button. Each of the three but- 
+tons has its own meaning in eqch of 
+the different regions. It is difficult to 
+remember which button dies what 
+where. 
+Thus, we decided to simplify the 
+mouse for Star. Since it is apparently 
+quite a temptation to ~verlgad the 
+semantics 'of 
+the buttoqa, 
+we 
+eliminated temptation by eliminating 
+buttons. Well then, khy didn't we use 
+a one-button mouse? Here the plot 
+thickens. We did consider and pro- 
+totype a one-button mouge interface. 
+One button is sufficient (with a little 
+cleverness) to provide all the func- 
+tionality needed in a pouse. But 
+when we tested the interfacg on naive 
+users, as we did with 9 variety of 
+featpres, we found that they had a lot 
+of trouble making selectiqns with it. 
+In fact, we prototyped and tested six 
+different semantics for the mouse but- 
+tons: one one-button, four two- 
+button, and a three-button design. 
+We were chagrined to'find that while 
+some were better than others, none of 
+them was completely easy to use, 
+even thsugh, a priori, it seemed like 
+all of them would work! We then 
+took the most successful features of 
+two of the two-button designs anh 
+prototyped and tested them as a 
+seventh design. To our relief, it not 
+only tested better than any of the 
+other six, everyone found it simple 
+and trouble-free ts use. 
+This story has a couple of morals: 
+.The intuition of designers is error- 
+prone, no matter how good or bad 
+they are. 
+.The critical parts of a system should 
+be tested on representative users, 
+preferably of the "lowest common 
+denominator" type. 
+owhat is simplest along any one 
+dimension (e.g., number of buttons) 
+is not necessarily conceptually 
+simplest for users; in particular, 
+minimizing the number of keystrokes 
+may not make a system easier to use. 
+Modeless Interaction 
+Larry Tesler defines a mode as 
+follows: 
+A mode of an interactive computer 
+system is a state of the user interface 
+that lasts for a period of time, is not 
+associated with any particular object, 
+and has no role other than to place an 
+interpretation on operator input. 
+(See reference 18.) 
+Many computer systems use modes 
+because there are too few keys on the 
+keyboard to represent all the avail- 
+able commands. Therefore, the inter- 
+pretation of the keys depends on the 
+mode or state the system is in. Modes 
+can and do cause trouble by making 
+habitual actions cause unexpected 
+results. If you do not notice what 
+mode the system is in, you may find 
+yourself invoking a sequence of com- 
+mands quite different from what you 
+had intended. 
+Our favorite story about modes, 
+probably apocryphal, involves 
+Bravo. In Bravo, the main typing 
+keys are normally interpreted as com- 
+mands. The "i" key invokes the Insert 
+command, which puts the system in 
+"insert mode." In insert mode, Bravo 
+interprets keystrgkes as letters.  he 
+story goes that a person intendec! to 
+type the word "edit" into his docu- 
+ment, but he forgot to enter insert 
+mode first. Bravq' interpreted "edit" 
+as the following commands: 
+E(verything) select everything in 
+the document 
+D(e1ete) 
+delete it 
+I (nsert) 
+enter insert mode 
+t 
+type a "t" 
+The entire contents of the document 
+were replaced $y the letter "t." This 
+makes the point, perhaps too strong- 
+ly, that modes should be introduced 
+into a user interface with caution, if 
+at all. 
+Commands in Star take the foqn of 
+noun-verb. You specify the object sf 
+interest (the noun) and then invoke a 
+command to manipulate it (the verb). 
+Specifying an object is called "making 
+a selection." Star provides powerful 
+selection mechanisms that reduce the 
+number and complexity of commands 
+in the system. Typically, you will ex- 
+ercise more dexterity and judgment in 
+making a selection than in invoking a 
+command. The object (noun) is 
+almost always specified before: the ac- 
+tion (verb) to be performed. This 
+helps make the command interface 
+modeless; you can change your mind 
+as to which object to affect simply by 
+making a new selection before invok- 
+ing the command. No "accept" func- 
+tion is needed to terminate or confirm 
+commands since invoking the com- 
+mand is the last step. Inserting text 
+does not even require a command; 
+you simply make a selection and 
+begin typing. The text is placed after 
+the end of the selection. 
+The noun-verb command form 
+does not by itself imply that a com- 
+mand interface is modeless. Bravo 
+also uses the noun-verb form; yet, it 
+is a highly modal editor (although the 
+latest version of Bravo has drastically 
+reduced its modalness). The dif- 
+ference is that Bravo tries to make 
+Actual Size 
+f t $ $ + ? +  
+Double Size 
+f 
+8
+2
+8
+ 
+Normal 
+Move 
+COPY 
+Copy Properties 
+Menu 
+Illegal 
+Graphics 
+mode 
+mode 
+mode 
+selecting 
+dest~nation 
+Ei 
+Figure I: Some of the cursor shapes wed by the Star to indicate the state of the system. The cursor is a 16- by 16-bit map that can be 
+changed under program control. 
+one mechanism (the main typing 
+keys) serve more than one function 
+(entering letters and invoking com- 
+mands). This inevitably leads to con- 
+fusion. Star avoids the problem by 
+having special keys on the keyboard 
+devoted solely to invoking functions. 
+The main typing keys only enter 
+characters. (This is another example 
+of the simplicity principle: avoid 
+overloading mechanisms with mean- 
+ings. ) 
+Modes are not necessarily bad. 
+Some modes can be helpful by simpli- 
+fying the specification of extended 
+commands. For example, Star uses a 
+"field fill-in order specification 
+mode." In this mode, you can specify 
+the order in which the NEXT key will 
+step through the fields in the docu- 
+ment. Invoking the SET FILL-IN 
+ORDER command puts the system in 
+the mode. Each field you now select is 
+added to the fill-in order. You ter- 
+minate the mode by pushing the 
+STOP key. Star also utilizes tem- 
+porary modes as part of the MOVE, 
+COPY, and COPY PROPERTIES 
+commands. For example, to move an 
+object, you select it, push the MOVE 
+key that puts the system in "move 
+mode," and then select the destina- 
+tion. These modes work for two rea- 
+sons. First, they are visible. Star posts 
+a message in ,the Message Area at the 
+top of the screen indicating that a 
+mode is in effect. The message re- 
+mains there for the duration of the 
+mode. Star also changes the shape of 
+the cursor as an additional indication. 
+You can always tell the state of the 
+system by inspection (see figure 7). 
+Second, the allowable actions are 
+constrained during modes. The only 
+action that is allowed-except for ac- 
+tions directly related to the mode-is 
+scrolling to another part of the docu- 
+ment. This constraint makes it even 
+more apparent that the system is in an 
+unusual state. 
+User Tailorability 
+No matter how general or powerful 
+a system is, it will never satisfy all its 
+potential users. People always want 
+ways to speed up often-performed 
+operations. Yet, everyone is different. 
+The only solution is to design the sys- 
+tem with provisions for user extensi- 
+bility built in. The following mecha- 
+nisms are provided by Star: 
+*You can tailor the appearance of 
+your system in a variety of ways. The 
+simplest is to choose the icons you 
+want on your Desktop, thus tailoring 
+your working environment. At a 
+more sophisticated level, a work sta- 
+tion can be purchased with or with- 
+out certain functions. For example, 
+not everyone may want the equation 
+facility. Xerox calls this "product fac- 
+toring." 
+*You can set up blank documents 
+with text, paragraph, and page layout 
+defaults. For example, you might set 
+up one document with the normal 
+text font being 10-point Classic and 
+another with it being 12-point 
+Modern italic. The documents need 
+not be blank; they may contain fixed 
+text and graphics, and fields for vari- 
+able fill-in. A typical form might be a 
+business-letter form with address, ad- 
+dressee, salutation, and body fields, 
+each field with its own default text 
+style. Or it might be an accounting 
+form with lines and tables. Or it 
+might be a mail form with To, From, 
+and Subject fields, and a heading 
+tailored to each individual. Whatever 
+the form or document, you can put it 
+on your Desktop and make new in- 
+stances of it by selecting it and invok- 
+ing COPY. Thus, each form can act 
+like a "pad of paper" from which new 
+sheets can be "torn off." 
+Interesting documents to set up are 
+"transfer sheets," documents contain- 
+ing a variety of graphics symbols 
+tailored to different applications. For 
+example, you might have a transfer 
+sheet containing buildings in different 
+sizes and shapes, or one devoted to 
+furniture, animals, geometric shapes, 
+flowchart symbols, circuit com- 
+ponents, logos, or a hundred other 
+possibilities. Each sheet would make 
+it easier to create a certain type of il- 
+lustration. Graphics experts could 
+even construct the symbols on the 
+sheets, so that users could create 
+high-quality illustrations without 
+needing as much skill. 
+@You can tailor your filing system by 
+changing the sort order in file drawers 
+and folders. You can also control the 
+Circle 6 on inquiry car 
+filing hierarchy by putting folders in- 
+side folders inside folders, to any 
+I I 
+desired level. 
+*You can tailor your record files by 
+defining any. number of "views" on 
+them. Each view consists of a filter, a 
+sort order, and a formatting docu- 
+I I ment. A filter is a set of predicates 
+that produces a subset of the record 
+file. A formatting document is any 
+locument that contains fields whose 
+lames correspond to those in the 
+,ecord file. Records are always dis- 
+)layed through some formatting 
+locument; they have no inherent ex- 
+ernal representation. Thus, you can 
+et up your own individual subset(s) 
+3 
+1 
+- - 
+and appearance(s) for a record file, 
+even if the record file is shared by 
+f 
+The Birth of UNJX" for CP/Mm! 
+The ... 
+. ,, , 
+u, ,, 
+aPOPULARITY OF 
+several users. 
+You can define "meta operations" 
+by writing programs in the Customer 
+Programming language CUSP. For 
+example, you can further tailor your 
+forms by assigning computation rules 
+expressed in CUSP to fields. Even- 
+tually, you will be able to define your 
+own commands by placing CUSP 
+'%uttons" into documents. 
+.You 
+can define abbreviations for 
+commonly used terms by means of 
+the abbreviation definitiodexpan- 
+sion facility. For example, you might 
+define "sdd as an abbreviation for 
+"Xerox Systems Development De- 
+partment." The expansion can be an 
+entire paragraph, or even multiple 
+paragraphs. This is handy if you 
+create documents out of predefined 
+I I 
+Available for adoption by: CP/M SOFTWARE DEVELOPERS 
+"boilerplate" paragraphs, as the legal 
+CP/M SOFTWARE USERS 
+profession does. The expansion can 
+C P ~ Y  
+2 2 1 3 2 ~  
+w,tn 80801w&lZBOCPU RHlu#raa 
+NEW 
+Mall or Phone Adoption Requests to' 
+*ADOPTION FEE: 
+$150.00 
+2153 Golf Course Drive 
+Manual Only: 
+$ 25.00 
+Reston. VA 22091 
+(VA residents add 4% aales tax) 
+(703) 47&9143 
+VISA, MC, Check or Money Order 
+SYSTEMS* inc* 
+CPIM - TM 01 ~4911.1 R-I* 
+~ o r p  
+UNlX - TM 018.11 TehehOm Labs 
+even be an illustration or mathe- 
+matical formula. 
+.Every user has a unique name used 
+for identification to the system, 
+usually the user's full name. How- 
+ever, you can define one or more 
+aliases by which you are willing to be 
+known, such as your last name only, 
+a shortened form of your name, or a 
+nickname. This lets you personalize 
+your identification to the rest of the 
+network. 
+Summary 
+In the 1980s, the most important 
+factors affecting how prevalent com- 
+puter usage becomes will be reduced 
+280 
+~
+p
+d
+ 
+1982 0 BYTE Publications lnc 
+Clrcie 299 on Inquiry card. 
+Uew 
+Mordlndex llTM $195 
+utomatic generation of subject index 
+nd tables of contents, figures, etc. 
+Wordlndex commands placed in any docu- 
+ment produced by wordstarTM automati- 
+cally number chapters and L? levels of sec- 
+tions; create tables of contents, figures, and 
+tables, and a sorted subject index with 
+page references. 
+Multiple files. Wordlndex II supports the 
+wordStarTM .f1 dot command: 
+Free choice of page number format. 
+Multiple choice of layout of all tables. 
+No limit on size of subject index. 
+Automatic generation of headings and 
+footings. 
+Alternating page offset for even and odd 
+pages slmplif~es printing procedures. 
+S W M .  QFaeR for owners of all previous 
+versions of Wordlndex. return your original 
+Wordlndex diskette dlrectly to us and re- 
+celve Wordlndex II at a nominal cost of $50. 
+Previously available on minls and main- 
+frames only. 
+Supplled with the original ~ e k t r o n i x ~ ~  
+documentation, MicroPlot fully mplements 
+the entire Tektronlx Terminal Control Sys- 
+tem on your 80801280 based microcompu- 
+ter at a fractlon of the or~glnal c o d  
+This package enables you to run even 
+mainframe-developed software for the 
+Plot-10 TCS on your microcomputer using 
+Tektronix compatible peripherals. 
+Microplot is supplled as ~ i c r o s o f t ~ ~  
+.RE1 
+files to be used with ~ortran-'80TM. 
+MenuMaslerm 
+$95 
+Stoo messina around with CP/M ' 
+commands. fienu~aster makes all 
+your software~menudriven. 
+Slmply create your own menus directly 
+on-screen using any text editor. The menu 
+dispenses of long and hard-to-remember 
+CP/M~" commands. The user may simply 
+select programs from the menu using sim- 
+ple commands of his own choice. 
+Order your copy today directly from us by 
+phone, telex, or mail. Please send cashier's 
+check or state Visa or Master Charge ac- 
+count no. 
+Detailed descriptlons may be requested at 
+no cost. Just circle reader service. Dealers 
+may apply for free demo-vers~ons of all 
+programs. 
+Dun Laoghaire 
+Dublin. ReDuhlic of Ireland 
+Phone 1802514. Telex 25105 GSOP 
+ATTN. BORLAND 
+cost, increased functionality, im- 
+proved availability and servicing, 
+and, perhaps most important of all, 
+progress in user-interface design. The 
+first three alone are necessary, but 
+not sufficient for widespread use. Re- 
+duced cost will allow people to buy 
+computers, but improved user inter- 
+faces will allow people to use com- 
+puters. In this article, we have pre- 
+sented some principles and techniques 
+that we hope will lead to better user 
+interfaces. 
+User-interface design is still an art, 
+not a science. Many times during the 
+Star design we were amazed at % the 
+depth and subtlety of user-interface 
+issues, even such supposedly straight- 
+forward issues as consistency and 
+simplicity. Often there is no one 
+"right" answer. Much of the time 
+there is no scientific evidence to sup- 
+port one alternative over another, 
+just intuition. Almost always there 
+are trade-offs. Perhaps by the end of 
+the decade, user-interface design wjll 
+be a more rigorous process. We hope 
+that we have contributed to that pro- 
+gress. m 
+I 
+I 
+References 
+1. Arnheim, Rudolf. Visual Thinking. 
+Berkeley: University of California Press, 
+1971. 
+2. 
+Brooks, Frederick. The Mythical Man- 
+Month. Reading, MA: Addison-Wesley, 
+1975. 
+3. Card, Stuart, William English, and Betty 
+Burr. "Evaluation of 
+Mouse, Rate- 
+Controlled Isometric Joystick, Step Keys, 
+and Text Keys for Text Selection on a 
+CRT." Ergonomics, vol. 21, no. 8, 1978, 
+pp. 601 -61 3. 
+4. 
+Dahl, Ole-Johan and Kristen Nygaard. 
+"SIMULA-An 
+Algol-Based Simulation 
+Language." Communications of the 
+ACM, vol. 9, no. 9, 1966, pp. 671-678. 
+5. Engelbart, Douglas and Willlam English. 
+"A Research Center for Augmenting 
+Human Intellect." Proceedings of the 
+AFlPS 1968 Fall Joint Computer Con- 
+ference, vol. 33. 1968, pp. 395-410. 
+6. English, William, Douglas Engelhaft, and 
+M. L. Berman. "Display-Select~on Tech- 
+niques for Text Manipulation." IEEE 
+Transactions on Human Factors in Elec- 
+tronics, vol. HFE-8, no. 1, 1967, pp. 
+21-31. 
+7. 
+Fitts, P. M. "The Information capacity of 
+the Human Motor System in Controlling 
+Amplitude of Movement." Journal of Ex- 
+perimental Psycholonv vol. 47, 1954, pp. 
+381 -391. 
+J<, t.::- ; 
+8. Ingalls, Daniel. in he Smalltalk Graphics 
+Kernel." 
+BYTE, August 1981, pp. 
+168-194. 
+9. Intel, Digital Equipment, and Xerox Cor- 
+porations. The Ethernet, A Local Area 
+Network: Data Link Layer and Physical 
+Layer Specifications. Version 1 .O, 1980. 
+10. lrby, Charles, Linda Bergsteinsson, 
+Thomas Moran. William Newman, and 
+Larry Tesler. A Methodology for User In- 
+terface Design. Systems Development 
+Division, Xerox Corporation, January 
+1977. 
+11. Kay, Alan and the Learning Research 
+Group. Personal Dynamic Media. Xerox 
+Palo Alto Research Center Technical 
+Report SSL-76-1, 1976. (A condensed 
+version is in IEEE Computer, March 
+1977, pp. 31-41.) 
+12. Lampson, Butler. "Bravo Manual." Alto 
+User's Handbook, Xerox Palo Alto Re- 
+search Center, 1976 and 1978. (Much of 
+the design of all the implementation of 
+Bravo was done by Charles Simonyi and 
+the skilled programmers in his "software 
+factory.") 
+13. Metcalfe, Robert and David Boggs. 
+"Ethernet:. Distributed Packet Switching 
+for Local Computer Networks." Com- 
+munications of the ACM, vol. 19, no. 7, 
+1976, pp. 395-404. 
+14. Miller, George. "The Magical Number 
+Seven, Plus or Minus Two: Some Limits 
+on Our Capacity for Processing Informa- 
+tion." In The Psychology of Communica- 
+tion, by G. Miller, New York: Basic Books, 
+1967. (An earlier version appeared in 
+Psychology Review, vol. 63, no. 2, 1956, 
+pp. 81.97. 
+15:Seybold, 
+Jonathan. "Xerox's 'Star'." In 
+The Seybold Report, Media, PA: Seybold 
+Publications, vol. 10, no. 16. 1981. 
+16. Smith, David Canfield. Pygmalion, A 
+Computer Program to Model and Stimu- 
+late Creative Thought. Basel, Switzer- 
+land: Birkhauser Verlag, 1977. 
+17. Smith, David Canfield, Charles Irby, 
+Ralph Kimball, and Eric Harslem. "The 
+Star User Interface: An Overview." Sub- 
+- 
+mitted to the AFlPS 1982 National COm- 
+puter Conference. 
+18. Tesler, Larry. Private communication; but 
+also see his excellent discussion of 
+modes in "The Smalltalk Environment." 
+BYTE, August 1981, pp. 90-147. 
+19. Thacker, C. P., E. M. McCreight, B. W. 
+Lampson, R. F. Sproull, and D. R. Boggs. 
+"Alto: A Personal Computer." In Com- 
+puter Structures: Principles and Ex- 
+amples, edited by D. Siewiorek, C. G. 
+Bell, and A. Newell, New York: McGraw- 
+Hill, 1982. 
+20. Wertenbaker, Lael. The 
+World of, 
+Picasso. New York: Time-Life Books. 
+1967. 
+21. Zloof, M. M. "Query-by-Example." Pro- 
+ceedings of the AFlPS 1975 National 
+Computer Conference, vol. 44, 1975, p~ 
+431 -438. 

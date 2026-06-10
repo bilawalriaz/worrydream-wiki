@@ -1,0 +1,1688 @@
+Vannevar Bush and the Differential 
+Analyzer: The Text and Context 
+of an Early Computer 
+LARRY 
+OWENS 
+One day in 1942, the Rockefeller Differential Analyzer was dedi- 
+cated to winning the war. For the next several years this large mathe- 
+matical machine, the centerpiece of MIT's Center of Analysis, labored 
+over the calculation of firing tables and the profiles of radar antennas.' 
+Weighing almost a hundred tons and comprising some two thousand 
+vacuum tubes, several thousand relays, a hundred and fifty 
+motors, 
+and automated input units, the analyzer was the most important com- 
+puter in existence in the United States at the end of the war.2 (See 
+fig. 1.) Wartime security prohibited its public announcement until 
+DR. OWENS teaches in the Department of History at the University 
+of Massachusetts, 
+Amherst. Earlier versions of this article were presented at Princeton University, the 
+University of Massachusetts, and at the 1983 meeting of the Society for the History of 
+Technology in Washington, D.C. For the last presentation, the author won the society's 
+Joan Cahalin Robinson Prize. He wishes to thank for their friendly 
+and expert assistance 
+the archivists of MIT, in particular Helen Samuels and Kathy Marquis; Warren Sea- 
+mans, the director of the MIT Museum, and his assistant Michael Yeates; the staff of the 
+Rockefeller Archive Center in Tarrytown, New York; and Florence Anderson of the 
+Carnegie Corporation of New York. John Servos of Amherst College deserves special 
+mention, for he has been unfailing in his encouragement and constructively 
+critical in the 
+best sense. 
+'The first demonstration of the still incomplete analyzer was held on December 13, 
+1941. By March 1943, when the staff and facilities of the center had been converted 
+entirely to war work, about half of the analyzer was in operation. S. H. Caldwell to 
+Warren Weaver, December 14, 1941. The letter is in the Rockefeller Archive Center, in 
+RF1.1/224/2/25. See also Caldwell to Bush, April 19, 1943, Bush Papers, Library of 
+Congress. 
+2The small band of digital pioneers would argue this claim. But ENIAC did not 
+become operational until some months after the war, and, while the Harvard-IBM Mark 
+I was completed in mid-1944, both it and the Bell relay machine proved significantly 
+slower than the analyzer for the computation of trajectories. The development of digital 
+computers, especially as logic machines, seems to have been further along in Great 
+Britain largely because of Alan Turing. For their history, see H. H. Goldstine, The 
+Computer 
+from Pascal to von Neumann (Princeton, 1972); Nancy Stern, From ENIAC to 
+UNIVAC: An Appraisal of theEckert-Mauchly 
+Computers 
+(Bedford, Mass., 198 1); N. Metrop- 
+? 1986 by the Society for the History of Technology. All rights reserved. 
+0040-165X/86/2701-0005$01.00 
+63 
+This content downloaded from 18.7.29.240 on Tue, 26 Nov 2013 15:42:05 PM
+All use subject to JSTOR Terms and Conditions
+64 
+Larry Owens 
+@!i ii i i i iBi~ lilli i~ri:iii 
+::ii::::iil::ii_::i-i_:i::::l:_:iii 
+:I::ii 
+i : 
+' 
+`==='==i 
+;,ii-ii:::;:i:::::i:::_ 
+= :ii'= 
+ii !i 
+ii!:=! 
+i ! i i i ! ii :ii!I 
+............. 
+i-:'i::i::;`i:' 
+ji~::` ::':: 
+:: 
+:::i::-::ii-::-:: 
+-::r~ii:i:i::i~:_. 
+. . . . . . . . . . 
+.:ii::"::l:r: 
+: iri~~~ji-:j~::::;:lii?-::i:: 
+~ 
+i-:::::i_::i:;::~......................
+::::':;:-:'::?::i~r:i~i:i:_:Sysi 
+- - ------------------------------------------- 
+------------ 
+- - 
+---------- 
+------------------------;':::' 
+':: 
+' ::::: 
+':':'':':: 
+FIG. 1.-The Rockefeller Differential Analyzer. (Courtesy of the MIT Museum.) 
+1945, when it was hailed by the press as a great electromechanical brain 
+ready to tackle the problems of peace and to advance science by freeing 
+it from the pick-and-shovel work of mathematics.3 
+The development of the analyzer had occupied Vannevar Bush and 
+his colleagues at MIT for almost twenty 
+years. In 1927, an early model 
+made the front page of the New York Times: "'Thinking Machine' Does 
+Higher Mathematics; Solves Equations That Take Humans Months." 
+In 1930, the group constructed a model which proved so successful 
+that it inspired imitation around the world. In the United States, 
+General Electric, Aberdeen Proving Ground, and the universities of 
+Pennsylvania, California, and Texas all built analyzers. More were 
+constructed abroad, in England at Manchester and Cambridge, and in 
+Ireland, Germany, Norway, and Russia.4 Bush's success prompted him 
+olis, J. Howlett, and G. Rota, eds., A History 
+of Computing 
+in the Twentieth 
+Century 
+(New 
+York, 1980); and Paul Ceruzzi, Reckoners: 
+The Prehistory 
+of the Digital Computer,from 
+Relays 
+to the Stored Program Concept, 1935-1945 (Westport, Conn., 1983). For Turing and his 
+interest in computing machines as a response to the crisis in the foundations of 
+mathematics, see William F. Aspray, Jr., "From Mathematical Constructivity 
+to Compu- 
+ter Science: Alan Turing, John von Neumann, and the Origins of Computer Science in 
+Mathematical Logic" (Ph.D. diss., Univ. of Wisconsin, Madison, 1980); and Alan 
+Hodges, Alan Turing: The Enigma (New York, 1983). 
+3See Life, January 14, 1946; also, Popular Science Monthly, 
+vol. 148 (1946). 
+"For a valuable bibliography of analyzer literature, see the notes to chap. 5 of E. C. 
+Berkeley, Giant Brains, or Machines That Think (New York, 1949). 
+This content downloaded from 18.7.29.240 on Tue, 26 Nov 2013 15:42:05 PM
+All use subject to JSTOR Terms and Conditions
+Vannevar Bush and the Differential 
+Analyzer 
+65 
+to plan an analyzer more capacious, quicker in calculation, and more 
+flexible in application, which would establish MIT as an international 
+center for the study of machine computation. He persuaded the Rock- 
+efeller Foundation in 1935 to finance the new machine, and in 1939 the 
+Carnegie Corporation contributed money to help establish and main- 
+tain a center to serve as a site for the study of machine analysis. At the 
+time, Bush's program seemed an adumbration of future technology. 
+Harold Hazen, the head of the Electrical Engineering Department in 
+1940 and a long-time colleague, predicted that the analyzer would 
+"mark the start of a new era in mechanized calculus," and Karl Comp- 
+ton, MIT's president, declared in 1941 that the new machine would be 
+"one of the great scientific instruments of modern times."5 
+Within five years of its announcement, however, the early enthu- 
+siasm which had marked the development of the analyzer had died, 
+and the Center of Analysis had collapsed as a vital site for the study of 
+computation.6 In the early spring of 1950, Samuel Caldwell, the cen- 
+ter's director and another of Bush's close colleagues in the develop- 
+ment of the analyzer, came to the home of Warren Weaver to discuss 
+the status of the machine and the program it had inspired. Weaver was 
+the director of the Natural Sciences Division of the Rockefeller Foun- 
+dation and a respected mathematician, and he had been intimately 
+involved with the MIT project from its beginnings in the 1930s. The 
+long meeting between the two men turned into an autopsy of the 
+program begun fifteen years earlier with Rockefeller support. No one 
+had expected in 1936, they admitted, that the whole field of"computer 
+science" would so quickly overtake Bush's project. But things had 
+indeed changed, and Caldwell confessed to Weaver that the analyzer 
+was "essentially obsolete" and the whole program had "become a real 
+burden on MIT."7 
+What happened? Why did a twenty-year 
+effort to create a computer 
+fail when it did? The reasons, of course, are manifold. In the first place, 
+the war released an unprecedented flood of federal money and 
+spawned a multitude of laboratories at MIT, disrupting the simpler 
+institutional environment in which the analyzer was conceived and 
+nurtured. But if the war brought new public monies which over- 
+whelmed the older tradition of private philanthropy 
+that had sustained 
+5MIT President's 
+Reports for 1940, p. 101; and 1941, p. 28. 
+'The analyzer and machines of a similar type did not, of course, disappear overnight. 
+The Rockefeller calculator was not dismantled until 1954 (personal communication 
+from Frank Verzuh, June 4, 1982). Descendants of Bush's analyzers still constitute a 
+modest weapon in the armory of engineers, as can be surmised by a glance at the current 
+texts on library shelves. 
+7See Warren Weaver's project diaries for March 17, 1950. The diaries Weaver kept as a 
+foundation officer are preserved at the Rockefeller Archive Center. 
+This content downloaded from 18.7.29.240 on Tue, 26 Nov 2013 15:42:05 PM
+All use subject to JSTOR Terms and Conditions
+66 
+Larry Owens 
+the analyzer, it also ushered in a variety of computational tasks, in the 
+fields of large-volume data analysis and real-time operation, which 
+were beyond the capacity of the Rockefeller instrument. The years 
+around the war's end were marked by intense competition in computer 
+development, and Bush's machine was quickly challenged by more 
+capable computers incorporating radically different 
+designs-by Eck- 
+ert and Mauchly's ENIAC at the University 
+of Pennsylvania, and by Jay 
+Forrester's Whirlwind at MIT itself.8 
+These new computers were elec- 
+tronic and digital rather than electromechanical, 
+and to them belonged 
+the future of computer technology. In brief, the Rockefeller Analyzer 
+succumbed to technical obsolescence. 
+But are these suggestions of failure the most interesting 
+features of 
+this twenty-year 
+project? In our rush to write the history of the most 
+glamorous of modern technologies, we must be careful lest we find in 
+older artifacts 
+only anticipations of future developments, and overlook 
+dimensions of meaning that open windows on the past. Warren 
+Weaver indicated this extra dimension in the case of the analyzer when 
+he remarked in a letter to Caldwell some days after their postmortem: 
+[I]t seems rather a pity not to have around such a place as MIT a 
+really impressive Analogue computer; for there is vividness and 
+directness of meaning of the electrical and mechanical processes 
+involved ... which can hardly fail, I would think, to have a very 
+considerable educational value. A Digital Electronic computer is 
+bound to be a somewhat abstract affair, in which the actual com- 
+putational processes are fairly deeply submerged.' 
+Weaver's insight can help us understand that the Rockefeller Analyzer 
+was not so much an aborted beginning as the culmination of a series of 
+inventions stretching back to Bush's undergraduate years at Tufts 
+College. Furthermore, Weaver's reference to its vividness of meaning 
+and educational value suggests that Bush's machines could be read as 
+weighty "texts" embodying a variety of idioms-technical, intellectual, 
+and ethical-ingredient in the culture of engineering in which he came 
+of age. In the context of the early 20th-century 
+engineering school, the 
+analyzers were not only tools but paradigms, and they taught 
+mathematics and method and modeled the character of engineering. 
+In the decade following the First World War, electrical engineers 
+came up against severe mathematical difficulties 
+in their studies of 
+8See Nancy Stern (n. 2 above) on ENIAC; for Whirlwind, see Kent Redmond and 
+Thomas Smith, Project Whirlwind, 
+the History 
+of a Pioneer Computer 
+(Bedford, Mass., 1980). 
+'Weaver to Caldwell, March 27, 1950, in RF1.1/224/2/26. 
+This content downloaded from 18.7.29.240 on Tue, 26 Nov 2013 15:42:05 PM
+All use subject to JSTOR Terms and Conditions
+Vannevar Bush and the Differential 
+Analyzer 
+67 
+vacuum tubes, telephone lines, and especially long-distance power 
+transmission lines. Given the large financial risks which accompanied 
+the construction of power networks, 
+it was imperative that engineers be 
+able to predict the operating characteristics of proposed systems.'" 
+Consequently, between 1920 and 1925 the Research Laboratory of 
+MIT's Electrical Engineering Department undertook a major assault 
+on the mathematical problems involved in the study of long-distance 
+lines. The attack was two-pronged and dealt, on the one hand, with the 
+construction of artificial lines designed to reproduce on a laboratory 
+scale the behavior of power networks, and, on the other, with the 
+search for methods to handle the refractory 
+equations generated by 
+these networks." 
+Much of the mathematics of long-distance lines had been developed 
+by General Electric's Charles Steinmetz and the Bell Telephone en- 
+gineer John Carson, but, while the derivation of the appropriate equa- 
+tions proved to be relatively 
+straightforward, 
+their solution was not. Of 
+particular importance to MIT engineers worried about the stability 
+of 
+lines was the equation derived by Carson: 
+I = A(t)(E)sinO + Epcos(pt + 0) fcospA - (8) d8 
++ Epsin(pt + 0) fsinpG A(8)d8, 
+where I is the entering current, and Esin(pt + 0) the voltage suddenly 
+applied to the sending end of an initially unenergized transmission 
+line. Normal procedure for the solution of this equation involved, first, 
+the calculation of the products under the integral signs from tables of 
+functions and their plotting by hand in graphic form, then the deter- 
+mination of the areas under the curves (and thus the integrals) with the 
+use of an Amsler planimeter, and finally the necessary multiplication 
+and addition of curves to give, in graphic form, I versus t.'2 
+'0The concern with such problems is obvious in the pages of the Journal of the American 
+Institute 
+of Electrical Engineers. In general, see Thomas Hughes, Networks 
+of Power: Elec- 
+trification 
+in Western 
+Society, 
+1880-1930 (Baltimore, 1983). In particular, see for example 
+V. Bush and R. D. Booth, "Power System Transients," Journal of the American 
+Institute 
+of 
+Electrical Engineers 44 (1925): 229-240. 
+"See the MIT President's 
+Reports for the period; also, Herbert R. Stewart, "A New 
+Recording Product Integraph and Multiplier," MIT master's thesis, 1925; and Karl 
+Wildes and Nilo Lindgren, A Century 
+of Electrical 
+Engineering 
+and Computer 
+Science at MIT, 
+1882-1982 (Cambridge, Mass., 1985). 
+"2Stewart; 
+John Carson, "A Mathematical Discussion of the Building-up of Sinusoidal 
+Currents in Loaded Lines . .." (New York, 1925); C. P. Steinmetz, Theory 
+and Calculation 
+of Transient 
+Electric Phenomena and Oscillations 
+(New York, 1911). 
+This content downloaded from 18.7.29.240 on Tue, 26 Nov 2013 15:42:05 PM
+All use subject to JSTOR Terms and Conditions
+68 
+Larry Owens 
+Early in 1925 Bush suggested to his graduate student Herbert Ste- 
+wart that he devise a machine to facilitate the recording of the areas 
+needed for the calculation of the Carson equation. In the course of his 
+work, Stewart apparently discovered the series of papers that William 
+and James Thomson had published in 1876 describing the disc-globe- 
+and-cylinder integrator and its application to harmonic analysis. Wil- 
+liam Thomson explained the use of the integrator for calculating the 
+integral 
+f 
+oxf(x) 
+(x)dx. 
+Stewart was properly intrigued, for the general form of the Carson 
+equation was of the same type: 
+y(t) = F1 (t) ff() 
+(8)d8. 
+However, since this use of the Thomson integrator required knowl- 
+edge of the integral 
+fnf(x)dx, 
+Stewart dismissed the device as unsuitable for his project, feeling that 
+f(x) might not, in the general case, be easily integrated. His dismissal of 
+the Thomson integrator is ironic, for he might have found in the 
+Thomson papers (which had been collected as Appendix B' in Thom- 
+son and Tait's 1879 Treatise 
+on Natural Philosophy) 
+the essential insights 
+that Bush would bring to fruition in the development of the mechani- 
+cal integrator for which he had set Stewart searching.'" 
+"'During 1924-25, the development of the Product Integraph was the majority activity 
+in the Research Division of the Electrical Engineering Department. For a description of 
+the first Product Integraph, see V. Bush, F. D. Gage, and H. R. Stewart, "A Continuous 
+Recording Integraph,"Journal of the Franklin Institute 
+212 (1927): 63-84. My account of 
+the origins of the integraph is based on materials in the MIT Archives and on discussions 
+with Karl Wildes, April 12 and 13, 1984. It might be that Stewart never closely studied the 
+Thomson papers. When Bush first suggested the project, he directed Stewart to Fred 
+Dellenbaugh's 1921 master's thesis as a fairly complete collection of "mechanical calculat- 
+ing contrivances which had been developed in the past" and in which he would have 
+found a condensed description and diagrams of the Thomson integrator emphasizing its 
+use in harmonic analysis, that is, with equations of the form 
+ff(x)g(x)dx. 
+Stewart to Bush, May 4, 1926, Hazen Papers, MIT Archives; Frederick Dellenbaugh, 
+"Harmonic Analysis, a Critical Compendium of Methods and Devices for the Analysis of 
+Complex Alternating Current Waves with Suggestions for Improvements and Discus- 
+This content downloaded from 18.7.29.240 on Tue, 26 Nov 2013 15:42:05 PM
+All use subject to JSTOR Terms and Conditions
+Vannevar Bush and the Differential 
+Analyzer 
+69 
+A colleague, F. D. Gage, suggested that Stewart interpret the equa- 
+tion electrically rather than mechanically. He then realized that the 
+integration of the functional product could be performed with an 
+ordinary watt-hour meter. Stewart intended to read the meter at 
+appropriate time intervals, but Bush recommended linking the meter 
+to a pen driven by a servomotor that would permit the integral's 
+continuous recording. To generate the second-level product, Stewart 
+turned again to the watt-hour meter until Bush pointed out that it 
+could be accomplished more simply by an elementary mechanical 
+linkage. Stewart received his master's degree in September 1925 for his 
+work on this first Product Integraph. 
+Two more Bush students became involved with the Product Inte- 
+graph. King Gould used the machine to study the temperature gra- 
+dient along the heated filament of a vacuum tube.l" Harold Hazen 
+began the study of vacuum-tube circuits and soon realized that he 
+could treat more complicated circuits if he had two levels of integration 
+with which to work instead of one. He sketched out a second element 
+for the integraph employing a wheel-and-disc integrator (a close 
+cousin of the Thomson device), and showed his idea to Bush, who 
+quickly recognized the generality of his innovation and generated a 
+twenty-page memo outlining a new machine.'" (See fig. 2.) After all, 
+although first-order differential equations were encountered fre- 
+quently in science, "it was once said that physics revolved about the 
+second-order differential equation, and while recent developments 
+have somewhat obscured this importance there is still much of physics 
+thus described."'6 Under Bush's guidance, Hazen built a two-element 
+sion of the Requirements of Such Devices," MIT master's thesis, 1921. E. C. Berkeley and 
+L. Wainwright, 
+in Computers, 
+Their Operation 
+and Application 
+(New York, 1956), claim that 
+Wainwright invented a "virtual prototype of the differential analyzer" in 1923 and 
+communicated it to Bush in 1924. They cite his response to a later query: "I have become 
+quite familiar with the literature of this subject, and as far as I know you [Wainwright] 
+were the first person after Kelvin to proceed in study along these lines and the first 
+to suggest a machine elaborated in detail for the handling of ballistic equations," 
+pp. 114-15. Obviously, the analyzers incorporated the work of many people. As will 
+become clear, however, their deeper origins lie not with Wainwright, Kelvin, Bush's 
+colleagues, or even with Bush himself. They reflect a common universe of technical 
+discourse that reaches back to the turn of the century and beyond. 
+'4V. Bush and K. Gould, "Temperature Distribution along a Filament," Physical 
+Review 
+29 (1927): 337-45. 
+'5Wildes (n. 13 above); Gordon Brown, "Eloge: Harold Locke Hazen, 1901-1980," 
+Annals of the History 
+of Computing 
+3 (1981): 4-12; the sketch and Bush's memo are in the 
+Hazen Papers, MIT Archives. 
+'6V. Bush and H. L. Hazen, "Integraph Solution of Differential Equations,"Journal 
+of 
+the Franklin Institute 
+204 (1927): 577. 
+This content downloaded from 18.7.29.240 on Tue, 26 Nov 2013 15:42:05 PM
+All use subject to JSTOR Terms and Conditions
+70 
+Larry Owens 
+X?Ioe.-.s,- ..-- 
+.Pr,;, 
+l 
+s?,, 
+,tr. 
+I !C~~~"" 
+FIG. 2.-The sketch by Harold Hazen of a second integrating 
+element. (Hazen Papers, 
+MIT Archives; facsimile by author.) 
+machine capable of solving most second-order equations to an accu- 
+racy of several percent (fig. 3). In May 1928 the Franklin Institute 
+awarded Bush its Levy Medal for his work on mechanical computation, 
+with honorable mentions to Stewart, Gage, and Hazen. 
+The new model Product Integraph was applied to the study of 
+vacuum-tube circuits, transmission lines, mechanical oscillations in 
+synchronous motors, and electron orbitals."7 
+Yet despite its successful 
+applications, no one was satisfied with the new integraph. A hybrid 
+machine that employed both an electrical and a mechanical device to 
+perform the same function of integration, it suffered from the limita- 
+tions of the former while failing to maximize the advantages of the 
+latter. The watt-hour meter was physically more complex and in- 
+herently less precise in its operation than a well-engineered mechanical 
+integrator. Moreover, the meter was a more complex logical device in 
+that it integrated the product of two functions, while the mechanical 
+integrator, 
+as will be seen, simply integratedf(x)dx. 
+The combination of 
+mathematical elegance and mechanical simplicity appealed to Bush, 
+and by the fall of 1928 he had secured funds from the administration 
+at 
+MIT to build a new machine that would take advantage of the simple 
+virtues of the wheel-and-disc integrator.'8 
+"'For a list of topics, see n. 6 in V. Bush, "The Differential Analyzer," Journal of the 
+Franklin Institute 
+212 (1931): 447-88. 
+"8Wildes (n. 13 above). 
+This content downloaded from 18.7.29.240 on Tue, 26 Nov 2013 15:42:05 PM
+All use subject to JSTOR Terms and Conditions
+Vannevar Bush and the Differential 
+Analyzer 
+71 
+iii'iiiiiii~i 
+i iii 
+iiiiii~iiiii~ii 
+:iicl~':'i'l 
+-:i _ : i~i~i':i~i~P:: 
+:~1~ 
+6~S~B~P~~ 
+a i~~i~i~iC'$ii::ii 
+:::i:::iiii::::::i~::::::-:::::-: 
+. II 
+II 
+I I II 
+II 
+X.:::::i:l 
+mom 
+,: 
+::::: 
+, 
+?4:. 
+FIG. 3.-(top) The revised Product Integraph with Bush at the near end and, leading 
+away, F. G. Kear, Harold Hazen, and F. D. Gage; (bottom) Bush seated at the output end 
+of the integraph with the disc integrator in front of him and the watt-hour meter, seen 
+from the rear, to its right. (Courtesy of the MIT Museum.) 
+This content downloaded from 18.7.29.240 on Tue, 26 Nov 2013 15:42:05 PM
+All use subject to JSTOR Terms and Conditions
+72 
+Larry Owens 
+The Differential Analyzer fulfilled Bush's expectations.'9 The new 
+machine consisted of a long table-like framework 
+crisscrossed by inter- 
+connectible shafts (fig. 4). Along one side were arrayed a series of 
+drawing boards and along the other six disc integrators. Pens on some 
+of the boards were driven by shafts so as to trace out curves on properly 
+positioned graph paper. Other boards were designed to permit an 
+operator, who could cause a pen to follow a curve positioned on a 
+board, to give to a particular shaft any desired rotation. In essence, the 
+analyzer was a device cleverly contrived to convert the rotations of 
+shafts one into another in a variety of ways. By associating the change 
+of variables in an equation with the rotations of shafts, and by em- 
+ploying an assortment of gearings, the operator could cause the calcu- 
+lator to add, subtract, multiply, divide, and integrate. 
+i:: 
+iiii; 
+....................... 
+............. 
+FIG. 4.-The 1931 Differential Analyzer. Sam Caldwell can be seen at the left. (Cour- 
+tesy of the MIT Museum.) 
+'"Waldo Lyon, a departmental colleague, contributed the new name, apparently in 
+response to the following: "We need some new names! The so-called product integraph 
+was much more than an integraph. It was a machine for solving differential 
+equations.... 
+In token of appreciation to one who suggests a name which is accepted, the following 
+procedure is proposed: The new machine will be set up to solve a differential 
+equation, 
+and the recording pencil will in this manner be caused to draw on the recording platen 
+the name of the successful contestant. This will be accompanied by all due and proper 
+ceremony," MIT Archives, AC 13, Box 3, Folder 69. Dugald Jackson informs us that the 
+Differential Analyzer cost MIT approximately $25,000. Jackson to Jackson, Jr., March 
+17, 1932. Jackson Papers, MIT Archives, Box 3, Folder 185. 
+This content downloaded from 18.7.29.240 on Tue, 26 Nov 2013 15:42:05 PM
+All use subject to JSTOR Terms and Conditions
+Vannevar Bush and the Differential 
+Analyzer 
+73 
+The disc integrator, the heart of the analyzer and the means by 
+which it performed the operation of integration, is a variable friction- 
+gear that consists of a disc resting on a wheel at a variable distance from 
+its center (fig. 5a). The geometry of the integrator forces its constituent 
+shafts to turn in accordance with the relationship 
+The precision of the disc integrator depends on eliminating slippage 
+between the wheel and the disc when the wheel turns under load. In 
+the Product Integraph Bush had reduced the load carried by the wheel 
+shaft by the use of a servomotor which followed its rotations. In the 
+Differential Analyzer, he accomplished the same end and continued 
+his replacement of electrical by mechanical elements by incorporating 
+another Hazen idea-the torque amplifier designed by C. W. Nieman 
+of the Bethlehem Steel Corporation.20 
+This was a purely mechanical 
+device for the amplification of motion that depended on the winch 
+principle (fig. 5b). By its use Bush was able to eliminate most of the 
+torque load carried by the wheel shaft of the integrator and to supply 
+the power needed to drive his calculating engine. 
+The use of the analyzer can be illustrated by an example based on 
+one of Bush's own. Consider the equation of a falling body when the 
+gravitational force g varies with the distance x: 
+d2x 
+dx 
+2 + k- + g(x) = 0, 
+dt2 
+dt 
+or, 
+dx 
+-"k-+ 
+g(x) dt. 
+dt 
+dt 
+In Bush's words, 
+A bus shaft is assigned to each significant 
+quantity appearing in the 
+equation. The several relations existing between these are then set 
+up by means of connections to the operating units: a functional 
+relationship by connecting the two corresponding shafts to an 
+input table, a sum by placing an adder in position, an integral 
+relationship by an integrator, 
+and so on. When all the relationships 
+which are involved have been thus represented a final connection 
+is made which represents the equality expressed in the equation. 
+In the example above this connection is through an integrating 
+20Brown (n. 15 above); C. W. Nieman, "Torque Amplifier," American Machinist 66 
+(1927): 895-97. 
+This content downloaded from 18.7.29.240 on Tue, 26 Nov 2013 15:42:05 PM
+All use subject to JSTOR Terms and Conditions
+74 
+Larry Owens 
+y 
+fx 
+y = f(x)dx y = (x)dx 
+x 
+a) 
+The Disc Integrator 
+OUrUT ARM 
+TINPUT 
+sA 
+INPUT ARMI 
+b) 
+The Torque Amplifier 
+FIG. 5.-A schematic diagram of the disc integrator and the torque amplifier. 
+unit .... When this has been done the machine is locked, and the 
+rotation of the independent-variable shaft will drive everything 
+else, thus forcing the machine to move in accordance with the 
+expressed relationship . . . 21 
+A diagram of the analyzer connected to solve the equation of the 
+falling body is shown in figure 6. The horizontal lines represent bus 
+shafts, K and I multiplying 
+and adding gears, and the integrators are 
+represented by the indicated symbol. The terms of the equation associ- 
+ated with the rotations of particular bus shafts are noted at the side of 
+the diagram. G(x) would have been plotted earlier and an operator 
+stationed at the input table to keep the pointer p on the curve as the 
+2'"The Differential Analyzer" (n. 17 above), p. 459. 
+This content downloaded from 18.7.29.240 on Tue, 26 Nov 2013 15:42:05 PM
+All use subject to JSTOR Terms and Conditions
+Vannevar Bush and the Differential 
+Analyzer 
+75 
+g(x) 
+INPUT TABLE 
+p 
+INDEPENDENT 
+.+ 
+)Ux(t) 
+dx dt 
+---t k(d) 
+g(x) 
+___-(k- 
+-k g(x)) 
+x(t) 
+dx 
++ g(x))dt 
+OUTPUT 
+TABLE 
+FIG. 6.-A diagram of the Differential Analyzer set up to solve the falling-body 
+equation. 
+analyzer worked through the equation. The function x(t), which ex- 
+presses distance with respect to time, would be traced automatically on 
+the output table. (See fig. 7.) 
+The Differential Analyzer did more, obviously, than compute x(t). 
+Through his elaboration of the mathematical possibilities inherent in 
+the disc integrator and by the elimination of extraneous nonmechani- 
+cal elements, Bush invented an elegant, dynamical, mechanical model 
+of the differential equation. Articulated in a particular pattern, its 
+shafts, gearboxes, integrators, 
+pens, and drawing boards set in motion, 
+the Differential Analyzer did not so much compute as kinetically act 
+out the mathematical equation. 
+Between 1926 and 1935 the development and application of the 
+analyzers generated four bachelors' theses, twenty-eight masters' 
+This content downloaded from 18.7.29.240 on Tue, 26 Nov 2013 15:42:05 PM
+All use subject to JSTOR Terms and Conditions
+76 
+Larry Owens 
+.......... 
+.................. 
+.................. 
+............ 
+. . . . . . . .. 
+.............. 
+N 
+O 
+FIG. 7.-Bush and Caldwell standing at the output board of the Differential 
+Analyzer 
+inspecting a family of curves produced during the solution of an equation. (Courtesy of 
+the MIT Museum.) 
+theses, and four doctoral dissertations.22 
+Among the students who 
+worked on the analyzer project were a number destined to become 
+influential figures at MIT-Harold 
+Hazen, Sam Caldwell, Gordon 
+Brown, and Harold Edgerton. Most of the problems studied with the 
+help of the analyzers were drawn from the field of electrical engineer- 
+ing-but not all. By 1935 applications reflected the frontiers of scien- 
+tific investigation and included studies in atomic physics, astrophysics, 
+cosmic rays, and seismology. As early as 1932 Bush's colleague in the 
+Physics Department, Philip Morse, used the analyzer to help thread his 
+way through the computational thicket created by the quantum revolu- 
+tion of the 1920s.23 The Englishman Douglas Hartree, a pioneer in the 
+development of wave mechanics, visited Bush during the summer of 
+1933 to become familiar with the analyzer and used it for his calcula- 
+tion of the atomic field of mercury. Back at the University 
+of Manches- 
+22See the "List of Problems Studied with the Aid of the Differential 
+Analyzer," attached 
+to material sent by Bush to Warren Weaver, April 22, 1935, RF1.1/224/2/22. 
+23p. M. Morse and W. P. Allis, "The Effect of Exchange on the Scattering of Slow 
+Electrons from Atoms," Physical Review 44 (1933): 269. 
+This content downloaded from 18.7.29.240 on Tue, 26 Nov 2013 15:42:05 PM
+All use subject to JSTOR Terms and Conditions
+Vannevar Bush and the Differential 
+Analyzer 
+77 
+ter, he constructed several analyzers modeled on the MIT machine, 
+one of them from standard Meccano parts for a cost of some twenty 
+pounds." 
+Experience, mathematical skill, and sometimes days were required 
+to translate difficult 
+problems into forms that could be attacked by the 
+calculator and then to connect the machine to perform the desired 
+calculations. When Lemaitre and Vallarta calculated the trajectories of 
+cosmic rays under the influence of the earth's magnetic field, it took 
+five staff members and eighteen students thirty weeks to obtain the 
+solutions.21 (See fig. 8.) Nevertheless, the analyzer found an eager 
+audience of scientists and engineers frustrated by impossibly difficult 
+calculations. For these, the not-inconsiderable 
+labors involved in work 
+with the analyzer were inconveniences to be born lightly. 
+Success prompted Bush to plan yet another analyzer, one more 
+precise in its calculations, convenient to operate, and with a larger 
+universe of mathematical possibilities. The opportunity to pursue his 
+plan presented itself in the person of Warren Weaver, who in the 
+F-i- 
+. , ',: - 
+-I 
+II" 
+'i -' ' 
+:,',' 
+-.1 
+I 
+I 
+L 
+_ 
+I 
+I - 
+?I 
+'I- -" 
+I I I I I 
+na ~ ~ I 
+II 
+I 
+I 
+I AI ~ 
+1? 
+;~:??u?'r'.., 
+,.. 
+, 
+II 
+II..... 
+.,,, 
+,??rv.,,' 
+I 
+F 
+I. 
+It./ 
+i 
+_ 
+i... 
+i 
+1 
+! 
+1 
+_ 
+:: 
+4r. 
+' 
+'j~t?,?I: 
+i~~~Ir 
+I 
+III 
+I 
+1 
+_~~~ 
+~~ 
+_ 
+ 
+i 
+, 
+ii 
+'Ir 
+FIG. 8.-Diagram of the Differential Analyzer set up to solve the Vallarta-Lemaitre 
+cosmic ray problem. (Bush to Weaver, April 15, 1933, Rockefeller Archives.) 
+24D. R. Hartree, "Approximate Wave Functions and Atomic Field for Mercury," 
+Physical 
+Review 46 (1934): 738-43; also the Hartree citations in the Berkeley bibliography 
+(n. 4 above). 
+25See George Gray's draft, "A Roomful of Brains," returned by Caldwell to Weaver, 
+December 17, 1937, in RF 1 .1/224/2/23. 
+For the study, see Vallarta and Lemaitre, "On the 
+Geomagnetic Analysis of Cosmic Radiation," Physical Review 49 (1936): 719-26. 
+This content downloaded from 18.7.29.240 on Tue, 26 Nov 2013 15:42:05 PM
+All use subject to JSTOR Terms and Conditions
+78 
+Larry Owens 
+autumn of 1931 had become the director of the Natural Sciences 
+Division of the Rockefeller Foundation. Weaver had first heard of the 
+analyzer at a meeting in Paris with Sven Rosseland in 1932. Making 
+plans for his new Institute of Theoretical Physics at the University of 
+Oslo, Rosseland was interested in acquiring an analyzer with Rockefel- 
+ler money to facilitate astrophysical calculations.26 
+Weaver visited Bush 
+in November to see the machine for himself, and he was "very much 
+impressed." An applied mathematician, Weaver was undoubtedly in- 
+trigued by the analyzer's practical applications as well as Bush's claim 
+that a machine only twice as big could solve the three-body problem.27 
+He came away from this first meeting with the feeling that it was "a 
+matter of first-rate 
+scientific importance for the Foundation to aid in 
+disseminating knowledge concerning this new and extremely effective 
+scientific device."2s 
+Always ready to seize the moment, Bush began an active campaign to 
+persuade Weaver that the analyzer project deserved large-scale sup- 
+port. "To dream in rather a definite way" was characteristic 
+of Bush, 
+and he made a point of keeping Weaver up-to-date on the progress of 
+the three-body problem.29 He shared as well his ideas concerning an 
+improved computer, and reported that it was "going to become possi- 
+ble to produce something quite startling." Foremost was the possibility 
+of enabling the analyzer to switch rapidly from one problem to another 
+in the manner of the automatic telephone exchange.30 He also shared 
+with Weaver the prospect of unwelcome competition. The interest of 
+men like Hartree and Rosseland provoked Bush to write that "with all 
+modesty, I think that this radical development should be in my own 
+hands," and foundation support would assure that. "It is rather hard 
+... to appreciate the extent of the struggle which is necessary to over- 
+come even simple mechanical difficulties 
+in a device of this sort."3" 
+The Depression discouraged the foundation from responding to 
+Bush's overtures until the spring of 1935, when it awarded MIT a 
+preliminary grant of $10,000 to complete the study of the improved 
+analyzer.32 
+Within the year Bush reported that the new machine was 
+easily in reach and would incorporate three improvements: the auto- 
+26"Memorandum of Professor L. R. Jones' talk with Professor Sven Rosseland, Paris, 
+July 6, 1932," in RF1.1/767D/2/19. 
+27Weaver's diaries, November 21, 1932. 
+28Weaver to Lauder Jones, December 6, 1932, in RF1.1/767D/2/19. 
+29Bush to Weaver, January 6, 1933, RF1.1/767D/2/20; the phrase is Bush's. 
+30Bush to Weaver, April 15, 1933, in RFl.1/767D/2/20. 
+31Bush to Weaver, July 7, 1933, in RF1.1/224/2/22. 
+32See the grant history in the Rockefeller files on the MIT Differential Analyzer 
+Project. 
+This content downloaded from 18.7.29.240 on Tue, 26 Nov 2013 15:42:05 PM
+All use subject to JSTOR Terms and Conditions
+Vannevar Bush and the Differential 
+Analyzer 
+79 
+matic electrical interconnection 
+of machine elements, increased preci- 
+sion in the working of the integrators, 
+and a "function unit" designed 
+to translate digitally coded mathematical functions into continuous 
+electrical signals. The new machine seemed just over the horizon and 
+he looked forward to the time when the institute, as he wrote to 
+Weaver, would "become a center of analysis of a certain important 
+type, to which research workers everywhere will turn for their solu- 
+tions of their equations."33 In March 1936 the foundation awarded 
+MIT $85,000 for three years to build the Rockefeller Differential 
+Analyzer. 
+The next few years were enthusiastic but frustrating. 
+Bush's enthu- 
+siasm for invention was contagious, and the crew working on the new 
+machine thoroughly enjoyed its work under him.34 
+Yet his predictions 
+proved overly optimistic. More precise integrators were developed 
+with little difficulty, 
+as were the servomechanisms needed to create the 
+electrical connections between elements. But other problems with 
+which the group had less experience proved more difficult. 
+The func- 
+tion unit, as it turned out, was not complete even by the end of the war. 
+The most frustrating 
+problem involved automatic control. Intended to 
+work on multiple problems simultaneously, 
+the analyzer needed to be 
+able to assign computing elements to different problems quickly, 
+efficiently, 
+and automatically, even as one problem finished and 
+another began. The matter introduced "extraordinarily 
+complicated 
+difficulties" 
+into the design of the machine.35 In essence, the earlier 
+devices had been dedicated machines, assembled anew each time an 
+equation was to be solved. The automatic control of the new machine 
+posed, in fact, a software problem, and it is not surprising that Bush 
+and his team should have found it unsettling. Moreover, Bush had 
+been MIT's vice-president 
+and dean of engineering since 1932, and his 
+duties were attracting 
+more of his energies. In Bush's absence responsi- 
+bility for the project fell on the shoulders of Sam Caldwell. Still, the 
+3"Bush to Weaver, March 17, 1936, in RF1.1/224/2/23. 
+"""To V. Bush, GREETINGS! 'To Doc' would perhaps be a better salutation for this 
+note of farewell and Godspeed, for among ourselves we have always called you Doc as the 
+title most appropriately expressing the affection and respect we have felt in working with 
+you. 
+"We would not have you leave without saying that it has been fun to build a Differential 
+Analyzer with you. We think that you will agree that it has been fun, but we are not going 
+to ask you to agree with some other feelings of ours, for of those we are betterjudges than 
+you. We know, for example, the many ways in which we have felt your influence: in your 
+generous praise for our successes, in your sympathetic analyses of our failures, in the 
+enlivening breezes you have brought to our developmental doldrums .... The Differen- 
+tial Analyzer Staff." In RF1.1/224/2. 
+35Weaver diaries, January 10, 1939. 
+This content downloaded from 18.7.29.240 on Tue, 26 Nov 2013 15:42:05 PM
+All use subject to JSTOR Terms and Conditions
+80 
+Larry Owens 
+project was in good hands and Weaver felt that "things were going 
+exceptionally well."36 When Bush announced he would leave MIT to 
+become president of the Carnegie Institution of Washington, the proj- 
+ect was dealt a serious blow. 
+Before he left for Washington, however, he brought to fruition his 
+plans for a center of analysis. Along with James Conant, Frank Jewett, 
+and Irvin Stewart, Bush was a member of the National Research 
+Council's Committee on Scientific 
+Aids to Learning. In February, Bush 
+had received from Stewart a letter suggesting the publication of a 
+catalog of important scientific instruments available to investigators. 
+He informed Stewart of MIT's work on machine analysis, writing: 
+There should be created in this country a center of mechanical 
+analysis amply manned and equipped for such work, to turn out 
+tables and solve actual problems for research workers everywhere. 
+We have the ambition to create such a center .... To do this we will 
+need support, but I can think of no place where support could be 
+given to a program that would have more general benefit upon 
+research programs in almost every branch of science throughout 
+the country.37 
+The committee (which apparently received a portion of its funds 
+from the Carnegie Corporation) submitted a proposal to the corpora- 
+tion on Bush's behalf. His maneuvers were successful and in January 
+1939 the corporation awarded MIT $45,000 for two years to establish a 
+Center of Analysis with Sam Caldwell as its director. The center would 
+house and coordinate the battery of computational devices developed 
+at MIT over the years, with its centerpiece being the new Rockefeller 
+Analyzer, undoubtedly the largest aid to learning the committee ever 
+supported. The center was to provide assistance with problems of 
+computation and foster research into computational and analytical 
+tools.31 
+With Bush gone and development plaguing the engineers, progress 
+on the new calculator slowed. While the older Differential Analyzer 
+carried the growing load of the center's computations, Caldwell and his 
+staff found the time to pursue other projects. In fact, by February 1941 
+work on a Rapid Arithmetical Computing Machine had come to 
+occupy the major part of the center's research.39 
+Bush had initiated 
+36Ibid. 
+17Bush to Stewart, February 28, 1938, in the file on the "Support of a Center of Analysis 
+at MIT" in the records of the Carnegie Corporation of New York. 
+"Bush to Stewart, June 13, 1938; Stewart to Frederick Keppel, July 15, 1938, both in 
+the Carnegie Corporation files. 
+"Samuel Caldwell, "Report on Center of Analysis,July 
+1, 1939-February 1, 1941," in 
+the Carnegie Corporation files. 
+This content downloaded from 18.7.29.240 on Tue, 26 Nov 2013 15:42:05 PM
+All use subject to JSTOR Terms and Conditions
+Vannevar Bush and the Differential 
+Analyzer 
+81 
+study of an arithmetical machine at the end of 1936 in conjunction with 
+cryptographic work for the government. Unlike the analyzers, this 
+device was meant to deal with large volumes of arithmetic calculations 
+at high speed. The design of the computer included a keyboard for 
+entering data, an input unit for inserting numbers at appropriate 
+moments in the process of computation, a control unit to coordinate 
+machine operations automatically, an output unit, a storage unit for 
+holding numbers temporarily 
+during computation, and the computing 
+unit. Bush attacked the problem of the high-speed computing element 
+first with the help of a grant from the National Cash Register Com- 
+pany. By the fall of 1939, Bush, Sam Caldwell, Mark Radford, and 
+others had devised a number of high-speed devices including vacuum- 
+tube counting rings and a matrix switch that would utilize, in one of its 
+forms, the magnetic properties of molybdenum or chrome permalloy 
+rings.40 
+(See fig. 9.) 
+By the time the first demonstration of the Rockefeller Analyzer was 
+held on December 13, 1941, the project was two and a half years 
+behind schedule. Convinced that Caldwell's staff was being distracted 
+by other work and facing the imminent cessation of outside financing 
+for the center, Karl Compton delivered an ultimatum: Make the ana- 
+lyzer self-supporting by October or the institute would suspend the 
+project.4' The president's concerns were undoubtedly aggravated by 
+outside events. Six days before Caldwell's demonstration, 
+the Japanese 
+had bombed Pearl Harbor. 
+When Caldwell returned to peacetime work at the end of the war, he 
+faced the challenge of revitalizing the center's programs. Given the 
+transformations 
+wrought at MIT by the war, this proved an impossible 
+task. In the first instance, the war accelerated a generational change in 
+the institute's staff. With both Caldwell and Hazen preoccupied with 
+the affairs of the National Defense Research Committee, supervision 
+of the center fell to Richard Taylor, the young assistant who had 
+worked on the function unit and automatic control. When Caldwell 
+'0W. H. Radford, "Research on A RAPID COMPUTING MACHINE," October 1939; 
+copy from Perry Crawford, May 1982. Bush informed Weaver in October 1938 that 
+equipment for carrying out arithmetical calculations at "almost unbelievably high rates" 
+had already been constructed by the government and by the National Cash Register 
+Company. Weaver diaries, October 28, 1938. 
+?"Weaver diaries, March 12, 1942; Caldwell to Weaver, March 13, 1942; Karl Compton 
+to Weaver, March 14, 1942. In the event MIT, encouraged by Weaver's offer of another 
+$25,000, did not terminate the project. The letters are in RF1.1/224/2. 
+This content downloaded from 18.7.29.240 on Tue, 26 Nov 2013 15:42:05 PM
+All use subject to JSTOR Terms and Conditions
+82 
+Larry Owens 
+P/an of Addinhy 1a//ri'x Jw/c/ch 
+(A) 
+CirtCils 
+cencct 
+to sourc 
+of 
+d ifil. 
+(B) Circui/s are Con/rolled by corrcrpondingly 
+nvrnbcred 
+s5aeo 
+ofa posti;onal 
+counlin7 
+rfin 
+(C) Circuils connec/ 
+/o inpu/ circui/s ofriny. 
+"o 
+AT o- 
+Cr 
+o 
+' 
+A.,0, 
+o 
+-\ 
+, 
+c, 
+\ 
+\4 
+\ 
+\N\ 
+C1\ 
+%0 
+\ A\ * 
+\ 
+\to 
+Aj 0- \-- 
+At o- -' 
+\I 
+\ ' 
+\o 
+\, 
+\o 
+\ \C 
+\ 
+C \ 
+\ 
+C-1 
+A 
+m 
+, 
+a 
+J4 
+A 
+4 
+B 
+4 
+6 
+4 
+\to 
+\ 
+\ 
+\ 
+\ 
+\ 
+' 
+- -C, 
+\, 
+\\ 
+\ 
+'7~ 
+FIG. 9.--Diagram of the matrix switch for the Rapid Arithmetical Computing 
+Machine. (From the report prepared by W. H. Radford, "Research on A RAPID 
+COMPUTING MACHINE," October 1939; courtesy of Perry Crawford.) 
+This content downloaded from 18.7.29.240 on Tue, 26 Nov 2013 15:42:05 PM
+All use subject to JSTOR Terms and Conditions
+Vannevar Bush and the Differential 
+Analyzer 
+83 
+tried to regain control after the war, he found that Taylor enjoyed 
+running the center and felt he ought to go on doing so.42 
+These shifts in personal relationships were complemented by institu- 
+tional changes. After the war, when Caldwell found his colleague 
+Gordon Brown promoted "over his head," he began to doubt the 
+extent of administrative support for the center.43 
+Be that as it may, 
+Brown's success certainly had cause. He had served as the wartime 
+director of the Servomechanisms Laboratory established in 1940 as an 
+outgrowth of a training program for naval fire control officers. By the 
+war's end the laboratory had a staff of almost a hundred and had 
+developed considerable expertise in the field of fire control systems. 
+Since these involved computing devices, the lab inevitably encroached 
+on territory 
+once occupied solely by the center and the Differential 
+Analyzer. The Servomechanisms Lab is only one example of the mas- 
+sive institutional adjustments provoked at MIT by the war's demand 
+for mission-oriented research and the consequent influx of federal 
+defense money.44 
+Nevertheless, Caldwell worked hard to reinvigorate the Center of 
+Analysis. His strategy was to turn, once again, to the Rockefeller 
+Foundation. Spurred on by developments in digital computing at the 
+University of Pennsylvania and at the Institute for Advanced Study in 
+Princeton, Caldwell created a plan designed to reassert MIT's lead- 
+ership in the field of computing. Aware that the center was no longer 
+the sole repository of necessary skills, he proposed cooperation be- 
+tween the center, the Mathematics Department, and the Research 
+Laboratory of Electronics established at the end of the war with the 
+dissolution of the Radiation Lab. The center would be responsible for 
+the design and construction 
+of a new computer, the research lab for the 
+basic electronic components, and the math department for the applied 
+mathematics that was assuming greater importance in the design and 
+construction of computers. In short order Rockefeller awarded Cald- 
+well and the institute $100,000 to study computer design and the 
+possibilities of the new electronic machines.45 
+Within these revised plans for the center, it is clear that Caldwell 
+intended the Rockefeller Analyzer to play a continuing role. Indeed, in 
+their 1945 account of the new machine, he and Bush had promised a 
+series of future publications detailing innovations for which the pres- 
+'2Weaver's diaries, April 11, 1946. 
+'3Ibid. 
+"4John Burchard, Q.E.D., M.I.T. in World War II (New York, 1948); Redmond and 
+Smith (n. 8 above). 
+45Excerpt, Caldwell to Weaver, January 16, 1946; grant history, both in RF1.1/224/ 
+4/31. 
+This content downloaded from 18.7.29.240 on Tue, 26 Nov 2013 15:42:05 PM
+All use subject to JSTOR Terms and Conditions
+84 
+Larry Owens 
+ent issue had lacked space. But for Taylor, the center and the science of 
+computing had outgrown their dependence on mechanical analysis, 
+despite Hazen's 1941 claim that the analyzer marked the start of a new 
+era in mechanized calculus. As Taylor ironically noted in a memoran- 
+dum outlining the new program, one of the analyzer's drawbacks 
+reflected the sophisticated mathematics with which it dealt. Well-suited 
+to differential equations, the analyzer bumbled arithmetic. Further- 
+more, the mechanical inertia of its operating parts limited its speed and 
+accuracy." 
+As it turned out, Caldwell's cooperative program failed to material- 
+ize. The Research Laboratory had its hands full with contract work 
+funded by the military, and the mathematician central to Caldwell's 
+plan, Norbert Wiener, proved a reluctant and irascible partner.47 
+For 
+Warren Weaver, who appreciated the need for first-rate 
+mathematical 
+help if MIT was to compete with such high-powered teams as John von 
+Neumann, RCA, and the Institute for Advanced Study, the "time for 
+mathematical thinking [was] fast slipping away."48 
+Yet Caldwell's center 
+would probably have been in trouble in any event. No longer occupy- 
+ing a privileged position in the study of computing, and with govern- 
+ment support readily and generally available at other sites, the center 
+could make only a token contribution to the vigorous and competitive 
+boom in postwar computing. Not only was it ill-prepared to compete 
+with ENIAC and the Princeton IAS computer, but it faced a fatal 
+challenge within MIT itself. 
+In the winter of 1944, the institute and the navy had agreed to 
+develop an Airplane Stability and Control Analyzer to serve as a 
+universal flight simulator for the design of military aircraft. The mis- 
+sion fell within the province of the Servomechanisms Lab, and Gordon 
+Brown assigned the project to Jay Forrester, a young research assistant 
+from Nebraska. The original plans called for a cockpit with flight 
+controls, an engineering station, and computing equipment. Forrester 
+had first intended to use an analyzer as the computing element but 
+soon realized, as had Taylor, that the mechanical principle of Bush's 
+computer severely restricted its speed. The allure of computer build- 
+ing soon swept away the other elements of the plan, and Forrester and 
+his team in the Servomechanisms Lab set out to develop a reliable, 
+ultra-high-speed machine capable of operating in real time. The fund- 
+46Richard Taylor, "Memorandum, Electronic Calculating Machine, 4/9/46," 
+in RF1.1/ 
+224/4/31. 
+47"Division 14, NDRC, MIT Research Laboratory in Electronics: Interim Progress 
+Report, 3/15/46," in RF1.1/224/4/31; Weaver to Hazen, March 4, 1947; Hazen to 
+Weaver, March 12, 1947; both in RF1.1/224/4/32. 
+"8Weaver to Hazen, March 4, 1947, in RF1.1/224/4/32. 
+This content downloaded from 18.7.29.240 on Tue, 26 Nov 2013 15:42:05 PM
+All use subject to JSTOR Terms and Conditions
+Vannevar Bush and the Differential 
+Analyzer 
+85 
+ing provided by the navy was generous. Whereas the Rockefeller 
+Foundation had granted the Center of Analysis $100,000 for its com- 
+puter study, in 1945-46 alone the navy alloted Forrester $875,000. In 
+1949 Forrester was spending the navy's money at the rate of $100,000 a 
+month. By 1951 he had succeeded in constructing 
+Whirlwind, the first 
+real-time electronic digital computer.49 
+The Whirlwind project accentuated the inadequacies of the Center 
+of Analysis and of the Differential 
+Analyzer as significant 
+influences in 
+the study of computing. In the spring of 1946, only halfway through 
+the center's two-year study, Compton returned to the foundation the 
+$50,000 which the institute had so far spent. The Whirlwind project, 
+he said, was fulfilling 
+the objectives of the Rockefeller grant with such 
+"vigor" and on such a substantially 
+larger scale that the expenditure of 
+foundation money for the same purpose was not only unjustified but 
+"foolish."50 
+How does one tell the story of a machine? On what categories should 
+the analysis rest, within what interpretive framework should one 
+search for the meaning of engineering artifacts? 
+However the historian 
+chooses to answer these questions, utility must certainly play a role. 
+Bush's analyzers were successful, to a large extent, because they were 
+able to alleviate computational frustrations 
+within electrical engineer- 
+ing and in scientific fields where theoretical advances had surpassed 
+the stratagems of applied mathematicians. When faster machines 
+based on a radically different technology became available after the 
+war, in part as a consequence of new sources of funding, those who 
+needed machine aids in computation could turn elsewhere. But there 
+are other categories than utility, 
+or, maybe, broader sorts of utility 
+than 
+so far invoked in our account. As John Kasson has shown us in Amusing 
+the Million and Civilizing the Machine, machines exist not only as tools, 
+but also as symbols. Bush's analyzers did indeed do more than simply 
+compute x(t). To flesh out our story of this particular machine, we must 
+discover what this something else was. 
+Weaver was right when he reminded Caldwell that the analyzer had 
+"a very considerable educational value." In 1928 Bush had attempted 
+to justify the expense of the Product Integraph in the course of an 
+article for the Tech Engineering 
+News. The integraph, he said, enabled 
+its users to cope with difficult mathematical equations. But it also 
+provided "the man who studies it a grasp of the innate meaning of the 
+49Redmond and Smith (n. 8 above). 
+50Compton to Weaver, June 26, 1947, in RF1.1/224/4/32. 
+This content downloaded from 18.7.29.240 on Tue, 26 Nov 2013 15:42:05 PM
+All use subject to JSTOR Terms and Conditions
+86 
+Larry Owens 
+differential equation." For this man "one part at least of formal 
+mathematics will become a live thing.""' Years later, Bush recounted an 
+anecdote that made the same point. When the army wanted to build 
+their own machine at the Aberdeen Proving Ground, he lent them a 
+mechanic who had been hired as an inexperienced draftsman to help 
+with the construction of the MIT calculator. The army wanted to pay 
+the man machinist's wages; Bush insisted he be hired as a consultant 
+with appropriate pay: 
+I never consciously taught this man any part of the subject of 
+differential 
+equations; but in building that machine, managing it, 
+he learned what differential 
+equations were himself. He got to the 
+point where when some professor was using the machine and got 
+stuck ... he could discuss the problem with the user and very often 
+find out what was wrong. It was very interesting to discuss this 
+subject with him because he had learned the calculus in mechani- 
+cal terms--a strange approach, and yet he understood it. That is, 
+he did not understand it in any formal sense, but he understood 
+the fundamentals; he had it under his skin.52 
+Studying the analyzers might help get the calculus under one's skin; 
+but it taught something more as well. Continuing his justification 
+of the 
+integraph for his Tech audience of 1928, Bush struggled to put into 
+words other tacit qualities expressed by the calculator: 
+Before a man can build with his hands a seaworthy boat he must 
+patiently learn to saw to a line and plane to an accurate surface .... 
+The study of engineering mathematics becomes soul-satisfying 
+only when one begins to grasp the power that lies in the ability to 
+think straight in the midst of complexity, and visualizes the rela- 
+tionship between such reasoning and that engineering accom- 
+plishment which is useful and admirable, seaworthy and a thing of 
+beauty.53 
+"To think straight in the midst of complexity." For young engineers 
+coming of age in the glory years of Herbert Hoover, this was not the 
+least of the lessons taught by the Differential 
+Analyzer. Bush's expecta- 
+tions were not his alone. They were, in fact, constitutive 
+of the early 
+20th-century culture of engineering. 
+5`V. Bush, "Mechanical Solutions of Engineering Problems," Tech Engineering 
+News, 
+vol. 9 (1928). 
+52V. Bush, Pieces of the Action (New York, 1970), p. 262. 
+53Bush, "Mechanical Solutions." 
+This content downloaded from 18.7.29.240 on Tue, 26 Nov 2013 15:42:05 PM
+All use subject to JSTOR Terms and Conditions
+Vannevar Bush and the Differential 
+Analyzer 
+87 
+The intellectual and ethical idioms embedded in the analyzers arose 
+out of the classrooms, laboratories, and shops of the turn-of-the- 
+century engineering school. Especially in the matter of mathematical 
+pedagogy and in notions of graphic language do we discover prece- 
+dents for Bush's claims regarding his computers. The historian can 
+insinuate himself into the somewhat alien frame of mind of that early 
+environment by listening in on a conversation which took place at 
+Tufts College between Samuel Earle and a student just a few years 
+before Bush arrived as an undergraduate in 1909. Earle had been 
+entrusted with the daunting task of teaching English composition to 
+engineers, a new project at the time, and had established the practice of 
+meeting his students in the shop or drafting room to discuss their 
+writing exercises. One day he found himself having difficulty 
+explain- 
+ing to a student how his essay, in its attempt to portray the character of 
+a man, had failed to convey any but his most superficial qualities. The 
+drawing instructor, who had overheard the conversation, at some 
+point interrupted with the question, "How about the dotted line?" The 
+student, Earle tells us, saw the point at once.54 Familiar with the use of 
+dotted lines in mechanical drawings to depict invisible features and 
+catalyzed by the remark of his drawing teacher, Earle's student was 
+able to apply his knowledge of a more familiar language to one less 
+familiar. 
+This anecdote suggests that the artifacts 
+of engineering, particularly 
+in the context of the school, can be interpreted as exercises in language. 
+It suggests also that in the particular context of the turn-of-the-century 
+engineering school the student was expected to move with facility 
+between a number of different 
+language communities serving as trans- 
+lator and interpreter; that the primary language on which the others, 
+such as physics and mathematics, depended derived from the visual, 
+tangible elements of the shop and laboratory. In such a setting the 
+Graphic Language was a fundamental skill for the student engineer. 
+Gardner Anthony, for many years the dean of engineering at Tufts 
+College, was an acknowledged master of mechanical drawing and 
+graphics in the engineering curriculum. In 1922 in a small book with a 
+long title, An Introduction 
+to the Graphic Language; the Vocabulary, 
+Gram- 
+matical Construction, 
+Idiomatic Use, and Historical 
+Development 
+with Special 
+Reference 
+to the Reading of Drawings, Anthony summarized ideas he had 
+been developing for over three decades and which formed the basis for 
+the course he taught at Tufts. Drawing, he felt, was a universal lan- 
+51Samuel Earle, "English in the Engineering School at Tufts College," Proceedings 
+of the 
+Society 
+for the Promotion 
+of Engineering 
+Education 19 (1911): 44. 
+This content downloaded from 18.7.29.240 on Tue, 26 Nov 2013 15:42:05 PM
+All use subject to JSTOR Terms and Conditions
+88 
+Larry Owens 
+guage and possessed, like other languages, its own vocabulary, 
+orthography, grammar, and literature. He first introduced his stu- 
+dents to the vocabulary and idioms of simple pictorial graphics, con- 
+tinued to the more complex grammatical conventions of perspective 
+drawing and descriptive geometry, and concluded his course with the 
+topic of penmanship. 
+Anthony meant by penmanship not simply lettering, but the whole 
+range of techniques by which ideas were transcribed from mind to 
+paper with the help of such instruments as pencils, triangles, 
+T-squares, compasses, graph paper, and drafting boards. Orthogra- 
+phy, in fact, was an exercise in writing straight and in thinking straight. 
+In the Graphic Language Anthony and fellow engineering educators 
+found what they believed was "an exceptional cultural subject for 
+strengthening 
+the power and habit of exact thinking, 
+that most difficult 
+of all habits to fix, and for training the constructive 
+imagination ... to 
+visualize quickly and accurately ...." "[I]t is the power and habit of 
+observing accurately that marks one of the fundamental differences 
+between the incapable man and the man of power." Ultimately draw- 
+ing would promote not only clear thinking, but with the constructive 
+power it evoked it would also become "drawing in relation to life."55 
+When Bush claimed that the study of the Differential Analyzer, con- 
+structed from the material of the shop, laboratory, and drafting room, 
+promoted the ability to think straight in the midst of complexity, 
+he was 
+echoing the virtues of Gardner Anthony's Graphic Language. 
+The penchant of engineers for the graphic idiom pervaded their 
+notions of mathematical pedagogy. And here engineers found them- 
+selves in a dilemma which reflected the course of development of 
+19th-century mathematics. In the United States the community of 
+mathematicians had acquired by the end of the century the rudiments 
+of professional identity and were becoming noticed for activity 
+in pure 
+mathematics for the first time by European observers. Ironically, 
+however, this maturation of the mathematical community threatened 
+the traditional relationship between mathematics and the arts and 
+sciences. Consequently, just when numerous recently established tech- 
+nical schools were discovering the need to teach their students more 
+sophisticated mathematics like the calculus, many mathematicians 
+were unable or unwilling to meet their practical demands.6' While the 
+55Thomas French, "The Educational Side of Engineering Drawing," ibid., vol. 21 
+(1913): 109. 
+56For an aging but valuable account of the history of mathematics in the United States, 
+see: D. E. Smith and J. Ginsburg, A History 
+of Mathematics 
+in America before 
+1900 (Chicago, 
+1934); the articles by Struik, Grabner, and Birkhoff in The Bicentennial 
+Tribute 
+to American 
+Mathematics, 
+1776-1976 (Washington, D.C., 1977), ed. J. Dalton Tarwater; A History 
+of 
+This content downloaded from 18.7.29.240 on Tue, 26 Nov 2013 15:42:05 PM
+All use subject to JSTOR Terms and Conditions
+Vannevar Bush and the Differential 
+Analyzer 
+89 
+disciplinary status of mathematics and engineering differed in Europe, 
+there too the abstraction of modern mathematics frustrated the needs 
+of engineers and experimentalists for adequate analytical tools. 
+The years around the turn of the century thus witnessed the growth 
+of a movement to reform the teaching of mathematics. The movement 
+was largely spearheaded by engineers and first took definite shape in 
+Britain with the work of the mechanical engineer and educator John 
+Perry. His most important work was done at Finsbury Technical Col- 
+lege in London after 1882, when he pioneered a course in practical 
+mathematics for engineers that emphasized practical examples, the use 
+of graph paper for the presentation of problems (a Perry innovation, 
+apparently), and mechanical devices for measurement and computa- 
+tion. Contradicting the common opinion that calculus, given its essen- 
+tial formal rigor, was not a subject easily taught to engineers, Perry 
+insisted that "there is no useful mathematical tool which an engineer 
+may not learn to use. A man learns to use the Calculus as he learns to 
+use the chisel or the file on actual concrete bits of work, and it is on this 
+idea that I act in teaching the use of the Calculus to Engineers.""57 
+Perry's efforts helped modernize the teaching of mathematics in Bri- 
+tain, and by 1908 an observer could note the growing attention paid to 
+mathematics "on its experimental and graphical side ... exemplified by 
+the use of drawing-boards, improved mathematical instruments, 
+squared-paper," and the provision of mathematical laboratories "well- 
+stocked with clay, cardboard, wire, wooden, metal and other models 
+Mathematics 
+Education in the United States and Canada, the 32nd Yearbook of the National 
+Council of Teachers of Mathematics, 1970; and E. H. Moore's presidential address to the 
+American Mathematical Society in 1903. For a new look at the way that limited mathe- 
+matical training influenced the development of American science, see John Servos, 
+"Taking the Measure of Nature: Mathematics and the Education of American Scientists, 
+1880-1930," paper read at the 1983 meeting of the History of Science Society in 
+Norwalk, Conn. Complaints about the scarcity of mathematicians willing to take an 
+interest in applications could be heard as late as 1941: "Though the United States holds a 
+position of outstanding leadership in pure mathematics, there is no school which pro- 
+vides an adequate mathematical training for the student who wishes to use the subject in 
+the field of industrial applications rather than to cultivate it as an end in itself. Both 
+science generally, and its industrial application in particular, would be advanced if a 
+group of suitable teachers were brought together in an institution 
+where there was also a 
+strong interest in the basic sciences and in engineering." Thornton Fry, "Industrial 
+Mathematics," American 
+Mathematical 
+Monthly 
+48 (1941): 1-39. Most of the mathemati- 
+cians working in industry, Fry noted, had been trained as physicists or as electrical or 
+mechanical engineers. 
+57John Perry, Calculus for Engineers (London, 1897), p. 5. For more on Perry, see 
+William Brock and Michael Price, "Squared Paper in the Nineteenth Century: Instru- 
+ment of Science and Engineering, and a Symbol of Reform in Mathematical Education," 
+Educational Studies in Mathematics, 
+vol. 11 (1980). 
+This content downloaded from 18.7.29.240 on Tue, 26 Nov 2013 15:42:05 PM
+All use subject to JSTOR Terms and Conditions
+90 
+Larry Owens 
+and materials, and apparatus for investigation of form, mensuration 
+and movement.. ."58 
+The "Perry Movement" percolated through the mathematics and 
+engineering communities in the United States as well, encouraging the 
+revision of curricula and the writing of new texts. The most eloquent 
+proponent of practical mathematics in this country was E. H. Moore, 
+the chairman of the mathematics department at the University of 
+Chicago and a major figure in the American mathematical establish- 
+ment. One of the architects of his discipline's new professionalism, 
+Moore had nevertheless absorbed the concern of the great German 
+mathematician Felix Klein that the increasing abstraction of modern 
+mathematics threatened to impoverish the teaching of mathematics 
+and its applications to science and engineering. In his presidential 
+address to the American Mathematical Society in 1903, Moore pro- 
+posed a program designed to revitalize mathematical pedagogy for 
+students at all levels. Based on the methods of Perry and incorporating 
+the approach of engineering educators, Moore's new curriculum cen- 
+tered around "arithmetic computations, mechanical drawing and 
+graphical methods generally, in continuous relation with problems of 
+physics and chemistry and engineering," and pursued in the 
+mathematical laboratory. Educated in this tangible environment, the 
+student would acquire "a feeling towards his mathematics extremely 
+different from that which is met with only too frequently-a feeling 
+that mathematics is indeed itself a fundamental reality of the domain 
+of thought, and not merely a matter of symbols and arbitrary 
+rules and 
+conventions."59 
+By 1910 the teaching of mathematics in most engineer- 
+ing schools thoroughly reflected the precepts of Anthony, Perry, and 
+Moore. Practical mathematics and the Graphic Language com- 
+plemented the practical demands of the schools and helped cultivate 
+students whose thoughts about the world were composed of the sym- 
+bols of shop and laboratory. This was an engineering curriculum which 
+separated "the incapable man and the man of power" and discovered 
+in the discipline of orthography the habit of thinking straight in the 
+midst of complexity. 
+The early engineering school, then, was a repository of idioms which 
+found expression in the Differential Analyzer. Looking closer, we can 
+discover not only the idioms but also the first edition, so to speak, of the 
+text that Bush and his colleagues would revise more than once before 
+producing the most successful of their editions, the analyzer of 1931. 
+58Brock and Price, p. 368. 
+59E. H. Moore (n. 56 above). 
+This content downloaded from 18.7.29.240 on Tue, 26 Nov 2013 15:42:05 PM
+All use subject to JSTOR Terms and Conditions
+Vannevar Bush and the Differential 
+Analyzer 
+91 
+During the course of his lectures on the Graphic Language, Anthony 
+dwelt for a while on the vocabulary of topograpical maps, illustrating 
+for his students contour lines and profiles of elevation. It is in a setting 
+such as this that the young Bush might have been introduced to the 
+problems faced by surveyors and the instruments they had at their 
+disposal. Profiles were commonly obtained by running levels, and 
+required several men, careful fieldwork, and tedious data reduction 
+afterward. Bush set himself the task of mechanizing this job as an 
+exercise for his master's thesis. His invention was an instrument box 
+slung between bicycle wheels; as it was pushed along the path for which 
+one desired a profile, a device within the box continuously recorded 
+the required elevation onto a revolving drum (figs. 10, 11, and 12). 
+"It was quite a gadget," Bush admitted, and it earned him his degree. 
+He patented the invention, which he called a Profile Tracer, and 
+attempted to interest several companies in its manufacture. However, 
+his entrepreneurial attempts flopped and he sagely charged the inven- 
+tion to experience. But if this first calculator failed in the commercial 
+market, it had a happier future. What Bush had in fact invented was an 
+arrangement of gears, shafts, and servo-driven pens which translated 
+mechanical motion into graphical mathematics. And the key mecha- 
+)/ 
+. ::.. : . :::: :::_i:-:: 
+B::-i::::: 
+:::::'::::-:':-i:::i 
+::::::~~~~ 7:: 
+:::::::~: 
+: :;::::i~::: 
+--: 
+~:::i 
+A 
+::::::: 
+::::::: 
+::::::: 
+:_:::__:::~i:L:i:::: 
+t.:i::: 
+~ 
+ii:::::l:::2:: 
+(:: 
+::-:::::ii~i:ii?~ii"ii-iii~#ii'~i:iii'ii-~~'~i:i 
+::#4:: 
+6: ::: ::::::i: ~~'/:://l:::::-ii:i: 
+:://i~~li:-i( 
+w:~: 
+::: ii::::~~:'i::'::: ':' ::::::::':::::l:i:2: 
+?:::::::: 
+::::: 
+::::::::::::: 
+: ::.::::::::::::??: 
+":::::::::::4 
+! < 
+(1:~i-:::ii:ii: 
+??: 
+??:: ::::':':': 
+FIG. 10.-Bush testing the Profile Tracer near the reservoir at Tufts College. (Cour- 
+tesy of the MIT Museum and Charles Eames, Venice, California. The photo is from 
+Bush's 1913 master's thesis, "An Automatic Instrument for Recording Terrestrial 
+Profiles.") 
+This content downloaded from 18.7.29.240 on Tue, 26 Nov 2013 15:42:05 PM
+All use subject to JSTOR Terms and Conditions
+(.. 
+2
+5-0 #/7 
+3
+II 
+I1 
+I 
+1 12 I 1 
+1 
+8l 11II 
+gloom 
+1 
+I 
+I 
+I---- 
+I- 
+I 
+I~- 
+~ 
+- 
+T- 
+.......... 
+w 
+FIG. 11.-A drawing from Bush's patent application illustrating the inner mec
+This content downloaded from 18.7.29.240 on Tue, 26 Nov 2013 15:42:05 PM
+All use subject to JSTOR Terms and Conditions
+Vannevar Bush and the Differential 
+Analyzer 
+93 
+Fcandomj 
+Profik 
+Io4)le 
+over roTlh country 
+akCen wtA Profile 
+acer 
+ro vnceto n , Mass. 
+Avg o, I 
+7, I 
+.Me 8 m;n. 
+-ra1'.i 
+bewA- 
+pasg 
+Scale 
+tier Ioo'= 
+Vertl Io'=I" 
+FIG. 12.-A reproduction of a typical tracing found in Bush's master's thesis. 
+nism was a disc integrator with which he would "have quite a lot to 
+do."60 
+In 1919, after a year with General Electric and several more teaching 
+at Tufts, Bush joined the staff of MIT's Department of Electrical 
+Engineering. In many ways the institute he joined was like the college 
+he left. The curriculum stressed mechanical skill, work in shop and 
+laboratory, and mathematics and physics couched in the graphic 
+idiom. The calculus was introduced to freshmen in a manner which 
+6oBush, Pieces of the Action, pp. 155-57; see Bush's master's thesis, "An Automatic 
+Instrument for Recording Terrestrial Profiles," Tufts College, January 1913. Bush 
+might not have known of the disc integrator when he devised the Profile Tracer. 
+However, variable friction gears much like the one he designed for the Profile Tracer 
+were well known to engineers. See, e. g., the illustration of the deal-frame in Knight's 
+American 
+Mechanical Dictionary, 
+vol. 1, 1876. 
+This content downloaded from 18.7.29.240 on Tue, 26 Nov 2013 15:42:05 PM
+All use subject to JSTOR Terms and Conditions
+94 
+Larry Owens 
+emphasized graphical presentation and intuition over abstract rigor. 
+In Joseph Lipka's Mathematical Laboratory, students could hone their 
+problem-solving talents with graphical methods and mechanical 
+methods of various kinds-slide rules, planimeters, a plethora of 
+nomographic charts, and instruments 
+for the mechanical integration 
+of areas under curves.6' All in all, the program at MIT still carried 
+about it "the odor of the shop," a description Calvin Woodward had 
+once applied to early electrical engineering.6" 
+But in other ways MIT was very different, and a variety of forces 
+were converging to transform the environment and enlarge opportu- 
+nities when Bush arrived. First, the decade between the Great War and 
+the Depression was a bull market for engineering. Enrollment in the 
+Electrical Engineering Department almost doubled in this period. 
+Furthermore, the decade witnessed the rapid expansion of graduate 
+programs, especially in electrical engineering, which had been 
+insignificant 
+before the war.63 Second, as we have seen, the develop- 
+ment of electrical technology and the growing complexity of systems 
+and circuits propelled the growth of circuit analysis and the aggressive 
+search for methods of solution of mathematical equations beyond the 
+scope of formal techniques. Third, the interwar years found corporate 
+and philanthropic donors more willing to fund research and develop- 
+ment within the university. All of these factors, as well as a diffuse 
+public appreciation for the expert skills of the engineer which peaked 
+in the 1920s, worked to Bush's advantage at MIT. The Profile Tracer 
+might have flopped in the commercial market, but within the bull 
+market of the engineering school where inventions, in addition to 
+being useful, could be read as books, Bush's mathematical practice 
+texts were a great success. 
+At this point our story becomes familiar. The technical success of the 
+analyzers, the opportunities they provided for graduate research, the 
+possibilities of new applications on the frontiers of science, and the 
+availability of support from private foundations encouraged Bush to 
+produce a bigger and better version of his popular 1931 computer. 
+Ringed round by tantalizing problems in atomic structure and cosmic 
+radiation, he and his colleagues labored to develop a new machine 
+which would in a flash rearrange itself to tackle new and more difficult 
+problems. But what is most significant 
+about the Rockefeller Differen- 
+6'L. M. Passano, Calculus and Graphs (New York, 1921); Joseph Lipka, Graphical and 
+Mechanical Computation 
+(New York, 1918). 
+62C. M. Woodward, "Report of the Committee on Technological Education-the 
+Relation of Technical to Liberal Education," in Addresses 
+and Proceedings 
+of the National 
+Educational Association 
+(1894), p. 613. 
+63See the MIT President's 
+Reports for the period. 
+This content downloaded from 18.7.29.240 on Tue, 26 Nov 2013 15:42:05 PM
+All use subject to JSTOR Terms and Conditions
+Vannevar Bush and the Differential 
+Analyzer 
+95 
+tial Analyzer is what remained the same. Electrically or not, automati- 
+cally or not, the newest edition of Bush's analyzer still interpreted 
+mathematics in terms of mechanical rotations, still depended on ex- 
+pertly machined wheel-and-disc integrators, 
+and still drew its answers 
+as curves. Differential equations and contours of elevation-Bush's 
+computers were very much the offspring of the early Profile Tracer. 
+How does one tell the story of a machine? If nothing else, the 
+evolution of the analyzers teaches us that there is more to machines 
+than has met our eyes. Like all expensive investments, 
+these machines 
+were sensitive to the demands of utility, 
+and when Weaver and Cald- 
+well admitted in 1950 that the analyzer project had been overtaken by 
+the whole new field of computer science, they conceded that such 
+demands could be decisive. But Bush's machines inhabited another 
+world as well, one where utility had a distinctively 
+bookish aspect. 
+Here, in the marketplace of the school, the analyzers were exercises in 
+the language of early 20th-century engineering. Forged in the 
+machine shop, the analyzers spoke the Graphic Language while they 
+drew profiles through the landscape of mathematics. The student 
+could find in these machine texts a catalog of his technical universe, 
+lessons on the nature of mathematics and its instruments, 
+and even 
+expressions of the ethos which pervaded engineering education. 
+Variations on the theme of mechanical analysis, the analyzers em- 
+bodied an engineering culture belonging to the first decades of our 
+century. When engineers and their new corporate and federal sup- 
+porters turned to the problems of computation at the end of the 
+Second World War, they discovered the need for new texts in a more 
+modern idiom, composed by a younger generation of inventive au- 
+thors. 
+This content downloaded from 18.7.29.240 on Tue, 26 Nov 2013 15:42:05 PM
+All use subject to JSTOR Terms and Conditions

@@ -1,0 +1,3667 @@
+Architectural 
+Considerations 
+for a New Generation 
+of Protocols 
+David D. Clark and David L. Tennenhouse 
+Laboratory 
+for Computer 
+Science, M. I. T. 
+Abstract 
+The current 
+generation 
+of protocol 
+architectures, 
+such as 
+TCP/IP 
+or the IS0 
+suite, 
+seem successful at meeting 
+the 
+demands 
+of todays 
+networks. 
+However, 
+a number 
+of new 
+requirements 
+have been proposed 
+for the networks 
+of to- 
+morrow, 
+and some innovation 
+in protocol 
+structuring 
+may 
+be necessary. 
+In this paper, 
+we review 
+some key require- 
+ments for tomorrow’s 
+networks, 
+and propose some architec- 
+tural principles 
+to structure 
+a new generation 
+of protocols. 
+In particular, 
+this paper identifies 
+two new design principles, 
+Application 
+Level Framing 
+and Integrated 
+Layer Processing. 
+Additionally, 
+it identifies 
+the presentation 
+layer as a key as- 
+pect of overall protocol 
+performance. 
+1 
+Introduction 
+Historically, 
+there has been a sharp distinction 
+between 
+the 
+network 
+architectures 
+used in universal 
+access environments, 
+such as the telephone 
+network, 
+and the architectures 
+devel- 
+oped within 
+the computer 
+communications 
+community. 
+We 
+believe 
+that 
+both 
+communities 
+would 
+benefit 
+from 
+a uni- 
+fied architecture 
+that addresses new communication 
+require- 
+ments. 
+We have identified 
+three key requirements 
+that will 
+stress the existing 
+protocol 
+architectures. 
+Future 
+networks 
+will have considerably 
+greater 
+capacity, 
+will be based on a 
+wider selection 
+of technologies, 
+and will support 
+a broader 
+range of services. 
+The principle 
+design goal for many research projects, 
+and 
+some commercial 
+products, 
+is gigabit 
+operation, 
+both in ag- 
+gregate 
+over trunks 
+and to individual 
+end points. 
+As net- 
+works proceed 
+to higher speeds, there is some concern that 
+existing 
+protocols 
+will 
+represent 
+a bottleneck, 
+and various 
+alternatives 
+have been proposed, 
+such as outboard 
+protocol 
+processors [l, 111 and new protocol 
+designs [2, 14, 121. Since 
+*This 
+research 
+was supported 
+by the Defense 
+Advanced 
+Research 
+Projects 
+Agency, 
+monitored 
+by the National 
+Aeronautics 
+and Space 
+Administration 
+under contract 
+No. 
+NAG2-582, 
+and 
+by the National 
+Science Foundation 
+under grant 
+NCR8814187. 
+Permission 
+to copy 
+without 
+fee all or part 
+of this material 
+is 
+granted 
+provided 
+that the copies 
+are not made or distributed 
+for 
+direct 
+commercial 
+advantage, 
+the ACM copyright 
+notice 
+and the 
+title 
+of the publication 
+and its date appear, 
+and notice 
+is given 
+that copying 
+is by permission 
+of the Association 
+for Computing 
+Machinery. 
+To copy 
+otherwise, 
+or to republish, 
+requires 
+a fee 
+and/or 
+specific 
+permission. 
+@ 1990 
+ACM 089791-405-8/90/000910200...$1.50 
+there is no clear consensus 
+on the real source of protocol 
+overhead, 
+it is hard to validate 
+these various solutions. 
+Another 
+requirement 
+is that 
+the protocols 
+of tomorrow 
+operate 
+over the range of coming 
+network 
+technology. 
+An 
+obvious example 
+of emerging 
+technology 
+is Broadband 
+ISDN 
+[19,6] which is based on Asynchronous 
+Transfer 
+Mode (ATM). 
+This network 
+technology 
+provides 
+a switching 
+mode some- 
+what different 
+from classic packet switching 
+in that the data 
+to be transferred 
+is divided 
+up into small (currently 
+48 byte) 
+fixed size elements 
+for transmission. 
+A more futuristic 
+net- 
+work technology 
+is wavelength 
+division 
+over fiber. 
+Finally, 
+there is the requirement 
+for service in.tegration. 
+In the future, 
+a single end system will be expected 
+to sup- 
+port 
+applications 
+that 
+orchestrate 
+a wide range of media 
+(voice, 
+video, graphics, 
+text) 
+and access pattern:; 
+(interac- 
+tive, bulk transfer, 
+real-time 
+rendering). 
+This cross-product 
+of media and access will generate 
+new traffic 
+patterns 
+with 
+performance 
+considerations, 
+such as delay and jitter 
+toler- 
+ance, that are not addressed 
+by present architect,ures. 
+In summary, 
+future 
+networks 
+must exhibit 
+a significant 
+degree of flexibility 
+and be based on an architecture 
+that 
+admits 
+a wide range of application 
+demands 
+and implemen- 
+tation strategies. 
+In the remainder 
+of this paper, we identify 
+some key principles 
+for the elaboration 
+of such an architec- 
+ture. 
+2 
+Structuring 
+Principles for Protocol Architectures 
+Most discussions 
+of protocol 
+design refer to the IS0 
+refer- 
+ence model [9], or some other model 
+that 
+uses layering 
+to 
+decompose 
+the protocol 
+into functional 
+modules. 
+There is, 
+however, 
+a peril in using only a layered 
+model to structure 
+protocols 
+into components, 
+which is that layering 
+may not 
+be the most effective 
+modularity 
+for implementai,ion. 
+It is important 
+to distinguish 
+between 
+the architecture 
+of a protocol 
+suite and the engineering 
+of a specific end sys- 
+tem or relay node. The architecture 
+specifies the decomposi- 
+tion into functional 
+modules, 
+the semantics 
+of the individual 
+modules 
+and, the syntax 
+used to effect the protocol. 
+There 
+should 
+be no a priori 
+requirement 
+that 
+the decomposition 
+of the engineering 
+design 
+of a given system 
+correspond 
+to 
+the architectural 
+decomposition 
+of the protocol. 
+[n the case 
+of layered architectures, 
+practical 
+experience 
+[4, 171 provides 
+strong support 
+for alternative 
+engineering 
+designs.. Wnfortu- 
+nately, the structure 
+of the protocol 
+architecture 
+may uunec- 
+200 
+essarily constrain 
+or complicate 
+the engineering 
+alternatives 
+available 
+to the implementor 
+[IS]. 
+We conclude 
+that 
+a key architectural 
+principle 
+should 
+be flexible 
+decomposition: 
+the deferral 
+of engineering 
+deci- 
+sions to the implementor 
+and the avoidance 
+of inessential 
+constraints. 
+Within 
+the domain 
+of a single protocol 
+archi- 
+tecture, 
+different 
+engineering 
+schemes may be appropriate 
+depending 
+on the functions 
+being performed 
+(relay 
+vs. end 
+systems), 
+the performance 
+requirements 
+of the applications, 
+and the resources available 
+to the designer. 
+In the next section 
+of this paper 
+we examine 
+the core 
+functions 
+of a protocol 
+architecture 
+and distinguish 
+between 
+essential and inessential 
+constraints. 
+The objective 
+through- 
+out is to identify 
+architectural 
+approaches 
+that might lead to 
+streamlined 
+engineering 
+designs that are customized 
+to suit 
+their environments. 
+Therefore 
+much of this paper discusses 
+engineering 
+issues, with 
+particular 
+emphasis 
+on the design 
+of end systems. 
+3 
+Protocol 
+Functions 
+The core function 
+of protocols 
+is to transfer 
+application 
+in- 
+formation 
+among machines. 
+Thus, an obvious way to review 
+the function 
+of protocols 
+is to focus on the data transfer 
+phase of protocol 
+operation 
+and to observe and catalog 
+the 
+operations 
+that 
+occur there. 
+This leaves for separate 
+con- 
+sideration 
+those operations 
+such as session initiation, 
+service 
+location, 
+and so on, which, while very import,ant, 
+do not oc- 
+cur at the same time as data transfer. 
+A distinction 
+which seems to have great relevance 
+is the 
+separation 
+of data transfer 
+functions 
+into two groups: 
+those 
+which actually 
+read or modify 
+the data, which we will call 
+data 
+manipulation 
+and those functions 
+that regulate 
+the 
+transfer, 
+which we will call transfer 
+control. 
+Despite 
+the 
+great complexity 
+of many protocol 
+suites, there are in fact 
+not that many manipulation 
+and transfer 
+control 
+functions 
+that actually 
+occur at the time of data transfer. 
+Based on 
+existing 
+practice, 
+the most important 
+and universal 
+of these 
+functions 
+are the following. 
+Data Manipulation 
+There 
+are six manipulation 
+functions 
+which 
+are generally 
+found in protocols. 
+Note that while we list them as separate, 
+several of them may be accomplished 
+in the same operation. 
+Moving 
+to/from 
+the net - 
+the most obvious 
+and un- 
+avoidable 
+manipulation 
+function 
+is the actual transfer of the 
+data in or out of the network 
+itself, 
+which usually 
+involves 
+some sort of serial-to-parallel 
+transformation. 
+This function 
+is usually 
+performed 
+in custom 
+hardware 
+which decouples 
+the timing 
+of the network 
+from that of the host. 
+Error detection 
+- 
+data is usually protected 
+by some sort 
+of checksum or related function, 
+which is computed 
+by read- 
+ing the data. 
+When an error is detected, 
+there may be an 
+error correction 
+stage that also involves a data manipulation. 
+Buffering 
+for retransmission 
+- 
+at the sending 
+end of a 
+transfer, 
+many protocols 
+reserve a copy of the data, so that 
+if it is lost in transit 
+it can be resent. 
+Encryption 
+- 
+either for privacy 
+or integrity, 
+data is en- 
+crypted. 
+This function, 
+if implemented, 
+can sometimes 
+also 
+provide 
+error detection. 
+Moving 
+to/from 
+application 
+address space - 
+most com- 
+monly, 
+data 
+is not moved 
+directly 
+between 
+user address 
+space and network 
+interface, 
+but is moved to some inter- 
+mediate 
+buffer in system address space. This may be a fun- 
+damental 
+requirement 
+on input, 
+as discussed below, but is 
+often dictated 
+by the details of the system I/O structure. 
+Presentation 
+formatting 
+- 
+most data transfers 
+require 
+that 
+the data be reformatted 
+into some common or external 
+data representation. 
+In the standards 
+world, 
+obvious 
+ex- 
+amples include 
+the IS0 ASN.1 
+[lo], or the SUN XDR 
+[16]. 
+Some data is sent across the network 
+in what is called “im- 
+age, * “internal,” 
+or “raw” 
+mode, without 
+such a conversion, 
+but even a universal 
+standard 
+such as ASCII 
+may require 
+ref0rmatting.l 
+These six steps are generally 
+associated 
+with 
+different 
+layers in the protocol 
+suite, but they represent 
+a common 
+class of overhead, 
+since they all involve 
+reading 
+and writing 
+the data, 
+and in some cases moving 
+it from 
+one part 
+of 
+memory 
+to another. 
+Presentation 
+formatting, 
+for example, 
+usually 
+involves 
+moving 
+the data into a new area, since the 
+result of formatting 
+may, in general, 
+be of a different 
+size 
+than the original. 
+Transfer 
+Control 
+There are a number 
+of operations 
+that are directly 
+related 
+to the detailed 
+control 
+of the data transfer 
+phase. 
+We will 
+focus on these “transfer 
+control” 
+operations 
+and set aside the 
+remaining 
+control 
+functions, 
+such as connection 
+initiation. 
+The most common 
+transfer 
+controls 
+are the following: 
+Flow/Congestion 
+control - 
+To protect 
+both the network 
+and the receiver, 
+the sender must be regulated 
+to send no 
+faster than the data can be accommodated. 
+The minimal 
+in- 
+band control 
+function 
+involves 
+the pacing of the data at the 
+transmitter 
+and the monitoring 
+of arrivals 
+at the receiver. 
+The actual computation 
+and negotiation 
+of the transfer rate 
+can be performed 
+on an out-of-band 
+basis. 
+Detecting 
+network 
+transmission 
+problems 
+- 
+Networks, 
+especially 
+packet 
+switched 
+networks, 
+have specific 
+failure 
+modes. Data may be lost due to congestion 
+overflow, 
+and it 
+may be reordered 
+or duplicated 
+as a part of processing. 
+It is 
+sometimes 
+convenient 
+to think 
+of lost packets as a different 
+problem 
+from reordered 
+packets, 
+but we will have more to 
+say on this later. 
+Acknowledgement 
+- 
+A common control function 
+is posi- 
+tive acknowledgement 
+of data receipt. 
+This control is some- 
+times thought 
+of as universal. 
+In truth, 
+it is but one of 
+many methods 
+for dealing 
+with 
+network 
+errors. 
+However, 
+it is a step with considerable 
+complexity 
+and thus deserves 
+separate 
+mention. 
+‘Since 
+ASCII 
+is vague 
+on the 
+representation 
+of its newline 
+con- 
+vention, 
+the Internet 
+protocols 
+[13] require 
+a conversion 
+from 
+internal 
+ASCII 
+to external 
+ASCII. 
+201 
+Multiplexing 
+- 
+Several hosts share a network, 
+and sev- 
+eral processes share one host. 
+Thus several 
+data streams 
+may interleave 
+entering 
+or leaving 
+a host. 
+These must be 
+delivered 
+properly, 
+both to insure basic function, 
+and to pre- 
+vent security 
+problems 
+arising from mis-delivery. 
+Timestamping 
+- 
+Some real-time 
+protocols 
+rely on packet 
+timestamps 
+to support 
+the regeneration 
+of inter-packet 
+tim- 
+ing. 
+Framing 
+- 
+Encapsulation-based 
+protocols 
+require 
+that 
+frame boundaries 
+be conveyed 
+between sending 
+and receiv- 
+ing entities. 
+Some aspects of transfer 
+control 
+are required 
+as a part of 
+data transfer, 
+but need not be performed 
+in lock-step 
+with 
+the actual 
+transfer 
+operations. 
+For example, 
+the computa- 
+tion of flow control 
+parameters 
+is obviously 
+a part of data 
+transfer, 
+but it need not be synchronized 
+with 
+the manip- 
+ulation 
+of individual 
+data units. 
+We will use the term “in- 
+band” 
+for those controls 
+that 
+are integral 
+to manipulation 
+steps, and the term 
+“out-of-band” 
+for those controls 
+that 
+can be somewhat 
+decoupled 
+from the transfer 
+and done in 
+the background. 
+One of our design goals is to reduce to a 
+minimum 
+the number of in-band 
+control 
+operations, 
+thereby 
+increasing 
+the number 
+of engineering 
+options for the manip- 
+ulation 
+steps. 
+4 
+Performance 
+- Control 
+vs. Manipulation 
+The various control operations 
+may interact 
+in complex 
+ways, 
+but in fact the list is very short. 
+It may come as a surprise, 
+given the apparent 
+complexity 
+of protocol 
+specifications, 
+but 
+examination 
+of efficient 
+implementations, 
+for example, 
+the 
+current 
+implementation 
+of TCP for Berkeley 
+BSD Unix 
+[3], 
+show that not many instructions 
+are required 
+for the in-band 
+control 
+operations. 
+Consider 
+the following 
+brief review 
+of the control 
+steps 
+for an incoming 
+packet. 
+First, 
+the packet 
+must be prop- 
+erly demultiplexed 
+or dispatched. 
+This 
+requires 
+that 
+one 
+or more fields in the packet be examined, 
+and a local state 
+structure 
+retrieved. 
+A manipulation 
+step is required 
+to check 
+for data errors, but the normal case (no errors) does not re- 
+quire control 
+action. 
+The only control 
+test is to verify 
+that 
+the packet 
+is in order, 
+which is a simple 
+comparison 
+with 
+the local state. 
+The next step is to compute 
+the proper 
+ac- 
+knowledgement 
+information, 
+and trigger 
+the sending 
+(now 
+or later) 
+of an acknowledgement 
+packet. 
+This step may also 
+involve 
+the computation 
+of some flow control information. 
+None of these control 
+steps is computationally 
+complex. 
+The largest, 
+based on experience, 
+is the computation 
+of flow 
+control 
+parameters, 
+which 
+most commonly 
+occurs 
+at the 
+sender of the data. 
+But 
+the total 
+path 
+lengths 
+are tens, 
+not hundreds 
+of instructions.* 
+In contrast, 
+the data manipulations 
+are much more pro- 
+cessing intensive, 
+since they involve 
+touching 
+all the bytes 
+in the packet, perhaps 
+several times. 
+A typical 
+large packet 
+today 
+might 
+have 4000 bytes, 
+or 1000 long words of data. 
+Thus to touch the data even once is 1000 memory 
+cycles, 
+*The 
+true costs may be somewhat 
+higher as a result of indirect 
+overheads associated with context switching, 
+the invalidation 
+of trans- 
+lation look-aside 
+entries, cache depletion, 
+etc. 
+PVax 
+R2000 
+‘-1 
+Table 1: Speed in Mb/s 
+for manipulation 
+operations. 
+to copy is 2000, and there may be several such sl;eps. One 
+is thus led to the conclusion 
+that 
+the manipulation 
+steps 
+are the more obvious target for overhead 
+reduction 
+and that 
+control 
+need be examined 
+only to the extent 
+that it makes 
+the burden of manipulation 
+worse than necessary. 
+This con- 
+clusion 
+is controversial, 
+but is supported, 
+for example, 
+by 
+the work reported 
+in [3]. 
+Some specific numbers 
+make the actual 
+cost of data ma- 
+nipulation 
+more concrete. 
+In TCP, two fundamemal 
+manip- 
+ulation 
+operations 
+are word-aligned 
+copies and c’hecksums, 
+the latter 
+requiring 
+a read of the data, with 
+a very simple 
+computation. 
+Table 1 reports 
+some actual measurements 
+of 
+the speeds of these operations, 
+in megabits 
+per second (the 
+normal 
+rating 
+for protocols, 
+if not hosts) using hand-coded 
+unrolled 
+loops, for two machines, 
+a PVax 
+III 
+and a MIPS 
+R2000. 
+The copy cost provides 
+almost an absolute 
+upper limit 
+on 
+the throughput 
+that can possibly 
+be achieved 
+for any CPU. 
+It is difficult 
+to see how a useful protocol 
+can be devised 
+that does not need to move the data at least once. 
+If the data manipulations 
+listed above are examined, 
+one 
+conclusion 
+is that 
+they 
+are usually 
+thought 
+of a.s distinct 
+operations, 
+since they occur in different 
+protocol 
+layers. 
+But 
+this is not necessarily 
+the most efficient 
+design approach. 
+With 
+current 
+RISC 
+chips, 
+which 
+pay a very high cost to 
+read or write 
+memory, 
+it is more efficient 
+to read. the data 
+once and perform 
+as many manipulations 
+as possible 
+while 
+holding 
+the data in cache or registers. 
+This approach 
+may 
+prove even more effective 
+with 
+the advent 
+of super-scaler 
+processors that perform 
+a number 
+of operations 
+during 
+each 
+memory 
+cycle. 
+For example, 
+in the case of the MIPS 
+processor 
+above, 
+the copy and the checksum 
+ran at 130 and 115 Mb/s, 
+re- 
+spectively. 
+If they were done separately, 
+the result would be 
+an effective throughput 
+of about 60 Mb/s. 
+In comparison, 
+a 
+hand coded unrolled 
+loop that did both operatious 
+at once 
+ran at 90 Mb/s. 
+This may not seem a dramatic 
+improve- 
+ment, but the effect would be much more beneficial 
+if several 
+of the necessary manipulation 
+steps were combined. 
+3 
+Presentation 
+Conversion 
+One manipulation 
+step has a key impact 
+on performance 
+- 
+presentation 
+conversion. 
+This is because it is often so very 
+costly. 
+Again, some simple experimental 
+numbers 
+may make 
+clear the typical 
+costs. 
+Using the R2000 as an experimen- 
+tal CPU, we compared 
+the cost of a word-aligned 
+copy (the 
+3The actual savings may be somewhat 
+higher. 
+Our simple analysis 
+does not take into account 
+the previously 
+noted indirect 
+overheads 
+associated 
+with the separate implementation 
+of protocol 
+loperations. 
+202 
+basic manipulation), 
+with various sorts of presentation 
+con- 
+versions. 
+As noted above, the word-aligned 
+copy ran at 130 
+Mb/s. 
+In comparison, 
+a hand coded conversion 
+routine 
+to 
+translate 
+an array of integers into ASN.1 ran at 28 Mb/s, 
+a 
+factor of 4-5 slower. 
+Similar 
+results for other processors are 
+reported 
+in [8]. 
+Another 
+experiment 
+was to examine 
+the performance 
+of 
+a protocol 
+stack comprising 
+the current 
+Unix TCP package 
+and the ISODE 
+implementation 
+of the OSI upper layers. 
+A 
+comparison 
+of throughput 
+with and without 
+significant 
+pre- 
+sentation 
+conversion4 
+showed that 
+about 
+97% of the total 
+protocol 
+stack overhead 
+was attributable 
+to the presenta- 
+tion conversion 
+function. 
+In effect, the conversion-intensive 
+case ran about 30 times slower. In summary, 
+the two exper- 
+iments provide 
+a range of relative 
+performance, 
+presentation 
+us. lower layers, within 
+which one might expect real systems 
+to performe5 
+The argument 
+about combining 
+manipulation 
+operations 
+takes on a different 
+nature 
+when these large presentation 
+costs are included. 
+Returning 
+to the R2000 integer 
+conver- 
+sion example, 
+the basic ASN.1 conversion 
+routine 
+ran at an 
+average rate of 28 Mb/s. 
+Adding 
+the TCP checksum manip- 
+ulation 
+to the code, so that it converted 
+and checksummed 
+in one step, only slowed the result to about 
+24 Mb/s.’ 
+5 
+Presentation 
+Processing 
+Because of the large costs that 
+we currently 
+see for pre- 
+sentation 
+conversion, 
+it becomes clear that to achieve good 
+performance, 
+one of two things must happen. 
+Either the pre- 
+sentation 
+layer must be omitted, 
+or it must be the focus of 
+performance 
+tuning. 
+In fact, most applications 
+that attempt 
+to achieve high performance 
+today 
+take the first approach 
+and transfer 
+data in some raw or image format. 
+However, 
+there is a loss of generality 
+in eliminating 
+the presentation 
+layer from all high performance 
+protocols. 
+We thus consider 
+how to maximize 
+the speed of presentation 
+conversion, 
+be- 
+fore looking 
+at the other 
+option. 
+One important 
+activity 
+is the optimization 
+of presentation 
+conversion, 
+through 
+the 
+tuned implementation 
+of existing 
+standards 
+or the introduc- 
+tion of alternatives, 
+such as the light weight transfer syntax 
+described 
+in [8]. 
+A key aspect of presentcation 
+conversion 
+is that it needs 
+to be done in the context 
+of the application. 
+Part of presen- 
+tation 
+conversion 
+is moving 
+the data to or from the appli- 
+cation data space. In some cases, such as file transfer, 
+this 
+is a simple 
+operation 
+of placing 
+the converted 
+data in se- 
+quential 
+locations. 
+In general, 
+however, 
+the presentation 
+is 
+to or from various language-level 
+variables. 
+For example, 
+in 
+the case of Remote Procedure 
+Call support, 
+the transferred 
+data represents 
+the arguments 
+and results 
+of a procedure 
+call, and must be moved to the stack of the application 
+pro- 
+cess. In some cases, only the application 
+will 
+know what 
+4The 
+baseline 
+case transferred a very 
+long 
+OCTET 
+STRING 
+while 
+the conversion-intensive case transferred 
+an equivalent 
+length 
+array 
+of 32 bit integers. 
+5To 
+be fair, 
+the present 
+ISODE 
+package 
+is a prototype 
+toolkit. 
+If 
+it were subjected 
+to the degree 
+of tuning 
+that 
+has been applied 
+to the 
+TCP 
+package, 
+the 
+gap between 
+its relative 
+performance 
+(30:l) and 
+that 
+of the hand-tuned 
+code 
+(4-5:l) 
+might 
+be significantly 
+reduced. 
+‘Here 
+again, 
+the 
+indirect 
+overheads 
+associated 
+with 
+separate 
+im- 
+plementation 
+may 
+be an important 
+consideration. 
+the sequence of data items is, so that the actual 
+sequence 
+of presentation 
+conversions 
+must be driven 
+by application 
+knowledge. 
+Mechanically, 
+what this means is that, if a presentation 
+conversion 
+is involved, 
+the application 
+process (rather 
+then 
+the system 
+kernel 
+or an outboard 
+processor) 
+will 
+be the 
+usual bottleneck 
+in overall network 
+throughput.7 
+This point 
+should not impact 
+the ability 
+to attack 
+performance 
+using 
+special coding techniques 
+such as hand-coded 
+unrolled loops, 
+but it can have a great impact 
+when one takes into account 
+the pipelined 
+nature of the data manipulation 
+steps. On the 
+receiving 
+end, if the application 
+cannot 
+run whenever 
+data 
+arrives from the network, 
+it will fall behind, 
+and since it is 
+the bottleneck, 
+it will never catch up. 
+A design goal must 
+be, therefore, 
+to design protocols 
+so that 
+the application 
+is 
+not prevented 
+from performing 
+presentation 
+conversion 
+as 
+the data arrives. 
+The Importance 
+of Lost and Mis-Ordered 
+Data 
+The relation 
+between reordering 
+and presentation 
+processing 
+is in fact a key architectural 
+consideration 
+in protocol 
+design, 
+a consideration 
+which has not received explicit 
+attention 
+in 
+the past. 
+In most current 
+protocol 
+designs it is difficult 
+to 
+keep the presentation 
+conversion 
+running 
+in real-time, 
+since 
+data loss or reordering 
+prevents immediate 
+processing 
+as the 
+data arrives. 
+For this reason, we will consider in more detail 
+some aspects of loss and reordering. 
+Why does data get out of order in the first place? There 
+are two answers. 
+Data may be mildly 
+out of order because 
+two of the data units, 
+e.g. packets, 
+are reordered 
+in some 
+switching 
+node. 
+The more drastic 
+reordering 
+occurs as an 
+indirect 
+result of a lost packet. 
+If a packet is lost, any data 
+after it can be thought 
+of as being 
+“out of order” 
+with re- 
+spect to the lost packets 
+Present day applications 
+are not 
+equipped 
+to deal with 
+packet 
+loss or reordering. 
+Instead, 
+lower layer protocols 
+such as TCP 
+hold up all the follow- 
+ing data, request retransmission 
+of the lost packet, and then 
+proceed with final manipulation 
+after it arrives. 
+Certainly, 
+with TCP, any presentation 
+conversion 
+can only occur after 
+TCP 
+has completely 
+reordered 
+and recovered 
+the incoming 
+data. 
+Thus, 
+a lost packet 
+stops the application 
+from per- 
+forming 
+presentation 
+conversion, 
+and to the extent 
+it is the 
+bottleneck, 
+it can never catch up. 
+To permit 
+some manipulations 
+to be performed 
+in the 
+presence 
+of mis-ordering 
+or loss, the typical 
+approach 
+is 
+to put “synchronization 
+points” 
+in the data stream, 
+points 
+where manipulation 
+can start even if data before that point 
+is missing. 
+Thus for example, 
+error 
+detection 
+checksums 
+are usually computed 
+separately 
+for each packet, permitting 
+each packet 
+to be checked in isolation. 
+The same is true 
+for many encryption 
+schemes, though 
+some sort of chaining 
+is often used to guard against 
+malicious 
+reordering. 
+These 
+are examples 
+from the lower layers of protocols; 
+in brief our 
+goal is to extend 
+this idea up through 
+presentation 
+to the 
+application. 
+7This point is overlooked when claims 
+for performance are made 
+based on memory-to-memory 
+transfers at the transport level. 
+‘In 
+the remainder 
+of this 
+paper 
+our use of the term 
+“out 
+of order” 
+includes 
+this case where 
+no reordering 
+has occurred 
+but an intervening 
+data 
+unit 
+has been 
+lost in transmission. 
+203 
+What 
+should 
+the unit 
+of synchronization 
+be to permit 
+the application 
+to perform 
+presentation 
+conversion 
+on out 
+of order elements? 
+One could consider some scheme based 
+on the transmission 
+unit, or packet, for this purpose, but this 
+does not seem fruitful. 
+Where the packet 
+was a basic unit 
+of data transmission 
+(and data reordering), 
+it was natural 
+to consider 
+the packet 
+as the unit of manipulation 
+as well. 
+This principle 
+will not hold in the future. 
+“Classic” 
+packet 
+switching 
+is not the only method 
+of multiplexing 
+that will 
+be used. Asynchronous 
+Transfer 
+Mode, or ATM, 
+segments 
+data into small units called cells, with a data payload 
+of 48 
+bytes.g 
+This is probably 
+too small a unit of data to permit 
+manipulation 
+operations 
+to be synchronized 
+on each cell. 
+Fiber 
+multiplexing 
+based on wavelength 
+division 
+need not 
+provide 
+transmission 
+framing 
+at all. 
+We adopt 
+another 
+design approach. 
+Instead 
+of starting 
+with 
+the transmission 
+unit such as the packet, 
+we propose 
+to start with 
+the application 
+(which is, after all, the reason 
+for the data transfer 
+in the first place) 
+and consider 
+what 
+its basic requirements 
+are for dealing 
+with lost or re-ordered 
+data. 
+Application 
+Processing 
+of Mis-ordered 
+or lncorrplete 
+Data 
+The manner 
+of coping with data loss is highly 
+dependent 
+on 
+the needs of the application. 
+The classic transport 
+model 
+is that the protocol 
+will suspend delivery 
+of data to the re- 
+ceiving client, 
+and retransmit 
+from a copy of the data saved 
+at the sender. 
+But this is not the only pattern. 
+Another 
+option 
+is for the application 
+to accept less than perfect 
+de- 
+livery 
+and continue 
+unchecked. 
+This will work for real-time 
+delivery 
+of video and voice. Another 
+option 
+is for the send- 
+ing end to retransmit, 
+but for the application 
+rather 
+than 
+the transport 
+protocol 
+to provide 
+the data. 
+This 
+permits 
+the sending 
+application 
+to recompute 
+the lost data values, 
+rather 
+than buffering 
+them. 
+Finally, 
+in some real time situa- 
+tions, the application 
+may not literally 
+retransmit 
+lost data, 
+but it might 
+send some new data which 
+eventually 
+“fixes” 
+the consequences 
+of the original 
+loss. 
+A general purpose data transfer 
+protocol 
+ought to permit 
+any of these options 
+to be selected: 
+buffering 
+by the sender 
+transport, 
+recomputation 
+by the sending application, 
+or pro- 
+ceeding without 
+retransmission. 
+What can be concluded 
+from this goal? If the application 
+is to have the option 
+of dealing 
+with a lost data unit, either 
+by reconstituting 
+it or by ignoring 
+the error, then losses must 
+be expressed 
+in terms meaningful 
+to the application. 
+Trans- 
+port protocols 
+such as TCP 
+do not have this feature. 
+TCP 
+numbers 
+the bytes in the data stream, 
+and uses these num- 
+bers to achieve data ordering 
+and retransmission. 
+However, 
+these numbers 
+have no meaning 
+to the application. 
+This is 
+true because the presentation 
+layer, which lies between 
+the 
+application 
+and the transport, 
+converts 
+the format 
+of the 
+data in a way that, 
+in general, 
+changes the size of the ele- 
+ments. 
+So without 
+understanding 
+the transformation 
+that 
+the presentation 
+layer has done, it is impossible 
+for the ap- 
+plication 
+layer to relate 
+lost data 
+at the transport 
+to the 
+‘We 
+do not 
+believe 
+that 
+ATM 
+cell loss rates 
+will 
+be so low as to 
+eliminate order 
+maintenance as a protocol 
+issue. 
+Although 
+the draft 
+CCITT 
+recommendations 
+proscribe 
+cell reordering, 
+they 
+make 
+signif- 
+icant 
+provisions 
+for cell loss detection, 
+primarily 
+within 
+the 
+“Adapta 
+tion 
+Layer.” 
+The 
+net cell payload, 
+after 
+adaptation, 
+is 44-46 
+bytes. 
+equivalent 
+application 
+data. 
+Application 
+Level Framing 
+The way to avoid this problem 
+is for the lower layers such 
+as presentation 
+and transport 
+to deal with 
+data in units 
+that the application 
+specifies. 
+In other words, the applica- 
+tion should break the data into suitable 
+aggregates, 
+and the 
+lower levels should preserve 
+these frame boundaries 
+as they 
+process the data. 
+This proposal 
+will call these aggregates 
+Application 
+Data Units, or ADUs. 
+ADUs 
+will then take the 
+place of the packet as the unit of manipulation. 
+We call this 
+design principle 
+Application 
+Level Framing. 
+What defines a suitable 
+size for an ADU? The -fundamen- 
+tal characteristic 
+of our definition 
+is that each A:DU can be 
+processed out of order with respect to other ADUs. 
+This rule 
+permits 
+the ADU boundaries 
+to take the place of the packet 
+boundaries 
+for purposes 
+of manipulation 
+functions 
+such as 
+end-to-end 
+error detecting 
+codes or moving 
+into application 
+address space. 
+At the same time, 
+the ADU 
+now becomes 
+the unit of 
+error recovery. 
+Since the ADU 
+is defined 
+to be the small- 
+est unit which 
+the application 
+(or presentation 
+conversion 
+function) 
+can deal with out of order, it follows that if even 
+part of an ADU is lost in transmission, 
+the application 
+will, 
+in general, 
+be unable 
+to deal with it. Since our application 
+layer takes on the responsibility 
+of recovering 
+lost data, it 
+will almost certainly 
+need to assume the whole ADU is lost, 
+even if parts exist.l’ 
+Unless the presentation 
+layer can trans- 
+late the identity 
+of the lost data into terms the application 
+understands, 
+the application 
+cannot understand 
+which of its 
+elements 
+have actually 
+been lost. 
+This 
+suggests 
+that 
+ADU 
+lengths 
+should 
+be reasonably 
+bounded, 
+so that when data is lost the application 
+need do 
+no more work than necessary. 
+Indeed, 
+since the loss of even 
+one bit will 
+trigger 
+the loss of a whole 
+ADU, 
+excessively 
+large ADUs 
+might 
+prevent 
+useful progress 
+at all, since the 
+probability 
+of any ADU having at least one uncorrected 
+error 
+would approach 
+one. 
+However, 
+there will 
+be a minimum 
+unit, 
+based on the 
+details of the application 
+data, below which the ,application 
+cannot break the data and still deal with parts lost or out of 
+order. 
+If this minimum 
+natural 
+size of the ADU 
+j.s too large 
+to provide 
+a practical 
+unit of error free transmissi,on, 
+then it 
+will be necessary 
+to define an artificial 
+set of subunits 
+into 
+which an ADU 
+is broken 
+for error recovery. 
+Although 
+this 
+partitioning 
+may be provided 
+by an independent 
+protocol 
+module, 
+the overall 
+responsibility 
+for retransmission 
+must 
+rest with the application. 
+The Architecture 
+of Presentation 
+Conversion 
+To express the processing 
+of ADUs 
+in a more abstract 
+way, 
+we note that 
+an ADU 
+exists in several 
+representations 
+or 
+“syntaxes.” 
+Each application 
+understands 
+the ADU 
+in its 
+lo We assume 
+that 
+ADUs 
+may 
+be broken 
+into smaller units suitable 
+for transmission 
+across 
+physical 
+links. 
+Of course, 
+lower 
+layer 
+recovery 
+schemes, 
+such as forward 
+error 
+correction 
+(FEC). 
+may 
+be al>plied 
+to 
+these 
+transmission 
+units. 
+Similarly, 
+our 
+gknerai’assertion 
+iegarding 
+applications 
+is not 
+meant 
+to preclude 
+the use of ADU-level 
+FEC. 
+204 
+own “local syntax.” 
+The peer applications 
+share a common 
+view of the ADU 
+in some “abstract 
+syntax.” 
+The various 
+data transformations 
+on the sending 
+end (most 
+obviously 
+presentation 
+conversion) 
+convert 
+the ADU to some “transfer 
+syntax,” 
+and the receiving 
+end performs 
+the reverse trans- 
+formation, 
+Each of these syntactic 
+forms can be viewed as 
+a name-space 
+in which data elements 
+within 
+the ADU 
+can 
+be identified. 
+The abstract 
+syntax 
+will represent 
+the data as 
+some application-level 
+data structure; 
+the transmission 
+syn- 
+tax will probably 
+represent 
+the data as a numbered 
+sequence 
+of bytes, as transport 
+protocols 
+do today. 
+For the receiving 
+application 
+to deal with the ADU out of 
+order, it is not sufficient 
+that the receiving 
+end understand 
+what presentation 
+conversion 
+to perform. 
+The receiving 
+end 
+needs to understand 
+where to put the data that results from 
+the conversion. 
+In the case of file transfer, 
+for example, 
+this implies 
+that, 
+for each ADU, 
+the sender must provide 
+information 
+as to its eventual 
+location 
+within 
+the receiver’s 
+file. 
+It is not obvious how, using today’s 
+models of presenta- 
+tion, the sender can compute 
+this information 
+in order to 
+provide 
+it to the receiver. 
+Traditionally, 
+some intermedi- 
+ate or “transfer” 
+representation 
+is used for the data, 
+and 
+the sender and receiver 
+do not exchange 
+details 
+concerning 
+their “local” 
+representations. 
+If the source and the destina- 
+tion are unaware 
+of the presentation 
+conversion 
+used by the 
+other, then there is no guidance 
+that the source can give the 
+destination 
+as to the eventual 
+size of each ADU. 
+So if an 
+ADU is received out of order, there is no way to guess how 
+large the intervening 
+ADUs 
+are, and thus no way to guess 
+where in the eventual 
+file the current 
+ADU 
+will go. While 
+the receiver can perform 
+the presentation 
+conversion for each 
+ADU, 
+it must buffer it, and thereby 
+clog the presentation 
+pipeline. 
+Thus, for a general external 
+representation 
+such as ASN.l, 
+there may be no way to allow ADUs to be totally 
+processed 
+out of order at the receiver. 
+As an alternative, 
+the sender 
+and receiver can negotiate 
+to translate 
+in one step from the 
+sender to the receiver’s 
+format. 
+If this is done at the sender, 
+then the sender can label each ADU with its location 
+in the 
+sender’s file (i.e. before conversion), 
+and a separate location 
+which it will occupy 
+in the receivers 
+file. 
+Using this infor- 
+mation, 
+the receiver 
+can copy the data into the file at the 
+correct location, 
+even though intervening 
+ADUs are missing. 
+In fact, the example 
+of file transfer 
+is too restricted 
+to 
+suggest the most general form of this principle. 
+A very differ- 
+ent application 
+example 
+is stream data such as video. 
+In this 
+case, each ADU 
+must be identified 
+with its location, 
+both in 
+space (where on the screen it goes) and in time (which video 
+frame it is a part of). 
+In order for the sender to compute 
+this, it is not necessary to convert 
+the data to the represen- 
+tation 
+of the receiver; 
+it is just necessary for the sender and 
+receiver 
+to agree on some higher-level 
+name-space 
+in which 
+ADUs are named. 
+The sender need only be able to compute 
+the receiver’s 
+name for each ADU 
+in this name-space. 
+Thus the more general 
+architectural 
+principle 
+of presen- 
+tation 
+conversion 
+is that 
+the sender must perform 
+at least 
+enough of the conversion 
+to be able to compute, 
+in terms 
+meaningful 
+to the receiver, 
+where or when the ADU 
+is to 
+be delivered. 
+In some cases, this may imply 
+that the sender 
+must do all the conversion; 
+in other situations, 
+the receiver 
+can do further 
+processing 
+as an implementation 
+decision. 
+Always, 
+the sender must be able to specify 
+the disposition 
+of the ADU in terms meaningful 
+to the receiver. 
+The final 
+characterization 
+of an ADU is thus the follow- 
+ing. The sending and receiving 
+application 
+must define what 
+data goes in an ADU 
+such that 
+the sender can compute 
+a name for each ADU 
+that 
+permits 
+the receiver to understand 
+its place in the se- 
+quence of ADUs produced 
+by the sender, and 
+the sender uses a transfer syntax 
+that permits 
+the ADU 
+to be processed out of order. 
+6 
+Integrated 
+Lays 
+Processing 
+Layered 
+protocol 
+suites provide 
+isolation 
+between 
+the func- 
+tional modules of distinct 
+layers. 
+A major architectural 
+ben- 
+efit of isolation 
+is that it facilitates 
+the implementation 
+of 
+subsystems 
+whose scope is restricted 
+to a small subset of 
+the suite’s 
+layers. 
+For example, 
+the implementation 
+of a 
+network 
+layer relay is largely 
+independent 
+of the upper layer 
+protocols 
+used by its clients. 
+However, 
+we are frequently 
+concerned 
+with 
+the imple- 
+mentation 
+of complete 
+end systems that coincidentally 
+ter- 
+minate 
+most of the layers of the protocol 
+stack. 
+The naive 
+implementation 
+of a layered 
+suite involves 
+the sequential 
+processing 
+of each unit of information, 
+as it is passed down 
+through 
+the individual 
+layer entities of the transmitter’s 
+pro- 
+tocol stack, and as it is passed up through 
+the peer entities 
+of the receiver’s 
+stack. Such a simple ordering 
+of operations 
+may well conflict 
+with 
+the efficient 
+engineering 
+of the end 
+systems, and it is sometimes 
+possible to arrange 
+the opera- 
+tions in a more efficient order that achieves the same result. 
+Ordering 
+Constraints 
+Layered engineering 
+designs should not be thought 
+of as fun- 
+damental, 
+but only as one approach, 
+which must be evalu- 
+ated on the basis of overhead 
+and simplicity 
+against 
+other 
+designs. As an alternative, 
+we introduce 
+an engineering 
+prin- 
+ciple called Integrated 
+Layer Processing, 
+or ILP, which cap- 
+tures the idea that the protocol 
+be so structured 
+as to permit 
+the implementor 
+the option 
+of performing 
+all the manipula- 
+tion steps in one or two integrated 
+processing 
+loops, instead 
+of performing 
+them serially 
+as is most often done today. 
+Unfortunately, 
+traditional 
+protocol 
+suites often impose 
+“precedence” 
+or “ordering” 
+constraints 
+that 
+limit 
+the op- 
+portunities 
+for such optimization. 
+In particular, 
+the shuf- 
+fling of operations 
+associated 
+with 
+different 
+layers is often 
+restricted. 
+To admit 
+ILP, a protocol 
+architecture 
+must be 
+organized 
+so that the interactions 
+between processing 
+steps, 
+both control 
+and data manipulation, 
+do not interfere 
+with 
+their integration. 
+We conclude that our new protocol 
+archi- 
+tecture should minimize 
+the inter-layer 
+ordering 
+constraints 
+imposed on its implementors. 
+Although 
+we favor the ILP ap- 
+proach described 
+above, a “reduced 
+constraint 
+architecture” 
+would also facilitate 
+pipelined 
+implementations, 
+such as the 
+interface 
+design described 
+in [ll]. 
+Thus an ILP-compatible 
+architecture 
+preserves the benefits of isolation, 
+while increas- 
+205 
+ing the range of implementation 
+options 
+available 
+to end 
+system designers. 
+One example 
+of inter-layer 
+optimization 
+is the provision 
+for encryption 
+processing 
+in the system 
+described 
+in [Is]. 
+The Autonet 
+protocol 
+suite has been carefully 
+structured 
+to 
+facilitate 
+the implementation 
+of end system interfaces 
+that 
+entwine 
+the session-specific 
+encryption 
+operations 
+with data 
+link 
+level operations. 
+This 
+relaxation 
+of the conventional 
+ordering 
+constraints 
+does not interfere 
+with layer isolation: 
+intermediate 
+nodes perform 
+the traditional 
+data link 
+and 
+network 
+layer operations 
+without 
+regard to the session en- 
+cryption 
+operation. 
+To understand 
+how interactions 
+among 
+steps interfere 
+with integration, 
+one must look at the receiving 
+end of the 
+connection. 
+When 
+sending, 
+the software 
+knows the com- 
+plete state of the transfer, 
+so that the manipulations 
+can be 
+performed 
+independent 
+of the control 
+steps. 
+When receiv- 
+ing data, 
+the protocol 
+must perform 
+certain 
+of the control 
+actions 
+in order to permit 
+the manipulation. 
+The details 
+of the protocol 
+architecture, 
+for example 
+the layering, 
+will 
+determine 
+the ordering 
+constraints, 
+i.e., which manipulation 
+steps can only be done after specific 
+control 
+steps. 
+These 
+details determine 
+the implementation 
+options 
+and, thus, the 
+efficiency 
+of the manipulation 
+steps. 
+This point is the key 
+to effective 
+design and implementation 
+of protocol 
+suites. 
+One example 
+of an ordering 
+constraint 
+is that 
+at least 
+some part 
+of the dat.a must 
+be extracted 
+from 
+the net- 
+work before 
+it can be demultiplexed. 
+It is very 
+hard to 
+combine the extraction 
+and serial-to-parallel 
+conversion 
+step 
+with 
+other 
+manipulation, 
+except 
+perhaps 
+error detection, 
+since most manipulations 
+require 
+the local state informa- 
+tion, 
+which 
+is only identified 
+through 
+demultiplexing. 
+In 
+general, 
+multiplexing 
+at a given layer may impose ordering 
+constraints, 
+or at least complicate 
+the re-ordering 
+of opera- 
+tions across layer boundaries.” 
+Another 
+example, 
+discussed above, is that many manipu- 
+lations can only be performed 
+once the data unit is in order. 
+This is true of most error detection 
+checksums, 
+of many en- 
+cryption 
+schemes, of most presentation 
+transformations 
+and 
+of moving 
+the data to or from the user address space. Thus, 
+the protocol 
+must insure that the data is in order, at least 
+within 
+a certain 
+range, 
+before performing 
+these manipula- 
+tions. 
+I LP Performance 
+This paper has presented 
+two significant 
+cases to consider in 
+exploring 
+the performance 
+impact 
+of ILP. In one case, there 
+is no presentation 
+layer; in the other, there is. 
+If there is no presentation 
+conversion, 
+then state-of-the- 
+art implementations 
+are already 
+running 
+into 
+the perfor- 
+mance limit 
+imposed 
+by the very simple 
+data transforma- 
+tions of the transport 
+and lower layers - data copying 
+and 
+checksums. 
+In these cases, ILP 
+may be a very 
+practical 
+next step to improve 
+throughput, 
+especially 
+with RISC pro- 
+cessors. 
+This will, 
+of course, not be true universally; 
+ILP 
+is just 
+an engineering 
+principle, 
+to be applied 
+only when 
+useful. 
+But the very simple performance 
+experiments 
+we re- 
+ported 
+above, as well as some of the advanced 
+experiments 
+“The 
+case against 
+layered 
+multiplexing 
+is presented 
+in [18, 121. 
+performed 
+by Van Jacobson on TCP 
+[3], suggest the utility 
+of this approach. 
+If there is a presentation 
+conversion 
+being 
+performed, 
+then the cost of this step may well dominate 
+the other ma- 
+nipulation 
+costs. 
+In this case, the application 
+code, which 
+must participate 
+in the presentation 
+conversion, 
+must be the 
+focus of performance 
+tuning. 
+ILP can help here, bec:ause the 
+processing 
+steps can be pipelined 
+in a flexible 
+manner. 
+Up to this point, 
+we have introduced 
+a number 
+of key 
+problems 
+and concepts 
+- the problem 
+of reordering, 
+the re- 
+quirement 
+for efficient 
+pipelining 
+of the presentation 
+con- 
+version, 
+and so on. 
+An overall 
+structure 
+that 
+takes these 
+concepts 
+into account is based on two manipulation 
+stages. 
+First, 
+the transmission 
+data units 
+are received 
+from the 
+network. 
+They are then examined 
+to determine 
+which ADU 
+they belong 
+to (the demultiplexing 
+control 
+operation) 
+and 
+where in the ADU 
+they go (the re-ordering 
+control 
+opera- 
+tion). 
+If part of an ADU is lost, then either some lower layer 
+may try to fix the problem 
+(if it has buffered sufficient 
+infor- 
+mation), 
+the receiving 
+application 
+may cope, or the sending 
+application 
+is instructed 
+to resend the whole A:DU. 
+Once a complete 
+ADU is received, even if it is out of order 
+with respect to other ADUs in the same applica5on 
+associa- 
+tion, it can be passed to the application 
+for the second stage 
+of processing. 
+This processing 
+will include 
+all the required 
+data manipulations, 
+including 
+error and encryption 
+checks, 
+and possibly 
+presentation 
+conversion, 
+if the sender has not 
+performed 
+this task completely. 
+The two stage approach 
+is 
+justified 
+by the distinction 
+between 
+two classes of “out of 
+order” 
+events: 
+misordering 
+of transmission 
+units; 
+and mis- 
+ordering 
+of complete 
+ADUs. 
+In the normal 
+case where all 
+transmission 
+units 
+arrive 
+in order, 
+the two sta.ges may be 
+fully integrated. 
+Even if the data does not require presentation 
+conversion, 
+it will require dispatching 
+to the proper locations 
+in memory. 
+In some cases, this may be simple, 
+if the data. is destined 
+for the file system 
+as a sequence 
+of linear 
+disk blocks. 
+A 
+more general case will require 
+that the data in -the ADU 
+be 
+separated 
+into different 
+values which are stored in different 
+variables 
+of some program. 
+This is the general 
+paradigm 
+of 
+the Remote 
+Procedure 
+Call, in which the incoming 
+data is 
+made to appear 
+as parameters 
+of a subroutine 
+call in some 
+high level programming 
+language. 
+This 
+requirement 
+to copy the data into locations 
+that 
+are part of the application 
+address space, and which may be 
+distributed 
+in that address space rather 
+than being a linear 
+region, 
+is a critical 
+architectural 
+constraint. 
+One proposal 
+for speeding 
+up protocols 
+is to perform 
+processmg 
+on a spe- 
+cialized 
+outboard 
+processor. 
+We assert that 
+it will 
+prove 
+too complex 
+to provide 
+a specialized 
+processor 
+with all the 
+information 
+necessary 
+for it to copy the data properly 
+into 
+the application 
+address space.” 
+While 
+in some cases, such 
+as raw file transfer, 
+it might 
+be easy, in gene:ral it would 
+require 
+giving 
+to the outboard 
+processor information 
+of the 
+same bulk and complexity 
+as the incoming 
+data itself. 
+For 
+this reason, most proposals 
+for outboard 
+processors 
+do not 
+include 
+the presentation 
+layer in the tasks to be performed 
+outboard. 
+“A 
+more 
+realistic 
+proposition 
+is the partitioning 
+of application 
+and 
+presentation 
+processing 
+across 
+the general 
+purpose 
+nodes 
+of a multi- 
+processor 
+system. 
+206 
+The key argument 
+in favor of ILP is that an integrated 
+processing 
+loop is more efficient 
+than several separate 
+steps 
+which read the data from memory, 
+possibly 
+convert 
+it, and 
+write 
+it again. 
+This 
+point 
+seems most obviously 
+true for 
+RISC chips, where a major 
+performance 
+limitation 
+is mem- 
+ory cycles. We claim that layered engineering 
+designs should 
+not be thought 
+of as fundamental, 
+but 
+only 
+as one ap- 
+proach, 
+which 
+must be evaluated 
+on the basis of overhead 
+and simplicity 
+against 
+other designs. 
+ILP designs may lead 
+to greater 
+efficiency 
+through 
+careful attention 
+to the order- 
+ing of the processing 
+steps and the delineation 
+of the data 
+units. 
+7 
+Application 
+Level Framing 
+Revisited 
+The concept 
+of Application 
+Level 
+Framing 
+was a key to 
+achieving 
+Integrated 
+Layer Processing, 
+because it provided 
+a single common 
+unit of data, 
+the ADU, 
+over which 
+ma- 
+nipulation 
+was defined. 
+In contrast, 
+protocols 
+today define 
+some operations 
+over the packet, and others over application 
+boundaries. 
+We believe 
+that once the concept 
+of the ADU is under- 
+stood, it will provide 
+a more natural 
+and direct way to deal 
+with 
+a variety 
+of protocol 
+problems. 
+As a particular 
+ex- 
+ample, 
+consider 
+the problem 
+of connecting 
+networks 
+to a 
+parallel 
+processor. 
+A network 
+is usually 
+thought 
+of as a serial device. 
+This 
+sort of device does not match 
+the nature 
+of some parallel 
+processors. 
+One of the design goals of a parallel 
+processor is 
+to avoid building 
+any one hot spot in the architecture 
+which 
+must run at the aggregate 
+speed of the total processor. 
+But 
+lacking 
+such a spot, 
+there is no place to connect 
+a high- 
+speed serial network. 
+The solution 
+seems to be to separate 
+the network 
+into several parts, 
+each of which delivers 
+part 
+of the data to part of the processor. 
+But how is the data to 
+be dispatched 
+to the correct part? 
+If the data is sent to the 
+parallel 
+processor using a traditional 
+protocol 
+such as TCP, 
+there is no way the transport 
+can understand 
+the structure 
+of the incoming 
+data. 
+However, if the data is organized 
+into 
+ADUs, each ADU will contain enough information 
+to control 
+its own delivery. 
+In summary, 
+the next generation 
+of protocol 
+must have 
+a very general model of the application. 
+Not only must the 
+network 
+support 
+traditional 
+computers, 
+but other devices, 
+including 
+video sources and sinks, specialized 
+memories, 
+and 
+so on. Since the ADU delivery 
+information 
+is not just visible 
+at the “application 
+protocol 
+layer” 
+but to all the protocol 
+functions, 
+it can be used to permit 
+a wide variety 
+of imple- 
+mentation 
+approaches 
+for various sorts of devices. 
+8 
+Conclusions 
+In this paper, we make several structural 
+observations 
+about 
+protocols, 
+and attempt 
+to draw some architectural 
+conclu- 
+sions. In summary, 
+our reasoning 
+has the following 
+points. 
+l Data 
+manipulation 
+costs more than 
+transfer 
+control 
+operations. 
+Presentation 
+can cost more than all other manipula- 
+tions combined. 
+To implement 
+presentation 
+efficiently, 
+it is necessary 
+to keep the processing 
+pipeline 
+going, 
+including 
+the 
+. 
+. 
+application 
+process. 
+Application 
+data units are the natural 
+pipelining 
+units. 
+They 
+correspond 
+to what 
+applications 
+want, 
+not to 
+the network 
+technology 
+of the day, which can and will 
+change in the near future. 
+The key architectural 
+principle 
+we have identified 
+is 
+Application 
+Level Framing. 
+The key engineering 
+principle 
+is Integrated 
+Layer Pro- 
+cessing, which allows applications 
+to process their data 
+incrementally, 
+and permits 
+efficient implementation 
+of 
+data manipulations 
+on RISC processors. 
+In this approach 
+to protocol 
+architecture, 
+the different 
+functions 
+are “next 
+to” each other, not “on top of,” to the 
+extent 
+possible. 
+The traditional 
+functions 
+of transport 
+and 
+session are control 
+functions, 
+and as such should not have 
+a strict 
+relation 
+to the manipulation 
+functions 
+such as pre- 
+sentation 
+conversion. 
+This is a more parallel 
+organizational 
+model, similar 
+to the HOPS model of Haas [7]. 
+This discussion of protocol 
+structure 
+should not be taken 
+to mean that layering 
+is unsuited 
+as a tool for protocol 
+de- 
+sign. The principle 
+role of layering 
+is the semantic 
+isolation 
+of functional 
+modules. 
+Although 
+alternative 
+organizational 
+schemes exist, layered isolation 
+has proven to be particularly 
+effective 
+in the network 
+environment. 
+At the Network 
+layer and below, intermediate 
+relay enti- 
+ties must participate 
+in some aspects of the communications 
+process. Within 
+the context 
+of a layered architecture, 
+inter- 
+mediate 
+entities 
+can operate 
+at one or more layers without 
+regard 
+to the semantic 
+content 
+of the symbols 
+being 
+ex- 
+changed 
+at the upper 
+or lower layers. 
+This 
+constitutes 
+a 
+powerful 
+argument 
+in favor of layered isolation. 
+However, 
+the same reasoning 
+does not apply 
+at Trans- 
+port and above, where symbols 
+are exchanged 
+on an end-to- 
+end basis. Alternative 
+organizational 
+schemes may be better 
+suited to the functional 
+decomposition 
+of what are presently 
+referred to as the upper layer functions. 
+In particular, 
+we ob- 
+serve that many of the Transport, 
+Session, and Presentation 
+functions 
+can be structured 
+in a less constrained 
+manner. 
+A potential 
+drawback 
+to the ILP approach is that it could 
+lead to complex 
+designs in which each protocol 
+stack variant 
+has its own fully 
+customized 
+implementation. 
+Clearly 
+this 
+would complicate 
+the maintainability 
+and overall 
+utility 
+of 
+the protocol 
+software. 
+However, 
+we believe 
+that 
+there are 
+approaches 
+to protocol 
+organization 
+that can minimize 
+the 
+liabilities 
+associated 
+with 
+“vertical 
+integration.” 
+In existing 
+protocol 
+suites the semantics 
+of a functional 
+module, 
+i.e., a layer protocol, 
+are closely 
+tied to the syn- 
+tax of the symbols 
+that 
+are exchanged. 
+Usually 
+there is 
+a one-to-one 
+correspondence 
+between 
+semantic 
+information 
+and specific fields within 
+protocol 
+data units. 
+This arrange- 
+ment gives rise to the present 
+day scheme of hierarchical 
+encapsulation 
+in which each layer appends its own synt.acti- 
+cal symbols 
+to those generated 
+by the layers above. 
+207 
+We propose 
+that 
+the semantics 
+of a functional 
+module 
+be decoupled 
+from the syntax 
+used to effect the exchange 
+of protocol 
+control 
+information. 
+A single syntactical 
+field 
+could be interpreted 
+by a number 
+of modules, 
+with 
+each 
+applying 
+its own semantic 
+rules as appropriate. 
+Thus, where 
+layering 
+is appropriate, 
+semantic 
+isolation 
+can be retained 
+without 
+the present 
+day overhead 
+of layered 
+encapsulation 
+and framing.r3 
+In many respects this approach 
+corresponds 
+to the “com- 
+pilation” 
+of the protocol 
+suite, while the encapsulation 
+ap- 
+proach corresponds 
+to its “interpretation”. 
+We believe that 
+the principle 
+of Application 
+Layer Framing 
+permits 
+this shared 
+use of fields 
+and structures 
+across layers, 
+and ILP 
+is one 
+speculative 
+example 
+of a “compiled” 
+implementation 
+of a 
+protocol 
+suite. 
+9 
+Acknowledgements 
+James Davin 
+performed 
+the presentation 
+conversion 
+experi- 
+ments described 
+in section four. Karen Sollins provided 
+con- 
+siderable 
+assistance 
+in detailed 
+discussions 
+concerning 
+the 
+key principles 
+and in the alignment 
+of the sometimes 
+di- 
+vergent 
+views of the co-authors. 
+John Wroclawski, 
+Karen 
+Sollins, Chuck Davin, 
+and the referees provided 
+criticism 
+of 
+earlier drafts which substantially 
+improved 
+the final version 
+of this paper. 
+In many respects, 
+this paper represents 
+the blending 
+of 
+insights 
+gained 
+from our past activities, 
+both at MIT 
+and 
+the University 
+of Cambridge. 
+The ideas developed 
+in this 
+paper 
+were also extensively 
+motivated 
+by discussions 
+with 
+the End to End Research 
+Group 
+of the Internet 
+Research 
+Task Force, in particular 
+the comments 
+of Van Jacobson. 
+References 
+PI 
+PI 
+[31 
+[41 
+[51 
+PI 
+E.A. 
+Arnould 
+et 
+al. 
+The 
+Design 
+of Nectar: 
+A 
+Network 
+Backplane 
+for Heterogeneous 
+Multicomput- 
+ers. 
+In ASPLOS-III 
+Proceedings, 
+Third 
+International 
+Conference 
+on Architectural 
+Support for Programming 
+Languages 
+and 
+Operating 
+Systems, 
+pages 
+205-216, 
+IEEE/ACM, 
+April 
+1989. 
+G. Chesson, 
+B. Eich, V. Schryver, 
+A. Cherenson, 
+and 
+A. Whaley. 
+XTP 
+Protocol 
+Definition. 
+Technical 
+Re- 
+port Revision 
+3.0, Silicon Graphics, 
+Inc., January 
+1988. 
+D. Clark, 
+V. Jacobson, 
+J. Romkey, 
+and H. Salwen. 
+An 
+Analysis 
+of TCP 
+Processing 
+Overhead. 
+IEEE 
+Commu- 
+nications, 
+27(6):23-29, 
+June 1989. 
+David 
+Clark. 
+The Structuring 
+of Systems 
+Using Up- 
+calls. 
+In Proceedings 
+of the 10th ACM 
+Symposium 
+on 
+Operating 
+Systems Princi;oZes, pages 171-180, 
+Associa- 
+tion for Computing 
+Machinery, 
+Oakland, 
+CA, Decem- 
+ber 1985. 
+A. G. Fraser and W. T. Marshall. 
+Data Transport 
+in a 
+Byte Stream 
+Network. 
+IEEE 
+Journal 
+on Selected Areas 
+in Communications, 
+‘7(7):1020-1033, 
+September 
+1989. 
+Rainer Handel. 
+Evolution 
+of ISDN Towards 
+Broadband 
+ISDN. 
+IEEE 
+Network, 
+3(1):7-13, 
+January 
+1989. 
+PI 
+PI 
+PI 
+WI 
+WI 
+[I31 
+D41 
+WI 
+I161 
+D71 
+Pf31 
+WI 
+Zygmunt 
+Hass. 
+A Communication 
+Architecture 
+for 
+High-speed 
+Networking. 
+In preparation. 
+C. Huitema 
+and A. Doghri. 
+A High Speed Approach 
+for the OS1 Presentation 
+Protocol. 
+In H. Rudin and R. 
+Williamson, 
+editors, 
+Protocols for High-Speed 
+Networks, 
+Elsevier 
+Science Publishers, 
+May 1989. IFIP. 
+ISO. 
+Information 
+Processing 
+Systems - Open Systems 
+Interconnection 
+- Basic Reference 
+Model. 
+1!)84. ISO- 
+7498. 
+ISO. 
+Information 
+Processing 
+Systems 
+- Open Systems 
+Interconnection 
+- Specification 
+of Abstract 
+Syntax 
+No- 
+tation 
+One (ASN.1). 
+International 
+Standard 
+ISO-8824. 
+J. Kanakia 
+and 
+D.R. 
+Cheriton. 
+The 
+b’MP 
+Net- 
+work Adapter 
+Board 
+(NAB): 
+High-Performance 
+Net- 
+work 
+Communication 
+for 
+Multiprocessors. 
+Technical 
+Report, 
+Stanford 
+University, 
+Stanford, 
+CA, November 
+1987. 
+D. R. McAuley. 
+Protocol 
+Design 
+for 
+High Speed Net- 
+works. 
+Technical 
+Report 
+TR 
+No. 186, University 
+of 
+Cambridge 
+Computer 
+Laboratory, 
+January 
+1390. 
+J. Postel and 3. Reynolds. 
+Telnet 
+Protocol 
+Specification 
+NIC-RFC-854. 
+DDN 
+Protocol Handbook, 2:2.575--2.589, 
+May 1983. 
+K. Sabnani 
+and A. Netravali. 
+A High 
+Speed Trans- 
+port Protocol 
+for Datagram 
+/ Virtual 
+Circuit 
+Networks. 
+In ACM 
+Sigcomm 
+‘89, pages 146-157, 
+Association 
+for 
+Computing 
+Machinery, 
+Austin, 
+Texas, September 
+1989. 
+M.D. 
+Schroeder 
+et al. 
+Autonet: 
+A High-speed, 
+Self- 
+configuring 
+Local Area 
+Network 
+Using Point-to-Point 
+Links. 
+Technical 
+Report 
+Research 
+Report 
+59, Digital 
+Systems Research Center, 
+April 
+1990. 
+Sun Microsystems, 
+Inc. 
+XDR: 
+External 
+Data 
+Repre- 
+sentation 
+Standard. 
+RFC - 1014, Network 
+Information 
+Center, 
+SRI International, 
+June 1987. 
+L. Svobodova. 
+Implementing 
+OS1 Systems. 
+IEEE 
+Jour- 
+nal on Selected Areas in Communications, 
+7(7):1115- 
+1130, September 
+1989. 
+D. L. Tennenhouse. 
+Layered 
+Multiplexing 
+Considered 
+Harmful. 
+In H. Rudin and R. Williamson, 
+editors, 
+Pro- 
+tocols for 
+High-Speed 
+Networks, 
+Elsevier 
+Science Pub- 
+lishers, May 1989. IFIP. 
+CCITT 
+Study 
+Group 
+XVIII. 
+Draft 
+1990 B-ISDN 
+Rec- 
+ommendations. 
+January 
+1990. 
+13Datakit 
+control 
+byte 
+codes 
+[5] have these 
+properties 
+208 

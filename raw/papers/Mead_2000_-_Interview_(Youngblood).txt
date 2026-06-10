@@ -1,0 +1,1182 @@
+MeadInterview
+1
+Fi le : 1 Carver .doe
+10/00
+CARVER MEAD INTERVIEW
+By : Gene Youngblood
+(Document 1 of 4 of Mead Interview)
+GENE : The progression toward a speed/power inversion has been happening cont inuously since 1959 when
+the integrated ci rcui t was invented and yet today we st i l l can' t bui ld a supercomputer that doesn' t requi re
+acres of f reon tubes for cool ing.
+CARVER : Oh yes you can . I t 's just they' re not doing i t . You see the probl em has been twofold. One, as the
+technology developed the big computer people -- the Amdhahls and the Crays -- stayed wi th the older bipolar gate
+array technology . They haven' t par t icipated in the revolut ion . Now the semiconductor guys don' t know much about
+computers so they've copied a bunch of ancient archi tectures . So what we have in the personal computers is creaky
+old archi tectures wi th this wonder ful technology . So the people dr iving the technology don' t know anything about
+systems and the people who have bui l t t radi t ional large computer systems haven' t par t icipated in the technology
+revolut ion . Supercomputers are an ext remely inef f icient use of power and space . They just brute- forced i t . They said
+we' re not going to use any cleverness at al l , we' re just going to pour the coal to i t and see how fast we can make i t
+run . So they just turn up the knob and go for i t . And you end up wi th these giant steam engines that blow of f al l this
+heat . I t doesn' t make any sense at al l f rom any point of view . But , you see, the si tuat ion is actual ly much bet ter than
+that . And that 's the par t nobody counts . I mean i f you take today's techno- logy and use i t to do a real ly novel
+archi tecture you can get a factor of 10,000 r ight now . Today . But you don' t do i t by running the clock that fast . You
+do i t through paral lel ism . There's a lot more to be ga ined through archi tecture than there is in clock speed . You can
+get 10 GHz out of a paral lel array of 10 MHz clocks .
+GENE : But aren' t there ser ious probl ems wi th sof tware for paral lel archi tectures? There seems to be
+cont roversy whether schemes l ike dataf low and funct ional programming can actual ly overcome the
+communi cat ion probl ems .
+CARVER : As long as you' re talking sof tware you' re missing the point . Because you' re thinking of something
+programmabl e . And those schemes wi l l never work out in terms of enormous paral lel ism . That 's why I think this
+super -computer thing wi l l turn out to be a net loss to our count ry . Because they' re st i l l cl inging to the bel ief that
+we' re going to make programmabl e highly paral lel machines . I worked on that for a long t ime and f inal ly came to
+the conclusion that i t just wasn' t going to make i t . You were going to get factors of ten or a hundred and that was the
+end of i t . We l l that 's not enough . We need eight or nine orders of magni tude to do the kinds of things we want to do
+wi th computers today . There's factors of a mi l l ion there i f you do i t r ight . But for that you can' t separate the
+archi tecture f rom the algor i thm . You have to bui ld that algor i thm in si l icon, not program i t somehow . I think they'd
+bet ter be facing st raight into the fact that there are dedicated archi tectures for these enormous tasks .
+GENE : What do you cal l the k ind of archi tecture you' re talking about?
+CARVER : I cal l them si l icon algor i thms . You just map the appl icat ion r ight into si l icon . And the technology for
+doing that we understand pret ty wel l . I don' t mean we've work- ed i t al l out . But we've developed the technology for
+taking high- level descr ipt ions and put t ing them on si l icon . I t 's cal led si l icon compi lat ion, which is the obvious next
+step . You need to compi le things r ight down into the chip instead of compi l ing them into some code that you feed to
+this giant mass of chips that gr inds away on i t t rying to interpret i t .
+GENE : So the si l icon compi ler solves not only the complexi ty probl em but also the probl em of massive ly
+paral lel archi tectures by al lowing us to exper iment wi th the dedicated hardware that a lone can real i ze the ful l
+potent ial of that archi tecture .
+CARVER : You bet . Otherwise there's no hope. Because then you' re stuck . I f i t takes f ive years to design a chip
+nobody's going to exper iment wi th algor i thms in si l icon, r ight? Because i t takes years to get anyplace. And that 's in
+ser ies wi th your learning curve . So you have to have a technology for exper iment ing wi th designs in si l icon more
+rapidly than that .
+ASL
+MeadInterview
+2
+Fi le : 1 Carver .doc
+GENE : Then microelect ronics and computer science have become synonymous.
+CARVER : They have to . You see, the thing that a l lowed people to separate the machinery of comput ing f rom the
+pract ice of comput ing -- hardware f rom sof tware, i f you l ike -- was the idea that what computers did was a
+sequent ial process . The old Tur ing or Von Neumann idea. Once you start to do things in a highly concurrent way
+you can' t separate the algor i thm f rom the archi tecture any more . You' re conf ronted wi th the necessi ty of mapping
+classes of appl icat ions di rect ly into si l icon . There's no such thing any more as the general purpose programmabl e
+machine when i t comes to real ly high bandwidth comput ing -- which is the only reason you need concurrent
+processing in the f i rst place . So that doesn' t mean Von Neumann machines wi l l go away; they' l l be used as general
+purpose cont rol lers for these special purpose inst ruments. The user has to talk to something that 's coherent , that has
+a language and an operat ing system and so for th . But instead of that poor l i t t le thing t rying to execute al l those
+inst ruct ions, you' re going to have special -purpose engines i t cal ls upon to do these enormous tasks . So you can think
+of the dedicated chips as ext remely capable inst ruct ions that you cal l f rom your personal computer .
+GENE : Would a persona l computer based on one of the new 32-bi t microprocessors be power ful enough to
+cont rol a such a high speed engine?
+CARVER : Oh sure . The very f i rst one of those on the market is the Si l icon Graphics I r is machine wi th the
+Geomet ry Engine in i t that Jim Clark designed. I t 's got a 68000 that cont rols an enormous graphics pipel ine wi th at
+least 100 t imes more computat ion capabi l i ty, which never theless is a slave to the microprocessor . The reason, of
+course, is that one smal l inst ruct ion can cause an enormous amount of work to get done . So the microprocessor is
+used to update the picture .
+GENE : Even wi th dedicated hardware there's a communi cat ion probl em in any massive ly paral lel
+archi tecture . So people star t talking about wafer -sca le integrat ion . Is wafer scale technology necessary for
+highly concurrent machines?
+CARVER : I t 's not essent ial but i t would help a lot . There are many dimensions to the problem . But essent ial ly
+you' re r ight that every t ime you come of f the chip and have to dr ive a big wi re instead of the k ind of wi res you have
+on the chip, you pay for that in speed. So to the extent that you can put the wi r ing on a wafer instead of on a ci rcui t
+board, the thing wi l l run that much faster and be that much more cost ef fect ive . The problem is nobody has yet come
+up wi th a viable scheme for tolerat ing the faul ts that a lways occur . None of the redundancy schemes are viable yet in
+terms of ef f icient use of the technology . I t has not at t racted the magni tude of research ef fort that i t 's wor th . I think
+i t 's a very exci t ing area . But as an al ternat ive to wafer-scale integrat ion you can arrange the chips as islands of
+computat ion where the l inks between them aren' t too huge. I t depends ent i rely on the nature of the algor i thm . How
+t ight ly connected are the c lumps of computat ion? You could, for example, arrange the islands to be synchronous and
+where they' re not connected too t ight ly use an asynchronous protocol so you don' t have to lock al l the clocks
+together . You'd st i l l have a fai r ly smal l box . So even i f you have to go of f chip you arrange i t so everything that 's on
+the chip is t ight ly connected . That 's the whole game of mak ing concurrent archi tectures whether you' re on a wafer or
+not . I t has to be based on local i ty . Otherwise the wi r ing mess just gets completely out of hand . Incidental ly, the brain
+has the same problem . Your cor tex is basical ly two-dimensiona l . I t 's only a mi l l imeter thick . That 's a lot thicker than
+a chip but i t 's by no means a ful ly connected three-dimensional volume . People think that because the brain is
+encased in this l i t t le round thing i t 's three-dimensional . I t 's not . I t 's two-dimensional , and i t 's wi red in a two-
+dimensional way . In fact there are two layers . There's the gray mat ter on top of the cor tex which is where the
+processing happens, and there's the whi te mat ter on the bot tom hal f of the cor tex which is where the wi res are -- a
+sol id mat of wi res about hal f or one- thi rd as thick as the cor tex . That 's exact ly what we have in si l icon except we
+don' t have qui te as many layers of thickness . But i t doesn' t qual i tat ively change the nature of the problem . And we' re
+get t ing more layers faster than the brain is . So the whole idea of put t ing pr ior i ty on local i ty is as t rue in the brain as
+in a chip .
+GENE : Are si l icon compi lers based on ar t i f icial intel l igence? Are they exper t systems?
+CARVER : You could think of them as exper t systems, i f you l ike, in the sense that they capture the exper t ise of the
+designers, but they don' t do i t by being art i f icial intel l igensia ; they do i t because some real ly smar t people worked
+the probl em. Si l icon compi lers are based on ordinary, old- fashioned, good systems design . That 's a whole di f ferent
+ASL
+MeadInterview
+3
+Fi le : 1 Carver .doe
+game . In my opinion, art i f icial intel l igence has done absolutely nothing that ever he lped anyone to do a chip design .
+They may help in the future but so far they haven' t .
+GENE : Wi l l the si l icon compi ler become the universal method of chip design?
+CARVER : Yes, for highly concurrent archi tectures.
+GENE : Regardless of the complexi ty of the chip?
+CARVER : We l l you simply can' t implement most of these algor i thms wi thout the complexi ty . There has to be a
+cer tain scale of integrat ion before i t makes sense. But yes, you' re going to need a si l icon compi ler to design even a
+Von Neumann-style chip at the complexi ty level of VLSI But once you have VLSI what 's to stop you f rom doing
+something a whole lot more interest ing than a Von Neumann computer? That 's real ly the point . People talk about the
+complexi ty as though i t were a problem . I t 's not ; i t 's an oppor tuni ty . We have to think about i t as an oppor tuni ty for
+new ideas, not as a probl em that has to be overcome so we can make one more Von Neumann computer . That 's a
+terr ible waste of a very beaut i ful technology . And that 's what we' re seeing r ight now . The si tuat ion is analogous to
+what happened in nineteenth century Engl and af ter Farraday demonst rated that you could make electr ic generators
+and motors . The factor ies of that day were long sheds wi th huge steam engines that drove a rotat ing shaf t that ran
+along under the r idge pole of the roof wi th big pul leys on i t and bel ts down to al l the machines. I f you wanted to stop
+a lathe you sl id the bel t f rom the dr ive pul ley onto an idler . Wel l , when they bui l t the f i rst electr ic motors they bui l t
+enormous motors and used them in place of the steam engine . You st i l l had the shaf t and pul leys and bel ts . They
+could not conceptual i ze that they real ly ought to have f ract ional horsepower motors dist r ibuted around -- what we
+now cal l the paral lel processing approach . But the other thing was that of course they couldn' t af ford to change
+everything . We look at that today and say wel l that was real ly dumb . But i f you were l iving back then you'd
+probably have a thousand arguments for why i t was the only sensible thing to do . That 's where we are today in
+computer science . We have this wonder ful technology and we' re bui lding one monol i thic computer . And i f that turns
+out to be inef f icient we' l l make a big one on a chip . So they talk about microma inf rames . I t reminds me of a car toon
+of the board of di rectors in Det roi t and one of the di rectors is saying "We l l , i f we have to make a compact , we' l l
+make the biggest compact in the indust ry! "
+CARVER : The reason I got into the whole sordid af fai r f i f teen years ago is that we as a cul ture were stal led . The
+real ly smar t innovators, who are a lways the l i t t le guys, were unable to get at the technology . And that 's cr iminal .
+And of course the big companies l iked i t that way . Because i t 's fat lazy comfor table, r ight? Whi ch is why they don' t
+l ike me . I 'm rocking the boat . But the impor tant thing that has happened is that the l i t t le guy l ike Jim Clark, one guy,
+can get at i t and turn the whole market upside down . That Geomet ry Engine that Jim Clark bui l t is a di f ferent
+archi tecture but the same idea that I proposed to Dave Evans [of Evans and Suther land] in 1975 as precisely the
+r ight thing to do wi th the technology, name ly to do the t ransformat ion and cl ipping stuf f . Here was the company that
+was supposed to be leading the way in graphics unwi l l ing to do anything about i t . They could sel l these megabuck
+boxes, why did they need a cheap one that did the same thing? Final ly Jim Clark did i t, six years later .
+GENE : As ear ly as 1972 you were saying we'd soon reach the l imi ts of Von Neumann archi tecture . And yet
+even today several more orders of magni tude in per formance can st i l l be got ten out of that archi tecture
+through submi cron scal ing and increased compact ion.
+CARVER : But you see the Von Neumann machine doesn' t take very good advantage of that . For one thing i t treats
+al l memory as i f i t were equidistant . I t makes everything as hard to get to as everything else . They t ry to compensate
+wi th things l ike caches, where they put some memory closer to the processor , but that 's af ter the fact . I t 's not bui l t
+into the archi tecture. So as a resul t Von Neumann archi tecture actual ly works against increased compact ion at the
+chip level . I t doesn' t scale wel l at al l . I t 's not a way you'd ever design a computer i f you had VLSI technology in
+mind . I f you want to get the ful l benef i t of this marve lous new technology -- this new medium, i f you wi l l -- you
+need a whole new way of thinking about computer archi tecture. Everybody viewed this technology as a cost
+reduct ion mechanism for t radi t ional designs instead of as a new medium wi th which to real i ze new classes of
+archi tecture. I 've spent the last f i f teen years of my l i fe t rying to get people to think in a f resh new way . And they
+haven' t been doing that . The sol id fundamenta l work that 's necessary even to understand what 's sensible to do isn' t
+being pursued in very many places . I mean the fundamenta l l imi tat ions work f rom an archi tectural and algor i thmic
+standpoint , not f rom a technology point of view . We' re in pret ty good shape technological ly . There's a lot of depth
+ASL
+MeadInterview
+4
+Fi le : 1 Carver .doc
+there across the board . But i t 's not paral leled by simi lar depth in the leading-edge systems area . We don' t have good
+people in every ma jor depar tment at every ma jor universi ty doing excel lent work on the cut t ing edge of archi tecture
+as we do in device physics and mater ials research . Basical ly that 's just star t ing to happen now. There have been
+some signs of l i fe recent ly, but that 's af ter f i f teen years of beat ing on i t .
+GENE : You said in 1977 that there was an e ight -order -of -magni tude possibi l i ty in compact ion of integrated
+ci rcui ts -- potent ial ly 100 mi l l ion t ransistors on a chip . How do those ear ly project ions look to you today?
+CARVER : The or iginal analysis we did in 1972 of how smal l you could make devices -- one quar ter of a micron --
+is holding up remarkably wel l . The chip sizes have also been going up, al though slowly . In that 1977 repor t we were
+thinking of a chip about a square cent imeter , approximately what they are today . So i f you scale the devices to a
+quar ter-micron and enlarge the chip area a l i t t le more you can get a hundred-mi l l ion t ransistors on a chip . That 's
+wi th the technology that 's known today . There's not a single step in there that hasn' t been proven feasible . You'd use
+ion-beam dry etching and X- ray l i thography . That wi l l be done in the next decade . There should be people doing i t
+now.
+GENE : How much more comput ing power is avai lable beyond today's technology just by scal ing everything
+to the l imi ts?
+CARVER : I t depends on what you count . You can count computat ion per uni t power or uni t area. I think the fai rest
+thing is computat ion per dol lar . What are you going to get for your money in terms of cycles per second of real
+computat ion? From now on that number is going to go roughly l ike the square of the scal ing . Ideal ly, when you
+scale everything the speed/power product goes l ike the cube : swi tching speed increases l inear ly as you scale down
+and densi ty goes up as the square . I f i t 's two to one in dimension i t 's four to one in densi ty -- i f you reduce a
+t ransistor by a factor of two on each side, four l i t t le t ransistors now f i t where the big one used to be . But in addi t ion
+to that they' re running twice as fast . So every t ime you go down a factor of two in si ze you get a factor of eight -- a
+factor of four in the number of gates and a factor of two in speed . That says gate cycles per uni t area goes l ike the
+cube also . But as you approach physical l imi ts you don' t qui te get that ful l cube law anymore, which is why I say
+that f rom now on i t 's going to go l ike the square . So i f we scale f rom, say, 1 .25 down to .25 micron, that 's f ive to
+one, which is 125 t imes in gate cycles per uni t area and also 125 t imes in how much computat ion you get per uni t
+power ; i t 's probably not qui te that good due to approaching physical l imi ts, but we' l l cer tainly get a factor of 100 .
+And remember we' re not real ly at 1 .25 micron yet . I t 's real ly a 1 .5 process today, and that 's only the leading edge ;
+three microns is the standard product ion process in today's commerc ia l wor ld . So that means we' re talking about
+chips a thousand t imes faster than the ones in today's personal computer once we reach al l those l imi ts . And that 's
+not count ing concurrent operat ion . A computer wi th a thousand of those chips running concurrent ly would be a
+mi l l ion t imes faster than today's machine.
+GENE : What about three-dimensiona l chips?
+CARVER : These things are bui l t up in layers and in pr inciple you could keep going . Everybody knows how to do
+that . For example, SOI -- si l icon on insulator -- is probably the most promising way to start stacking things . But
+there are other ways . The problem is that the yield -- the overal l probabi l i ty that the thing works -- goes down
+exponent ial ly wi th the number of layers in the process, even i f i t 's just an insulat ion layer or a layer of wi r ing . And
+exponent ials are deadly things. Af ter a whi le they real ly get you . And i t 's not just the yield problem . As you make
+things smal ler they also become much more suscept ible to things l ike cosmic rays and al l kinds of other mechanisms
+of fai lure .
+GENE : Compound mater ials l ike ga l l ium arsenide are supposed to be less vulnerable to sof t errors .
+CARVER : Every technology has i ts own horr ible problems and that includes gal l ium arsenide . There's no magi c.
+The number of elect rons created by ioni z ing par t icles isn' t t remendously di f ferent between mater ials, not by huge
+orders of magni tude . I t 's real ly a si ze quest ion, a st raight - forward scal ing issue -- how many elect rons represent your
+signal versus how many elect rons are created when you put an ioni z ing par t icle through the mater ial? As you scale
+down there are fewer elect rons per device, so i t becomes easier for a random par t icle to swi tch the t ransistor for the
+same reason i t 's easier for you to swi tch i t .
+MeadInterview
+5
+Fi le : 1 Carver .doe
+CARVER : I bel ieve that the vision of the or iginal founders of AI -- the Minskys and McCar thys -- was ext remely
+correct . But when they got into i t they discovered that what they were real ly headed for took eight or nine orders of
+magni tude more computat ion than you could get out of a regular computer . And so there came to be two groups : one
+went looking for that eight or nine orders of magni tude ; the other just punted and faked i t -- and that 's the vast
+major i ty of the AI communi ty today . I 'm one of the people who's of f t rying to f ind that eight or nine orders of
+magni tude .
+GENE : I 've heard cel lular automata used as a genera l term for massive ly paral lel archi tectures .
+CARVER : Cel lular automata are an invent ion of Von Neumann, st rangely enough . He descr ibed them back in the
+fort ies . I t was the f i rst ul t ra-concurrent archi tecture, a real ly good f i rst step in what 's now become a large class of
+things. For example, you can view Kung's systol ic algor i thms as an extension of cel lular automata . And i f you look
+at i t that way,
+i t 's a very natural evolut ion . But in fact a cel lular automaton is an ext remely precise thing -- an
+interconnected set of f ini te automata . Tradi t ional cel lular automata have only been connected to neighbors, and as
+such they represent only very local computat ions. Any such local computat ion can be expressed as a cel lular
+automaton but i t 's of ten not relevant to do so . Very few algor i thms map wel l into that doma in . So they've k ind of
+boxed themselves out of a lot of the more interest ing views of computat ion .
+GENE : What about the demarcat ions between levels of integrat ion, l ike SSI , MSI , and so for th?
+CARVER : To me the di f ferences aren' t so much in t ransistor count as in the level of funct ional i ty, that is, how you
+have to think about i t in terms of what i t 's doing . The f i rst integrated ci rcui t in 1959 had one gate or one f l ip- f lop, so
+you could think of them as elementary logic elements . Medium-sca le chips had things l ike counters and registers .
+Now people could start thinking at a higher level than just gates . That was in the middle sixt ies . The next real step
+happened when memor i es and microprocessors were integrated on the chip around 1971 . That 's when LSI begins for
+me, not because of the number of t ransistors but because now i t was a complete system- level funct ion . Those ear ly
+micros only had about three thousand t ransistors but they were a processor never theless and they changed the way
+people thought . Now actual ly i f you look at the Intel 286 today, i t isn' t real ly more capable -- or not very much --
+than those ear ly chips . I t 's got a lot more t ransistors but the archi tecture's pret ty much the same; the inst ruct ion set 's
+pret ty much the same . So I don' t put i t in a di f ferent class f rom the 8008 . Also, according to this view the gate-array
+business represents a throwback : gate arrays are the SSI level and standard cel ls are the MSI level .
+GENE : I f 32-bi t microprocessors aren' t qual i tat ively di f ferent f rom 8-bi t versions, then when does VLSI
+begin?
+CARVER : I 'm looking forward to the machine that ' l l do ray- t racing in real t ime . I t 's not beyond our capabi l i ty r ight
+now. Provided you compi led the algor i thms into si l icon in a massive array . I don' t bel ieve that polygonal
+representat ion for shapes is the r ight one . I think stuf f l ike superquadr ics is a whole lot more sensible -- maybe not
+exact ly that representat ion, but something that has some nice mathemat ica l proper t ies when i t comes to ray- t racing .
+So i f you' re going to use .CP10 a ray- t racing algor i thm you'd bet ter use something other than polygons . In fact , you
+have to invent the representat ion and the algor i thm together . That 's why nobody's going to do i t unless they get thei r
+head around the whol e probl em.
+CARVER : My own work is concerned wi th music . As you know, i f you t ry to simulate even one musical inst rument
+you' re in for at least 10 MIPs wor th of computat ion for a single voice -- one st r ing on a gui tar or whatever . In some
+cases you get a whole inst rument l ike a f lute, but i f you t ry to do a piano you've got to have a huge number of
+processors . So you get into the gigaops very quickly to simulate any reasonable ensemble at al l . A whole orchest ra is
+a lot of gigaops . And i t turns out you can do that . We' re r ight now looking at about 10 MIPS per chip for doing
+music . A speci f ic archi tecture for doing music, not good for anything else, and you can make some of the most
+beaut i ful voices you've ever heard in your l i fe . We' l l be able to simulate a very convincing orchest ra. Now I 'm not
+saying we' re ever going to replace a real orchest ra, but there's a set of things you can do i f you have the abi l i ty to
+create your own orchest ra . This is what the synthesi zer guys ought to be doing and can' t ; and the reason they can' t is
+that you need four or f ive more orders of computat ion than is avai lable today . That 's what prevents them f rom t rue
+orchest ral simulat ion . A standard synthesi zer sounds l ike hel l and i t doesn' t have to, but you've got to f ind that four
+or four or f ive orders of magni tude -- in this case i t isn' t eight or nine, only four or f ive, but i t 's st i l l a lot . And we can
+put i t in a personal workstat ion for use by composers . I bel ieve that 's the way composi t ion wi l l be done . Composers
+ASL
+MeadInterview
+6
+Fi le : 1 Carver .doc
+simply cannot af ford to exper iment . You can' t af ford to pay a hundred union musicians to fool around. So
+composers are real ly stuck, just be- cause they need that four or f ive orders of magni tude . We' re st i l l in the very
+ear ly exper imental stages but we can al ready mix amaz ing voices . Most people say i t sounds l ike a real inst rument ,
+not l ike a computer . Except you can t ransform i t and move i t into di f ferent spaces . We can simulate a mar imba bar
+that would have to be 27 feet long .
+End of document I
+MeadInterview2
+1
+Fi le : 2 Carver .doc
+10/00
+CARVER MEAD INTERVIEW PART TWO
+Document 2 of 4 of Mead Interview
+By : Gene Youngblood
+CARVER : Ful l custom handcraf ted chips typical ly take three years . What that means is that
+people hand design cer tain pieces and then they use some k ind of computer aid to help them put
+the stuf f together . Nobody si ts down and draws the whole chip on one giant sheet of mylar any
+more l ike they used to . That 's impossible. At least ten years ago people began using simple CAD
+systems to help place the pieces they'd draf ted by hand . That 's just plain common sense . Even the
+old k ind of design aids he lped . And there's been this cont inual evolut ion of things that made that
+easier to do . So any chip done in the last ten years, nobody sat down and drew the whole thing on
+one piece of paper . They drew pieces of i t and then they plot ted i t and then they drew some more,
+and so on . You can get there that way but i t 's an enormous amount of ef fort . I f you have a good
+methodology and good people that understand the design you can do some pret ty ambi t ious chips
+using not very advanced tools, i f you've thought the thing through .
+GENE : By what factor does a si l icon compi ler reduce design t ime?
+CARVER : Maybe 75% or an order of magni tude . From several weeks to several months . I t
+depends on what you count ; a lot of design goes into just conceptual i z ing what you need . One
+thing a si l icon compi ler al lows you to do which we never could do before is exploratory
+archi tecture, where you can actual ly t ry a design and see how i t comes out ; i f i t doesn' t work you
+t ry something else . We could never that before because the amount of energy to implement a
+design is so high that once you get on an approach you force i t to f inish, even i f i t 's a horr ible chip
+when you' re done . And there's a lot of examples on the market . They got f inished because
+economical ly i t 's not feasible to scrap them and start over .
+GENE : Wi l l design t ime ever be independent of chip complexi ty?
+CARVER : I t depends on what you mean by complexi ty . I t 's cer tainly not a di rect funct ion of the
+number of t ransistors ; i t 's a funct ion of how much the designer has to think about the design .
+That 's qui te a di f ferent mat ter . That has not been a dimension along which people have measured
+things very much . So design t ime wi l l indeed become independent of raw t ransistor count , but
+people wi l l f igure out conceptual ly more compl ex things and then i t ' l l take them longer to get
+those f igured out . What a si l icon compi ler does is make the implementat ion tr ivial . I t doesn' t mean
+get t ing the idea is any easier .
+GENE : Wi l l something equiva lent to supercomputer power be necessary for si l icon
+compi lat ion as we approach the mul t imi l l ion- t ransistor level of complexi ty? Even now Cray
+is a l ready promot ing i ts machines for VLSI design.
+CARVER : What people think of when they say supercomputer is going to change . I al ready
+showed you a chip that ' l l do about 600 VAXes wor th of computat ion . The actual numbers of adds
+and mul t ipl ies are only maybe f ive or ten mi l l ion per second; that sounds l ike maybe ten VAXes .
+But by the t ime you get done shuf f l ing al l the data around and get t ing everything in the r ight place
+and al l that , i t ends up being a few hundreds t imes real t ime instead of a few tens t imes real t ime .
+most of what goes on in a standard computer is just data shuf f l ing . And that doesn' t change wi th a
+supercomputer . I t 's the same problem . So people are going to reconceptual i ze what they think
+about supercomputers . I t 's going to be paral lel archi tectures and a lot of special -purpose
+archi tecture. Sure, there' l l be some standard "general -purpose" archi tectures but the big
+breakthroughs wi l l be in special purpose archi tectures . The whole not ion of supercomput ing is
+going to change . The people in that business don' t want i t to change, because they' re in that
+ASL
+MeadInterview2
+2
+Fi le : 2 Carver .doc
+business .
+GENE : Wel l , let us say then, wi l l power in the supercomputer range, no mat ter how i t 's
+achieved, be necessary for VLSI design?
+CARVER : Sure. But what 's real ly going to happen is that instead of doing a supercomputer people
+wi l l bui ld special l i t t le accelerators to do pieces of the problem . There' l l be a l i t t le simulat ion
+engine that runs simulat ions l ike crazy. These var ious things that do the par t icular computat ions,
+and you' l l plug those boards into your workstat ion .
+GENE : Why is the si l icon compi ler die si ze larger than hand-craf ted chips?
+CARVER : There are a lot of approaches to si l icon compi lat ion today. The one I worked on, the
+chip si ze for a given funct ion is much smal ler than gate arrays or standard cel ls but st i l l larger than
+hand design of course, because that 's what hand design does -- i f you see some space you pack
+some stuf f into i t . In a very funny way i t does get to the point where that 's compensated. What
+real ly happens is people redo the archi tecture to make the chip more ef f icient . So actual ly for a
+given funct ion they can get things that are actual ly smal ler than hand designs by explor ing the
+archi tectural approaches . But i f you took any one of those once you' re f inished and redesigned i t
+by hand i t would be smal ler . But you can' t af ford to do that in VLSI . So the whole thing is real ly
+decept ive because what a si l icon compi ler al lows you to do is exper iment wi th the archi tecture
+unt i l you f ind the most ef f icient archi tecture, and you can never do that in hand design . People wi l l
+look at a given chip and say " Oh, I could make that smal ler by hand, " but they never would have
+got ten there by hand. So you' re work ing a di f ferent end of the problem ; you' re let t ing people
+exper iment on the archi tectural end . Then of course i f they wanted to take that par t icular
+archi tecture and repack i t by hand you can a lways get i t physical ly smal ler . I t 's a lways t rue that
+star t ing wi th something that exists you can a lways make i t bet ter by work ing on i t . What the
+si l icon compi ler does is let you start f rom scratch and get to something that exists that 's real ly
+qui te ef f icient .
+GENE :
+Is " ful l custom" synonymous wi th si l icon a lgor i thms?
+CARVER : I t means hand craf ted . I t 's not synonymous wi th a dedicated archi tecture . Histor ical ly,
+" ful l custom" has meant that you give the thing to somebody in a l i t t le design shop and they do a
+hand-craf ted design for that purpose.
+GENE : In the l i terature they only say that si l icon compi lers are for ful l custom chips ; they
+don' t speci f ical ly talk about dedicated archi tectures. That 's incredible, given the fact that
+everyone would acknowl edge that dedicated archi tectures are inherent ly faster than general
+ones, and the only histor ical barr ier to doing that has been the design t ime, and now you
+have a technology that can do i t and they don' t even remark that achievement .
+CARVER : I t 's a lways t rue when you have a new technology that the only terms in which people
+can discuss i t are the old terms . So i t 's real ly di f f icul t to explain to people how things have to work
+when you have a new technology . The only thing people can do is compare wi th what they know.
+The only thing they know is that histor ical ly people have hand-craf ted some designs .
+GENE : There's the issue of who speci f ies the archi tecture, the designers or the compi ler .
+Today we' re not yet at the point where the computer simply doesn' t have the intel l igence to
+do that . So the designer speci f ies the archi tecture and then exper iments wi th i t through the
+si l icon compi ler . But apparent ly there are people pursuing the AI approach or exper t
+systems approach where the compi ler would have suf f icient intel l igence to actual ly make
+archi tectural decisions .
+CARVER : We l l the AI people haven' t done anything yet so i t 's hard to make comments about i t .
+That doesn' t mean they won' t . There's cer tainly room for heur ist ics in helping wi th the process, to
+ASL
+MeadInterview2
+3
+Fi le : 2 Carver .doc
+the extent that what we mean by AI is a heur ist ic approach to opt imi zat ion -- of course there's
+room for that and everybody's going to be doing that . But there's another thing going on that you
+need to know about . What a lot of people mean by automat ic archi tecture is f ixed archi tecture .
+They have picked the archi tecture ahead of t ime and they compi le a chip in that class . And al l the
+ear ly si l icon compi lers were l ike that . I wrote one myse l f in 1971 that was l ike that . i t only did one
+l i t t le archi tecture . And i t did al l the si l icon compi l ing things -- i t took in the thing and generated
+the simulat ion f rom the same source that generated the ar twork, but i t only did this one l i t t le t iny
+archi tecture. And then when Dave Johannsen did his thing he did a wider class of archi tecture .
+And a lot of people now are doing an even wider class of archi tectures, but they' re st i l l wi thin
+l imi ts . There's nothing wrong wi th that i f that archi tecture f i ts what you want to do, but i t doesn' t
+al low you to do archi tectural explorat ion, which is one of the dimensions of si l icon compi lat ion
+that 's real ly highly impor tant . The approach that the Si l icon Compi ler Inc . people tool -- which is
+Dave Johannsen and his people -- is to bui ld a tool for people to do general archi tecture work. So
+they bui l t a tool for archi tects ; i t does implementat ions of systems for people who want to do
+archi tecture -- to bui ld algor i thms in si l icon, i f you l ike . that isn' t the only thing that needs to be
+done . A couple of companies back east have bui l t si l icon compi lers for bui lding microcode
+engines . That 's going to have an impact on people who want to bui ld microcode engines -- that 's a
+data path wi th a set of f ini te-state machines that sequences i t . Our own ear ly si l icon compi lers
+were basical ly a imed at that thing too . since then they've become general i zed . And of course once
+you have a general tool you can a lways put a layer on top of i t that has a higher level
+representat ion and al lows you then to generate the input for the general chip compi ler . So the way
+I look at the actual evolut ion of the indust ry is there wi l l be a few real ly general chip compi lers, a
+bunch of f ront -ends for those that al low people to take a special thinking process or heur ist ic
+programs or whatever and generate input for that , then there wi l l be some honest - to-god special -
+purpose si l icon compi lers .
+GENE : Can we achieve VLSI densi ty wi thout sacr i f icing clock speed? For example, bipolar
+and CMOS are converging today and people say CMOS wi l l outper form bipolar . So wi l l be
+we able to carry a 100 MHz clock into VLSI?
+CARVER : Oh sure . The problem wi th that is not that you can' t make dense things that run at high
+clock rates, i t 's that you' re not going to have the ent i re chip completely lockstep at those clock
+rates . Because just dist r ibut ing a clock at those f requencies means that you' re going to lose the
+synchrony over the chip . You should ask Chuck Sei tz about the fact that di f ferent pieces of the
+chip are going to have to be able to operate autonomously. And you couple them in such a way
+that thei r clocks don' t have to be absolutely in phase . You run pieces of the chip on very fast
+clocks and you communi cate between them wi th some other f requency .
+GENE :
+I f you think of any machine as be ing a clock, in the norma l human-sca l ed wor ld
+there seems to be a constant rule whi ch says the fastest clock has to use the most energy, and
+the one uses the most energy usual ly has some si ze const raints on i t in order to dissipate that
+heat . Therefore, in the norma l physical human wor ld the fastest c lock that would also use
+the least amount of energy is an impossible clock . But when you get down to the submi cron
+doma in you have an impossible clock, because in order to achieve both high speed and high
+densi ty compact ion, i t has to use the least amount of energy comparat ive ly speak ing .
+CARVER : Wel l , remember that what you said in the beginning is real ly t rue : i f you t ry to take a
+whole VLSI chip and clock i t at 100 MHz i t wi l l indeed dissipate an impossible amount of energy .
+But you don' t have to run the whole chip at the same clock rate and you don' t have to clock every
+element every t ime -- there are a lot of ways you can get the ef fect of that speed wi thout having
+this global thing that 's just pumping al l that charge al l the t ime. That 's just physics . I f you have
+every e lement in there swi tching every t ime, then there's just the amount of stored energy t imes
+the f requency, and that doesn' t change depending upon how many elements . You make the
+elements smal ler , there are more of them, so in that sense you can run more things faster wi th the
+same power ; but the basic physics doesn' t change . Pumping things up and down at a fast rate takes
+a huge amount of energy and the faster the rate and the more things, the more energy . That par t
+ASL
+MeadInterview2
+4
+Fi le : 2 Carver .doc
+doesn' t change . I t 's real ly the area: how much area do you pump? Think of the chip as a big
+capaci tor and you' re just pumping charge in and out of i t , and every t ime you pump i t i t 's one-hal f
+CV squared that you lose in energy ; so the power is one-hal f CV squared t imes the f requency .
+Per iod. Capac i tance t imes V-squared hasn' t been changing a lot wi th chip evolut ion ; capaci tance
+has been get t ing a l i t t le bigger , the vol tage a l i t t le lower ; i t 's get t ing a l i t t le bet ter but basical ly
+that 's one of those things that doesn' t change much . What 's real ly going on is that we can make
+individual pieces of the ci rcui t ext remely fast and then you do something to not have to run the
+whole ci rcui t that fast . For example, communicat ions cont rol lers have to decode stuf f coming in
+of f of , say, a local -area network at 10 MHz ; that means you've got to have some mul t iple of that in
+your resolut ion of things, so that 's got to be fast on the f ront -end and for error-correct ing, but then
+you get i t in and you go into some paral lel thing that can run a lot slower , so you do most of your
+processing at a lot slower rate, but in paral lel . So your high clock rates are pr imar i ly for
+inter facing the chip wi th the outside wor ld . I f you' re inter facing wi th an opt ical f iber you've got to
+be running in the gigaher tz range . But somehow there's a way of not having to swi tch every
+element every t ime . (Chuck can tel l you some nice things about the whole sel f - t iming thing where
+you only do swi tching i f you need i t . Things don' t swi tch unless they change) .
+GENE : Geof f rey Fox claims the speedup through concurrency is a l inear funct ion of the
+number of PE's, per iod.
+CARVER : I have gone on record as saying that the special -purpose archi tectures are going to be
+the way to approach highly concurrent archi tectures . The reason for that isn' t that isn' t that -- yeah,
+for Geof f rey's par t icular problem, he can arrange things in such a way that you only have nearest
+neighbor communicat ions and then you can get a l inear increase in computat ion wi th the number
+of e lements . And that ' l l work unt i l he wants to do something a l i t t le more sophist icated . The
+computat ions they' re doing isn' t very di f ferent f rom the one you have to do in music, and they' re
+get t ing about one VAX per ci rcui t board wor th of computat ion and we' re get t ing about 600
+VAXes per chip . That should cal ibrate you a l i t t le bi t .
+GENE : What 's the probl em wi th doing f loat ing-point in si l icon?
+CARVER : We chose to do 64-bi t f ixed point instead of 16-bi t f loat ing point in our music chips
+because i t 's much cleaner and for a lot of appl icat ions i f you go to a real ly long word you can use a
+f ixed point number every bi t as ef fect ively as you can use a shor ter f loat ing point number , and the
+computat ion does get enormously simpl i f ied. I mean, doing f loat ing point is a bi tch . There's no
+quest ion about that . Because you have al l the interact ion between the exponent and the mant issa's .
+In par t icular , adds are horr ible .
+GENE : There's a lot of f loat ing point in graphics .
+CARVER : We l l nobody's ever thought through i f you real ly need to do that or not . I t 's just that ,
+they look at the dynami c range they have, which is huge, and they say gee we've got to do f loat ing
+point . On the other hand they've only got a 1000 by 1000 mat r ix, so i t 's cer tainly a f ini te resolut ion
+of things . So I bel ieve nobody's real ly thought through whether you can do that wi th a long-word
+f ixed point ar i thmet ic . Nobody has a long-word, f ixed point engine, i t 's al l 16-bi t or 32-bi t .
+Algor i thms in si l icon would faci l i tate that . But I 'm real ly not sure whether i t would be more
+ef fect ive to buy a bunch of f loat ing point engines to do i t or whether i t would be more ef fect ive to
+just have some long-word f ixed-point engines -- of which you could have a lot more on the same
+si l icon . And then you ask yoursel f what the t radeof f is . And i t 's just an engineer ing t radeof f , i t 's
+not a rel igious issue .
+GENE : Geof f rey Fox sa id that for his par t icular scient i f ic problems, the larger the probl em
+the less viable i t is to bui ld i t into hardware. The more par ts you have wi th greater degrees
+of f reedom, the more genera l the probl em and you need a genera l purpose computer .
+CARVER : That 's the old lore of the programmabl e machine people . They know how to program ;
+ASL
+MeadInterview2
+5
+Fi le : 2 Carver .doc
+they don' t know how to design chips . So they assume i ts easier to wr i te a program . They can' t
+conceive that wi th a chip compi ler you could compi le a special -purpose archi tecture for a probl em
+easier than you can f igure out how to use one of those stupid programmabl e highly concurrent
+machines . Right now i f you look at the amount of programming t ime i t takes use an array
+processor , you could easi ly have a special -purpose archi tecture up and running before you could
+have the same algor i thms running on an array machine. I 'm not saying that 's always t rue; there is a
+lot of mer i t to programmabl e things you can change in some way ; but i t 's a big mistake to think
+that sequent ial programming languages are going to work on concurrent machines for anything
+except the most simple problems . I t 's real easy when everything's doing the same thing, to wr i te
+down what i t does and you have a bunch of Von Neumann machines work ing on i t and i ts
+st raight forward . But when i t 's more compl icated than that i t 's not so tr ivial any more. I ' l l once
+again refer to the music problem, where the inst ruments are separable in the sense that a voice is
+separate f rom other voices, but then they have to get choreograph- ed together wi th some k ind of
+conductor k ind of thing, and each one's a l i t t le di f ferent , and now i t isn' t qui te so tr ivial anymore .
+GENE :
+I t 's probably the same thing in graphics i f you want to do photoreal simulat ions of
+natural phenomena . That 's very interest ing. The physicists wi l l say they' re doing the real
+ser ious work, mode l ing the universe, and i f you want to play wi th the big boys and mode l the
+universe, then you need a general purpose supercomputer . But i t seems to me that mode l ing
+natural phenomena for visual simulat ion is at least as compl ex i f not more so in terms of the
+dynami c complexi ty of the probl em.
+CARVER : I t has one other advantage : you can tel l i f you've done i t . A whole lot of physics these
+days has the problem of how many angels are danc ing on the head of a pin .
+GENE : So could i t be that mode l ing the universe is a simpler probl em than mode l ing an
+orchest ra or a smal l ensembl e?
+CARVER : Yes, i t 's more real . Physics has got ten i tsel f of f in lef t f ield . I don' t want to get my
+physics f r iends mad at me . I do a lot of physics myse l f . But the physics communi ty is in a bi t of
+t rouble nowadays and the reason is i t has lost a lot of contact wi th real i ty. I mean the kinds of
+exper iments where they look for these par t icles at some enormous energies and they have some
+symmet ry groups which they think explain the part icles, which are real ly just a way of cataloging .
+A symmet ry group doesn' t explain anything . I t 's l ike Mende l ev before we understood what made
+the per iodic table; you could see there was per iodici ty in i t and you could make some predict ions
+f rom that . We l l that 's nice but i t doesn' t say why i t 's there. My percept ion is that they've got a very
+pecul iar view going in physics and they cover that up wi th a lot of ego. I t 's very, very far f rom
+anything di rect and exper iencable by real human beings or even measurable by real human beings .
+I f you look at the exper iments that are done by casts of thousands on bi l l ion-dol lar faci l i t ies, the
+whole thing has taken on an ai r of unreal i ty that 's just monumenta l .
+GENE :
+I f the 286 isn' t signi f icant ly di f ferent f rom the 8008 in the sense that i t 's a
+microprocessor , then at what level of thinking does VLSI begin for you?
+CARVER : I t 's cer tainly t rue that the microprocessor star ted an era where computat ion and si l icon
+weren' t separate any more . In other words the real signi f icance of the micro- processor was that
+people could no longer think of computat ion as going separate f rom i ts technology base . In fact i t
+never had been separate . I t 's just that people thought of i t that way . There was the computer
+indust ry and there was some other place where they bought thei r parts, and those were just par ts
+and they didn' t real ly mat ter . We l l the complexi ty of things cont inued to grow because the basic
+fab process al lowed you to put more and more t ransistors down ; but bui lding a big memory is no
+di f ferent than bui lding a l i t t le memory. So in terms of the way the fab guys have to think, i t 's VLSI
+al l r ight because they've got to make the thing yield . So f rom thei r point of view i t 's VLSI the
+moment i t gets to 100,000 t ransistors . But f rom the point of view of the designer those memor i es
+are no di f ferent than they ever were. They' re just l i t t le wi zened ci rcui ts . And the memory
+designer 's job is no harder , involves no more intel lectual content , than i t did before VLSI . Have
+ASL
+MeadInterview2
+6
+Fi le : 2 Carver .doc
+you heard the term "algor i thmic complexi ty?" The idea is, how would you character i ze the
+complexi ty of a machine? Wel l , i f you look at a crystal , for example, i t can have ten to the twenty-
+four th atoms in i t . But you can speci fy i t by the shape of a uni t cel l and the way the uni t cel ls are
+stacked together . So there's real ly only two pieces of informat ion . So in a few tens of bi ts you can
+speci fy a crystal . So i t 's not anywhere the ten to the twenty- four th k ind of complexi ty because of
+the very regular nature of i t . Programs are the same way. You wr i te a loop and the loop can go and
+create a god-awful amount of stuf f , but i f i t 's one simple l i t t le thing, no mat ter how much i t 's
+repeated i t 's not compl ex somehow . So i f you look at i t f rom that point of view and say wel l how
+can we talk about the complexi ty of si l icon algor i thms,
+i t 's real ly the sort of unique funct ion and
+the amount of unique interconnect ion that have to be speci f ied, that aren' t just repeated regular ly,
+that gives you the nature of the complexi ty of the thing. So let 's look at Geof f rey Fox's machine.
+I t 's a crystal . He's al ready told you that . No mat ter how big i t is i t 's a crystal . I t has one k ind of uni t
+cel l that 's hooked up in some way to i ts neighbors . so you have to speci fy exact ly what you have
+to speci fy in a crystal : i t 's no more compl ex than the descr ipt ion of i ts uni t cel l and of i ts
+connect ions . And the fact that i t might have a longer -word ALU doesn' t make i t more
+compl icated . But i f i t has a more compl icated ALU -- i f i t does f loat ing-point , that 's a lot more
+compl icated than a f ixed-point ALU. But i f you go f rom a 16-bi t ALU to a 64-bi t ALU that
+doesn' t make i t more compl icated, algor i thmical ly . I t 's harder for the fab guy to get yield out of i t,
+so f rom his point of view i t may be qual i tat ively di f ferent . So the way I look at i t is that the fab
+guys have created a technology that 's independent of what people use i t for : a systems designer
+can sue i t for ei ther a sophist icated purpose or a dead simple purpose . I f people decide to just
+make crystals out of i t -- make a memory -- which doesn' t have any more conceptual content than
+memor i es ever did, then i t 's just a cost -reduct ion mechani sm . That 's al l i t is . I t hasn' t added any
+real value except that you get more memory in a box of the same si ze for the same pr ice. And
+that 's nice . But the real value of i t added by what you put into the memory. And that 's why
+memor i es are cheap : there's no conceptual content in them . But now you take something l ike a 32-
+bi t microprocessor -- and I was a l i t t le facet ious : the 286 is real ly qui te a bi t more sophist icated
+than the 8080 -- so in fact they've added more value there than you would i f i t had been a memory,
+because i t does a lot of things bet ter ; on the other hand, i f you take that another level and ask i f
+there's any new conceptual content in i t, wel l no, i t 's doing what minicomputers a lways did . So i t 's
+new to si l icon in some way maybe but i t adds nothing new to the theory of comput ing .
+Incidental ly, this is why there's a lways what people cal l the hardware/sof tware t radeof f . I t means
+where is the value? Is the value in the pat terns on the si l icon or is the value in the l i t t le bi t -pat terns
+in the memory af ter you've made the si l icon? And you can a lways t rade that of f . The informat ion's
+a lways going to be on the si l icon, but i t may be in l i t t le electr ical charges on the memory
+locat ions; in which case i t was the value added by the guy that wrote the sof tware. Or i t may be
+that someone actual ly created a st ructure that embodied that algor i thm, in which case he put i t
+di rect ly on the si l icon -- in the wi r ing, in the content of those pieces of si l icon . So for me, VLSI
+begins when you can start thinking about algor i thmic complexi ty. That 's when i t gets interest ing .
+And I 've a lways thought of i t that way, ever since i t was just LSI . Because the potent ial was there
+to bui ld real ly compl ex things .
+GENE : The si l icon a lgor i thm is a photograph that does what i t represents.
+CARVER : Fur thermore they' re beaut i ful . As forms, they' re beaut i ful . I f you've l ived wi th them for
+awhi le you can appreciate them as an art form . You can tel l a beaut i ful design f rom an ugly design
+that does the same thing very easi ly.
+CARVER : There are two t ransistors per memory locat ion in a DRAM and six in a SRAM . And
+three or four t ransistors per gate, i f you' re bui lding gates. But the par t they don' t tel l you -- these
+people that l ike to count gates -- is that i f you take a good wel l -designed si l icon chip that 's done by
+exper ts and you make a gate diagram for what i t does -- see, the thing i tsel f can' t be represented by
+gates, because they don' t represent a lot of the funct ional i ty you can get wi th t ransistors . Bi t i f you
+make a gate diagram of the thing i t turns out that we get about one equivalent gate for every one
+and a hal f t ransistors . Because you use t ransistors not for mak ing gates but for mak ing things
+much more clever than gates . Like you use a single-pass t ransistor as a memory locat ion . I f you
+ASL
+MeadInterview2
+7
+Fi le : 2 Carver .doc
+had to bui ld that wi th gates you'd have to make two cross- coupled AND gates and some other
+stuf f and i t 'd take at least four gates to make what one single-pass t ransistor does . So gates aren' t
+an appropr iate descr ipt ion for what happens in VLSI . and there's this enormous argument about
+wel l , that 's 30,000 t ransistors that 's only 8000 gates . No 30,000 t ransistors is probably l ike 20,000
+gates -- i f you did i t wi th gates, l ike in a gate-array . That par t doesn' t get told . But i t means you' re
+using the si l icon in a much more ef fect ive way than mak ing gates out of i t . So to summar i ze, i f i t 's
+done wel l the number of t ransistors per gate-equivalent is between one and two. That 's because
+you don' t use them to make gates ; i f you used them to make gates i t 'd be three or four . So you' re
+al ready using them twice as ef fect ively as you would i f you made gates, just by being the sl ightest
+bi t intel l igent .
+GENE : What is meant by "devices per chip" and how much of the chip area is devoted to
+"gates" and how much to wi res?
+CARVER : Devices usual ly refers to t ransistors, and that 's misleading because wi res take up about
+95 percent of the chip area. Let me say i t another way : i f you put the wi res down that have to be
+there you can usual ly sl ip the t ransistors underneath and not not ice. I t 's down on the bot tom levels
+and the wi res go over the top, and usual ly the wi res you can work in wi th pieces of the t ransistor
+and i t turns out that i f they were shrunk to zero area for the actual t ransistors themselves you
+wouldn' t save more than f ive or ten percent of chip area .
+GENE : So when you say 100 mi l l ion t ransistors per chip you' re only talking about ten
+percent of the chip area?
+CARVER : Yeah, but you see, i f i t were just the t ransistors there they wouldn' t do anything . What
+they do is determined by how they' re interconnected . So actual ly i t 's not a bad measure, because
+when people have a work ing chip they tel l you how many t ransistors they were able to
+interconnect const ruct ively . And that 's an impor tant number . That number is one dimension of this
+complexi ty issue: i t doesn' t tel l you i f they' re ext remely regular or i f they have more informat ion
+than that in them . And just because a thing appears regular doesn' t mean there isn' t informat ion in
+i t that makes things not equivalent to other things . Like a ROM looks ext remely regular but i t may
+have a lot of informat ion in i t because of the pat terns in ROMs . Like Geof f rey Fox's computer : i f
+you were to put a di f ferent program in every machine, i t would be a much more compl ex thing
+than i f you have one program in al l the machines . That 's what I meant by algor i thmic complexi ty .
+Of course, f igur ing out how to use i t would also be that much more complex .
+GENE :
+Is there a rule of thumb by whi ch you can relate the minimum feature si ze or design
+rule to the total area of a t ransistor in terms of square microns?
+CARVER : A typical t ransistor in today's wor ld is of the order of one design rule by one design
+rule . Three by three is the most common t ransistor .
+GENE :
+I read something that said 480 square mi crons.
+CARVER : That 's the amount of chip per device. I f you take the total number of devices and divide
+by chip area that 's what you get . So then immediate ly you can take those two numbers and f igure
+out what the f ract ion of ut i l i zat ion is .
+GENE : What is the computer revolut ion?
+CARVER : There are a number of levels . The most obvious level is that since anybody can own an
+ordinary Von Neumann-style computer , people are now discover ing that they can do a lot of
+things, so everybody's got a PC at home . They wr i te programs to do al l kinds of things . That 's
+become a thing you can talk about which you could never talk about before . I t 's l ike the car .
+Enough people own cars that you can talk about them as a metaphor for explaining other things .
+To me that 's been the value of the microcomputer phenomenon : not so much what they do but the
+ASL
+MeadInterview2
+8
+Fi le : 2 Carver .doc
+fact that they' re obvious enough and useful enough and ubiqui tous enough that everybody knows
+at least something about them . They' re not great big things that gobble you up anymore . So that 's
+been a big he lp . But much more impor tant than that in terms of microcomputers are the
+microcomputers that get bui l t into things -- telephones and typewr i ters and VCRs and al l the
+ordinary everyday l i fe appl iances and tools . Elect r ic dr i l ls . A lot of people don' t understand that
+the reason electr ic dr i l ls don' t get stuck as much as they used to is that they have a microprocessor
+in them that looks at how fast the chuck's going around and where your f inger is on the t r igger and
+f igures out what they ought to do . Those are real ly much more power ful in the revolut ion they
+create because they solve real problems instead of being something that you have to program to
+solve a real problem . They actual ly just do i t . Somebody worked the whole thing out instead of
+just saying wel l here, now i t 's your turn . Al l of this is in the context of what people think of as
+computers . The fact that there has occurred a viable thi rd-par ty sof tware indust ry where i t 's now
+considered OK to wr i te sof tware, you can actual ly make money doing that . That 's not something
+that was perceived a few years ago . That 's where most of the actual value is added in terms of
+algor i thmic complexi ty. The value is added in the programs, not the hardware i tsel f . The hardware
+is tr ivial . Most computers don' t have much in them . They' re real ly just a receptacle for sof tware .
+So of course the real ly impor tant thing that 's coming up -- and we haven' t real ly begun to see i t --
+is the revolut ion of algor i thms in si l icon, where al l the things you could never do wi th computers -
+- which were the things you real ly wanted to do -- l ike make pictures and music and al l of the
+things that relate to people and to what people real ly want to do -- ordinary computers can' t touch
+that . They' re of f by at least f ive orders of magni tude in computat ional power . That to me is the
+real ly exci t ing thing and i t 's the thing that hasn' t been touched yet by what people are talking about
+as the computer revolut ion . But I think i f you dig underneath al l that , people's not ion of value is
+changing . I t used to be that people thought of mater ial as value, so they'd think about steel or
+a luminum or gold or di amonds . I t was things that were valuable . Af ter a whi le i t became clear that
+i t was also energy that was valuable : energy al lowed you to t ransform things into other things . Up
+unt i l very recent ly that 's been people's image of value: things held value. And the fact that i t 's
+actual ly informat ion that 's the thing that 's valuable rather than the substance, is something that 's a
+new idea. That 's why nobody would give you a dime for sof tware . Because what the hel l i t 's just a
+tape you can copy so why is there any value in i t . You could have said the same for mot ion
+pictures except that was in a di f ferent doma in so i t had di f ferent laws and i t grew up understanding
+that the value wasn' t in the cel luloid . But everyplace else, especial ly in technology, people had this
+very wei rd view of where the value real ly was . To me the most fundamenta l revolut ion that 's
+going on is people are now beginning to perceive that not just in enter tainment is the informat ion
+the impor tant thing . And that 's a lways been t rue in enter tainment , in music and mot ion pictures
+and paint ings . I t wasn' t those l i t t le tubes of paint and a piece of canvas, i t was the informat ion that
+was there . So i t 's always been t rue in the ar ts but i t has taken a long t ime to dawn in other areas .
+And now i t 's happening in machines and businesses . People are beginning to see that the
+informat ion is the valuable thing . I t br ings these closer to the f ine arts and the human pursui ts, not
+far ther away . That 's not general ly perceived but i t 's very t rue .
+GENE :
+Is i t fai r to say that highly concurrent si l icon a lgor i thms put many orders of
+magni tude more comput ing power in the hands of average people? Is that par t of the
+revolut ion?
+CARVER : Oh yeah . Things that the ordinary computer could never do . Vision . Speech
+understanding . Musi c . Visual simulat ion .
+End of Carver
+Carver 3
+1
+Fi le : 3 Carver .doe
+10/00
+Carver Mead Interview Par t I I I
+(Wi th Dick Lyon, Schlumberger AI researcher)
+By : Gene Youngblood
+Document 3 of 4 of Mead Interview
+CARVER : When I say that one of our music chips is equal to 600 VAXes, wel l , "equal " is a funny word . What I
+mean is that i f you do the same calculat ions on a VAX i t takes about ten minutes to do one second of sound . So one
+of those chips does as much computat ion of that par t icular sort as 600 VAXes could do . Now VAXes are very
+poor ly set up for doing computat ions of that sort , but so is every other general purpose computer . Now there are
+special -purpose engines that can do comparable things ; so mine isn' t the only way to do i t .
+GENE : What did you mean by "by the t ime you get done shuf f l ing al l the data around, you wind up wi th
+something that 's a few hundred t imes real t ime instead of a few tens t imes real t ime?" What do you mean by
+real t ime?
+CARVER : You ought to be able to generate the sound as fast as you need the samples. To compute the samples as
+fast as they' re needed for you to hear the sound . You cant do that on a regular computer . I f you look at how many
+mul t ipl ies and adds i t takes per second to do these kinds of computat ions, i t 's only f ive or ten mi l l ion per second.
+That sounds l ike f ive or ten t imes as many as a VAX can do . But i t turns out that 's not al l the VAX is doing . I t ends
+up shuf f l ing al l the data around to be in the r ight place -- you fetch i t and you get i t in the machine and you
+mul t iplying i t and then you get i t back out again . And al l those how many mul t ipl ies you can do per second don' t
+count i f you' re only get t ing the data to mul t iply, you see . We were very surpr ised. People had told me this for
+years, and I a lways thought wel l yeah, i t 's t rue for general programs, but I never thought that for a program l ike this
+i t would be t rue that data shuf f l ing took most of the t ime . But i t turns out that there's enough pieces of data that you
+have to gr ind on and put into other places that that ends up taking more t ime than al l the mul t ipl ies . Every t ime you
+want a piece of data you've got to compute i t 's address, then do a part ial calculat ion, then f igure out where to put
+the answer , and then put i t back, and so on . Al l those things eat you al ive . So only about one- tenth of the
+inst ruct ions actual ly end up mul t iplying anything . So you could do the actual mul t ipl ies in zero t ime and i t doesn' t
+speed things up very much. Whereas wi th special -purpose archi tecture you arrange i t so the data automat ical ly
+f lows to the r ight place at the r ight t ime. In fact in our chip and others that was the key to the whole design -- to
+make sure that that 's what happened .
+GENE : Is there a rule of thumb for the amount of speedup you get f rom a dedicated archi tecture . Al l else
+be ing equal , i f you' re going to put the same a lgor i thm in si l icon as opposed to running i t on a VAX . What
+k ind of speedup in pr inciple, just by doing that?
+CARVER : For a lot of the appl icat ions we've looked at i t 's more than two orders of magni tude . One way to look at
+i t is that you get one factor of ten f rom what was just being discussed -- f rom the fact that i t 's special i zed -- and
+then as many more factors of ten as you l ike f rom the fact that you' re put t ing more of the special i zed hard- ware in
+that -- you get a factor of ten or 100 because you used 10 or 100 mul t ipl iers and another factor of ten because i t 's
+not general purpose . So that 's a hundred or a thousand r ight there . So that 's why we' re at a factor of the order of
+1000 -- because you've got things work ing in paral lel and then you' re not doing any data-shuf f l ing . So that 's
+another factor of ten .
+DICK: My speech recogni t ion machine's get t ing the same factor wi th respect to our general -purpose computer ; I
+get somewhere between a factor of 1000 and 5000 speedup . I 'm doing speech recogni t ion by implement ing a mode l
+of how the ear processes sounds . Sounds of al l sor ts including music .
+CARVER : So my machine does this par t icular class of computat ions about 600 t imes faster than a VAX . But i t
+won' t run a PASCAL program and i t doesn' t run UNIX and i t doesn' t maintain a f i le system. The way I think of
+general purpose computers is they' re the l i t t le envi ronment that does al l those stupid things -- hooks up to
+Ethernets, hooks up to telephone l ines, hooks up to keyboards, hooks up to humans, compi les languages, accesses
+f i le systems -- does al l those things AND issues commands to the special -purpose engines that do the real ly hard
+ASL
+Carver 3
+2
+Fi le : 3 Carver .doc
+grunt -work a thousand or more t imes faster than i t could .
+CARVER : Six hundred t imes a VAX would be about ten t imes as fast as a Cray . I haven' t programmed this on a
+Cray so I wouldn' t say that ; in fact a Cray is set up to do this k ind of calculat ion reasonably wel l also, so that for
+this par t icular task the Cray might be more than 60 t imes a VAX. I want to be very careful not to mislead people
+about this . One way of thinking about i t is that you' re not just taking the VAX and mak ing a special purpose thing ;
+you' re taking the whole program that does a special thing on the VAX and you' re saying that I 'm going to take that
+very special appl icat ion and instead of a general purpose programming language on a general purpose computer ,
+I 'm going to put the whole thing -- appl icat ion and al l -- r ight down into si l icon .
+GENE : Who invented the si l icon compi ler?
+CARVER : I t evolved gradual ly over a per iod of about eight years . But the f i rst one that was recogni zable as a
+compi ler instead of something less general was done by Dave Johannsen in 1977 . I did a very special purpose one
+in 1971 for f ini te-state machines, but i t wasn' t a si l icon compi ler in the sense that we talk about them today.
+GENE : The appearance of si l icon compi lers is a signi f icant histor ical event ; does what makes them possible
+come out of your st ructured approach to VLSI design?
+CARVER : I t had been possible for a long t ime . I t isn' t a mat ter of mak ing i t possible ; i t 's that people had been
+thinking of hand-craf t ing everything because in the ear ly days you never had enough si l icon to waste any at al l .
+And any st ructured approach to design is in some sense sl ight ly inef f icient at the bot tom level . You can a lways f ind
+l i t t le places that aren' t al l f i l led up wi th t ransistors . Exact ly the same history happened in code. Back when
+machines only had a 4K memory, people wrote every machine inst ruct ion because you couldn' t af ford any waste at
+al l . But when you have a megabyte of memory you can let a compi ler al locate var iables because i f you waste ten
+percent i t doesn' t mat ter any more . The same thing is t rue of si l icon compi lat ion : people did not foresee the fact
+that we would have so much real estate avai lable; that the real probl em was the design cost , not the cost of the real
+estate . When I t r ied to tel l people that in the ear ly days they laughed at me . That was wi thin f ive years of the t ime
+they were standing up and saying i t 's the most impor tant problem for the semiconductor indust ry . They were
+laughing when you would say that the design cost was going to be larger than the product ion cost for compl icated
+par ts . Now that i t 's t rue i t 's them that invented i t . But at the t ime I remember t rying to get the Intel people interested
+-- this was in 1973 -- and Gordon Moore said i t was an academic problem, and by the late 1970s he was publ ishing
+his curve of the design costs going up to the moon. The compi ler viewpoint comes f rom saying we' re going to have
+enough real estate and we' re not going to have enough engineer ing man-hours, so what you ought to be work ing on
+is the design problem, not how dense is the si l icon.
+DICK: But i t 's st i l l fai r to say that this approach of doing things in a more st ructured way is what made si l icon
+compi lers possible, by set t ing up that way of thinking . To go f rom hand-craf t ing to st ructural bui lding blocks sets
+the stage for the next thing, which is compi lat ion . So i t 's fai r to say that the Mead-Conway approach made si l icon
+compi lers possible .
+CARVER : And Dave Johannsen was the one who f i rst real ly saw how to pul l the whole thing together in a much
+more general way than people had done before .
+GENE : So i t 's a k ind of synergy between VLSI , whi ch makes possible a more simpl i f ied st ructured
+approach, plus that mak ing possible the si l icon compi ler -- al l of that together resul ts in the abi l i ty to put
+a lgor i thms in si l icon wi th a fast turnaround t ime . You can' t separate the compi ler f rom the st ructured
+approach and you can' t separate the st ructured approach f rom VLSI .
+CARVER : There are a lot of things that can' t be separated . Having people in business who are wi l l ing to fab chips
+that you design . In fact we had to start a whole new set of companies to do that because the t radi t ional
+semiconductor people didn' t want to do i t . They st i l l don' t want to do i t . They' l l do i t for thei r large customers who
+want to make a mi l l ion par ts . So this thing couldn' t happen unt i l we had access to fabr icat ion. And there was a
+ma jor amount of energy went into get t ing people to understand that there was a good business in that ; and r ight
+now that 's the only par t of the semiconductor business that 's mak ing money . I t 's happening in a big way now .
+DARPA provides fab services at a very low cost to research projects in a few hundred universi t ies . But there are
+ASL
+Carver 3
+3
+Fi le : 3 Carver .doe
+also a number of commerc ia l places that wi l l do that k ind of thing now for low-volume engineer ing prototypes .
+GENE : How do you talk about what is actual ly on a dedicated chip? What makes the adders and mul t ipl iers
+in your chip dedicated?
+CARVER : Wel l , on one of our chips we' re apt to have f i f ty mul t ipl iers al l work ing at the same t ime ; on a
+microprocessor you have to have one -- or zero, more l ikely, because they use adders instead and make up the
+mul t iply out of addi t ions . Almost al l microprocessors including the MC68000 have zero mul t ipl iers . Both in Dick's
+speech chip and the chip we use for music, the key is there's a way to set i t up so that where the data comes f rom
+and where i t goes to is something that can be set up and just run and not take a bunch of inst ruct ions to f igure out
+everything .
+GENE : Because the inst ruct ions are the chip?
+CARVER : The chip has a special i zed way of set t ing up where the data should come f rom and where i t should go,
+so that the faci l i t ies for mov ing data ef f icient ly f rom every place i t might want to come f rom to every place i t might
+want to go to are a big par t of the chip . And i t 's not hardwi red to a par t icular algor i thm ; i t 's got enough f lexibi l i ty to
+be able to run a reasonable number of algor i thms wi thin a class. Like di f ferent music inst rument mode ls can be put
+on our chip . Di f ferent kinds of digi tal f i l ter ing st ructures can be put on Dick's speech chip .
+GENE : So i t 's not accurate to say that this chip is a cel lo?
+CARVER : I t can be conf igured to be any k ind of inst rument , but i t 's dedicated in the sense that i t per forms that
+l imi ted class of calculat ions which are relevant to those physics formulas . The big chal lenge in this special i zed
+hardware game is to make a piece of hardware that 's not so special i zed that i t 's only good for one thing . You want
+to leave a cer tain amount of programmabi l i ty of some sor t . This resul ts in a good chunk of your si l icon area --
+maybe as much as hal f -- being dedicated to the job of get t ing data f rom where i t 's coming f rom to where i t 's going .
+In a general purpose computer that takes ninety percent of your resources ; in our chips i t 's probably less than 20
+percent , in Dick's speech chip i t 's f i f ty percent . You get di f ferent amounts of general i ty for the di f ferent amounts of
+overhead .
+GENE : How many t ransistors is on your chip?
+CARVER : I t has 64 mul t ipl iers, each giving a 32 by 32 mul t iply wi th a 64-bi t product . There are 32 stages of the
+mul t iply . I t has about 200,000 t ransistors . That 's a lot less than the Hewlet t -Packard chip that has 450,000 . But for
+this par t icular appl icat ion our chip is about 1000 t imes faster . The t ime-honored way of get t ing a high t ransistor
+count is to put a lot of memory on the chip . Our chip has a lot of memory which is mixed in wi th the processors,
+and the very thing that makes i t ef f icient is that you mix the processing in wi th the memory so you don' t have to
+move things f rom the memory to a processing element and back . You mix them together so processing is going on
+al l the t ime . Let me say whi le we' re at i t that the 600 VAXes est imate is ext remely conservat ive because the clock
+for our chip is slowed down so that i t matches the sample rate which is the standard that al l D to A conver ters use .
+There'd be nothing to prevent us f rom running the chip f ive t imes faster i f you wanted to do graphics instead of
+sound. But in a sense that 's not fai r because we' re comput ing these samples ; and the fact that you could compute
+them faster than real t ime doesn' t help . On the other hand, because a VAX computes them slower than real t ime we
+ought to be able to at least count that somehow . But essent ial ly once you' re at real t ime at a given sampl ing
+resolut ion you don' t need to go any faster . Your ear couldn' t hear i t anyway . Now i f we were work ing on bats
+instead of humans, wel l bats can hear at 200 KHz instead of 20 -- they' re 10 t imes faster than people -- so then we'd
+have to run the clock 10 t imes as fast . We could do that , too, in which case i t 'd be the equivalent of 6000 VAXes .
+Now the other thing is that you may have the need to generate 10 musical inst ruments at once, and wi th our chip i f
+you run i t 10 t imes faster i t st i l l cant qui te do that -- i t can generate one very fast inst rument but not ten at once .
+Dick's speech chip has an ext ra degree of f lexibi l i ty that lets you be ten things at once instead of one thing very
+fast . In fact his chip is not very good at doing one thing very fast , so he couldn' t make very good music for bats but
+he could maybe analyze sounds f rom several microphones at once . That costs him a lot ; he has hal f his chip
+dedicated to get t ing data f rom where i t 's coming f rom to where i t 's going and by the way stor ing i t temporar i ly in
+between . That 's the ext ra cost of that ext ra general i ty . And that 's the t radeof f you make depending on what you
+want to do . The discussion among people who do these special i zed archi tectures is another level up f rom al l this,
+ASL
+Carver 3
+4
+Fi le : 3 Carver .doc
+namely, now that you've got things that run 1000 t imes as fast as a general purpose computer would on the same
+problem, can you make i t 10,000 t imes or 100,000 t imes faster -- can you get an even bet ter match to the probl em
+which uses the si l icon in even a bet ter way? I t 's just amaz ing when people start playing this game. I t 's not just more
+concurrency, i t 's algor i thms that are more thought - through, t ighter . In fact both Dick and I have t raded of f for
+general i ty the ul t imate in per formance . There would have been ways for each of us i f we'd wanted to be real ly
+special i zed to make the things another order of magni tude faster . We chose to have some general i ty instead . For
+example we both use a lot more bi ts of accuracy than are needed for most of the problems we' re at tacking, because
+occasional ly you suddenly need more bi ts, so you spend the bi ts a lways and pay a big cost , but this means you
+don' t of ten run into a problem where you don' t have enough bi ts . That 's one of the dimensions of var iabi l i ty, how
+many bi ts you choose to put in . We use 64-bi t accumulators . Most people who do music synthesis would say that 's
+out rageous, we' re throwing away resources .
+GENE : Today to get an updated version of a sof tware package I buy a f loppy disk. How would I update my
+computer i f everything's in hardware? Buy a new board?
+CARVER : There's a l i t t le company in the bay area cal led Si l icon Solut ions, Inc . You should talk to them because
+they make an algor i thm in si l icon . They founded this company on the premise that algor i thms in si l icon are going
+to be the future . The i r f i rst product checks design rules on integrated ci rcui ts . So i t 's an integrated ci rcui t that
+checks for errors in the next integrated ci rcui t . The next thing they' re bui lding is a chip simulator . What they did is
+make an add-on for a standard workstat ion . So you can plug the card into your workstat ion's mul t ibus slot . And
+there's a l i t t le sof tware package that goes wi th your standard UNIX operat ing system -- workstat ions are al l UNIX
+based -- and now you can be up and running wi th thei r design-rule-checker in your workstat ion . So instead of a
+disk that you plug into your disk slot there's a board you plug into the board slot . There's a chip that implemented
+the Ethernet protocol . I t got bui l t on a l i t t le board that plugs into the PC . So that 's an exampl e of an al ready exist ing
+approach . When you buy sof tware on a disk you pay f ive dol lars for the f loppy and three-hundred dol lars for the
+ideas in i t . A board costs about the same, maybe ten or twenty dol lars for a cheap board instead of f ive dol lars for a
+f loppy disk . Or even i f i t was $100 for the board you' re get t ing instead of something new but just as slow as ever ,
+i t does something new but 1000 t imes faster . So that factor of 1000 costs you a hundred bucks over what i t would
+be i f i t was a sof tware package . And you get a factor of 1000 . That 's a pret ty good pr ice . That 's a factor of ten per
+dol lar .
+End of Carver 3
+Carver 3
+5
+Fi le : 3 Carver .doc
+Interview: Mead 4
+1
+Fi le : 4 Carver .doe
+10/00
+Carver Mead Interview Par t IV
+(Wi th Dick Lyon, Schlumberger AI researcher)
+By : Gene Youngblood
+(Document 4 of 4 of Mead Interview)
+DICK: You asked about what i t 's l ike to design algor i thms when i t 's not just Pascal programs or something . I t 's a
+di f ferent game, but people who design algor i thms a lways do i t wi th some target comput ing technology in mind,
+whether i t 's a general purpose computer or ful l custom si l icon or maybe you' re designing the interconnect pat tern for
+Carver 's chip to make a new inst rument mode l . Whatever your target technology is, that def ines the game you' re
+playing when you design algor i thms . The neat thing about custom si l icon is that you've got a lot of new kinds of
+games other than just t rying new programs . So designing musical inst ruments is a new k ind of game. You come up
+wi th algor i thms that you could have wr i t ten in a general purpose programming language but you probably wouldn' t
+have, because i f you had a general purpose computer to play wi th, you would have done something di f ferent -- more
+compl icated, probably ; more ef f icient maybe . I f you' re designing f rom bare si l icon and you have to make a new
+algor i thm, the game is wide open . Al l you know is you' re mak ing i t out of submicroscopic t ransistors . I f you' re
+designing wi thin the context of somebody's si l icon compi ler , you' re a l i t t le more rest r icted than that -- you know you
+can make i t out of predef ined modul e types and register types and bus st ructures and so on . so that def ines the rules
+of the game . A programming language puts a lot of preconcept ions in your head about what you should do wi th a
+computer .
+CARVER : In fact you do things very di f ferent ly in di f ferent programming languages. Not because you couldn' t do
+the same thing in two di f ferent languages but because the way you think in one language leads to a way of doing i t
+which is natural in that language. Even though you could have thought in another way i t 's not as natural . So the
+language of si l icon has cer tain things that are ext remely natural to i t . The idea of regular i ty matches very wel l the
+idea that communicat ion is very expensive . I f you think of things local ly and have them communi cate not too
+global ly wi th too many other things, a) : i t helps you to think about i t and make regular st ructures, and b) : i t also
+makes things that are very high per formance . That was the par t that the old si l icon hackers missed . They didn' t
+understand that a regular design can produce bet ter per formance than some i rregular way . Because you force your
+thought processes to encompass the overal l way that the thing works.
+DICK: You st i l l get quest ions f rom people who don' t know enough about i t who are steeped in the old lore but don' t
+understand very much . They ask things l ike " I f you design a chip in the Mead-Conway st ructured style, how much
+per formance do you have to give up : 20 percent , 30 percent?"
+I say that 's a si l ly quest ion . The quest ion is how much
+per formance can you gain. They think of the st ructure as being an art i f icial l imi tat ion, which i t is, but i t al lows you
+to do things you couldn' t or wouldn' t do otherwise . And you get to invent the st ructure, which means you make your
+problem easier not only at the bot tom level of hack ing t ransistors but at the next level up -- you can do creat ive
+design and algor i thm planning at a higher level and make i t easy to bui ld the whole thing and make i t ef f icient .
+Instead of doing i t the old way where you draw many pages of schemat ics and then have somebody t ry to force i t
+into the chip .
+GENE : Why can' t we get both VLSI and high speed at the same t ime?
+CARVER : In 1956 when I was a student i t was thought that i f you make a bigger t ransistor i t a lways got slower .
+That was the common exper ience of the day . So this one company said i f I make a t iny t ransistor I can make i t
+faster , and i f I make a bunch of these l i t t le t ransistors and put them al l in paral lel , why isn' t that faster? We l l i t is
+faster . Because al l the parasi t ics that loaded down the big t ransistors aren' t a proper ty of the individual t ransistor ; the
+real problem was that people were scal ing things wrong to make the big t ransistors . They were thinking about i t
+wrong . And these guys had f igured i t out . They asked me to prove scient i f ical ly that you don' t have to get something
+that goes slower and takes more power i f you make i t bigger . So I ana lyzed what was actual ly going on there and
+that 's actual ly what got me star ted thinking on this whol e t rain of scale -- the very f i rst consul t ing job I ever had . I t
+turns out that i t 's the same k ind of misconcept ion when people assume something is constant that isn' t when you
+scale .
+Interview: Mead 4
+2
+Fi le : 4 Carver .doe
+GENE : I f that 's the case, then, can we put a number on the speed l imi t of the Von Neumann computer?
+CARVER : We can do that very wel l . Let 's do a one-chip machine. Things are scal ing in such a way that the
+power /delay product is get t ing bet ter by something between the square and the cube of the scal ing factor . As you get
+close to the l imi ts you don' t get the whole cube law any more . So i f you take the minimum-si ze t ransistors -- quar ter-
+micron -- you have gate delay t imes in the 10 picosecond range . People have al ready made ci rcui ts wi th 30
+picoseconds and the latest I heard was 18 picoseconds in submicron CMOS . And i t 's going to get bet ter . So the
+speed l imi t of one isolated gate not dr iving anything wi l l be in the 10 picosecond range ; see, the probl em wi th the
+Von Neumann archi tecture is they have these damn long wi res you have to dr ive, which is inherent in the large
+RAM conf igurat ion -- so you need ei ther long wi res or many stages of delays . So you can say, wel l , what do I have
+to do to dr ive that thing? Wel l , the wi res in terms of the technology underneath, are get t ing longer because you st i l l
+want the wi re to go clear across the chip because you' re bui lding a bigger machine ; on the other hand the t ransistor
+i tsel f is get t ing bet ter able to dr ive, because the channel lengths are shor ter and the submicron t ransistors are
+st ronger for a given length . So when you add i t al l up, the actual speed gets bet ter about l inear ly wi th the scal ing . So
+f rom where we are now in device si ze -- say 1 .25 micron -- that 's a factor of f ive f rom the .25-micron technology,
+and i t runs at about 20 MHz . So you can look forward -- i f you' re going to bui ld a microcomputer that f i l ls a chip at
+a quar ter-micron and you have good processing and you've done things sensibly, you can look forward to in excess
+of 100 MHz clock rates for those things . That 's al ready respectable by the standards of people l ike Cray . And you
+can look forward to the same k ind of complexi t ies you have on those kinds of machines . Right now you have
+complexi t ies l ike you have on VAXes on one chip, there's no reason you can' t have a complexi ty on the order of a
+Cray on one chip by that t ime. And the power per uni t area would be about the same as i t is today.
+GENE : So the ul t imate speed of the Von Neumann machine is about ten t imes what i t is today, that is, ten
+t imes a Cray?
+CARVER : No . You'd be just about get t ing in the range on one chip where Cray is today by the t ime you do al l that .
+The speed l imi t on a single chip is about a Cray . That 's a good number to keep in your head: you' l l get about one
+Cray on a chip, including the clock rate and everything, by the t ime you push ordinary MOS devices as far as they' re
+going to go . That is, i f you choose to make a Cray . Whi ch is an elaborated or extended version of the Von Neumann
+archi tecture wi th vector processing. So we' re talking between 50 and 100 megaf lops depending on how wel l i ts
+done .
+GENE : And how much speedup wi l l we get f rom new mater ials l ike ga l l ium arsenide? A factor of ten more?
+CARVER : I doubt i t . Fi rst , fundamenta l ly you can' t make i t as smal l as si l icon . The reason gal l ium arsenide is fast is
+because the elect ron mobi l i ty is high . The reason the mobi l i ty is high is because the ef fect ive mass is low . This
+means the tunnel ing distances are longer . There's a di rect relat ionship between ef fect ive mass and how far you can
+tunnel . Since tunnel ing is one of the things that restr icts how smal l you can make devices, to the extent that that 's the
+l imi t ing factor -- and i t does enter in submicron devices -- you' l l bump against i t sooner wi th gal l ium arsenide than
+you wi l l wi th si l icon . Exact ly how al l that comes out is not known r ight now. Nobody has yet done i t . Meanwhi l e
+people are work ing on some very fancy things cal led super lat t ice st ructures which give ext remely high mobi l i t ies .
+But exact ly how the device st ructures are going to scale is something we need to know . These are compound layers
+whose lat t ices match and you can make the bandgap go up and down by a sor t of stai rstep thing . That makes a
+quantum ef fect on the elect rons . I t basical ly shapes the bandgap in a nice way and al ready McGi l l has worked out a
+theory for that and the measured shi f t in the photo-emission has turned out to agree exact ly wi th his theory . That
+would be the HEMT device . That may get you the factor of ten or even more in terms of raw speed. But you can' t
+take the numbers for individual devices and apply them to large-scale ci rcui ts because . For instance what 's wrong
+wi th gal l ium arsenide technology r ight now is not the individual devices . They work bet ter than you would have
+thought . They' re bet ter than my f i rst predict ions, because there's a f luke, there's a violat ion of Murphy's Law that
+happens . When an elect ron goes in under the gate you'd think i t would come up to saturated veloci ty -- which is only
+a l i t t le bet ter in gal l ium arsenide than in si l icon -- but i t turns out they do a bal l ist ic overshoot , so they actual ly, for
+shor t channel ings, go faster than the saturated veloci ty because they haven' t star ted to have enough col l isions yet .
+That was a violat ion of Murphy's Law of the f i rst order . I t was wonder ful . The real problem wi th that k ind of
+technology is that there's only one k ind of device -- a deplet ion mode device . So you have to have the gate vol tage
+of opposi te polar i ty f rom the drain vol tage, which means you have to level shi f t between every stage . I t 's horr ible,
+just l ike the old vacuum tube things . And i t turns out that ends up taking more space than the ci rcui t by a lot . So i t
+ASL
+Interview: Mead 4
+3
+Fi le : 4 Carver .doe
+isn' t at al l clear that the densi t ies wi l l ever be compet i t ive wi th what you can do in si l icon .
+DICK : But for that same reason i t would probably make possible very high densi ty, very fast memor i es. And you
+might st i l l be able to get a Cray-si ze Von Neumann machine on a chip because the memory is where most of i t goes .
+In fact as you everything up and the amount of global wi r ing gets more and more dominant , the amount of memory
+gets bigger and bigger , the power of the ar i thmet ic processor goes up a l i t t le bi t and that 's i t . So the biggest thing
+goes into more wi re, the next biggest thing goes into more memory, and the least gain is in the processor . This is
+what people have been doing . When you grow a Von Neumann machine in any technology that 's what happens
+whether i t 's on a chip or not . Cray is a depar ture f rom that because they f igured out how to put a lot more in the
+processing ; but i t 's less Von Neumann- l ike than other machines .
+CARVER : Cray is one of the people who f rom day one real i zed that , wel l , he said two things . He said computer
+design has two problems . One is how you get the heat out . The second is how you keep the thickness of the wi r ing
+mat wi thin bounds . He thought the key to his design was get t ing the heat out . We l l we can take care of mak ing more
+compl ex things wi th less heat by just scal ing down the si l icon . So that par t isn' t the key ; but the other par t is, the
+wi r ing management . And he was the only ma jor computer designer that I know of who speci f ical ly twenty years ago
+ident i f ied the thickness of the wi r ing mat as the dominant thing about computer design. Everybody else was saying
+wel l you have to have the x-y-z inst ruct ion and there's this and that , and he was saying no, i t 's the thickness of that
+wi r ing mat .
+GENE : Wi l l there ever be a Von Neumann machine wi th a one nanosecond clock.
+CARVER : There might be . We al ready got you to under ten nano-seconds wi th our l i t t le chip at a quar ter-micron .
+You could do i t today wi th a smal l enough Von Neumann machine . A real simple machine . You'd come close to that
+today using submicron CMOS . They've al ready demonst rated .8-micron CMOS wi th 35-picosecond gates. You
+could no doubt make a credible one-nanosecond smal l Von Neumann machine . I f i t was only eight bi ts wide and
+had only three registers . Or i f you bui l t i t l ike Cray did and pipel ine the hel l out of i t . And we could cer tainly make
+these bi t -ser ial things to run that fast . That 's our music chips and Dick's speech chip, where you do one bi t at a t ime .
+Because the signals only have to go to the next stage instead of going clear across the chip .
+GENE : Is RISC archi tecture relevant only to Von Neumann archi tecture?
+CARVER : Yes, and what i t real ly means is something they did ear ly on and forgot about later . People used to bui ld
+al l machines as reduced inst ruct ion sets because they couldn' t af ford anything else. The best exampl e of that was the
+old Data General Nova, which had a real simple inst ruct ion set . Ever since then they bui l t in ever more elaborate
+inst ruct ion sets, bel ieving that i t was going to make thei r computers run faster . And i t turns out that what l imi ts your
+computer is the load inst ruct ion and the store inst ruct ion and the index calculat ions . I f you do those fast i t doesn' t
+much mat ter what else you do . And i t doesn' t at al l mat ter how fast you do ar i thmet ic . So people f inal ly went back
+and rediscovered the fact that had been known for a long t ime by good computer designers : that i t doesn' t real ly
+much mat ter what you do wi th inst ruct ions i f you get the basic ones real fast . So they said why put in al l the others,
+why not just make them up out of these pr imi t ives? You have to have a compi ler that 's smar t enough to do a decent
+job of that .
+DICK: The other argument is that the machines wi th compl icated inst ruct ion sets don' t real ly get any advantage
+f rom them unless you have a compi ler that 's smar t enough to f igure out when to use compl icated inst ruct ions . Wi th
+the RISC you may get bet ter per formance even wi th a very simple compi ler .
+CARVER : But in fact nobody has yet done the real exper iment of actual ly mak ing a complete system wi th a
+complete operat ing system and everything on one of these RISC things and actual ly honest - to-god put t ing i t side by
+side wi th some other computer and given i t the smoke test . That ' l l no doubt happen but i t 's incredibly late in coming,
+because the f igures people quote are concocted examples rather than real honest - to-god things happening .
+GENE : Sure ly there wi l l a lways be a supercomputer , because there' l l a lways be the ten-mi l l ion-dol lar
+machine .
+CARVER : Oh but you know what i t 's going to be? I t 's going to be one of these chips that has the Cray on i t and a
+ASL
+Interview: Mead 4
+4
+Fi le : 4 Carver .doe
+bunch of memory and discs and al l that , which wi l l eat up a whole lot of money, and then i t 's going to be a box that
+has one k ind of special purpose chip on i t whi ch does the signal processing things, and another card that has another
+k ind of chip which does the geomet ry calculat ions, and another card wi th chips that do whatever else . When you talk
+about extending the inst ruct ion set . . . i t 's l ike r ight now when you buy a machine you get an ar i thmet ic accelerator
+and you plug i t in and i t runs ten t imes as fast doing f loat ing-point . So you' l l have something that runs ten- thousand
+t imes as fast doing signal processing . And something that runs a mi l l ion t imes as fast doing graphics render ing . And
+something that runs a hundred- thousand t imes as fast doing whatever else you' re doing . There' l l be these cards
+which are these accelerators for special classes of problems . And they' l l plug into this thing . There wi l l a lways be
+card cages and power suppl ies and fans (or cryogenic cool ing systems) but the thing you plug in there is going to
+have a god-awful amount of capabi l i ty compared wi th the l i t t le poor wi zened Cray that 's si t t ing on that one chip.
+DICK: The interest ing problem is to f igure out how there wi l l be ten-mi l l ion-dol lar machines . I mean, what par t of
+that are going to spend your money on . I bel ieve there wi l l st i l l be such machines but they' l l probably be dominated
+by head-per- t rack discs or something l ike that . You' l l spend nine out of the ten mi l l ion dol lars get t ing enough
+secondary storage and i /o bandwidth that 's fast enough to keep up wi th the thing . Any one of our l i t t le chips can
+generate data a god-awful amount faster than any disc can soak i t up . We solve the probl em by just put t ing i t out on
+a loudspeaker . We never store samples at al l , ever ; and i t may be that for some appl icat ions you never would need to
+store al l that data .
+DICK: In the speech analysis problem, you come in wi th some sampled speech, which may be at a reasonably low
+rate l ike you get of f a telephone system, maybe bet ter qual i ty. In the intermediate calculat ions you end up wi th
+places in your block diagram between the f i rst block and the second block where the data rate may be 100 t imes
+higher than what you star ted out wi th. There's no way you' re going to feed that back into your general purpose
+computer or put i t on disc or anything else. But i f you put special i zed stuf f out there to keep deal ing wi th i t unt i l
+you've got ten close to an answer , unt i l you've narrowed i t down to what word was said, then you can throw away al l
+that intermediate data. i t 's a t remendous amount of data but you don' t need to keep i t . You just look at i t to ext ract
+the next stuf f f rom i t and you throw i t away . Put i t in the bi t -bucket .
+GENE : What you guys are doing is amaz ing.
+DICK: I t 's happening so fast that even new engineer ing graduates aren' t aware of the hal f of i t .
+GENE : Any given appl icat ion a lways has a l imi t ing case. In imaging, you don' t need to compute more than
+what your display device can show.
+CARVER: There's no point in mak ing a picture faster than real t ime, any more than there is in me mak ing samples
+faster than real t ime .
+GENE : Alvy Ray Smi th thinks you need a complexi ty of 80 mi l l ion polygons per f rame for photorea l natural
+phenomena .
+CARVER : That 's a Jim Ka j iya measure : a compl ex scene has more than one polygon per pixel . Actual ly i t turns out
+there are some very interest ing problems associated wi th scenes that are much more compl ex than one polygon per
+pixel . Whi ch is the k ind our guys deal wi th.
+GENE : So let 's say we reach some arbi t rary point beyond whi ch no more computat ion power is needed, then
+you' re saying that i t 's probably going to be possible to put that k ind of power on a board and that 's that .
+CARVER : You just use i t unt i l you get a bet ter idea of how to do i t, bet ter algor i thms . The real interest ing problem
+now is the or igin of l i fe problem, r ight? I t 's the thing I talked about wi th the "Newmath" company . They' re work ing
+the or igin of l i fe probl em. They want to design si l icon algor i thms so they' re bui lding things that ' l l help them do that
+-- and by the way they can sel l that too, because other people wi l l want to make si l icon algor i thms too -- people who
+want to make bet ter graphics algor i thms, who's going to help them? Because you've got to f igure out i f your ideas
+are r ight before you go and make the bet ter graphics algor i thm . So there's a lways going to be room for a thing that 's
+more general than the speci f ic thing because somebody has to invent the next one . So you' l l need a deve lopment
+system that 's an engineer ing work- stat ion for people doing computer graphics, or speech or music -- whi ch is not
+ASL
+Interview: Mead 4
+5
+Fi le : 4 Carver .doe
+real ly a general purpose computer but i t more general than the f inal si l icon algor i thms i t wi l l produce .
+DICK: This is exact ly the idea that mot ivated my archi tecture: make a machine much more general than what I
+wanted to do . So that I could exper iment wi th algor i thms on that machine . So that the next t ime around I ' l l know
+what I want to do and I can put i t in si l icon .
+GENE : So say we've got the l imi ts of what we need to do on one card of special i zed chips, and I 've got my
+general purpose computer cont rol l ing i t . So you' re saying that at that point a supercomputer would be a
+system l ike that but one whi ch would do al l these things .
+CARVER : And a lot of them . So that your inst ruct ions, instead of being a load inst ruct ion or a store inst ruct ion --
+you st i l l have those -- but what you real ly do is you say go Fourr ier- t ransform this, go render this display l ist on the
+screen wi th the ray- t racing board, go analyze this speech wi th this other board.
+GENE : But in fact a network in whi ch those funct ions are dist r ibuted, each node wi th a par t icular special ty,
+would be equivalent to the supercomputer . You could synthesi ze a supercomputer by having smal l processors
+on a network.
+CARVER : I think that thing you just said is going to replace the supercomputer as a concept : you have servers on a
+network . You have a server that does the Four ier analysis and a server that does the graphics render ing and so on,
+instead of thinking of i t as be ing in one box . Because then i t 's just a much more convenient setup . So in fact I don' t
+see any great big blue boxes wi th giant power suppl ies wi thin a few years . I just don' t see them at al l . Because you
+can buy something that 's got a thousand t imes the capabi l i ty in one of these l i t t le boxes you hook on a network . That
+makes so much more sense .
+GENE : So bandwidth is emerging as the ma jor bot t leneck.
+CARVER : I t a lways has been. I t 's a ma jor oppor tuni ty that bigger bandwidths are avai lable now . Fibers not only
+carry more, they go longer distances . The networks you' re l ikely to f ind in a medium-si zed company or research lab
+is the network that runs down the hal l to the room where you've got al l your special i zed machines . So you can use
+this power ful machine f rom your own of f ice . That k ind of net - work is providing a lot of power to the people and
+you don' t have to go out over the phone company to do any of that . That 's a decision that can be made by a smal l
+company, not a big company . So what we' re f inding is that al l of the def ini t ions of these things are be ing done by the
+people who are bui lding the stuf f . And the government agencies and AT&T come along later and say, "Oh, gee! We
+didn' t say i t was OK. " We l l you didn' t have to say i t was OK, thank god; somebody got a chance to do i t anyway . I f
+we were wai t ing around for a network standard to emerge nobody would have any networks r ight now . In fact we've
+had networks since the mid-70s because people just went of f and did them . When you leave the bui lding, that 's
+when the pol i t ics start . I t 's horr ible .
+GENE : Where are we now in speech recogni t ion in relat ion to something that could be put into most user
+inter faces? Is this technology we've just been talking about leading to a solut ion of the user - independent
+recogni t ion device wi thin ten years .
+DICK: Cer tainly wi thin ten years there's going to be a lot happening . I t 's a dangerous f ield to make predict ions
+about . I f you look ten or twenty years ago people were mak ing very opt imist ic predict ions and not doing the r ight
+things . What 's happened dur ing that t ime is that , in many cases people have pretended that the probl em is
+technology l imi ted . So every t ime there's an advance in IC technology they make the next bet ter thing, but i t 's st i l l
+no good .
+CARVER : I t 's just l ike microcomputers . The idea st ream has not got ten bet ter as fast as the technology has . So they
+make a much faster thing that 's st i l l lousy because i t doesn' t have any new ideas in i t . That has happened a lot . Just
+l ike the microprocessor is an image of the ugly old computers of yesteryear .
+DICK: When you record wi th just one microphone you lose a lot of informat ion . So whi le your two ears don' t have
+any t rouble hear ing me, this one microphone may have more di f f icul ty . This is one area where there's a clear
+di rect ion that 's needed in the speech recogni t ion business -- things that l isten to people talking need to have two
+ASL
+Interview: Mead 4
+6
+Fi le : 4 Carver .doe
+microphones at least . They don' t . None of them do. Because people haven' t f igured out how to take advantage of
+that . That 's one of the things I 'm work ing on .
+CARVER : That 's the stupidest most zero-order thing you can imagine, but i t st i l l hasn' t been done to this day .
+DICK: And one excuse they make is that i t would cost twice as much si l icon to analyze signals f rom two
+microphones . That 's a total ly lame excuse, because i f you can make the problem work by throwing si l icon at i t you
+ought to . Because nothing else is work ing . But i t 's not that simple . You've got to have the ideas of what to do wi th
+the si l icon other than put more memory in i t and recogni ze more words poor ly -- which is what people are doing .
+The key thing that 's mot ivat ing my own research is to f igure out how people do i t and mode l the human hear ing
+system . That approach is not far enough along yet to show demonst rated good resul ts, but i t is far enough along to
+be ext remely opt imist ic about i t .
+GENE : Not far enough on the biology side?
+DICK: No, in my actual implementat ion of ideas . I can' t yet show you a system that achieves spectacular
+per formance . But I can show prel iminary resul ts that look encouraging .
+GENE : Do we know how people do i t?
+DICK: We know a lot about how people do i t, but there are st i l l some open quest ions . There's an area that 's not
+receiving enough research at tent ion . There's a lot of research in the physiology of the hear ing system and
+psychophysics, that k ind of thing, but not enough on the computat iona l approach -- t rying to f igure out what are the
+algor i thms that the human is doing .
+CARVER : In fact , work l ike the people here are doing is very much in the very near future, i t wi l l st imulate a lot of
+biology work because i t wi l l raise quest ions that have not been addressed by the biology communi ty . Because
+they' re not t rying to bui ld a system and unless you t ry to bui ld i t you simply don' t get faced wi th those quest ions . So
+I think there's going to be a synergy between people l ike Di ck and the biologists and the psycho-acoust ic and
+psycho-vision people that is going to real ly . . . in fact both of us are spending a lot of our t ime doing that now because
+i t 's just a very gorgeous area that 's a lmost untapped.
+DICK: The biologists are start ing to understand how impor tant i t is to look at the computat iona l aspects, so we've
+formed some beginnings of some impor tant col laborat ions wi th a couple of biologists .
+CARVER: Af ter al l , there's this work ing computer that does this wonder ful thing, that people haven' t ana lyzed as a
+computer .
+DICK : How do you compare how a microprocessor is put together to the way Carver 's chip is put together . The best
+thing that works real ly wel l is a chip photo . Just show a picture of the chips. The di f ference between a regular design
+and a non-regular design doesn' t need to be explained . I t 's just there, and st r ikingly obvious . Carver 's chip is simple
+enough, that in addi t ion to that you could actual ly wr i te down the ent i rety of informat ion that i t contains. You could
+wr i te the CIF-code (Cal tech Intermediate Form) for the layout in f ive pages . I t 's a representat ion of geomet ry . You
+could have basical ly a pr intout of the computer text f i le f rom which the chip is created . i t would be interest ing to
+show the chip, the code that created the chip, and cont rast that wi th the quant i t ies of informat ion that the chip
+produces. The leverage is the fact that you put a l i t t le bi t of informat ion into i t to make the chip, and the chip is able
+to produce back huge quant i t ies of informat ion every second, which sound l ike music . I t 's an informat ion ampl i f ier .
+So the pictures and the l ist ing, even though i t 's ent i rely unintel l igible, would be interest ing to see that there aren' t too
+many bi ts there .
+End of Carver 4

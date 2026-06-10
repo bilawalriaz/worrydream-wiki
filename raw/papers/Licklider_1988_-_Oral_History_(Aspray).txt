@@ -1,0 +1,1611 @@
+ 
+ 
+1 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+An Interview with 
+ 
+ 
+J. C. R. LICKLIDER 
+ 
+ 
+OH 150 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Conducted by William Aspray and Arthur Norberg 
+ 
+on 
+ 
+28 October 1988 
+ 
+Cambridge, MA 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Charles Babbage Institute 
+Center for the History of Information Processing 
+University of Minnesota, Minneapolis  
+ 
+ 
+ 
+2 
+Copyright, Charles Babbage Institute
+ 
+ 
+3 
+ 
+ 
+ 
+ 
+ 
+ 
+J. C. R. Licklider Interview 
+28 October 1988 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Abstract 
+ 
+Licklider, the first director of the Advanced Research Projects Agency's (ARPA) Information Processing Techniques 
+Office (IPTO), discusses his work at Lincoln Laboratory and IPTO.  Topics include: personnel recruitment; the 
+interrelations between the various Massachusetts Institute of Technology laboratories; Licklider's relationship with 
+Bolt, Beranek, and Newman; the work of ARPA director Jack Ruina; IPTO's influence of computer science research in 
+ 
+ 
+4 
+the areas of interactive computing and timesharing; the ARPA contracting process; the work of Ivan Sutherland. 
+ 
+ 
+5 
+J. C. R. LICKLIDER INTERVIEW 
+ 
+DATE:  28 October 1988 
+INTERVIEWERS:  William Aspray and Arthur Norberg 
+LOCATION:  Cambridge, MA 
+ 
+NORBERG:  The date is October 28, 1988.  We are here in the office of Professor J. C. R. Licklider to talk about his 
+experiences, both in the MIT community and with the Advanced Research Projects Agency in the Department of the 
+Defense.  Professor Licklider, can we begin with the years at the Lincoln Laboratories?  We are curious to know how 
+you became associated with the Lincoln Laboratories back in the 1950s. 
+ 
+LICKLIDER:  I came to MIT from Harvard University, where I was a lecturer.  I had been at the Harvard 
+Psychoacoustic Laboratory during World War II and stayed on at Harvard as a lecturer, mainly doing research, but 
+also a little bit of teaching -- statistics and physiological psychology -- subjects like that.  Then there came a time that 
+I thought that I had better go pay attention to my career.  I had just been having a marvelous time there.  I am not a 
+good looker for jobs; I just came to the nearest place I could, which was in our city.  I arranged to come down here 
+and start up a psychology section, which we hoped would eventually become a psychology department.  For the 
+purposes of having a base of some kind I was in the Electrical Engineering Department.  I even taught a little bit of 
+electrical engineering.  I fell in love with the summer study process that MIT had.  They had one on undersea warfare 
+and overseas transport -- a thing called Project Hartwell.  I really liked that.  It was getting physicists, mathematicians 
+-- everybody who could contribute -- to work very intensively for a period of two or three months.  After Hartwell 
+there was a project called Project Charles, which was actually two years long (two summers and the time in between). 
+ It was on air defense.  I was a member of that study.  They needed one psychologist and 20 physicis ts.  That led to 
+the creation of the Lincoln Laboratory.  It got started immediately as the applied section of the Research Laboratory 
+for Electronics, which was already a growing concern at MIT.  They got an old temporary building -- Building 22, 
+which had been around for many years.  We took it over and built a laboratory immediately, and then started to get 
+one built out at Hanson Field.  So, before I could get started worrying about this psychology section, I was really 
+wrapped up in air defense.  It turned out that there was a lot that needed to be known about the presentation of 
+ 
+ 
+6 
+information in the community (?) control system.  Here the engineers were bringing radar, and computers and 
+everything together.  Then there was essentially a big display and control problem.  The upshot was that a young 
+engineer named Herbie Weiss (who has gone on to be a great expert on big antennas; he's the big antenna man in the 
+world) and I created a group in the Lincoln Laboratory, which was about half experimental psychologists and half 
+electrical engineers.  It was supposed to work on two aspects of the presentation of information problem:  building 
+the stuff and then getting it to work, making a good interface with the user.  To get the psychology part started, I 
+went to what I thought were the ten best ten graduate schools and tried to get at least one, and sometimes two, 
+people from each, people who were just then getting their Ph.D.s.  So almost immediately we just came by one of the 
+best groups of psychologists there ever was.  At that time, nuclear explosives were getting to be a big thing.  That 
+was 1950.  I think Hartwell was in 1951 and Charles was in 1952 and 1953.  So it was right at the crucial time, when the 
+Russians were getting the... Everybody was kind of excited about that.  I remember psychologists were wondering 
+whether they should go into more practical, military-oriented things, or stay in research.  One kid was saying, "Well, I 
+don't want to write the last journal paper."  There was some feeling of imminence.  Also I had come and gotten into 
+the acoustics laboratory here.  So I found myself spread three ways:  I was in the acoustics lab and had an office over 
+there which was in research, I was working on this psychology section thing, and I was working at the Lincoln 
+Laboratory.  I think I really made arrangements to get both George Miller, who had been a colleague at Harvard, and 
+Walter Rosenblith down here.  George and I wound up doing the Lincoln stuff jointly.  We were "co-whatever" we 
+were.  When we moved the Lincoln Lab out to its new building, George and I flipped a coin to see who would stay 
+with the Lincoln Lab, and who would stay with this lot.  We both thought we lost.  I stayed with the lot.  He went on 
+with Lincoln Lab. 
+ 
+NORBERG:  What was the nature of the problem of the presentation of data as you people saw it in the early it in the 
+early '50s?  
+ 
+LICKLIDER:  Well, it was essentially that, here for the first time we were coupling computers with sensors like radar, 
+and sonar and so on.  It was possible to do things now that just couldn't have been thought about before.  We had 
+ 
+ 
+7 
+plan position indicators, and A scopes and stuff like that.  But there were many new dimensions now.  For instance, 
+in air defense we wanted methods of saving the air situation for successive seconds, and plotting tracks, not blips, 
+and coloring the tracks so that could see which was the recent information, so that we could tell which way the thing 
+was going; try to get some way of neutralizing the ground clutter, which was relatively stable from sweep to sweep -- 
+all sorts of stuff like that.  We wanted to process signals so that we could get a noise out of the signal with 
+electronics better than we could visually, although we could not take into account its sophisticated relationships.  
+Display was about 80%; control was about 20%.  The light gun came out of a group in Lincoln.  Then we turned the 
+light gun into the light pen.  We never did have mice in Lincoln. 
+ 
+NORBERG:  Was there a close relationship between the work in the Acoustics Laboratory and the work in 
+psychology? 
+ 
+LICKLIDER:  No, I guess I would say not.  We had a different set of problems in the Acoustics Lab.  There was a 
+relation in my mind, because I was, I guess, primarily interested in the theory of hearing and what went on in the 
+brain.  It didn't really envision what goes on in the brain as closely related to what goes on in here.  So, it didn't matter 
+to me much what the vehicle was.  I was doing acoustical work, and I was doing visual work.  Also, I was just playing 
+with human communication.  There was one place where they touched -- auditory radar.  Auditory radar was really an 
+exciting thing to me.  Harry Shector, who is a statistician connected with the Cambridge Research Center of the Air 
+Force, and Bill Huggins, who is an electrical engineer originally connected to that (he's been a professor at Johns 
+Hopkins for years), and I put together oral radar -- it didn't really take development -- and got the military to fly us 
+around in airplanes.  We could literally count the blades in a jet engine and could tell quite a lot from the sound.  That 
+had been played with during World War II and then largely forgotten about.  We had a wave of it and then it got 
+forgotten.  Then it came back, and I think that today there may even be a classified sector of R&D on that. 
+ 
+NORBERG:  Is there a characteristic effect of an individual motor, such that one could identify a plane on the basis of 
+such information? 
+ 
+ 
+8 
+ 
+LICKLIDER:  Well, we could tell the type of airplane, but we could not distinguish between two copies of the same 
+engine of the same type.  It was possible to tell when something was going wrong with the engine.  That was the 
+thing of great interest and excitement to the military:  here is a way of detecting instantly. 
+ 
+ASPRAY:  In your visits to the universities recruiting personnel, what did you look for in the students? 
+ 
+LICKLIDER:  Orientation to theory and experiment.  Psychology, at that time, was pretty well divided between 
+experimental and clinical.  We were really not in the market for clinical people.  We were looking for experimentalists.  
+My bias was toward very bright people.  I did not care very much what they knew or what they were interested in.  I 
+even made an agreement with all these kids:  I told them that if they wanted to keep on working on their Ph.D. thesis 
+project, they could do that up to 50% of their time.  But I told them, "You won't want to do that after six months, 
+because this is really an exciting thing that you're getting into."  And it was true.  They all started off working on their 
+Ph.D.  Then everybody left it; there was much more excitement in the new study. 
+ 
+ASPRAY:  How did you decide which schools to go to? 
+ 
+LICKLIDER:  Well, it's pretty well known, I guess.  Everybody in any field can rank the first several universities.  Let's 
+see, in psychology it was Michigan, the University of California at Berkeley, the University of California at Los 
+Angeles, Harvard, Stanford.  Where else?  I think I went to Washington University in St. Louis, because I had gone 
+there myself (laugh).  I've forgotten what the itinerary was.  But there were 10 or 12 of them.  I didn't have to be 
+exactly right, because the main thing is to have good ore.  You may be lucky and you may get a little unlucky.  I 
+constituted myself (?) at testing locations for the Miller Analogies Test and the Graduate Record Examination, and 
+gave all these guys these tests, if they hadn't already had them.  I had a kind of a rule, "Anybody who could do 85 or 
+better on the Miller Analogies Test, hire him, because he's going to be very good at something."   
+ 
+ 
+ 
+9 
+NORBERG:  Who were some of the people you were able to encourage to come? 
+ 
+LICKLIDER:  Well, Bill McGill, who later wound up being president of Columbia; a fellow named Joe Bennett, who, 
+unfortunately, died early.  He had a bad heart, but he was brilliant and fluent.  Bill Harris, who is still a staff member of 
+the Lincoln Laboratory -- one of the few who's still around.  Herb Jenkins, who is at McMaster University in 
+Hamilton, Canada.  Let's see.  Well, that's all I'm going to think of right now. 
+ 
+NORBERG:  Yes, that's fine. 
+ 
+LICKLIDER:  I do not know whether there were 10 or 12... 
+ 
+NORBERG:  Okay, we interrupted you just at the stage where you and Mr. Miller had flipped a coin to see who would 
+go to Lincoln and who would stay.  What happened after that? 
+ 
+LICKLIDER:  We got some Ph.D students -- five of them -- and started to develop a psychology department.  
+Looking back, I was incredibly naive.  It did not occur to me to tell the faculty we were starting a psychology 
+department. (laugh)  We actually got around to awarding Ph.D. degrees.  Then the dean found out about this and he 
+said, "Oh, no, no, no!"  We had brought Bill McGill and Herb Jenkins down here from Lincoln.  Alex Babilus was still 
+here at MIT from the wave of dynamic psychology when Kurt Lewin set up a big psychology show here in the 
+generation earlier than what we are talking about.  So, Alex, and George Miller, and Herb Jenkins, and Bill McGill, and 
+maybe we have one or two other people   ? [a person's name],... the Harvard professor, I can't remember his name.  
+Anyway, we had quite a show going, had research contracts -- so we really had lots of money.  We had the whole 
+basement of the Sloan building, which is where the faculty club is.  We were doing pretty well.  The dean, or the 
+president -- one or the other -- saw that we had a pretty good thing, even though it was on a kind of informal basis, 
+and he talked to Don Marquis, and Smitty Stevens and maybe somebody else -- the two or three really well-
+established, trustable psychologists.  They essentially told MIT "You've got a really good nucleus of a psychology 
+ 
+ 
+10 
+department."  So we were going to turn this thing into a legitimate activity, and go tell the faculty about it.  About 
+that point I came to realize that my interests just couldn't be furthered.  I had a big analog computer lab, because I 
+was modeling brain stuff, and I realized that I could not do what I was trying to do by analog computing.  I did not 
+know digital computing, but I could see in all this Lincoln context that there were digital computers everywhere.  I 
+started to go tinker and learn how they work.  Wes Clark got a hold of me one day and gave me a lecture about it.  He 
+said, "Why don't you take a couple of hours everyday and go work at this TX2 computer that we put together?"  So I 
+saw that I had really got to do that, and I also saw that I was not going to do that trying to build a psychology 
+department at MIT.  Just about that same time, George Miller got an offer from Harvard to go be a professor.  We 
+started to fall apart.  I developed an agreement with Bolt, Beranek and Newman that I would go there, start a psycho-
+acoustic laboratory, and probably also start a more general experimental psychology communication lab.  But mainly, 
+we would buy a digital computer, I would master the digital computer, and we would go into the computer business -- 
+the software side.   
+ 
+ASPRAY:  Were you familiar with the other people doing analog computing at MIT? 
+ 
+LICKLIDER:  Oh, yes; although I did mainly psyco-acoustic research.  I used the analog equipment mainly for 
+generating stimuli, collecting responses, analyzing them, and so on.  It was having analog computers, and finally 
+learning how to master them, that led me to do modeling on them.  I knew the digital differential analyzer.  Indeed, 
+since I needed less precision and was more tolerant of faulty equipment, I got a lot of their stuff after they thought it 
+wasn't any good any more.  I had a wall full of electronic counters and stuff like that.  There was a Mr. Verzuh, I think 
+it was. 
+ 
+ASPRAY:  Frank Verzuh. 
+ 
+LICKLIDER:  He was very helpful to me.  There was a young guy in the acoustics lab -- I forget his name -- who was 
+an electronic genius, and he taught me to build circuitry and the like.  I could do the electronics and so on for my 
+ 
+ 
+11 
+purposes.  Indeed, I had two full-time technicians working in the lab.  My lab was administered by the Research 
+Laboratory for Electronics, and they let me have their senior electronic technician, who was really a genius at putting 
+this stuff together.  The technicians had to learn that you do not really want blueprints, and you do not want a thing 
+finished too well, because tomorrow it's going to change.  That was a shock for them.   
+ 
+ASPRAY:  How did you learn about Bolt Beranek and Newman? 
+ 
+LICKLIDER:  Well, it was a spin-off of the acoustics lab.  I worked in the acoustics lab with Bolt and Beranek, and 
+Jordan Baruch, who was another member, and Sam Labate, who was another, and they started spending more and 
+more time with their company.  They could see the computer was going to be important for them too -- they didn't 
+know just how.  Here I was really determined to go learn it. 
+ 
+NORBERG:  Let me go back and see if we can unravel some of the threads that are in the fabric you've just describe.  
+Can you review for us what some of these contracts were, and with whom the contracts had been made that you were 
+doing in the psychology department? 
+ 
+LICKLIDER:  Yes.  Mainly Air Force.  There was a thing called the Human Resources Research Laboratory, which 
+was physically located at the Naval Research Lab, although it was an Air Force lab.  I had contracts with them to do 
+essentially psycho-acoustic research.  The research was pretty diverse, I guess.  I can't keep this all separate.  Part of 
+it was basic research related to auditory theory.  Part of it was in the psychology section of the Sloan School, part 
+was in the acoustics laboratory, and I did some part of it at Lincoln.  I think I also had a little money from the National 
+Institutes of Health. 
+ 
+NORBERG:  How did all this money come about?  Were you all trying to raise these funds? 
+ 
+ 
+ 
+12 
+LICKLIDER:  A young MIT professor really had to divide funds into a lot of little fragments unless he was a member 
+of a big lab that did all that for him, and since there wasn't any big lab they would do the administrative things orally. 
+ But they were not about to go to raise money... 
+ 
+NORBERG:  Did you hire Bolt and Beranek and Baruch, or had they been around as students? 
+ 
+LICKLIDER:  Oh, no, they were senior to me.  Bolt and Beranek were two or three years older, I guess.  Baruch was 
+maybe a year or several years younger.  He was a graduate student at first.  But Beranek and Bolt were instrumental 
+in getting me down here from Harvard.  As a matter of fact, my first office at MIT was in the acoustics lab.  There still 
+is a big space back there that isn't full yet.  They simply built an office for me on top of Leo Beranek's office.   
+ 
+NORBERG:  Had you had any contact with the people in the Servo-mechanisms Laboratory, and the work that was 
+going on with Whirlwind? 
+ 
+LICKLIDER:  Yes.  I knew Gordon Brown slightly, and I had read his book.  I guess he was the only person that I 
+really knew there, but I did spend a little time there.  If I had problems, I would show up.  I was not embarrassed to go 
+ask people. 
+ 
+ASPRAY:  He was also the director of the computing center at that time, was he not? 
+ 
+LICKLIDER:  No, Phil Morse, the physicist, was head of the Computation Center, and Fernando Corbato was the 
+Associate Director.  At least somewhere along in there Corby had a contract with Office of Naval Research, I think, to 
+develop a time-sharing system.  That started before there was a Project MAC.  It is conceivable Gordon Brown was 
+director of the Computation Center at one time, but when I knew it, it was Phil Morse. 
+ 
+ 
+ 
+13 
+NORBERG:  I guess what I was trying to get you to say was something about how you became interested in digital 
+machinery, and moved away from the analog machinery. 
+ 
+LICKLIDER:  Well, there was tremendous intellectual ferment in Cambridge after World War II.  Norbert Wiener ran a 
+weekly circle of 40 or 50 people who got together.  They would gather together and talk for a couple of hours.  I was a 
+faithful adherent to that.  When I was at Harvard, I came down here and audited Wiener's     ?      series in   ?     -- a 
+couple of things like that.  Then there was a faculty group at MIT that got together and talked about cybernetics and 
+stuff like that.  I was always hanging onto that.  Some of it was hard for psychologists to understand.  But Walter 
+Rosenblith was understanding and he did a lot of explaining to me.  As a matter of fact, he audited a course down 
+here two weekends ago.  There was a young fellow named M. Fred Webster.  Routinely we'd talk about it on the way 
+down in the car, and then listen to this stuff.  Then on the way back, Walter would more or less explain it to me. 
+(laugh)  Digital stuff was big in all of that.  And there was Whirlwind.  And I knew about and then visited Howard 
+Aiken's lab.  Once I had the pleasure of riding on an airplane with Aiken, and got to know him enough to be 
+somewhat inspired by that.   
+ 
+NORBERG:  In what period did you get to know him? 
+ 
+LICKLIDER:  It was just about the time that Jay Forrester was getting Whirlwind I up and running. 
+ 
+NORBERG:  1950 or so? 
+ 
+LICKLIDER:  Something like that, yes.  I was interested in speech as well as hearing, and was interested in the 
+phenomenon that you could take speech waves and reduce them to rectangular waves that crossed the axis when the 
+speech wave did.  That is, you could construct what we called multi-vibrators, the flip-flop circuit.  You listened to 
+the output of it and got a surprisingly high degree of intelligibility.  Then it went further in, quantitized the time 
+scales, so the switching had to happen at the nearest pulse.  I wanted to build a device that would let me set up 
+ 
+ 
+14 
+arbitrary patterns -- just one bit per decision.  But I wanted at least a second of speech, and preferably five or ten 
+seconds.  So I was really in quest of ways to do that.  At that time, unhappily, the circuitry was expensive.  We got 
+our flip-flops, and I think they were about $25 apiece.  There were two vacuum tubes and some resistors and 
+capacitors.  I could not afford enough of them to do what I wanted.  But I could sneak into some of the digital 
+computers that were being built, and program them.  That was really, I guess, how I got my hands on a computer first. 
+ 
+NORBERG:  Is this also about that same time, when Whirlwind One was...? 
+ 
+LICKLIDER:  Yes, I do not remember the timing exactly, but Lincoln built a thing called TX-0, which was a computer 
+with happily only four basic instructions.  That was out at ?             Defense (?).  Then they built TX-2, and they built 
+a thing called the Memory Test Computer to test for memories that Forrester had done.   
+ 
+TAPE 1/SIDE 2 
+ 
+NORBERG:  You were just mentioning when the Memory Test Computer was constructed, along with TX-0 and TX-2, 
+and so on; and your association with these. 
+ 
+LICKLIDER:  Well, at Lincoln, one would get to get his hands on a thing like that a little bit.  But it was more just 
+establishing in my mind the concept I had to have one of those.  I did not get hours on it.  TX-0 was essentially given 
+to MIT by Lincoln when it was no longer needed for its purpose there.  But, more to the point, what we had done at 
+BBN was buy the cheapest computer we could find, which was the LIBRASCOPE LGB30.  It turned out that that was 
+just totally inadequate. 
+ 
+NORBERG:  Why?   
+ 
+ 
+ 
+15 
+LICKLIDER:  Well, maybe I will spend a minute about the LGB30.  It was a vacuum tube machine.  The signals 
+recirculated through the vacuum tubes.  I think they went through three times in order to get a different frequency.  
+They were shifted in frequency.  It was a trick that people knew how to do.  But there was no core memory, of course. 
+ There was no vacuum tube memory either; there was just a drum.  And for some strange reason the drum had 29 bit 
+words on it.  The accumulator was 32 bits.  It was AC coupled, and they had forgotten that if you get all ones or all 
+zeros, eventually you will lose your signal, because nothing would fluctuate.  So they took one bit off the 
+accumulator to make it about halfway between a zero and a one, so there would always be some AC.  So, you had 29 
+bits in memory and 31 in the accumulator; and you had to feed things in through the accumulator.  The first thing we 
+did was multiply three by four.  The way that went was you had to shift it over two bits to get it in the right place to 
+go into memory.  You multiplied the three by the four and got 12; multiplied the 4x4 and got 16; mu ltiplied 12 and 16 
+and got whatever you got, and divided that by 4 (laugh) and, indeed, it worked, but it was ridiculous.  The darn thing 
+made mistakes.  It just had machine errors and it was very slow.  So I programmed one of the models I had running on 
+a G.A. Philbrick analog computer.  The analog computer solved the problem 30 times a second and displayed it, so I 
+could twiddle my knobs and see what was happening.  This darn thing took two and a half days to run the program.  
+In the process it made many mistakes, so you had to checkpoint yourself.  All there was to checkpoint yourself on 
+was paper tape, and the paper tape was unreliable.  So it was fun to play, and I learned to write programs and stuff on 
+the LGB30, but we were an order of magnitude worse off from what it was going to take.  At that point, or before that, 
+Ken Olson, Norm Anderson, and their group had spun off from Lincoln to form DEC, which was a maker of plug-in 
+modules -- digital modules.  One day, they saw that, my God, we can build a computer.  We've got enough parts here. 
+ All we have to do is put them together.  And so they made this thing.  Bolt, Beranek and Newman bought the very 
+first one they ever made.  In fact, they let us have the prototype while they made the first production machine.  So we 
+wound up with this PDP1. 
+ 
+ASPRAY:  This was when? 
+ 
+ 
+ 
+16 
+LICKLIDER:  The negotiations were in 1958 and the machine was delivered in 1959, I think.  The second one was 
+delivered down to MIT and went in along side TX0.  Jack Dennis, I think, was head of the group that had it.  The 
+BBN people and the MIT people knew each other pretty well.  I had got Minsky and McCarthy to be consultants at 
+BBN and had a bunch of MIT graduate students:  Kane, Raphael, Bobrow -- maybe two or three more.  So there was 
+good communication, and we always knew we had to have some bigger memory in this PDP1.  So I think it was kind 
+of a joint effort to get Bryant Chucking (?) to build a drum that would work.  Somewhere along the line when I was 
+early at BBN, Ed Fredkin came to see about a job.  It was obvious from the beginning that here's a young genius.  So, 
+we got Fredkin working at BBN.  At that time he was having all kinds of psychological problems about getting work 
+done.  We had fantastically interesting and flexible arrangements, like figuring out at the end of each month what his 
+salary for that month should be.  But he was absolutely marvelous.  He designed up this drum with MIT in just a few 
+days.  Anyway, that was a serious computer.  You can make an argument that, although it had better graphics, in 
+other respects it was almost exactly a Radio Shack TRS 80-100 computer.  It had about that computing power, a little 
+less memory, and it ran a little slower.  Everybody connected with it just sat at the console and did on-line interacting 
+programming and since I was of the first one, I got most of the time.  There were enough of us; we kept that thing 
+running day and night.  We even built a time-sharing system on it, although it was more just an exercise:  because it 
+was such a weak little computer, there was nothing really to time-share.  But, just to prove it could be done, we 
+divided the scope into four quadrants and let each person have a quadrant of the scope. 
+ 
+ASPRAY:  This was when? 
+ 
+LICKLIDER:  Well, there's a paper about that time-sharing system.  I do not know whether it was 1960 or 1962.  It was 
+probably 1960.  I have a copy of a memo from Minsky to some of his colleagues here, chastising them for letting us 
+get ahead of them in demonstrating the time-sharing system.  I simply do not know what the precedent was there.  
+But the BBN one was quite special purpose.  It was a time-sharing system for writing and debugging programs. 
+ 
+ASPRAY:  Do you know the origin of the time-sharing concept in this larger community? 
+ 
+ 
+17 
+ 
+LICKLIDER:  Yes, probably the first person who wrote about it was a young Britisher.  He mentioned the concept at a 
+computer meeting in Paris, I think in 1960 -- sponsored by UNESCO, maybe.   
+ 
+NORBERG:  Sounds right. 
+ 
+LICKLIDER:  Yes.  That's the first writing I know of about it, and his mentioning it then was probably the first I had 
+heard.  But very soon there was pretty much discussion in the community very soon.  People were saying that what 
+they wanted was interaction and memory sharing.  Processors were so expensive that for a time it was really just 
+barely making processing available for more people.  I think John McCarthy was probably the source of most of the 
+motivation and action.  I think he rather stimulated BBN into doing the time-sharing system.  At that point he was, I 
+believe, head of the thing called the Long-range Study Planning Group here.  He did not administer that very well.  
+So, eventually they made Al Hill, who had been director of the Lincoln Lab head of it.  Al was a very soft-spoken but 
+driving administrator, who would get things done.  Al got the report to come out about what the requirements were.  
+The powers that be thought McCarthy's requirements were preposterous.  McCarthy wanted a million bit memory -- 
+not a million words, I think it was just a million bits -- but at that time, of course, that wasn't responsible thinking.  
+Now it would not be responsible thinking either.  Anybody that did not want more than a million words in a memory 
+would really...  (laugh)  
+ 
+NORBERG:  Let's go back to BBN.  What sort of problems were you people working on besides this time-sharing and 
+trying to make the PDP1 work in this way? 
+ 
+LICKLIDER:  Well, one of the things was libraries -- The Council on Library Resources gave us the money to explore 
+what the computer was going to do to libraries.  We did some things, but they were never practical at that stage, 
+because we wanted to do something where the text and diagrams of all these books were going to be stored, but we 
+had enough room to have three short technical articles -- or something in this direction.  It took a pretty big step of 
+ 
+ 
+18 
+imagination to see the relationship between what we had and what we wanted.  But we did make a system for 
+studying technical documents.  Even for now, the concept was just right.  We wanted to analyze the scholarly 
+process -- reading and studying documents, tracing references, and so on -- and build an interactive man-machine 
+system, or a person-machine system, to facilitate that.  Raphael, Kane, Bobrow and I actually wrote a paper about 
+such a thing.  About two years ago I was visiting Xerox PARC -- walked in on this group, and they said it was not a 
+put-up job.  They were working on exactly such a thing.  And they had a copy of the paper, and indeed, there was 
+Bobrow.  So, there were several things like that.  We did not work very hard on how to use the computer to control 
+circulation and stuff like that.  We got out a little brochure, I think, that presented workaday ways to use the 
+computer in the library, but we were much more interested in knowledge bases -- how to store information.  We 
+played with pointer schemes for storing relations in them.  Ed Fredkin, at that point, published a paper called "TRIE 
+Memory," which presented an extreme storage scheme in which there was nothing but pointers.  If I recall the scheme 
+it went something like this:  suppose you want to work with alphabetic things.  You have 26 cells.  If you have 
+something beginning with "m" the pointer goes from the "m" cell to another one of these.  And then the pointer 
+from... But you can use each one of these several or many times.  All words that begin with "m-a-n" use the same first 
+three pointers.  Then there's a thing that says, "This is the end of the line," so that you can have one thing stopping 
+there at the word "man", and then another one going on to something that begins with "man".  Well, I remember Ed 
+simulating that thing.  We managed to get eight hours on a 7094 or maybe it was a 7090 at the Lincoln Laboratory.  Ed 
+ran this simulation, which showed that when you get a big enough thing, this becomes efficient, and interesting and 
+promising.  And it was so good that we talked Lincoln into giving us another eight hours to run it.  And there was a 
+random selection process in this test.  And Ed forgot to differently initialize the random number generator.  And the 
+second eight hours gave exactly the same numbers as the first eight hours.  And that was really quite a big event in 
+my life.  I frankly didn't believe that... exactly the same... (laugh)... pretty unhappy not to get any ?      today. 
+ 
+ASPRAY:  Who was supporting this research? 
+ 
+ 
+ 
+19 
+LICKLIDER:  The Council on Library Resources was.  The head of it was a man named Verner Clapp, who was an 
+eminent figure in the librarian and scholarly book world.  Although he was tremendously suspicious of all of this 
+stuff with computers, he did appreciate that we were serious and enthusiastic and working hard on it.  He really 
+supported us.  He got a steering committee for us.  I do not remember who was on it.  I do remember the president of 
+Colby College was a very helpful guy who steered us through a lot of troubles.  But to keep this bunch of engineers 
+honest, we would have to report to the steering committee about once a month about what we were doing.  When we 
+got all through, I still had to write the final report of this project even though I had moved to ARPA by then.  I 
+remember that occasion very vividly.  I was at some meeting in Las Vegas, and every day went out by the swimming 
+pool for about three or four hours and dictated on that report -- and, indeed, did get the thing done.  I had to look up 
+some references when I got back home, but Verner liked the report so much that he talked MIT Press into publishing 
+it as a book.  So here is this book called Libraries of the Future that tells about what we did.  I have always been 
+pretty happy with that.  It was not a terribly expensive thing, as those go.  I think it captured a little bit was an early 
+appreciation of the coefficient in the exponential increase in the power of computers.  We figured that every two 
+years the cost effectiveness of computer hardware was doubling.  Considerably later -- towards the late end of the 
+1960s -- Larry Roberts really went into that and plotted a lot of data about the capability of the computer according to 
+a couple of formulas he had for figuring the capability as a function of announcement date.  If you don't change the 
+technology, I guess the coefficient within a system was 1.4, which means doubling every two years.  If you take the 
+best thing of any kind, it was 1.56, I think, which was even faster.  I have felt that that is a very significant number.  It 
+tells you that if you're going to do research on something that you hope to see in practical applications in say eight 
+years, you ought to figure that you've got four doublings.  So what's that -- 16?  So you better get yourself a machine 
+16 times as good as you would be able to afford for the practical application in order to have a space for developing 
+it.   
+ 
+ASPRAY:  Any other projects that went on during that time? 
+ 
+ 
+ 
+20 
+LICKLIDER:  Oh, yes.  We had a project with the Air Force Office of Scientific Research to develop the systems 
+concept.  Now it's corny, but then it was an interesting concept.  We were trying to figure out what systems meant to 
+the engineering and scientific world.  That involved some meetings in which we brought [together] good thinkers in 
+several fields.  We wanted a kind of miniature Wiener circle.  I do not remember that we really contributed that much 
+to that.  I don't know what came of it.  But we put a lot of hours into trying to do that.  I think Tom Marill joined the 
+group at BBN, and he had a contract to develop semantic networks -- one of the very early things, probably earlier 
+than Tom was.  At Carnegie-Mellon there was one paper on Semantic Networks before Tom's, but I think that was 
+pretty terminal I am not be able to say that guy's name.   
+ 
+NORBERG:  How large was Bolt Beranek at the time [in] the late 1950s. 
+ 
+LICKLIDER:  Well, when I went there I think there were probably about 40 people. 
+ 
+NORBERG:  They could not all have been working on the Council of Library Resources. 
+ 
+LICKLIDER:  Oh, no.  BBN was mainly an acoustical consulting firm.  It moved into computers pretty fast once we 
+got started.  Jordon Baruch got excited about computers.  And he ran a company jointly owned by General Electric 
+and BBN which did medical applications.  I am trying to think of what I did with myself.  I think my support was 
+largely from the Air Force and the Council on Library Resources.  But I believe we also had Office of Naval Research 
+support.  We were running pretty much like you would run a university.  We were not building things, and selling 
+machinery or anything.  I could probably go find reprints. 
+ 
+NORBERG:  No, that's all right.  We can certainly do that.  Was there any thought at BBN in that time -- I am still 
+talking about the late 1950s -- of simulating any sort of acoustical activity in an attempt to do better design work, or 
+better consulting? 
+ 
+ 
+ 
+21 
+LICKLIDER:  I do not know the answer to that.  Leo Beranek was deeply engaged in concert hall acoustics.  We had a 
+kind of a debacle with Lincoln Center, if you may recall -- it was pretty famous. 
+ 
+NORBERG:  Yes, that's what I was thinking of. 
+ 
+LICKLIDER:  This had to have been discussion of simulating concert halls.  But I really do not remember the details 
+of that.  Oh, aircraft noise was a big thing.  There was a whole sector of the work that had to do with how to measure 
+the noise.  It had to deal with the effects of noise on people.  Karl Kryter came and started up that work, and wrote a 
+book called Effects of Noise on Man.  I saw him the other day and he is, I think, doing another revision of it.  He spent 
+his lifetime, really, on noise effects.  It was pretty big stuff, because in industry at that time there were many 
+manufacturing situations that made a terrible clatter.  People were just beginning to realize that that was all much 
+worse on hearing than anybody had suspected.  And there were six or seven billion dollars worth of lawsuits stacked 
+up at that point when I was at BBN.  So there was a practical side of things there.  I do not think anybody tried to 
+simulate the nerve degeneration process in the computer.  But the computer was certainly useful in a kind of 
+epidemiological approach to the... 
+ 
+NORBERG:  This is about the time you wrote the paper on man and information, is it not? 
+ 
+LICKLIDER:  The thing called "Man Computer Symbiosis?" 
+ 
+NORBERG:  Yes. 
+ 
+LICKLIDER:  Yes, that was in there somewhere.  I do not know what the date of that was.  1960... 
+ 
+NORBERG:  1960.  Did that come out of the Council on Library Resources work, or was that some larger problem you 
+were thinking about? 
+ 
+ 
+22 
+ 
+LICKLIDER:  No, that didn't come out of any particular research.  It was just a statement about the general notion of 
+analyzing work into a creative part that seems to be heavily involved with heuristics and routine programmable parts 
+that you could see exactly how to get a computer to do.  That was really based really on some measurements I made 
+on myself.  I tried to keep schedules and see how much time I spent doing what, and I was pretty much impressed 
+with the notion that almost all the time I thought I was thinking and working, I was really just getting in the position 
+to do something.  And I had an experience with Jerry Elkind and his manual tracking experiments, which he had done 
+as a graduate student under my supervision, (although he was an electrical engineer).  He was pretty clear [that] there 
+were some relationships in his data; he had all these things plotted on graph paper.  There was a stack of them, and 
+we could never see them all at once, and could not tell what was going on until we put big heavy blobs wherever 
+there was a datum point, and went down to the Sloan building where I happened to have an office at the end of a little 
+mezzanine where you could stand and look down on the floor below.  So we redirected traffic a little bit, and put all 
+these graphs down there, so we had a hundred or so sheets of graph paper.  Then it was obvious what was going on. 
+ And I was pretty much impressed.  That happened frequently:  you do a lot of work, you get in a position to see 
+some relationship or make some decision.  And then it was obvious.  In fact, even before you could quite get 
+finished, you knew how it was going to come out.  "Man Computer Symbiosis" was largely about ideas for how to 
+get a computer and a person thinking together, sharing, dividing the load -- mainly heuristic versus algorithmic. 
+ 
+NORBERG:  While your were out at BBN were you still teaching here at the Institute? 
+ 
+LICKLIDER:  No, I was around the Institute a good bit, but I was not teaching. 
+ 
+ASPRAY:  One last question about BBN.  Were there people that you got to know well at BBN that you then were in 
+a funding relationship with at DARPA? 
+ 
+ 
+ 
+23 
+LICKLIDER:  Well, there are two parts to that.  One would be funding BBN from DARPA.  There what happened was 
+that, in order to avoid conflict of interest I studiously avoided funding BBN.  Leo Beranek did not like that much, and 
+went down to ARPA to complain.  I said, "Well, okay, you deal with the director's office, but not through Licklider."  I 
+do not think anything happened very soon, but later when it came to building the ARPA network, ARPA picked BBN 
+to be the principle developer and builder of that.  And that set BBN into the network business.  I think it has been 
+very effective in the network business. 
+ 
+NORBERG:  Had you had anything to do with MITRE during this period? 
+ 
+LICKLIDER:  Yes, MITRE was spun off from Lincoln.  I do not remember the date, but a lot of the people I knew went 
+with MITRE.  MITRE ran an annual conference, for a few years at least, in Virginia or West Virginia -- I have 
+forgotten the name of the place now.  One of those big hotels... 
+ 
+TAPE 2/SIDE 1 
+ 
+LICKLIDER:  Through the work at BBN I got acquainted with people in the computer world.  Also, through the work 
+of Lincoln Laboratories.  So I guess I knew pretty well that there were people at MIT, and Harvard, and UCLA -- I 
+remember George Brown ran the Western Digital Network, or something like that, under IBM funding at UCLA.  I had 
+a number of notions of where to go.  It was not starting absolutely cold.  But most of the time that I was at BBN I did 
+not know that I was going to ARPA at all.  It had happened rather suddenly. 
+ 
+NORBERG:  How did it happen? 
+ 
+LICKLIDER:  Jack Ruina was director of ARPA, and was given responsibility for a command and control project that 
+got set up from inside the office of the Secretary of Defense.  The contract was let by them through ARPA to System 
+Development Corporation to do some command and control research.  It was envisioned that that would grow.  There 
+ 
+ 
+24 
+would be more to it than that one thing.  So Jack wanted somebody to do that.  Simultaneously, there was a 
+recommendation from the Defense Advisory Board that the Defense Department look into supporting some 
+behavioral research, particularly through some institutes that would be set up to bring behavioral researchers 
+together with better facilities.  Jack wanted somebody to look into that; maybe do something about that.  Fred Frick, 
+whom I first knew at Harvard in the Psychology Department at Harvard, was in all of this at Lincoln.  Fred was, by 
+that time, at Lincoln.  Fred and I went jointly to talk with Ruina.  We were both interested in what he was talking 
+about, but neither one of us wanted to leave what we were doing.  I guess Ruina got Gene Fubini to give us a sales 
+pitch and we decided, yes, this was so important that one of us would do it.  But which one?  Again we came to a 
+coin toss. 
+ 
+ASPRAY:  Who was Fubini and why were you influenced by him? 
+ 
+LICKLIDER:  Well, Gene Fubini was general assistant or associate to the Assistant Secretary of Defense.  I had 
+known him before that.  I do not know exactly how.  He was in a research laboratory out of Long Island, and I 
+remember spending some time with him.  I was tremendously impressed with the guy.  He was an immigrant from Italy 
+-- a wonderful European technical education; very sharp, incisive, impatient kind of guy; quite eloquent, and really 
+dedicated to this job at the Pentagon.  He made Frick and me feel that the world needed at least one of us and we 
+should do it.  So, it wound up that I was going to take off from BBN and do that.  I went on leave, but before too long 
+had decided that I would not go back to BBN and went off the leave. 
+ 
+NORBERG:  Let's go back a little bit.  Do you recall what sort of arguments Fubini used about ARPA and its 
+objectives that might have helped to convince you? 
+ 
+LICKLIDER:  Well, part of it was when we got talking I started to wax eloquent on my view of the thing:  that the 
+problems of command and control were essentially problems of man computer interaction.  I thought it was just 
+ridiculous to be having command control systems based on batch processing.  Who can direct a battle when he's got 
+ 
+ 
+25 
+to write the program in the middle of the battle?  Fubini essentially agreed 100% with that and so did Ruina.  We 
+started seeing that.  Here this whole military thing was not developed right.  The kind of computing almost did not 
+exist, but up in Cambridge everybody was excited about making it exist.  Why didn't we really develop an interactive 
+computing?  If the Defense Department's need for that was to provide an underpinning for command and control, 
+fine.  But it was probably necessary in intelligence and other parts of the military too.  So, we essentially found that 
+there was a great consonance of interest here, despite the fact that we were using different terms we were talking 
+about the same thing.   
+ 
+NORBERG:  Had you had any experience with command and control before this conversation with Fubini? 
+ 
+LICKLIDER:  Well, yes.  The Air Force systems contract at BBN was really essentially command and control, yes. 
+ 
+NORBERG:  Who was working on that at BBN? 
+ 
+LICKLIDER:  Well, I was a little bit.  Jordan Baruch was; Tom Marill was; Jerry Elkind was.  Everybody had a corner 
+of it. 
+ 
+NORBERG:  Was this under support from the Air Force? 
+ 
+LICKLIDER:  Yes.  Somewhere along in there in the mid-1950s I was a member of the Air Force Scientific Advisory 
+Board.  They picked me to run a committee to explore from a human factors point of view the relative merits of one-
+person and two-person interceptors -- essentially can one person run such a complicated thing?  It was a time when 
+there were F-86s, F-89s, and F94s.  F-86 was a one-person machine; the other two were two-person machines.  I had a 
+committee, partly military people and partly psychologists and engineers -- I guess six or eight people, including one 
+colonel who could somehow commandeer airplanes and fly them.  (I remember it was the fall that Eisenhower and 
+Stevenson were running against each other and I covered more miles than they did.  We went everywhere.)  We were 
+ 
+ 
+26 
+going to report on that, but it was kind of a shocker to the Air Force Research & Development, ARDC, because we 
+were really very critical about a lot of things.  They did not have any place to test tactics; they did not know whether 
+these things would work or not.  When they finally did get around to testing them, nothing hit anything except the F-
+89 shot off 104 rockets, and one was out of control, spinning off like that, and it hit the target.  (laugh)  So I got pretty 
+deeply involved with military people about stuff like that.  And the Lincoln Laboratory had been essentially command 
+and control -- factoring aircraft to make interceptions and stuff like that.  So I was pretty well coded up on it.  I had 
+read a lot and was intrinsically interested.  But I did not go to Washington and do anything about command and 
+control studies as such.  It was the development of interactive computing which we all claimed would be a basis for 
+command and control. 
+ 
+NORBERG:  Okay, let me understand something that you said before to make sure I got the point.  You mentioned 
+when you and Frick went to Washington to talk to Ruina, and he sent you on to Fubini, that there had been an 
+interest in the Department of the Air Force (I think you said through the Air Force) to develop institutes, to study 
+these behavioral questions.  Now, had you two gone looking for funds to set up one of those institutes, or bring the 
+work to BBN? 
+ 
+LICKLIDER:  No. 
+ 
+NORBERG:  You had been invited to Washington, then, for this conversation? 
+ 
+LICKLIDER:  Yes. 
+ 
+NORBERG:  Okay.  I wasn't quite sure what started it. 
+ 
+LICKLIDER:  I was going to say, the institute thing never really did work, because Behavioral Science didn't want to 
+move.  They wanted money where they were, and did not want to move together just for facilities.  They were not 
+ 
+ 
+27 
+very convinced they wanted any facilities.  In my view every research enterprise like that ought to be centered about 
+a big, time-shared computer. 
+ 
+NORBERG:  Yes.  What sort of man was Ruina? 
+ 
+LICKLIDER:  In my view, brilliant; for a scientist, amazingly competent in finance and all kinds of fiscal 
+administration.  As a manager, it seemed to me that he had spent long enough to decide he understood what I was 
+trying to do, and that I would probably work hard to do that, and then just wanted to have a report periodically -- was 
+I on track or not?  He had much bigger fish to fry; this was a small part of his life.  I've told him since that I've felt that 
+that was a kind of benign neglect. 
+ 
+ASPRAY:  Was he an MIT man? 
+ 
+LICKLIDER:  I do not know whether he was before or not.  I knew him first when he was in the Pentagon; the first 
+time I ever heard him give a talk he was in the Pentagon.  He came to MIT afterward.  I do not know whether that was 
+returning to MIT or not. 
+ 
+ASPRAY:  How well did you know him when you went to that meeting with Frick? 
+ 
+LICKLIDER:  Not very well.  I had heard him give talks.  I do not know whether I knew him personally then or not. 
+ 
+NORBERG:  ARPA was five years old at the time you arrived.  What sort of situation did you find there?  How was it 
+set up?  What sort of people were active?   
+ 
+LICKLIDER:  That's hard to answer.  I do not remember extremely well what the organization was.  There was one part 
+that distressed me.  ARPA had gotten in... Were we in the Vietnam war then? 
+ 
+ 
+28 
+ 
+NORBERG:  Not quite yet.  We were there, but it had not expanded. 
+ 
+LICKLIDER:  There was a kind of a cloak and dagger part of it. 
+ 
+NORBERG:  There was? 
+ 
+LICKLIDER:  There was a fellow named Bill Godell who, it seemed to me, was always trying to get control over what I 
+was doing.  I could never tell what he was doing, so that part made me nervous.  Other parts of it... I am not sure 
+whether it was organized with the Strategic Office, or the Tactical Office, but it was something along that line.  A lot 
+of it was re-entry physics.  I had the feeling that there were some real geniuses in this, but there were also some guys 
+who were essentially bureaucrats and managers, so I sort of stayed out of that as best I could.  I couldn't be totally 
+uninvolved.  I had one project that I wasn't cleared deeply enough to know what was, and that made me nervous.   
+ 
+NORBERG:  Let me try and ask the question a different way... 
+ 
+LICKLIDER:  It turned out, I could say I was paid for digging a hole in Lafayette Square. 
+ 
+NORBERG:  ... And that is, as we look over the history of ARPA that has been presented to us by the Barber 
+Associates when they did their analysis of the management style there, which they prepared in 1975, it seems there 
+were about six different groups active in ARPA at the time.  One of them was the missile group, which had been the 
+primary activity from 1958 through about 1962.  Then there was the commanding control group, which seems to be 
+relatively small in comparison to the missile group.  There was some activity in behavioral psychology and one or 
+two other things now which escape my memory.  It appears as if the command and control and the behavioral 
+psychology groups ?       groups offices were linked... 
+ 
+ 
+ 
+29 
+LICKLIDER:  I was director... 
+ 
+NORBERG:  ... Whereas the others were not linked and did not seem to be associated with command and control and 
+behavioral psychology.  Is that a fair assessment? 
+ 
+LICKLIDER:  Yes.  I did not deeply understand what they were doing.  I thought that the motivation here was really 
+that there has to be this research on reentry physics, and the secretary didn't want to give that to one of the 
+established military departments, because they knew how to spend money.  ARPA would do it for one-tenth the 
+money, and they did not want that to be a development project.  They wanted that to be close to a research project.  
+But I did not know anything about that; I had got problems of my own.   
+ 
+NORBERG:  Okay, let's put that aside for the moment.  Regardless of what your agenda was, what was it you were 
+told that you were being brought in for, to run Command and Control and Behavioral Psychology? 
+ 
+LICKLIDER:  To run Behavioral Science.  I do not think I was ever told to run Command and Control.  I was going to 
+be in charge of the SDC contract, but mainly, I was going to set up more stuff, and maybe even decrease SDC a bit, to 
+spread it further, and do interactive computing.  At least, I said that.  Every time I had the chance to talk, I said the 
+mission is interactive computing.  I did realize that the guys in the secretary's office started off thinking that I was 
+running the Command and Control Office, but every time I possibly could I got them to say interactive computing.  I 
+think eventually that was what they thought I was doing.   
+ 
+NORBERG:  Well, why?  Why did you want to push interactive computing so strongly? 
+ 
+LICKLIDER:  I was just a true believer.  I thought, this is going to revolutionize how people think, how things are 
+done.  You know, yesterday or the day before I heard a talk about productivity and about improving it 7/10 of a 
+ 
+ 
+30 
+percent per year, or something.  I thought we were going to double it or triple it, or multiply it by four or ten or 
+something; and I still feel that way. 
+ 
+NORBERG:  Why did you believe this? 
+ 
+LICKLIDER:  Well, I was one of the very few people, at that time, who had been sitting at a computer console four or 
+five hours a day -- or maybe even more.  It was very compelling.  I was terribly frustrated at the limitations of the 
+equipment we had, but I also saw how fast it's getting better.  So I was just a true believer in my own propaganda, I 
+guess.   
+ 
+NORBERG:  Who else did you talk to about this question of interactive computing before you went to ARPA? 
+ 
+LICKLIDER:  Oh, all the guys around here -- Minsky, McCarthy, Fredkin (maybe especially Fredkin.  He is a 
+tremendous enthusiast), Tom Marill, Wes Clark, Larry Roberts.  Ivan Sutherland 
+ 
+ASPRAY:  Did they share your view? 
+ 
+LICKLIDER:  Oh, yes.   
+ 
+ASPRAY:  Was there a disagreement at all about this in this community? 
+ 
+LICKLIDER:  Well, people like Minsky and McCarthy were primarily interested in artificial intelligence, and tended to 
+view man-computer interaction as a neat and convenient thing to make it possible to write AI programs, whereas I 
+thought there was going to be this interval between man's thinking about himself and machines taking over.  I do not 
+know how long the interval was, but it looked like a considerable interval, when working with the computer was of the 
+essence.  So, in short, I really believed it, and quite a few people in the area here thought that something really great 
+ 
+ 
+31 
+was going to happen.  Belmont Farley was another one of the fellows.  He worked with Wes Clark on the Memory 
+Test Computer.   
+ 
+NORBERG:  Was there a staff waiting for you when you arrived? 
+ 
+LICKLIDER:  Well, I had a secretary.  I went in my first day, which was in October of 1962, and met my secretary and 
+she said, "Well, Dr. Licklider, you have just one appointment today.  There are some gentlemen coming from the 
+Bureau of the Budget, or whatever it was called then, to review your program."  And, indeed, they came.  They were 
+amused when they found out it was my first day on the job.  We had a really very pleasant talk.  I told them what I 
+was excited about, and that turned out to work greatly to my favor, because they got interested in it, and when we did 
+have a meeting on it it was very favorable; they did not take any of my money away. 
+ 
+NORBERG:  Was the only contract at the time the one with SDC? 
+ 
+LICKLIDER:  That's correct, yes. 
+ 
+ASPRAY:  And who had let this happen? 
+ 
+LICKLIDER:  I do not remember, exactly, but I am afraid somebody from SDC had spent a year in the secretary's 
+office, and had managed to get that set up -- something along that line. 
+ 
+NORBERG:  If the people from BOB, I guess at the time here in the budget, came in to talk to whoever it was running 
+this office, and you turned out to be the person, there must have been a budget associated with the office. 
+ 
+ 
+ 
+32 
+LICKLIDER:  Yes, I think that there was nine million dollars in that contract, and I think that there was something like 
+14 million dollars total that... Ruina could have moved to any place he wanted to, but I think he had had a good move 
+sitting there (?). 
+ 
+NORBERG:  In comparison to the contracts you had had before, what sort of budget was BBN running on, for 
+example, in 1962? 
+ 
+LICKLIDER:  Well, if I take just the part of BBN related to computers and systems and stuff like that, I guess we were 
+a total of 10, or 12, or 15 people.  I do not know how you turn that into money, but our whole thing was small stuff 
+compared with... Fourteen million dollars seemed like a lot of money to me. 
+ 
+NORBERG:  It sure does to me, especially for that period.  What I am leading toward is to try to see whether or not 
+you thought about it in terms of, how do I spend so much money, or, this is not going to be enough.  Between the 
+ends of that spectrum, where did you sit at the time? 
+ 
+LICKLIDER:  Well, there was indeed also a little behavioral science money.  I thought the computer money was going 
+to pay for about ten laboratories.  It was going to take more than that to make a movement, but I could settle for it if I 
+just had ten.  I thought I would like to have at least one that was well over a million dollars.  I thought that about 
+300,000 dollars is as low as you can go and still do something, because you've got to have a computer, and you've 
+got to have people to make it run, and so on.  So it was just back of the envelope calculations.  I felt that I could be 
+happy if I never saw any more money than this.  But probably the most important thing I could do was get some stuff 
+started very fast; get things committed so it can't go away.  The other thought was that I really wanted to set this up 
+on three-year funding, because I was not going to be here too long and I wanted to get something set up.  I would 
+have liked three-year... where you keep moving one year... That essentially divides the amount of money I have got 
+by three, and that makes it look pretty weak. 
+ 
+ 
+ 
+33 
+NORBERG:  Why ten places? 
+ 
+LICKLIDER:  I had this picture that Cambridge is a good reinforcing community.  There were enough different places 
+doing related things that if you just had a single group doing something, nobody knew whether to believe it or not.  
+But if Harvard had something, and MIT had something here, and there was something at the Lincoln Lab, and BBN 
+had something, and maybe Otto Burnett had something at MGH [Massachusetts General Hospital], it reinforced.  I 
+would have liked to see that happen in Cambridge; I'd have liked to see that happen in Los Angeles or the San 
+Francisco area; maybe one other place.  There was always in the back of my mind the idea that if we could ever get 
+time we would see if we could not do something in Texas or the Midwest, and create a cognitive center where there 
+wasn't one.  I never did really get around to that, although ARPA has tried a couple of times. 
+ 
+NORBERG:  So, with just you and a secretary to do this, how did you proceed?   
+ 
+LICKLIDER:  Well, I tried to select a colonel with the aid of the computer systems.  I talked to a lot of people in the 
+Pentagon.  They were very helpful.  I said, "You want to get somebody who's really credible to the military.  If you 
+can, find a war hero.  Also, he's got to know something about science, or mathematics or something."  I wound up 
+with a guy who was a war hero.  He had escaped from captivity by the Germans twice.  He was a flyer.  He also had 
+run the computer center in the Pentagon, but the records did not say that.  It turned out he had hated running the 
+computer center so much that he tore up his records before he left.  But I finally got him anyway.  He was an 
+astronomer by trade. 
+ 
+ASPRAY:  What was his name? 
+ 
+LICKLIDER:  Buck Cleven -- a very interesting guy.  Well, it would have been a folly to try to do this, except for one 
+very important fact.  ARPA did not write contracts; it wrote ARPA orders, and then some agent went and turned that 
+into a contract, and the agent supplied a monitor to be sure they turned in their progress reports and all of that.  I was 
+ 
+ 
+34 
+already friends with the people in ONR and the people in the Air Force Office of Scientific Research.  And I knew 
+people in the Army Research Office a little bit.  So we had an infrastructure, and the infrastructure was ambitious and 
+did not have enough money in its budget, so it was very happy to join ARPA and make a team. 
+ 
+ASPRAY:  Were these contracting organizations already contracting for ARPA for other programs? 
+ 
+LICKLIDER:  Yes.  In addition, there was something called Defense Supply Service Washington (DSSW), which was 
+a kind of a captive of the Secretary's office.  If you needed something to happen in a hurry, it was possible to get it to 
+happen.  I believe I had one from concept to contract in two weeks.  
+ 
+NORBERG:  (laugh)  We did not get it in two weeks, as you know. 
+ 
+LICKLIDER:  Things got much, much, much, much worse, I am sure. 
+ 
+ASPRAY:  How much of this budget was allocated to the SDC people? 
+ 
+LICKLIDER:  Well, I think it started off nine million, or seven million dollars; I have forgotten which it was -- probably 
+seven. 
+ 
+ASPRAY:   Did you have some control over how much they got of that, and when, and what they used it for? 
+ 
+LICKLIDER:  I do not know how to deal with this.  To be frank about it, I was not impressed with some of what they 
+were doing and cut them back a bit.  But I did not do too much of that, because I think all of us are convinced it is 
+easier and better to get more money than it is to take money away from people who spread it around.  So they came 
+out of it pretty well; they were a little mad at me, but not terribly.  
+ 
+ 
+ 
+35 
+ASPRAY:  Can you tell us what they were doing? 
+ 
+LICKLIDER:  Yes, they were doing command and control research.  They were doing data base research.  One of the 
+really good things they were doing, I think, was that they had the first research, the first thoughtful approach, to how 
+to deal with large data bases.  They were interested in complex programming, and had a project (which I probably will 
+not remember the name of), which was essentially just an excuse for making an extremely complex program, that 
+allowed them to learn how to make them stay on top of complex programs. 
+ 
+TAPE 2/SIDE 2 
+ 
+LICKLIDER:  They had some work on displays and controls.  One thing I liked best of all the things they did was the 
+transparent or translucent desks with projectors that allowed the computer to draw stuff on this.  It had a light pen, 
+sensing equipment, so the computer could tell what you were doing.  One thing they demonstrated was proofreading. 
+ You would make proofreader's marks, and the computer would recognize the marks, and respond to those commands. 
+ So this thing would readjust.  That was better than any editing with a mouse I have ever seen.  It was early 
+technology, so you had to turn the lights off to make it work, and then you could not read the book, but the concept 
+of it was just beautiful. 
+ 
+ASPRAY:  What did you not like about the work that was going on there? 
+ 
+LICKLIDER:  Well, essentially I did not like it because it was based on batch processing, and while I was interested in 
+a new way of doing things, they were studying how to make improvements in the way things were done already.  
+They had what I thought was a pretty great asset.  They had one of the four new SAGE computers that the Air Force 
+decided not to go forward with.  So there were these four machines, and they had one of them.  I hated to see it sit 
+there being used as an old batch processor. 
+ 
+ 
+ 
+36 
+NORBERG:  So you have a philosophic difference there as to what is going on.  Why not encourage them to change, 
+and provide them money for the change? 
+ 
+LICKLIDER:  I did exactly that.  I even let a contract with a little firm that Fredkin had set up just to give Fredkin time 
+to go take the Cambridge word and transplant it to the SDC.  Of course, there were drawbacks about that.  They did 
+not like to be told what to do.  But it did work, in fact.  There is a fellow named Jules Schwartz, who is the father of the 
+language called JOVIAL.  Really good programmers are fairly easy to spot, especially for other really good 
+programmers.  I will not claim to be one, but I certainly was associated with them, and I spotted Schwartz as a really 
+positive character.  We supported him to the hilt.  We got him to turn a machine into a time-sharing system, which I 
+think he enjoyed doing.  So, it went well.  I did not really have a bad battle with SDC, but I was aware that this was 
+cheating a little bit.  I would insist on my philosophy, my vision of what I wanted to happen here, and these people 
+had every right to have their own vision. 
+ 
+NORBERG:  That's fine.  I am just trying to set up an extreme contrast to get you to remember some of these things 
+more clearly. 
+ 
+ASPRAY:  You were clearly committed to this time-sharing, or interactive mode of operation.  Did Ruina have the 
+same kind of commitment, or would he have been happy if he had developed computing for command and control in 
+the existing way and improved upon it? 
+ 
+LICKLIDER:  Well, I think his attitude was something like this; that I perceived that command and control really 
+needed some work.  It was recognized as one of the three or four main foci of military effort, but we did not know how 
+to do it. 
+ 
+NORBERG:  This is 1962 you're talking about now. 
+ 
+ 
+ 
+37 
+LICKLIDER:  Yes.  Well, we needed to get some work going.  If we had just done command and control studies, we'd 
+done them well, nobody ever asked too much about them, and then maybe we got a little military interest in them, we 
+would have been reasonably happy.  I think he saw that, "My gosh, maybe there is a big theme here.  Maybe it is 
+possible to develop a kind of computing, called interactive computing, that will make a significant change in it.  That 
+would be great.  That's what I'd like ARPA really to be doing."  And so, without being convinced it was feasible or 
+anything else, I think he said, "Let's go along with it."  I think he also had a feeling, "I have got 50 or 100 million 
+dollars in getting these nuclear warheads back in; why can't I have 10 or 15 in command or control without..." I think 
+he saw it as no big deal, and possibly it would work out doing it the way I wanted to do it. 
+ 
+NORBERG:  Does this suggest that there were presentations to Ruina, and perhaps to others, by you in the early 
+months that you were at ARPA? 
+ 
+LICKLIDER:  Yes.  I even went over to the CIA and gave them a pitch.  I had to tell them, "Look, I do not know what 
+you're doing about this.  I hope you are doing the following.  But let me tell you about what I am doing, and then 
+maybe we can figure some way to talk about what the relations are."  I guess it turned out they were not doing it, but 
+I did not know that they were not.  I tried to make my presentation so it wasn't too parochial in case they did know 
+about it.  Similarly, at NSA they really needed what I wanted, and Fubini thought they had it.  One of my early jobs 
+was to get in to see that they did not have it.   
+ 
+NORBERG:  Do you have any idea why he felt they had it already? 
+ 
+LICKLIDER:  Yes, they had quick turn-around batch processing, which was very helpful.  I do not know what they 
+have now.  I have not been to their place for a long time.  We should not talk about it anyway, but I'm morally sure 
+that... 
+ 
+ 
+ 
+38 
+NORBERG:  Did any of your thoughts about command and control in this period of 1962 harp back to things that you 
+had observed while on the Air Force Scientific Advisory Board?  In fact we might even ask, how long were you on 
+the advisory board? 
+ 
+LICKLIDER:  Well, I do not remember that, but I would guess five, or six or seven years -- something like that. 
+ 
+NORBERG:  Beginning in, say, 1955, or in 1956 or 1957? 
+ 
+LICKLIDER:  Well, I went to a meeting of it after I went to ARPA, although I came off the Scientific Advisory Board 
+because I was now a government employee.  So it was leading up to 1962. 
+ 
+NORBERG:  So you would be familiar, then, with many of the problems that the Air Force saw in Research and 
+Development with respect to their objectives. 
+ 
+LICKLIDER:  Yes, I think that is right.  I was very much interested in sensors, and sonar rays, and radar rays, and all 
+kinds of stuff like that from the Lincoln Laboratory. 
+ 
+ASPRAY:  Were there other computer type people on the Advisory Board?  I know that von Neumann had been on it 
+earlier, and was off, presumably, by the time you were on it. 
+ 
+LICKLIDER:  Oh, sure, several computer types.  I am trying to think of just which ones. 
+ 
+NORBERG:  I would think that J. Forrester was on the Advisory Board in the middle 1950s. 
+ 
+LICKLIDER:  That is right.  J. Forrester was on.  I think George Brown was on it; I am not sure. 
+ 
+ 
+ 
+39 
+NORBERG:  Is it possible to separate out military interests from the interests of this community around Cambridge in 
+the use of computers and meeting objectives? 
+ 
+LICKLIDER:  I think of it this way:  you can't make any clear cuts if you look at the thing in terms of big block 
+diagrams, because what the military needs is what the businessman needs is what the scientist needs.  But look more 
+sharply -- look ahead a block.  Take speech understanding, for instance.  Here, the scientist wants continuous 
+discourse, wants not to transfer the individual person.  The military person, or the intelligence person wants to 
+recognize a few critical words -- "We'd like to be able to pick out Secretary of Defense" -- but is less interested in the 
+dictating machine.  So when you get down to the specific task they're really quite different.  Or take a project done 
+around here:  making a computer simulation of a Morse Code operator, so that you can hook the computer in the net 
+with people.  That's an artificial intelligence problem, and academics get tremendously interested in it.  They are 
+simulating in it the planning capabilities of the person, as well as the reception of Morse Code.  Military people want 
+something that will work, and not something that will advance the theory of how to do AI.  But they will both be 
+happy with exactly the same project if it has both facets. 
+ 
+NORBERG:  I see.  So, did you suggest that people build in both facets, or were you the person who was doing the 
+building in? 
+ 
+LICKLIDER:  My first tour at ARPA was too short to build in anything.  I did not feel much pressure to make a 
+military case for anything.  I tried to stay at the top level of the block diagram, and tried to convince people of the 
+philosophy that in general the same thing is needed.  If I had stayed longer, I would have had to be specific.  I feel a 
+little bit like Bush and Dukakis. 
+ 
+NORBERG:  All right, back to the office then.  You arrived; you had this money; you had only one contract that you 
+needed to worry about with SDC.  How did you go about finding people to do work in interactive computing? 
+ 
+ 
+ 
+40 
+LICKLIDER:  Well, somebody gave me a little talk, "Lick, you can not just go write proposals for people.  You're a 
+government employee now; you've got to respond to suggestions."  So I took advantage of the presence of those 
+SAGE computers.  I could take the initiative of going around and talking to people, "Do you want one of these 
+things, and what would you do with it if you had it?"  People were pretty sensible.  Nobody wanted one, but it did 
+lead to a lot of discussions; and discussions lead to proposals and so forth.  So, I was able to get proposals out of 
+MIT, Harvard, the University of California at Berkeley, Stanford, UCLA, and, oh, where else?  Quite a few places; I 
+have forgotten how many contracts there were, but they came pretty fast. 
+ 
+NORBERG:  To do what?  What were these contracts specifically about? 
+ 
+LICKLIDER:  Well, some of them were to build time-sharing systems, because we needed to have time-sharing 
+systems before we could do man computer interaction research.  So, for instance, Berkeley built a time-sharing 
+system.  SDC built one; MIT built one.  That may have been it.  There was not really very much graphics.  We didn't 
+have the facilities for doing graphics.  There were contracts on displays, controls, data bases, organization of the 
+main computer interface.  Stanford Research Institute did work on these.  Doug Englebert was already working there 
+before I got there, but he was working on a shoestring, and we funded him pretty well. 
+ 
+ASPRAY:  How did you identify these centers?  I mean, MIT is obvious, and maybe one or two others are, but you 
+listed a range of places, like UCLA and Berkeley. 
+ 
+LICKLIDER:  Well, partly it's people; partly the reputation of the university.  I had been going to computer meetings 
+for quite a while.  I'd heard many of these people talk.  I do not know how to deal with that question.  There is a kind 
+of networking.  You learn to trust certain people, and they expand your acquaintance.  I did a lot of traveling, and in a 
+job like that, when people know you have some money it's awful easy to meet people; you get to hear what they are 
+doing. (laugh) 
+ 
+ 
+ 
+41 
+ASPRAY:  Right.  Well, let me ask it in a different way.  You do not map one to one onto all of the established 
+computing centers at the time:  there is a fairly large center already at Wayne State; there is one at University of 
+Michigan; there is one at Georgia Tech.  But I do not see money coming to those places; I see them going to other 
+places. 
+ 
+LICKLIDER:  Well, I am surprised about Michigan, but I guess that I spent behavioral science money at Michigan.  It 
+seems like I was in Ann Arbor a quarter of my time. 
+ 
+ASPRAY:  I do not know for a fact that you did not award money there. 
+ 
+LICKLIDER:  Well, I think there was money at Michigan -- probably behavioral science money -- but I am not really 
+sure.  I was there a lot.  I knew some people there -- especially Tanner, Swets, and Green of signal detection theory.  I 
+am really amazed if I did not fund something of that. 
+ 
+ASPRAY:  But, am I interpreting what you say correctly when I say, the individuals were more important than the 
+existence of a well-developed computer center and program at an institution? 
+ 
+LICKLIDER:  Well, the thing is that we had computer centers all over the country even then.  There was a big 
+computer and arrangements for putting in your deck of cards and getting out your printout.  But in most of those 
+places there was not much promise for the research I wanted. 
+ 
+NORBERG:  One of the things that seemed to emerge from the meeting over the last couple of days here at MIT was a 
+sense, on my part at least (I have talked to Bill about this as well), that in that period, somehow, MIT -- that is, the 
+community here in Cambridge and Boston -- was thinking of computing in in a way essentially quite different, maybe 
+even new, from people in other parts of the academic community -- certainly different from people in industry.  It was 
+trying to strive for some sort of discontinuous circumstance where a new world of computing would develop out of 
+ 
+ 
+42 
+the research.  What is not clear to me, first of all, is whether others did not have a similar sort of vision.  That we 
+would have to inquire about.  But secondly, whether or not enough of the required pieces to make that work -- the 
+displays, the interfaces, the expanded memories -- were seen as part of an overall plan at that time, each piece of 
+which would need to be attacked in order to achieve interactive computing.  The way you just described your visits 
+to the various groups suggest that such a vision might have been in your mind, but it isn't clear to me whether it was 
+a clear vision at the time. 
+ 
+LICKLIDER:  Well, it surely was not clear.  Take this area here.  Here's a mass; here's a keyboard.  A fellow named 
+Herb Teager thought that you get rid of that, and you put a sheet of plastic down here, because it was an inductive 
+coupling.  Go out to Rand and it was the same thing:  "It is a sheet of plastic; it is capacitated coupling."  My thought 
+was, "It does not matter which they use, but we better have two projects, because people tend to goof up on these."  
+And then the Mouse... Engelbart had a mouse.  There was some difference of opinion about how many buttons there 
+ought to be.  "Oh, that's trivial.  Why don't we get somebody to go in to do research on how effective a thing like this 
+is.  Is this a function of off-set, and comparing this with light pens?" and so on.  "Herb Jenkins does that at the 
+Lincoln Laboratory.  Maybe if Engelbart wants to do some of that, that's fine.  But let's try to think of all of the 
+schemes -- horizontal and vertical scopes, languages.  Let's not get into the language business, but let's see if there 
+are essentially new ideas about languages."  And so on.  Well, I used to draw big sketches on big sheets of paper.  
+Then I would lose them.  But I had pretty well wrapped up in me all of the topics that it would take to put interactive 
+computing together.  I deliberately talked about the intergalactic network, but deliberately did not try to do anything 
+about netting them together, because it was becoming very difficult just to get them to run.  The concept that would 
+say:  this is pertinent, this is relevant, and this we can let alone for now; so I would create a network of contracts in 
+which one place might do some subset of things that did not necessarily fit together to make a total system.  But if I 
+was going to be successful, I had to have some kind of a system here.  Maybe have one place interact with another, 
+get these guys together frequently, and have special Computer Society meetings.  We would get our gang together, 
+and there would be lots of discussion, and we would stay up late at night, and maybe drink a little alcohol and such.  
+So I thought I had a plan at that level.  I could talk about it to people in ARPA.  It was easy to have plenty of topics 
+ 
+ 
+43 
+in the outline carried down three or four levels if I found a guy who wanted it that way.  I even invented a way to 
+keep books on how much money was being spent on what, that did not say, you know:  "Here's this contract and we 
+will put this in this category."  Instead it said:  "This contract is dealing with these issues, and the money is..."  I 
+could take the whole pile of things and say how much money went to each part, and what the interactions were.  That 
+blew the minds of the accounting people; they had never seen that.  Still, they didn't heckle me much about being the 
+manager there.  It was a different dimension.  "Oh, go talk to him and he will talk your arm off for two or three hours 
+about that.  Better avoid him."  So, to come back to your question, it was not a clear vision, as certainly, not that:  
+"We'll plug them all together, and that will be the system"; but, rather, it was a matter of getting a supply of parts and 
+methods and techniques, and different people will put together different systems out of it.   
+ 
+NORBERG:  Okay.  Were you using advisors at the time, either unofficially or officially? 
+ 
+LICKLIDER:  I do not think there was ever anything official.  This was a very small operation in the Pentagon.  I did 
+not have that much time to talk with people, to bring them in and spend the day with them.  But there was lots and 
+lots of talk in the contractor community, as soon as they got some contractors.  I think we even told them that the 
+future of this program was very much going to come out of how they suggest things. 
+ 
+NORBERG:  How much overlap was there between your procedures in running the command and control and later 
+IPTO, and other operations within ARPA?  Did you talk with the other program managers, for example? 
+ 
+LICKLIDER:  Yes, a little bit, but not really very much.  They used computers, and I talked with them about their uses 
+of computers.  Occasionally we'd try to dream up some joint thing.  But I think at that time nuclear explosions were 
+being monitored, and that was generating a tremendous lot of data.  I had talks with them about what we could do.   
+In 1967, I think -- or was it earlier? -- IBM got around to delivering this trillion bit...  I forgot the relation of the trillion 
+bit also.  I think I may be into my second visit to ARPA.  That is the trouble there.  I was excited about really big 
+stores and going back to the library. 
+ 
+ 
+44 
+ 
+NORBERG:  I guess it was not the technical side that I was interested in exploring in that question (although you 
+answered it quite nicely), but it was the management side.  Did you discuss with them what their procedures were, 
+and did you then apply those procedures to your own operations? 
+ 
+LICKLIDER:  No, I viewed myself, and they viewed me as not a very good manager, but didn't think this was 
+essentially a "manage" job.  I could always say, "Well, ONR, and the AFOSR, and organizations like that are seeing 
+to it that the progress reports get written."  
+ 
+NORBERG:  So, their objection was a detail objection, rather than a programmatic objection about management, and 
+whether or not you were a good manager. 
+ 
+LICKLIDER:  No, they were always kind of amazed that I wanted to travel light.  Some of my colleagues liked to have 
+a big office with quite a few people in it.  My attitude was, "Time is of the essence.  It has gone by, and I don't want 
+to take time to hire somebody.  Not when we've got these good people already."  There wasn't much time spent on 
+that.  The worst thing that happened to me administratively, or managerially  was that there was an old-line 
+bureaucrat in the Secretary's office, who really wanted me to spend my money on something quite different from what 
+I was spending it on.  I guess I would repress that guy's name.  He got somebody to write a letter saying, essentially, 
+that he didn't see real value in what I was doing.  This kid who was picked to write the letter came to talk to me.  We 
+weren't close friends, but I knew him, and he didn't want to do this dirty trick.  He came around and told me about it.  I 
+told him, "Well, gee, Russ, I really don't want that letter to get over the system."  And he said, "Well, I think the best 
+thing to do is that I forget about it and you forget about it.  I'll let you know if there is any more pressure about it."  
+And it never raised its head again. 
+ 
+NORBERG:  What was the letter about?  I don't understand. 
+ 
+ 
+ 
+45 
+LICKLIDER:  It was just an expression of non-faith, or disbelief, that that's not the kind of research we need.  I did 
+have a kind of a battle with Wimmix (?), and I'm not sure whether that was really well-formed when I was there the first 
+time, or whether that came later.  I'm afraid I flashed out some times in frustration.  I said something like you guys are 
+just running a big batch processing center and haven't got your stuff networked enough.  It was being run by a guy 
+from IBM whom I vaguely knew.  But that wasn't really much of a battle either.  They were too busy.  They were 
+chronically six months behind on their programming.  They didn't have time to fight. 
+ 
+ASPRAY:  Was there a certain ethos about there being an ARPA way of management at the time, say in the other 
+offices? 
+ 
+LICKLIDER:  I don't think ARPA had convinced itself... There came a time when ARPA thought it was awfully good.  
+I think the first time I was in ARPA that hadn't really emerged much.  Ruina was brilliant.  Sproull, in a different way, 
+was at least as brilliant.  The third floor E-ring was populated by very bright people.  McNamara's whiz kids, and so 
+forth.  So, there wasn't much bureaucratic fighting that I saw.  I told you about these two instances, which were the 
+main ones that I could think of.  There were problems, like some character came around with a gun that shot pellets, 
+that shot little rockets -- 50 or 100 little rockets -- and demonstrated it in my office.  These things got going and the 
+place was left a shambles.  There were administrative problems of that sort. (laugh)  We were lucky not to be blinded. 
+ 
+TAPE 3/SIDE 1 
+ 
+NORBERG:  Okay.  When did Colonel Cleven join your group? 
+ 
+LICKLIDER:  Well, it took some months, I guess, before he arrived.  He joined fairly early. 
+ 
+NORBERG:  What was the division of labor then between the two of you? 
+ 
+ 
+ 
+46 
+LICKLIDER:  Well, that wasn't fair to Cleven.  You can't imagine how many people, when they hear you've got 
+money, want to come sell you something.  Most of it was unbelievably irrelevant or low-grade.  I just took advantage 
+of Cleven and made him listen to all those things.  He could be very charming; he was fantastically charming.  Then 
+he would say, "Now, I've had all that I can take.  I'm going on a trip or something."  And he would go visit the 
+contractors.  But he was a very good guy.  Unfortunately, his main job was just to make the visitors feel good, and 
+not give them any money unless he could spot that they had something -- which was one in 30 or 40. 
+ 
+NORBERG:  Would it be fair, then, to say that he was a screening mechanism in the office, and that was his principal 
+task? 
+ 
+LICKLIDER:  Yes.  Well, he was also fantastically personable.  So if there were some unpleasant task to do, a 
+progress report had to be turned in or something, he could drop in on the contractor, and get it done.  Well, he was 
+wonderful.  He could explain about bureaucracy, "We all hate it, and so forth.  It would really be helpful if you could 
+get that thing done."  He was a troubleshooter, as well as a screener. 
+ 
+NORBERG:  Was he helpful in any way with the military side of the Department of Defense? 
+ 
+LICKLIDER:  Yes, he knew the protocol.  He knew, for instance, that it was very important to keep everybody who 
+ought to be in the piece identified with it and knowledgeable about it.  So he had lots of meetings.  I remember once 
+getting in all the people who dealt with lie detection.  That was on the behavioral science side.  I have never seen 
+such a meeting in my life.  These were all guys from the intelligence agencies of one kind or another, and they 
+wouldn't talk.  They absolutely would not.  Happily, I had brought the guy from the Harvard Medical School, who 
+was a national authority, and he gave a lecture (laugh).   
+ 
+NORBERG:  In the early years of ARPA, from its beginning -- essentially 1958 --through sometime later, there was a 
+considerable amount of sometimes open, sometimes not so open conflict between the military services and the 
+ 
+ 
+47 
+director of ARPA, maybe even some of the program people.  At least in the early years, there was a sense of 
+impending doom on the part of some of the ARPA people, that indeed, their mission might be wiped out in the 
+Department of Defense.  Did you sense any of this when you came, or had that disappeared? 
+ 
+LICKLIDER:  No, I didn't even quite realize that was the case.  In my area we were cheating a little bit, because when 
+we talked about the military we talked first about ONR, AFOSR, and the Army Research Office.  Well, Marv Dennicoff 
+and ONR were close personal friends... I knew if I shook hands with him about something there was no question.  
+Charles Hutchinson in AFOSR.  Then the next step would be into operational military that didn't really care much 
+about research programs, but where we would... We did a lot of visiting of Fort Knox and the interior of a mountain of 
+Colorado, mainly so that we would be surely current about applications.  The military development people weren't 
+really in our circuit.  I think when it comes to the Strategic Defense office, or the Tactical Defense Office, or the 
+Reentry Physics thing, or any of those, they had real competitors in the military.  But what might have been our 
+competitors were really our agents and our friends.  I felt more threat, really, from secretary's offices in the E Ring, and 
+not too much there.  There was, for instance, a guy who was in charge of inventory of some kind, I guess.  He had 24 
+data bases and I've had a hard time avoiding the assignment of making his 24 data base interactive.  So he had the 
+picture that he was going to sit in his office at something, and talk with these 24 data bases.  I studied it a while and I 
+said, "Oh, my God!  Most of them are batch-oriented.  There's millions of dollars to spend transcribing records.  I've 
+got to stay out of that."  It was unbelievable, but he had this kind of a terminal, not hooked to anything, and said, 
+"Licklider, what I wanted you to do is to hook this up to my 24 data bases."  He wasn't wanting my money or 
+anything like that, but I could have taken on a responsibility in a relation to him that was just beyond my power to 
+tinker with.  I mean, I could tell him, of course, "Ten years from now, if we're successful, you're going to be in 
+command of all of that.  That's where were going.  But let's not make... Sorry." 
+ 
+NORBERG:  Well, there was one little piece of jargon in there that I didn't understand -- the E Ring? 
+ 
+ 
+ 
+48 
+LICKLIDER:  Oh, in the Pentagon the concentric rings are A, B, C, D, E.  E is outside.  The second or third floor is the 
+most prestigious, depending on if you've got a uniform or not.  The Secretary of Defense is on the third floor in the E 
+Ring. 
+ 
+NORBERG:  I see. 
+ 
+LICKLIDER:  And your proximity to the secretary's office is important.  Well, first you've got to stay on the E Ring if 
+you're anybody, because they've got outside windows.  Then the closer you are to the Secretary's office, the more 
+important you are.  I was in the D Ring, so nobody was trying to get in my office.  But I was still close enough; I 
+could interact with those bright guys.  And they were bright.  Oh, what a fantastic bunch of people! 
+ 
+ASPRAY:  At the time that ARPA starts funding computing, the money from the federal government is coming from 
+ONR, from the Air Force, starting to come from AEC.  How did your presence disrupt or change the way that the 
+funding patterns came at the time? 
+ 
+LICKLIDER:  Well, there was a bad feature, because the amount of money we had, although it was a pittance in 
+modern terms, was pretty much then and its presence could be used, for example, as a reason why ONR didn't need 
+any more money in the computing field.  You know:  let ARPA do it if ARPA has got all that money.  On the other 
+hand, we did have meetings.  A gang of people who had some computer money to spend got together.  For a time, I 
+think we had a meeting every month.  And we were fairly factual with each other about what we had.  So to try to 
+answer the question, I think that the fact ARPA had a fair amount of money, was inhibitory on the others, but they 
+did help ARPA spend some of its money, and so in some sense they had more than they'd have had without ARPA. 
+ 
+ASPRAY:  Was there any effort to divvy up the field in certain ways? 
+ 
+ 
+ 
+49 
+LICKLIDER:  Yes, Dennicoff would fund artificial intelligence.  Most of the others were afraid to try it.  They wouldn't 
+be able to defend that.  The Air Force Office of Scientific Research had funded Engelbart on his interactive office 
+concepts, and continued to do more, I think, in the -- the paperless office concept, and so forth.  But there was no 
+sharp division, no charter that said, your responsibility to this is this. 
+ 
+NORBERG:  Okay.  Can you give an assessment, then, of what you think your accomplishments were in the two years 
+in the first tour in that office? 
+ 
+LICKLIDER:  Yes, I think that I found a lot of bright people and got them working in this area, well enough almost to 
+define this area.  I got it moving.  I think maybe the best thing I did was to pick a successor, Ivan Sutherland, who 
+was surely more brilliant than I and very effective, and who carried it on.  I think that the main thing ARPA has had is 
+a series of good people running an office, and a fantastic community.  I guess that's the word. It was more than just a 
+collection of bright people working in the field.  It was a thing that organized itself a little bit into a community, so that 
+there was some competition and some cooperation, and it resulted in the emergence of a field. 
+ 
+NORBERG:  How do you think that emergence of the community occurred?  Was there a particular mechanism that 
+you think stimulated it in that period? 
+ 
+LICKLIDER:  Well, let me just make claims about what I did.  I think I was a good picker of people.  I had always, 
+since getting started in Cambridge, just looked for... I told you that.  I used Miller analogies to ?    ? 
+ 
+ASPRAY:  Yes, you did. 
+ 
+LICKLIDER:  Of course, I realized I could not go give a professor at Irving an intelligence test, but I was just 
+deliberately trying to get the best people I could find, those who were interestable in this area, into it.   
+ 
+ 
+ 
+50 
+NORBERG:  This sort of thing continued after you got to ARPA? 
+ 
+LICKLIDER:  Yes.  Then maybe the second thing would be that I did work very hard on trying to make friends and 
+contacts in the Pentagon, and I had had enough pre-indoctrination with the military that I could at least talk with 
+them about... But I wasn't as good at it; my relations with the world of research were better than with the military.  I 
+would make a stronger claim for having gotten good research people.   
+ 
+NORBERG:  Yes.  I'd like to go back to my earlier question, though, about what you think your accomplishments were 
+during the first tour of duty in terms of actual developments that occurred in the research community at that time.  
+What things would you cite from the technical field as most significant? 
+ 
+LICKLIDER:  Oh, I'd almost rather not deal with that, because there was a real problem there.  I went for one year and 
+stayed for two, and the time scale for doing anything significant is longer than that.  So I had to buy into things and 
+finish them and make them demonstrable, so that there would be something for people to look at without realizing 
+that I didn't do them.  ONR had had Corby started on the time-sharing system and the computation center, and he 
+came along and greatly increased the speed with which that project was going.  We could never have started it and 
+gotten it going.  Berkeley had a time-sharing system running on an SDS computer before I left.   
+ 
+ASPRAY:  Had they already started time-sharing before you came along? 
+ 
+LICKLIDER:  They hadn't started time-sharing, but they had a laboratory and a computer and everything else, and 
+the time-sharing part was relatively simple.  What looked good when they demonstrated it was that it had some 
+graphics; they had applications that were interesting and exciting.  At SDC, well, I think their time-sharing system ran 
+before I left Washington.  But they had a hundred or two hundred programmers, or something like that, working 
+before I got there.  We were responsible to channel that a bit, but... So I think that there's nothing I can point to with 
+pride and say, "I did that." 
+ 
+ 
+51 
+ 
+NORBERG:  All right, I'm going to ask the question yet another way.  Did you set conditions on the awards that you 
+made to these people? 
+ 
+LICKLIDER:  Set conditions? 
+ 
+NORBERG:  Yes, what were the conditions of making a contract with, say, MIT? 
+ 
+LICKLIDER:  Well, in that one, my main condition was that they should produce a proposal that would be a 
+statesmanly work, because it was going to be my first one, and I wanted a real good proposal.  I wanted interactive 
+computing; I wanted time-sharing.  I wanted:  "Computers are as much for communication as they are for calculation." 
+ A lot of these themes in it.  Then I wanted assurance there were going to be good people working on it.  I wanted a 
+summer study that would bring people from all over the industry, that was going to try to shape up this field and 
+make it clear what we were doing.  I also said that I wanted a lot of help, although I didn't want that written in the 
+proposal, I wanted a lot of help. 
+ 
+NORBERG:  What do you mean by a lot of help? 
+ 
+LICKLIDER:  I wanted to be able to get an MIT person to visit SDC, or I wanted people to take time off from their 
+research to have meetings to think about how all this was going to go. 
+ 
+NORBERG:  Did you think about giving a contract to anyone, whether it's MIT or anyone else, which would be a 
+large amount of money that they could then decide how to distribute among the various groups that were doing 
+research?  Or was this prescribed before you received the proposal? 
+ 
+ 
+ 
+52 
+LICKLIDER:  No, the Project MAC, for example, did not prescribe what the groups should be.  The reason for calling 
+it Project MAC instead of a laboratory was that it was going to use existing labs to a considerable extent.  Existing 
+research groups were going to come into it.  MIT had a lot of flexibility in just which projects to do.  But it was clear 
+that there's got to be artificial intelligence.  There's got to be time-sharing.  There's got to be interactive stuff like the 
+Teaager Tablet and graphics like the thing called the Kludge, that Sal Loventhal did.  I would have been very 
+unhappy not to have Sal Loventhal modeling protein molecules, because, to me, that's going to be a dramatic step.  I 
+really had to have that, and lots of other things, like the civil engineering Stress and Strudel and those things.  I didn't 
+really hear much whether they were in or out.  They did exercises on the system and were perfectly good things to 
+develop, but what I needed was an inventory of examples to make things concrete.  Then it could be that one or 
+another  ?      
+ 
+NORBERG:  How closely did you work with the proposers? 
+ 
+LICKLIDER:  It ranged.  In the case of MIT, Bob Fano worked the proposal.  I talked with him at some length on two 
+or three occasions.  But I knew Bob very well, and he was a good writer.  I felt bad, because this was just absolutely 
+crucial to me, because it was my first one.  A lot of people were going to see this, and he had to make a good one.  In 
+other cases, I practically wrote the proposal myself, because I could not beat into the head of the research guy that 
+you've got to have milestones.  Don't ask why you have to have milestones. 
+ 
+NORBERG:  Well, the reason that I ask that question is in reading over the MAC memorandum in the spring of 1963, 
+you were organizing a meeting to be held in Palo Alto, which was to take place in early May.  A memorandum went 
+around saying that it was going to be impossible for you to be at that meeting, and so could people shift to a week 
+later, because you had to spend a week at MIT -- no reason given.  "For externally driven reasons," was the phrase 
+used in the memorandum.  I'm not asking you to try and remember what that week was about.  I think we have to look 
+for some other records to determine it.  But what I was trying to ask here is, was this an unusual occurrence, or do 
+you remember spending a week at a time at many places, and did it have to do with proposal writing? 
+ 
+ 
+53 
+ 
+LICKLIDER:  Well, I spent a lot of time at other places, and sometimes, I'm sure it had to do with proposal writing.  I 
+had the feeling that, having talked with all these people in the Pentagon, I knew some things about proposal writing.  
+I had written many, many proposals in my life.  When I would see one that I thought was just hopeless, that was 
+going to cause me trouble, and I really wanted research done there, and I knew this was a bright guy but he's just not 
+good at this particular department, I think maybe I tried to help. 
+ 
+ASPRAY:  To what degree did you determine the research areas and projects?  I mean, how much was it that you 
+were sitting back, or visiting and finding out what these people really wanted to do, and how much was it that you 
+had in mind that it would be nice to have a project in area X?  And so, you were sort of touring, telling people that, 
+waiting for the right response? 
+ 
+LICKLIDER:  Well, those two don't have to add up to one, because if you visit laboratories, you can be getting a lot 
+of great ideas and seeing concrete things, and at the same time you can be trying to explain to them what you think 
+you need, and look for some kind of convergence, or at least some kind of harmony.  In some sense, everything I 
+knew I got either from thinking myself or from visiting labs and talking with people. 
+ 
+ASPRAY:  Let me ask the question a slightly different way.  Did you find people who approached you about doing 
+research projects that you thought were technically feasible, and perhaps even important research, that you didn't 
+fund because they were in areas that were outside a few that you were concentrating on? 
+ 
+LICKLIDER:  Well, for example, a fellow came to give me a pitch about mathematical technique in engineering. I've 
+forgotten exactly what it was, but it had to do with digital system functions.  I knew enough about it to see that this 
+was a real good idea, but I didn't know enough about it to know whether it was original with him, or whether if I talked 
+with other mathematicians that they would tell me, "Oh, yes, we know about that."  I didn't fund that, but I did try to 
+help him get connected with people who had mathematics money.  I didn't fund it, because, essentially, I would have 
+ 
+ 
+54 
+clobbered myself, if I got to doing too many things that I did not understand really well enough.  Although, I was 
+pretty well convinced that this was great.  Another example was when a guy had a twist on the general theory of 
+relativity -- a somewhat different approach to it that came out looking very similar.  I went to the trouble of getting 
+some physicists to study it, and try and advise me.  Finally, I decided not to deal with that.  But I think Larry Roberts, 
+who succeeded me down the line, did fund it.  I think by that time Larry had the excuse that he had some equipment 
+that would facilitate doing it, and he could always say he was using this as a driver.  But I don't know whether this is 
+getting at your question.  I felt constrained to the general area of interactive computing.  I was not afraid to go make 
+little scallops outside it if they seemed particularly exciting.  In a behavioral science I had less limitation than that.  I 
+was funding work on pain, and neuronal work, as well experimental psychology.  Anyhow, I funded a guy in Toronto 
+that I thought was going to win the Nobel prize.  He didn't, but his work was very favorably received. 
+ 
+ASPRAY:  Can you break up the interactive into a few categories into which we can fit the research that you funded 
+during that period? 
+ 
+LICKLIDER:  Well, I don't remember what categories were in my mind then, but sure:  operating systems, time-sharing 
+systems and the like, graphics, data, databases, datatypes, languages, displays, controls, theory of algorithms -- it 
+sounded like almost any computer science center laboratory, all focused on interactive computing.  I probably spent 
+more time with more energy than most of my colleagues on what I thought of as not an interface, but an intermedium -
+- the skills and capabilities that the operator needed and could develop to get a system together that was not going 
+to leave the situation static, but was going to improve both the computer through reorganization, and the user 
+through making it possible for him to learn stuff as he goes.  I had the idea of a motivational trap.  I wanted somebody 
+to make the computer an interactive system that people wouldn't, in fact, leave.  I had one small success in that with 
+teaching system for kids.  They would stay with the machine and they would not go to the bathroom.  They'd sit... 
+But I'm afraid the list of subfields is very much like... If you'd look at Project MAC or if you'd look at the Laboratory 
+for Computer Science, it must be fairly similar. 
+ 
+ 
+ 
+55 
+NORBERG:  Let me ask two more questions and we can bring this to a close.  First of all, did you, in your capacity as 
+program manager, have any interaction with people in the White House?  I'm thinking particularly of staff members 
+for the President's Science Advisory Committee. 
+ 
+LICKLIDER:  Yes.  At that time there was a thing called the Multinational Force, or Concept.  It looked as though 
+there might even be people from several different countries on the same ship, or in the same group.  So how could we 
+declare war if we have got 15 heads of state.  Well, I have since written about teleconferencing, and looked at the 
+history.  The earliest pieces I found were from our program at that time that we set up in direct response to the White 
+House's request to get hopping on teleconferencing at the Institute for Defense Analyses.  I mentioned psychologist 
+Vamos at MIT -- he had gone to Stanford by then, I guess -- and got him as an external consultant to us.  We ran 
+teleconferences.  It was very primitive in those days; a teletype machine was about what you had to work with.  We'd 
+run conferences face to face, and through teletype, and also, we had some video that was just simulated.  So there 
+was that.  I'm trying to think whether at that time... Wiesner was Science Advisor through at least part of that time.  I 
+had been very close to him here at MIT.  So he gave me some chores to do.  I discovered that he was really very 
+sensitive.  My bosses in the Pentagon didn't like me working for him; I was supposed to work for them.  There was 
+another thing going on at that time.  From the library work, I was interested in the flow of scientific and technical 
+information.  There was a fellow named Weinberg, the head of the Atomic Energy plant in Tennessee, who had 
+written a document about the national effort in scientific and technical communication, proposing a lot of stuff. 
+ 
+TAPE 3/SIDE 2 
+ 
+LICKLIDER:   ... ready to evaluate what had happened, and proposed what ought to happen next.  So I wrote a kind 
+of a follow-up to the Weinberg Report.  That was directed to the White House connection.  There wasn't, at that time, 
+anything we had that I could deliver to them.  As a matter of fact, it wasn't till one of my last two or three days in the 
+Pentagon that I had a console in my office.  It was connected to computers here and in California.  When Ivan 
+Sutherland succeeded me, he had a steady stream of military people, including generals and admirals coming to play 
+ 
+ 
+56 
+with that console.  He found that he had to put it in a little room that was big enough for just one person, because if 
+an admiral were sitting at the console, and there were junior officers looking, the admiral was afraid to move his 
+fingers for fear he'd reveal he didn't know what to do. 
+ 
+NORBERG:  And my last question is, how did you come to choose Ivan Sutherland? 
+ 
+LICKLIDER:  Well, I had known Ivan for a while.  I thought he was a brilliant person, and he was a true believer in the 
+things I was a believer in (and, in my view, better at it).  I had lots of talks with Sproull, and Charlie Herzfeld, and 
+several of the others, about if it is going to be possible for such a young guy to make it in the Pentagon.  They 
+worked hard on how to set it up.  For instance, a colonel couldn't report to this guy who was a second lieutenant, or 
+something like that.  They got enough arrangements made so that there wouldn't be protocol problems -- or not too 
+many of them.  There is one other aspect of it.  Several of us in the field, who realized that Ivan was being wasted in 
+some job in Michigan that he'd been assigned to, got him moved to the National Security Agency. 
+ 
+NORBERG:  Was he a military person at the time? 
+ 
+LICKLIDER:  He was in uniform -- second lieutenant.  He was such a success at the National Security Agency, and 
+developed such a following there that the ARPA people thought, this is really going to be pretty good to have.  
+That's always been a kind of rough and rocky connection for us.  So that's how come that Ivan... Also, you might 
+say, it wasn't easy to get a successor for me.  Most of my colleagues would much rather spend the government 
+money doing research back in the lab than coast another year or two or three in Washington. 
+ 
+END OF INTERVIEW 

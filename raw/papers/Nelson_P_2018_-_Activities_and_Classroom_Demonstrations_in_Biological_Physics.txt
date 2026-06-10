@@ -1,0 +1,2243 @@
+University of Pennsylvania
+ScholarlyCommons
+Department of Physics Papers
+Department of Physics
+7-30-2018
+Activities and Classroom Demonstrations in
+Biological Physics: A resource document
+Philip C. Nelson
+University of Pennsylvania, nelson@physics.upenn.edu
+William Berner
+University of Pennsylvania, berner@physics.upenn.edu
+Follow this and additional works at: https://repository.upenn.edu/physics_papers
+Part of the Biochemistry Commons, Biology Commons, Biophysics Commons, Cellular and
+Molecular Physiology Commons, Molecular Biology Commons, and the Physics Commons
+This paper is posted at ScholarlyCommons. https://repository.upenn.edu/physics_papers/646
+For more information, please contact repository@pobox.upenn.edu.
+Recommended Citation
+Nelson, P. C., & Berner, W. (2018). Activities and Classroom Demonstrations in Biological Physics: A resource document. Retrieved
+from https://repository.upenn.edu/physics_papers/646
+Activities and Classroom Demonstrations in Biological Physics: A
+resource document
+Abstract
+We give detailed recipes for a number of classroom demonstrations relevant to biological physics instruction.
+We developed them mainly for use in 2nd-3rd year undergraduate Physics courses. But you can (and we do)
+use them for primary school, through high school, up to PhD candidates. You adapt the words for each
+audience, but a phenomenon is a phenomenon.
+We also outline a 1-hour introduction to Python for undergraduate scientific computing.
+Finally we document some outcomes from courses taught at U Pennsylvania using these resources and others
+cited here. This material was presented at a workshop at the AAPT meeting in July 2018.
+Keywords
+biophysics, physics demonstrations, climate
+Disciplines
+Biochemistry | Biology | Biophysics | Cellular and Molecular Physiology | Molecular Biology | Physical
+Sciences and Mathematics | Physics
+This conference paper is available at ScholarlyCommons: https://repository.upenn.edu/physics_papers/646
+1
+Activities and Classroom Demonstrations in Biological
+Physics:
+A resource document
+Philip C Nelson and William Berner, University of Pennsylvania
+AAPT meeting 2018
+We give detailed recipes for a number of classroom demonstrations relevant to biological
+physics instruction. We developed them mainly for use in 2nd-3rd year undergraduate Physics
+courses. But you can (and we do) use them for primary school, through high school, up to PhD
+candidates. You adapt the words for each audience, but a phenomenon is a phenomenon.
+We also outline a 1-hour introduction to Python for undergraduate scientiﬁc computing.
+Finally we document some outcomes from courses taught at U Pennsylvania using these
+resources and others cited here.
+Bill’s other demo shows are also available via a link atwww.physics.upenn.edu/⇠pcn .
+Contents
+1
+Intro
+4
+2
+Skill set
+5
+2.1
+Wishlist . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+5
+2.2
+Speciﬁc skills . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+5
+2.3
+Filling gaps . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+6
+3
+Computation
+7
+3.1
+Python . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+7
+3.1.1
+First things . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+8
+3.1.2
+Graphs and vectorization
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+9
+3.1.3
+Challenge
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+11
+3.2
+Animation . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+12
+4
+Demo-based modules: Materials
+13
+4.1
+Fluid mechanics is qualitatively diﬀerent in the microworld . . . . . . . . . . . . . .
+13
+4.1.1
+Demo: mixing/unmixing . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+13
+4.2
+Energy is conserved, but in surprising ways . . . . . . . . . . . . . . . . . . . . . . .
+15
+4.2.1
+Demo: Osmotic ﬂow . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+15
+4.2.2
+Demo: Rubber elasticity . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+17
+5
+Demo-based modules: Dynamics
+19
+5.1
+The ﬂow or release of energy can generate structure . . . . . . . . . . . . . . . . . .
+19
+5.1.1
+Demo: Nonlinear traveling mechanical wave . . . . . . . . . . . . . . . . . .
+19
+5.1.2
+Demo: Traveling chemical wave
+. . . . . . . . . . . . . . . . . . . . . . . . .
+21
+5.2
+Dynamical systems can use feedback to generate useful behavior
+. . . . . . . . . .
+23
+5.2.1
+Demo: Mechanical toggle . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+23
+6
+Demo-based modules: Optics
+25
+6.1
+Light resists conﬁnement . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+25
+6.1.1
+Demo: Diﬀraction through adjustable slit . . . . . . . . . . . . . . . . . . . .
+25
+6.1.2
+Demo: Diﬀraction of white light by a 1D array sample
+. . . . . . . . . . . .
+26
+6.1.3
+Demo: Diﬀraction of monochromatic light by a 2D or 3D crystalline sample
+26
+6.2
+Biomolecules have characteristic geometries . . . . . . . . . . . . . . . . . . . . . . .
+27
+6.2.1
+Demo: Optical rotatory power
+. . . . . . . . . . . . . . . . . . . . . . . . . .
+27
+6.3
+We can make quantitative predictions even for unconscious human perception
+. .
+28
+2
+3
+6.3.1
+Demo: R+G=Y
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+28
+6.4
+The color of light is related to energy . . . . . . . . . . . . . . . . . . . . . . . . . . .
+29
+6.4.1
+Demo: Fluorescence of chlorophyll and other molecules
+. . . . . . . . . . .
+29
+6.5
+Planetary climate is determined by feedback
+. . . . . . . . . . . . . . . . . . . . . .
+30
+6.5.1
+Demo: The infrared activity of CO2
+. . . . . . . . . . . . . . . . . . . . . . .
+30
+7
+Exams/Assessment
+35
+8
+Wrap
+36
+F￿￿￿￿￿￿R￿￿￿￿￿￿
+37
+A Diﬀraction slide fabrication notes
+39
+B
+Mechanical analogy for color vision
+40
+C Outcomes
+41
+Chapter 1
+Intro
+Why are we here?
+What is interdisciplinary instruction and why is it important?
+Everyone bemoans the way
+students silo their knowledge—but who can blame them, when we make little eﬀort to see what’s
+in their other science classes and make connections? (As do our colleagues in those other depart-
+ments.)
+Also, many students look at Physics and don’t see any connection to something they could do
+for a living, unlike say Biology, Chemistry, or Engineering.
+So let’s see if we can think like physicists while thinking about some phenomena that physicists
+don’t usually think about. That is one deﬁnition of “interdisciplinary.”
+An interdisciplinary course can be useful if a practitioner of one discipline shows students how
+that discipline’s methods have been useful in solving problems of independent interest in another
+ﬁeld.
+4
+Chapter 2
+Skill set
+2.1
+Wishlist
+What do we really want our undergrads to get, as early as possible?
+• Science needs imagination￿“Reason can answer questions, but imagination has to ask them.”
+— Ralph W Gerard
+• Imagination must be coupled to discipline￿“Seek simplicity, and distrust it.” — Alfred North
+Whitehead
+• Science involves modeling￿“We all know that Art is not truth. Art is a lie that makes us realize
+the truth.” — Pablo Picasso
+• Quantitative models are the most falsiﬁable￿“A single number has more genuine and permanent
+value than an expansive library full of hypotheses.” — Robert Mayer, 1814–1878
+2.2
+Speciﬁc skills
+What physics-style courses can give to life-science students
+• Stress that understanding is tested by falsiﬁable quantitative prediction. Shake the hypothe-
+sis till it yields up a testable prediction. Push it to a region of parameter space diﬀerent from
+the observations that motivated it in the ﬁrst place.
+• A little familiarity with general-purpose programming language can lower the barrier to
+everyday tasks—so that they can really become everyday actions: Graphing a function to
+understand it; visualizing experimental data; switching from linear to log axes; etc.
+• Consciously teach the art of throwing out details. The theory should not be more elaborate
+than the data can support. Don’t stop with a successful prediction—next seek the simplest
+model that succeeds equally well, and then decide between those two competing hypotheses.
+5
+6
+More speciﬁc
+• Even after two full years of university physics, students have not yet heard (us) say the words
+“free energy,” even though it’s far more central to chemistry and biology than “energy.”
+• They may have encountered the words in P-chem, but P-chem is still taught with thermody-
+namic foundations appropriate for whole moles or reactants—not single molecules. It also
+spends quite a lot of time on 1920s-era quantum mechanics.
+• In fact, ﬁrst-year physics is basically a rundown of all the rare, mostly irrelevant phenomena
+that are truly nondissipative, that is, the exceptions to normal behavior (except for cursory
+treatments of friction and electrical resistance, never drawing attention to their dissipative
+character).
+Indeed, the entire undergrad program has this blind spot.
+Even statistical
+physics is mostly concerned with equilibrium. No wonder students of Chemistry, Biology,
+Engineering think we’re out on Planet X!
+• For those students who have taken Physics, many were never taught any serious optics.
+(Some study it independently for the GRE, but this is 18th century material.)
+• Even among elite US students, most enter university with no useful background in proba-
+bility, which plays a central role in molecular biophysics.
+• Even among elite US students, about half enter university with no useful background in
+computer programming. Shockingly, nearly the same can be said of undergrads graduating
+from our Physics major, and hence of students entering our PhD program.
+• Even among those students who have taken computer programming, it is rare that they got
+basic science skills like making informative graphs. Those who didn’t take programming
+have a deeper gap in algorithmic thinking.
+• Most physics degree programs, and even moreso other subjects, neglect nonlinear dynamical
+systems. The intellectual framework needed to understand bifurcations, toggles, oscillators,
+etc via phase portraits, linearized analysis, etc thus needs to be picked up on the street
+somehow.
+• Most physics degree programs neglect discussion of sensory psychophysics. We go on and
+on about the crisis of blackbody radiation around 1900, but never discuss single-photon
+sensitivity of the human visual receptors, which I believe interests students a lot more.
+Neuroscience courses do pay some homage, but their students lack the background to
+understand much.
+2.3
+Filling gaps
+Many resources can ﬁll speciﬁc gaps in students’ background, for example, khanacademy.org.
+Here is a greatsetofshortvideosthatarespeciﬁcallytailoredtoquantitativebiology: http://quant.bio
+(Liao, 2018).
+Chapter 3
+Computation
+If you know Python already, think of this as ideas for how to get a class of students going. General
+starter reference: (Kinder & Nelson, 2018).
+3.1
+Python
+Say to your students: “You need some skills to be a scientist. If you have those skills already in
+some other language, bear with us and learn them in Python. It will be easier this time around,
+and anyway some day you may need to work with somebody who only uses Python. And even if
+today you have free ￿￿￿￿￿￿/Mathematica access, some day you won’t have it any more. Python is
+free and open-source.” (Get it from anaconda.com .)
+Some of the suggested actions below will give error messages. Making deliberate errors is
+good—that way you’ll recognize the messages when you get them unintentionally.
+7
+8
+3.1.1
+First things
+= is an action, but == is a question
+Start with some basic things in the Console:
+%reset
+#-- you may need to scroll to see the "are you sure?" dialog
+1+1
+#-- evaluate and print an expression
+x = 2*y
+#-- error, "y" is not yet defined
+a = 1
+#-- check in the Variable Explorer window: variable "a" has appeared
+a = a+1
+#-- check in Variable Explorer window: "a" has been updated
+print a
+#-- this is an error...
+print(a)
+#-- print is a function, so it needs parentheses
+b == 2
+#-- error because == is a relation, not an assignment, and "b" is undefined
+a == 2
+#-- asks whether the current value in "a" equals 2
+a=1; b=a; a=2; #-- check in Variable Explorer: the command b=a did not set
+#-- up a permanent connection.
+Use the Help pane to get documentation.
+Modules
+Python isn’t very capable when it ﬁrst launches.
+You must give it capabilities by importing
+modules.
+round(1.4)
+sin(1.4)
+#-- fails
+numpy.sqrt(2)
+#-- fails until we import
+import numpy as np
+#-- helpful nickname
+sin(1.4)
+#-- still fails
+numpy.sin(1.4)
+#-- succeeds
+np.sqrt(2)
+#-- helpful nickname for numpy
+np.pi
+#-- no parentheses because not a function
+from numpy import tan
+tan(3.14/4)
+#-- don’t need module name with this approach
+Lists are diﬀerent from arrays
+a = [3.14, 2.71, 0.577]
+#-- similar syntax to MATLAB
+a[0]
+#-- unlike MATLAB must use square brackets for index
+a[1]
+#-- unlike MATLAB, arrays start at 0
+e = [1]
+e == 1
+#-- a list with one entry is different from its entry
+b=[[1,2,3],[4,5,6]] #-- represent a matrix as a list of lists
+Then how to extract a row:
+b[1]
+b[1][0]
+b_array = np.array(b)
+#-- convert b to a numpy array
+b_array[1,0]
+#-- abbreviation for b_array[1][0]; this syntax not available for lists
+b_array[1,:]
+#-- same as b_array[1]
+b_array[1,0:1]
+#-- just part of a row
+9
+Now: How to extract a column? The answer is b_array[:,0], but you need to understand why.
+Variable names are distinct from their objects
+f = e
+#-- defined earlier
+e[0] = 3 ; print(f)
+#-- surprise, f changes too
+e == f
+#-- tells you if they currently have same value
+e is f
+#-- tells you if they are synonyms for a single object
+e_array = np.array(e)
+f_array = e_array.copy() #-- copy is a method that creates an independent duplicate
+e_array == f_array
+#-- the == operator acts on each pair of corresponding elements
+e_array is f_array
+#-- though the values currently agree, they are not same object
+e_array[0] = 3000 ; print(f_array)
+3.1.2
+Graphs and vectorization
+Graphs
+Next a little graph:
+import matplotlib.pyplot as plt
+x = [1,2]; y = [1,2] #-- these create lists, not NumPy arrays, but plot doesn’t care
+plt.plot(x, y)
+#-- helpful nickname for matplotlib.pyplot
+Vectorization is almost like ￿￿￿￿￿￿, but:
+y = x**2
+#-- fails because vectorization only works on NumPy arrays
+y = np.array(x)**2
+#-- that works
+np.arange?
+#-- ask for help on this function
+vals= np.arange(0,3.14)
+#-- bad in an instructive way
+plt.plot(vals, np.sin(vals))
+#-- sin can act on an array
+Next then repeat with a better choice of vals. First, you’ll want to clear out the previous bad
+graphs:
+plt.close(’all’)
+#-- this is a function, and its argument is a string
+Plot style
+There are two basic kinds of plots you need to make: Experimental data (points) and theoretical
+ﬁt (curves). Figure out how to override the default, which is to join points with lines.
+“Help! I can’t switch to my plot window!” On macOS, we found that it matters what “Graphics
+backend” you choose. This one worked for me:
+python > preferences > iPython console > graphics > backend > Automatic
+Features of the backend: zoom. Show how it reports coordinates. Save. Figure options.
+Play with axis labels, line styles, etc for a while.
+Discuss how to have two diﬀerent plot windows open (plt.figure()).
+Discuss how to put two plots on the same axes.
+10
+3D plotting
+# code line3d.py
+from mpl_toolkits.mplot3d import Axes3D # import 3D plotting tool
+fig = plt.figure()
+# create a new blank figure window
+ax = Axes3D(fig)
+# create 3D plotting object attached to figure
+t = np.linspace(0, 5*np.pi, 501)
+# define parameter for parametric plot
+ax.plot(t*np.cos(t), t*np.sin(t), t)
+# generate 3D plot
+plt.show()
+# often not needed
+Try dragging inside the plot window to rotate the viewpoint.
+Explicit loops
+Much of what you need can be done with vectorized code, but not everything.
+from numpy.random import random
+for i in range(10):
+#-- that colon is essential
+print(random())
+#-- indentation is essential
+(OK, this particular operation actually could have been done with print(random(10)).)
+Not only is indentation essential, it must also be consistent. Use either tabs or blank spaces,
+but don’t mix them. If you do, you may get indentation that looks good on your screen but that
+Python will claim is inconsistent.
+Get a dataset
+Here are some datasets:
+https://physicalmodelingwithpython.blogspot.com/p/data-sets.html .
+Try going there and clicking data_sets.zip.
+Now you must either put the dataset you want where Python is going to look, or else tell
+Python to look where the dataset is located. For the ﬁrst option, in Spyder console say
+%pwd
+This tells you where Spyder will look. (Mnemonic is “print working directory.”) Move a dataset
+there, for example 01HIVseries/HIVseries.csv . Conﬁrm that Spyder can see it with
+%ls
+(Mnemonic is “list.”) Open and inspect it with
+%edit HIVseries.csv
+If it looks good, try reading it with
+np.loadtxt(’HIVseries.csv’)
+#-- error: we didn’t tell delimiter
+np.loadtxt(’HIVseries.csv’, delimiter=",") #-- not an error but didn’t assign to a variable
+a = np.loadtxt(’HIVseries.csv’, delimiter=",") #-- OK
+(Mnemonic is “load a text ﬁle.”) Then graph it.
+The alternate approach is to leave the ﬁle where your browser put it. Find it in your computer’s
+ﬁle ﬁnder and drag/drop it into the IPython console. This does not read in the ﬁle. However, it does
+insert the complete “path” into the IPython command line. Before hitting enter, prepend “%cd ”
+(“change directory”; don’t forget the blank space separator). Then remove the ﬁlename from the
+end of the path (point only to the folder). Then hit enter. Proceed as before; for the rest of your
+session, IPython will look for ﬁles in the folder you selected.
+11
+Fitting data by hand
+It’s better to do this by hand on a couple of examples, and only then
+introduce black-box software. See (Kinder & Nelson, 2018, §5.2).
+3.1.3
+Challenge
+It can take some reﬁned judgement to make meaningful plots. This is a very instructive exercise
+in several ways.
+"""
+Author: pcn Python:3.6
+PDFexample.py
+Description: estimate the probability density function of simulated data
+"""
+import numpy as np, matplotlib.pyplot as plt
+plt.close(’all’)
+from numpy.random import random as rng
+#-- define convenient nickname
+Nsamples = 1000000
+x = rng(Nsamples) #**
+mycounts, mybins = np.histogram(x,30)
+dx = mybins[1] - mybins[0]
+bincenters = mybins[0:-1] + dx/2
+# discard the last edge, shift others
+plt.plot(bincenters, mycounts, ’*r’)
+plt.plot([mybins[0],mybins[-1]],[1,1])
+#plt.ylim([0,1.1])
+Run the code. The solid line doesn’t agree with the stars, so correct the stars in the usual way to
+make them an estimated probability density function. The resulting graph is still hard to interpret,
+but uncomment the last line and you’ll get something more reasonable.
+The coding challenge￿Replace the ﬁfth line (#⇤⇤) by:
+x = np.tan(np.pi*(rng(Nsamples)-.5))
+The resulting graph is not very informative, and moreover it’s quite diﬀerent every time you run
+the code! Do whatever it takes to display a nice, meaningful probability density and compare it
+to the Cauchy form:
+}(x) ⇤A/(1 + Bx2).
+(3.1)
+Here A and B are two constants that you are to ﬁnd.
+The math challenge￿Why does the probability density take that form?
+The physics challenge￿Are there any real systems that display long-tail distributions like this one?
+12
+3.2
+Animation
+Physical processes unfold over time. Our minds grasp physical mechanisms largely via narrative.
+So it is not surprising that some of the most vivid physics demonstrations also play out over
+time. Simulations of physics that unfold over time are similarly powerful; interactive simulations
+are better; and simulations created by the student can be best of all.
+This view is becoming
+mainstream in introductory courses (Chabay & Sherwood, 2015), but the beneﬁts of animated
+simulation extend farther than this. For examples in the form of student projects, see (Chen et al.,
+2018).
+Any series of graphics can be bundled into a movie ﬁle that can be uploaded to YouTube,
+viewed in a browser, and so on, without requiring the viewer to install Python. Details are given
+in (Kinder & Nelson, 2018, §7).
+Alternatively, the VPython package is great for animation. It doesn’t currently work in the
+Spyder environment, but it works in the Jupyter Notebook environment. First install it:￿From
+your computer’s the command line use￿
+$ conda install -c vpython vpython
+The code flipper.ipynb shows an animation of stochastic switching between two stable states
+that captures an essential aspect of chemical reactions, in a way that no static textbook ﬁgure could
+do.
+￿Also, glowscript.org lets students run VPython codes without installing anything.
+￿You can also do this from the Anaconda Launcher application. Some users report problems installing with Windows.
+First, it is crucial that the graphics card and browser support WebGL, which is GPU-based. A way to check whether there
+is a problem is to go to http://webglreport.com/, which reports whether WebGL in fact works. A related issue is
+that the graphics driver might need to be updated even if the graphics card does contain a GPU.
+Chapter 4
+Demo-based modules: Materials
+The material I will present today is stuﬀI generally use for sophomores and juniors. But the
+beauty of demos is that you can (and I do) use them for second-grade, through high school, up to
+PhD candidates. You adapt the words for each audience, but a phenomenon is a phenomenon.
+Framework
+One way to structure each module of a class:
+• Weird phenomenon: a direct, unﬁltered experience of Nature that either deﬁes common
+sense, or at least seems to conﬂict with things taught previously.
+• Qualitative naive expectation, then proposed corrected expectation; or conceptual tools to
+be introduced.
+• Quantitative estimate.
+• Calculation. You don’t need to work through the complex details of a literal model of your
+phenomenon—you can boil the phenomenon down to one key point, and ﬁnd a mathematical
+system that illustrates just that.
+• Discuss relevance to an actual biological system or some other department’s courses.
+• More details and references.
+I won’t hit every one of these for every module this morning. You can try ﬁlling in the missing
+ones.
+4.1
+Fluid mechanics is qualitatively diﬀerent in the microworld
+4.1.1
+Demo: mixing/unmixing
+Materials
+Corn syrup. Big beaker (⇡6 inch wide, at least 4 inch tall). Syringe or turkey baster.
+Food color. Fat stirrer, e.g. a test tube. Overhead projector or document camera.￿
+￿Your phone’s builtin camera can also be used for this if you clamp it looking downward and feed to the room projector.
+13
+14
+How-to
+Prepare a few ccs of colored corn syrup by mixing with food color, load in syringe.
+Pour at least 4 inches of corn syrup into the beaker. Insert the stirrer, positioned at the edge by
+the wall of the beaker. Place on overhead projector or have students crowd around.
+Use syringe to inject colored syrup well below the surface of the bulk clear syrup, but away
+from the ﬂoor or walls of the beaker and away from the stirrer. A cm-size blob will be clearly
+visible.
+Slowly swirl the stirrer 720 degrees around the edge of the beaker. Using exactly the opposite
+motions, slowly swirl it back in the opposite direction
+Weird experience
+The colored blob responds instantly to distant motion of the stirrer. It also
+stops moving instantly when the stirrer stops moving. It seems to get mixed, or at least stretched,
+but ultimately it reforms its original shape and position, as if it “remembered,” over two full turns
+of the stirrer.
+Qualitative naive expectation, then corrected expectation
+“Miscible ﬂuids never unmix, at least
+not without elaborate steps like distillation.” “A Newtonian ﬂuid has no memory, for example, no
+elastic restoration of any remembered state.”
+This intuition is based on macroscopic observations with water, which is in a regime dominated
+by inertia. Other ﬂuids, even water in other scale regimes, are instead dominated by friction, and
+the qualitative behaviors are diﬀerent. In fact, even after stirring to the point where the ﬂuids
+appear mixed, they still are not; kinematic reversibility brings them back to nearly the initial
+conﬁguration.￿
+The super-convoluted structure of stirred coﬀee (turbulent ﬂow) allows molecular diﬀusion to
+erase a concentration gradient (of ink). But in this demo, there’s no turbulence, so diﬀusion is
+negligible. The equations are therefore practically deterministic, and since they are ﬁrst-order in
+forces the solution reverses when the force does.
+Estimate
+The shear force law is
+f /a ⇤⌘v
+L .
+So the material parameter ⌘(“viscosity”) has units M/(LT). A more familiar material parameter
+of a ﬂuid is mass density, M/L3. Those two numbers characterize a simple (“Newtonian”) ﬂuid
+mechanically.
+There’s no combination of these constants with units of length!
+Fluid mechanics is scale
+invariant.
+But we can form a combination with units of force, namely ⌘2/⇢. That critical value is the demar-
+cation between a low-force regime (dominated by friction) and a high-force regime (dominated
+by inertia). Any simple ﬂuid will have these regimes.
+For air, it’s ⇡2 · 10−10 N. For corn syrup, it’s ⇡3 · 10−2 N. When stirred gently, the corn syrup is
+in the friction-dominated regime (“laminar ﬂow”).
+For water it’s 10−9 N.
+When we stir our coﬀee, we’re in the inertially-dominated regime
+(“turbulent ﬂow”). But when a microorganism swims, it’s in the laminar regime.
+￿This is not complete reversibility! Viscous friction is dissipative; it irreversibly turns mechanical work into heat. What
+is reversible, if we neglect diﬀusion, is the bulk motion of the ﬂuid.
+15
+Calculation
+Poiseuille ﬂow law is not hard to derive, and verify. See (Nelson, 2014).
+Discuss relevance to actual biological system or some other department’s courses
+A swimming
+ﬁsh is in the turbulent regime. But interestingly, a swimming bacterium is in the laminar regime.
+This aﬀects strategies for swimming, seeking food, etc.
+Even air has a laminar regime, e.g. relevant to your lungs’ cilia.
+More details
+The classics are (Purcell, 1977; Berg, 2004; Berg, 1993). A textbook treatment is in
+(Nelson, 2014).
+Taylor’s “unmixing” demo is at https://www.youtube.com/watch?v=PhsmOc7Hb8Q , starting around
+03:26.
+His two mechanical swimmers start at around 06:50 in the same video.
+4.2
+Energy is conserved, but in surprising ways
+4.2.1
+Demo: Osmotic ﬂow
+Materials
+Concentrated solution of table sugar with food coloring.
+Visking dialysis tubing (Fisher scientiﬁc), or lambskin condom (Rite-Aid).
+“Thistle tube,” or transparent turkey baster without bulb (referred to below as “glassware”).
+Big beaker. Clamp stand. Rubber band.
+How-to
+If using dialysis tubing, soak in water ﬁrst to soften, cut oﬀ25cm, and tie oﬀone end
+securely. If using pharmacy apparatus, wash inside and out.
+Fill the membrane bag partway with sugar solution, test for leaks. Securely attach open end
+to the wide end of the glassware with rubber band. Fill the rest of the way with sugar solution
+till the level rises up to the narrow part of the glassware. Do this over a sink to avoid sticky mess.
+Wash food color oﬀthe outside.
+16
+Suspend into the beaker using a clamp stand, which also ﬁrmly holds the junction between
+membrane and glassware. Fill the beaker with water, mark the initial level of colored ﬂuid in the
+glassware, and wait.
+Weird experience
+The bag contains sugar water with a little food color. The bag is not very
+stretchy, and the water is incompressible, so some is forced up the vertical tube. I immerse the bag
+in water. It’s in mechanical equilibrium. But actually this bag is slightly permeable to water. So
+the slight additional pressure inside, from the column of water, should drive water through the
+membrane, slowly lowering the water level in the most boring demo you have ever seen. . . . Wait:
+The opposite happens instead, which requires doing work against gravity.
+Qualitative naive expectation, then corrected expectation
+Where did the required gravitational
+potential energy come from? There is plenty of thermal energy from the water bath etc., but
+“thermal energy never spontaneously converts to mechanical form.”
+Why do people say that? Energy is conserved, so why shouldn’t it be converted from one form
+to another?
+Thermal energy is disordered, and the world’s disorder doesn’t spontaneously decrease.
+If
+some gets transformed to a lower-disorder form, somebody must pay the information bill; the
+transformation must be linked to an increase in disorder somewhere else that exceeds the thermal
+decrease.
+In our demo, as the volume of interior ﬂuid increases, each sugar molecule gets to range over a
+bigger volume—an increase in disorder. Up to a point, this can overbalance the thermal decrease
+required by energy conservation, and the system literally sucks heat out of the environment and
+does mechanical work.
+The ﬂow must eventually stop, because as the process proceeds,
+• The increase of disorder with each extra cubic centimeter of ﬂow goes down, because entropy
+change involves the relative volume change, and the total is getting bigger.
+• The amount of energy that must be spent for each extra cc goes up, because the weight of
+the ﬂuid column is increasing.
+Estimate
+Flow stops when pressure at the base of the column matches kBT times the number of
+sugar molecules divided by their concentration drop. The units work properly.
+At room temperature, kBT ⇡4 pN nm (or you may prefer RT/N0). It’s easy to make a sugar
+solution with concentration 1 M, that is, 6 · 1023 molecules per liter (10−3 m3). The product of these
+numbers is 2.4 · 106 N m−2, way bigger than an atmosphere!
+Calculation
+Discuss relevance to actual biological system or some other department’s courses
+Cell mem-
+branes are permeable to water, but not to ions, so they can and must use osmotic balance to control
+their size. That is, they evolved pumps to actively control size; otherwise, they’d burst or collapse.
+17
+More details
+You may notice that some green color leaks out of the bag into the surrounding
+water. (Nelson, 2014; Benedek & Villars, 2000a).
+https://en.wikibooks.org/wiki/School_Science/Apparatus_for_demonstrating_osmosis
+https://www.youtube.com/watch?v=RhQ5NpYcMOI
+4.2.2
+Demo: Rubber elasticity
+Materials
+Overhead projector, paperclips.
+IR camera, rubber sheet.
+How-to
+a. Make a chain of paperclips. Stretch it straight across the overhead projector plate. Now pound
+gently on the projector to simulate thermal motion.
+The straight chain gets distorted and its
+end-end distance shortens. If you wanted to maintain it straight in spite of the random buﬀeting,
+you’d need to supply a constant force on the ends.
+b. Stretch out the rubber sheet, wait a moment for it to equilibrate. Watch it with the IR camera
+and suddenly let it relax.
+Weird experience
+The rubber sheet gets colder as it relaxes. You can even feel this with a wide
+rubber band on your lip or other sensitive area.
+Qualitative naive expectation, then corrected expectation
+As it shrinks, the rubber sheet does
+mechanical work on my hands (exerts a force parallel to motion). Where did the energy to do this
+work come from? For a steel spring the answer is easy: reduction of internal potential energy.
+But the individual polymer molecules in rubber are getting more bent, not less. So where does the
+energy being transferred to my hands as mechanical work come from?
+As in the osmotic demo, again there is plenty of thermal energy from the surrounding air, but
+don’t professors say, “Thermal energy never spontaneously converts to mechanical form”?
+As in the osmotic demo, again the key is to remember that thermal energy is disordered, and
+the precise statement is that the entire world’s disorder doesn’t spontaneously decrease. If some
+thermal energy gets transformed to a lower-disorder form (mechanical work, perhaps lifting a
+weight), somebody must pay the information bill; the transformation must be linked to an increase
+in disorder somewhere else that exceeds the thermal decrease. In the case of rubber elasticity, the
+extra disorder lies in the wiggly shapes of polymer molecules as they revert to a form with shorter
+end-end distance.
+Estimate
+Calculation
+Discuss relevance to actual biological system or some other department’s courses
+Organisms
+(you and I) are mostly water. Everything else is mostly polymers (DNA, protein, polysaccha-
+rides,. . . )!
+So it’s good to know something about their properties.
+Some, like cartilage, are
+explicitly designed to buﬀer mechanical shocks.
+18
+More details
+(Nelson, 2014).
+Chapter 5
+Demo-based modules: Dynamics
+5.1
+The ﬂow or release of energy can generate structure
+5.1.1
+Demo: Nonlinear traveling mechanical wave
+Materials
+Corrugated plastic from Home Depot, such as you’d use to cover a carport. Cut a 2m
+strip, clip it to a backing, and use a clamp to hold it tilted.
+Also need a ﬁne metal chain as long as the plastic. The photo shows the chain in its initial position,
+trapped in the upper well of a 2-well potential:
+How-to
+Position the chain as shown.
+Give it a small, subthreshold tweak in the middle; it
+returns to its metastable state.
+Give it a larger tweak; two traveling waves ensue moving in
+opposite directions from the tweak.
+Weird experience
+The waves always rapidly approach a stereotyped form regardless of the
+character of the tweak. They also hit a terminal velocity.
+Qualitative naive expectation, then corrected expectation
+“Initial conditions matter in dynam-
+ics problems.”
+But a system with an attractor can forget everything about its initial state except where it is on
+that attractor.
+19
+20
+“How can a wave travel undiminished forever despite friction?”
+Each cm of chain has stored gravitational potential energy, but each by itself is in a stable
+equilibrium. Each is connected to a neighbor, which can pull it over its barrier, and then the next,
+and so on in a cascade. The rate of release of gravitational p.e. is proportional to the speed of this
+traveling front. But the rate of frictional energy dissipation is proportional to the square of that
+speed. Enforcing energy balance thus selects a speed, a bit like terminal velocity of a falling body.
+What has this got to do with the chemical wave, or with the population-dynamics metaphor?
+Well, friction and diﬀusion are both dissipative processes.
+Estimate
+Everybody says “The brain is a computer and the nerves are the wires.” But nerve
+impulses travel at 10 m/s, not the speed of light. What is really going on in this wave? What sets
+this velocity?
+Above I argued that, in the mechanical system, a balance between dissipation (there it is
+again!) and the release of stored energy sets the wave speed. The same principle applies for nerve
+impulses. You just have to identify what’s storing energy (capacitance) and what’s dissipating it
+(electrical resistance).
+Each patch of a nerve axon membrane is an excitable medium—like our mechanical system,
+like the BZ reactants. It’s got a “rest” state with ion channels closed and electric potential drop
+around −100 mV. It’s also got a “depolarized” state with ion channels open and electric potential
+drop closer to zero, or even > 0. Each state is self-perpetuating, but when a localized patch
+switches state, the change in electric potential spreads diﬀusively and can ﬂip over neighboring
+patches. (An extra mechanism resets the system after wave passage, so it’s ready for the next one.)
+Here are some measured values:
+• radius of squid “giant” axon a ⇤0.5 mm,
+• resting membrane conductance gtot ⇡5 m−2 ⌦−1,
+• membrane capacitance per area C ⇡1 µF cm−2, and
+• the conductivity of salt water ⇡3 ⌦−1 m−1.
+Dimensional analysis won’t take us the whole way, but still there are very few ways to combine
+these material parameters and end up with dimensions of velocity:￿
+pag/C ⇠m1/2⌦−1m−1/2m−1
+F m−2
+⇠m A
+volt
+volt
+coul ⇠m/s.
+Substituting numbers gives an estimate of wave velocity in the correct ballpark of 10 m/s, and
+indeed it is a ratio of “spring constant” (C−1) to “resistive” (g−1, −1) type factors.￿
+We can also build a length scale
+λcable ⌘
+p
+a/g ⇡17 mm
+and a time scale
+⌧cable ⌘C/g ⇡2 ms.
+These are useful and correct for understanding “passive spread” or “electrotonus.”
+￿That is, we need coulombs and kilograms to cancel.
+￿Dissipation yet again.
+21
+Calculation
+Discuss relevance to actual biological system or some other department’s courses
+Many other
+examples exist of wavefronts propagating in excitable medium, e.g. cardiac contraction. Patho-
+logical wave patterns can lead to sudden cardiac death.
+More details
+(Nelson, 2018a; Nelson, 2014; Benedek & Villars, 2000b, chapt. 10).
+5.1.2
+Demo: Traveling chemical wave
+Materials
+I found J. Cohen and A. Winfree’s simpliﬁcation of Zhabotinskii’s recipe for this
+reaction in (Stewart, 1998, p250). It uses reagents you can get from your chemistry department,
+and it’s quite reliable. Be sure to use it in a well-ventilated room, and don’t forget that the reagents
+are poisonous:
+Prepare in advance four components:
+A. 25g of sodium bromate, 335 ml water to dissolve it, then 10 ml concentrated sulfuric acid. Use
+all normal precautions for working with sulfuric acid, e.g. add it to the water and not the other
+way around. Use eye protection.
+B. 10g sodium bromide, add water to 100 ml.
+C. 10g malonic acid, add water to 100 ml.
+D. “1, 10 phenanthroline ferrous complex” (that is not a typo), a redox indicator (Fisher Scientiﬁc,
+or Fisons, Loughborough, UK). This is not a participant; it just lets us see what the other chemicals
+are doing.
+Pre-measure two sets of the four reagents in the quantities mentioned below and bring these to
+class with two standard (9 cm) glass petri dishes (in case one gets spilled!) and pipettes to deliver
+precise amounts (see below).
+A small class can crowd around and look. For a bigger class you need a document camera.
+(An overhead projector can generate unwanted vibrations, add heat, etc.)
+How-to
+Put 6ml of A in a glass beaker, then add 0.5ml of B, then quickly mix in 1ml of C.
+Leave the brown mixture by an open window to lose bromine, until it is the color of pale straw or
+colorless (2–3 min if agitated in a ﬂat dish).
+Add 1ml of D, mix thoroughly, and pour into a petri dish on a level, white, illuminated background.
+(An overhead projector works, but the heat can create too much convection, and vibration can be
+a problem too.)
+The solution turns patchy blue, then clears to brownish-red. Foci of blue will appear (you may
+have to wait nervously up to ﬁve minutes—very dramatic). They grow into concentric rings,
+which slowly expand. If you swish the dish to re-mix, the patterns will reappear. (But try waiting
+for a well-developed pattern, then grabbing the dish and suddenly twisting it about its center; if
+you’re lucky the resulting swirling motion will convert some of the foci from concentric expanding
+circles to rotating spiral waves!!)
+The eﬀect lasts 20–25 min.
+22
+Weird experience
+When we mix oil and water, they macroscopically separate instantly (millisec-
+onds). Here we have aqueous solutions that clearly mix and stay mixed for over a minute. Then
+they form spatial/temporal structures!
+Qualitative naive expectation, then corrected expectation
+“Well-mixed solutions never spon-
+taneously unmix.”
+Imagine a population in the wild. The population is autocatalytic (they breed) but self-limiting
+(they eventually compete for food). There can be two steady states: “low” (breeding not enough to
+sustain population) and “high” (population stays at maximum carrying capacity). Now imagine
+somehow preparing a uniform state with population density everywhere right on the cusp. It will
+be unstable to formation of high or low patches.
+Now consider a boundary between two adjacent territories, one “low” and the other “high,”
+sharing a line border. Population can drift (“diﬀuse”) across the border, pulling the self-sustaining
+“high” state down but also pushing the subthreshold “low” state up. In this way one of the two
+states may be able to convert the other, moving the border. Even chemical reactions can have
+similar character.
+Note that it’s critical to have a distributed source of energy (the initial chemicals themselves,
+or the food eaten by the population of animals). In our demo, after half an hour, this source of
+energy gets exhausted, and then everything mixes and stays mixed, as thermodynamics instructs us
+it must do.
+(In the demo, an extra mechanism also resets the system after wave passage, so it’s ready for
+the next one. But there are also conditions supporting only one-shot passage.)
+You may say, “Cool demo, but I’m a physicist, and I would feel dishonest if I didn’t myself
+understand all 14 of the participating chemical reactions, which I don’t.” Indeed, I don’t even
+understand how sand dunes form, let alone chemistry, but. . .
+the point is that one part of the
+world can get more ordered as long as some other part is getting less ordered. When sand dunes
+form, mechanical energy of wind is turning into heat. In the BZ reaction, high-quality chemical
+bond energy is turning into heat. Along the way, some structure is allowed to form.
+[Less exciting, but more amenable to analysis, you can discuss reverse osmotic ﬂow: Under
+a suﬃcient pressure gradient, the sugar solution volume will go down, decreasing the freedom
+of the sugar molecules and hence their entropy. Somebody needs to supply mechanical energy,
+which winds up as heat, so there’s no conﬂict with the Second Law.]
+23
+Estimate
+This process is surprising in part because of its unusual time scale (minutes). Where
+did that time scale come from? Oil and water unmix in milliseconds. It’s got something to do
+with a reaction rate and with diﬀusion, and diﬀusion is very slow over macroscopic scales.
+Calculation
+Discuss relevance to actual biological system or some other department’s courses
+There are
+various examples of pattern formation, e.g. in embryogenesis (millipede needs to make all those
+segments; snake needs to make all those ribs; hair follicles need to be placed nonrandomly in skin;
+leopards have spots...).
+More details
+(Strogatz, 2014; Tyson, 1985; Zhabotinsky, 2007).
+https://en.wikipedia.org/wiki/Reaction-diffusion_system
+https://en.wikipedia.org/wiki/Belousov-Zhabotinsky_reaction
+Morphogenesis in embryos: (Phillips et al., 2012).
+Here is a recent discovery: (Gelens et al., 2014).
+5.2
+Dynamical systems can use feedback to generate useful be-
+havior
+5.2.1
+Demo: Mechanical toggle
+Materials
+This device from Home Depot (“chain tightener”):
+How-to
+Weird experience
+Not so weird. We intuitively understand mechanical bistability.
+Conceptual tools
+This system is a nice introduction to dynamical systems. There is an unstable
+ﬁxed point ﬂanked by two stable ones, a simple phase portrait.
+24
+Estimate
+Calculation
+Compute: Flow of a vector ﬁeld using pendulumAAPT.py. Play with various initial
+conditions.
+−3
+−2
+−1
+0
+1
+2
+3
+✓
+−3
+−2
+−1
+0
+1
+2
+3
+!
+nullclines, vector field, ﬂow: underdamped pendulum
+Discuss relevance to actual biological system or some other department’s courses
+Cells use
+negative feedback control to maintain constant internal conditions despite ﬂuctuations in envi-
+ronment, or in internal demand.
+Cells use positive feedback control to construct “switchlike” (bistable) dynamics (lac and lambda
+switches).
+Cells use positive plus negative feedback control to construct oscillatory dynamics (dividing cells
+in an embryo).
+More details
+(Nelson, 2015).
+Chapter 6
+Demo-based modules: Optics
+6.1
+Light resists conﬁnement
+6.1.1
+Demo: Diﬀraction through adjustable slit
+Materials
+Laser, adjustable slit. Lab-jack to conveniently position the laser. Lab stand to hold
+the adjustable slit.
+How-to
+Shine the laser on a distant wall. The beam doesn’t spread much. Introduce the slit at
+its widest setting. The beam still doesn’t spread much.
+Weird experience
+Now crank down the slit width. The beam spreads, and also patterns start to
+form.
+Qualitative naive expectation, then corrected expectation
+Life science students get told that
+light has a particulate character, but a stream of material particles won’t get spread out by con-
+ﬁnement, nor will it form these patterns. It won’t do to tell them some fairy tale about light being
+a wave, because the pattern builds up one photon at a time; it is a probability distribution for where
+the next photon is likely to be detected, not the amplitude squared of some classical wave.
+Estimate
+Discuss why the expected angular fringe spacing goes up with increasing wavelength;
+so for dimensional reasons it must go down with increasing slit width, i.e. ∆✓⇠λ/w. Multiply
+by distance to the screen and estimate the expected spacing.
+Calculation
+Work out the 2-slit pattern in detail from Feynman’s rule and conﬁrm expectations.
+Discuss relevance to actual biological system or some other department’s courses
+The “diﬀrac-
+tion limit” was once thought to be a fundamental limitation on optical imaging. Certainly using
+objects with shorter wavelength (electrons) helps.
+Reconciling wave and particle aspects is critical to understanding the ongoing revolution in su-
+perresolution imaging.
+25
+26
+More details
+(Nelson, 2017; Nelson, 2018b).
+6.1.2
+Demo: Diﬀraction of white light by a 1D array sample
+Materials
+35mm projector, CD, DVD, phonograph record (for comparison), red laser.
+How-to
+Shine directed white light on a CD; get a rainbow. Shine directed monochromatic white
+light on CD, DVD, phono record: get well-separated spots (unlike 2-slit).
+Weird experience
+What’s with those diﬀraction spots?
+Conceptual tools to be introduced
+Students may have seen the geometric series summation
+formula, but few will naturally think to apply that to a geometric series whose factor is a complex
+phase. Yet that very quickly gives a result that predicts sharp, narrow diﬀraction spots.
+Estimate
+Calculation
+Discuss relevance to actual biological system or some other department’s courses
+Structural
+color abounds in Nature. Nearly every blue color in a living organism arises in this way (unlike
+say red, which usually arises via pigments).
+6.1.3
+Demo: Diﬀraction of monochromatic light by a 2D or 3D crystalline
+sample
+Materials
+Red laser (e.g. pointer), Phil’s special slide (appendix A).
+Other slides are available, e.g. from http://ice.chem.wisc.edu/Catalog.html .
+Not essential but nice: Blue or UV laser pointer. If you use the UV laser, you’ll need a ﬂuorescent
+target, e.g. large sheet of white paper (a white wall or projection screen will probably not be
+ﬂuorescent).
+How-to
+Shine laser on the slide, observe the pattern.
+Weird experience
+Nice image but. . . there are no lenses! How do you get a sharp image without
+lenses? And the resulting pattern doesn’t look like what’s on the slide. (For one thing, it’s far
+bigger.)
+Qualitative naive expectation, then corrected expectation
+“Objects lit from a distant source cast
+shadow images.”
+Instead, in the diﬀraction regime what we see is the Fourier transform. Qualitatively, the
+macro- and micro-structures trade places.
+Estimate
+27
+Calculation
+Discuss relevance to actual biological system or some other department’s courses
+This is how
+the molecular structure of DNA was ﬁrst obtained, speciﬁcally how Rosalind Franklin found its
+helical structure.￿
+More details
+(Nelson, 2017; Nelson, 2018b). See also Appendix A.
+6.2
+Biomolecules have characteristic geometries
+6.2.1
+Demo: Optical rotatory power
+Materials
+Corn syrup and/or sucrose solution. Beaker several inches wide, several inches deep.
+Polarizing ﬁlters big enough to cover the ends of beaker. Overhead projector.
+Also clear plastic objects (e.g. ruler) and cellophane (e.g. Chinese fortune cookie wrapper).
+How-to
+Put a rigid clear plastic object between crossed polarizers. No light gets through outside
+the object, but the object itself appears light, and colored.
+Place empty glass beaker between crossed polarizers, no eﬀect. Fill it with water, no eﬀect.
+Dump out water and add 1cm layer of corn syrup or sugar solution and observe. Now add another
+1cm, and another. . . .
+[Here is another realization: http://ice.chem.wisc.edu/Catalog.html .]
+Weird experience
+The polarization gets rotated by an angle proportional to solution depth. But
+how does that amorphous, indeed liquid, solution know which direction to rotate the polarization?
+Qualitative naive expectation, then corrected expectation
+“An amorphous material (glass or a
+liquid) cannot do anything at all to the polarization of light because its polarizability tensor gets
+averaged over all random orientations, becoming eﬀectively isotropic.”
+Hint: Optical rotatory power breaks inversion symmetry. Inversion-symmetric molecules like
+water don’t display it. But sugar can. No matter how you rotate a chiral molecule, its chirality
+stays the same.
+To go further we must acknowledge cross-polarizability. Even a rotationally invariant (isotropic)
+cross-polarizability can nevertheless break inversion symmetry.
+Estimate
+Calculation
+SeeChap.43from https://repository.upenn.edu/physics_papers/644/ (Nelson, 2018a).
+Discuss relevance to actual biological system or some other department’s courses
+This is an
+essential tool of analytical chemistry. The left-handed (“Z”) form of DNA was ﬁrst documented
+in this way.
+￿Previously Dorothy Crowfoot Hodgkin had solved the structures of cholesterol and penicillin, and others had done
+myoglobin. Then the stampede started.
+28
+More details
+Some people would deﬁne a physicist as “scientist obsessed with matters of symme-
+try,” yet I could not ﬁnd this phenomenon in any physics textbook, except (naturally) the Feynman
+lectures [§33-5], which however does not do the derivation cited above.
+Any p-chem textbook mentions “optical activity,” “optical rotatory dispersion,” and/or “cir-
+cular dichroism,” but few discuss its symmetry aspects.
+This is nice: (Nieves & Pal, 1994).
+See alsothefascinatingstory https://en.wikipedia.org/wiki/Louis_Pasteur#Molecular_asymmetry
+6.3
+We can make quantitative predictions even for unconscious
+human perception
+6.3.1
+Demo: R+G=Y
+Materials
+One version: Three 35-mm slide projectors, monochromatic slides
+(https://www.pasco.com/prodCatalog/SE/SE-9360_color-filters-set-of-7/), prism.
+Alternate version: Theatrical spotlight with sliders for each color (like the Chauvet “Obey3” LED).
+How-to
+Weird experience
+Combining pure red and pure green gives a sensation that we do not think of
+as “reddish green” nor “greenish red”; we experience a unitary sensation called “yellow.” And
+yet, the components can readily be re-separated using a prism. More disturbing, there is a band
+in the spectrum that looks exactly the same, yet cannot be further separated with a prism.
+Qualitative naive expectation, then corrected expectation
+We think of our senses as telling us
+“what’s out there.” But really all our brain can know is what’s coming down the wires. The brain
+cannot itself “see” anything. And what’s coming down the wires depends on the transducer
+hardware. If two kinds of light elicit identical outputs from our photoreceptor cells, then we
+must say they “match,” regardless what sophisticated processing is going on, because we have no other
+source of information.
+We have just three classes of receptors, and two of them have broad, overlapping spectral
+sensitivity ranges. That’s enough for a qualitative explanation of the phenomenon.
+Estimate
+Calculation
+Once the three sensitivity curves have been measured, then predicting the color-
+matching functions is just a matter of solving three linear equations in three unknowns (Appendix
+B).
+Discuss relevance to actual biological system or some other department’s courses
+Every intro
+to psychology pays some lip service to “psychophysics.”
+Brainbow imaging and spectral karyotyping make use of the insight we got from thinking about
+human color perception.
+29
+More details
+(Nelson, 2017).
+6.4
+The color of light is related to energy
+6.4.1
+Demo: Fluorescence of chlorophyll and other molecules
+Materials
+Need: Black light. Red laser pointer. Bottle of tonic water (supermarket). Acetone
+(hardware store). Day-glo objects such as ﬂuorescent colored chalk, paper, etc.
+Not required but nice: Blue-light LED source. UV laser pointer
+(http://www.arborsci.com/shop-by-topic/light-optics/lasers/laser-pointers
+or http://www.alpec.com). Here and below, use extra precautions with the laser; remember that
+the UV beam can damage eyes, even though you can hardly see it.
+How-to
+Prepare chlorophyll solution in advance by soaking any kind of green leaves in acetone
+overnight. Acetone is nail-polish remover, so work in a well-ventilated place. (I have heard that
+olive oil also works, but haven’t veriﬁed that.)
+Weird experience
+Chlorophyll famously looks green under visible light. So does green food
+coloring. But under UV, chlorophyll gives mysterious blood-red ﬂuorescence, a downconversion
+(Stokes shift). Normal plant leaves do not do this.
+Under visible blue light, chlorophyll scatters some of the blue and downconverts some to that
+same red.
+Tonic water (quinine solution) is also ﬂuorescent. It downconverts UV to pale blue. The UV
+laser pointer shows that the ﬂuorescence comes oﬀin all directions, despite the narrow incoming
+beam. In contrast, red laser beam goes straight through unaﬀected.
+Qualitative naive expectation, then corrected expectation
+Most objects reﬂect or scatter in-
+coming light into light of the same wavelength. Classical physics explains this by saying the
+incoming EM wave shakes electrons at its frequency, so they reemit at that same frequency. Even
+most “colored” objects behave like this, though with diﬀering amount of absorption for each
+wavelength.
+So what’s going on with the frequency shift observed in ﬂuorescence? Why is it always toward
+the red?
+We need to get used to thinking of light as bundles carrying deﬁnite energy. In ﬂuorescence,
+there is a time delay in the nanosecond range, plenty for the excited molecule to lose some of its
+excitation energy before emitting a new photon. (There’s dissipation once again.) See Fig. 6.1 for a
+physical model of what is going on.
+Estimate
+Pushing the idea forward another step, we also start to understand photoisomerization,
+the key ﬁrst step to our vision.
+Note that ordinary thermal jostling can in principle achieve the “activation energy” needed
+to make this conformational change occur spontaneously, without light. But in practice that will
+never happen at room temperature if the barrier is signiﬁcantly larger than the typical magnitude
+of thermal energy at room (or body) temperature, about 4 pN nm.
+30
+excited-state
+energy U (y)
+ground-state
+energy U0 (y)
+¯y0
+¯y
+excitation photon
+nuclear position
+1
+2
+3
+4
+5
+6
+emitted photon
+total energy U
+?
+?
+of electrons + nuclei
+Figure 6.1: Physical model for ﬂuorescence from (Nelson, 2017).
+￿: The positions of the nuclei in a
+molecule ﬂuctuate near ¯y0, the minimum of the energy function appropriate for electrons in their ground
+state. ￿: Absorption of a photon promotes the electrons to an excited state. The diﬀering lengths of the dashed
+and dotted lines indicate that the required photon energy depends on the momentary value of the nuclear
+position coordinate y. ￿: The nuclei respond by moving toward the minimum of the new, excited-state
+energy function. ￿: Then the nuclei ﬂuctuate about the new minimum ¯y?. ￿: Eventually a new photon is
+emitted (right), sending the electrons back to their ground state. The lengths of the dashed and dotted lines
+again indicate that there is variation in the precise energy of the emitted photon. ￿: The nuclear positions
+then readjust back to the neighborhood of ¯y0. The typical diﬀerence in length between the ascending and
+descending arrows represents the Stokes shift of this ﬂuorescent molecule.
+Calculation
+Discuss relevance to actual biological system or some other department’s courses
+Once you get
+the realization you ﬁnd that basically nothing important to biophysics requires the wave/Maxwell
+approach. And nearly everything important is in fact incomprehensible in that approach!
+Fluorescence microscopy is revolutionizing biology.
+Once you understand it, then two-photon excitation and Fluorescence Resonance Excitation Trans-
+fer (FRET) are small additional steps.
+More details
+(Nelson, 2017; Nelson, 2018b).
+6.5
+Planetary climate is determined by feedback
+6.5.1
+Demo: The infrared activity of CO2
+Instrument
+We used the FLIR E60 infrared camera (www.flir.com), which contains an uncooled microbolometer
+array with spectral sensitivity in the range 7.5–14 µm. The camera has video output that can be
+projected in real time for audience viewing; it can also export still images.￿Other cameras may
+￿We were not able to observe the eﬀect with the much less expensive FLIR One camera.
+31
+Figure 6.2: Setup. After irradiation from the two heat lamps (foreground), the two cans were viewed by an
+infrared camera placed on the far side (near the chalkboard). Not shown: For the trial shown in Fig. 6.3, each
+cylindrical can was wrapped in a blanket of foam insulation (except for its ends).
+work as long as they have similar sensitivity and spectral sensitivity range, and allow manually
+ﬁxing a narrow false-color scale. A tripod is helpful.
+Materials
+See Fig. 6.2.
+• Four identical coﬀee cans with both ends removed.
+Ours were 11.5 cm diameter steel.
+Optional: we joined two pairs of such cans to get cylindrical chambers of length 23 cm.
+• Sheer plastic food wrap (“Glad Wrap/Handiwrap/Saran Wrap”).
+• Fire extinguisher or another source of dry CO2.￿
+• Two identical sources of infrared radiation, for example, 1000 W ceramic heating elements.
+• Apparatus to hold the cans in place (wooden V-blocks, lab jacks, etc).
+How-to
+1. Cover tube one with food wrap at both ends, secure with rubber bands, and set aside. Cover
+tube two with food wrap on just one end and secure with rubber band. Prepare a square of
+food wrap for the last window but do not attach it yet.
+2. Set up the tubes with their cylinder axes horizontal (Fig. 6.2), with nothing behind them for at
+least a meter, and something uniform beyond that (typically a wall of uniform temperature).
+This horizontal arrangement reduces convective heat transfer from the sources to the cans.
+￿A CO2 ﬁre extinguisher is convenient, but beware that most home models are the chemical type, which is not what you
+want. Some alternative sources: (a) Insert dry ice pellets into a plastic bag in advance, close it until they have sublimated,
+then pour the gas into the can. (b) Obtain a CO2 tire inﬂator and cartridge from a bike shop (e.g. http://ridepdw.com/).
+Chemically generating CO2 (or letting it escape from a bottle of soda) has the disadvantage of producing gas saturated
+with water vapor.
+32
+3. Turn on the camera and focus on the cans. Align the tubes and camera so that the camera
+looks straight down each tube’s axis. Make sure what the camera sees when looking through
+each tube is the uniform wall. Then override the automatic temperature scale and manually
+adjust it: Raise the low extreme of the scale until the wall turns black (e.g. 22◦C), then set
+the upper end about 2◦C higher.
+4. Place tube two on the ﬂoor with open end up and ﬂood it with dry CO2. Quickly cover it
+loosely with the remaining food wrap window and wait for any solid CO2 snow to sublimate,
+then seal it. Wait for everything to come to room temperature.
+5. Image the cans. The experimenter’s own emission will create an artifact when specularly
+reﬂected from the tube windows, so practice standing to the side to avoid this. Most rooms
+contain other warm objects, such as computers, so identify and avoid their reﬂections. For
+the same reason, audience members should not be too close. [Optionally, it may also be
+worthwhile to do the demonstration in a darkened room to minimize potential reﬂections.]
+Conﬁrm that, with these precautions, both cans appear the same to the infrared camera.
+6. Move the sources into position and irradiate the cans for 2 minutes.
+Point out to the
+audience that one can easily feel radiation passing out the far ends of each can—at least
+some wavelengths go right through.
+[Caution: Some cameras can “burn in” an image of the hot ﬁlament, which will last for some
+time after removing the sources. To avoid this, block the camera from directly viewing the
+sources during irradiation.]
+7. [Optional: In some trials, we placed a reﬂecting metal sheet behind the sources during
+irradiation. This redirects some more energy back toward the cans, and protects the wall
+of the room from being heated, if space limitations force it to be close to the sources.
+Alternatively, heat lamps equipped with their own reﬂectors can be used.]
+8. [Optional: In some trials, including the one shown in Fig. 6.3, we blanketed both cans with
+foam insulation to obstruct energy loss through the can walls. As expected, this change
+increased the steady-state temperature diﬀerence observed after irradiating the cans, but the
+eﬀect was apparent even without this step.]
+9. Suddenly remove the sources (and reﬂecting sheet if any) and immediately uncover the
+camera. Image the tubes and observe that the interior of the tube with CO2 appears warmer
+than the can with air for at least a minute. More precisely, the apparatus adds its own
+emission to any wall emission seen through the back end of the can. Again, be sure to stand
+to the side to avoid imaging yourself.
+10. Controls: While practicing the demonstration, it is worthwhile to exchange the positions
+of the cans, exchange which can gets which gas, exchange the infrared sources, and so on.
+We found that in every case the only variable relevant to the observed diﬀerence was the
+presence of CO2 gas.
+Weird experience
+See Fig. 6.3.
+33
+23.7  C
+25.7  C
+a
+b
+c
+10 cm
+◦
+◦
+Air
+CO2
+d
+still at room
+temperature
+elevated
+temperature
+Figure 6.3: (Infrared photographs.) Energy absorption by an infrared-active gas. Two identical cylindrical
+chambers with transparent ends were viewed in the wavelength band 7.5–14 µm. False color indicates radi-
+ance in this band (reds are higher than blues); the scale bar is labeled with approximate inferred temperature
+in degrees Celsius. The chamber on the left contains dry air. The one on the right contains carbon dioxide.
+Both are cylinders viewed end-on. a. Chambers before irradiation. A human hand is viewed through the
+left chamber. Dashed teal lines were added to show the locations of the chamber walls. b. The chambers
+were invisible before irradiation because they matched the ambient room temperature. The backdrop was
+independently measured to be at about 24◦C, which agreed with the camera. c. The chambers were exposed
+to infrared light for two minutes. After irradiation was stopped, the one containing CO2 was observed to be
+slightly warmer for about one minute. That is, the apparent temperature when looking through this chamber
+was higher than either the backdrop or the other chamber. The bright rings are the steel cans themselves
+and their insulating blankets. d. Cartoon showing the approximate positions and thicknesses of the foam
+insulation blankets (dark gray). An artifact of the infrared camera makes the warmer right-side insulation
+appear thicker in (c) than the identical left layer.
+34
+Qualitative naive expectation, then corrected expectation
+Some students are surprised to learn
+that a gas can be so transparent to some wavelengths (here visible) yet so opaque to others (here
+IR). But we saw earlier that tonic water is quite transparent to visible, yet strongly absorbs UV, and
+many other materials are like that.
+Estimate
+Energy transport from a planet’s surface outward is notoriously complex, and yet a
+simple estimate is pretty successful: in the lower part of the atmosphere (“troposphere”), where
+it is still dense enough to be opaque to IR, temperature depends linearly with altitude, with slope
+of the graph called the “lapse rate.”
+For example, dry air (a mixture of gases roughly obeying the ideal gas law, without any
+component that can condense upon cooling) will have lapse rate −g/cp, where g is the acceleration
+of gravity at the surface and cp is the speciﬁc heat at constant pressure, per mass. This formula is
+nearly independent of gas density, because cp is constant for an ideal gas. The formula just given
+predicts its value as around 10 K/km.
+Similar but more accurate formulas can be written to account for an atmosphere with a con-
+densing component, such as water vapor on The actual observed lapse rate in the troposphere is
+about 65 K/(10 km) on Earth, and similar values even on such diﬀerent planets as Mars and Venus.
+Discuss relevance to actual biological system or some other department’s courses
+What is the
+most important scientiﬁc question of all time? Surely the answer is: Climate. So, every academic
+discipline should be asking, What can we oﬀer students that is relevant to this question?
+Climate may seem distant from biophysics: The Earth system does not reproduce and hence did
+not evolve via descent with modiﬁcation in the presence of natural selection. In that sense, planets
+are not “alive.” But planetary systems are complex and self-regulating, with many interesting
+feedbacks, so the subject has much in common with the physiology of living organisms. Moreover,
+our own planet hosts a biosphere that has itself made major modiﬁcations to the climate. So
+whether or not we call it “alive,” some of the concepts of biophysics turn out to be relevant.
+More details
+(Sieg et al., 2019).
+P. Nelson, “Planetary Climates”: https://repository.upenn.edu/physics_papers/645/
+Here is the demo: https://www.youtube.com/watch?v=0eI9zxZoipA
+Chapter 7
+Exams/Assessment
+It is safe to say that most Physics exam questions boil down to ﬁnding two or three numbers,
+multiplying/dividing them in the proper way, and emitting a numerical result. This does not
+always (or ever) engage the sort of skills that we claim it does. Yes, we must retain such questions.
+But. . .
+Science is largely about careful observation. If I show you a phenomenon, it’s fair game for me
+to ask you what you saw, and how it relates to the themes of this class. Many students are profoundly
+uncomfortable with such an open-ended task. They need to get less uncomfortable with it. This
+is science.
+Many students will respond with lots of theory, equations, etc., even when clearly asked what
+did you observe. They need practice before it’s time for an exam so that they can do this important
+task.
+Other students are unable to reply concisely to this sort of question; they will ﬁll up a page to
+prove their erudition, no matter how clearly you tell them to respond in one sentence. They need
+to acquire this important skill of focusing down to just the main point.
+With your partner, try constructing a question of the following form, but tailored to each of
+the experiences we had today:
+I did some demonstrations in class. Choose just xx of these and write one sentence
+describing the phenomenon that we observed, and one more sentence about how that
+connects to something discussed in class.
+• Shine light into a curving “pipe” made of transparent plastic. [sample answer: “Light
+followed the pipe, even though it was bent and its surfaces were not mirrored.” “Total
+internal reﬂection as long as every incidence exceeds the critical angle.”]
+• Diﬀraction from a triple slit. [sample answer: “Alternating brighter and weaker spots
+separated by dark bands.” “An intermediate to the many-slit pattern, where only the
+brightest spots survive, and they are very condensed.”]
+Such open-ended questions may seem hard to grade. So grade them on a coarse scale (0–3
+points) and don’t make them a huge part of the total. But do include them, just to see if you can
+make some students think.
+35
+Chapter 8
+Wrap
+Years from now, one out of ﬁfty of your students may remember you vividly as somebody “who
+showed me how to put it all together.” (Nobody will remember you vividly as the person “who got
+me ready for the MCAT.”) Which one out of ﬁfty is largely a matter of chance—that’s the one who
+was exactly ready, at that exact moment, to hear about the exact connection you were discussing.
+What’s not a matter of chance is that it cannot happen if you don’t try to make connections.
+Acknowledgements
+This work was partially supported by the United States National Science Foundation under Grants
+EF–0928048, DMR–0832802, and PHY–1601894. Some of the work was done at the Aspen Center
+for Physics, which is supported by NSF grant PHY–1607611.
+36
+F￿￿￿￿￿￿R￿￿￿￿￿￿
+B￿￿￿￿￿￿, G B, & V￿￿￿￿￿￿, F M H. 2000a. Physics with illustrative examples from medicine and biology. 2d ed. Vol.
+2. New York: AIP Press.
+B￿￿￿￿￿￿, G B, & V￿￿￿￿￿￿, F M H. 2000b. Physics with illustrative examples from medicine and biology. 2nd ed. Vol.
+3. New York: AIP Press.
+B￿￿￿, H. 1993. Random walks in biology. Expanded ed. Princeton NJ: Princeton Univ. Press.
+B￿￿￿, H C. 2004. E. coli in motion. New York: Springer.
+C￿￿￿￿￿, R W, & S￿￿￿￿￿￿￿, B A. 2015. Matter and interactions. 4th ed. New York: Wiley.
+C￿￿￿, K Y, Z￿￿￿￿￿￿￿￿, D M, & N￿￿￿￿￿, P C. 2018. Stochastic simulation exercises for visualization of
+gene-expression dynamics and error correction in biological cells (in preparation; ask me).
+G￿￿￿￿￿, L, A￿￿￿￿￿￿￿, G A, & F￿￿￿￿￿￿J￿., J E. 2014. Spatial trigger waves: Positive feedback gets you a long
+way. Mol. Biol. Cell, 25(22), 3486–3493.
+K￿￿￿￿￿, J M, & N￿￿￿￿￿, P. 2018. A student’s guide to Python for physical modeling. Updated ed. Princeton NJ:
+Princeton Univ. Press.
+L￿￿￿, D￿￿￿￿. 2018. A mathematical way to think about biology: http://quant.bio .
+N￿￿￿￿￿, P. 2014. Biological physics: Energy, information, life—With new art by David Goodsell. New York: W. H.
+Freeman and Co.
+N￿￿￿￿￿, P. 2015. Physical models of living systems. New York: W. H. Freeman and Co.
+N￿￿￿￿￿, P. 2017. From photon to neuron: Light, imaging, vision. Princeton NJ: Princeton Univ. Press.
+N￿￿￿￿￿, P.2018a. Physics516: Electromagnetic Phenomena https://repository.upenn.edu/physics_papers/644/.
+N￿￿￿￿￿, P￿￿￿￿￿C. 2018b. Time to Stop Telling Biophysics Students that Light Is Primarily a Wave. Biophys. J.,
+114(4), 761–765.
+N￿￿￿￿￿, J￿￿￿F, & P￿￿, P￿￿￿￿￿B. 1994. Third electromagnetic constant of an isotropic medium. Am. J. Phys.,
+62(3), 207–216.
+P￿￿￿￿￿￿￿, R, K￿￿￿￿￿, J, T￿￿￿￿￿￿, J, & G￿￿￿￿￿, H. 2012. Physical biology of the cell. 2nd ed. New York: Garland
+Science.
+P￿￿￿￿￿￿, E￿￿￿￿￿. 1977. Life at low Reynolds number. Am. J. Phys., 45(1), 3–11.
+S￿￿￿, P G, B￿￿￿￿￿, W, H￿￿￿￿￿￿, P K, & N￿￿￿￿￿, P C. 2019. A demonstration of the infrared activity of carbon
+dioxide. Physics Teach., 57(4), 246–249.
+S￿￿￿￿￿￿, I￿￿. 1998. Life’s other secret: The new mathematics of the living world. New York: Wiley.
+S￿￿￿￿￿￿￿, S H. 2014. Nonlinear dynamics and chaos with applications in physics, biology, chemistry, and engineering.
+2d ed. San Francisco: Westview Press.
+37
+38
+T￿￿￿￿, J J. 1985. A quantitative account of oscillations, bistability, and traveling waves in the Belousov-
+Zhabotinskll reaction. Chap. 3, pages 93–144 of: F￿￿￿￿, R￿￿￿￿￿￿J, & B￿￿￿￿￿, M￿￿￿￿(Eds.), Oscillations
+and traveling waves in chemical systems. New York: Wiley.
+Z￿￿￿￿￿￿￿￿￿￿,
+A
+M.
+2007.
+Belousov-Zhabotinsky
+reaction.
+Scholarpedia,
+2(9),
+1435.
+http://www.scholarpedia.org/article/Belousov-Zhabotinsky_reaction.
+Appendix A
+Diﬀraction slide fabrication notes
+38
+Di↵raction slide
+P. Nelson 10/2011
+1
+Science
+Show a fact about x-ray di↵raction (or about Fourier transformation): The ﬁne structure of the scattering
+object gets encoded in the di↵raction pattern as the overall envelope function (the intensities of the spots).
+Reciprocally, the overall structure of the scattering object (crystal lattice) gets encoded in the ﬁne structure
+of the di↵raction pattern (arrangement of the spots).
+2
+Fabrication
+I prepared diffractSlideFull.ai in Adobe Illustrator CS5 (that is, vector art). This ﬁle contains 25
+panels. Its nominal size is 10 times the actual desired size, because of limitations on the precision of Illustrator’s
+internal representation of lengths. A sampler showing closeups of each of the 25 panels appears at the end of
+this document.
+I sent the ﬁle to FineLine Imaging (fineline-imaging.com), indicating the desired ﬁnal size and specifying
+50,800 DPI / 7µm feature size and that the image should be rendered positive (white ! clear, black ! black).
+I requested that the image be duplicated as many times as would ﬁt into the minimal order of 117 square
+inches. FineLine accepts many image ﬁle types and converts whatever you send to Gerber format.
+Brieﬂy, 24 of the panels contain some equilateral triangles, some hypocycloids (pointier than triangles), or
+some Y shapes, always arranged in a square lattice. The actual sizes are listed on the last page of these notes.
+Big and Small in the titles refer to the size of the objects relative to their spacing. My favorite of these panels
+was A4 which gave the pattern below right (photo by William Berner):
+b
+Panel E1 gives a repeating motif of bar pairs. This one wasn’t very successful. I suspect I made the bars too
+fat, not enough like delta functions, so the bars’ own structure function interferes with what I wanted to show,
+which was the structure factor of the two-bar motif.
+Matlab code hypocycloid.m draws these panels, except that the triangles are drawn by triangleGrid.m.
+Save as EPS. Read into Illustrator and save as .AI. See comment lines below for hints on Adobe Illustrator
+postprocessing.
+Here is another supplier whom I have not tried: University Microlitho
+www.microlitho.co.uk university@microlitho.co.uk.
+1
+✔
+3
+Reference
+See also Slogo↵et al. Photolithographic fabrication of di↵raction and interference slit patterns for the undergraduate
+laboratory. Am. J. Phys. (2004) vol. 72 pp. 1328-1334.
+4
+Code
+%% pcn 10/2011 triangleGrid.m
+clear all; close all
+[x,y]=meshgrid(1:100,1:100);
+%axes(’Color’,’w’)
+%%
+h=plot(x,y,’^’, ’MarkerEdgeColor’,’r’,...
+’MarkerFaceColor’,’r’,...
+’MarkerSize’,1) % size 2 for larger; size 1 and remove the edges and stroke for small
+axis equal; axis off
+%set(h,’Visible’,’off’)
+%% pcn 10/2011 hypocycloid.m
+% Make diffration slide pictures:
+% draw a hypocycloid. draw a 100x100 array of them.
+% draw an array of stars.
+% draw an array of bar pairs
+% postprocessing in Adobe Illustrator: Generally, set fill black and stroke empty. Scale to desired size.
+% for Y images, choose rounded ends of lines.
+%%
+clear all; close all
+alpha=.45
+%0.4 is approx a triangle; 0.45 is scooped in; 0.5 is very pointy
+gamma=2.5 % spacing between the examplars
+%% draw a hypocycloid.
+theta=[(-pi):(2*pi/21):(pi), -pi]; % make it a closed loop
+c=cos(theta);s=sin(theta);
+x=(c + alpha*(c.^2-s.^2))/2; y=(s - alpha*(2*c.*s))/2;
+%figure(1);plot(theta,sqrt(x.^2+y.^2)); hold on
+figure(2); plot(x,y,’k’)
+axis equal
+hold on
+%% draw a 100x100 array of them.
+figure; hold on;
+for i=1:100,for j=1:100
+plot(x+gamma*i,y+gamma*j,’k’)
+end;end
+axis equal; axis off
+error(’stop’)
+%% draw an array of stars.
+figure; hold on; axis equal; axis off
+s=sin(pi/6);c=cos(pi/6);
+for xoff=1:1.5:200, for yoff=1:1.5:200,
+x=[0,
+0.1*c,
+-0.1*c; ...
+0,
+0.6*c,
+-0.6*c]
+y=[0.1,
+-0.1*s,
+-0.1*s; ...
+.6,
+-0.6*s,
+-0.6*s]
+line(x+xoff,y+yoff,’Color’,’k’)
+end;end
+hold off
+2
+%% now make bar pairs
+figure; hold on; axis equal; axis off
+line([1:100, (3/8)+(1:100); 1:100, (3/8)+(1:100)],
+[zeros(1,200); 100*ones(1,200)],’Color’,’k’)
+hold off
+3
+3
+3
+3
+3
+3
+1
+5
+4
+3
+2
+A
+E
+D
+C
+B
+Details of the 25 panels in the diffraction slide. Actual sizes: Panels with names ending in 1 contain 100 objects in 5mm, or 50um spacing. 
+Panels with names ending in 1.3 contain 100 objects in 6.5mm, or 65um spacing. P Nelson 10/2011. 
+4
+Appendix B
+Mechanical analogy for color vision
+[Pages from (Nelson, 2017).]
+39
+126
+Chapter 3
+Color Vision
+3.8.6 A mechanical analogy for color matching
+Young’s hypothesis appears promising: It explains the R + G ⇠Y puzzle, and it can
+be interpreted in the framework of other things we know about light (Section 3.8.5).
+But to conﬁrm that it describes our vision, we must show that it correctly predicts
+the systematics (Section 3.6.3, page 113), as well as the quantitative data obtained
+from color-matching experiments (Figure 3.8). We can see how to proceed by ﬁrst
+Fig. 3.8 (page 119)
+making an analogy to a purely mechanical system.
+Imagine an air-hockey game. The puck is a disk ﬂoating on a thin layer of air. It
+can move without friction in two directions x and y; in the third direction, however,
+it is conﬁned to the plane z = 0. We can apply a force F to the puck and watch it
+respond. When we do this, we see that it obeys Newton’s law of motion:
+a? = F?/m,
+where a is the acceleration vector and the subscript ? means projection to the xy
+plane. Let ⇧denote the projection operation:
+F? = ⇧(F ) =
+Fx
+Fy
+"
+.
+(3.10)
+The component Fz is irrelevant to the puck’s motion.18 To indicate this, we intro-
+duce the equivalence symbol ⇠; the formula F ⇠F 0 means that two forces generate
+the same puck motion, whether or not they are equal. The preceding discussion implies
+that this statement is the same as saying that F? = F 0
+?:
+Two forces are equivalent (F ⇠F 0) if they have the same projection, that
+is, if ⇧(F ) = ⇧(F 0).
+(3.11)
+The relation ⇠has some mathematical properties reminiscent of the ones in Sec-
+tion 3.6.3:
+30. It is reﬂexive and transitive.
+40. It obeys a Grassmann-type law (page 115).
+50–60. We can choose two ﬁxed “basis” forces F(1) and F(2). Then any other “target”
+force F ? can be uniquely expressed as equivalent to a linear combination of
+those two:
+F ? ⇠⇣(1)F(1) + ⇣(2)F(2).
+(3.12)
+70. There are many allowed choices for the two basis forces. For example, they
+need not be chosen perpendicular to each other, nor even lie in the xy plane.
+They must not, however, be parallel to each other, nor may either one be purely
+vertical.
+The origin of all these properties is that the ⇠relation amounts to equality of the
+projections, and projection is a linear function:
+⇧(aF + bF 0) = a⇧(F ) + b⇧(F 0).
+(3.13)
+18This statements assumes that the force is not too large. Too large a downward force would create
+friction with the table; too large an upward force would lift the puck o↵the table.
+Contents
+Index
+Notation
+3.8
+A Physical Model of Color Vision
+127
+Your Turn 3E
+Conﬁrm that property 40 follows from the fact that ⇧is linear. That is, show
+that if F1 ⇠F2, then F1 + F3 ⇠F2 + F3.
+Ex.
+Derive properties 50–70.
+Solution: We wish to show that Equation 3.12 has a unique solution. First, rephrase
+it as an ordinary vector equation by applying Idea 3.11 and linearity, Equation 3.13:
+F ?
+x
+F ?
+y
+"
+=
+
+⇣(1)F(1)x + ⇣(2)F(2)x
+⇣(1)F(1)y + ⇣(2)F(2)y
+"
+.
+(3.14)
+These are two linear equations in the two unknowns ⇣(1) and ⇣(2); every other
+symbol denotes a known quantity. Solving them in the usual way establishes 50,
+and is possible as long as the two basis forces have nonzero projections F(1)? and
+F(2)? that are not parallel to each other. The other properties can be obtained by
+extending this argument.
+To restate the Example in a more general way, we can reduce our problem to a set
+of two ordinary linear equations once we know ⇧(F ?) (the left side of Equation 3.14)
+and the two vectors ⇧(F(↵)) (coeﬃcients of ⇣(↵) on the right side, for ↵= 1, 2). If
+you are familiar with matrix notation, you’ll recognize Equation 3.14 as the equation
+F ?
+x
+F ?
+y
+"
+=
+
+F(1)x
+F(2)x
+F(1)y
+F(2)y
+" 
+⇣(1)
+⇣(2)
+"
+.
+(3.15)
+The condition for a solution to exist is just the statement that the 2 ⇥2 matrix in
+Equation 3.15 should be invertible; moreover, that condition guarantees a unique
+solution, obtained by multiplying both sides by the inverse matrix.
+3.8.7 Connection between the mechanical analogy and color vision
+How does the air-puck analogy help us to understand color?
+Section 3.8.5 argued that the rate of productive photon absorptions is a linear
+function of the spectrum (Equation 3.9), analogous to the projection ⇧in the mechan-
+ical analogy (Equation 3.10). In the analogy, ⇧projects three-dimensional forces to
+the 2D space of (Fx, Fy) values. In human vision, Equation 3.9 projects the inﬁnite-
+dimensional space of spectra to the three-dimensional space of productive absorption
+rates: the (βL, βM, βS) values. Despite these di↵erences, we can again obtain the color-
+matching facts in Section 3.6.3 as consequences of the property that the projection
+operation is linear in I.
+Your Turn 3F
+Show that the empirical color-matching rules 3–4 (page 115) follow from our
+model.
+3.8.8 Quantitative comparison to experimentally
+observed color-matching functions
+The quantitative challenge announced in Section 3.8.1 was: Given a target light spec-
+trum I ? and three basis lights with spectra I(↵), ﬁnd the amount of each basis light,
+⇣(↵), needed to match a speciﬁed target (or state when no such match is possible).
+Contents
+Index
+Notation
+128
+Chapter 3
+Color Vision
+Before proceeding, we ﬁrst summarize notation introduced earlier, and extend it some-
+what:
+Φ?
+p
+mean photon arrival rate of a target light (units s
+−1)
+Φp(↵)
+mean photon arrival rate of basis light ↵, where ↵= 1, 2, or 3
+I ?
+spectral photon arrival rate (“spectrum”) of a target light to be matched (units s
+−1nm
+−1)
+λ?
+wavelength in the special case of a target light that is monochromatic (units nm)
+I(↵)
+spectrum of basis light ↵(units nm
+−1s
+−1)
+λ(↵)
+wavelength in the special case that basis light ↵is monochromatic
+⇣(↵)
+mixing coeﬃcient for basis light ↵(dimensionless)
+βi
+mean rate of productive photon absorptions by cones in class i = L, M, or S (units s
+−1)
+Si(λ)
+spectral sensitivity function for cone class i (dimensionless)
+β?
+i
+projection of the target light spectrum onto cone sensitivity i (units s
+−1)
+B(↵)i
+projection of basis light ↵’s spectrum onto cone sensitivity i
+To address the challenge, we now implement the condition given in Equation 3.6:
+I ? ⇠⇣(1)I(1) + ⇣(2)I(2) + ⇣(3)I(3).
+[3.6, page 119]
+As in the mechanical analogy, ﬁrst apply the projection (Equation 3.9, page 125)
+to I ?, obtaining the three numbers
+β?
+i =
+Z
+dλ Si(λ)I ?(λ),
+i = L, M, or S.
+Similarly, deﬁne a 3 ⇥3 array of numbers B(↵)i by applying the same projection to
+each of the I(↵). Analogously to Equation 3.14, Equation 3.6 then yields
+2
+4
+β?
+L
+β?
+M
+β?
+S
+3
+5 =
+2
+4
+⇣(1)B(1)L + ⇣(2)B(2)L + ⇣(3)B(3)L
+⇣(1)B(1)M + ⇣(2)B(2)M + ⇣(3)B(3)M
+⇣(1)B(1)S + ⇣(2)B(2)S + ⇣(3)B(3)S
+3
+5 .
+(3.16)
+To ﬁnd the required values of ⇣(↵), we solve this set of three linear equations in the
+three unknowns ⇣(↵). All other symbols in Equation 3.16 represent known quantities.
+Your Turn 3G
+Derive Equation 3.16 from the preceding formulas.
+Mathematically, Equation 3.16 always has a unique solution, as long as the three
+basis lights are suitably generic.19 However, unlike forces on an air puck, there is
+no such thing as negative light. Thus, physically all three coeﬃcients ⇣(↵) must be
+nonnegative numbers. If a particular target light leads to a solution of Equation 3.16
+with any negative values of ⇣(↵), then that target cannot be matched with the chosen
+basis lights.20 For this reason, the color gamut of a computer or television monitor is
+incomplete; the spectral colors that you see from a prism are more vivid than anything
+you perceive when looking at a computer screen or printed page.
+The experiment of interest to us actually involves a special case of Equation 3.16,
+which is simpler than the general case: The target lights used to obtain Figure 3.8
+Fig. 3.8 (page 119)
+19If there are fewer than three basis lights, or any basis light is a multiple of another, or one is a
+combination of the other two, then many target lights cannot be matched. (Mathematically, we say
+the basis lights must be chosen such that the matrix of B(↵)i values is invertible in order to avoid
+this problem.)
+20We already encountered this failure in the experimental data (Figure 3.8, page 119).
+Contents
+Index
+Notation
+3.9
+Why the Sky Is Not Violet
+129
+Figure 3.13: [Experimental data.] Sun and sky.
+Solid curve: Spectral photon arrival rate of sun-
+light arriving at Earth’s atmosphere. Dashed
+curve: Spectral photon arrival rate of the blue
+sky. [Data from Smith, 2005].
+400
+450
+500
+550
+600
+650
+700
+wavelength [nm]
+1.0
+1.5
+2.0
+2.5
+3.0
+3.5
+4.0
+4.5
+spectral photon arrival rate [a.u.]
+sky
+Sun
+were monochromatic. Denote the mean total photon arrival rate of a target light by
+the symbol Φ?
+p. Then we do not need to integrate over λ when evaluating the left side
+of Equation 3.16:
+β?
+i = Si(λ?)Φ?
+p
+for i = L, M, or S.
+(3.17)
+Your Turn 3H
+In the experiment, the basis lights were also monochromatic. Obtain a formula
+analogous to Equation 3.17 for the B(↵)i in this case.
+You’ll ﬁnish deriving a prediction for the color-matching experiment in Problem 3.5;
+that is, by using the empirical sensitivity functions shown in Figure 3.11, together with
+Equations 3.16–3.17, you’ll predict the values of ⇣(↵) as functions of λ?, and compare
+them to the experimental data. The result, shown as the solid curves in Figure 3.8,
+was the main goal of this chapter.
+Section 3.8 has shown that the detailed empirical facts about color matching
+emerge naturally from the physical model of light based on the Light Hypothesis and
+Electron State Hypothesis, plus the one additional hypothesis that humans determine
+color by using three classes of photoreceptor cells.
+T2 Section 3.8.8 0a (page 139) explains why we may use relative sensitivity functions
+in this derivation in place of the absolute ones. Section 3.8.8 0b (page 140) discusses
+the limited color gamut in more detail.
+3.9 WHY THE SKY IS NOT VIOLET
+It is often said that a cloudless sky appears blue because Earth’s atmosphere scatters
+blue light more than it does longer wavelengths. Thus (unlike on the Moon), we see
+light in directions other than the line of sight to the Sun, but that light has a di↵erent
+spectrum from direct sunlight. Figure 3.13 shows this di↵erence: Light from the sky
+has more photons at the shortest visible wavelengths than at any longer wavelength.
+L
+M
+S
+Fig. 3.11 (page 123)
+Faced with that observation, however, we may wonder: If we mostly get violet
+photons, then why doesn’t the sky appear violet? To answer that question, return
+Contents
+Index
+Notation
+Appendix C
+Outcomes
+You may need some ammunition to convince colleagues that a course on biological physics is
+worthwhile. Here are some results from a survey I gave to several years’ worth of alumni of my
+classes.
+40
+1.
+I took the course in
+Initial Report
+Last Modified: 11/10/2014
+1
+2013
+20
+26%
+2
+2012
+10
+13%
+3
+2011
+11
+14%
+4
+2010
+10
+13%
+5
+2009
+12
+16%
+6
+2008
+6
+8%
+7
+2007
+8
+10%
+Total
+77
+Min Value
+1
+Max Value
+7
+Mean
+3.44
+Variance
+4.14
+Standard Deviation
+2.04
+Total Responses
+77
+#
+Answer
+Bar
+Response
+%
+Statistic
+Value
+2.
+My level of computer-math experience prior to taking this course was
+1
+1 = No prior experience
+28
+36%
+2
+2
+33
+42%
+3
+3
+13
+17%
+4
+4 = Extensive prior experience
+4
+5%
+Total
+78
+Min Value
+1
+Max Value
+4
+Mean
+1.91
+Variance
+0.73
+Standard Deviation
+0.86
+Total Responses
+78
+#
+Answer
+Bar
+Response
+%
+Statistic
+Value
+3.
+My level of computer-math facility after finishing this course was
+1
+1 = Inadequate for needs I encountered later
+1
+1%
+2
+Click to write Choice 2
+8
+10%
+3
+Click to write Choice 3
+31
+40%
+4
+4 = Adequate for needs I encountered later
+38
+49%
+Total
+78
+Min Value
+1
+Max Value
+4
+Mean
+3.36
+Variance
+0.52
+Standard Deviation
+0.72
+Total Responses
+78
+#
+Answer
+Bar
+Response
+%
+Statistic
+Value
+4.
+Completing this course benefited my work in later courses
+1
+1 = Not really
+6
+8%
+2
+Click to write Choice 2
+6
+8%
+3
+Click to write Choice 3
+23
+30%
+4
+4 = Significantly
+42
+55%
+Total
+77
+Min Value
+1
+Max Value
+4
+Mean
+3.31
+Variance
+0.85
+Standard Deviation
+0.92
+Total Responses
+77
+#
+Answer
+Bar
+Response
+%
+Statistic
+Value
+5.
+Completing this course benefited my work in later research
+1
+1 = Not really
+7
+9%
+2
+Click to write Choice 2
+7
+9%
+3
+Click to write Choice 3
+31
+40%
+4
+4 = Significantly
+32
+42%
+Total
+77
+Min Value
+1
+Max Value
+4
+Mean
+3.14
+Variance
+0.86
+Standard Deviation
+0.93
+Total Responses
+77
+#
+Answer
+Bar
+Response
+%
+Statistic
+Value
+6.
+Completing this course led me to take more advanced science course(s) that I
+might not otherwise have considered
+1
+1 = Not really
+16
+21%
+2
+Click to write Choice 2
+11
+14%
+3
+Click to write Choice 3
+19
+24%
+4
+4 = Really
+32
+41%
+Total
+78
+Min Value
+1
+Max Value
+4
+Mean
+2.86
+Variance
+1.37
+Standard Deviation
+1.17
+Total Responses
+78
+#
+Answer
+Bar
+Response
+%
+Statistic
+Value
+7.
+Completing this course contributed to making broader career decisions
+1
+1 = Not really
+11
+14%
+2
+Click to write Choice 2
+12
+16%
+3
+Click to write Choice 3
+19
+25%
+4
+4 = Really
+35
+45%
+Total
+77
+Min Value
+1
+Max Value
+4
+Mean
+3.01
+Variance
+1.20
+Standard Deviation
+1.09
+Total Responses
+77
+#
+Answer
+Bar
+Response
+%
+Statistic
+Value
+8.
+Completing this course conferred skills that made me more attractive to
+research labs and/or graduate programs
+1
+1 = I don't think so
+5
+6%
+2
+Click to write Choice 2
+14
+18%
+3
+Click to write Choice 3
+19
+25%
+4
+4 = I think so
+39
+51%
+Total
+77
+Min Value
+1
+Max Value
+4
+Mean
+3.19
+Variance
+0.92
+Standard Deviation
+0.96
+Total Responses
+77
+#
+Answer
+Bar
+Response
+%
+Statistic
+Value
+9.
+[Optional] Elaborations on these answers, answers to other questions that
+should have been asked.
+Just really briefly: There are a lot of classes at Penn that give students the standard experience. Intro Bio, Organic Chem, Calculus, etc. This course (by far one of the best I've
+ever taken) accomplished an impressive synthesis of high-level biology and physics, acquainting me with the real power of interdisciplinary academia. Courses like this one
+should be highly encouraged.
+I have difficulty assigning a lot of credit specifically to this course for all of the research endeavors I've made and advanced classes I've taken, but it was still undoubtedly a great
+course that fostered curiosity about biological applications of math and physics.
+I would have never pursued the biophysical sciences if I had not taken this class. I am now in a PhD program in biophysics because of how much I loved this class. Prof Nelson
+was an excellent instructor, and his classes taught me to think in completely different ways about science. I often call the class my most influential class while at Penn.
+Will never forget it! Top class I took at penn!
+The skills and principles I learned about allowed me to excel at multiple pharmaceutical internships. My expertise is in experimental lab chemistry but the statistics and matlab
+experience I gained in phys280 allowed me to branch out and do some other experiences in computational chemistry. This class was extremely formative in my science career
+and I take forward things I learned into my PhD
+The skills and principles I learned about allowed me to excel at multiple pharmaceutical internships. My expertise is in experimental lab chemistry but the statistics and matlab
+experience I gained in phys280 allowed me to branch out and do some other experiences in computational chemistry. This class was extremely formative in my science career
+and I take forward things I learned into my PhD
+I'm now a graduate student in ecology and evolutionary biology at Princeton University. My expertise is in fieldwork and empirical science; this course significantly helped me in
+three ways: by helping me to better and more easily grasp statistical models of data "from the bottom up" (i.e. based on a fundamental understanding of the probability
+distributions that are the foundation for the model); by providing me with the computational skills to dabble in simulation and theory to my hearts' content; and by encouraging
+me to look at the messy biological world conceptually using tractable models.
+I'm now a graduate student in ecology and evolutionary biology at Princeton University. My expertise is in fieldwork and empirical science; this course significantly helped me in
+three ways: by helping me to better and more easily grasp statistical models of data "from the bottom up" (i.e. based on a fundamental understanding of the probability
+distributions that are the foundation for the model); by providing me with the computational skills to dabble in simulation and theory to my hearts' content; and by encouraging
+me to look at the messy biological world conceptually using tractable models.
+Really loved this class. Continue to recommend it to current students. Nelson is a great professor.
+Quick dimensional analysis has saved so much time (and so many points) in future classes!
+In particular, the skills in building physical models and my understanding of probability/statistics greatly improved my understanding of later courses, as well as proficiency with
+mathematical computations using programs like MATLAB.
+It was difficult to answer some of these questions because my general feelings about the material I learned in biophysics and science in general did not change significantly
+after the course. I had a high respect for the physical methods in biology before the course and the course only confirmed these feelings. Perhaps if I had taken the course as a
+freshman it would have had the chance to have an impact on my interests but by the time I took it as a senior my interests had already crystallized in the physical sciences as
+they relate to biology and therefore there was not much work left to be done. Overall, in my opinion, the single greatest factor in the value of a course is how strongly the
+instructor is able to make an impress upon the students the importance of the subject matter and to inspire them to work hard to master it. Dr. Nelson succeeded in both of these
+objectives and therefore I rate the course highly in my mind. My only regret is that I did not have more time my senior year at Penn to devote to mastering the material.
+This was absolutely the best class I have ever taken. Phil made me believe in the scientific method and rekindled the purpose and goals of basic research for me.
+It was a challenging and engaging course that I am very glad I took -- although I'm not a biology or physics student, I found the material interesting and well-explained.
+Most useful class I took at Penn!
+To this day, I continue to tell people that PHYS 280 with Phil Nelson was one of my favorite courses in my whole time at Penn (finished a bachelor's and master's)
+It was really good to take a computer based science course and it did inspire me to take CIS 120 which I may not have taken otherwise. However, MATLAB is not that common
+in my field as I assume it is in Biophysics. It might be useful to let physicists with different backgrounds develop with their own preferred language. Although I understand the
+preference for being able to design problems in a language that you know has a solution that is accessible to Sophomores. In addition, in my year(2011) , we spent an
+incredible amount of time on statistics. I think it would be more useful to give a broader overview of biophysics than drilling into our heads what the mean and variance of the
+Poisson distribution is.
+Still remember the things we went over in this class. The statistics portion was great as was the brief intro to Matlab. Very helpful as a medical student having a quantitative
+background on some of the physiology we're learning.
+My early exposure to Matlab made me more qualified for my research that I am doing currently as well as for other courses I took later on in my undergraduate career.
+My valuation of computer-math skills are on the lower end, but that is because I regularly use Matlab on a near daily basis now and Phys 280 was just the first step towards
+where I am today.
+I developed a familiarity and confidence with MATLAB - especially using it to tackle large analysis problems - which still benefits me tremendously today, as a medical student
+pursuing a master's in clinical research.
+Phys 280 was the most useful course I have ever taken. I currently work in predictive marketing analytics, and use the Poisson Process, which was covered in Phys 280
+everyday at work. Dr. Nelson framed the course in terms of MLEs and the fundamentals of probabilistic modeling. This framework enabled me to extend my knowledge and
+derive new statistical models later in my academic career and into my professional career. I also had no knowledge of programming before the course, and now program in R
+and SQL everyday at work. I learned to program in Phys 280.
+While I was drawn to this course because it is about biophysics (which was, and is, my primary scientific interest), the main benefit I took away was the introduction to MATLAB,
+which has been invaluable to me in my research (I am now a physics Ph.D. student studying biophysics at UCSB).
+Having a "mini-introduction" to the course during the few weeks before class starts may be helpful for those that do not have extensive computer-math backgrounds.
+Re: 2nd question, I felt more prepared but not entirely prepared for programming applications encountered in later research endeavors, but this is not a fault of the course, the
+course served as a brief introduction to these skills
+This is one of the most rewarding courses I have taken at Penn. This course not only gave me the confidence to take more advanced science classes in the future but also
+helped inform me on what classes I would find interesting. Since this class emphasized concepts and ideas over facts, my level of retention for this class was a lot higher than
+for any other class I have taken.
+This is one of the most rewarding courses I have taken at Penn. This course not only gave me the confidence to take more advanced science classes in the future but also
+helped inform me on what classes I would find interesting. Since this class emphasized concepts and ideas over facts, my level of retention for this class was a lot higher than
+for any other class I have taken.
+This is one of the most rewarding courses I have taken at Penn. This course not only gave me the confidence to take more advanced science classes in the future but also
+helped inform me on what classes I would find interesting. Since this class emphasized concepts and ideas over facts, my level of retention for this class was a lot higher than
+for any other class I have taken.
+Phys280 introduced to some extremely important concepts that have become central to my thinking in recent years. No other course I took in the department covers bayesian
+Text Response
+reasoning --- an increasingly essential tool.
+This was a good course, very unique in its set-up and the accompanying textbook written by the professor (available for free as PDFs, presumably bc it was a work in progress)
+was very clear and well-written, unlike most actually assigned textbooks which tend to contain weird filler content or be ambiguous, etc. I also enjoyed learning a little Matlab, it
+was quite fun. I did have some issues applying the knowledge from the class and homeworks to exams. I also remember one of the assignments had us using Matlab to
+manipulate an image of Dr. Nelson's cat, which is one of the ways the course was particularly charming/endearing (I don't know if this is an appropriate way to describe the
+course nor if this is helpful commentary).
+I am a math / bio major and this was one of
+This is one of the most rewarding courses I have taken at Penn. This course not only gave me the confidence to take more advanced science classes in the future but also
+helped inform me on what classes I would find interesting. Since this class emphasized concepts and ideas over facts, my level of retention for this class was a lot higher than
+for any other class I have taken.
+This was a fantastic course.
+This is one of the most rewarding courses I have taken at Penn. This course not only gave me the confidence to take more advanced science classes in the future but also
+helped inform me on what classes I would find interesting. Since this class emphasized concepts and ideas over facts, my level of retention for this class was a lot higher than
+for any other class I have taken.
+This is one of the most rewarding courses I have taken at Penn. This course not only gave me the confidence to take more advanced science classes in the future but also
+helped inform me on what classes I would find interesting. Since this class emphasized concepts and ideas over facts, my level of retention for this class was a lot higher than
+for any other class I have taken.
+Thanks; this was one of the most enjoyable courses I took at Penn and was very influential in directing the type of graduate study I decided to pursue.
+Total Responses
+36
+Statistic
+Value

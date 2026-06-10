@@ -1,0 +1,962 @@
+AN IDIOSYNCRATIC SYSTEMS APPROACH TO INTERACTIVE GRAPHICS 
+Nicholas Negropont~ 
+Massachusetts Institute of Technology 
+Abstract 
+This paper applauds and emphasizes the Workshop's title, "User-Oriented Design of Inter- 
+active Graphics Systems," but bemoans and condemns its subtitle,+ "Application-Specific 
+User Behavior and Cognition." 
+The pros and the cons are an incomplete but cogent case 
+for consideration of an idiosyncratic systems approach to interactive graphics systems. 
+An idiosyncratic system is a personalized system. 
+Personalization means both recognition 
+of and response to the complete range of an individual's characteristics, 
+from physical 
+traits, to work habits, to cognitive styles. 
+Enough evidence exists in the literature of 
+experimental psychology to substantiate the fact that user behavior is not application- 
+specific, but driven by personality and experience. 
+The resulting criteria for a user- 
+oriented interactive graphics system include existential hardware, adaptive representa- 
+tions, inferential input, and graphical conversation. 
+*Work reported herein has been jointly sponsored by the National Science Foundation 
+(Grant: 
+DCR74-20974-A01) 
+and the Office of Naval Research (Contract: 
+N00014--67-A- 
+0204-0074). 
+Mention is made of touch-sensitive displays, which is work in our 
+laboratory, currently Sponsored by ARPA (Contract: 
+MDA903-76-C-0261). 
++Editor's Note: 
+See Part IV. 
+53 
+Introduction 
+When computer graphics emerged in the ear- 
+ly sixties (1,2) it appeared as a highly 
+interactive process for man-machine commu- 
+nication. 
+However, for the following dec- 
+ade, it developed as a predominantly 
+static medium, finding less application 
+than anticipated. 
+I can see three reasons 
+for this curious development: 
+1. The concurrent development of time 
+sharing, which was a bad host to graphics. 
+The remedy, storage tubes (3), further 
+entrenched the notion of static graphics. 
+2. A vast infusion of research funds allo- 
+cated to computer graphics research at the 
+University of Utah in the middle sixties. 
+That work was particularly inbalanced 
+toward the picture-making prowess of com- 
+puters and their programmers. 
+3. Refresh display technology was too 
+costly to justify. 
+Currently we see many changes which are 
+bringing computer graphics out of this 
+static era, back into worlds of intensive 
+interaction between user and machine. 
+I 
+offer the following four explanations for 
+this change: 
+1. Hardware costs are dropping, disqual- 
+ifying some of the premises of time shar- 
+ing, offering cost-effectiveness in mini- 
+computer technology, allowing high-band- 
+width interaction with mass memories. 
+We 
+are told that the megabit memory chip is 
+not far off (4). 
+2. Consensus and movement toward raster 
+scan displays in general and video in 
+particular (5) offer a new refresh dis- 
+play technology, one accompanied by new 
+dimensions of halftone, greytone, and 
+color. 
+3. Attention is being directed to the pre- 
+viously ignored problem of graphical input 
+(6,7), for example, touch sensitive dis- 
+plays (8). 
+4. There has been a broadening of the 
+community of users and enthusiasts, pre- 
+viously self-serving, frequently caught in 
+the quagmire of data structuring. 
+The result of these four circumstances is 
+a revewal and momentous interest in 
+interaction and the application of the 
+hitherto freakish medium of computer 
+graphics. 
+The renewed enthusiasm for interactive 
+graphics is part of a more general trend 
+toward what Winegrad (9) calls "The 
+Peoplization of Computers." Interest in 
+how people might best use and be best sat- 
+isfied with computers is ushering in 
+strategies for satisfaction based for the 
+most part on a "human factors" approach to 
+design. 
+By this I mean that systems de- 
+signers are searching for guidelines to 
+achieve, in the case of computer graphics, 
+more comfortable keyboards, more practical 
+pens, more effective display formats, and 
+to orchestration of more dimensions of the 
+medium (notably color). 
+I hear questions 
+that begin with, "Why do people direct 
+their attention to..., .... Do people prefer 
+color in..., .... Are people less eye- 
+strained with .... " 
+These examples illus- 
+strate my point of contention: 
+people 
+(the almost-plural of "person"). 
+"User- 
+oriented" is neither plural nor singular 
+in fact, but plural in spirit, and that is 
+our problem. 
+The theme of the following sections can be 
+called "person-oriented interactive graph- 
+ics," "person-oriented" in the most sing- 
+ular sense of made to order. 
+I will argue 
+that we are all so different in our 
+manners and mannerisms, in our thinking 
+and thoughts, that we need highly person- 
+alized computers and computer interfaces, 
+not only to cater to our individuality, 
+but to amplify it. 
+A seemingly reckless 
+but instructive stance to keep in mind is 
+that in the future the only reason to use 
+computers might be for the purpose of 
+being creative. 
+I suggest this extreme 
+not as an exercise in narcissism, but as a 
+tenet for measuring how interactive graph- 
+ics is enjoyed, not by measuring a per- 
+son's productivity, but his or her percep- 
+tion of it. 
+The Both/And Attitude toward Design 
+Societal and social fabrics are too fre- 
+quently woven by either/or decisions: 
+guns or butter, shut up or put up. 
+We are 
+told that we cannot have our cake and eat 
+it too, usually because (with computers) 
+it costs too much. 
+But cost is not really 
+the driving factor of this attitude. 
+It 
+results from a misguided search for "best- 
+ness," as if bestness can survive more 
+than moments and can be normalized across 
+a community, profession, or culture. 
+We 
+have a formidable body of literature in 
+experimental psychology devoted to the 
+identification of the normative behaviors 
+of people. 
+Authors will argue that meet- 
+ing these norms is on the road to success. 
+Ultimately, on a statistical basis we 
+adopt one implementation over another by 
+making a handful of either/or decisions. 
+And it seems to work because we can never 
+tell if the human variance would have been 
+signal or noise because of the amazing 
+adaptability of human beings in covering 
+for error. 
+I contend that if a system is to be person 
+oriented, that person should at least de- 
+sign it and should be able to change it 
+at a moment's notice. 
+Leaving the term 
+"design" unqualified for a moment, this 
+means that the computer scientist or 
+54 
+manufacturer must champion a both/and 
+attitude in what they provide. 
+In the 
+specific case of computer graphics equip- 
+ment, I shall call these kinds of designs 
+existential hardware. 
+I am not suggesting that we make key- 
+boards for Brobdingnags. 
+I am comfor- 
+table with the hypothesis that a finger 
+is .5 inches in diameter, plus or minus 
+something, but not an order of magnitude. 
+I am struck, however, by the scope of 
+certain individual differences, where, 
+for example, a study of the time taken by 
+computer programmers to complete a stan- 
+dard program showed a range of 2300 per- 
+cent (i0). And I am horrified by computer 
+graphics' disinterest in something as 
+simple as right- and left-handedness, and 
+the resultant repositioning of function 
+keys or light buttons. 
+A marvelous excep- 
+tion, and the closest I can come to 
+exemplifying the notion of existential 
+hardware, is Ken Knowlton's keyboard for 
+telephone operators. 
+Briefly, with the combination of a color 
+raster scan display, a half-silvered 
+mirror, and a virgin keyboard, Knowlton 
+orchestrates and lets the operator re- 
+organize over one thousand keystrokes. 
+Knowlton uses color, position, intensity, 
+and transiency to: 
+i. prune the tree of decisions 
+2. offer a redundancy of cues 
+3. allow simple personalizations like 
+putting the i0 key digit set on 
+the left, if you are left-handed. 
+This is an example of existential hard- 
+ware and the both/and attitude. 
+How 
+many times have we heard that tactile 
+feedback is important to keystroking, but 
+that changeable keys can only be 
+achieved on touch sensitive displays or 
+with light buttons? 
+You either have the 
+satisfaction of typewriter o__r you poke or 
+point at a piece of glass. 
+Knowlton has 
+both/and: 
+complete tactile interaction 
+and changeability (by the way, with no 
+parallax). 
+Additionally, he offers the 
+interesting feature of seeing through 
+your hands! 
+To begin thinking about similar imple- 
+mentations in computer graphics, we 
+must start by forgetting current dis- 
+play technologies and input devices. 
+Instead, let us consider some of the 
+properties of blackboards, bulletin 
+boards, paper, pencil, chalk, and even 
+the organization of our own desk tops. 
+While not interactive domains in them- 
+selves, they do afford very important 
+spatial and temporal organizations, im- 
+portant to memory schemes, to working 
+priorities, to personalization, and to 
+what I will call "ambient information." 
+In complete contrast, consider the notion 
+of a "window" in computer graphics. 
+In 
+both the logical and literal sense, it is 
+a porthole to a multidimensional data 
+space, viewed by panning and zooming. 
+I 
+liken this window to the blinders on the 
+horses which anachronistically pull 
+carriages down Fifth Avenue. 
+Instead, a 
+both/and approach can be characterized as 
+a filter, not a window, within a surround 
+or milieu (ii). 
+I suggest a computer 
+graphics place. 
+Several researchers are working on the so- 
+called "electronic desk." 
+While this 
+work epitomizes the race toward a paper- 
+less office, some deference is being shown 
+toward paper (12), particularly in a RAND 
+memo "Don't throw out the message with the 
+medium." 
+With paper, characteristics of 
+crumpledness, yellowishness, coffee versus 
+whiskey stains, indicate dimensions of 
+age, reader interest, completeness, and 
+the like. 
+This says nothing about scrib- 
+bles in the margins that can range from 
+important revisions or questions, to hap- 
+hazard doodles, to important but unrelated 
+shopping lists. 
+One image of the both/and attitude applied 
+to computer graphics is found in the 
+thinking of Zelikovitz and his colleagues 
+at Bell Northern Research in Canada (7). 
+They imagine a very high resolution, vola- 
+tile display medium, large enough to be a 
+surrogate desk or real wall, first imple- 
+mented (perhaps) through projection tech- 
+niques. 
+Billions of pixels would be 
+available for the user to arrange in any 
+fashion, not unlike scattering note pads 
+of various sizes across the top of a desk. 
+One is reminded of how often we rotate 
+our pads to draw vertical lines with 
+"horizontal" control. 
+Similarly I would 
+expect to use my left hand to rotate one 
+of my displays in order to draw more 
+conveniently. 
+Adaptive Interactive Graphics 
+While user participation in the structure 
+and arrangement of a display or input for- 
+mat is a necessary criterion for an idio- 
+syncratic approach, it is not sufficient. 
+Additionally, the system must be adaptive. 
+That is, it must automatically do some of 
+those things available for the user to do. 
+This is a touchy subject. 
+In my first treatment of idiosyncratic 
+systems (13), I used the following example, 
+taken from a hypothetical husband-wife 
+scenario, to illustrate the results of 
+adaptation, in the case of inference 
+making: 
+"Okay, where did you hide it?" 
+"Hide what?" 
+"You know. " 
+"Where do you think?" 
+"Oh. " 
+More graphical examples can be found in 
+55 
+numerous references to the problem of 
+sketch recognition, most recently Herot 
+(14), Taggart (15), Negroponte (16). 
+They dwell on the single assumption that 
+people draw very differently. 
+Knowing 
+these differences for a particular indi- 
+vidual allows the substantiation of sim- 
+ple graphical intentions, like: 
+a curve 
+was meant, a square was intended, these 
+overtracings mean reinforcement° 
+A later 
+section describes the potential use of 
+this kind of recognition in a new sort 
+of graphical conversation. 
+A final example, somewhere between the 
+sophistication of cohabitants and the 
+banality of line finders, can be found in 
+problems of computer aided design. 
+Com- 
+mon to human-to-human interactions in de- 
+sign is the problem of timing. 
+A crit- 
+icism 
+or a suggestion is a captive of 
+its timing. 
+Not only does it take a 
+good teacher to introduce a comment at 
+the most effective time, but it takes a 
+personal acquaintance to validate it. 
+All of these examples of adaptation char- 
+acterize responding to the traits of an 
+individual: 
+habits, drawing styles, 
+receptivity. 
+From that individual's 
+point of view, these are welcome features 
+of an interaction for three reasons: 
+1. We only like to say things once. 
+2. We are very sensitive to "con- 
+text." 
+3. We require tolerance of ambigui- 
+ties, inconsistency, and incom- 
+pleteness. 
+Sometimes we require outright error cor- 
+rection, without the nagging: 
+"Didn't 
+you mean .... " A very pragmatic and 
+eminently feasible application of adap- 
+tation can be found in the problem of 
+spelling correction, particularly when 
+the error is typographical (17). 
+Know- 
+ing the typist is postulated as the 
+prime mechanism for disambiguation. 
+This is extremely important to inter- 
+active systems. 
+The reader can surely 
+remember occasions where a train of 
+thought was disrupted totally by some- 
+thing like "INSRET is not a recogniza- 
+ble command" (an error not uncommon to 
+one particular hunt-and-peck typist). 
+What makes adaptation troublesome or, as 
+previously described, touchy, are the 
+pitfalls of complacency degeneration, 
+and apathy toward deviancy (18). 
+Re- 
+turning to graphical input, consider 
+the application of sketch recognition 
+techniques to handwriting recognition, 
+in a manner not unlike the command 
+recognizer proposed above. 
+It is not 
+difficult to imagine ten years hence, a 
+situation where we find a community of 
+machines unwittingly ignoring and fos- 
+tering the disease of dislexia. 
+In an 
+era when we grow up with machines and 
+play with machines, as well as work with 
+them, it is not inconceivable that a path- 
+ological case of computational adaptation 
+might be to recognize every hand-drawn 
+to be 5 and to proceed accordingly. 
+The 
+science-fictional threat is that we will 
+end up in a world where a person can talk 
+to other people only via his or her mach- 
+ine~ 
+A more likely argument against adaptive 
+interactions is that of degradation of 
+personal skills, where, for example, a 
+person's ability to draw degenerates into 
+a hodgepodge of scribbles, recognizable 
+only by a computer, and only one computer 
+at that. 
+This argument is as vacuous as 
+the case against pocket calculators as 
+threatening us with the possibility that 
+the human race will forget how to multi- 
+ply. 
+Some intellectual functions will re- 
+lax and lose acumen from infrequent use, 
+but they will surely not be the prime in- 
+gredients of creative behavior. 
+The issue of instilling a new kind of com- 
+placency is, alas, application-dependent. 
+In general it can be dealt with through 
+what we might call benevolent antagonisms: 
+questioning axioms, postulating new tax- 
+onomies, highlighting low-key features, 
+and the like. 
+In the balance, the case for pursuing 
+adaptive interactions remains strong and 
+intact. 
+Namely, an interactive graphics 
+system really is not interactive, unless 
+the system knows who is using it. 
+I am 
+again reminded of the usage and mainte- 
+nance of one's desk or blackboard. 
+A most 
+annoying situation happens when a house- 
+keeper or janitor wipes it clean. 
+More 
+satisfactory is properly selected neaten- 
+ing and erasure. 
+Most exciting would be 
+the appearance of an enlightening document 
+or an explicative annotation. 
+Cognitive Styles and Graphics 
+Our facial expressions, gestures, way of 
+talking, are all indications of and result 
+from our individual personalities. 
+It is 
+not difficult to extrapolate and to pro- 
+ject similar indices, like those of cogni- 
+tive style, from drawing. 
+In literature 
+we find a curious absence of research in 
+this area, with the exception of clinical 
+psychiatry, notably Machover (19), Bender 
+(20), and Goodnough (21), and with the 
+exception of graphology (22). While the 
+latter, the study of personality in hand- 
+writing, is suspect and frequently accused 
+of being metaphysics, it is interesting to 
+note that advanced degrees are offered in 
+graphology at seven different German 
+Universities. 
+These precedents may be able to be knit 
+together with prudence into a well formed 
+theory of drawing. 
+But, so far, the re- 
+sults are far beyond the basic need for 
+56 
+idiosyncratic graphics. 
+In the one case, 
+drawings are used to uncover deep psycho- 
+logical traits (or problems), using the 
+content of the drawing as much as the 
+linework. 
+In the other case, expert in- 
+terpretations are as much social (charac- 
+teristics of: leadership, magnanimity, 
+of sense of humor) as cognitive ("good 
+faculty for logical reasoning," "unwill- 
+ing to go back," "experience by trial and 
+e rror" 
+) ° 
+More current and perhaps appropos is the 
+work of Gordon Pask (23). 
+"Styles encom- 
+pass gross differences like comprehension/ 
+operation learning and the global/local 
+orientation, as well as relatively precise 
+characterizations of learning strategy, 
+for example, wholist/serialist and the 
+subcategories redundant/irredundant whol- 
+ist." 
+This taxonomy of cognitive style 
+is important when, for example, you view 
+computer-aided design as in the domain of 
+computer aided instruction, particularly 
+in the LOGO (24) sense of learning through 
+doing. 
+The anecdotal evidence resides in 
+Pask's own diagrams, violently wholist, 
+as for example in the one at the bottom of 
+this column, taken from his introduction 
+to my own book, Soft Architecture 
+Machines. 
+Interpretations of cognitive styles can 
+come equally from preferences and imple- 
+mentations of graphical format. 
+I am 
+personally most comfortable with a Swiss 
+graphics of terse structure, bent upon 
+having my display in Helvetica Medium. 
+However, I observe students developing 
+computer programs whose light buttons, 
+for example, are scattered and boxed off 
+like an IRS form. 
+While it is easy to 
+discard this as the lack of graphical 
+training or couth, it is more impor- 
+..... 
+{ ' 
+C 
+~ 
+" 
+P 
+.... 
+. 
+. . . . . . . . .  
+'. 
+, 
+~ 
+~_.E__~ 
+~--~ ~_.~-.--~_?~<-'v-~'- 
+......... 
+~
+.
+ 
+tant to simply recognize that the comfort 
+arises from it being the student's "form." 
+Once again, the user has designed it. 
+Graphical Conversations 
+Conversation theory is exceptionally new, 
+a good start is found in Conversation, 
+Cognition and Learning (26) and the previ- 
+ous reference to Pask (23). 
+We are simply 
+not accustomed to holding graphical con- 
+versations. 
+For the most part, a conver- 
+sation is achieved through spoken lang- 
+uage. 
+Furthermore, it is augmented by in- 
+tonations (even available over the tele- 
+phone), gestures, and facial expressions. 
+Sometimes conversations refer to visual 
+aids, but they are not per se graphical. 
+The closest we can get to a graphical con- 
+versation is some kind of blackboard argu- 
+ment between two headstrong designers, 
+each with chalk and eraser in hand, raging 
+over a schematic, which over time passes 
+from being a well delineated proposition 
+to being a smudge (with the protagonists 
+probably covered in chalk). 
+An emerging exception is found in the po- 
+tentialities of the founding work of Dr. 
+Gordon Thompson (27). 
+His notion, in re- 
+tort to the Picturephone, is one of shared 
+graphical space, currently and tentatively 
+called "Scribblephone." 
+Though untested 
+in a consumer world (yet), It offers the 
+opportunity for graphical conversation be- 
+tween two remote people, from which we may 
+get some empirical results useful for the 
+occasion when one of the conversants is 
+not a person, but a machine. 
+Let us assume for the moment that our 
+graphical conversation is not augmented by 
+any other medium. 
+Also, let us limit 
+graphics to pictures, lines, and shapes. 
+What are some of the distinguishing fea- 
+tures of that conversation and how can we 
+capitalize upon these differences to en- 
+hance the interactiveness? 
+Graphical conversations are iconic and not 
+symbolic. 
+They are communal, adjacent, or 
+metaphorical (28). 
+This is true equally 
+for an electrical schematic, section of a 
+fuselage, or rendering of a house design. 
+The most important and distinguishing fea- 
+ture of a graphical conversation is that 
+the topic (or referent) is in the same 
+space and time as the conversants. 
+Unlike 
+a verbal discussion on, let us say, poli- 
+tics, where the referents are distant in 
+both space and time, the referent of a 
+graphical conversation (within the above 
+limitation) is immediate. Whether we are 
+dealing with diagrams or projective geome- 
+try, abstractions or photographs, we are 
+not conducting symbol manipulations, com- 
+mon to algebra or natural language. 
+I be- 
+lieve that this offers a kernel of rigor 
+for the definition of interactive graphics. 
+The spatial and temporal immediacy of a 
+57 
+graphical conversation is certainly true 
+for computer-aided design, image process- 
+ing, and process control (application ar- 
+eas culled from the ACM/SIGG~hPH announce- 
+ment of this workshop). 
+A candidate ex- 
+ception to be observed is that of data 
+collection, display, and analysis. 
+While 
+worrying about the exceptions to my hy- 
+pothesis, I remember the work of Chernoff 
+(29) who has displayed multivariate stat- 
+istical information in k-dimensional 
+space (where k has been as high as 18) 
+by a cartoon of a face whose features 
+correspond to the k-components of a par- 
+ticular data point. 
+While not pursued by 
+Che~noff, the explanation for 
+efficient understanding of his data by 
+subjects may be found in the referent 
+being the face, rather than the data which 
+generated it. 
+This would be harder to ar- 
+gue for pie charts, bar graphs and the 
+like. 
+But, ultimately the limitation on 
+the graphical conversation will have to 
+be lifted, alphanumerics allowed, with 
+augmentation of sound and voice. 
+Conse- 
+quently the propriety of the theory of 
+immediacy is only useful insofar as we 
+have had none. 
+In looking for examples to illustrate 
+features of or criteria for a graphical 
+interaction (as I was instructed to do), 
+I am immediately stymied by the ubiqui- 
+tous tit-for-tat nature of the conversa- 
+tion. 
+The generally accepted paradigm 
+for interactive graphics is a process of 
+taking turns; the user does something, 
+the machine responds, or "the system 
+follows a user action." I offer as an 
+early exception my own very early work 
+(30,31), but more recently the work of 
+Masanori Nagashima (32), built upon the 
+founding efforts of IMAGE (33,34). 
+In 
+his work he maintains a veritable fore- 
+ground and background, the beginning of 
+a conversation. 
+The computer is manipula- 
+ting the graphics in parallel with the 
+user. 
+In this case, the machine does 
+local optimization and relaxation of con- 
+straints, while the user handles global 
+goals and fiddles with criteria. 
+/"L[A~ ~|T 
+-'" 0.¢£.S~.AT~N0 M[V k0L2T|¢4[$1 
+~TN 
+58 
+A more potentially more relevant example 
+for graphical conversation theory may be 
+found in the present work of Guy Weinzap- 
+fel (35), Architecture-by-yourself. While 
+it currently suffers from a serialist lim- 
+itation, it offers a more idiosyncratic 
+example. 
+For one, the user is working on 
+a problem important and particular to him 
+or her, the outcome for which he or she 
+bears the risk. 
+For another, the referent 
+is a house, for which we can imagine 
+hordes of relevant knowledge or what 
+Minsky (36) would call "frames" (structur- 
+al, mechanical, cost-estimating), but for 
+which we cannot imagine a know-better (on 
+how you or I ought to live). 
+This means 
+that potentially the conversation is two- 
+way, the beginnings of a dialogue as op- 
+posed to what Warren McCulloch would call 
+two monologues. 
+A final detail in the implementation of 
+Architecture-by-yourself warrants atten- 
+tion in our theme of interactive graphics. 
+Namely, the bubble diagrams. 
+They are com- 
+puter implementations of a common graph- 
+ical device used to understand taxonomies, 
+without the surreptitious introduction of 
+shape. 
+In all Architectural applications 
+of which I am aware, the design solution 
+has the signature of~x 
+and~y, 
+common to 
+graphics devices and languages, yielding 
+the proverbial rectangle. 
+It would be 
+nice to consider conversational domains 
+that truly avoided the Gestalt of a 
+programming language. 
+Architectural his- 
+torians frequently tend to matters of 
+conceptual origin, such as physical mod- 
+elling with sugar cubes versus cardboard 
+versus clay, revealing itself in the 
+built form. 
+I wonder if n-years hence 
+we will be looking back and recognize the 
+Architecture of LISP from that of PL/i. 
+CONCLUSION 
+In conclusion I restate my discomfort with 
+the subtitle: "Application Specific User 
+Behavior and Cognition in Interactive 
+Graphics Systems." 
+What it conjures is a 
+set of elaborations like the following: 
+i. color is inexpensive in raster 
+scan displays 
+2. mapping applications frequently 
+need color 
+3. hue-saturation-intensity are sep- 
+arately distinguishable 
+4. hence thematic mapping should 
+have suchandsuch specification 
+Not only would the resulting system be 
+disappointing to the color blind user, but 
+would not necessarily be more user-orien- 
+ted than the previous black & white call- 
+igraphic display. 
+The medium is not the 
+message in an interactive system. 
+The 
+message is how I organize it for myself 
+and, more wishfully, how it organizes it- 
+self for me. 
+But then what do we do in computer graph- 
+ics research? 
+Is there an underlying 
+theory to be found? 
+There is surely a 
+theory of graphical conversation, but de- 
+veloping it will be no small task. 
+In the 
+meanwhile, we should keep in mind the 
+both/and attitude and build specific sys- 
+tems which respect, even in a token fash- 
+ion, the idiosyncracies of future users. 
+Some of the simple ideas of "user-pro- 
+files" in time-sharing or the DWIM (Do 
+What I Mean) Command in Interlisp (37), 
+do yet have graphical counterparts. 
+A 
+simple exception is the common law prac- 
+tice at The Architecture Machine of 
+programming in a deference to right- 
+and left-handedness. 
+References 
+1. Sutherland, Ivan. "SKETCHPAD - 
+A Man-Machine Graphical Communication 
+System," AFIPS Conference Proceedings, 
+2. Johnson, Timothy. "Sketchpad III: A 
+Computer Program for Drawing in Three 
+Dimensions," AFIPS Conference Proceedings, 
+Spring Joint Computer Conference, 23, 
+347-353, 1963. 
+3. Stotz, Robert. "A New Display Termi- 
+nal," Computer Design Magazine, April 
+1968. 
+4. Noyce, Robert N. "Computers in the Next 
+l0 to 20 Years, Hardware Prospects and 
+Limitations," draft of chapter in Future 
+Impact of Computers and Information Pro- 
+cessing, Michael Dertouzos and Joel Moses 
+(Eds.), (in preparation). 
+5. Negroponte, Nicholas. "Raster Scan 
+Approaches to Computer Graphics," Compu- 
+ters and Graphic s , forthcoming 
+6. Negroponte, Nicholas. "Recent Advanc- 
+es in Sketch Recognition," Proceedings of 
+the National Computer Conference, New 
+York, June 4-6, 1973. 
+7. Zelikovitz, Joe and Gordon Thompson. 
+" Scribblephone: A Conversation About 
+Scribblephone," Bell Northern Research. 
+8. Bolt, Richard and Nicholas Negroponte. 
+Touch Sensitive Displays ,, ARPA Proposal, 
+MIT, March 1976. 
+9. Winegrad, Terry. "The Peoplization of 
+Computers," draft of chapter in Future 
+Impact of Computers and Information Pro- 
+cessing, Michael Dertouzos and Joel Moses 
+(Eds.), (in preparation). 
+10. Williams, Roger J. and Bernard 
+Rimland. "Individuality," The Encyclopedia 
+of Psychiatry, Neurology, and Psychoanaly- 
+sis, Benjamin B. Wolman (Ed.), Van No- 
+strand Reinhold Publisher, 
+(in press). 
+ii. Bolt, Richard and Nicholas Negro- 
+59 
+ponte. 
+Augmentation of Human Resources in 
+Command and Control through Multiple Media 
+Man-Machine Interaction, ARPA Proposal, 
+MIT, May 1976. 
+12. Palley, Norm. "Don't Throw Out the 
+Message with the Medium," 
+(Originally a 
+RAND Corp. memo), Appears as Appendix A 
+in Markowitz, Joe, Minutes of the Human 
+Factors Meeting of February 5, 1975, Sci- 
+ence Applications, 
+Inc. 
+13. Negroponte, Nicholas. 
+"Idiosyncratic 
+Systems," Technology Review, 
+(in press). 
+14. Herot, Christopher F. "Graphical Input 
+Through Machine Recognition of Sketches," 
+Proceedings of ACM/SIGGRAPH Conference, 
+Philadelphia, July 1976. 
+15. Taggart, James. "Sketching, an Infor- 
+mal Dialogue between Designer and Compu- 
+ter," Computer Aids to Design and Archi- 
+tecture, Nicholas Negroponte 
+(Ed.) New 
+York: Mason/Charter Publishers, 
+1975. 
+16. Negroponte, Nicholas. 
+"Sketching - A 
+Computational Paradigm for Personalized 
+Searching," AIA Journal, Fall 1975. 
+17. Markowitz, Joe and Nicholas Negro- 
+ponte. On-line Command Recognition, ARPA 
+Proposal, MIT, January 1975. 
+18. Freedman, Jonathan L. and Anthony N. 
+Doob. 
+Deviancy - The Psychology of Being 
+Different, New York: Academic Press, 1968. 
+19. Machover, Karen. Personality Projec- 
+tion in the Drawing of the Human Figure, 
+Springfield, 
+Illinois: Charles C. Thomas 
+Publisher 
+(First Edition, First Printing, 
+1949; First Edition, Ninth Printing, 
+1974). 
+20. Bender, Lauretta. 
+"Art and Therapy in 
+Mental Disturbances of Children," Jour- 
+nal of Nervous and Mental Disorders, 
+86, 
+249-263, 1937. 
+21. Goodenough, F.L. Measurement of In- 
+telligence by Drawings, Yonkers: World 
+Book Company, 1926. 
+22. Singer, Eric. 
+Personality in Hand- 
+writing, New York: Hippocrene Books, 
+Inc., 1974. 
+23. Pask, Gordon. Conversation Theory: 
+Application in Education and Epistemol- 
+ogy, Amsterdam and New York: Elsevier 
+Press, 1976. 
+24. Papert, Seymour. "Teaching Children 
+Thinking," Teaching Mathematics, 
+No. 58, 
+Spring 1972. 
+25. Negroponte, Nicholas. 
+Soft Architec- 
+ture Machines, Cambridge: NIT Press, 1975. 
+26. Pask, Gordon. Conversation, Cognition 
+and Learning, Amsterdan and New York: 
+Elsevier Press, 1975o 
+27. Thompson, Gordon P. "Moloch or Aquar- 
+ius," THE, Bell Northern Research, 4 Feb- 
+ruary, 1970. 
+28. Johnson, Avery. "Dialogue and the Ex- 
+ploration of Context: Properties of an Ad- 
+equate Interface," unpublished paper, 1970, 
+illustrated on page 40 of reference #24. 
+29. Chernoff, Herman. 
+"The Use of Faces to 
+Represent Points in k-Dimensional Space 
+Graphically," Journal of the American 
+Statistical Association, Vol. 68, No. 342, 
+pp. 361-368, June 1973. 
+30. Negroponte, Nicholas and Leon B. 
+Groisser. 
+"URBAN5," Ekistics, 24, No. 142, 
+pp. 289-291, Aeptember 1967. 
+31. Negroponte, Nicholas. The Architecture 
+Machine, Cambridge: MIT Press, 1970. 
+32. Nagashima, Masanori. 
+"Development of a 
+Computer System for 3-Dimensional Space 
+Allocation in the Early Stages of Architec- 
+tural Design," Master's thesis, MIT 1976. 
+33. Weinzapfel, Guy. "Following the Yellow 
+Brick Road," Computer Aids to Design and 
+Architecture, Nicholas Negroponte 
+(Ed.), 
+New York" Mason/Charter Publishers, 
+1975. 
+34. Weinzapfel, Guy and Steve Handel. 
+"IMAGE: Computer Assistance for Architec- 
+tural Design," Spatial Synthesis in Compu- 
+ter Aided Building Design, Charles Eastman 
+(Ed.), Essex England: Applied Science Pub- 
+lishers Ltd., 1975. 
+35. Weinzapfel, 
+Guy and Nicholas Negro- 
+ponte. "Architecture-by-yourself, 
+An Exper- 
+iment with Computer Graphics for House 
+Design," Proceedings of ACM/SIGGRAPH Con- 
+ference, Philadelphia, 
+July 1976. 
+36. Minsky, Marvin. "A Framework for Repre- 
+senting Knowledge," Psychology of Computer 
+Vision, Patrick Winston (Ed.), New York: 
+McGraw-Hill, 
+1975. 
+37. Teitelman, Warren. Interlisp~Reference 
+Manual, Palo Alto: Xerox Research Center, 
+1974. 
+60 

@@ -1,0 +1,2819 @@
+Spacetime Physics with Geometric Algebra1
+David Hestenes
+Department of Physics and Astronomy
+Arizona State University, Tempe, Arizona 85287-1504
+This is an introduction to spacetime algebra (STA) as a uniﬁed mathematical
+language for physics. STA simpliﬁes, extends and integrates the mathemat-
+ical methods of classical, relativistic and quantum physics while elucidating
+geometric structure of the theory. For example, STA provides a single, matrix-
+free spinor method for rotational dynamics with applications from classical
+rigid body mechanics to relativistic quantum theory – thus signiﬁcantly reduc-
+ing the mathematical and conceptual barriers between classical and quantum
+mechanics. The entire physics curriculum can be uniﬁed and simpliﬁed by
+adopting STA as the standard mathematical language. This would enable
+early infusion of spacetime physics and give it the prominent place it deserves
+in the curriculum.
+I. Introduction
+Einstein’s Special Theory of Relativity has been incorporated into the founda-
+tions of theoretical physics for the better part of a century, yet it is still treated
+as an add-on in the physics curriculum. Even today, a student can get a PhD in
+physics with only a superﬁcial knowledge of Relativity Theory and its import.
+I submit that this sorry state of aﬀairs is due, in large part, to serious language
+barriers. The standard tensor algebra of relativity theory so diﬀers from ordi-
+nary vector algebra that it amounts to a new language for students to learn.
+Moreover, it is not adequate for relativistic quantum theory, which introduces
+a whole new language to deal with spin and quantization. The learning curve
+for this language is so steep that only graduate students in theoretical physics
+ordinarily attempt it. Thus, most physicists are eﬀectively barred from a work-
+ing knowledge of what is purported to be the most fundamental part of physics.
+Little wonder that the majority is content with the nonrelativistic domain for
+their research and teaching.
+Beyond the daunting language barrier, tensor algebra has certain practical
+limitations as a conceptual tool. Aside from its inability to deal with spinors,
+standard tensor algebra is coordinate-based in an essential way, so much time
+must be devoted to proving covariance of physical quantities and equations. This
+reinforces reliance on coordinates in the physics curriculum, and it obscures the
+fundamental role of geometric invariants in physics. We can do better – much
+better!
+This is the second in a series of articles introducing geometric algebra (GA)
+as a uniﬁed mathematical language for physics.
+The ﬁrst article1 (hereafter
+1Published in Am. J. Phys, 71 (6), June 2003.
+1
+referred to as GA1) shows how GA simpliﬁes and uniﬁes the mathematical
+methods of classical physics and nonrelativistic quantum mechanics. This article
+extends that uniﬁcation to spacetime physics by developing a spacetime algebra
+(STA) expressly designed for that purpose. A third article is planned to present
+a profound and surprising extension of the language to incorporate General
+Relativity.2
+Although this article provides a self-contained introduction to STA, the seri-
+ous reader is advised to study GA1 ﬁrst for background and motivation. This
+is not a primer on relativity and quantum mechanics. Readers are expected
+to be familiar with those subjects so they can make their own comparisons of
+standard approaches to the topics treated here. Topics have been selected to
+showcase unique advantages of STA rather than for balanced coverage of every
+subject.
+Nevertheless, topics are developed in suﬃcient detail to make STA
+useful in instruction and research, at least after some practice and consultation
+with the literature. The general objectives of each Section in the article can be
+summarized as follows:
+Section II presents the deﬁning grammar for STA and introduces basic deﬁ-
+nitions and theorems needed for coordinate-free formulation and application of
+spacetime geometry to physics.
+Section III distinguishes between proper (invariant) and relative formulations
+of physics. It introduces a simple algebraic device called the spacetime split
+to relate proper descriptions of physical properties to relative descriptions with
+respect to inertial systems. This provides a seamless connection of STA to the
+GA of classical physics in GA1.
+Section IV extends the treatment of rotations and reﬂections in GA1 to a
+coordinate-free treatment of Lorentz transformations on spacetime. The method
+is more versatile than standard methods, because it applies to spinors as well
+as vectors, and it reduces the composition of Lorentz transformations to the
+geometric product.
+Lorentz invariant physics with STA obviates any need for the passive Lorentz
+transformations between coordinate systems that are required by standard co-
+variant formulations.
+Instead, Section V uses the spinor form of an active
+Lorentz transformation to characterize change of state along world lines. This
+generalizes the spinor treatment of classical rigid body mechanics in GA1, so it
+articulates smoothly with nonrelativistic theory. It has the dual advantages of
+simplifying solutions of the classical Lorentz force equation while generalizing
+it to a classical model of an electron with spin that is shown to be a classical
+limit of the Dirac equation in Section VIII.
+Section VI shows how STA simpliﬁes electromagnetic ﬁeld theory, including
+reduction of Maxwell’s equations to a single invertible ﬁeld equation. It is most
+notable that this simpliﬁcation comes from recognizing that the famous “Dirac
+operator” is just the STA derivative with respect to a spacetime point, so it is
+as signiﬁcant for Maxwell’s equation as for Dirac’s equation.
+Section VII reformulates Dirac’s famous equation for the electron in terms
+of the real STA, thereby showing that complex numbers are superﬂuous in
+relativistic quantum theory. STA reveals geometric structure in the Dirac wave
+2
+function that has long gone unrecognized in the standard matrix theory. That
+structure is explicated and analyzed at length to ascertain implications for the
+interpretation of quantum theory.
+Section VIII discusses alternatives to the Copenhagen interpretation of quan-
+tum mechanics that are motivated by geometric analysis of the Dirac theory.
+The questions raised by this analysis may be more important than the conclu-
+sions. My own view is that the Copenhagen interpretation cannot account for
+the structure of the Dirac theory, but a fully satisfactory alternative remains to
+be found.
+Finally, Section IX outlines how STA can streamline the physics curriculum
+to give the powerful ideas of relativistic ﬁeld theory and quantum mechanics
+roles that are commensurate with their importance.
+II. Spacetime Algebra
+The standard model for spacetime is a real 4D Minkowski vector space M4 called
+Minkowski spacetime or (by suppressing the distinction between the model and
+the physical reality it is supposed to represent) simply spacetime. With vector
+addition and scalar multiplication taken for granted, we impose the geometry
+of spacetime on M4 by deﬁning the geometric product uv for vectors u, v, w by
+the following rules:
+(uv)w = u(vw) ,
+associative
+(1)
+u(v + w) = uv + uw ,
+left distributive
+(2)
+(v + w)u = vu + wu ,
+right distributive
+(3)
+v2 = ϵv| v |2 ,
+contraction
+(4)
+where ϵv is the signature of v and the magnitude | v | is a real positive scalar. As
+usual in spacetime physics, we say that v is timelike if its signature is positive
+(ϵv = 1), spacelike if (ϵv = −1), or lightlike if | v | = 0, which is equivalent to
+null signature (ϵv = 0).
+It should be noted that these are the same rules deﬁning the “classical ge-
+ometric algebra” in GA1, except for the signature in the contraction rule (4)
+that allows vectors to have negative or null square. (This modiﬁcation was the
+great innovation of Minkowski that we honor by invoking his name!)
+Spacetime vectors are denoted by italic letters to distinguish them from the
+3D vectors denoted by boldface letters in GA1. This convention is especially
+helpful when we formulate relations between the two kinds of vector in Section
+III.
+By successive multiplications and additions, the vectors of M4 generate a
+geometric algebra G4 = G(M4) called spacetime algebra (STA). As usual in a
+geometric algebra, the elements of G4 are called multivectors. The above rules
+deﬁning the geometric product are the basic grammar rules of STA.
+In reviewing its manifold applications to physics, one can see that STA derives
+astounding power and versatility from
+3
+• the simplicity of its grammar,
+• the geometric meaning of multiplication,
+• the way geometry links the algebra to the physical world.
+As we have seen before, the geometric product uv can be decomposed into a
+symmetric inner product
+u · v = 1
+2(uv + vu) = v · u,
+(5)
+and an antisymmetric outer product
+u ∧v = 1
+2(uv −vu) = −v ∧u.
+(6)
+so that
+uv = u · v + u ∧v .
+(7)
+To facilitate coordinate-free manipulations in STA, it is useful to generalize
+the inner and outer products of vectors to arbitrary multivectors. We deﬁne the
+outer product along with the notion of k-vector iteratively as follows: Scalars are
+deﬁned to be 0-vectors, vectors are 1-vectors, and bivectors, such as u∧v, are 2-
+vectors. For a given k-vector K, the integer k is called the step (or grade) of K.
+For k ≥1, the outer product of a vector v with a k-vector K is a (k + 1)-vector
+deﬁned in terms of the geometric product by
+v ∧K = 1
+2(vK + (−1)kKv) = (−1)kK ∧v .
+(8)
+The corresponding inner product is deﬁned by
+v · K = 1
+2(vK + (−1)k+1Kv) = (−1)k+1K · v ,
+(9)
+and it can be proved that the result is a (k −1)-vector. Adding (8) and (9) we
+obtain
+vK = v · K + v ∧K ,
+(10)
+which obviously generalizes (7).
+The important thing about (10), is that it
+decomposes vK into (k −1)-vector and (k + 1)-vector parts.
+A basis for STA can be generated by a standard frame {γµ; 0, 1, 2, 3} of
+orthonormal vectors, with timelike vector γ0 in the forward light cone and com-
+ponents gµν of the usual metric tensor given by
+gµν = γµ · γν = 1
+2(γµγν + γνγµ) .
+(11)
+(We use c = 1 so spacelike and timelike intervals are measured in the same
+unit.) The γµ determine a unique righthanded unit pseudoscalar
+i = γ0γ1γ2γ3 = γ0 ∧γ1 ∧γ2 ∧γ3 .
+(12)
+It follows that
+i2 = −1 ,
+and
+γµi = −iγµ.
+(13)
+4
+Thus, i is a geometrical √−1, but it anticommutes with all spacetime vectors.
+By forming all distinct products of the γµ we obtain a complete basis for the
+STA G4 consisting of the 24 = 16 linearly independent elements
+1,
+γµ,
+γµ ∧γν,
+γµi,
+i .
+(14)
+To facilitate algebraic manipulations it is convenient to introduce the recip-
+rocal frame {γµ} deﬁned by the equations
+γµ = gµνγν
+or
+γµ · γν = δν
+µ .
+(15)
+(summation convention in force!) Now, any multivector can be expressed as a
+linear combination of the basis elements (14). For example, a bivector F has
+the expansion
+F = 1
+2F µνγµ ∧γν ,
+(16)
+with its “scalar components” F µν given by
+F µν = γµ · F · γν = γν · (γµ · F) = (γν ∧γµ) · F .
+(17)
+Note that the two inner products in the second form can be performed in either
+order, so a parenthesis is not needed.
+The entire spacetime algebra is obtained by taking linear combinations of
+basis k-vectors in (14).
+A generic element M of the STA, called a multivector, can therefore be written
+in the expanded form
+M = α + a + F + bi + βi ,
+(18)
+where α and β are scalars, a and b are vectors, and F is a bivector. This is a
+decomposition of M into its k-vector parts, with k = 0, 1, 2, 3, 4, as is expressed
+more explicitly by putting (18) in the form
+M =
+4
+
+k=0
+M(k),
+(19)
+where the subscript (k) means “k-vector part.” Of course, M(0) = α, M(1) = a,
+M(2) = F, M(3) = bi, M(4) = βi. Alternative notations include MS = ⟨M⟩=
+M(0) for the scalar part of a multivector. The scalar part of a product behaves
+much like the “trace” in matrix algebra. For example, we have the very useful
+theorem ⟨MN⟩= ⟨NM⟩for arbitrary M and N.
+Computations are also facilitated by the operation of reversion, the name
+indicating reversal in the order of geometric products. For M in the expanded
+form (18) the reverse M can be deﬁned by
+M = α + a −F −bi + βi .
+(20)
+Note, in particular, the eﬀect of reversion on the various k-vector parts.
+α = α,
+a = a,
+F = −F,
+˜i = i .
+(21)
+5
+It is not diﬃcult to prove that
+(MN) = 
+NM ,
+(22)
+for arbitrary M and N. For example, in (20) we have (bi) = ib = −bi, where
+the last sign follows from (13).
+A positive deﬁnite magnitude | M | for any multivector M can now be deﬁned
+by
+| M |2 = | ⟨MM ⟩| .
+(23)
+Any multivector M can be decomposed into the sum of an even part M+ and
+an odd part M−deﬁned in terms of the expanded form (18) by
+M+ = α + F + βi ,
+(24)
+M−= a + bi ,
+(25)
+or, equivalently, by
+M± = 1
+2(M ∓iMi) .
+(26)
+The set {M+} of all even multivectors forms an important subalgebra of STA
+called the even subalgebra.
+If ψ is an even multivector, then ψ ψ is also even, but its bivector part must
+vanish according to (20), since (ψ ψ) = ψ ψ. Therefore, ψ ψ has only scalar and
+pseudoscalar parts, as expressed by writing
+ψ ψ = ρeiβ = ρ(cos β + i sin β) ,
+(27)
+where ρ ≥0 and β are scalars. If ρ ̸= 0 we can derive from ψ an even multivector
+R = ψ(ψ ψ)−1
+2 satisfying
+RR = RR = 1 .
+(28)
+Then ψ can be put in the canonical form
+ψ = (ρeiβ)
+1
+2 R
+(29)
+We shall see that this invariant decomposition has a fundamental physical sig-
+niﬁcance in the Dirac Theory.
+An important special case of the decomposition (29) is its application to a
+bivector F, for which it is convenient to replace β/2 by β + π/2 and write
+f = ρ
+1
+2 Ri. Thus, for any bivector F that is not null (F 2 ̸= 0) we have the
+invariant canonical form
+F = feiβ = f(cos β + i sin β) ,
+(30)
+where f 2 = −f f = | f |2, so f is said to be a timelike bivector with magnitude
+| f |. Similarly, the dual if is said to be a spacelike bivector, since (if)2 = −| f |2.
+6
+Thus the right side of (30) is the unique decomposition of F into a sum of
+mutually commuting timelike and spacelike parts.
+When F 2 = 0, F is said to be a lightlike bivector, and it can still be written
+in the form (30) with
+f = k ∧e = ke ,
+(31)
+where k is a null vector and e is a spacelike vector orthogonal to k. In this
+case, the decomposition is not unique, and the exponential factor can always be
+absorbed in the deﬁnition of f.
+To extend spacetime algebra into a complete spacetime calculus, suitable def-
+initions for derivatives and integrals are required. Though that can be done in a
+completely coordinate-free way,6 it is more expedient here to exploit one’s prior
+knowledge about coordinates.
+For each spacetime point x a standard frame {γµ} determines a set of “rect-
+angular coordinates” {xµ} given by
+xµ = γµ · x
+and
+x = xµγµ .
+(32)
+In terms of these coordinates the derivative with respect to a spacetime point
+x is an operator ▽≡∂x that can be deﬁned by
+▽= γµ∂µ,
+(33)
+where ∂µ is given by
+∂µ =
+∂
+∂xµ = γµ · ▽.
+(34)
+The square of ▽is the usual d’Alembertian
+▽2 = gµν∂µ∂ν
+where
+gµν = γµ · γν.
+(35)
+The matrix representation of the vector derivative ▽can be recognized as the
+socalled “Dirac operator,” originally discovered by Dirac by seeking a “square
+root” of the d’Alembertian (35) in order to ﬁnd a ﬁrst order “relativistically
+invariant” wave equation for the electron. In STA however, where the γµ are
+vectors rather than matrices, it is clear that ▽is a vector operator; indeed, it
+provides an appropriate deﬁnition for the derivative with respect to any space-
+time vector variable.
+Contrary to the impression given by conventional accounts of relativistic quan-
+tum theory, the operator ▽is not specially adapted to spin- 1
+2 wave equations.
+It is equally apt for electromagnetic ﬁeld equations, as seen in Section VI.
+This is a good point to describe the relation of STA to the standard Dirac
+algebra. The Dirac matrices are representations of the vectors γµ in STA by
+4 × 4 matrices, and to emphasize this correspondence the vectors here are de-
+noted with the same symbols γµ ordinarily used to represent the Dirac matrices.
+In view of what we know about STA, this correspondence reveals the physi-
+cal signiﬁcance of the Dirac matrices, appearing so mysteriously in relativistic
+7
+quantum mechanics: The Dirac matrices are no more and no less than matrix
+representations of an orthonormal frame of spacetime vectors and thereby they
+characterize spacetime geometry. But how can this be? Dirac never said any
+such thing! And physicists today regard the set {γµ} as a single vector with
+matrices for components. Nevertheless, their practice shows that the “frame
+interpretation” is the correct one, though we shall see later that the “compo-
+nent interpretation” is actually equivalent to it in certain circumstances. The
+correct interpretation was actually inherent in Dirac’s argument to derive the
+matrices in the ﬁrst place: First he put the γµ in one-to-one correspondence
+with orthogonal directions in spacetime by indexing them. Second, he related
+the γµ to the metric tensor by imposing the “peculiar condition” (11) on the
+matrices for formal algebraic reasons. But we see in (11) that this condition
+has a clear geometric meaning in STA as the inner product of vectors in the
+frame. Finally, Dirac introduced associativity automatically by employing ma-
+trix algebra, without realizing that it has a geometric meaning in this context.
+If indeed the physical signiﬁcance of the Dirac matrices derives entirely from
+their interpretation as a frame of vectors, then their speciﬁc matrix properties
+must be irrelevant to physics. That is proved in Section VII by dispensing with
+matrices altogether and formulating the Dirac theory entirely in terms of STA.
+In relativistic quantum mechanics one often encounters the notation γ · p =
+γµpµ, where γ is regarded formally as a vector with matrices γµ as components
+and p is an ordinary vector. Likewise, the Dirac operator is denoted by γ · ∂=
+γµ∂µ without recognizing it as a generic vector derivative with components ∂µ.
+The notation γ · p has the same deﬁciencies as the notation σ · a criticized in
+GA1. In STA it is inconsistent with identiﬁcation of {γµ} as an orthonormal
+frame.
+III. Proper Physics and Spacetime Splits
+STA makes it possible to formulate and analyze conventional relativistic physics
+in invariant form without reference to a coordinate system. To emphasize the
+distinctive features of this formulation, I like to call it “proper physics.” From the
+proper point of view, the term “relativistic mechanics” is a misnomer, because
+the theory is less rather than more relativistic than the so-called “nonrelativis-
+tic” mechanics of Newton. The equations describing a particle in Newtonian
+mechanics depend on the motion of the particle relative to some observer; in
+Einstein’s mechanics they do not. Einstein originally formulated his mechanics
+in terms of “relative variables” (such as the position and velocity of a particle
+relative to a given observer), but he eliminated dependence of the equations on
+the observer’s motion by the “relativity postulate,” which requires that the form
+of the equations be invariant under a change of relative variables from those of
+one inertial observer to those of another. Despite the taint of misnomer, the
+terms “relativistic” and “nonrelativistic” are so ensconced in the literature that
+it is awkward to avoid them.
+Minkowski’s covariant formulation of Einstein’s theory replaced the explicit
+8
+use of variables relative to inertial observers by components relative to an ar-
+bitrary coordinate system for spacetime. The “proper formulation” given here
+takes another step to move from covariance to invariance by relating particle
+motion directly to Minkowski’s “absolute spacetime” without reference to any
+coordinate system. Minkowski had the great idea of interpreting Einstein’s the-
+ory of relativity as a prescription for fusing space and time into a single entity
+“spacetime”.5
+The straightforward algebraic characterization of “Minkowski
+spacetime” by spacetime algebra makes a proper formulation of physics possi-
+ble.
+The history or world line of a material particle is a timelike curve x = x(τ) in
+spacetime. Particle conservation is expressed by assuming that the function x(τ)
+is single-valued and continuous except possibly at discrete points where particle
+creation and/or annihilation occurs. Only diﬀerentiable particle histories are
+considered here, and τ always refers to the proper time (arc length) of a particle
+history. After a unit of length (say centimeters) has been chosen, the physical
+signiﬁcance of the spacetime metric is ﬁxed by the assumption that the proper
+time of a material particle is equal to the time (in centimeters) recorded on a
+(perhaps hypothetical) clock traveling with the particle.
+The unit tangent v = v(τ) = dx/dτ ≡x. of a particle history will be called
+the (proper) velocity of the particle. By the deﬁnition of proper time, we have
+dτ = | dx | = | (dx)2 |
+1
+2 , and
+v2 = 1.
+(36)
+The term “proper velocity,” is preferable to the alternative terms “world veloc-
+ity,” “invariant velocity,” and “four velocity.” The adjective “proper” is used to
+emphasize that the velocity v describes an intrinsic property of the particle, in-
+dependent of any observer or coordinate system. The adjective “absolute” would
+do the same, but it may not be free from undesirable connotations. Moreover,
+the word “proper” is shorter and has already been used in a similar sense in
+the terms “proper mass” and “proper time.” The adjective “invariant” is inap-
+propriate, because no coordinates or transformation group has been introduced.
+The velocity should not be called a “4-vector,” because that term means pseu-
+doscalar in STA; besides, there is no need to refer to four components of the
+velocity.
+Though STA enables us to describe physical processes by proper equations,
+observations and measurements are often expressed in terms of variables tied
+to a particular inertial system, so we need to know how to reformulate proper
+equations in terms of those variables. STA provides a very simple way to do
+that called a spacetime split.
+In STA a given inertial system is completely characterized by a single future-
+pointing, timelike unit vector. Refer to the inertial system characterized by the
+vector γ0 as the γ0-system. The vector γ0 is tangent to the world line of an
+observer at rest in the γ0-system, so it is convenient to use γ0 as a name for
+the observer. The observer γ0 is represented algebraically in STA in the same
+way as any other physical system, and the spacetime split amounts to no more
+9
+than comparing the motion of a given system (the observer) to other physical
+systems.
+Indeed, the world line of an inertial observer is the straight world
+line of a free particle, so inertial frames can be characterized by free particles
+without the anthropomorphic reference to observers.
+An inertial observer γ0 determines a unique mapping of spacetime into the
+even subalgebra of STA. For each spacetime point (or event) x the mapping is
+speciﬁed by
+xγ0 = t + x ,
+(37)
+where
+t = x · γ0
+(38)
+and
+x = x ∧γ0 .
+(39)
+This deﬁnes the γ0-split of spacetime. Equation (38) assigns a unique time t
+to every event x; indeed, (38) is the equation for a one-parameter family of
+spacelike hyperplanes with normal γ0.
+Equation (39) assigns to each event x a unique position vector x in the γ0
+system. Thus, to each event x the single equation (37) assigns a unique time
+and position in the γ0-system. Note that the reverse of (37) is
+γ0x = γ0 · x + γ0 ∧x = t −x ,
+(40)
+so, since γ2
+0 = 1,
+x2 = (xγ0)(γ0x) = (t −x)(t + x) = t2 −x2 .
+(41)
+The form and value of this equation are independent of the chosen observer; thus
+we have proved that the expression t2 −x2 is Lorentz invariant without even
+mentioning a Lorentz transformation. Thus, the term “Lorentz invariant” can
+be construed as meaning “independent of a chosen spacetime split.” In contrast
+to (41), equation (37) is not Lorentz invariant; indeed, for a diﬀerent observer
+γ′
+0 we get the split
+xγ′
+0 = t′ + x′ .
+(42)
+Mostly we shall work with manifestly Lorentz invariant equations, which are
+independent of even an indirect reference to an inertial system.
+The set of all position vectors (39) is the 3-dimensional position space of the
+observer γ0, which we designate by P3 = P3(γ0) = {x = x ∧γ0}. Note that P3
+consists of all bivectors in STA with γ0 as a common factor. In agreement with
+common parlance, we refer to the elements of P3 as vectors. Thus, we have two
+kinds of vectors, those in M4 and those in P3. To distinguish between them,
+we refer to elements of M4 as proper vectors and to elements of P3 as relative
+10
+vectors (relative to γ0, of course!). To keep the discussion clear, relative vectors
+are designated in boldface, while proper vectors are not.
+By the geometric product and sum, the vectors in P3 generate the entire even
+subalgebra of STA as the geometric algebra G3 = G(P3) employed for classical
+physics in GA1. This is made obvious by constructing a basis. Corresponding
+to a standard basis {γµ} for M4, we have a standard basis {σk; k = 1, 2, 3} for
+P3, where
+σk = γk ∧γ0 = γkγ0 .
+(43)
+These generate a basis for the relative bivectors:
+σi ∧σj = σiσj = iσk = γjγi ,
+(44)
+where the allowed values of the indices {i, j, k} are cyclic permutations of 1,2,3,
+and the wedge is the outer product of relative vectors (not to be confused with
+the outer product of proper vectors as in (43)). The right sides of (43) and (44)
+show how the bivectors for spacetime are split into vectors and bivectors for P3.
+Comparison with (14) shows that the σk generate the entire even subalgebra,
+which can therefore be identiﬁed with G3 = G(P3).
+Remarkably, the right-
+handed pseudoscalar for P3 is identical to that for M4, that is,
+σ1σ2σ3 = i = γ0γ1γ2γ3 .
+(45)
+To be consistent with the operation of reversion deﬁned in GA1 for the algebra
+G3 we require
+σ†
+k = σk
+and
+(σiσj)† = σjσi .
+(46)
+This can be extended to the entire STA by deﬁning
+M † ≡γ0M γ0
+(47)
+for an arbitrary multivector M. The explicit appearance of the timelike vector
+γ0 here shows the dependence of M † on a particular spacetime split.
+The
+deﬁnitions in this paragraph guarantee smooth articulation of proper physics
+with physical descriptions relative to inertial frames.
+Now let us rapidly survey the spacetime splits of some important physical
+quantities. Let x = x(τ) be the history of a particle with proper time τ and
+proper velocity v = dx/dτ. The spacetime split of v is obtained by diﬀerentiating
+(37); whence
+vγ0 = v0(1 + v) ,
+(48)
+where
+v0 = v · γ0 = dt
+dτ =
+
+1 −v2−1
+2
+(49)
+11
+is the “time dilation” factor, and
+v = dx
+dt = dτ
+dt
+dx
+dτ = v ∧γ0
+v · γ0
+(50)
+is the relative velocity in the γ0-system. The last equality in (49) was obtained
+from
+1 = v2 = (vγ0)(γ0v) = v0(1 + v)v0(1 −v) = v2
+0(1 −v2) .
+(51)
+Let p be the proper momentum (i.e., energy-momentum vector) of a particle.
+The spacetime split of p into energy (or relative mass) E and relative momentum
+p is given by
+pγ0 = E + p ,
+(52)
+where
+E = p · γ0
+and
+p = p ∧γ0 .
+(53)
+Of course
+p2 = (E + p)(E −p) = E2 −p2 = m2 ,
+(54)
+where m is the proper mass of the particle.
+The proper angular momentum of a particle relates its proper momentum p
+to its location at a spacetime point x. Performing the splits as before, we ﬁnd
+px = (E + p)(t −x) = Et + pt −Ex −px .
+(55)
+The scalar part of this gives the familiar split
+p · x = Et −p · x ,
+(56)
+so often employed in the phase of a wave function. The bivector part gives us
+the proper angular momentum
+p ∧x = pt −Ex + i(x × p) ,
+(57)
+where, as explained in GA1, x × p is the standard vector cross product.
+An electromagnetic ﬁeld is a bivector-valued function F = F(x) on spacetime.
+An observer γ0 splits it into an electric (relative vector) part E and, a magnetic
+(relative bivector) part iB; thus
+F = E + iB ,
+(58)
+where
+E = (F · γ0)γ0 = 1
+2(F + F †)
+(59)
+is the part of F that anticommutes with γ0, and
+iB = (F ∧γ0)γ0 = 1
+2(F −F †)
+(60)
+is the part that commutes. Also, in accordance with (47), F † = E −iB. Note
+that the split of the electromagnetic ﬁeld in (58) corresponds exactly to the split
+of the angular momentum (57) into relative vector and bivector parts.
+A diﬀerent kind of spacetime split is most appropriate for Lorentz transfor-
+mations, as explained in the next Section.
+12
+IV. Lorentz Transformations
+Orthogonal transformations on spacetime are called Lorentz transformations.
+With due attention to the indeﬁnite signature of spacetime (11), geometric al-
+gebra enables us to treat Lorentz transformations by the same coordinate-free
+methods used in GA1 for 3D rotations and reﬂections. Again, the method has
+the great advantage of reducing the composition of transformations to simple
+versor multiplication. The method is developed here in complete generality to
+include space and time inversion, but the emphasis is on rotors and rotations as
+a foundation for classical spinor mechanics in the next Section and subsequent
+connection to relativistic quantum mechanics in Section VIII.
+The main theorem is that any Lorentz transformation of a spacetime vector
+a can be expressed in the canonical form
+La = ϵLLaL−1,
+(61)
+where ϵL = 1 if versor L is an even multivector and ϵL = −1 if L is odd. The
+condition
+LL−1 = 1
+(62)
+allows L to have any nonzero magnitude, but normalization to | L | = 1 is often
+convenient. The Lorentz transformation L is said to be proper if ϵL = 1, and
+improper if ϵL = −1. It is said to be orthochronous if, for any timelike vector v,
+v · L(v) > 0 .
+(63)
+A proper, orthochronous Lorentz transformation is called a Lorentz rotation (or
+a restricted Lorentz transformation). For a Lorentz rotation R the canonical
+form can be written
+R(a) = RaR ,
+(64)
+where the even multivector R is called a rotor and is normalized by the condition
+RR = 1 .
+(65)
+The rotors form a multiplicative group called the rotor group, which is a double-
+valued representation of the Lorentz rotation group (also called the restricted
+Lorentz group).
+As in the 3D case, the canonical form (61) simpliﬁes the whole treatment of
+Lorentz transformations. In particular, its main advantage is that it reduces
+the composition law for Lorentz transformations,
+L2 L1 = L3
+(66)
+to the versor product
+L2 L1 = L3.
+(67)
+13
+It follows from the rotor form (64), that, for any vectors a and b,
+(Ra)(Rb) = RabR = R(ab).
+(68)
+Thus, Lorentz rotations preserve the geometric product. This implies that the
+Lorentz rotation (64) can be extended to any multivector M as
+RM = RMR.
+(69)
+The most elementary kind of Lorentz transformation is a reﬂection n by a
+(non-null) vector n, according to
+n(a) = −nan−1 .
+(70)
+This is a reﬂection with respect to a hyperplane with normal n. Even if n is
+normalized to | n | = 1, if it is spacelike we need n−1 = −n in (70) to account
+for its negative signature. A reﬂection
+v(a) = −vav
+(71)
+with respect to a timelike vector v = v−1 is called a time reﬂection.
+Let
+n1, n2, n3 be spacelike vectors that compose the trivector
+n3n2n1 = iv .
+(72)
+A space inversion vs can then be deﬁned as the composite of reﬂections with
+respect to these three vectors, so it can be written
+vs(a) = n3n2n1an1n2n3 = ivavi = vav .
+(73)
+Note the diﬀerence in sign between the right sides of (71) and (73). The com-
+posite of the time reﬂection (71) with the space inversion (73) is the spacetime
+inversion
+vst(a) = vsv(a) = iai−1 = −a ,
+(74)
+which is represented by the pseudoscalar i. Note that spacetime inversion is
+proper but not orthochronous, so it is not a rotation despite the fact that i is
+even.
+Two basic types of Lorentz rotation can be obtained from the product of two
+reﬂections, namely timelike rotations (or boosts) and spacelike rotations. For a
+boost
+L(a) = LaL,
+(75)
+the rotor L can be factored into a product
+L = v2v1
+(76)
+14
+of two unit timelike vectors v1 and v2. The boost is a rotation in the timelike
+plane containing v1 and v2. The factorization (76) is not unique. Indeed, for a
+given L any timelike vector in the plane can be chosen as v1, and v2 can then
+be computed from (76). Similarly, for a spacelike rotation
+U(a) = Ua U,
+(77)
+the rotor U can be factored into a product
+U = n2n1
+(78)
+of two unit spacelike vectors in the spacelike plane of the rotation. Note that
+the product, say n2v1, of a spacelike vector with a timelike vector is not a
+rotor, because the corresponding Lorentz transformation is not orthochronous.
+Likewise, the pseudoscalar i is not a rotor, even though it can be expressed as
+the product of two bivectors, for it does not satisfy the rotor condition RR = 1.
+The Lorentz rotation (64) can be applied to a standard frame {γµ}, trans-
+forming it into a new frame of vectors {eµ} given by
+eµ = RγµR .
+(79)
+A spacetime rotor split of this Lorentz rotation is accomplished by a split of the
+rotor R into the product
+R = LU ,
+(80)
+where U † = γ0 Uγ0 = U or
+Uγ0 U = γ0
+(81)
+and L† = γ0Lγ0 = L or
+γ0L = Lγ0 .
+(82)
+This determines a split of (79) into a sequence of two Lorentz rotations deter-
+mined by U and L respectively; thus,
+eµ = RγµR = L(Uγµ U)L.
+(83)
+In particular, by (81) and (82),
+e0 = Rγ0R = Lγ0L = L2γ0 .
+(84)
+Hence,
+L2 = e0γ0 .
+(85)
+This determines L uniquely in terms of the timelike vectors e0 and γ0, which,
+in turn, uniquely determines the split (80) of R, since U can be computed from
+U = LR.
+15
+It is essential to note that the “spacetime rotor split” (80) is quite diﬀerent
+from the “spacetime split” introduced in the preceding section, for example in
+(58). The terminology is motivated by the expression of rotors U and L in terms
+of relative vectors, to which we now turn.
+Equation (81) for variable U deﬁnes the “little group” of Lorentz rotations
+that leave γ0 invariant; This is the group of “spatial rotations” in the γ0-system.
+Each such rotation takes a frame of proper vectors γk (for k = 1, 2, 3) into a new
+frame of vectors Uγk U in the γ0-system. Multiplication by γ0 expresses this as
+a rotation of relative vectors σk = γkγ0 into relative vectors ek; thus, we get
+ek = UσkU † = Uσk U ,
+(86)
+in exact agreement with the equation for 3D rotations in GA1.
+Equation (84) can be solved for L, in particular, for the case where e0 = v is
+the proper velocity of a particle of mass m. Then (48) enables us to write (85)
+in the alternative forms
+L2 = vγ0 = pγ0
+m = E + p
+m
+,
+(87)
+It is easily veriﬁed that this has the solution
+L = (vγ0)
+1
+2 =
+1 + vγ0
+
+2(1 + v · γ0)
+ 1
+2
+=
+m + pγ0
+
+2m(m + p · γ0)
+ 1
+2 =
+m + E + p
+
+2m(m + E)
+ 1
+2 .
+(88)
+This displays L as a boost of a particle from rest in the γ0-system to a relative
+momentum p.
+Generalizing the treatment of rotating frames in GA1, the Lorentz rotation
+of a frame (79) can be related to the standard matrix form by writing
+eµ = RγµR = αν
+µγν.
+(89)
+As in GA1, this can be solved for the matrix elements
+αν
+µ = eµ · γν = (γνRγµR)(0).
+(90)
+Or it can be solved for the rotor,7 with the result
+R = ±(A A)−1
+2 A,
+(91)
+where
+A ≡eµγµ = αν
+µγνγµ
+(92)
+Equation (89) can be used to describe a change of coordinate frames.
+In the tensorial approach to Lorentz rotations, the coordinates xµ = γµ · x of
+a point x transform according to
+xµ →x′µ = αµ
+νxν,
+with
+αµ
+ναν
+λ = δµ
+λ
+(93)
+16
+as the orthogonality condition on the transformation. This can be interpreted
+either as a passive or an active transformation. In the passive case, it is accom-
+panied by a (usually implicit) transformation of coordinate frame:
+γµ →γ′
+µ = αλ
+µγλ,
+(94)
+so that each spacetime point x = xµγµ = x′µγ′µ is left unchanged.
+In the active case, each spacetime point x = xµγµ is mapped to a new space-
+time point
+x′ = x′µγµ = xµγ′
+µ = RxR,
+(95)
+where the last form was obtained by identifying γ′
+µ with eµ in (89). This shows
+that STA enables us to dispense with coordinates entirely in the treatment of
+Lorentz transformations. Consequently, we deal with active Lorentz transfor-
+mations only in the coordinate-free form (64) or (61), and we dispense with
+passive transformations entirely.
+If all this seems rather obvious, just turn to any textbook on relativistic
+quantum theory,8 where the γµ are matrices and (89) is introduced as a change
+in matrix representation to prove relativistic invariance of the “Dirac operator”
+γµ∂µ = γ′µ∂′µ. In STA this is recognized as a passive Lorentz transformation,
+so it is superﬂuous. Consequently, this aspect of Lorentz invariance need not be
+mentioned in our treatment of the Dirac equation in Section VII.
+V. Spinor Particle Mechanics
+Now we are prepared to exploit the unique advantages of STA with a spinor for-
+mulation of relativistic (or proper) mechanics. This approach has three major
+beneﬁts. First, it articulates perfectly with the rotor formulation of nonrelativis-
+tic rigid body mechanics in GA1. Second, it articulates perfectly with Dirac’s
+quantum theory of the electron, providing it with an informative and useful
+classical limit that includes a natural classical explanation for the gyromagnetic
+ratio g = 2. Indeed, the spinor used here for particle mechanics is an obvi-
+ous special case of the real Dirac spinor introduced in Section VII. Finally, the
+spinor formulation simpliﬁes the solution of problems in relativistic mechanics
+and automatically generalizes particle mechanics to include spin precession.
+The rotor equation for a frame
+eµ = RγµR
+(96)
+can be used to describe the relativistic kinematics of a rigid body (with negligible
+dimensions) traversing a world line x = x(τ) with proper time τ, provided we
+identify e0 with the proper velocity v of the body, so that
+dx
+dτ = x. = v = e0 = Rγ0R .
+(97)
+17
+Then {eµ = eµ(τ); µ = 0, 1, 2, 3} is a comoving frame traversing the world line
+along with the particle, and the rotor R must also be a function of proper time,
+so that, at each time τ, equation (96) describes a Lorentz rotation of some
+arbitrarily chosen ﬁxed frame {γµ} into the comoving frame {eµ = eµ(τ)}.
+Thus, we have a rotor-valued function of proper time R = R(τ) determining a
+1-parameter family of Lorentz rotations eµ(τ) = R(τ)γµR(τ). The rotor R is a
+unimodular spinor, as it satisﬁes the unimodular condition RR = 1.
+The spacelike vectors ek = RγkR (for k = 1, 2, 3) can be identiﬁed with the
+principal axes of the body. But the same equations can be used for modeling
+a particle with an intrinsic angular momentum or spin, where e3 is identiﬁed
+with the spin direction ˆs; so we write
+ˆs = e3 = Rγ3R .
+(98)
+Later we see that this corresponds exactly to the spin vector in the Dirac theory
+where the magnitude of the spin has the constant value | s | = ¯h/2.
+The rotor equation of motion for R = R(τ) has the form
+˙R = 1
+2ΩR
+(99)
+where Ω= Ω(τ) is a bivector-valued function. The fact that Ω= 2 ˙RR = −Ωis
+necessarily a bivector is easily proved by diﬀerentiating RR = 1. Diﬀerentiating
+(96) and using (99), we see that the equations of motion for the comoving frame
+have the form
+˙eµ = Ω· eµ .
+(100)
+Clearly Ωcan be interpreted as a generalized rotational velocity of the comoving
+frame.
+The dynamics of the rigid body, that is, the eﬀect of external forces and
+torques on the body, is completely characterized by specifying Ωas a deﬁnite
+function of proper time. The single rotor equation (99) is equivalent to the set
+of four frame equations (100). Besides the theoretical advantage of being closely
+related to the Dirac equation, as we shall see, it has the practical advantage of
+being simpler and easier to solve than the set of frame equations (100). The
+corresponding nonrelativistic rotor equation for a spinning body was introduced
+in GA1. It should be noted that the nonrelativistic rotor equation describes only
+rotational motion, while its relativistic generalization (99) describes rotational
+and translational motion together.
+For a classical particle with mass m and charge e in an electromagnetic ﬁeld
+F, the dynamics is speciﬁed by
+Ω= e
+m F .
+(101)
+So (100) gives the particle equation of motion
+m˙v = eF · v
+(102)
+18
+This may be recognized as the classical Lorentz force with tensor components
+m˙vµ = eF µνvν, but note that tensor theory does not admit the more powerful
+rotor equation of motion (99).
+As demonstrated in speciﬁc examples that follow, even if one is interested in
+the motion of a structureless point charge, the rotor equation (99) is easier to
+solve than the Lorentz force equation (102). However, if one wants to extend
+the model to an electron with spin, the same solution automatically describes
+the electron’s spin precession. The result is physically meaningful too, for, as
+we see later, the classical model of an electron with proper rotational veloc-
+ity (101) proportional to the ﬁeld F gives the same gyromagnetic ratio as the
+Dirac equation. Indeed, it is a well-deﬁned classical limit of the Dirac equation,
+though Planck’s constant remains in the magnitude of the spin. This role of the
+electromagnetic ﬁeld F as a rotational velocity is so simple and natural that it
+deserves a name. I propose to dub the relation (101) the Lorentz Torque, since
+it is a straightforward generalization of the Lorentz Force (102). It is notewor-
+thy that this idea, which is so natural in STA, seems never to have occurred
+to physicists using tensor theory. This is one more example of the inﬂuence of
+mathematical language on physical theory.
+A. Motion in constant electric and magnetic ﬁelds.
+If F is a uniform ﬁeld on spacetime, then ˙Ω= 0 and (99) has the solution
+R = e
+1
+2 ΩτR0 ,
+(103)
+where R0 = R(0) speciﬁes the initial conditions. When this is substituted into
+(103) we get the explicit τ dependence of the proper velocity v. The integration
+of (97) for the history x(t) is most simply accomplished in the general case
+of arbitrary non-null F by exploiting the invariant decomposition F = feiϕ
+determined in (30).
+This separates Ωinto mutually commuting parts Ω1 =
+(e/m)f cos ϕ and Ω2 = (e/m)if sin ϕ, so
+e
+1
+2 Ωτ = e
+1
+2 (Ω1+Ω2)τ = e
+1
+2 Ω1τe
+1
+2 Ω2τ .
+(104)
+It also determines an invariant decomposition of the initial velocity v(0) into a
+component v1 in the f-plane and a component v2 orthogonal to the f-plane;
+thus,
+v(0) = f −1(f · v(0)) + f −1(f ∧v(0)) = v1 + v2 .
+(105)
+When this is substituted in (97) and (104) is used, we get
+dx
+dτ = v = eΩ1τv1 + eΩ2τv2 .
+(106)
+Note that this is an invariant decomposition of the motion into “electriclike”
+and “magneticlike” components. It integrates easily to give the history
+x(τ) −x(0) = 2(eΩ1τ −1)Ω−1
+1 v1 + 2(eΩ2τ −1)Ω−1
+2 v2 .
+(107)
+19
+This general result, which applies for arbitrary initial conditions and arbitrary
+uniform electric and magnetic ﬁelds, has such a simple form because it is ex-
+pressed in terms of invariants. It looks far more complicated when subjected to
+a space-time split and expressed directly as a function of “laboratory ﬁelds” in
+an inertial system. Details are given in my mechanics book.3
+B. Electron in the ﬁeld of a plane wave.
+As a second example with important applications, we integrate the rotor
+equation for a “classical test charge” in an electromagnetic plane wave.9 This
+is useful for describing the interaction of electrons with lasers. As explained
+at the end of Section VI in GA1, any plane wave ﬁeld F = F(x) with proper
+propagation vector k can be written in the canonical form
+F = fz ,
+(108)
+where f is a constant null bivector (f 2 = 0), and the x-dependence of F is
+exhibited explicitly by
+z(k · x) = α+ei(k·x) + α−e−i(k·x) ,
+(109)
+with
+α± = ρ±e±iδ± ,
+(110)
+where δ± and ρ± ≥0 are scalars. It is crucial to note that the “imaginary” i
+here is the unit pseudoscalar, because it endows these solutions with geometrical
+properties not possessed by conventional “complex solutions.” Indeed, as noted
+in GA1, the pseudoscalar property of i implies that the two terms on the right
+side of (109) describe right and left circular polarizations. Thus, the orientation
+of i determines handedness of the solutions.
+For the plane wave (108), Maxwell’s equation reduces to the algebraic condi-
+tion,
+kf = 0 .
+(111)
+This implies k2 = 0 as well as f 2 = 0. To integrate the rotor equation of motion
+˙R =
+e
+2m FR ,
+(112)
+it is necessary to express F as a function of τ. This can be done by using special
+properties of F to ﬁnd constants of motion. Multiplying (112) by k and using
+(111) we ﬁnd immediately that kR is a constant of the motion. So, with the
+initial condition R(0) = 1, we obtain k = kR = Rk = kR; whence
+RkR = k .
+(113)
+Thus, the one parameter family of Lorentz rotations represented by R = R(τ)
+lies in the little group of the lightlike vector k. Multiplying (113) by (96), we
+ﬁnd the constants of motion k · eµ = k · γµ. This includes the constant
+ω = k · v,
+(114)
+20
+which can be interpreted as the frequency of the plane wave “seen by the par-
+ticle.” Since v = dx/dτ, we can integrate (114) immediately to get
+k · (x(τ) −x(0)) = ωτ .
+(115)
+Inserting this into (109) and absorbing k · x(0) in the phase factor, we get
+z(k · x) = z(ωτ), expressing the desired τ dependence of F. Equation (112)
+can now be integrated directly, with the result
+R = exp (efz1/2m) = 1 + e
+2m fz1 ,
+(116)
+where
+z1 = 2
+ω sin (ωτ/2)
+
+α+eiωτ/2 + α−e−iωτ/2
+.
+(117)
+This gives the velocity v and, by integrating (97), the complete particle history.
+Details are given elsewhere.9 It is of practical interest to know that this solution
+is equivalent to the “Volkov solution” of the Dirac equation for an electron in a
+plane wave ﬁeld.10 In this case, the quantum mechanical solution is equivalent
+to its classical limit. The solution has practical applications to the interaction
+of electrons with laser ﬁelds.13
+The problem of motion in a Coulomb ﬁeld has been solved by the same spinor
+method,11 but no other exact solutions of the rotor equation (99) with Lorentz
+torque have been published.
+C. Spin precession.
+We have established that speciﬁcation of kinematics by the rotor equation
+(99) and dynamics by Ω= (e/m)F is a geometrically perspicuous and analyti-
+cally eﬃcient means of characterizing the motion of a classical charged particle,
+and noted that it automatically provides us with a classical model of spin preces-
+sion. Now let us take a more general approach to modeling and analyzing spin
+precession. Any dynamics of spin precession can be characterized by specifying
+a functional form for Ω. That includes gravitational precession12 and electron
+spin precession in the Dirac theory.
+To facilitate the analysis for any given
+dynamical model, we ﬁrst carry the analysis as far as possible for arbitrary Ω.
+Then we give a speciﬁc application to measurement of the g-factor for a Dirac
+particle.
+The rotor equation of motion (99) determines both translational and rota-
+tional motions of the comoving frame (96), whatever the frame models physi-
+cally. It is of interest to separate translational and rotational modes, though
+they are generally coupled. This can be done by a spacetime split by the particle
+velocity v or by the reference vector γ0. We consider both ways and how they
+are related.
+D. Larmor and Thomas precession.
+To split the rotational velocity Ωby the velocity v, we write
+Ω= Ωv2 = (Ω· v)v + (Ω∧v)v .
+(118)
+21
+This produces the split
+Ω= Ω+ + Ω−,
+(119)
+where
+Ω+ = 1
+2(Ω+ vΩv) = (Ω· v)v = ˙vv ,
+(120)
+and
+Ω−= 1
+2(Ω−vΩv) = (Ω∧v)v .
+(121)
+Note that Ω· v = ˙v was used in (120) to express Ω+ entirely in terms of the
+proper acceleration ˙v and velocity v. This split has exactly the same form as
+the split (58) of the electromagnetic bivector into electric and magnetic parts
+corresponding here to Ω+ and Ω−respectively. However, it is a split with respect
+to the instantaneous “rest frame” of the particle rather than a ﬁxed inertial
+frame. In the rest frame the relative velocity of the particle itself vanishes, of
+course, so the particle’s acceleration is entirely determined by the “electriclike”
+part Ω+, as (120) shows explicitly. The “magneticlike” part Ω−is completely
+independent of the particle motion; it is the Larmor precession (frequency) of
+the spin for a particle with a magnetic moment, so let us refer to it as the
+Larmor precession in the general case.
+Unfortunately, (119) does not completely decouple precession from translation
+because Ω+ contributes to both. Also, we need a way to compare precessions
+at diﬀerent points on the particle history. These diﬃculties can be resolved by
+adopting the γ0-split
+R = LU ,
+(122)
+exactly as deﬁned by (80) and subsequent equations. At every time τ, this split
+determines a “deboost” of relative vectors eke0 = Rγkγ0R = RσkR (k = 1, 2, 3)
+into relative vectors
+ek = L(eke0)L = Uσk U
+(123)
+in the ﬁxed reference system of γ0. The particle is brought to rest, so to speak,
+so we can watch it precess (or spin) in one place. The precession is described
+by an equation of the form
+dU
+dt = −1
+2iωU ,
+(124)
+so, as already shown in GA1, diﬀerentiation of (123) yields the familiar equations
+for a rotating frame:
+dek
+dt = ω × ek .
+(125)
+22
+The problem now is to express ω in terms of the given Ωand determine the
+relative contributions of the parts Ω+ and Ω−. To do that, we use the time
+dilation factor v0 = v · γ0 = dt/dτ to change the time variable in (124) and
+write
+ω = −iωv0
+(126)
+so (124) becomes ˙U = 1
+2ωU. Then diﬀerentiation of (122) and use of (99) gives
+Ω= 2 ˙RR = 2 ˙LL + LωL.
+(127)
+Solving for ω and using the split (119), we get
+ω = LΩ−L + L˙vvL −2L ˙L .
+(128)
+Diﬀerentiation of (87) leads to
+L(˙vv)L = L ˙L + ˙LL,
+(129)
+while diﬀerentiation of (88) gives
+2 ˙LL = ˙v ∧(v + γ0)
+1 + v · γ0
+.
+(130)
+These terms combine to give the well-known Thomas precession frequency
+ωT =
+
+(2 ˙LL) ∧γ0
+
+γ0 = ˙LL −L ˙L
+= (˙v ∧v ∧γ0)γ0
+1 + v · γ0
+= i
+
+v2
+0
+1 + v0
+
+v × ˙v .
+(131)
+The last step here, expressing the proper vectors in terms of relative vectors,
+was derived from the split
+˙vv = ˙v ∧v = v2
+0( ˙v + i(v × ˙v)) .
+(132)
+Finally, writing
+ωL = LΩ−L
+(133)
+for the transformed Larmor precession, we have the desired result
+ω = ωT + ωL .
+(134)
+The Thomas term describes the eﬀect of motion on the precession explicitly and
+completely.
+23
+E. The g-factor in spin precession.
+Now let us apply the rotor approach to a practical problem of spin precession.
+In general, for a charged particle with an intrinsic magnetic moment in a uniform
+electromagnetic ﬁeld F = F+ + F−,
+Ω=
+e
+mc
+
+F+ + g
+2F−
+
+=
+e
+mc
+
+F + 1
+2(g −2)F−
+
+,
+(135)
+where as deﬁned by (121), F−is the magnetic ﬁeld in the instantaneous rest
+frame of the particle, and g is the usual gyromagnetic ratio. This yields the
+classical equation of motion (102) for the velocity, but by (98) and (100) the
+equation of motion for the spin is
+˙s = e
+m [ F + 1
+2(g −2)F−] · s .
+(136)
+This is the well-known Bargmann-Michel-Telegdi (BMT) equation, which is used
+in high precision measurements of the g-factor for the electron and muon.
+To apply the BMT equation, it must be solved for the rate of spin precession.
+The general solution for an arbitrary combination F = E+iB of uniform electric
+and magnetic ﬁelds is most easily found by replacing the BMT equation by the
+rotor equation
+˙R =
+e
+2mFR + R 1
+2(g −2)
+	 e
+2m
+
+iB0 ,
+(137)
+where
+iB0 = RF−R = 1
+2
+
+RFR −(RFR)†
+.
+(138)
+is an “eﬀective magnetic ﬁeld” in the “rest system” of the particle. With initial
+conditions R(0) = L0, U(0) = 1, for a boost without spatial rotation, a solution
+of (137) is
+R = exp
+ e
+2m Fτ
+
+L0 exp
+
+1
+2(g −2)
+	 e
+2m
+
+iB0τ
+
+,
+(139)
+where B0 is deﬁned by
+B0 = 1
+2i
+
+L0FL0 −(L0FL0)†
+= B +
+v2
+00
+1 + v00
+v0×(B×v0) + v00E×v0 ,
+(140)
+where v00 = v(0) · γ0 = (1−v2)−1
+2 . The ﬁrst factor in (139) has the same eﬀect
+on both the velocity v and the spin s, so the last factor gives directly the change
+in the relative directions of the relative velocity v and the spin s. This can be
+measured experimentally.3
+To conclude this section, some general remarks about the description of spin
+will be helpful in applications and in comparisons with more conventional ap-
+proaches. We have represented the spin by the proper vector s = | s |e3 deﬁned
+24
+by (98) and alternatively by the relative vector σ = | s |e3, where e3 is deﬁned by
+(123). For a particle with proper velocity v = L2γ0, these two representations
+are related by
+sv = LσL
+(141)
+or, equivalently, by
+σ = L(sv)L = LsLγ0 .
+(142)
+A straightforward spacetime split of the proper spin vector s, like (48) for the
+velocity vector, gives
+sγ0 = s0 + s ,
+(143)
+where
+s = s ∧γ0
+(144)
+is the relative spin vector, and s · v = 0 implies that
+v0s0 = v · s .
+(145)
+From (141) and (143), the relation of s to σ is found to be
+s = σ + (v0 −1)(σ · ˆv)ˆv ,
+(146)
+where v0 = v · γ0 and ˆv = v/| v |. Both vectors s and σ are sometimes used
+in the literature, and some confusion results from a failure to recognize that
+they come from two diﬀerent kinds of spacetime split. Of course either one can
+be used, since one determines the other, but σ is usually simpler because its
+magnitude is constant. Note from (146) that they are indistinguishable in the
+non-relativistic approximation.
+VI. Electromagnetic Field Theory
+In STA an electromagnetic ﬁeld is represented by a bivector-valued function
+F = F(x) on spacetime. The ﬁeld produced by a source with proper current
+density J = J(x) is determined by Maxwell’s Equation
+▽F = J .
+(147)
+As explained in Section II, the diﬀerential operator ▽= ∂x in STA is regarded
+as the (vector) derivative with respect to a spacetime point x.
+Since ▽is a vector operator the expansion (10) applies, so we can write
+▽F = ▽· F + ▽∧F ,
+(148)
+25
+where ▽· F is the divergence of F and ▽∧F is the curl. We can accordingly
+separate (147) into vector and trivector parts:
+▽· F = J ,
+(149)
+▽∧F = 0.
+(150)
+This is the coordinate-free form for the two covariant tensor equations for the
+electromagnetic ﬁeld in standard relativistic theory.
+As a pedagogical point, it is worth noting that the decomposition (148) into
+divergence and curl is a straightforward generalization of the 3D vectorial de-
+composition introduced in GA1. Also note that, as standard SI units are not
+well suited for spacetime physics, we choose a system of units that minimizes
+the number of constants in basic equations. The reader can infer the choice
+from the spacetime split of Maxwell’s equation given below.
+The reduction of the two Maxwell equations (149) and (150) to the to a sin-
+gle “Maxwell’s Equation” (147) brings many simpliﬁcations to electromagnetic
+theory. For example, the operator ▽has an inverse so (147) can be solved for
+F = ▽−1J ,
+(151)
+Of course, ▽−1 is an integral operator that depends on boundary conditions on
+F for the region on which it is deﬁned, so (151) is an integral form of Maxwell’s
+equation. However, if the “current” J = J(x) is the sole source of F, then (151)
+provides the unique solution to (147).
+Next we survey other simpliﬁcations to the formulation and analysis of elec-
+tromagnetic equations. Diﬀerentiating (147) we obtain
+▽2F = ▽J = ▽· J + ▽∧J ,
+(152)
+where ▽2 is the d’Alembertian (35). Separately equating scalar and bivector
+parts of (152), we obtain the charge conservation law
+▽· J = 0
+(153)
+and an alternative equation for the E-M ﬁeld
+▽2F = ▽∧J .
+(154)
+A. Electromagnetic Potentials.
+A diﬀerent ﬁeld equation is obtained by using the fact that, under general con-
+ditions, any continuous bivector ﬁeld F = F(x) can be expressed as a derivative
+with the speciﬁc form
+F = ▽(A + Bi) ,
+(155)
+where A = A(x) and B = B(x) are vector ﬁelds, so F has a “vector potential”
+A and a “trivector potential” Bi. This is a generalization of the well-known
+26
+“Helmholtz theorem” in vector analysis.4 Since ▽A = ▽· A + ▽∧A with a
+similar equation for ▽B, the bivector part of (155) can be written
+F = ▽∧A + (▽∧B)i ,
+(156)
+while the scalar and pseudoscalar parts yield the so-called “Lorenz condition”
+▽· A = ▽· B = 0 ,
+(157)
+Inserting (155) into Maxwell’s equation (147) and separating vector and trivec-
+tor parts, we obtain the usual wave equation for the vector potential
+▽2A = J ,
+(158)
+as well as
+▽2Bi = 0 .
+(159)
+The last equation shows that B is independent of the source J, so it can be
+set to zero in (155). However, in a theory with magnetic charges, Maxwell’s
+equation takes the form
+▽F = J + iK,
+(160)
+where K = K(x) is a vector ﬁeld, the “magnetic current density.” On substituting
+(155) into (160) we obtain in place of (159),
+▽2Bi = iK .
+(161)
+The pseudoscalar i can be factored out to make (161) appear symmetrical with
+(157), but this symmetry between the roles of electric and magnetic currents is
+deceptive, because one is vectorial while the other is actually trivectorial.
+The separation of the generalized Maxwell’s equation (160) into parts with
+electric and magnetic sources can be achieved by again using (148) and again
+getting (149) for the vector part but getting
+▽∧F = iK
+(162)
+for the trivector part. This equation can be made to look similar to (149) by
+duality to put it in the form
+▽· (Fi) = K .
+(163)
+Note that the dual Fi of the bivector F is also a bivector. Hereafter we restrict
+our attention to the “physical case” K = 0.
+B. Maxwell’s equation for material media.
+Sometimes the source current J can be decomposed into a conduction current
+JC and a magnetization current ▽· M, where the generalized magnetization
+M = M(x) is a bivector ﬁeld; thus
+J = JC + ▽· M .
+(164)
+27
+The Gordon decomposition of the Dirac current is of this ilk. Because of the
+mathematical identity ▽· (▽· M) = (▽∧▽) · M = 0, the conservation law
+▽· J = 0 implies also that ▽· JC = 0. Using (164), equation (149) can be put
+in the form
+▽· G = JC
+(165)
+where we have deﬁned a new ﬁeld
+G = F −M .
+(166)
+A disadvantage of this approach is that it mixes up physically diﬀerent kinds
+of entities, an E-M ﬁeld F and a matter ﬁeld M. However, in most materials
+M is a function of the ﬁeld F, so when a “constitutive equation” M = M(F) is
+known (165) becomes a well deﬁned equation for F.
+C. Energy-momentum tensor.
+STA enables us to write the usual Maxwell energy-momentum tensor T(n) =
+T(n(x), x) for the electromagnetic ﬁeld in the compact form
+T(n) = 1
+2Fn F = −1
+2FnF .
+(167)
+Recall that the tensor ﬁeld T(n) is a vector-valued linear function on the tan-
+gent space at each spacetime point x describing the ﬂow of energy-momentum
+through a surface with normal n = n(x), By linearity T(n) = nµT µ, where
+nµ = n · γµ and
+T µ ≡T(γµ) = 1
+2Fγµ F .
+(168)
+The divergence of T(n) can be evaluated by using Maxwell’s equation (147),
+with the result
+∂µT µ = T(▽) = J · F .
+(169)
+Its value is the negative of the Lorentz force (density) F · J, which is the rate
+of energy-momentum transfer from the source J to the ﬁeld F.
+D. Eigenvectors of the Maxwell Tensor.
+The compact, invariant form (167) enables us to solve easily the eigenvector
+problem for the Maxwell energy-momentum tensor. If F is not a null ﬁeld, it
+has the invariant decomposition F = feiϕ given by (30), which, when inserted
+in (167), gives
+T(n) = −1
+2fnf
+(170)
+This is simpler than (167) because f is simpler than F.
+Note also that it
+implies that all ﬁelds diﬀering only by an arbitrary “duality factor” eiϕ have
+the same energy-momentum tensor. The eigenvalues can be found from (170)
+by inspection. The bivector f determines a timelike plane. Any vector n in that
+plane satisﬁes n ∧f = 0, or equivalently, nf = −fn. On the other hand, if n
+28
+is orthogonal to the plane, then n · f = 0 and nf = fn. For these two cases,
+(170) gives us
+T(n) = ± 1
+2f 2n .
+(171)
+Thus T(n) has a pair of doubly degenerate eigenvalues ± 1
+2f 2 corresponding to
+“eigenbivectors” f and if, all expressible in terms of F by inverting (30). This
+approach should be compared with conventional matrix methods to appreciate
+the simpliﬁcations achieved by STA.
+E. Relation to tensor formulations.
+The versatility of STA is also illustrated by the ease with which the above
+invariant formulation of “Maxwell theory” can be related to more conventional
+formulations. The tensor components F µν of the E-M ﬁeld F are given by (17),
+whence, using (34), we ﬁnd
+∂µF µν = J · γν = Jν
+(172)
+for the tensor components of Maxwell’s equation (149). Similarly, the tensor
+components of (163) are
+∂[νFαβ] = Kµϵµναβ ,
+(173)
+where the brackets indicate antisymmetrization and ϵµναβ = i−1 · (γµγνγαγβ).
+The tensor components of the energy-momentum tensor (168) are
+T µν = γµ · T ν = −1
+2(γµFγνF)(0)
+= (γµ · F) · (F · γν) −1
+2γµ · γν(F 2)(0)
+= F µαF ν
+α −1
+2gµνFαβF αβ
+(174)
+F. Spacetime splits in E-M theory.
+To demonstrate how smoothly the proper formulation of E-M theory articu-
+lates with the relative formulation, we quickly survey several spacetime splits.
+A spacetime split of Maxwell’s equation (147) puts it in the standard relative
+vector form for an inertial system. Thus, following the procedure in Section 4,
+Jγ0 = J0 + J
+(175)
+splits the current J into a charge density J0 = J · γ0 and a relative current
+J = J ∧γ0 in the γ0-system. Similarly,
+γ0▽= ∂t + ∇
+(176)
+splits ▽= ∂x into a time derivative ∂t = γ0 · ▽and spatial derivative ∇=
+γ0 ∧▽= ∂x with respect to the relative position vector x = x ∧γ0. Combining
+this with the split of F into electric and magnetic parts, we get Maxwell’s
+equation (147) in the split form
+(∂t + ∇)(E + iB) = J0 −J ,
+(177)
+29
+in agreement with the formulation in GA1.
+Note that (176) splits the D’Alembertian into
+▽2 = (▽γ0)(γ0▽) = (∂t −∇)(∂t + ∇) = ∂2
+t −∇2.
+(178)
+The vector ﬁeld T 0 = T(γ0) = T(γ0) is the energy-momentum density in the
+γ0-system. The split
+T 0γ0 = T 0γ0 = T 00 + T0
+(179)
+separates it into an energy density T 00 = T 0 · γ0 and a momentum density
+T0 = T 0 ∧γ0. Using the fact that γ0 anticommutes with relative vectors, from
+(168) we obtain
+T 0γ0 = 1
+2FF † = 1
+2(E2 + B2) + E×B ,
+(180)
+in agreement with GA1.
+The spacetime split helps us with physical interpretation. Corresponding to
+the split F = E + iB, the magnetization ﬁeld M splits into
+M = −P + iM ,
+(181)
+where P is the electric polarization density and M is the magnetic moment
+density. Writing
+G = D + iH ,
+(182)
+we see that (166) gives us the familiar relations
+D = E + P ,
+(183)
+H = B −M .
+(184)
+Insertion of (182) into (165) with a spacetime split yields the usual set of
+Maxwell’s equations for a material medium.
+VII. Real Relativistic Quantum Theory
+The Dirac equation is the cornerstone of relativistic quantum theory, if not the
+single most important equation in all of quantum physics. This Section shows
+how STA simpliﬁes the entire Dirac theory, reveals hidden geometric structure
+with implications for physical interpretation, and provides a common spinor
+method for classical and quantum physics with a more direct and transparent
+classical limit of the Dirac equation.
+First, we show how to reformulate the standard matrix version of Dirac theory
+in terms of the real STA. As this reformulation eliminates superﬂuous complex
+numbers and matrices from the standard version, I call it the real Dirac theory.
+30
+Next we provide the real Dirac wave function with a geometric interpretation
+by relating it to local observables. The term “local observable” is non-standard
+but the concept is not unprecedented. It refers to assignment of physical inter-
+pretation to some local quantity such as energy or charge density rather than
+to global quantities such as expectation values. It serves as a device for describ-
+ing local geometric structure of the theory quite apart from claims of objective
+reality. Its bearing on the interpretation of quantum mechanics is discussed in
+the next Section.
+For reference purposes, I provide a complete catalog of relations between
+local observables in the real theory and the socalled “bilinear covariants” in the
+matrix theory. This facilitates translation between the two formulations. It will
+be noted that the real version is substantially simpler, and the complexities of
+translation can be avoided by sticking to the real theory alone.
+Finally, I provide a thorough analysis of local conservation laws in the real
+Dirac theory to ascertain further what STA can tell us about geometric structure
+and physical interpretation.
+The analysis is much more complete than any
+treatment in textbooks that I know.
+This account is limited to the single particle Dirac theory. The tendency in
+textbooks is to forego a thorough study of single particle theory and leap at
+once to the second quantized many particle theory. I leave it to the reader to
+decide what might be lost by that practice.
+Space does not permit an adequate account of “real solutions” of the Dirac
+equation in this article. Partial treatments are given elsewhere,15,16 but it is
+worth mentioning here that in some respects the real Dirac equation is easier
+to solve and analyze than the Schroedinger equation.
+A. Derivation of the real Dirac theory.
+Derivation of the real STA version of the Dirac theory from the standard
+matrix version is essentially the same as for the Pauli theory, but the diﬀerences
+are suﬃcient to justify a quick review. To ﬁnd a representation of the Dirac
+theory in terms of STA, we begin with a Dirac spinor Ψ, a column matrix of 4
+complex numbers. Let u be a ﬁxed spinor with the properties
+u†u = 1 ,
+(185)
+γ0u = u ,
+(186)
+γ2γ1u = i′u .
+(187)
+In writing this we regard the γµ, for the moment, as 4 × 4 Dirac matrices, and
+i′ as the unit imaginary in the complex number ﬁeld of the Dirac algebra. Now,
+we can write any Dirac spinor
+Ψ = ψu ,
+(188)
+where ψ is a matrix that can be expressed as a polynomial in the γµ.
+The
+coeﬃcients in this polynomial can be taken as real, for if there is a term with
+an imaginary coeﬃcient, then (187) enables us to make it real without altering
+31
+(188) by replacing i′ in the term by γ2γ1 on the right of the term. Furthermore,
+the polynomial can be taken to be an even multivector, for if any term is odd,
+then (186) allows us to make it even by multiplying on the right by γ0. Thus,
+in (188) we may assume that ψ is a real even multivector, so we can reinterpret
+the γµ in ψ as vectors in STA instead of matrices. Thus, we have established
+a correspondence between Dirac spinors and even multivectors in STA. The
+correspondence must be one-to-one, because the space of even multivectors (like
+the space of Dirac spinors) is exactly 8-dimensional, with 1 scalar, 1 pseudoscalar
+and 6 bivector dimensions.
+Finally, it should be noted that by eliminating the ungeometrical imaginary
+i′ from the base ﬁeld we reduce the degrees of freedom in the Dirac theory
+by half, with consequent simpliﬁcation of the theory that shows up in the real
+version. The Dirac algebra is generated by the Dirac matrices over the base
+ﬁeld of complex numbers, so it has 24 × 2 = 32 degrees of freedom and can be
+identiﬁed with the algebra of 4 × 4 complex matrices. From (14) we see that
+STA has 24 = 16 degrees of freedom.
+One immediate simpliﬁcation brought by STA appears in the spacetime split.
+To write his equation in hamiltonian form, Dirac deﬁned 4 × 4 matrices
+αk = γkγ0
+(189)
+for k = 1, 2, 3. This is, in fact, a representation of the 2 × 2 Pauli matrices by
+4×4 matrices. STA eliminates this awkward and irrelevant distinction between
+matrix representations of diﬀerent dimension, so the αk can be identiﬁed with
+the σk, as we have already done in the spacetime split (43).
+There are several ways to represent a Dirac spinor in STA,18 but all repre-
+sentations are, of course, mathematically equivalent. The representation chosen
+here has the advantages of simplicity and, as we shall see, ease of interpretation.
+To distinguish a spinor ψ in STA from its matrix representation Ψ in the
+Dirac algebra, let us call it a real spinor to emphasize the elimination of the
+ungeometrical imaginary i′. Alternatively, we might refer to ψ as the operator
+representation of a Dirac spinor, because, as shown below, it plays the role of
+an operator generating observables in the theory.
+In terms of the real wave function ψ, the Dirac equation for an electron can
+be written in the form
+γµ(∂µψγ2γ1¯h −eAµψ) = mψγ0 ,
+(190)
+where m is the mass and e = −| e | is the charge of the electron, while the
+Aµ = A · γµ are components of the electromagnetic vector potential. To prove
+that this is equivalent to the standard matrix form of the Dirac equation,8 we
+simply interpret the γµ as matrices, multiply by u on the right and use (186)
+and (188) to get the standard form
+γµ(i′¯h∂µ −eAµ)Ψ = mΨ .
+(191)
+This completes the proof.
+Alternative proofs are given elsewhere.17–19
+The
+original converse derivation of (190) from (191) was much more indirect.14
+32
+Henceforth, we can work with the real Dirac equation (190) without refer-
+ence to its matrix representation (191). We know from previous Sections that
+computations in STA can be carried out without introducing a basis, and we
+recognize the so-called “Dirac operator” ▽= γµ∂µ as the vector derivative
+with respect to a spacetime point, so let us write the real Dirac equation in the
+coordinate-free form
+▽ψi¯h −eAψ = mψγ0 ,
+(192)
+where A = Aµγµ is the electromagnetic vector potential, and the notation
+i ≡γ2γ1 = iγ3γ0 = iσ3
+(193)
+emphasizes that this bivector plays the role of the imaginary i′ that appears
+explicitly in the matrix form (191) of the Dirac equation. To interpret the theory,
+it is crucial to note that the bivector i has a deﬁnite geometrical interpretation
+while i′ does not.
+B. Lorentz invariance.
+Equation (192) is Lorentz invariant, despite the explicit appearance of the
+constants γ0 and i = γ2γ1 in it. These constants need not be associated with
+vectors in a particular reference frame, though it is often convenient to do so.
+It is only required that γ0 be a ﬁxed, future-pointing, timelike unit vector while
+i is a spacelike unit bivector that commutes with γ0. The constants can be
+changed by a Lorentz rotation
+γµ →γ′
+µ = Cγµ C ,
+(194)
+where C is a constant rotor, so C C = 1,
+γ′
+0 = Cγ0 C
+and
+i′ = Ci C .
+(195)
+A corresponding change in the wave function,
+ψ →ψ′ = ψ C ,
+(196)
+induces a mapping of the Dirac equation (192) into an equation of the same
+form:
+▽ψi′¯h −eAψ′ = mψ′γ′
+0 .
+(197)
+This transformation is no more than a change of constants in the Dirac equation.
+It need not be coupled to a change in reference frame. Indeed, in the matrix
+formulation it can be interpreted as a mere change in matrix representation,
+that is, a change in the particular matrices selected to be associated with the
+vectors γµ, for (188) gives
+Ψ = ψu = ψ′u′ ,
+(198)
+where u′ = Cu.
+33
+For the special case
+C = eiϕ0 ,
+(199)
+where ϕ0 is a scalar constant, (195) gives γ′
+0 = γ0 and i′ = i, so ψ and
+ψ′ = ψeiϕ0
+(200)
+are solutions of the same equation. In other words, the Dirac equation does not
+distinguish solutions diﬀering by a constant phase factor.
+C. Charge conjugation.
+Note that σ2 = γ2γ0 anticommutes with both γ0 and i = iσ3, so multiplica-
+tion of the Dirac equation (192) on the right by σ2 yields
+▽ψCi¯h + eAψC = mψCγ0 ,
+(201)
+where
+ψC = ψσ2 .
+(202)
+The net eﬀect is to change the sign of the charge in the Dirac equation, there-
+fore, the transformation ψ →ψC can be interpreted as charge conjugation. Of
+course, the deﬁnition of charge conjugate is arbitrary up to a constant phase
+factor such as in (200). The main thing to notice here is that in (202) charge
+conjugation, like parity conjugation, is formulated as a completely geometrical
+transformation, without any reference to a complex conjugation operation of
+obscure physical meaning. Its geometric meaning is determined by what it does
+to the “frame of observables” identiﬁed below.
+D. Interpretation of the Dirac wave function.
+As explained in Section II, since the real Dirac wave function ψ = ψ(x) is an
+even multivector, we can write
+ψ ψ = ρeiβ ,
+(203)
+where ρ and β are scalars. Hence ψ has the Lorentz invariant decomposition
+ψ = (ρeiβ)
+1
+2 R,
+where
+RR = RR = 1 .
+(204)
+At each spacetime point x, the rotor R = R(x) determines a Lorentz rotation
+of a given ﬁxed frame of vectors {γµ} into a frame {eµ = eµ(x)} given by
+eµ = RγµR .
+(205)
+In other words, R determines a unique frame ﬁeld on spacetime.
+The physical interpretation given to the frame ﬁeld {eµ} is a key to the in-
+terpretation of the entire Dirac theory. Speciﬁcally, the eµ can be interpreted
+directly as descriptors of the kinematics of electron motion.
+It follows from
+(205), therefore, that the rotor ﬁeld R = R(x) is a descriptor of electron kine-
+matics.
+34
+It should be noted that (205) has the same algebraic form as the comoving
+frame (96) deﬁned on classical partical histories. Thus, (205) is a direct general-
+ization of (96) from frames on curves to frame ﬁelds on spacetime. Conversely,
+as we shall see, probability conservation in the Dirac theory permits a decompo-
+sition of the frame ﬁeld into bundles of comoving frames on Dirac “streamlines.”
+This provides a direct connection to the classical spinor particle mechanics in
+Section V and thereby a natural approach to the classical limit of the Dirac
+equation, as discussed in the next Section.
+Anticipating that the factor (ρeiβ)
+1
+2 can be given a statistical interpreta-
+tion, the canonical form (204) can be regarded as an invariant decomposition
+of the Dirac wave function into a 2-parameter statistical factor (ρeiβ)
+1
+2 and a
+6-parameter kinematical factor R.
+From (204), (205) and (196) we ﬁnd that
+ψγµ ψ = ψ′γ′
+µ ψ′ = ρeµ .
+(206)
+Note that we have here a set of four linearly independent vector ﬁelds which
+are invariant under the transformation speciﬁed by (194) and (195). Thus these
+ﬁelds do not depend on any coordinate system, despite the appearance of γµ on
+the left side of (206). Note also that the factor eiβ/2 in (204) does not contribute
+to (206), because the pseudoscalar i anticommutes with the γµ.
+Two of the vector ﬁelds in (206) are given physical interpretations in the
+standard Dirac theory. First, the vector ﬁeld
+ψγ0 ψ = ρe0 = ρv
+(207)
+is the Dirac current, which, in accord with the standard Born interpretation,
+we interpret as a probability current.
+Thus, at each spacetime point x the
+timelike vector v = v(x) = e0(x) is interpreted as the probable (proper) velocity
+of the electron, and ρ = ρ(x) is the relative probability (i.e. proper probability
+density) that the electron actually is at x. The correspondence of (207) to the
+conventional deﬁnition of the Dirac current is displayed in Table I.
+The probability conservation law
+▽· (ψγ0 ψ) = ▽· (ρv) = 0
+(208)
+follows directly from the Dirac equation. To prove that we can use (204) and
+(205) to put the Dirac equation (192) into the form
+¯h(▽ψ)γ0 ψ = mρeiβe1e2 + ρAe1e2e0,
+(209)
+from which it follows that
+[(▽ψ)γ0 ψ](0) = 1
+2[(▽ψ)γ0 ψ + ψγ0(▽ψ)](0)
+= 1
+2γµ · (∂µψγ0 ψ + ψγ0∂µ ψ) = 0.
+(210)
+The vector ﬁeld
+1
+2¯hψγ3 ψ = ρ 1
+2¯he3 = ρs
+(211)
+35
+TABLE I:
+BILINEAR COVARIANTS
+Scalar
+ΨΨ = Ψ†γ0Ψ = (ψ ψ)(0) = ρ cos β
+Vector
+ΨγµΨ = Ψ†γ0γµΨ = (ψγ0 ψγµ)(0) = (ψ†γ0γµψ)(0)
+= (ψγ0 ψ) · γµ = (ρv) · γµ = ρvµ
+Bivector
+e
+m
+i′¯h
+2
+Ψ1
+2
+
+γµγν −γνγµ
+
+Ψ = e¯h
+2m
+
+γµγνψγ2γ1 ψ
+
+(0)
+= (γµ∧γν) · (M) = Mνµ = e
+m ρ(ieiβsv) · (γµ∧γν)
+Pseudovector∗
+1
+2i′¯hΨγµγ5Ψ = 1
+2¯h(γµψγ3 ψ)(0) = γµ · (ρs) = ρsµ
+Pseudoscalar∗
+Ψγ5Ψ = (iψ ψ)(0) = −ρ sin β
+∗Here we use the more conventional symbol γ5=γ0γ1γ2γ3 for the matrix representation
+of the unit pseudoscalar i.
+will be interpreted as the spin vector density, in exact correspondence with
+the real PS theory.
+Justiﬁcation for this interpretation comes from angular
+momentum conservation treated below. Note in Table I that this vector quantity
+is represented as a pseudovector (or axial vector) quantity in the conventional
+matrix formulation. The spin pseudovector is correctly identiﬁed as is, as shown
+below.
+As we have noted before, angular momentum is actually a bivector quantity.
+The spin angular momentum S = S(x) is a bivector ﬁeld related to the spin
+vector ﬁeld s = s(x) by
+S = isv = 1
+2¯hie3e0 = 1
+2¯hRγ2γ1R = 1
+2R(i¯h)R.
+(212)
+The right side of this chain of equivalent representations shows the relation of
+the spin to the unit imaginary i appearing in the Dirac equation (192). Indeed,
+it shows that the bivector 1
+2i¯h is a reference representation of the spin that is
+rotated by the kinematical factor R into the local spin direction at each space-
+time point. This establishes an explicit connection between spin and imaginary
+numbers that is inherent in the Dirac theory but hidden in the conventional
+formulation, and, as we have already seen, remains even in the Schroedinger
+approximation.
+Explicit equations relating spin to the unit imaginary i′ in the PS theory are
+given in GA1. They apply without change in the Dirac theory, so the argument
+36
+need not be repeated here. The important fact is that for every solution of the
+Dirac equation, at each spacetime point x the bivector S = S(x) speciﬁes a
+deﬁnite spacelike tangent plane, a spin plane, if you will.
+Explicit identiﬁcation of S with spin is not made in standard accounts of the
+Dirac theory.8 Typically, they introduce the spin (density) tensor
+ρSναβ = i′¯h
+2
+Ψγν ∧γα ∧γβΨ = i′¯h
+2
+Ψγµγ5Ψϵµναβ = ρsµϵµναβ ,
+(213)
+where use has been made of the identity
+γν ∧γα ∧γβ = γµγ5ϵµναβ
+(214)
+and the expression for sµ in Table I. Note that the “alternating tensor” ϵµναβ
+can be deﬁned simply as the product of two pseudoscalars, thus
+ϵµναβ = −i(γµ ∧γν ∧γα ∧γβ) = −(iγµγνγαγβ)(0)
+= −(γ3 ∧γ2 ∧γ1 ∧γ0) · (γµ ∧γν ∧γα ∧γβ) .
+(215)
+γµ ∧γν ∧γα ∧γβ = iϵµναβ .
+(216)
+From (213) and (215) we ﬁnd
+Sναβ = sµϵµναβ = −i(s ∧γν ∧γα ∧γβ) = −(is) · (γν ∧γα ∧γβ) .
+(217)
+The last expression shows that the Sναβ are simply tensor components of the
+pseudovector is. Contraction of (217) with vν = v · γν and use of duality gives
+the desired relation between Sναβ and S:
+vνSναβ = −i(s ∧v ∧γα ∧γβ) = −[ i(s ∧v) ] · (γα ∧γβ)
+= S · (γβ ∧γα) = Sαβ .
+(218)
+Its signiﬁcance will be made clear in the discussion of angular momentum con-
+servation.
+Note that the spin bivector and its relation to the unit imaginary is invisible
+in the standard version of the bilinear covariants in Table I. The spin S is buried
+there in the magnetization (tensor or bivector). The magnetization M can be
+deﬁned and related to the spin by
+M = e¯h
+2m ψγ2γ1 ψ = e¯h
+2m ρeiβe2e1 = e
+m ρSeiβ .
+(219)
+One source for the interpretation of M as magnetization is the Gordon decom-
+position of the Dirac current given below. Equation (219) reveals that in the
+Dirac theory the magnetic moment is not simply proportional to the spin as
+often asserted; the two are related by a duality rotation produced by the factor
+eiβ. It may be appreciated that this relation of M to S is much simpler than any
+relation of M αβ to Sναβ in the literature, another indication that S is the most
+appropriate representation for spin. By the way, note that (219) provides some
+37
+justiﬁcation for referring to β henceforth as the duality parameter. The name
+is noncommittal to the physical interpretation of β, a debatable issue discussed
+later.
+We are now better able to assess the content of Table I. There are 1+4+6+4+
+1 = 16 distinct bilinear covariants but only 8 parameters in the wave function,
+so the various covariants are not mutually independent. Their interdependence
+has been expressed in the literature by a system of algebraic relations known as
+“Fierz Identities.”20 However, the invariant decomposition of the wave function
+(204) reduces the relations to their simplest common terms.
+Table I shows
+exactly how the covariants are related by expressing them in terms of ρ, β, vµ,
+sµ, which constitutes a set of 7 independent parameters, since the velocity and
+spin vectors are constrained by the three conditions that they are orthogonal
+and have constant magnitudes. This parametrization reduces the derivation of
+any Fierz identity practically to inspection. Note, for example, that
+ρ2 = (ΨΨ)2 + (Ψγ5Ψ)2 = (ΨγµΨ)(ΨγµΨ) = −(Ψγµγ5Ψ)(Ψγµγ5Ψ) . (220)
+Evidently Table I tells us all we need to know about the bilinear covariants and
+makes further reference to Fierz identities superﬂuous.
+Note that the factor i′¯h occurs explicitly in Table I only in those expressions
+involving electron spin. The conventional justiﬁcation for including the i′ is to
+make antihermitian operators hermitian so the bilinear covariants are real. We
+have seen however that this smuggles spin into the expressions. That can be
+made explicit by using (212) to derive the general identity
+i′¯hΨΓΨ = ΨΓγαγβΨSαβ ,
+(221)
+where Γ is any matrix operator.
+Perhaps the most signiﬁcant thing to note about Table I is that only 7 of
+the 8 parameters in the wave function are involved. The missing parameter is
+the phase of the wave function. To understand the signiﬁcance of this, note
+also that, in contrast to the vectors e0 and e3 representing velocity and spin
+directions, the vectors e1 and e2 do not appear in Table I except indirectly in
+the product e2e1. The missing parameter is one of the six parameters implicit in
+the rotor R determining the Lorentz rotation (205). We have already noted that
+5 of these parameters are needed to determine the velocity and spin directions
+e0 and e3. By duality, these vectors also determine the direction e2e1 = ie3e0
+of the “spin plane” containing e1 and e2. The remaining parameter therefore
+determines the directions of e1 and e2 in this plane. It is literally an angle of
+rotation in this plane and the spin bivector ˆS = e2e1 = RiR is the generator
+of the rotation. Thus, in full accord with PS theory we arrive at a geometrical
+interpretation of the phase of the wave function that is inherent in the Dirac
+theory. But all of this is invisible in the conventional matrix formulation.
+The purpose of Table I is to explicate the correspondence of the matrix formu-
+lation to the real (STA) formulation of the Dirac theory. Once it is understood
+that the two formulations are completely isomorphic, the matrix formulation
+38
+can be dispensed with and Table I becomes superﬂuous. By revealing the geo-
+metrical meaning of the unit imaginary and the wave function phase along with
+this connection to spin, STA challenges us to ascertain the physical signiﬁcance
+of these geometrical facts.
+E. Conservation laws.
+One of the miracles of the Dirac theory was the spontaneous emergence of
+spin in the theory when nothing about spin seemed to be included in the as-
+sumptions. This miracle has been attributed to Dirac’s derivation of his lin-
+earized relativistic wave equation, so spin has been said to be “a relativistic
+phenomenon.” However, we have seen that the “Dirac operator” ▽= γµ∂µ is
+a generic spacetime derivative equally suited to the formulation of Maxwell’s
+equation, and we have concluded that the Dirac algebra arises from spacetime
+geometry rather than anything special about quantum theory. The origin of
+spin must be elsewhere.
+Our ultimate objective is to ascertain precisely what features of the Dirac
+theory are responsible for its extraordinary empirical success and to establish
+a coherent physical interpretation that accounts for all its salient aspects. The
+geometric insights of STA provide us with a perspective from which to criticize
+some conventional beliefs about quantum mechanics and so leads us to some
+unconventional conclusions. However, our purpose here is merely to raise sig-
+niﬁcant issues by introducing suggestive interpretations.
+Much more will be
+required to claim deﬁnitive conclusions.
+The physical interpretation of standard quantum mechanics is centered on
+meaning ascribed to the kinetic energy-momentum operators pµ deﬁned in the
+conventional matrix theory by
+pµ = i′¯h∂µ −e Aµ .
+(222)
+In the STA formulation they are deﬁned by
+pµ = i¯h∂µ −e Aµ ,
+(223)
+where the underbar signiﬁes a “linear operator” and the operator i signiﬁes
+right multiplication by the bivector i = γ2γ1, as deﬁned by
+iψ = ψi .
+(224)
+The importance of (223) can hardly be overemphasized. Above all, it embodies
+the fruitful “minimal coupling” rule, a fundamental principle of gauge theory
+that ﬁxes the form of electromagnetic interactions. In this capacity it plays a
+crucial heuristic role in the original formulation of the Dirac equation, as is clear
+when the equation is written in the form
+γµpµψ = ψγ0m .
+(225)
+However, the STA formulation tells us even more. It reveals geometrical proper-
+ties of the pµ that provide clues to a deeper physical meaning. We have already
+noted a connection of the factor i¯h with spin. We establish below that this
+connection is a consequence of the form and interpretation of the pµ. Thus,
+39
+TABLE II:
+Observables of the energy-momentum operator,
+relating real and matrix versions.
+Energy-momentum tensor
+T µν = T µ · γν = (γ0 ψγµpνψ)(0)
+= ΨγµpνΨ
+Kinetic energy density
+T 00 = (ψ†p0ψ)(0) = Ψ†p0Ψ
+Kinetic momentum density
+T 0k = (ψ†pkψ)(0) = Ψ†pkΨ
+Angular Momentum tensor
+Jναβ =
+
+T ν ∧x + iρ(s ∧γν)
+
+· (γβ ∧γα)
+= T ναxβ −T νβxα −i′¯h
+2
+Ψγ5γµΨϵµναβ
+Gordon current
+Kµ = e
+m ( ψpµψ)(0) = e
+m
+ΨpµΨ
+spin was inadvertently smuggled into the Dirac theory by the pµ, hidden in the
+innocent looking factor i′¯h. Its sudden appearance was only incidentally related
+to relativity. History has shown that it is impossible to recognize this fact in
+the conventional formulation of the Dirac theory. The connection of i′¯h with
+spin is not inherent in the pµ alone. It appears only when the pµ operate on the
+wave function, as is evident from (212). This leads to the conclusion that the
+signiﬁcance of the pµ lies in what they imply about the physical meaning of the
+wave function. Indeed, the STA formulation reveals that the pµ have something
+important to tell us about the kinematics of electron motion.
+F. Energy-momentum tensor.
+The operators pµ or, equivalently, pµ = γµ · γν pν acquire a physical meaning
+when used to deﬁne the components T µν of the electron energy-momentum
+tensor:
+T µν = T µ · γν = (γ0 ψγµpνψ)(0) = (ψ†γ0 γµpνψ)(0) .
+(226)
+Its matrix equivalent is given in Table II. As mentioned in the discussion of
+the electromagnetic energy-momentum tensor,
+T µ = T(γµ) = T µνγν
+(227)
+is the energy-momentum ﬂux through a hyperplane with normal γµ.
+The
+energy-momentum density in the electron rest system is
+T(v) = vµT µ = ρ p .
+(228)
+40
+This deﬁnes the “expected” proper momentum p = p(x). The observable p =
+p(x) is a statistical prediction for the momentum of the electron at x. In gen-
+eral, the momentum p is not collinear with the velocity, because it includes a
+contribution from the spin. A measure of this noncollinearity is p ∧v, which
+should be recognized as deﬁning the relative momentum in the electron rest
+frame.
+From the deﬁnition (226) of T µν in terms of the Dirac wave function, mo-
+mentum and angular momentum conservation laws can be established by direct
+calculation from the Dirac equation. First, it is found that17
+∂µT µ = F · J ,
+(229)
+where F = ▽∧A is the electromagnetic ﬁeld and
+J = eψγ0 ψ = eρv
+(230)
+is identiﬁed as the charge current (density), so charge conservation ▽· J = 0
+is an immediate consequence of probability conservation.
+The right side of
+(229) is exactly the classical Lorentz force, so using (169) and denoting the
+electromagnetic energy-momentum tensor (168) by T µ
+EM, we can rephrase (229)
+as the total energy-momentum conservation law
+∂µ(T µ + T µ
+EM) = 0 .
+(231)
+This justiﬁes identifying the Dirac current with the charge current of the elec-
+tron.
+G. Angular momentum conservation.
+To derive the angular momentum conservation law, we identify T µ ∧x as
+the orbital angular momentum tensor (See Table II for comparison with more
+conventional expressions). Noting that ∂µx = γµ, we calculate
+∂µ(T µ ∧x) = T µ ∧γµ + ∂µT µ ∧x .
+(232)
+To evaluate the ﬁrst term on the right, we return to the deﬁnition (226) and
+ﬁnd
+γµT µν = [ (pνψ)γ0 ψ ](1) = 1
+2
+
+(pνψ)γ0 ψ + ψγ0(pνψ) 
+= (pνψ)γ0 ψ −∂ν( 1
+2¯hψiγ3 ψ) .
+(233)
+Summing with γν and using the Dirac equation (225) to evaluate the ﬁrst term
+on the right while recognizing the spin vector (211) in the second term, we
+obtain
+γνγµT µν = mψ ψ + ▽(ρsi) .
+(234)
+The scalar part gives the curious result
+T µ
+µ = T µ · γµ = mρ cos β .
+(235)
+However, the bivector part gives the relation we are looking for:
+T µ ∧γµ = T νµγν ∧γµ = ▽· (ρsi) = −∂µ(ρSµ) ,
+(236)
+41
+where
+Sµ = (is) · γµ = i(s ∧γµ)
+(237)
+is the spin angular momentum tensor already identiﬁed in (213) and (217). Thus
+from (232) and (229) we obtain the angular momentum conservation law
+∂µJµ = (F · J) ∧x ,
+(238)
+where
+J(γµ) = Jµ = T µ ∧x + ρSµ
+(239)
+is the bivector-valued angular momentum tensor, representing the total angular
+momentum ﬂux in the γµ direction. In the electron rest system, therefore, the
+angular momentum density is
+J(v) = ρ(p ∧x + S) ,
+(240)
+where recalling (199), p∧x is recognized as the expected orbital angular momen-
+tum and as already advertised in (212), S = isv can be identiﬁed as an intrinsic
+angular momentum or spin. This completes the justiﬁcation for interpreting S
+as spin. The task remaining is to dig deeper and understand its origin.
+H. Local observables.
+We now have a complete set of conservation laws for the local observables
+ρ, v, S and p, but we still need to ascertain precisely how the kinetic momentum
+p is related to the wave function. For that purpose we employ the invariant
+decomposition ψ = (ρeiβ)
+1
+2 R. First we need some kinematics. By diﬀerentiating
+RR = 1, it is easy to prove that the derivatives of the rotor R must have the
+form
+∂µR = 1
+2 ΩµR ,
+(241)
+where Ωµ = Ωµ(x) is a bivector ﬁeld. Consequently the derivatives of the eν
+deﬁned by (205) have the form
+∂µeν = Ωµ · eν .
+(242)
+Thus Ωµ is the rotation rate of the frame {eν} as it is displaced in the direction
+γµ.
+Now, with the help of (212), the eﬀect of pν on ψ can be put in the form
+pνψ = [ ∂ν(ln ρ + iβ) + Ων ]Sψ −eAνψ ,
+(243)
+whence
+(pνψ)γ0 ψ = [ ∂ν(ln ρ + iβ) + Ων ]iρs −eAνρv .
+(244)
+Inserting this in the deﬁnition (226) for the energy-momentum tensor, after
+some manipulations beginning with is = Sv, we get the explicit expression
+Tµν = ρ
+
+vµ(Ων · S −eAν) −(γµ ∧v) · (∂νS) −sµ∂νβ
+
+.
+(245)
+42
+From this we ﬁnd, by (228), the momentum components
+pν = Ων · S −eAν .
+(246)
+This reveals that (apart from the Aν contribution) the momentum has a kine-
+matical meaning related to the spin: It is completely determined by the compo-
+nent of Ων in the spin plane. In other words, it describes the rotation rate of
+the frame {eµ} in the spin plane or, if you will “about the spin axis.” But we
+have identiﬁed the angle of rotation in this plane with the phase of the wave
+function. Thus, the momentum describes the phase change in all directions of
+the wave function or, equivalently, of the frame {eµ}. A physical interpretation
+for this geometrical fact will be oﬀered in the next Section.
+The kinematical import of the operator pν is derived from its action on the
+rotor R. To make that explicit, write (241) in the form
+(∂νR)i¯hR = ΩνS = Ων · S + Ων ∧S + ∂νS ,
+(247)
+where (212) was used to establish that
+∂νS = 1
+2[ Ων, S ] = 1
+2(ΩνS −SΩν) .
+(248)
+Introducing the abbreviation
+iqν = Ων ∧S ,
+(249)
+and using (246) we can put (247) in the form
+(pνR)R = pν + iqν + ∂νS .
+(250)
+This shows explicitly how the operator pν relates to kinematical observables,
+although the physical signiﬁcance of qν is obscure. Note that both pν and ∂νS
+contribute to Tµν in (245), but qν does not. By the way, it should be noted
+that the last two terms in (245) describe energy-momentum ﬂux orthogonal to
+the v direction. It is altogether natural that this ﬂux should depend on the
+component of ∂νS as shown. However, the signiﬁcance of the parameter β in
+the last term of (245) remains obscure.
+An auxiliary conservation law can be derived from the Dirac equation by
+decomposing the Dirac current as follows. Solving (225) for the Dirac charge
+current, we have
+J = eψγ0 ψ = e
+m γµ(pµψ) ψ .
+(251)
+The identity (250) is easily generalized to
+(pµψ) ψ = (pµ + iqµ)ρeiβ + ∂µ(ρSeiβ) .
+(252)
+The right side exhibits the scalar, pseudoscalar and bivector parts explicitly.
+From the scalar part we deﬁne the Gordon current:
+Kµ = e
+m [ (pµψ) ψ ](0) = e
+m ( ψpµψ)(0) = e
+m (pµρ cos β −qµρ sin β) .
+(253)
+43
+Or in vector form,
+K = e
+m ρ(p cos β −q sin β) .
+(254)
+When (252) is inserted into (251), the pseudovector part must vanish, and the
+vector part gives us the so-called “Gordon decomposition”
+J = K + ▽· M,
+(255)
+where the deﬁnition (219) of the magnetization tensor M has been introduced
+for the last term in (252) This is ostensibly a decomposition into a conduction
+current K and a magnetization current ▽· M, both of which are separately
+conserved. But how does this square with the physical interpretation already
+ascribed to J? The possibility that it arises from a substructure in the charge
+ﬂow is considered in the next Section.
+So far we have supplied a physical interpretation for all parameters in the
+wave function (204) except the “duality parameter” β. To date, this parameter
+has deﬁed all eﬀorts at physical interpretation, because of its peculiar “duality
+role.” For example, a straightforward interpretation of the Gordon current in
+(254) as a conduction current is confounded by β ̸= 0. Similarly, equation (219)
+tells us that the magnetization (magnetic moment density) M is not directly
+proportional to the spin (as commonly supposed) but “dually proportional.”
+The duality factor eiβ has the eﬀect of generating an eﬀective electric dipole
+moment for the electron, as is easily shown by applying the spacetime split
+(181) to M. This seems to conﬂict with experimental evidence that the electron
+has no detectable electric moment, but the issue is subtle. We are forced to
+leave the problem of interpreting β as unresolved, though it rises again in the
+next Section.
+VIII. Interpretation of Quantum Mechanics
+Quantum mechanics has been spectacularly successful over an immense range
+of applications, so there is little doubt about the eﬃcacy of its mathematical
+formulation. However, the physical interpretation of quantum mechanics has
+remained a matter of intense debate. Two prominent alternatives have emerged
+in the literature: the Copenhagen interpretation championed by Niels Bohr, and
+the causal interpretation championed by David Bohm. These two interpretations
+are so radically diﬀerent as to constitute diﬀerent physical theories, though they
+share the same mathematical formulation. The essential diﬀerence is that the
+causal theory asserts that electrons have continuous paths in spacetime, whereas
+the Copenhagen theory denies that.
+James Cushing21 has traced the history of the dispute between these theories
+and critically reviewed arguments in support of the causal theory. In agreement
+with many other commentators, he concludes that the causal theory is perfectly
+viable, and every objection from the Copenhagen camp has been adequately
+answered in the literature. He traces the dispute from the inception of quantum
+44
+mechanics and comes to the surprising conclusion that the dominance of the
+Copenhagen theory in the physics literature is a historical accident that could
+easily have been deﬂected in favor of the causal theory instead.
+Our real formulation of Schroedinger-Pauli-Dirac theory puts the causal-
+Copenhagen dispute in new light by making the geometric structure of the
+equations more explicit. The causal theory admits to a much more detailed
+physical interpretation of this structure than the Copenhagen theory, including
+hidden structure revealed by the real formulation. However, since real QM is
+mathematically isomorphic with standard QM, our analysis does not contradict
+successes of the Copenhagen theory.
+Real QM does raise some questions for Copenhagen theory though. First,
+questions about the relation of observables to operators in QM are raised by
+the realization that both hermiticity and noncommutivity of Pauli and Dirac
+matrices have clear geometric meanings with no necessary connection to QM.
+Second, any interpretation of uncertainty relations should account for the fact
+that Planck’s constant enters the Dirac equation only as the magnitude of the
+spin. What indeed does spin have to do with limitations on observability?
+The causal theory does not resolve all the mysteries of QM. Rather it replaces
+the mysteries of Copenhagen theory with a diﬀerent set of mysteries. As the
+two theories are mathematically equivalent, the choice between them could be
+regarded as a matter of taste. However, they suggest very diﬀerent directions
+for research that could lead to testable diﬀerences between them.
+Our discussion here is concentrated on the geometry of the single particle
+Dirac theory as a guide to physical interpretation. Many particle theory raises
+new issues. We merely note that Bohm and his followers have extended the
+causal theory to the many particle case22,23 and demonstrated its use in ex-
+plaining such mysterious QM eﬀects as entanglement. As real QM is so similar
+to Bohm’s theory in the one-particle case, it has a straightforward extension to
+the many-particle case by following Bohm. No position on the validity of that
+extension is taken here.
+A. Electron trajectories.
+In classical theory the concept of particle refers to an object of negligible size
+with a continuous trajectory. Copenhagen theory asserts that it is meaningless
+or impossible in quantum mechanics to regard the electron as a particle in this
+sense. On the contrary, Bohm argues that the diﬀerence between classical and
+quantum mechanics is not in the concept of particle itself but in the equation
+for particle trajectories. From Schroedinger’s equation he derived an equation
+of motion for the electron that diﬀers from the classical equation only in a
+statistical term called the “quantum force.” He was careful, however, not to
+commit himself to any special hypothesis about the origins of the quantum
+force. He accepted the form of the force dictated by Schroedinger’s equation,
+and he took pains to show that all implications of Schroedinger theory are
+compatible with a strict particle interpretation.
+Adopting the same general
+particle interpretation of the Dirac theory, we ﬁnd a generalization of Bohm’s
+equation that provides a new perspective on the quantum force.
+The Dirac current ρv assigns a unit timelike vector v(x) to each spacetime
+45
+point x where ρ ̸= 0. In accordance with the causal theory, we interpret v(x) as
+the expected proper velocity of the electron at x, that is, the velocity predicted
+for the electron if it happens to be at x.
+The velocity v(x) deﬁnes a local
+reference frame at x called the electron rest frame. The proper probability density
+ρ = (ρv) · v can be interpreted as the probability density in the rest frame. By a
+well known theorem, the probability conservation law (208) implies that through
+each spacetime point there passes a unique integral curve that is tangent to v
+at each of its points. Let us call these curves (electron) streamlines. In any
+spacetime region where ρ ̸= 0, a solution of the Dirac equation determines a
+family of streamlines that ﬁlls the region with exactly one streamline through
+each point. The streamline through a speciﬁc point x0 is the expected history
+of an electron at x0, that is, it is the optimal prediction for the history of
+an electron that actually is at x0 (with relative probability ρ(x0), of course!).
+Parametrized by proper time τ, the streamline x = x(τ) is determined by the
+equation
+dx
+dτ = v(x(τ)) .
+(256)
+The main objection to a strict particle interpretation of the Schroedinger and
+Dirac theories is the Copenhagen claim that a wave interpretation is essential to
+explain diﬀraction. The causal theory claims otherwise, based on the fact that
+the wave function determines a unique family of electron trajectories. For dou-
+ble slit diﬀraction these trajectories have been calculated from Schroedinger’s
+equation,24,25 and, recently, from the Dirac equation.15 Sure enough, after ﬂow-
+ing uniformly through the slits, the trajectories bunch up at diﬀraction maxima
+and thin out at the minima. According to Bohm, the cause of this phenomenon
+is the quantum force rather than wave interference. This shows at least that the
+particle interpretation is not inconsistent with diﬀraction phenomena, though
+the origin of the quantum force remains to be explained. The obvious objections
+to this account of diﬀraction have been adequately refuted in the literature.21 It
+is worth noting, though, that this account has the decided advantage of avoid-
+ing the paradoxical “collapse of the wave function” inherent in the “dualist”
+Copenhagen explanation of diﬀraction. At no time is it claimed that the elec-
+tron spreads out like a wave to interfere with itself and then “collapses” when
+it is detected in a localized region. The claim is only that the electron is likely
+to travel on one of a family of possible trajectories consistent with experimental
+constraints; which trajectory is known initially only with a certain probabil-
+ity, though it can be inferred more precisely after detection in the ﬁnal state.
+Indeed, it is possible then to infer which slit the electron passed through.24
+These remarks apply to the Dirac theory as well as to the Schroedinger theory,
+though there are some diﬀerences in the predicted trajectories,15 because the
+Schroedinger current is the nonrelativistic limit of the Gordon current rather
+than the Dirac current.29
+Now let us investigate the equations for motion along a Dirac streamline
+x = x(τ). On this curve the kinematical factor in the Dirac wave function (204)
+46
+can be expressed as a function of proper time
+R = R(x(τ)) .
+(257)
+By (205), (207) and (256), this determines a comoving frame
+eµ = R γµR
+(258)
+on the streamline with velocity v = e0, while the spin vector s and bivector S
+are given as before by (211) and (212). In accordance with (241), diﬀerentiation
+of (257) leads to
+˙R = v · ▽R = 1
+2ΩR ,
+(259)
+where the overdot indicates diﬀerentiation with respect to proper time, and
+Ω= vµΩµ = Ω(x(τ))
+(260)
+is the rotational velocity of the frame {eµ}. Accordingly,
+˙eµ = v · ▽eµ = Ω· eµ .
+(261)
+But these equations are identical in form to those in Section V for the classical
+theory of a relativistic rigid body with negligible size. This is a consequence
+of the particle interpretation. In Bohmian terms, the only diﬀerence between
+classical and quantum theory is in the functional form of Ω. Our main task,
+therefore, is to investigate what the Dirac theory tells us about Ω.
+We begin by examining the special case of a free particle and the simplest
+approach to the classical limit. Then we formulate the causal theory in the
+most general terms and discuss its extension to a more detailed interpretation
+of Dirac theory.
+B. Solutions of the Dirac equation.
+This is not the place for a systematic study of solutions to the Dirac equation.
+Suﬃce it to say that every solution in the matrix theory has a corresponding
+solution in the real theory. To show what a “real solution” looks like and the
+physical insight that it oﬀers, we consider the simplest example of a free particle.
+For a free particle with proper momentum p, the wave function ψ is an eigen-
+state of the “proper momentum operator” (223), that is,
+pψ = pψ,
+(262)
+so the Dirac equation (225) reduces to the algebraic equation
+pψ = ψγ0m.
+(263)
+The solution is a plane wave of the form
+ψ = (ρeiβ)
+1
+2 R = ρ
+1
+2 eiβ/2R0e−ip·x/¯h ,
+(264)
+where the kinematical factor R has been decomposed to explicitly exhibit its
+spacetime dependence on a phase satisfying ▽p · x = p. Inserting this into (223)
+and solving for p we get
+p = meiβRγ0R = mve−iβ .
+(265)
+47
+This implies eiβ = ±1, so
+eiβ/2 = 1 or i ,
+(266)
+and p = ±mv corresponding to two distinct solutions. One solution appears to
+have negative energy E = p · γ0, but that can be rectiﬁed by changing the sign
+in the phase of the “trial solution” (264).
+Thus we obtain two distinct kinds of plane wave solutions with positive energy
+E = p · γ0:
+ψ−= ρ
+1
+2 R0e−ip·x/¯h ,
+(267)
+ψ+ = ρ
+1
+2 iR0e+ip·x/¯h .
+(268)
+We identify these as electron and positron wave functions.
+Indeed, the two
+solutions are related by charge conjugation.
+According to (202), the charge
+conjugate of (267) is
+ψC
+−= ψ−σ2 = ρ
+1
+2 iR′
+0e+ip·x/¯h ,
+(269)
+where
+R′
+0 = R0(−iσ2) .
+(270)
+The factor −iσ2 represents a spatial rotation that just “ﬂips” the direction of
+the spin vector. Evidently (268) and (269) are both positron solutions, but with
+oppositely directed spins.
+Determining the comoving frame (258) for the electron solution (267), we ﬁnd
+that the velocity v = R0γ0R0 and the spin s = 1
+2¯hR0γ3R0 are constant, but,
+for k = 1, 2,
+ek(τ) = ek(0)e−p·x/S = ek(0)ee2e1ωτ ,
+(271)
+where τ = v · x is the proper time along the streamline and frequency ω is given
+by
+ω = 2m
+¯h = 1.6 × 1021 s−1 .
+(272)
+Thus, the streamlines are straight lines along which the spin is constant, and
+e1 and e2 rotate about the “spin axis” with the ultrahigh frequency (272) as the
+electron moves along the streamline. A similar result is found for the positron
+solution.
+For applications, the constants in the solution must be speciﬁed in more detail.
+If the wave functions are normalized to one particle per unit volume V in the
+γ0-system, then we have
+ρ0 = γ0 · (ρv) = 1
+V
+or
+ρ = m
+EV =
+1
+γ0 · vV .
+(273)
+48
+To separate velocity and spin variables, we follow the procedure beginning with
+(80) to make the spacetime split
+R = LU
+where
+U = U0e−ip·x/¯h .
+(274)
+Inserting this into (263), we can express L in terms of p and γ0, as already
+shown in (88). The rotor U describes the spin direction in the same way as in
+the Pauli theory in GA1.
+C. The classical limit.
+One way to get a classical limit is through an “eikonal approximation” to the
+Dirac equation. Accordingly, the wave function is set in the form
+ψ = ψ0e−iϕ/¯h .
+(275)
+Then the “amplitude” ψ0 is assumed to be slowly varying compared to the
+“phase” ϕ, so the derivatives of ψ0 in the Dirac equation can be neglected to a
+good approximation. Thus, inserting (275) into the Dirac equation, say in the
+form (192), we obtain
+(▽ϕ −eA)eiβ = mv .
+(276)
+As in the plane wave case (265) this implies eiβ = ±1, and the two values
+correspond to electron and positron solutions. For the electron case,
+▽ϕ −eA = mv .
+(277)
+This deﬁnes a family of classical histories in spacetime. For a given external
+potential A = A(x), the phase ϕ can be found by solving the “Hamilton-Jacobi
+equation”
+(▽ϕ −eA)2 = m2 ,
+(278)
+obtained by squaring (277). On the other hand, the curl of (277) gives
+m▽∧v = −e▽∧A = −eF .
+(279)
+Dotting this with v and using the identity
+˙v = v · (▽∧v) = v · ▽v,
+(280)
+we obtain exactly the classical Lorentz force for each streamline.
+Inserting (279) into (287), we obtain
+Ω= e
+m F + (m + eA · v)S−1 .
+(281)
+Whence the rotor equation (259) assumes the explicit form
+˙R =
+e
+2m FR −Ri(m + eA · v)/¯h .
+(282)
+This admits a solution by separation of variables:
+R = R0e−iϕ/¯h ,
+(283)
+49
+where
+˙R0 =
+e
+2m FR0
+(284)
+and
+˙ϕ = v · ▽ϕ = m + eA · v .
+(285)
+Equation (284) is identical with the classical rotor equation (99) with Lorentz
+torque, while (285) can be obtained from (277).
+Thus, in the eikonal approximation the quantum equation for a comoving
+frame diﬀers from the classical equation only in having additional rotation in
+the spin plane. Quantum mechanics also assigns energy to this rotation, and
+an explicit expression for it is obtained by inserting (281) into (246), with the
+interesting result
+p · v = m + e
+m F · S .
+(286)
+This is what one would expect classically if there were some sort of localized
+motion in the spin plane.
+Note that the high frequency rotation rate (272)
+due to the mass is shifted by a magnetic type interaction. That possibility is
+considered below.
+The two kinds of solutions distinguished by the values of β in (266) and
+(276) suggest that β parametrizes an admixture of particle–antiparticle states.
+Unfortunately, that is inconsistent with more general solutions of the Dirac
+equation, such as the Darwin solutions for the Hydrogen atom. One way out of
+the dilemma is simply to assert that it shows the need for second quantization,
+but that solution is too facile without further argument.
+D. Quantum torque
+Having gained some physical insight from special cases, let us turn to the
+derivation of a general equation for a Dirac streamline. For this purpose, we
+know that the rotor equation (259) is optimal. All we need is an explicit form
+for the rotational velocity Ωdeﬁned by (260). A general expression for Ωin
+terms of observables has been derived from the Dirac equation in two steps.17
+The ﬁrst step yields the interesting result
+Ω= −▽∧v + v · (i▽β) + (m cos β + eA · v)S−1 .
+(287)
+But this tells us nothing about particle streamlines, because it gives us the
+identity (280) for the velocity. The second step yields
+−▽∧v + v · (i▽β) = m−1(eFeiβ + Q) ,
+(288)
+where Q has the complicated form
+Q = −eiβ{ ∂µW µ + 1
+2(γµ ∧γν)[(W µ × W ν)S−1 ]}(2) ,
+(289)
+where A × B is the commutator product and
+Wµ = (ρeiβ)−1∂µ(ρeiβS) = ∂µS + S∂µ(ln ρ + iβ) .
+(290)
+50
+Hence,
+Ω= e
+mFeiβ + m−1Q + (m cos β + eA · v)S−1 .
+(291)
+This is the desired result in its most general form.
+Again we see the Lorentz torque in (291), but multiplied by the duality factor
+eiβ. Again the cases with opposite charge are covered by cos β = ±1, and that
+assignment simpliﬁes the other terms in (291) as well. However, the value of β
+is set by solving the Dirac equation, and in solutions for the Hydrogen atom,
+for example, β is a variable function of position that so far has deﬁed physical
+interpretation.
+The term Q in (291) generalizes the “quantum force” term that Bohm iden-
+tiﬁes in Schroedinger theory as responsible for quantum eﬀects on particle mo-
+tion.22 Like the “Lorentz torque” it exerts a torque on the spin as well as a
+force on the motion, so let us call Q the quantum torque. From (290) we see
+that Q is independent of normalization on the probability density ρ, as Bohm
+has observed for the quantum force. However, the striking new insight brought
+by the Dirac theory and made explicit by (289) and (290) is that the quantum
+torque is derived from spin. To put it baldly: No spin! No quantum torque!
+No quantum force! No quantum eﬀects! This may be the strongest theoretical
+evidence that spin is an essential ingredient of QM, not simply an “add-on” to
+more basic quantum behavior.
+Though Bohm never noticed it, the quantum force is spin dependent even in
+Schroedinger theory, provided it is derived from Dirac theory.29
+The expression (291) for Ωmay be the best starting place for studying the
+classical limit. The classical limit can be characterized ﬁrst by ∂µln ρ →0 and,
+say, cos β = 1; second, by ∂µS = vµ ˙S, which comes from assuming that only
+the variation of S along the history can aﬀect the motion. Accordingly, (289)
+reduces to Q =
+..
+S, and for the limiting classical equations of motion for a particle
+with intrinsic spin we obtain
+m˙v = (eF −
+..
+S) · v ,
+(292)
+m ˙S = (eF −
+..
+S)×S .
+(293)
+These coupled equations have not been seriously studied. Of course, they should
+be studied in conjunction with the spinor equation (259).
+E. Zitterbewegung.
+Many students of the Dirac theory including Schroedinger26,27 and Bohm22
+have suggested that the spin of a Dirac electron is generated by localized par-
+ticle circulation that Schroedinger called zitterbewegung (= trembling motion).
+Schroedinger’s original analysis applied only to free particles. However, the real
+Dirac theory provides a natural extension of the interpretation to all solutions of
+the Dirac equation. Since the Dirac equation is the prototypical equation for all
+fermions, the interpretation extends broadly to quantum mechanics. It has been
+dubbed the the zitterbewegung (zbw) interpretation of quantum mechanics.28
+51
+The zbw interpretation can be regarded as a reﬁnement of the causal in-
+terpretation of QM, so it needs to be evaluated in the same light. Its main
+advantage is the simple, coherent picture it gives for electron motion. Here is a
+brief introduction to the idea.
+We have seen that the kinematics of electron motion is completely character-
+ized by the “Dirac rotor” R in the invariant decomposition (204) of the wave
+function. The Dirac rotor determines a comoving frame {eµ = R γµR} that ro-
+tates at high frequency in the e2e1-plane, the “spin plane,” as the electron moves
+along a streamline. Moreover, according to (286) there is energy associated with
+this rotation, indeed, all the rest energy p · v of the electron. These facts sug-
+gest that the electron mass, spin and magnetic moment are manifestations of
+a local circular motion of the electron. Mindful that the velocity attributed to
+the electron is an independent assumption imposed on the Dirac theory from
+physical considerations, we recognize that this suggestion can be accommodated
+by giving the electron a component of velocity in the spin plane. Accordingly,
+we now deﬁne the electron velocity u by
+u = v −e2 = e0 −e2 .
+(294)
+The choice u2 = 0 has the advantage that the electron mass can be attributed
+to kinetic energy of self interaction while the spin is the corresponding angular
+momentum.28
+This new identiﬁcation of electron velocity makes the plane wave solutions
+more physically meaningful. For p · x = mv · x = mτ, the kinematical factor for
+the solution (267) can be written in the form
+R = e
+1
+2 ΩτR0 ,
+(295)
+where Ωis the constant bivector
+Ω= mS−1 = 2m
+¯h e1e2 .
+(296)
+From (295) it follows that v is constant and
+e2(τ) = eΩτe2(0) .
+(297)
+So u = ˙z can be integrated immediately to get the electron history
+z(τ) = vτ + (eΩτ −1)r0 + z0 ,
+(298)
+where r0 = Ω−1e2(0). This is a lightlike helix centered on the Dirac streamline
+x(τ) = vτ + z0 −r0. In the electron “rest system” deﬁned by v, it projects to a
+circular orbit of radius
+| r0 | = | Ω−1 | = ¯h
+2m = 1.9 × 10−13m .
+(299)
+The diameter of the orbit is thus equal to an electron Compton wavelength. For
+r(τ) = eΩτr0, the angular momentum of this circular motion is, as intended,
+the spin
+(m ˙r) ∧r = m ˙rr = mr2Ω= mΩ−1 = S .
+(300)
+52
+Finally, if z0 is varied parametrically over a hyperplane normal to v, equation
+(298) describes a 3-parameter family of spacetime ﬁlling lightlike helixes, each
+centered on a unique Dirac streamline. According to the causal interpretation,
+the electron can be on any one of these helixes with uniform probability.
+Let us refer to this localized helical motion of the electron by the name zit-
+terbewegung (zbw) originally introduced by Schroedinger. Accordingly, we call
+ω = Ω· S the zbw frequency and λ = ω−1 the zbw radius. The phase of the wave
+function can now be interpreted literally as the phase in the circular motion, so
+we can refer to that as the zbw phase.
+Although the frequency and radius ascribed to the zbw are the same here as
+in Schroedinger’s work, its role in the theory is quite diﬀerent. Schroedinger
+attributed it to interference between positive and negative energy components
+of a wave packet,26,27 whereas here it is associated directly with the complex
+phase factor of a plane wave. From the present point of view, wave packets and
+interference are not essential ingredients of the zbw, although the phenomenon
+noticed by Schroedinger certainly appears when wave packets are constructed.
+Of course, the present interpretation was not an option open to Schroedinger,
+because the association of the unit imaginary with spin was not established (or
+even dreamed of), and the vector e2 needed to form the spacelike component
+of the zbw velocity u was buried out of sight in the matrix formalism. Now
+that it has been exhumed, we can see that the zbw may play a ubiquitous role
+in quantum mechanics.
+The present approach associates the zbw phase and
+frequency with the phase and frequency of the complex phase factor in the
+electron wave function.
+This is the central feature of the the zitterbewegung
+interpretation of quantum mechanics.
+The strength of the zbw interpretation lies ﬁrst in its coherence and com-
+pleteness in the Dirac theory and second in the intimations it gives of more
+fundamental physics. It will be noted that the zbw interpretation is completely
+general, because the deﬁnition (294) of the zbw velocity is well deﬁned for any
+solution of the Dirac equation. It is also perfectly compatible with everything
+said about the causal interpretation of the Dirac theory. One need only recog-
+nize that the Dirac velocity can be interpreted as the average of the electron
+velocity over a zbw period, as expressed by writing
+v = u .
+(301)
+Since the period is on the order of 10−21s, it is v rather than u that best describes
+electron motion in most experiments.
+Perhaps the strongest theoretical support for the zbw interpretation is the
+fact that it is fundamentally geometrical; it completes the kinematical interpre-
+tation of R, so all components of R, even the complex phase factor, characterize
+features of the electron history.
+The key ingredients of the zbw interpretation are the complex phase factor
+and the energy-momentum operators pµ deﬁned by (223). The unit imaginary
+i appearing in both of these has the dual properties of representing the plane in
+which zbw circulation takes place and generating rotations in that plane. The
+phase factor literally represents a rotation on the electron’s circular orbit in the
+53
+spin plane. Operating on the phase factor, the pµ computes the phase rotation
+rates in all spacetime directions and associates them with the electron energy-
+momentum. Thus, the zbw interpretation explains the physical signiﬁcance of
+the mysterious “quantum mechanical operators” pµ.
+The key ingredients of the zbw interpretation are preserved in the nonrelativis-
+tic limit and so provide a zitterbewegung interpretation of Pauli-Schroedinger
+theory.
+The nonrelativistic approximation to the STA version of the Dirac
+theory, leading through the Pauli theory to the Schroedinger theory, has been
+treated in detail elsewhere.18 But the essential point can be seen by a split of
+the Dirac wave function ψ into the factors
+ψ = ρ
+1
+2 eiβ/2LUe−i(m/¯h)t .
+(302)
+In the nonrelativistic approximation three of these factors are neglected or elim-
+inated and ψ is reduced to the Pauli wave function ψP = ρ
+1
+2 U, where the rotor
+U retains the portion of the phase that is inﬂuenced by external interactions.
+It follows that even in the Schroedinger theory the phase ϕ/¯h describes the
+zbw, and ∂µϕ describes the zbw energy and momentum. This implies that the
+physical signiﬁcance of the complex phase factor e−i(ϕ/¯h) is kinematical rather
+than logical or statistical as so often claimed.
+The zbw interpretation has the potential to explain much more than the elec-
+tron spin and magnetic moment,28,30,31 but it remains to be seen if that is a
+fruitful direction for research.
+One interesting direction for future research is application of Feynman’s path
+integral methods in real quantum theory. Suppose that the electron state at
+each point x is characterized by a spacetime rotor Rk(x) for each path to the
+point. Feynman’s complex phase factor can then be incorporated in the Rk(x)
+as part of the zbw path, and spin will be included automatically. It is easy to
+prove that the sum over paths will then produce a wave function of the general
+form
+ψ(x) =
+
+k
+Rk(x) = (ρeiβ)
+1
+2 R
+(303)
+Thus, the factor(ρeiβ)
+1
+2 arises from superposition, which supports its interpreta-
+tion as a statistical factor and may thereby explain the origin of the troublesome
+parameter β.
+IX. STA in the physics curriculum
+I claim that the physics curriculum at all levels can be thoroughly uniﬁed and
+considerably simpliﬁed by adopting STA as the core mathematical language
+of physics.
+The language is fully developed and ready to use.
+Setting the
+politics of curriculum reform aside, let us consider how a forward-looking physics
+department could incorporate STA into its curriculum.
+54
+In GA1 I made the case for adopting GA as the mathematical language of
+physics from the outset of the ﬁrst course. For the sake of argument, let us sup-
+pose that has been done. Presumably, the students will have developed some
+proﬁciency with GA by the end of the ﬁrst semester, or the ﬁrst year, at least.
+That, I propose, is the ideal time to introduce the rudiments of STA, with the
+objective of developing student capacity for spacetime thinking as early as pos-
+sible. This step is not so radical as might be supposed, for the fundamental
+geometric product deﬁning STA in Section II is nearly the same as the deﬁning
+product introduced in GA1 for classical physics, the main diﬀerence being the
+signature of spacetime and its geometric role in characterizing the light cone.
+Moreover, the spacetime split in Section III makes it possible to interrelate rel-
+ativistic and nonrelativistic physics without appeal to Lorentz transformations.
+That enables students immediately to reason with relativistic invariants and ac-
+quire a working knowledge of such important physical cancepts as mass-energy
+equivalence, energy-momentum conservation and time dilation. This portion of
+the curriculum is easily constructed from available materials.3
+Early introduction to STA will make it available throughout the rest of the
+curriculum, so it will be possible to move ﬂuently between relativistic and non-
+relativistic treatments of any topic, whatever is most appropriate. Wasted time
+in treating a topic both relativistically and nonrelativistically in diﬀerent courses
+will be eliminated. The usual junior level course in electrodynamics will be able
+to take full advantage of the simpliﬁcations brought by the STA treatment in
+Sections V and VI. Finally, the senior level quantum mechanics course will be
+able to deal with the real Dirac equation from the outset. I daresay that this
+would be an eyeopener to many physicists.15
+It should be recognized that this unprecedented simpliﬁcation of classical,
+relativistic and quantum physics is enabled by two profound STA innovations:
+First, a common spinor method for rotations and rotational dynamics. Second,
+a universal concept of vector derivative.
+Of course, the wholesale reconstruction of the physics curriculum proposed
+here will be a formidable task, though all the pieces are at hand. Who will
+volunteer to get it started?!
+Note. Most of the papers listed in the references are available on line at
+<http://modelingnts.la.asu.edu> or <http://www.mrao.cam.ac.uk/˜cliﬀord/>.
+References
+[1] D. Hestenes, “Oersted Medal Lecture 2002: Reforming the mathematical
+language of physics,” Am. J. Phys. 71 104–121 (2003). Referred to as GA1
+in the text.
+[2] A. Lasenby, C. Doran, & S. Gull, “Gravity, gauge theories and geometric
+algebra,” Phil. Trans. R. Lond. A 356, 487–582 (1998).
+55
+[3] D. Hestenes, New Foundations for Classical Mechanics, (Kluwer, Dor-
+drecht/Boston, 1986). Second Edition (1999). The last chapter in the ﬁrst
+edition has been replaced ay a 100 page chapter on “Relativistic Mechanics”
+that is related to an invariant STA treatment by spacetime splits.
+[4] D. Hestenes & G. Sobczyk, CLIFFORD ALGEBRA to GEOMETRIC
+CALCULUS, a Uniﬁed Language for Mathematics and Physics (Kluwer
+Academic, Dordrecht/Boston, 1986).
+[5] H. Minkowski, “Space and Time,” (1923) English translation of (1908)
+address in The Principle of Relativity (Dover, New York, 1923).
+[6] D. Hestenes, “Diﬀerential Forms in Geometric Calculus.” In F. Brackx,
+R. Delanghe, and H. Serras (eds), Cliﬀord Algebras and their Applications
+in Mathematical Physics (Kluwer Academic, Dordrecht/Boston, 1993). pp.
+269–285.
+[7] D. Hestenes, Space-Time Algebra, (Gordon & Breach, New York, 1966).
+[8] J. Bjorken and S. Drell, Relativistic Quantum Mechanics (McGraw-Hill,
+N.Y., 1964).
+[9] D. Hestenes, “Proper Dynamics of a Rigid Point Particle,” J. Math. Phys.
+15, 1778–1786 (1974).
+[10] V. Bagrov & D. Gitman. Exact Solutions of Relativistic Wave Equations
+(Kluwer Academic, Dordrecht/Boston, 1990). pp. 61–66.
+[11] D. Hestenes, “Spinor Particle Mechanics.” In V. Diedrick (Ed.), Cliﬀord Al-
+gebras and their Applications in Mathematical Physics (Kluwer Academic,
+Dordrecht/Boston, 1994). pp. 129–143.
+[12] D. Hestenes, “A Spinor Approach to Gravitational Motion and Precession,”
+Int. J. Theo. Phys., 25, 589–598 (1986).
+[13] W. Baylis & Y. Yao, “Relativistic dynamics of charges in electromagnetic
+ﬁelds: An eigenspinor approach,” Phys. Rev. A 60, 785–795 (1999).
+[14] D. Hestenes, “Real Spinor Fields,” J. Math. Phys. 8, 798–808 (1967).
+[15] C. Doran, A. Lasenby, S. Gull, S. Somaroo & A. Challinor, “Spacetime
+Algebra and Electron Physics,” Adv. Imag. & Elect. Phys. 95, 271–365
+(1996).
+[16] A. Lewis, A. Lasenby & C. Doran, “Electron Scattering in the Spacetime
+Algebra.” In R. Ablamowicz & B. Fauser (Eds.), Cliﬀord Algebras and their
+Applications in Mathematical Physics, Vol. 1 (Birkh¨auser, Boston, 2000).
+pp. 49-71.
+[17] D. Hestenes, “Local Observables in the Dirac Theory,” J. Math. Phys. 14,
+893–905 (1973).
+56
+[18] D. Hestenes, “Observables, operators and complex numbers in the Dirac
+theory,” J. Math. Phys. 16, 556–572 (1975).
+[19] S. Gull, A. Lasenby & C. Doran, “Imaginary numbers are not real – the
+geometric algebra of spacetime,” Found. Physics 23, 1175–1202 (1993).
+[20] J. P. Crawford, “On the algebra of Dirac bispinor densities,” J. Math. Phys.
+26, 1439–1441 (1985).
+[21] J. Cushing, Quantum Mechanics — Historical contingency and the Copen-
+hagen hegemony (Univ. Chicago Press, Chicago, 1994).
+[22] D. Bohm & B. Hiley, THE UNDIVIDED UNIVERSE, An Ontological In-
+terpretation of Quantum Theory. (Routledge, London, 1993).
+[23] P. Holland, Quantum Theory of Motion (Cambridge Univ. Press, Cam-
+bridge, 1993).
+[24] C. Philippidis, C. Dewdney and B. J. Hiley, “Quantum Interference and
+the Quantum Potential,” Nuovo Cimento 52B, 15–28 (1979).
+[25] J.-P. Vigier, C. Dewdney, P.R. Holland & A. Kypriandis, Causal particle
+trajectories and the interpretation of quantum mechanics. In Quantum Im-
+plications, B. J. Hiley & F. D. Peat (eds.), (Routledge and Kegan Paul,
+London, 1987).
+[26] E. Schroedinger, Sitzungb. Preuss. Akad. Wiss. Phys.-Math. Kl. 24, 418
+(1930).
+[27] K. Huang, On the Zitterbewegung of the Electron, Am. J. Phys. 47, 797
+(1949).
+[28] D. Hestenes, “The Zitterbewegung Interpretation of Quantum Mechanics,”
+Found. Phys. bf 20, 1213–1232 (1990).
+[29] R. Gurtler and D. Hestenes, “Consistency in the formulation of the Dirac,
+Pauli and Schroedinger Theories,” J. Math. Phys. 16, 573–583 (1975).
+[30] D. Hestenes, “Quantum Mechanics from Self-Interaction,” Found. Phys.
+15, 63–87 (1985).
+[31] E. Recami & G. Salesi, Kinematics and hydrodynamics of spinning parti-
+cles, Phys. Rev. A 57, 98–105 (1998).
+57

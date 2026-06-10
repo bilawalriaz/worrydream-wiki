@@ -1,0 +1,1789 @@
+Joseph Carl Robnett Licklider (see Figure 1;
+Tables 1 and 2) is the well-known ﬁrst director
+of the Information Processing Techniques
+Office (IPTO) at the Pentagon’s Advanced
+Research Projects Agency (ARPA). As Martin
+Campbell-Kelly and William Aspray point out
+in Computer: A History of the Information
+Machine, IPTO support brought time-sharing
+into the mainstream of computing because its
+budget was the largest of any federal agency’s
+for computer research.1,2 Licklider’s strategy was
+to divide the IPTO budget among only a hand-
+ful of organizations.3 Among the first nine
+organizations that the IPTO funded in 1963,
+eight were related to time-sharing.4 The fact
+that Licklider gave priority to time-sharing sys-
+tems is, however, somewhat strange, because
+initially time-sharing was not even mentioned
+in the 1961 government—or Department of
+Defense (DoD)—report that led to the estab-
+lishment of the IPTO. Furthermore, even if it
+had been mentioned, the early time-sharing
+systems could not support human–computer
+interaction through graphics, which
+was essential for the IPTO’s primary
+objective: advancement of command
+and control systems. The subsequent
+reputation of Licklider as the progen-
+itor of graphically oriented, interac-
+tive computing, therefore, seems
+inappropriate in the context of the
+early 1960s.
+IPTO’s beginnings
+The IPTO was created when the
+Kennedy administration pressed for
+an improved command and control
+system for purposes of US defense.
+The Director of Defense Research and
+Engineering office thus charged
+ARPA, in June 1961, with the respon-
+sibility to develop such systems.5
+ARPA requested that a study by the Institute for
+Defense Analyses (IDA) then be done, con-
+cerning digital computer application study, on
+the basis of three objectives: 
+1. To study command and control problems with
+a view toward determining criteria for the
+effective application of computers to com-
+mand and control.
+2. To postulate goals for future DOD growth in
+automated command and control capability
+and to generate guidelines that will aid future
+planners in specifying individual system char-
+acteristics. 
+3. To delineate problem areas needing accelerat-
+ed research.6
+The study culminated in a report, Computers
+in Command and Control, which was submitted
+to ARPA in November 1961.6 In the report, the
+ultimate goal for DoD was thought to be an
+automated command and control system.
+Though the study group found that the current
+technical feasibility of using computers was
+commonly overrated and “the personnel of the
+command must still be the dominant informa-
+tion processing elements of the system,”7 the
+group listed “several areas of potentially fruit-
+ful research and development relevant to com-
+mand systems.” These were as follows: 
+a. Development of improved techniques in for-
+mulation, analysis, and programming.
+b. Development of improved procedures and lan-
+guages for communication between machines
+and their users.
+c. Basic research directed toward increasing our
+understanding of such complex processes as
+pattern perception, concept formation and
+recognition, problem solving, learning, and
+decision making.
+d. Research directed toward improving the
+J.C.R. Licklider’s Vision for the IPTO
+Chigusa Ishikawa Kita
+Kyoto University
+The Information Processing Techniques Ofﬁce of the Advanced
+Research Projects Agency was founded in 1962 as a step toward
+realizing a ﬂexible military command and control system. In setting the
+IPTO’s research agenda for funding, its ﬁrst director, J.C.R. Licklider,
+emphasized the development of time-sharing systems. This article
+looks at how Licklider’s early vision of “a network of thinking centers”
+helped set the stage for the IPTO’s most famous project: the Arpanet.
+62
+IEEE Annals of the History of Computing
+Published by the IEEE Computer Society
+1058-6180/03/$17.00 © 2003 IEEE
+Figure 1. J.C.R. Licklider
+circa 1960, pictured in the
+IRE Transactions of Human
+Factors in Electronics. (Photo
+courtesy of the IEEE.)
+dependability of computers and their
+associated hardware.8
+In the IDA report, time-sharing was
+never mentioned. The likely reason is
+because time-sharing systems could
+not support, around 1960, the inten-
+sive use of a display at the terminals.
+Indeed, Wesley Clark, designer of
+the advanced TX-2 computer at MIT,
+insisted that time-sharing had a seri-
+ous limitation when he vainly opposed it in
+MIT’s Long Range Computation Study Group in
+1960.9 Ironically, Clark had already “clearly
+specified in 1954, in a memo entitled ‘The
+Multi-Sequence Program Concept,’ exactly how
+to write a subroutine capable of simultaneous
+execution by many different callers,” and
+designed the I/O interrupt system into the TX-2
+computer.10 Clark himself implemented the
+fundamental technique to allow I/O devices to
+share the time of the central processor, which
+could be used as the basis of time-sharing sys-
+tems. The group headed by Clark at MIT
+Lincoln Laboratory, however, used the tech-
+nique not for time-sharing but for the advanced
+use of I/O devices connected to the TX-2, to
+make a computer more “approachable.”11 In
+1963, on the TX-2, Ivan Sutherland developed
+Sketchpad, a digital drawing system with a light
+pen, which Licklider greatly admired.12,13
+Strangely enough, although Licklider fully
+understood the importance of advanced
+human–machine interaction, whenever he had
+a choice he always leaned toward time-sharing.
+For example, in IPTO’s early days, when Licklider
+decided to fund Douglas Engelbert’s group at
+Stanford Research Institute, Licklider asked
+Engelbert to conduct his human–machine inter-
+action research by using the time-sharing system.
+Engelbert was puzzled: 
+Lick[lider] moved very swiftly. By early 1963 we
+had a funded project. But, whereas I had pro-
+posed using a local computer and building an
+interactive workstation, Lick asked us instead to
+connect a display to the System Development
+Corporation’s (SDC’s) AN/FSQ-32 computer, on
+site in Santa Monica, to do our experimenting
+under the Q32’s projected new time-sharing sys-
+tem. (Converting the Q32 to be a time-shared
+machine was SDC’s IPTO project.) … For various
+reasons, not uncommon in pioneering ventures,
+that ﬁrst year was very unproductive relative to
+the purposes and plan of our project.14
+July–September 2003
+63
+Table 1. Personal history of J.C.R. Licklider (1915–1990), compiled on the basis of information in the
+J.C.R. Licklider papers at the Massachusetts Institute of Technology (MIT) Archives.
+Year
+Event
+1915
+Born on 11 March, St. Louis, Missouri
+1937
+Earned AB in physics, mathematics, and psychology at Washington University, St. Louis
+1938
+Earned AM in psychology at Washington University
+1942
+Earned PhD in psychology at University of Rochester, New York
+1942–1946
+Became research associate and research fellow in the Harvard Psycho-Acoustic Laboratory
+1946–1950
+Lectured at Harvard, Dept. of Psychology
+1950–1957
+Hired at MIT, associate professor in the Dept. of Electrical Engineering, (then in the Dept. of
+Economics and Social Science)
+1951–1955
+Worked at MIT Acoustics Laboratory
+1952–1955
+Consulted at the MIT Lincoln Laboratory, served as unofﬁcial group leader
+1957–1962
+Worked at Bolt, Beranek, and Newman (BBN) as vice president and headed the Psycho-
+Acoustics, Engineering Psychology, and Information Systems Research depts.
+1962–1964
+Served at the Advanced Research Projects Agency as director of the IPTO
+1964–1967
+Served at IBM as consultant to the IBM director of research
+1966–1967
+Taught at MIT as visiting professor
+1967–1970
+Served as director of Project MAC
+1967–1985
+Taught at MIT as professor of electrical engineering, then professor of computer science
+1974–1975
+Went on leave from MIT, also served a second time as director of ARPA/IPTO
+1990
+Died, Cambridge, Massachusetts
+Table 2. Awards received, and ofﬁces held, by J.C.R. Licklider, compiled on the
+basis of information in the J.C.R. Licklider papers at the MIT Archives.
+Year
+Awards/Ofﬁces
+1950
+Biennial Award of the Acoustical Society of America
+1958
+President of the Acoustical Society of America
+1961–1962
+President of the Society of Engineering Psychologists
+1965
+Franklin Y. Taylor Award of the Society of Engineering Psychologists
+1977–1978
+Secretary of Class C of the National Academy of Sciences
+Obviously, the Engelbert group’s human–
+machine interaction research was slowed down
+because of Licklider’s direction. Licklider’s deci-
+sion runs counter to his image as a “visionary
+of interactive computing,” which one often
+ﬁnds in the history of modern computing.15
+Licklider explained his rationale, in econom-
+ic terms, for favoring time-sharing in his paper
+“Artiﬁcial Intelligence, Military Intelligence, and
+Command and Control,” which appeared in
+1964’s Military Information Systems.16,17 In that
+book, which was based on the First Congress on
+the Information System Sciences held in
+November 1962, he argued that a complex
+information system required large programming
+tasks and that a large, fast computer based on
+the concept of “sensibly simultaneous time shar-
+ing” can be economically used to facilitate the
+efforts of one programmer.18 This reasoning,
+however, was not sufﬁcient to explain his incli-
+nation toward time-sharing. Because, as even
+Licklider himself had argued in another, 1962
+paper on online man–computer communica-
+tion, “in critical military systems such as SAGE
+[Semi-Automatic Ground Environment], the
+economic factor has been less restrictive and the
+need for man–computer interaction greater or
+more evident.”19 And at that time, already “the
+cost of computation is decreasing; it is no longer
+wholly uneconomic for a man to think in real
+time with a medium-scale computer.”19
+Accordingly, the development of time-shar-
+ing could be viewed as somewhat inappropriate
+for the DoD’s new ofﬁce for command and con-
+trol. Licklider succeeded in arguing for the
+development of time-sharing ofﬁcially by virtue
+of this economic rationale, yet he claimed that
+his primary goal for the IPTO was the develop-
+ment of interaction between humans and com-
+puters. Why would Licklider want to develop
+human–computer interaction through time-
+sharing? In analyzing the reasons behind this
+seemingly contradictory goal, let’s examine the
+resources with which Licklider formed the
+research agenda for funding the IPTO.20 As will
+become evident, time-sharing was important to
+Licklider’s primary concern, which he called “a
+thinking center.” He had arrived at this concept
+earlier, before joining the IPTO.
+‘A thinking center’
+Back in 1957, Licklider had joined the
+acoustic-consulting firm Bolt, Beranek, and
+Newman (BBN) in Cambridge, Massachusetts,
+to head a group of experimental psychologists
+working in acoustics. Although the group
+already had analog computers, Licklider asked
+Leo Beranek, one of BBN’s founders, to buy a
+digital computer, which he did.21 Later, in
+1959, Licklider had an opportunity to use the
+prototype 
+of 
+the 
+Digital 
+Equipment
+Corporation (DEC) PDP-1, a state-of-the-art
+machine that was designed after Clark’s TX
+computers.22 Soon, Licklider and colleagues
+such as BBN’s Edward Fredkin and MIT’s John
+McCarthy began developing a time-sharing sys-
+tem for BBN based on the PDP-1.23
+The DEC PDP-1 intrigued BBN because the
+computer was “characterized by high speed and
+relatively small memory,” and “its low cost
+means that it will not ordinarily have to be
+shared by a large number of users.” The BBN
+time-sharing system was experimental, because
+it had initially allowed, by means of teletype-
+writers, only two users although that later
+increased to five.24 In all likelihood, Licklider
+and his colleagues wanted the system not out
+of a practical need but to conﬁrm the possibili-
+ty of scaling such a technique to a larger system.
+In a series of 1961 lectures held to commem-
+orate MIT’s 100th birthday,25 Licklider served on
+a panel at one of the lectures, at which he dis-
+cussed how time-sharing would be beneﬁcial in
+making digital computers “approachable” in
+universities.26 In another lecture, “Time-Sharing
+Computer Systems” by John McCarthy, Licklid-
+er’s 1960 “Man–Computer Symbiosis” essay was
+introduced as a “recent paper” on “the ideas
+concerning time-sharing systems.”27
+In that paper, Licklider not only presented a
+new concept of a man–machine system for
+thinking but he also laid out a research agenda
+for the goal, detailing prerequisite elements
+such as memory hardware, programming for
+memory organization, computer language, and
+I/O devices.28 Although the reference to time-
+sharing was not central to the paper, it was
+clearly presented as the ﬁrst prerequisite, “Speed
+Mismatch between Men and Computers”: 
+Any present-day large-scale computer is too fast
+and too costly for real-time cooperative thinking
+with one man. Clearly, for the sake of efﬁciency
+and economy, the computer must divide its time
+among many users. Time-sharing systems are
+currently under active development. There are
+even arrangements to keep users from “clobber-
+ing” anything but their own personal programs.
+It seems reasonable to envision, for a time 10
+or 15 years hence, a “thinking center” that will
+incorporate the functions of present-day libraries
+together with anticipated advances in informa-
+tion storage and retrieval and the symbiotic func-
+tions suggested earlier in this paper. The picture
+readily enlarges itself into a network of such cen-
+ters, connected to one another by wide-band
+64
+IEEE Annals of the History of Computing
+J.C.R. Licklider and the IPTO
+communication lines and to individual users by
+leased-wire services. In such a system, the cost of
+the gigantic memories and the sophisticated pro-
+grams would be divided by the number of users.29
+Licklider dealt with time-sharing as an econom-
+ical matter as well as a key technology for intel-
+lectual resource sharing, “a thinking center.” He
+even mentioned a network of such centers.
+At the time of article publication, Licklider was
+not only participating in the development of a
+time-sharing system, but in the winter of
+1960–1961 he had also been leading the BBN
+group in researching the libraries of the future.
+Both efforts were steps toward a realization of a
+thinking center. In the research agenda he laid
+out for the BBN research group, he encouraged
+the members to investigate the current status of
+ﬁve areas: storage and retrieval of information;
+memory organization; man–machine communi-
+cation; language processing; and artiﬁcial intelli-
+gence (AI).30 These were the “information storage
+and retrieval and the symbiotic functions” whose
+advances were anticipated for realizing a think-
+ing center, as he wrote in his 1960 paper.
+As for implementation, BBN had launched
+a time-sharing service through its subsidiary
+company, Telcomp, in 1963, which was a
+“leased-wire service” cited by Licklider as the
+technology needed to connect a network of
+such centers.31 Thus, Licklider had taken steps
+to begin realizing his vision of an intellectual
+resource-sharing network just at the time he
+was selected as the IPTO’s ﬁrst director.
+Against such a background, it is under-
+standable that he envisioned a network of
+time-sharing systems from the very beginning
+of IPTO. Licklider showed his enthusiasm by
+describing a network in an internal 1963 ARPA
+memo, 
+sometimes 
+referred 
+to 
+as 
+the
+“Intergalactic Computer Network memo.” He
+addressed the memo, sent to the researchers
+that the IPTO funded, to the “Members and
+Affiliates of the Intergalactic Computer
+Network” in preparation for a meeting on 25
+April 1963.4,32 This memo was his modestly
+presented agenda of computer research for
+funding. In the memo, Licklider explained:
+It will possibly turn out, I realize, that only on
+rare occasions do most or all of the computers in
+the overall system operate together in an inte-
+grated network. It seems to me to be interesting
+and important, nevertheless, to develop a capa-
+bility for integrated network operation.
+He then went on: “Let me suppose that I am
+sitting at a console that includes cathode-ray-
+tube display, light-pen, and typewriter,” and
+continued for three of the memo’s eight pages
+with a detailed description of hypothetical com-
+puter network usage by an experimental psy-
+chologist. He laid out his own comprehensive
+picture of a thinking center here. Toward the
+end of the memo, he noted: “The fact is, as I see
+it, that the military greatly needs solutions to
+many or most of the problems that will arise if
+we tried to make good use of the facilities that
+are coming into existence.” Thus, although
+there was no explanation of the direct military
+need for time-sharing systems or their net-
+working, Licklider tried to convince researchers
+that the development of time-sharing systems
+would subsequently beneﬁt the military.
+His consistent concern for a network of
+thinking centers was seen even after his
+administration of the IPTO had ended. In
+Licklider’s only book, Libraries of the Future, the
+central concept of a “procognitive system” (see
+Figure 2) extended his vision of such a net-
+work.33 In the book, he explained that this net-
+work consisted of four echelons of subsystems
+all based on a time-sharing technique, and he
+pointed to IPTO-funded time-sharing systems
+at MIT, the Carnegie Institute of Technology,
+System Development Corporation, RAND
+July–September 2003
+65
+Figure 2. The procognitive system envisioned by
+Licklider. Licklider’s explanation of the ﬁgure:
+“The circles and ellipses represent advanced and
+specialized computer systems. The squares
+represent man–computer interfaces, those of
+echelon 4 being stations or consoles for
+substantive users of the system. Most of the
+connections are switchable telecommunication
+lines. Those shown as solid lines represent
+connections that might be established at a
+particular moment during operation. The dotted
+lines are introduced to suggest other connections
+that could be established. … Except in echelon 1,
+the number of subsystems envisioned for the
+projected system is very much greater than the
+number shown.” From Libraries of the Future,
+1965, p. 41. (Courtesy of the MIT Press.) 
+Corporation, and BBN as the best schemata to
+think about the third and fourth layers of the
+network.34
+From these facts, we can see Licklider added
+time-sharing to the IPTO agenda to realize his
+vision of a network of thinking centers, and he
+even placed priority on it. But how would the
+picture of a thinking center readily enlarge
+itself as a network of such centers?
+‘The Truly SAGE System ...’ 
+The archived J.C.R. Licklider papers include
+an interesting typed 1957 manuscript (con-
+taining a number of hand-written corrections):
+“The Truly SAGE System or Toward a
+Man–Machine System for Thinking.” 35 It
+demonstrates that Licklider’s network of think-
+ing centers was a transformation of SAGE as an
+advanced information network. To understand
+its historical meaning, we need to examine
+Licklider’s relationship to the 1950s SAGE proj-
+ect (see the “About SAGE” sidebar).
+Licklider’s relationship with SAGE started in
+1951 when, as an associate professor at MIT, he
+was chosen to be “a token psychologist”36 in
+Project Charles, an MIT project established to
+examine the possibility of an improved air
+defense system.37 The MIT Lincoln Laboratory
+was established in the early 1950s with the pri-
+mary mission of developing a national air
+defense system. One of the groups was psy-
+chology. Although Licklider was officially a
+consultant to the psychology group at Lincoln
+Laboratory, he worked closely with George
+Miller, its group leader, in forming the group
+that examined how to detect information from
+the analog graphical data obtained from radar.
+The group collaborated with electrical engi-
+neers on data transmission and with engineers
+from Polaroid Corporation on analog graphical
+technology, but it had almost no direct con-
+nection to the digital computer developments
+at MIT Lincoln Laboratory.38 However, Licklider
+had “an opportunity with Lincoln Laboratory
+to hear of computers and radar sets and com-
+munications.”36 As Licklider often mentioned,
+his exposure to advanced digital computers at
+the laboratory in the late 1950s was a crucial
+experience for him in forming a vision of their
+advanced usage in the future.39
+The principal architect of TX computers at
+Lincoln Laboratory, Wesley Clark, recalls intro-
+ducing Licklider to one of the computers (in
+the quote, “LINC” is the name of the small
+computer Clark designed in the early 1960s):
+I had simply demonstrated its use and powerful
+displays to him, and had expected him to draw
+his own conclusions about the great value of
+interacting with a computer directly. I had
+learned this “on-line” style of operation on
+Whirlwind and the Memory Test Computer
+(MTC), and I designed the TX-0, the TX-2 and,
+of course, the LINC for use in this same, directly
+interactive manner. All of these computers had
+display scopes, and “interaction” meant making
+extensive use of them. Lick[lider] saw how we
+did all this and was clearly intrigued. Like many
+66
+IEEE Annals of the History of Computing
+J.C.R. Licklider and the IPTO
+About SAGE
+The Semi-Automatic Ground Environment (SAGE) was a com-
+mand and control network for air defense, designed to coordinate
+all air defense components by a digital computer at individual
+Direction Centers. It was one of the biggest postwar air defense
+projects, officially beginning in 1954.1 Although SAGE as an air
+defense system for bombers was already out of date when it
+became operational in 1958 because of the Intercontinental
+Ballistic Missile (ICBM), it had a great impact on military system
+design, computer research, and industry.2 In the context of human
+factors in man–machine systems research, SAGE was also one of
+the most important achievements. As the name indicates, SAGE
+was a semiautomatic system that included human elements, such
+as computer operators who helped with SAGE procedures and
+commanders who conducted the decision-making process. As
+Kenneth Schaffel has written in his book on the history of air
+defense, in the early 1950s when the SAGE project was launched,
+industrial automation applications were new and military applica-
+tions were only dimly perceived.3 But the new air defense system
+was intended to be automated, just like other industrial applica-
+tions, because manual procedures for transmitting military infor-
+mation through telephone and teletype systems lacked speed and
+precision. For this reason, computers were crucial. At the same
+time, as MIT’s professor George Valley, who headed the Air Defense
+System Engineering Committee of the US Air Force Scientific
+Advisory Board (1950–1952), noted in his memoir, there was a
+controversy between analog and digital usage. The researchers at
+MIT chose digital computers because by comparison analog com-
+puters had serious limitations.4
+References and notes
+1. On this point, see for example, S.I. Schwartz, ed., Atomic Audit: The
+Costs and Consequences of U.S. Nuclear Weapons since 1940, chapter
+4: “Defending against the Bomb,” Brookings Institution Press, 1998.
+For the general history of SAGE, see, in particular: Annals of History
+of Computing, special issue on SAGE, vol. 5, no. 4, Oct.–Dec. 1983;
+G.E. Valley Jr., “How the SAGE Development Began,” Annals of
+History of Computing, vol. 7, no. 3, July–Sept. 1985, pp. 196-226; K.
+Schaffel, The Emerging Shield: The Air Force and the Evolution of
+Continental Air Defense, 1945–1960, Ofﬁce of Air Force History, US
+Air Force, Washington, D.C., 1991.
+2. See, for example, an excellent historical work on this subject: K.D.
+Redmond and T.M. Smith, From Whirlwind to MITRE: The R&D Story
+of the SAGE Air Defense Computer, MIT Press, 2000.
+3. Schaffel, The Emerging Shield, p. 150.
+4. Valley, “How the SAGE Development Began,” pp. 220-221.
+other visitors, he understood the enormous value
+of using computers directly and thought to emu-
+late the way we did things at Lincoln.40
+As Clark notes, it was at this time that Licklider
+recognized the potential for extensively using
+displays.
+Around the time that he ﬁrst saw the TX-2,
+Licklider also had some interaction in meetings
+with Lincoln Laboratory’s communications
+techniques group, which conducted research
+on pattern recognition and was headed by
+Oliver Selfridge.41 Selfridge and G.P. Dinneen
+had presented papers on pattern recognition at
+the Western Joint Computer Conference in
+1955.42 At the same conference session, Clark
+also presented a paper on pattern recognition.43
+Thus, through his associations with colleagues
+at Lincoln Laboratory, we can assume Licklider
+acquired knowledge of pattern recognition by
+digital computers. With such knowledge of
+advanced computing, Licklider even began to
+think about an advanced information system
+through the scheme of SAGE as a whole.
+As Licklider wrote in “The Truly SAGE
+System,” the aim of the 1957 paper was “to
+suggest a kind of system that seems desirable
+and reasonable from a psychological point of
+view and not totally unfeasible from a psy-
+chologist’s approximation of an engineering
+point of view.”44 This paper indicates that
+Licklider conceived of an idea for “a network of
+thinking centers” through SAGE and added
+some new features.45 The title of Licklider’s
+manuscript hints that SAGE was not sage
+enough for what Licklider envisioned despite
+the name, but he did not ﬁercely criticize SAGE.
+On the contrary, he maintained his close con-
+nection with the Air Force (SAGE’s developers)
+in the 1950s and early 1960s.46 Moreover, he
+wrote this paper as a National Academy of
+Science—Air Research and Development
+Command (NAS-ARDC) Special Study paper.
+Licklider later acknowledged ARDC as the main
+funding source of the “Man–Computer
+Symbiosis” paper in 1960.47
+The paper contains 10 parts (see Figure 3). In
+the ﬁrst part, Licklider wrote that he was con-
+cerned with ﬁnding a way to “improve the qual-
+ity or efﬁciency of scientiﬁc and technical
+thinking.”48 The paper’s framework proposes the
+effective use of the computer for a system of net-
+worked information centers.49 The ﬁrst four
+parts explain the goals of the network and pro-
+vide a picture of the system. The next part,
+“Steps Toward Realization,” presents the four
+steps (which, in his original outline, are listed as
+parts but which are actually subparts) needed for
+realization and describes each in detail; the last
+short part describes the system’s potential.
+The use of the system as an information
+center is portrayed as a general application of
+SAGE. In each center, “there is of course a
+large-scale digital computer with a very exten-
+sive memory,” and “the centers for related
+fields are connected one with another by
+telecommunication channels.”50 There are four
+modes of communication between man and
+machine in the system. First, human operators
+can simply speak into microphones. Second,
+there is a combination display and control
+having a large, ﬂat surface onto which materi-
+al is projected and the operators can write with
+a pencil or stylus. Third, the operators can put
+graphical information (such as curves and
+functions) into the computer and relate the
+information so introduced to graphical infor-
+mation presented by the computer. Fourth, the
+operators can use “typing or type-writer—per-
+haps one that is also used as a computer-out-
+put device.”51 Among these modes, the last
+three were achieved on the SAGE consoles, but
+Licklider added a new feature of speech recog-
+nition that was clearly beyond the 1950s state
+of the art. Later, in his “Man–Computer Sym-
+biosis” paper (1960), Licklider also described
+how “desirable” and “feasible” speech com-
+munication between man and machine could
+be in section E-3: “Automatic Speech Produc-
+tion and Recognition.”28
+The proposed computing style in each cen-
+ter is online use by multiple users based on a
+time-sharing technique:
+The computer is operated on a time-sharing basis
+by a number of people. The arrangements for dis-
+playing information to the people are highly
+developed. They include digital-analogue con-
+verters, curve plotters, large-screen cathode-ray
+tubes, automatic typing or printing machines,
+and loudspeakers.51
+July–September 2003
+67
+“The Need”
+“The Room for Improvement”
+“The System”
+“Hypothetical Picture of a System in Operation”
+“Steps Toward Realization”
+“Study of Creative Thinking”
+“Research and Development on Mechanical Data-Processing
+Techniques”
+“Artiﬁcial Intelligence”
+“Development of a Small, Experimental System”
+“Variations”
+Figure 3. Outline of Licklider’s 1957 paper, “The Truly SAGE System or
+Toward a Man–Machine System for Thinking.”
+It is notable that he mentioned time-sharing
+by multiple people here, because Licklider’s
+1957 paper is one of the earliest written records
+mentioning time-sharing in this sense.
+Although this concept of time-sharing is usual-
+ly associated with John McCarthy, who wrote
+specifically about it in a 1959 memo at MIT,52
+the “Truly SAGE” paper indicates that Licklider
+had already used the term in the summer of
+1957.53 It was possible for Licklider to have been
+exposed to the phrase time-sharing at the SAGE
+project, although there it was used to describe
+the SAGE program’s cyclic scheduling process.54
+As J.A.N. Lee writes in the introduction to the
+Annals’ special issue on time-sharing and inter-
+active computing, the phrase time-sharing
+(sometimes hyphenated or capitalized) was
+used as a technical term throughout the mid-
+1950s to the mid-1960s with different mean-
+ings, and the diversity of its usage even became
+controversial in the mid-1960s.55,56 But at least
+Licklider’s intention to push its development
+was clear in his 1957 paper. For Licklider, time-
+sharing was a technique to allow users simulta-
+neous multiple access and one that was needed
+to share the information stored in the large-
+scale computer at a thinking center.
+The essential point is that, both in SAGE
+and in a network of thinking centers, comput-
+ers are networked and used for data processing
+and storage, and the computing style is online.
+Like SAGE, Licklider’s picture of “a thinking
+center” could “readily enlarge itself into a net-
+work of such centers.”29
+Against ‘artiﬁcial intelligence’ 
+As we have seen, Licklider’s network of
+thinking centers was inspired by SAGE. But
+what about the tendency toward automation
+as seen in SAGE?
+The title of his 1957 paper35 suggests that
+Licklider wanted a truly semiautomatic system
+that contained human elements. In the paper
+he indicated four categories of humans in the
+system: scientists, engineers, and other
+“thinkers”; “impedance matchers”; mainte-
+nance personnel; and programmers.51 The
+impedance matchers were people who helped
+the thinkers in operating the equipment.
+Historically, most of the research on human
+factors in man–machine systems was about
+machines and the humans in the last three cat-
+egories. Machines needed humans to help their
+procedures. 
+The SAGE designers tried to realize automa-
+tion by gathering information from various
+sources and presenting the data as a composite
+picture of the air situation as it developed, but
+it was in many senses semiautomatic. It need-
+ed many operators. In SAGE, there was a tran-
+sition from the old type of manual system of
+using hand plotting or voice communication
+for transferring data to the use of automation.
+In 1958, Licklider criticized SAGE’s insufﬁcien-
+cy in realizing the level of automation origi-
+nally proposed: 
+The main experience we have had with a large-
+scale man–machine system for situation analysis
+and control has been provided by the SAGE sys-
+tem. But it does not, either, help much to convey
+the conception we have in mind. The SAGE sys-
+tem was conceived of originally as being very
+largely automatic. The numerous human opera-
+tors have been brought into SAGE mainly to
+handle tasks that turned out not to be practica-
+ble for the computer. It is therefore too much a
+matter of men aiding the machine, and not
+enough a matter of true man–computer symbio-
+sis, to give us a preview of the Air Force informa-
+tion-processing and control systems that we
+hope will exist in the future. 57
+This criticism also appeared in his 1960 paper
+generalizing the concept of man–computer sym-
+biosis from its speciﬁc application for Air Force
+systems.58 Accordingly, Licklider did not deny
+the need to automate functions that helped the
+procedure of computers and even encouraged it
+for future man–machine systems. But in SAGE,
+there were thinkers: commanders and weapons
+directors. Licklider thought that the most impor-
+tant human component in his “truly SAGE sys-
+tem” was the thinkers: 
+The scientists and engineers combine their cere-
+bral data-processing with the facilities of the
+machine to constitute a more effective system
+than either the human or the mechanical parts
+alone could make.59
+At that time, there was another general
+application of SAGE, this one by IBM: Semi-
+Automatic Business Research Environment
+(Sabre), the online airplane reservation network
+system of American Airlines.60 Sabre was basi-
+cally an advanced automation of the preexis-
+tent human-operated information network
+system.61 All the users of the Sabre system fol-
+lowed the same preestablished procedure,
+although in a network of thinking centers, users
+would apply the information in many different
+ways. In this sense, Sabre was a commercial
+application that made SAGE simpler and stabler
+through “IBM’s mature and well-seasoned
+engineering approach derived from its SAGE
+68
+IEEE Annals of the History of Computing
+J.C.R. Licklider and the IPTO
+experience.”62 By contrast, a network of think-
+ing centers would be more complex and
+advanced than SAGE. In Sabre, users were just
+like the radar in SAGE that fed a piece of infor-
+mation into a preestablished procedure. Sabre
+essentially automated the functional equivalent
+of the SAGE commander to, in this case, decide
+which seat should be reserved or cancelled. But
+in a network of thinking centers there would be
+many thinkers to input some data and use the
+system information in their thinking processes
+as the commanders in the SAGE system did.
+Furthermore, the thinkers in Licklider’s think-
+ing centers could use the whole system simul-
+taneously in different ways, whereas SAGE had
+a single air-defense procedure. In this sense,
+Licklider did not share a tendency toward com-
+plete automation that would include the deci-
+sion-making process, while Sabre did. In fact,
+the direction Sabre took seemed promising at
+the time, because AI was expected to be a key
+technology for the automation of complex
+man–machine systems.63 Licklider did not share
+this view; indeed, he employed the phrase
+“man–computer symbiosis” to express his
+opposition to automation.
+Man–computer symbiosis
+Well before the term artiﬁcial intelligence was
+born, comparisons between a computer and a
+human brain had already been made. Even the
+usage of the term computer implied a personiﬁ-
+cation of a machine, because the old usage
+meant humans, not machines. Fittingly, the
+popular press often employed expressions such
+as “giant brain” or “electronic brain” through-
+out the 1950s and 1960s.64
+Licklider showed sympathy for research in
+this area in the “Artiﬁcial Intelligence” section
+in his 1957 manuscript: 
+There is little reason to restrict either the man or
+the machine to what, at the outset, appears to be
+his zone. In fact, the problem of coupling
+between the man and the machine would be
+greatly simpliﬁed if the machine could be devel-
+oped in part in man’s image. It is desirable, there-
+fore, to explore the possibilities of the field of
+research currently designated by the terms artiﬁ-
+cial intelligence and self-organizing automata.
+That study and the study of human thinking and
+perceiving should be mutually facilitating.65
+Licklider did in fact interact with people who
+participated in the Dartmouth Summer
+Research Project on Artificial Intelligence in
+1956, where the phrase “artiﬁcial intelligence,
+or AI” seems to have been ofﬁcially used for the
+ﬁrst time. For example, Marvin Minsky, one of
+the original members of the summer project,
+listed Licklider as one of his mentors.66 In the
+late 1940s, Minsky was one of the students in
+Licklider’s seminar while Licklider was afﬁliat-
+ed with the Harvard Psycho-Acoustics Labora-
+tory.67 They often built electronic devices
+together for experiments on theories of learn-
+ing.68 According to Minsky, Licklider built “a
+wonderful machine” that “could recognize the
+word ‘watermelon’ no matter who said it in no
+matter what sentence” in the early 1950s.69 And
+when Licklider gave a talk about his psycholog-
+ical research on acoustics at the 7th Macy con-
+ference on “The Feedback Mechanisms and
+Circular Causal Systems in Biological and Social
+Systems,” Claude Shannon, who had also been
+on the Dartmouth project, was the speaker fol-
+lowing Licklider, and they both participated in
+discussions together at the meeting.70
+Other researchers related to the Dartmouth
+project with whose paths Licklider kept cross-
+ing included Oliver Selfridge, who had been an
+assistant to Norbert Wiener, the well-known
+mathematician who authored Cybernetics, and
+carried on the research on pattern recognition
+at MIT Lincoln Laboratory where Licklider had
+spent some time with him. Another partici-
+pant, Nathaniel Rochester of IBM, had pro-
+grammed a neural network model on the
+computer. This work was said to apply Donald
+O. Hebb’s The Organization of Behavior (1949),
+and the Rochester group was inspired by
+Licklider’s talk on Hebb’s theory in 1952.71 In
+fact, in the preface to his book, Hebb noted
+that Licklider was one of the scholars he was
+indebted to “for painstaking and detailed crit-
+icism of a large part of the manuscript, improv-
+ing both matter and style.”72
+In his “Symbiosis” paper, Licklider listed 13
+papers on “theorem proving, problem-solving,
+chess-playing, and pattern recognizing pro-
+grams” as best papers on AI including those by
+researchers whom he knew. He continued as
+follows:
+In fact, it seems worthwhile to avoid arguing
+with (other [than the researchers whose papers
+he listed]) enthusiasts for artiﬁcial intelligence by
+conceding dominance in the distant future of
+cerebration to machines alone. There will never-
+theless be a fairly long interim during which the
+main intellectual advances will be made by men
+and computers working together in intimate
+association.73
+Apparently, Licklider tried to differentiate
+his man–machine symbiosis concept from AI
+July–September 2003
+69
+concerning the possibility of fully automating a
+man–machine system that included a heuristic
+human brain procedure. This point was central
+to his 1960 paper.
+Licklider published “Man–Computer Sym-
+biosis” as the ﬁrst article in the inaugural issue
+of the IRE Transactions on Human Factors in Elec-
+tronics, which appeared in March 1960. The
+journal was one of the newly established peri-
+odicals of human factors research at the time.
+In the 1950s, a newly emerging research area
+involved designing complex systems that
+included humans as elements. Such systems
+were usually called man–machine systems. The
+main man–machine systems were for military
+use, but there were also requirements in indus-
+tries for “the production of a commodity or the
+construction of a facility.”74
+A field of specialization concentrating on
+solving the problems that occurred between
+man and machine had evolved during World
+War II, as has been described in the ofﬁcial his-
+tory of the Office of Scientific Research and
+Development (OSRD).75 The new interdiscipli-
+nary area for handling problems involving
+“man as a system component”76 was called by
+various names by 1960, such as human factors
+in engineering, human engineering, engineer-
+ing psychology, biomechanics, applied experi-
+mental psychology, and ergonomics, among
+others, as mentioned in the preface of
+McCormick’s well-known textbook, Human
+Engineering.77 As he wrote in this 1957 book,
+McCormick noticed there were many who did
+not like the term human engineering but he
+adopted it because it was the most popular
+expression, even though “not adequately
+descriptive of the ﬁeld.” In 1957, the American
+Psychological Association declared the forma-
+tion of the new division of the Society of Engi-
+neering Psychologists in an effort to form an
+academic area gathering their research results
+on the human element in a man–machine
+system.78
+Licklider was so enthusiastic about the
+establishment of the academic field that he
+served on the editorial board of another newly
+published periodical, Human Factors, in the late
+1950s and became the fourth president of the
+Society of Engineering Psychologists in
+1961.79,80 Thus Licklider’s “Man–Computer
+Symbiosis” clearly reﬂected important elements
+of the new area of human factors research.
+The “Symbiosis” paper suggested that a com-
+puter could be an ideal partner for human beings
+in “formulative thinking,” which was preferable
+to a completely automated man–machine sys-
+tem. The paper then provided an agenda for the
+research necessary to accomplish the goal of such
+interaction between men and computing
+machines. At that time, researchers treated
+automation as an important objective for
+man–machine systems. If such a system were
+fully automated, humans would disappear com-
+pletely, to be replaced by computers carrying out
+all tasks, even intellectual tasks formerly consid-
+ered reserved for humans. Man would no longer
+be a component of man–machine systems.
+Licklider tried to redirect the trend, and to this
+end he used the phrase man–computer symbiosis.
+There is also an interesting document in the
+archived Licklider papers, entitled: “Man–Com-
+puter Symbiosis: Part of the Oral Report of the
+1958 NAS-ARDC Special Study, Presented on
+Behalf of the Committee on the Roles of Men
+in Future Air Force Systems, 20-21 November
+1958.”81 This seems to be the first paper in
+which Licklider used the phrase man–computer
+symbiosis. It demonstrates how Licklider
+explained the importance of research on
+man–computer symbiosis to the Air Force, the
+main organization that funded such research.
+In his 1958 “Man–Computer Symbiosis”
+report, Licklider mentioned another report:
+“Report of the Committee on the Roles of Men
+in Future Air Force Systems.” He wrote: “Since
+there is not time to report on all those topics, I
+shall select just one of them—actually one
+subtopic—and concentrate on it. We have been
+referring to it as man–computer symbiosis.”82
+From this, we know that Licklider coined
+the phrase man–computer symbiosis in commit-
+tee discussions and had been using it at least as
+early as the summer of 1958, in the context of
+the military application of man–machine sys-
+tems in the future.
+Licklider started the early 1958 report in the
+style of popular science ﬁction: “[T]he President
+pressed the golden button. The wheels whirred,
+the lights flashed, the display panel came
+aglow, and the computer announced: ‘I am
+glad that you asked me that question.’” Right
+after this humorous beginning, Licklider reject-
+ed the image of complete automation through
+computers.82 He doubted the adequacy of an
+image of self-thinking machines caused by the
+popular understandings of AI. At that time, the
+phrase man–computer symbiosis was an effective
+phrase to call attention to his argument against
+full automation: that there be a partnership
+between human and computer. He denied the
+early realization of complete automation in
+“intelligence data processing, mission plan-
+ning, battle control and assessment.”83
+Licklider argued that it would need 10 to 20
+years for “developments in artificial intelli-
+70
+IEEE Annals of the History of Computing
+J.C.R. Licklider and the IPTO
+gence to make it possible for machines alone to
+do much thinking or problem solving of mili-
+tary signiﬁcance.” And he conﬁrmed the need
+for research of “man–machine communica-
+tion” because there would remain human ele-
+ments in man–machine systems in the near
+future.84 This estimation was also referred to in
+his 1960 paper, where Licklider even men-
+tioned that it might take far longer, 500 years,
+for the development of applicable AI.73
+Once he began to emphasize the impor-
+tance of man–computer symbiosis, he had to
+defend his research agenda to the funding
+source, the Air Force. In 1961, Licklider wrote
+“The Cerebral Frontier” as a “draft of a report
+to the Basic Research Panel of the Air Force Sci-
+entific Advisory Board by the Committee on
+Artiﬁcial Intelligences, Bionics, and Man–Com-
+puter Symbiosis.”85 The Air Force was con-
+cerned with the future of man–machine
+systems, and there were at least three agendas
+to advance them: AI, bionics, and man–com-
+puter symbiosis. In this competitive situation,
+he tried to emphasize that his research agenda
+was the most practical. Admitting some over-
+lap among the three agendas, Licklider recom-
+mended the funding of both man–computer
+symbiosis and AI, because there were “intelli-
+gent and dedicated young research workers,
+trained in contributory disciplines and quali-
+ﬁed for the task, who are eager to explore and
+assimilate the cerebral frontier.” By “young
+research workers” he obviously meant Minsky
+and McCarthy, and others who had helped his
+research on libraries of the future at BBN.
+Directing IPTO
+When Licklider became the ﬁrst director of
+the IPTO, the fundamental military concern
+with AI was its possible application for
+automating command and control system. In
+the 1961 IDA report that spawned IPTO, the
+words automated and automation were fre-
+quently used, and the report’s authors investi-
+gated AI’s potential as a key technology for
+automating tasks such as problem solving, self-
+modifying or optimizing systems, and decision
+making.86 Although different from his agenda
+for man–machine systems, the ﬁeld of AI rep-
+resented a good opportunity for Licklider, who
+had been trying to ﬁnd funding sources for his
+“young research workers”—AI was a likely
+project for IPTO funding.
+However, Licklider carefully avoided prom-
+ising an early direct application for automated
+command and control systems from this fund-
+ing. In his 1964 paper “Artificial Intelligence,
+Military Intelligence, and Command and
+Control,” Licklider did not say that AI would
+be a key for an automated military system, but
+that it would “come to grips with some of the
+problems that are basic in command and con-
+trol.” He reasoned as follows: 
+The prospect that research in artificial intelli-
+gence may progress in a deﬁnite and substantial
+way is favored by the fact that the tool of dynam-
+ic representation exists, that it can be developed
+greatly beyond its present state, and that research
+recognize its value. The prospect that their work
+may have practical bearing upon command and
+control and military intelligence is favored by
+the fact that researchers in artiﬁcial intelligence
+are working on problems that happen to be rel-
+evant and basic and that the tools they are devel-
+oping promise to be useful in military
+information processing.87
+Among Licklider’s ﬁrst nine funded organi-
+zations in 1963, four received budgets for AI:
+Allen Newell’s group at Carnegie Institute of
+Technology, McCarthy’s group at Stanford, the
+Systems Development Corp. for heuristic pro-
+gramming and theory of computation, and
+Minsky’s group at MIT for recursive functions,
+symbolic manipulations, heuristics, and prob-
+lem-solving in Project MAC.88 Note that all of
+the organizations were working on time-shar-
+ing at the same time, and the AI that Licklider
+funded was not outside his thinking-center
+scheme; rather, it would support his ideas by
+potentially improving man–computer interac-
+tion by means of a console.
+We can conclude that in determining what
+the IPTO should fund, Licklider’s inclination
+toward developing a network of thinking centers
+played a key role in his overall agenda, albeit
+unofﬁcially. Licklider instead directed the IPTO
+to ofﬁcially fund time-sharing projects (which
+could serve as the basis for thinking-center net-
+works) and AI (which could improve man–
+machine communication required in those net-
+works). On one level, Licklider established the
+IPTO agenda to fund projects that would fulﬁll
+the military’s need for improved command and
+control systems, but on another level, he con-
+tinued pursuing his personal research agenda for
+the network of thinking centers.
+IPTO after Licklider’s departure
+The direction that Licklider initially set for
+the IPTO was strongly affected by his own
+research interests. However, as Arthur Norberg
+and Judy O’Neill show in Transforming Computer
+Technology, important IPTO priorities included
+graphics and networking.89 The latter two ini-
+July–September 2003
+71
+tiatives were not yet fixed during Licklider’s
+directorship. In recent years, with an
+increased focus on how the networks of com-
+puters concept originated, historians and
+writers tend to refer to Licklider’s role as an
+inspiration for the Arpanet, irrespective of
+their approach.90
+But, in fact, neither
+Licklider’s vision for thinking centers nor his
+call for an intergalactic computer network
+directly formed the IPTO agenda for funding
+networking projects, as we’ll see.
+Licklider directed the IPTO for two years
+(1962–1964). Although his IPTO research prior-
+ities initially favored time-sharing over
+human–computer interaction, Licklider appre-
+ciated the need to fund man–machine interac-
+tion research. Because he had high praise for
+Ivan Sutherland’s work at MIT on man–machine
+communication through graphics, he asked
+Sutherland to become the IPTO’s second direc-
+tor. As the IDA report had originally explained,
+the development of “man–computer communi-
+cation” was crucial to the US military’s future
+command and control system, so it was logical
+for the IPTO to emphasize its importance. 
+Through Sutherland, the IPTO became more
+focused on the advancement of man–machine
+communications, especially in the graphics
+area so urgently needed for future military
+command and control. During his directorship
+(1964–1966), Sutherland set an agenda firmly
+establishing computer graphics as a research
+focus.91 Consequently, through his research
+funding from the IPTO, Larry Roberts—who
+had worked in the computer graphics area at
+MIT Lincoln Laboratory—began working on
+the time-sharing scheme as it related to graph-
+ics.92 Roberts wrote about the quality of dis-
+plays connected to time-sharing systems in a
+1965 paper, “Graphical Communication in a
+Time-Sharing Environment”: 
+It is generally acknowledged today that display
+equipment is a powerful component for facilitat-
+ing man–machine communications in computer
+systems. The advent of large-scale time-sharing
+has made many forms of on-line operation,
+which previously were extremely inefﬁcient, eco-
+nomically feasible for the first time. This has
+resulted in renewed interest in low-cost displays
+to improve the ease and speed of interaction.
+Although there is considerable agreement on the
+value of graphical techniques, there is wide diver-
+gence in the approaches to designing display
+consoles. This variety reﬂects not only the neces-
+sary differences in application requirements but
+the limited operating experience of designers as
+well. In particular, extensive experience in on-line
+graphics on the Lincoln Laboratory TX-2
+Computer has demonstrated that the common
+tendency to sacriﬁce performance for the sake of
+cost reduction is a dangerous one.93
+Even in 1965, the conflict between time-
+sharing concepts and high-quality man–
+machine communications was evident. But
+through the effort of Roberts and others the
+two research initiatives coexisted to some
+extent. In directing the IPTO funding of
+Roberts’ research, Sutherland integrated two
+previously separate funding priorities: time-
+sharing and computer graphics.
+Although both Licklider and Sutherland saw
+potential in man–computer communication,
+Sutherland did not share Licklider’s skepticism
+about 
+the 
+complete 
+automation 
+of 
+a
+man–machine system. As the second director
+of the IPTO, Sutherland argued:
+The future of on-line systems depends a great deal
+upon the future of off-line systems. There is a lot
+of talk these days about a semi-automated mathe-
+matical laboratory in which a mathematician
+could prove theorems that he could not prove
+without computer assistance. How about having
+the computer prove the theorems all by itself?
+Suppose the artiﬁcial intelligence people make a
+machine which can, in fact, prove new theorems
+all by itself. What then becomes of our semi-auto-
+mated mathematical laboratory? It’s useless. …
+What I am predicting is that today’s interest in sys-
+tems in which a man and a machine get together
+on-line will be replaced in the distant future by
+interest in systems in which a computer gets
+directly on-line with the real world, sensing and
+interacting with it directly through transducers.
+The “real world” with which such systems interact
+will include human beings, of course.94
+Sutherland dismissed the concept of “sym-
+biotic” systems that should be almost, but not
+completely, automated. Instead, he tried to
+redirect the IPTO funding agenda to support
+advanced hardware design projects, inasmuch
+as the advanced design of TX-2 had stimulat-
+ed him to produce Sketchpad.95,96 In fact, the
+support for hardware research was recom-
+mended in the original IDA report by which
+the IPTO was formed. Although historians
+viewed this direction “almost as a digression”
+for the IPTO, at the time it was a reasonable
+redirection.97
+On the matter of a computer network,
+Sutherland directed and funded a network
+experiment at UCLA, and he “noted time shar-
+ing’s effect on the sharing of programs and
+72
+IEEE Annals of the History of Computing
+J.C.R. Licklider and the IPTO
+other ﬁles among users of the same system.”98
+Around the same time, Sutherland wrote: 
+We have only just begun to work with comput-
+ers as communication media between people.
+Today, by linking remote stations, we can allow
+one person to “look over the shoulder” of anoth-
+er through a computer. We have yet to combine
+the functions of the design system and the
+inquiry system. The ability of many people in
+widely separated locations to know exactly what
+is going on has already proved practical in the
+airline reservation system. It must be included in
+our computer-assisted design system.99
+Clearly, Sutherland had high regard for other
+trends outside the IPTO, such as Sabre, and he
+described the networking of computers, includ-
+ing these attempts, as “communication media
+between people.” 
+The research agenda for time-sharing sys-
+tems earlier set by Licklider now began to gen-
+erate some elaborate, large-scale systems
+during Sutherland’s directorship. However,
+these systems that the IPTO had funded were
+complicated and unwieldy and had many
+problems.100 Around the same time, relatively
+simple time-sharing systems ﬁrst became com-
+mercially available outside the IPTO world. As
+Norberg and O’Neill point out, “most com-
+puter manufacturers had announced and were
+working on time-sharing systems by 1965.”100
+The business area of time-sharing services in
+particular was growing rapidly from the mid-
+1960s on.101 As Thomas Hughes notes in
+Rescuing Prometheus, this trend—the distribu-
+tion of computing power—is analogous to the
+evolution of electricity distribution.102 But, at
+the same time, time-sharing systems were not
+necessarily favored by all computer users.
+Small computers, for instance, began to
+emerge in the 1960s, and there was a conflict
+over which approach companies should take
+in choosing computing facilities, as evidenced
+in popular magazines such as Computers and
+Automation.103
+The IPTO acquired its third director in 1966.
+At that time, as disadvantages of time-sharing
+systems began to be debated publicly, director
+Robert Taylor tried to continue funding of
+time-sharing. He argued in 1967:
+All time-sharing systems give promise of an eco-
+nomic advantage gained through one computer
+system serving more than one on-line user.
+Furthermore, a computer system large enough to
+serve a number of simultaneous users provides,
+for any one user, more storage, computational
+power and convenience than he could expect to
+afford on his own stand-alone machine.104
+By the same token, he began to emphasize
+the merits of a time-sharing system: a commu-
+nity of users communicating through comput-
+er consoles.105 To pursue this potential, he
+initiated the network project that led to the
+Arpanet. At that time, computers and telecom-
+munications were often discussed together, and
+computer networks were constructed by con-
+necting the same kind of computers. But Taylor
+wanted the project to connect communities to
+make the reason for the IPTO’s support of time-
+sharing more meaningful, independently from
+Licklider’s earlier agenda of a network of think-
+ing centers. Consequently, the IPTO wanted a
+network experiment between the most geo-
+graphically distant organizations it funded:
+MIT Lincoln Laboratory (Massachusetts) and
+SDC (California), and asked Roberts to take
+charge because he was managing TX-2 at
+Lincoln.106
+According to Roberts, he had been well
+aware of Licklider’s enthusiasm for networking
+time-sharing systems, but when the IPTO
+sought his expertise in 1966, Roberts declined;
+he was more interested in computer graphics.
+Ultimately, however, Roberts was compelled to
+join the IPTO to direct the networking project,
+and the IPTO agenda for computer networking
+was set in motion at last.107
+Roberts’ approach to the network experi-
+ment differed from what Licklider had origi-
+nally envisioned. Unlike the centralized
+time-sharing systems at the heart of Licklider’s
+networking concept, the Arpanet was designed
+as a distributed network, and Roberts integrat-
+ed the former directors’ visions into an agenda
+for a resource sharing network.108
+We can conclude that the IPTO agenda for
+networking was backed by the time-sharing
+agenda set by Licklider, though it did not pre-
+cisely follow his picture of a network of think-
+ing centers. As we know, the Arpanet became a
+basis of the backbone of today’s Internet. Of
+course, the Internet has been the dynamic force
+in integrating multiple separate networks into a
+network system, so we cannot point out only
+one origin. But we can say that Licklider’s orig-
+inal vision of intellectual resource sharing
+through a network of online databases stored
+in digital computers has been historically real-
+ized in today’s Internet.
+Acknowledgments
+On the revision process, the comments and
+advice of the reviewers were helpful in making
+July–September 2003
+73
+this article better, and I am greatly indebted to
+Michael S. Mahoney for his kindness in read-
+ing, and commenting on, this article.
+References and notes
+1. M. Campbell-Kelly and W. Aspray, Computer: A
+History of the Information Machine, Basic Books,
+1996, p. 212.
+2. Committee on Innovations in Computing and
+Communications: Lessons from History, Comput-
+er Science and Telecommunications Board, Com-
+mission on Physical Sciences, Mathematics, and
+Applications, National Research Council, Funding
+a Revolution: Government Support for Computing
+Research, National Academy Press, 1999, p. 56.
+3. A.L. Norberg and J.E. O’Neill, Transforming Com-
+puter Technology: Information Processing for the
+Pentagon, 1962–1986, Johns Hopkins Univ. Press,
+1996, pp. 58-59.
+4. According to the ARPA internal memo directed to
+the organization Licklider funded, from J.C.R. Lick-
+lider to members and afﬁliates of the Intergalactic
+Computer Network, in J.C.R. Licklider Papers (MC
+499), Inst. Archives and Special Collections, Mass.
+Inst. of Technology Libraries, Cambridge, Mass.
+(hereafter referred to as Licklider Papers at MIT
+Libraries), box 7, folder “1963,” the distribution is
+for SDC (System Development Corp.); Stanford
+Research Inst.; Stanford Univ.; Univ. of California
+(Berkeley); Univ. of California (Los Angeles);
+Carnegie Inst. of Technology; Information Int’l
+Inc.; MIT; Thompson-Ramo-Woolridge. The fact
+that the eight organizations were related to time-
+sharing was conﬁrmed through Norberg and
+O’Neill, Transforming Computing Technology, pp.
+102-103 and accompanying references.
+5. Norberg and O’Neill, Transforming Computing
+Technology, pp. 9-10.
+6. Inst. for Defense Analyses, Research and Eng.
+Support Division, Computers in Command and
+Control, tech. report 61-12, Nov. 1961, p. 1.
+7. Ibid., p. 2.
+8. Ibid., p. 62.
+9. Norberg and O’Neil, Transforming Computer Tech-
+nology, pp. 84-85; W. Clark, “The LINC Was Early
+and Small,” A History of Personal Workstations, A.
+Goldberg, ed., ACM Press, 1988, p. 358.
+10. E. Fredkin, “The Time Sharing of Computers,”
+Computers and Automation, Nov. 1963, vol. 12,
+no. 11. p. 12.
+11. I.E. Sutherland, Sketchpad: A Man–Machine Graphi-
+cal Communication System, master’s thesis, Dept. of
+Electrical Eng., MIT, Jan. 1963, MIT theses, no.
+1963-10, chapter 2: “History of Sketchpad,” p. 24.
+12. I.E. Sutherland, “Sketchpad: A Man–Machine
+Graphical Communication System,” AFIPS Proc.
+Spring Joint Computer Conf., Spartan Books, vol.
+23, 1963, pp. 329-345.
+13. F. Gruenberger, ed., Computer Graphics: Utility/Pro-
+duction/Art, Thompson Book Co., 1967, pp. 44-45.
+14. D.C. Engelbert, “The Augmented Knowledge
+Workshop,” A History of Personal Workstations, A.
+Goldberg, ed., ACM Press, 1988, pp. 191-192.
+15. See, for example, H. Rheingold, Tools for Thought:
+The People and Ideas behind the Next Computer
+Revolution, Simon & Schuster, 1985, chapter 7;
+Norberg and O’Neill, Transforming Computer
+Technology, pp. 26-30; Campbell-Kelly and
+Aspray, Computer, pp. 212-215; P.E. Ceruzzi, A
+History of Modern Computing, MIT Press, 1998, p.
+306. Also see Licklider’s biographical history:
+M.M. Waldrop, The Dream Machine: J.C.R. Licklid-
+er and the Revolution That Made Computer Person-
+al, Viking, 2001.
+16. E. Bennet, J. Degan, and J. Spiegel, eds., Military
+Information Systems, Frederick A. Praeger, 1964,
+preface, p. ix.
+17. J.C.R. Licklider, “Artiﬁcial Intelligence, Military
+Intelligence, and Command and Control,” Mili-
+tary Information Systems, 1964, pp. 118-133.
+18. Ibid., pp. 123-124.
+19. J.C.R. Licklider and W.E. Clark, “On-Line
+Man–Computer Communication,” AFIPS Proc.
+1962 Spring Joint Computer Conf., Spartan Books,
+vol. 21, May 1962, p. 113.
+20. In relation to the term of agenda, see M.S.
+Mahoney, “The Structures of Computation,” The
+First Computers: History and Architectures, R. Rojas
+and U. Hashagen, eds., MIT Press, 2000, pp. 20-
+21: “The agenda of a ﬁeld consists of what its
+practitioners agree ought to be done, a consen-
+sus concerning the problems of the ﬁeld, their
+order of importance or priority, the means of
+solving them, and perhaps most importantly,
+what constitutes a solution.”
+21. L. Beranek, “Roots of the Internet: A Personal His-
+tory,” The Massachusetts Historical Rev., vol. 2,
+2000, pp. 57-59.
+22. In 1959, the PDP-1 prototype came to BBN
+before its ofﬁcial release. See, for example, “The
+Project MAC Interviews,” Annals of the History of
+Computing, vol. 14, no. 2, Apr.–June 1992, pp.
+16-17. A photo of the prototype can been seen
+in G. Bell, J.C. Mudge, and J.E. McNamara, Com-
+puter Engineering: A DEC View of Hardware Systems
+Design, Digital Press, 1978, p. 135. The inﬂuence
+of TX-0 and TX-2 on PDP-1 is described in chap-
+ter 6, “The PDP-1 and Other 18-Bit Computers,”
+pp. 123-129.
+23. L. Beranek, “Roots of the Internet: A Personal His-
+tory,” p. 60.
+24. J. McCarthy et al., “A Time-Sharing Debugging
+System for a Small Computer,” AFIPS Proc. 1963
+Spring Joint Computer Conf., Spartan Books, vol.
+23, p. 56.
+25. M. Greenberger, ed., Computers and the World of
+74
+IEEE Annals of the History of Computing
+J.C.R. Licklider and the IPTO
+the Future, MIT Press, 1962, p. vii. Also see, for
+example, “The Project MAC Interviews,” Annals
+of the History of Computing, vol. 14, no. 2,
+Apr.–June 1992, pp. 15-16.
+26. Ibid., Greenberger, ed., Computers and the World
+of the Future, p. 205. 
+27. Ibid., p. 222.
+28. J.C.R. Licklider, “Man–Computer Symbiosis,” IRE
+Trans. Human Factors in Electronics, vol. 1, no. 1,
+Mar. 1960, pp. 4-11.
+29. Ibid., p. 7.
+30. J.C.R. Licklider, “Agenda for the study of library
+problems of the future,” memo, box 6, folder
+“1961,” Licklider Papers at MIT Libraries.
+31. L. Beranek, “Roots of the Internet: A Personal His-
+tory,” pp. 60-61.
+32. In Licklider Papers at MIT Libraries, box 7, folder
+“1963.” 
+33. J.C.R. Licklider, Libraries of the Future, MIT Press,
+1965, pp. 39-45.
+34. Ibid., p. 42.
+35. J.C.R. Licklider, “The Truly Sage System, or
+Toward A Man–Machine System for Thinking,”
+manuscript, 20 Aug. 1957, box 6, folder “1957,”
+Licklider Papers at MIT Libraries.
+36. “The Project MAC Interviews,” Annals of the His-
+tory of Computing, vol. 14, no. 2, p. 16.
+37. MIT Project Charles, “Problems of Air Defense:
+Final Report of Project Charles,” MIT, Cambridge,
+Mass., 1951, 3 vols. See also, Redmond and
+Smith, From Whirlwind to MITRE, pp. 102-108.
+38. Group Organization List of MIT Lincoln Laborato-
+ry, 1 July 1953; G. Miller, interview by C. Ishikawa
+Kita, 9 Oct. 2001, Princeton, N.J.; J.C.R. Licklider,
+OH 150, oral history interview by W. Aspray and
+A. Norberg, transcript, 28 Oct. 1988, in
+Cambridge, Mass., Charles Babbage Inst., Univ.
+of Minnesota, Minneapolis, pp. 6-7.
+39. See Ref. 36. Licklider interview by Aspray and Nor-
+berg, transcript, 1988, p. 10. Though he men-
+tioned the computer as TX-2, it might be TX-0.
+40. W. Clark, email interview by C. Ishikawa Kita, 24
+June 2000.
+41. Group Organization List of MIT Lincoln Laborato-
+ry, 1 July 1953. There were several informal meet-
+ings organized by Selfridge among people who
+were researching the function of the human
+brain through digital computers. Licklider joined
+the meetings. (W. Clark, email interview by C.
+Ishikawa Kita, 24 June 2000. Preliminary
+interview was done on 27 Mar. 2000, Palo Alto,
+Calif.) I conﬁrmed the fact with Marvin Minsky,
+(email interview by C. Ishikawa Kita, 27 May
+2000) and O. Selfridge, (interview, 23 Dec. 2000,
+Cambridge, Mass.). Selfridge said that he could
+not recognize which meetings they were because
+he talked on the matter with a variety of people,
+including the people Clark suggested. Thus the
+fact that they had some relationship and talked
+about the “human brain and computer” can at
+least be counted as a historical fact.
+42. The session of “Learning Machines,” Proc. West-
+ern Joint Computer Conf., Inst. of Radio Engineers,
+1955, pp. 85-111; O.G. Selfridge, “Pattern
+Recognition and Modern Computers,” pp. 91-
+93; G.P. Dinneen, “Programming Pattern Recog-
+nition,” pp. 94-100.
+43. Ibid., W.A. Clark and B.G. Farley, “Generalization
+of Pattern Recognition in a Self-Organizing Sys-
+tem,” pp. 86-91.
+44. J.C.R. Licklider, “The Truly SAGE System,” cover
+page.
+45. Ibid., p. 8. Licklider used “information center”
+and “thinking center” interchangeably in the
+paper.
+46. Project Charles and MIT Lincoln Laboratory were
+initiated by the US Air Force. Licklider served as a
+member of the Scientiﬁc Advisory Board, Ofﬁce
+of the Chief of Staff, US Air Force, circa 1961.
+47. “Man–Computer Symbiosis” (1960) was
+“supported largely by the Behavioral Science
+Division, Air Force Ofﬁce of Scientiﬁc research, Air
+Research and Development Command,” as indi-
+cated on the ﬁrst page of the publication. Licklid-
+er, “Man–Computer Symbiosis,” p. 4.
+48. J.C.R. Licklider, “Truly SAGE system,” p. 1.
+49. Ibid., p. 2.
+50. Ibid., p. 2-3.
+51. Ibid., p. 3.
+52. According to J. McCarthy, “Reminiscences on the
+History of Time-Sharing,” Annals of the History of
+Computing, vol. 14, no. 1, Jan.–Mar. 1992, pp.
+19-24. For more detail at MIT, see S.L. Garﬁnkel,
+Architects of the Information Society; Thirty-Five
+Years of the Laboratory for Computer Science at
+MIT, H. Abelson, ed., MIT Press, 1999, pp. 2-9.
+53. J. McCarthy could not remember whether he had
+a conversation with Licklider before Sept. 1957
+on “time-sharing.” J. McCarthy, email interview
+by C. Ishikawa Kita, 30 Oct. 2001.
+54. R.R. Everette, C.A. Zraket, and H.D. Bennington,
+“SAGE—A Data Processing System for Air
+Defense,” Proc. Eastern Joint Computer Conf., Inst.
+of Radio Engineers, 1957, pp. 153-154.
+55. J.A.N. Lee, “Time-Sharing at MIT: Introduction,”
+Annals of the History of Computing, vol. 14, no. 1,
+Jan.–Mar. 1992, pp. 13-15. See also, J.A.N. Lee,
+“Claims to the Term “Time-Sharing,” Ibid., pp.
+16-17. 
+56. See, for example, A. Rosenberg, “Time-Sharing: A
+Status Report; Problems and Prospects,” Datama-
+tion, Feb. 1966, vol. 12, no. 2, pp. 66-77.
+57. J.C.R. Licklider, “Man–Computer Symbiosis: Part
+of the Oral Report of the 1958 NAS-ARDC Special
+Study, Presented on Behalf of the Committee on
+the Roles of Men in Future Air Force Systems, 20-
+July–September 2003
+75
+21 November 1958,” box 6, folder “1958,” Lick-
+lider Papers at the MIT Libraries, pp. 2-3.
+58. J.C.R. Licklider, “Man–Computer Symbiosis,”
+1960, p. 4.
+59. J.C.R. Licklider, “The Truly SAGE System,” p. 4.
+60. About Sabre, see for example, J.L. McKenney with
+D.C. Copeland and R.O. Mason, Waves of Change:
+Business Evolution through Information Technology,
+Harvard Business School Press, 1995. Especially,
+chapter 4: “Rattling SABRES: American Airlines and
+the Reservation System Revolution,” pp. 97-140.
+61. M. Campbell-Kelly and W. Aspray, “Computers,”
+pp. 169-176.
+62. Ibid., p. 174.
+63. See, for example, A.L. Samuel, “Artiﬁcial Intelli-
+gence: A Frontier of Automation,” The Annals of
+the American Academy of Political and Social
+Science, vol. 340, Mar. 1962, pp. 10-20.
+64. Especially, the phrase “giant brain” was diffused
+by E.C. Berkeley, Giant Brains, or Machines that
+Think, John Wiley & Sons, 1949.
+65. J.C.R. Licklider, “The Truly SAGE System,” p. 12.
+66. M. Minsky homepage, http://www.ai.mit.edu/
+people/minsky/people.html.
+67. J. Bernstein, “Mind and Machine: Proﬁle of Mar-
+vin Minsky,” Science Observed, Basic Books, 1982,
+p. 29.
+68. M. Minsky, email interview by C. Ishikawa Kita,
+28 May 2000.
+69. J. Bernstein, “Mind and Machine: Proﬁle of Mar-
+vin Minsky,” p. 101. The word the machine could
+recognize was not “watermelon” but “butterfat”
+according to G. Miller, interviewed by Ishikawa
+Kita, 2001.
+70. According to H. von Foerster, ed., Cybernetics; Cir-
+cular Causal and Feedback Mechanisms in Biological
+and Social Systems, vol. 7, Macy Foundation, New
+York, 1951, Licklider’s talk was “The Manner in
+Which and Extent to Which Speech Can Be Dis-
+torted and Remain Intelligible.” The best historical
+work on the meetings: S.J. Heims, Constructing A
+Social Science for Postwar America: The Cybernetics
+Group, 1946–1953, MIT Press, 1991.
+71. M. Mitchell Waldrop, Complexity, Simon & Schus-
+ter, 1992, pp. 157-160.
+72. D.O. Hebb, The Organization of Behavior, John
+Wiley & Sons, 1949.
+73. Licklider, “Man–Computer Symbiosis,” 1960, p. 5.
+74. C.T. Morgan et al., eds., Human Eng. Guide to
+Equipment Design, McGraw-Hill, 1961, p. 1.
+75. J. Phinney Baxter 3rd, Scientist Against Time, Lit-
+tle, Brown, 1946, part ﬁve: “Men and Machines,”
+pp. 395-417.
+76. W. Sinaiko, ed., Selected Papers on Human Factors
+in the Design and Use of Control System, Dover
+Publications, 1961, p. vii.
+77. E.J. McCormick, Human Engineering, McGraw-
+Hill, 1957. 
+78. See the section “Ofﬁcers, Board, Committees,
+and Representatives of the American Psychologi-
+cal Association, 1957–1958,” The American Psy-
+chologist, vol. 12, no. 11, p. 710.
+79. Human Factors, vol. 1, no. 1, Sept. 1958 (it was
+issued in 1959).
+80. “Proc. Sixty-Ninth Ann. Business Meeting,” The
+American Psychologist, vol. 16, no. 12, p. 785.
+81. J.C.R. Licklider, “Man–Computer Symbiosis: Part
+of the Oral Report of the 1958 NAS-ARDC Special
+Study,” Licklider Papers at the MIT Libraries.
+82. Ibid., front page.
+83. Ibid., p. 2.
+84. Ibid., pp. 4-7.
+85. J.C.R. Licklider, “The Cerebral Frontier,” 24 Apr.
+1961, Licklider Papers at MIT Libraries, box 6,
+folder “1961,” front page.
+86. Inst. for Defense Analyses, “Computers in Com-
+mand and Control,” pp. 56-57.
+87. J.C.R. Licklider, “Artiﬁcial Intelligence, Military
+Intelligence, and Command and Control,” p. 133.
+88. A. Norberg and J. O’Neill, Transforming Computer
+Technology, pp. 204-209.
+89. Ibid., p. 14. Chapters two through ﬁve were ded-
+icated for each of four research areas: time-shar-
+ing, computer graphics, networking, and AI.
+90. See, for example, P.H. Salus, Casting the Net,
+Addison-Wesley, 1995, pp. 6-7; P.N. Edwards, The
+Closed World, MIT Press, 1996, pp. 262-271; K.
+Hafner and M. Lyon, Where Wizards Stay Up Late:
+The Origins of the Internet, Touchstone, 1996, pp.
+24-40; M. Hauben and R. Hauben, Netizens: On
+the History and Impact of Usenet and the Internet,
+IEEE CS Press, 1997, chapter 6; T.P. Hughes, Res-
+cuing Prometheus, Pantheon Books, 1998, pp.
+258-265; J. Abbate, Inventing the Internet, MIT
+Press, 1999, pp. 43-44; and J. Naughton, A Brief
+History of the Future: The Origins of the Internet,
+Weidenfeld & Nicolson, 1999, pp. 65-76.
+91. I. Sutherland, “Computer Graphics: Ten Unsolved
+Problems,” Datamation, vol. 12, no. 5, May
+1966, pp. 22-27.
+92. A. Norberg and J. O’Neill, Transforming Computer
+Technology, pp. 129-130.
+93. L.G. Roberts, Graphical Communication in a Time-
+Sharing Environment, tech. report, MIT Lincoln
+Laboratory, May 1965, p. 1. (This paper was pre-
+sented at the 1965 IFIPS Congress, 24-29 May
+1965, New York.)
+94. I.E. Sutherland, “The Future of On-Line Systems,”
+On-Line Computing Systems, E. Burgess, ed., pro-
+ceedings of the symposium sponsored by the
+Univ. of California at Los Angeles and Informatics
+Inc., 2-4 Feb. 1965, American Data Processing,
+1965, p. 13.
+95. Macromodular Computer System project at
+Washington Univ. led by W. Clark from Mar.
+1965, and Parallel Processor (ILLIAC IV) project at
+76
+IEEE Annals of the History of Computing
+J.C.R. Licklider and the IPTO
+Univ. of Illinois led by D. Slotnick from Feb. 1966.
+See, for example, Norberg and O’Neill,
+Transforming Computer Technology, pp. 264-269.
+96. I. Sutherland, OH171, oral history interview by
+W. Aspray, transcript, 1 May 1989, Pittsburgh,
+Charles Babbage Inst., Univ. of Minnesota, p. 20.
+97. A. Norberg and J. O’Neill, Transforming Computer
+Technology, p. 264.
+98. Ibid., pp. 204-209.
+99. I. Sutherland, “The Future of On-line Systems,”
+p. 11.
+100. A. Norberg and J. O’Neill, Transforming Computer
+Technology, p. 116.
+101. See, for example, A.G. Hammersmith, “Selecting
+a Vendor of Time-Shared Computer Services,”
+Computers and Automation, vol. 17, no. 10, Oct.
+1968, pp. 16-22; R.T. Bueschel, “Time Sharing in
+the Near Future,” Computers and Automation, vol.
+18, no. 1, Jan. 1969, pp. 28-30.
+102. T.P. Hughes, Rescuing Prometheus, p. 265.
+103. See, for example, R.A. MacGowan, “Small Scientif-
+ic Computers versus Data Communications
+Systems in a Large Computer Environment,” Com-
+puters and Automation, vol. 13, no. 2, Feb. 1964,
+pp. 26-28; M. Emerson, “The ‘Small’ Computer
+versus Time-Shared Systems,” Computers and
+Automation, vol. 14, no. 9, Sept. 1965, pp. 18-20.
+104. R.W. Taylor, “Man–Computer Input-Output Tech-
+niques,” IRE Trans. Human Factors in Electronics,
+vol. 8, vol. HFE-8, no. 1, Mar. 1967, p. 2.
+105. R.W. Taylor, “Plans for an Experimental, Interac-
+tive Computer Network,” paper prepared for the
+2nd Workshop on National Systems of the Task
+Group on National Systems for Scientiﬁc and
+Technical Information, Front Royal, Va., circa
+1968, pp. 9-10; Taylor’s personal ﬁles.
+106. T. Marill and L.G. Roberts, “Toward a Coopera-
+tive Network of Time-Shared Computers,” AFIPS
+Conf. Proc. Fall Joint Computer Conf., Spartan
+Books, vol. 29, 1966, pp. 425-431.
+107. L.G. Roberts, “The ARPANET and Computer Net-
+works,” A History of Personal Workstations, A.
+Goldberg, ed., ACM Press, 1988, pp. 143-144.
+108. Ibid., p. 146.
+Chigusa Ishikawa Kita was
+granted a doctorate in 2002
+from Kyoto University. Her
+research interests include the
+formation of technological
+vision and research agenda, the
+social impact of computing
+technology, and the process of
+institutionalization in the ﬁeld of computer science.
+A book on the early history of the IPTO based on her
+dissertation was published in Japan in 2003.
+Readers may contact Chigusa Ishikawa Kita at
+Academic Center for Computing and Media Studies,
+Kyoto University, Yoshida-Nihonmatsu-cyo, Sakyo,
+Kyoto, Japan 606-8501; chigusa.kita@nifty.ne.jp.
+For further information on this or any other com-
+puting topic, please visit our Digital Library at
+http://computer.org/publications/dlib.
+July–September 2003
+77
+SET
+INDUSTRY
+STANDARDS
+computer.org/standards/
+HELP SHAPE FUTURE TECHNOLOGIES • JOIN AN IEEE COMPUTER SOCIETY STANDARDS WORKING GROUP AT 
+IEEE Computer Society members work together to deﬁne standards like 
+IEEE 802, 1003, 1394, 1284, and many more.
+802.11 FireWire
+token rings
+gigabit Ethernet
+wireless networks
+enhanced parallel ports

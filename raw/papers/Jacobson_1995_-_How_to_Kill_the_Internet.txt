@@ -1,0 +1,135 @@
+How to Kill the Internet
+Van Jacobson
+Lawrence Berkeley Laboratory
+Berkeley, CA 94720
+SIGCOMM ’95 Middleware Workshop
+Cambridge, MA
+28 August 1995
+The Internet was designed to survive
+a nuclear war.
+It lives up to its design.
+How might you kill it?
+vj–Middleware WS–2
+Easy — Invent the Web.
+vj–Middleware WS–3
+Web trafﬁc is destroying the Internet.
+Not because it’s popular — there are
+benign popular protocols — but because the
+application-level protocols are abysmal.
+With a lot of effort and cooperation, we may
+be able to ﬁx the Web without changing its
+user interface.
+But it would be nice if application designers
+didn’t make this painful set of mistakes
+again.
+vj–Middleware WS–4
+With 25 years of Internet experience, we’ve
+learned exactly one way to deal with
+exponential growth:
+Caching.
+Data
+has
+to
+ﬁnd
+‘local’
+sources
+near
+consumers rather than always coming from
+the place it was originally produced.
+But the number of caches has to grow as
+fast as the Internet, exponentially.
+How do we architect for lots of caches?
+vj–Middleware WS–5
+Conﬁguration is a major problem.
+Experience shows that anything that must
+be conﬁgured will be misconﬁgured.
+Web clients need hostname of their local
+cache.
+Client rendezvous with local cache
+should be automatic.
+I.e., use multicast.
+vj–Middleware WS–6
+For any source of popular data, want a
+cache distribution tree rooted at that source
+with leaves near everyone who wants the
+data.
+But
+nothing
+in
+the
+Internet
+is
+static:
+sources, receivers and distribution topology
+all change continuously.
+Cache hierarchy should be
+self-conﬁguring and adaptive.
+I.e., use multicast.
+vj–Middleware WS–7
+Near root of distribution tree, it’s very likely
+data requested by one cache will soon be
+needed by another.
+1
+2
+3
+R
+isp
+Should use efﬁcient, multi-point
+distribution for data.
+I.e., use multicast.
+vj–Middleware WS–8
+Using multicast implies that we stop thinking
+of communication as ‘conversations’:
+Instead of asking X to send you Y,
+simply ask for Y.
+(This is a profound change at the protocol
+level — Dave Clark’s ALF).
+vj–Middleware WS–9
+Applications and data (data naming) have to
+be designed with scalable caching in mind.
+This
+implies
+either
+explicit
+lifetimes
+or
+generation numbers otherwise bottlenecks
+re-appear due to cache-coherency protocol.
+(The average transaction is small so
+a validity check
+a data xfer.)
+vj–Middleware WS–10
+The Internet has grown because IP’s default
+behavior is transitive and a site has to do
+extra work to limit transitivity.
+C
+B
+A
+Need
+the
+same
+attitude
+in
+application
+design.
+I.e., every reader is a cache (becomes a
+source of the data read) and users have to
+work to turn this off.
+vj–Middleware WS–11
+Large-scale caching makes it much more
+likely that data is corrupted or subverted.
+Need cheap, universal, data integrity
+and authentication machinery.
+Item size vs. packet size mismatch
+might require machinery with
+some new properties.
+vj–Middleware WS–12
+Need a billing architecture that encourages
+rather than discourages caching.
+1
+2
+3
+R
+isp
+Receiver-pays, not sender-pays.
+vj–Middleware WS–13

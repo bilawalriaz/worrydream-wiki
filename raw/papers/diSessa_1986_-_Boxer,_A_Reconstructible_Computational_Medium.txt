@@ -1,0 +1,1236 @@
+SPECIAL SECTION 
+BOXER: A RECONSTRUCTIBLE 
+COMPUTATIONAL MEDIUM 
+Programming is most often viewed as a way for experts to get computers to 
+perform complex tasks efficiently and reliably. Boxer presents an alternative 
+image-programming 
+as a way for nonexperts to control a reconstructible 
+medium, much like written language, but with dramatically 
+extended 
+interactive capabilities. 
+ANDREA A. diSESSA and HAROLD ABELSON 
+Writing is an everyday activity for most people in 
+our society-whether 
+it be in the form of a list, a 
+letter, or a scribbled note in the margin of a book- 
+even though few possess expert writing skills. 
+Within a generation, programming will also be a part 
+of the everyday lives of many people who do not 
+have expert programming skills. Naturally, 
+popular 
+programming languages will differ from current 
+general-purpose computer languages, which are de- 
+signed primarily 
+for programming professionals. In- 
+deed, the very idea of what it means to “program” 
+will change as we come to recognize that, as with 
+writing, the significance of programming derives not 
+only from the carefully crafted works of a few 
+professionals, but also from the casual jottings of 
+“ordinary” 
+people. 
+This article presents a view of what programming 
+could be like as a common everyday activity for 
+most people. The central image is that of controlling 
+a reconstructible 
+medium, much like written lan- 
+guage, but with dramatically 
+extended interactive 
+capabilities. We begin with some general observa- 
+tions about programming in this context and con- 
+tinue with a description of Boxer, a reconstructible 
+medium that we are designing for particular 
+applica- 
+tions in education. 
+Boxer development is supported by the National Science Foundation un- 
+der Grant MDR-85.96025 and Grant MDR-86-42177. and by the Defense 
+Advanced Research Projects Agency of the Department of Defense. and 
+monitored by the Office of Naval Research under Contract N00014.83- 
+K-0125. 
+0 1986 ACM OOOl-0782/86/0900-0859 
+750 
+RECONSTRUCTIBLE 
+MEDIA 
+Computers are commonly used for text processing, 
+although most text written using computers is still 
+intended to be ultimately 
+printed on paper. As more 
+and more people have access to computers, it be- 
+comes increasingly 
+worthwhile 
+to exploit the possi- 
+bilities of the computer screen itself as an expressive 
+medium. It is easy to imagine interactive 
+books with 
+elaborately structured text, moving illustrations, 
+built-in 
+simulations, 
+and special-purpose dynamic 
+tools whose interactive 
+capabilities go far beyond 
+canned presentations. For instance, a science text- 
+book on optics could include text with multiple 
+or- 
+ganizations and multiple means of access; moving 
+illustrations 
+of the wave properties of light; simula- 
+tions that perform ray tracing through lenses and 
+mirrors; databases of optical properties of various 
+substances; and graphing and analysis tools for pro- 
+cessing experimental 
+data gathered through photo- 
+electric sensors. 
+A computer-based medium for constructing 
+such 
+a book may seem like a great advance over present- 
+day printed media. Yet, if viewed only as a way to 
+produce fancy books, it lacks an essential quality 
+necessary for a truly popular medium: the possibility 
+for personal construction 
+by users at all levels of 
+competence, The optics book represents the “grand 
+image” of the medium, such as one would see in 
+commercially 
+produced textbooks or in a finished 
+novel. A popular medium of expression, however, 
+must also be usable in ways that might suit the 
+September 1986 
+Volume 29 
+Number 9 
+Communications of the ACM 
+Special Section 
+personal needs of children, teachers, or other 
+noncomputer specialists. 
+In particular, 
+a popular computational 
+medium 
+must be easy to program. In the hypothetical 
+optics 
+book, for example, all elements of the book, beyond 
+simply entering the text, would be created through 
+some sort of programming. We would like everyone 
+to have access to the same kinds of tools used for 
+constructing 
+the book. The medium should also 
+serve beginners and casual users, even if they never 
+reach the stage of producing an exemplar of the 
+grand image. 
+One major benefit of programmability 
+is that even 
+professionally 
+produced items become changeable, 
+adaptable, fragmentable, and quotable in ways that 
+present software is not. Not only would professionals 
+be able to construct grand images, but others would 
+be able to reconstruct personalized versions of these 
+same images. Giving all users access to the behind- 
+the-scenes organization 
+of an interactive 
+book means 
+that new ideas-the 
+dynamic equivalent 
+of famous 
+quotations-can 
+enter the culture with the medium. 
+Beyond interactive 
+books, a reconstructible 
+me- 
+dium should allow people to build personalized 
+computational 
+tools and easily modify tools they 
+have gotten from others. This concept is in strong 
+contrast to the current situation in applications 
+software-professionals 
+are designing tools only for 
+large populations with a common need. Since only 
+experts can craft such systems or tune them to par- 
+ticular purposes, designers must predict every possi- 
+ble variation that users might need, and supply often 
+ad hoc methods of selecting among options. With a 
+reconstructible 
+medium, there is no need to play 
+guessing games to this extent, and changes to any 
+application tool can be made uniformly-through 
+programming. 
+PROGRAMMING 
+LANGUAGES 
+REVISITED 
+Most research into the design of programming lan- 
+guages has been in the tradition 
+of programming as a 
+way for experts to get comput.ers to perform complex 
+tasks efficiently 
+and reliably. Programming as a 
+means of controlling 
+an interactive 
+medium sets 
+very different needs and constraints on languages. 
+Here are some traditional 
+desiderata for program- 
+ming languages that ultimately 
+are not of major im- 
+portance in creating a popular medium: 
+l Formal simplicity-a 
+computer scientist’s or a 
+mathematician’s 
+measures of simplicity 
+are simply 
+not at issue. A better criterion is accessibility 
+to a 
+seven-year-old child. 
+l Efficiency-there 
+are so many other important at- 
+tributes of a language for controlling 
+an interactive 
+medium that efficiency must take a backseat. If 
+860 
+Communicatiolzs of the ACM 
+present-generation 
+machines are not powerful 
+enough, we can wait for the next. 
+l Verifiability-rigor 
+is not a primary requirement 
+of an expressive medium. Much more important is 
+the ability to accommodate a wide variety of ex- 
+pressive styles. 
+l Uniformity-the 
+demands of multifunctionality 
+are great, and it is likely that some degree of uni- 
+formity will have to be sacrificed. 
+More telling is what emerges as important to a 
+broadly based computational 
+medium: 
+l Understandability-this 
+is a primary and unavoid- 
+able goal if nonexperts are to successfully use this 
+new medium. 
+l Tuned toward common, directly useful functional- 
+ities-if 
+the medium is to be useful and widely 
+used, it will have to seem more “familiar”; 
+for ex- 
+ample, basing data structures on text and pictures 
+rather than on abstract, though perhaps more gen- 
+eral objects such as arrays or lists. 
+l Tuned toward small tasks-the 
+ability to imple- 
+ment simple ideas easily is much more important 
+in this context than the ability to do complex tasks 
+efficiently. 
+l Interaction-user 
+interfaces are often considered 
+to be separable from programming language se- 
+mantics and almost an afterthought 
+in language 
+design. Worse, most present languages assume 
+only character-stream 
+input and output. A useful 
+medium must be much more flexibly 
+interactive. 
+BOXER 
+Much of Boxer’s character is determined by two key 
+principles-the 
+spatial metaphor and naive realism. 
+People have a great deal of commonsense knowl- 
+edge about space that can be used to make com- 
+puters more comprehensible. 
+The spatial metaphor 
+encourages people to interpret the organization 
+of 
+the computational 
+system in terms of spatial rela- 
+tionships.’ Using a Boxer system is like moving 
+around in a large two-dimensional 
+space. All compu- 
+tational objects are represented in terms of boxes, 
+which are regions on the screen that contain text, 
+graphics, or other boxes. Boxes within 
+boxes repre- 
+sent hierarchical 
+structures. For example, (1) a vari- 
+able is a box containing the variable’s value; for a 
+compound data structure (such as a record with 
+named fields) the variable contains other variables; 
+(2) a program is a box containing the program text; 
+internal subprocedures and variables (as in block- 
+structured programs) are represented as subboxes. 
+When you enter a box (by moving the cursor into it), 
+’ Boxer’s use of the spatial metaphor was encouraged by work on spatial 
+data management systems at the MIT Department of Architecture 
+[Z]. 
+September 1986 Volume 29 Number 9 
+Special Sectior7 
+you gain access to its contents. Thus, any box can be 
+a special-purpose environment 
+with its own data 
+and behavior (programs). 
+Naive realism is an extension of the “what you see 
+is what you have” idea that has become common- 
+place in the design of text editors and spreadsheets, 
+but not for programming languages. The point is that 
+users should be able to pretend that what they see 
+on the screen is their computational 
+world in its 
+entirety. For example, (1) any text that appears on 
+the screen-whether 
+typed by the system, entered 
+by the user, or constructed by a program-can 
+be 
+moved, copied, modified, or (if it is program text) 
+evaluated; (2) you can change the value of a variable 
+simply by altering the contents of the variable box 
+on the screen. If a program modifies the value of a 
+variable, the contents of the box will be automati- 
+cally updated on the screen. In general, there is no 
+need to query the system to display its state, nor any 
+need to invoke a state-change operation to affect the 
+system indirectly. 
+portant features. Our aim is to suggest how users can 
+move smoothly from simple text and data manipula- 
+tion, through modifying and producing personal 
+computational 
+tools, to dealing with larger systetns 
+such as interactive 
+books. Of key interest is the way 
+in which the basic box structure is elaborated tb 
+support many important functions of a reconstructi- 
+ble medium. (Additional 
+examples and discussion of 
+the theoretical and empirical motivations 
+for specific 
+choices in Boxer’s design can be found in [3] and 
+[4lJ 
+Boxer currently 
+exists as a prototype, including 
+all 
+of the features described below, implemented on 
+Symbolics and Texas Instruments Lisp machines. 
+We are about to start implementation 
+on a more 
+modest machine so that we can begin testing the 
+system extensively 
+in a variety of settings. 
+Boxes and Text 
+The text shown in Figure 1 is part of a tutdrial on 
+Boxer, organized using boxes. Note particularlv 
+the 
+Following are-some highlights of Boxer’s most im- 
+way in which, by shrinking 
+and expanding boxes, 
+I :.I I 
+7 
+Welcome 
+to 
+Boxer 
+Boxes 
+come 
+in 
+three 
+sizes 
+-- 
+tin 
+as 
+his 
+as 
+necessary 
+to 
+show 
+contents, 
+and 
+full 
+screen. 
+Use 
+t 
+e mouse 
+to 
+move 
+around 
+in 
+the 
+Kg 
+Boxer 
+world. 
+The 
+left 
+button 
+shrinks 
+boxes 
+and 
+the 
+right 
+button 
+expands 
+them. 
+mouse 
+button. 
+Point 
+to 
+the 
+shrunken 
+box 
+below 
+and 
+press 
+the 
+right 
+1 ook 
+You 
+should 
+see 
+the 
+box 
+expand, 
+and 
+then 
+it 
+will 
+‘ust 
+1 ike 
+the 
+box 
+next 
+to 
+it 
+. 
+and 
+t 
+e box 
+ui 11 
+expand 
+to 
+full 
+screen. 
+A 
+Press 
+the 
+right 
+button 
+again, 
+pressing 
+the 
+left 
+button. 
+Then 
+shrink 
+the 
+box 
+by 
+his 
+box 
+is 
+just 
+a copy 
+o 
+he 
+one 
+next 
+to 
+it. 
+m 
+You 
+can 
+make 
+a box 
+by 
+pressing 
+the 
+MflKE-BOX 
+key. 
+Why 
+don’t 
+you 
+B 
+ill. 
+make 
+a box 
+nou, 
+here 
+in 
+this 
+text 
+somewhere, 
+and 
+expand 
+it 
+and 
+shrink 
+it. 
+Move 
+the 
+cursor 
+into 
+it 
+and 
+type 
+anythin 
+you 
+want. 
+In 
+fact, 
+you 
+may 
+want 
+to 
+type 
+notes 
+to 
+yourself 
+ins1 3 
+add 
+to 
+this 
+tutorial 
+e boxes 
+you 
+That’s 
+the 
+kind 
+of 
+flexibility 
+you 
+get 
+with 
+a reconstructible 
+medium! 
+By 
+entering 
+the 
+first 
+box 
+belok 
+you 
+can 
+learn 
+more 
+text-editin 
+commands 
+so 
+you 
+can 
+move 
+and 
+delete 
+whole 
+sections 
+of 
+text 
+and 
+% oxes 
+at 
+once. 
+Boxer. 
+The 
+second 
+box 
+tells 
+you 
+a 
+little 
+about 
+programming 
+in 
+The 
+third 
+box 
+contains 
+some 
+Boxer-built 
+toys 
+you 
+can 
+play 
+with. 
+Pick 
+a box, 
+expand 
+it 
+to 
+full 
+screen, 
+and 
+get 
+started. 
+A mouse is used as a pointing device to move around the system and to shrink and expand boxes. 
+FIGURE 1. A “Page” from a Boxer Tutorial 
+September 1986 
+Volume 29 
+Number 9 
+Communications of the ACM 
+661 
+Special Secfiorl 
+detail can be hidden or shown for brief inspection. 
+By expanding a box to full screen, the user effec- 
+tively enters a subenvironment 
+(box). Figure 1 
+shows how essentially all of the mechanics of mak- 
+ing, inspecting, and modifying boxes can be learned 
+and used without 
+knowing anything at all about 
+programming. 
+At first glance, boxes may seem to be nothing 
+more than a variant on the windows used in many 
+display-oriented 
+systems. Windows, however, have 
+no computational 
+semantics except as places to dis- 
+play interaction 
+with a program or application-a 
+window’s position on the screen and its relation to 
+other windows do not generally reflect any informa- 
+tion about the objects in the computational 
+system. 
+Boxes, in contrast, are the system’s computational 
+you can make arcs 
+with 
+the 
+procedures 
+FlRCRldHT and ARCLEFT. 
+Heie 
+are 
+some procedures 
+%I&! 
+draw pictures 
+using 
+arcs: 
+Try running 
+some af 4% 
+followib~g 
+commands to draq 
+pictures 
+in 
+the 
+graphics 
+bdx atWe. 
+f 
+Graphics appear inside regions of the screen called graphics 
+boxes. The box labeled SUN defines the procedure that drew 
+the design in the graphics box above. Definitions (boxes with 
+name tabs on them) can be invoked anywhere within the box 
+in which they appear. This scoping rule provides a general 
+blockstructuring capability that has been used here to in- 
+clude RAY as an internal subprocedure of SUN. The bottom 
+line of the screen is a menu from which the user can select 
+commands to be run. Here, as indicated by the small arrow 
+(mouse cursor), the user has selected SUN with an input of 
+0.7. The letter R followed by a colon is a prompt generated 
+by the system to indicate that the SUN procedure requires 
+one argument, named R. Such prompts are generated auto- 
+matically whenever users type the name of a defined proce- 
+dure and press a help key. In general, any text on the screen 
+can be modified or run. 
+662 
+Communications of fhe ACM 
+FIGURE 2. Turtle Graphics in Boxer 
+September 1986 
+Volume 29 Number 9 
+Special Sectior~ 
+B 
+for- 
+x in 
+list 
+I 
+if 
+x.name 
+= name 
+I 
+change 
+number 
+x . number 1 
+If 
+you 
+put 
+a name 
+in 
+the 
+NAME box 
+and 
+press 
+the 
+FUNCTION-l 
+key 
+the 
+phone 
+number 
+.will 
+appear 
+in 
+the 
+NUMBER box. 
+This box is a utility for finding phone numbers. Its local data- 
+standard format. The procedure named FUNCTION _ 1 -KEY 
+base is a box called LIST that contains subboxes with a 
+will be run whenever the FUNCTION- 1 key is pressed. 
+FlGURE3. The PHONE-BOOKBOX 
+objects, and box containment 
+reflects meanings such 
+as subprocedures as parts of procedures and records 
+as parts of databases. The part-whole 
+relation im- 
+plied by box containment 
+is fully operational, and 
+the box structure can be traversed, inspected, and 
+changed by programs as well as manually. Boxer’s 
+spatial metaphor is a recognition that spatial rela- 
+tions are extraordinarily 
+expressive and should not 
+be wasted by being used only for transient needs 
+(where there is space to pop up a windowj 
+or by 
+divorcing spatial relations from fundamental 
+seman- 
+tics. Similarly, 
+the concept of naive realism dictates 
+that one should see computational 
+objects, not just 
+interfaces to them. 
+Simple Programming 
+Figure 2 shows some simple Boxer programs that 
+draw designs using the turtle graphics commands 
+introduced in the educational computer language 
+Logo.’ It is important to observe how text, programs, 
+and graphics have been intermixed 
+to produce a tu- 
+torial about drawing using arcs; note in particular 
+that the bottom line of the figure is a menu of com- 
+mands for the user to try. This menu was created 
+2Boxsr is in many ways an extension of Logo. Simple Boxer procedures- 
+especially those for graphics--resemble 
+Logo procedures. Our work in 
+Boxer has been motivated largely by a desire to extend Logo-style activi- 
+ties to a much broader range of possibilities. Although Logo took very 
+seriously the benefits of making programming a popular activity. it did 
+not begin with the image of a medium encompassing written language. 
+hierarchical structures. databases. and interactive 
+graphical tools. (See [6] 
+for an overview of Logo. and [‘] for a development of geometry based on 
+turtle graphics.) 
+simply by typing the commands in place and leaving 
+them on the screen to be run or modified-the 
+prin- 
+ciple of naive realism dictates that anything that ap- 
+pears on the screen should be manipulable 
+in this 
+way. Here, as indicated by the mouse cursor, the 
+user has selected to run the command SUN with an 
+input of 0.7. The graphics output appears in a graph- 
+ics box. Graphics boxes can also be named, copied, 
+and moved using Boxer’s editor interface. 
+Two of the procedure boxes in Figure 2, 
+ARCLEFT and SUN, have been expanded to illustrate 
+the form of Boxer procedures. Note that SUN con- 
+tains an internal procedure RAY; box containment 
+is 
+being used here to implement block structuring 
+of 
+procedures. In general, the scoping rules of Boxer- 
+definitions 
+are accessible inside a box, but not out- 
+side of it-allow 
+for boxes to be used as environ- 
+ments that users enter to gain access to procedures 
+and data defined inside. Assimilating 
+the computa- 
+tional idea of scoping into the intuitive 
+notion of 
+“inside” is central to the spatial metaphor. 
+A Simple Database Tool 
+The box named PHONE-BOOK, 
+shown in Figure 3, 
+is a simple utility 
+for storing and retrieving phone 
+numbers. When a user types a name in the box 
+marked NAME and presses the FUNCTION 
+- 1 key, the 
+corresponding phone number will appear in the box 
+marked NUMBER. PHONE -BOOK contains a database 
+called LIST, 
+which is a box containing other boxes 
+with a standard format: subboxes NAME, ADDRESS, 
+September 1986 
+Volume 29 
+Number 9 
+Communications of the ACM 
+863 
+Special Section 
+, 
+I 
+, 
+- 
+When the FUNCTLON - 2 key is pressed, 6~~~~~jl~~~,~a~~~,’ ” ::, the template and tabal it $th the name FUNCTXON 2 -KEY. 
+the cursor a template for a record with add&X: ~~rXg$$+’ 
+fields partially filled in that can be added t~~he~~Srn~:IP~ * 
+(The template st+v 
+ha@& especiqlly useful if you happen 
+: 
+order to make this extension, the user needed br%yIttl &pc$ 
+FIGURE 4. Extension to the PHONE-BOOK 
+and PHONE. The boxes in the database, as well as 
+the NAME and NUMBER boxes, are data boxes. Mark- 
+ing a box as data indicates that, when the box is 
+used by a program, the contents are to be inter- 
+preted as literal text rather than as a program to be 
+executed. (This is similar to the use of QUOTE in 
+Lisp.) Named data boxes are variables. 
+The FUNCTION- 1 -KEY is a procedure that looks 
+up the designated name and supplies the corre- 
+sponding phone number.3 Boxer contains pattern- 
+matching capabilities that make the lookup opera- 
+tion trivial, but we have written the procedure here 
+in a way that illustrates some more basic Boxer ca- 
+pabilities: A FOR loop steps through the LIST, 
+searching for a box whose NAME field matches 
+the designated NAME. When the box is found, the 
+NUMBER box is changed to the corresponding 
+PHONE field. (There are obvious improvements 
+to 
+be made here, such as stopping the iteration when 
+a match is found, and using an ordered database, 
+but we have chosen to show only the very sim- 
+plest procedure.) Note the use of the dot syntax 
+<box - name> . tsubbox 
+- name> for specify- 
+ing named subboxes of a box. 
+Boxer’s naive realism automatically 
+supplies an 
+input/output 
+mechanism for the procedure. The 
+boxes NAME and NUMBER are ordinary variables. 
+3The 
+we 
+of 
+KEY as a suffix 
+automaticallv 
+hinds 
+the operation 
+to the 
+specified 
+key. 
+Any 
+key can he hound 
+in this 
+way. 
+Typing something in the NAME box automatically 
+sets the variable NAME that is referenced by the pro- 
+cedure. Similarly, 
+when the procedure changes the 
+variable NUMBER, the new contents will automati- 
+cally appear on the screen in the NUMBER box. 
+In a user’s overall Boxer environment, 
+PHONE - 
+BOOK is a special-purpose subenvironment. 
+Boxer’s 
+scoping rules dictate that the binding of the function 
+key to the lookup procedure will be active only 
+when the user enters the PHONE - BOOK box. Other 
+boxes in the system are free to bind this function 
+key (or any other key) for their own purposes. 
+Extending the Database Tool 
+It is easy to make personalized extensions to the 
+PHONE-BOOK as illustrated 
+in Figure 4. The point of 
+the phone-book example is not that everyone should 
+write a phone-number-fetching 
+procedure from 
+scratch; rather, we want to illustrate 
+how Boxer en- 
+ables people to build or modify their own little tools 
+of whatever idiosyncratic 
+sort. Boxer is an environ- 
+ment designed for invention 
+and functionality 
+in lit- 
+tle pieces, where understanding 
+the system better in 
+any particular 
+context results in more power gener- 
+ally. For example, learning how to change the value 
+of a variable is far more than a trick for the PHONE - 
+BOOK program; it is an essential feature that allows 
+users to modify any piece of Boxer. 
+a64 
+Communiations 
+of fhc ACM 
+September 1986 
+Volume 29 
+Number 9 
+Special Sectiorl 
+Objects and Message Passing 
+The graphics box in Figure 5a is the home of two 
+graphical objects (known in Boxer as sprites) named 
+Minnie and Mickey. Also shown is the STAR proce- 
+dure, which takes two parameters, SIZE and 
+ANGLE, and draws a symmetric shape by repeating 
+360/ANGLE 
+times the following 
+sequence: Call the 
+procedure STEP with an input of SIZE, 
+and then 
+the procedure RIGHT with an input of ANGLE. In 
+the figure, Minnie and Mickey have each been told 
+to perform STAR with a SIZE of 40 and an ANGLE of 
+60. Observe that the two sprites draw different de- 
+signs. This is because, as we shall see below, Minnie 
+and Mickey use different 
+STEP procedures when 
+executing STAR. 
+Turtle graphics, and the sprite extensions that 
+appear in some versions of Logo, are known to be 
+congenial forms of interaction 
+for simple graphics 
+programming. But the fact that the state of these 
+graphical objects cannot be seen and directly manip- 
+ulated violates the naive realism principle. 
+Boxer is 
+therefore arranged so that a graphics box is only an 
+alternate form for an ordinary box structure that 
+includes sprites as subboxes. Attributes 
+of sprites- 
+their position, heading, speed (if in motion), and 
+shape (expressed as the procedure that draws the 
+shape) are visible and manipulable 
+as ordinary vari- 
+ables. Changes to these variables, whether by direct 
+editing or under program control, automatically 
+affect the graphical representation. 
+Figure 6b shows the nongraphical 
+(data) version of 
+the same graphics box with its resident sprites 
+Minnie and Mickey. Minnie and Mickey each have 
+their own version of the procedure STEP, which 
+IGraohics 
+Data, 
+qGraphics1 
+tell 
+minnie 
+star 
+SIZE:40 
+fiNGLE:60 
+tell 
+mickey 
+star 
+SIZE:40 
+ANGLE:60 
+This graphics box contains two sprites-Minnie 
+(the small 
+triangle) and Mickey (the small five-pointed star). Each sprite 
+has been told to run the procedure called STAR. The designs 
+drawn are different, because each sprite has its own defini- 
+tion of the STEP procedure when executing STAR. 
+FIGURE 5a. A Graphics Box 
+Here is the graphics box of Figure 5a, shown in data form so 
+ing of each sprite. In addition, Mickey has a SHAPE proce- 
+that all of its computational structure is visible, changeable, 
+dure that makes him appear as a five-pointed star; Minnie 
+and extendable in ordinary Boxer textual format. The XPOS, 
+has no SHAPE procedure and hence appears in the default 
+YPOS, and HEADING variables show the position and head- 
+shape, a triangle. 
+FIGURE 5b. The Data Form of a Graphics Box 
+September 1986 
+Volume 29 
+Number 9 
+Communications of the ACM 
+885 
+Special Section 
+they use when they perform STAR. Naturally, 
+addi- 
+tional local procedures or variables can be added at 
+any time simply by entering the sprite box and typ- 
+ing the definition 
+in place. 
+Packaging local data and procedures together and 
+organizing computations by sending messages to 
+these packages via TELL 
+are paradigms of object- 
+oriented programming, popularized by the language 
+Smalltalk [5]. Boxer’s spatial metaphor assimilates 
+such packaging to box containment, 
+thereby making 
+the object structure visible and concrete. Object- 
+oriented programming in Boxer is not limited to 
+sprites and graphics. Any box can be told remotely 
+to execute any command tha.t might ordinarily 
+be 
+locally executed from within 
+that box. 
+Point-and-Poke 
+Interaction 
+Figure 6b also reveals that Minnie contains a proce- 
+dure named M - CLICK. 
+A sprite’s M - CLICK 
+proce- 
+dure is automatically 
+executed whenever the middle 
+mouse button is clicked over the sprite in graphics 
+presentation. In this case, pointing at Minnie with 
+the mouse and clicking the button will make her go 
+forward. 
+A simple game that could be constructed by a 
+child using a few lines of code and the above inter- 
+active capabilities is shown in Figure 6. The graphics 
+box contains five sprites: a planet, a rocket, two ar- 
+rows, and a BOOST 
+! icon. Because sprites have 
+touch-sensing capabilities, it is easy to include obsta- 
+cles, such as the planet, that the rocket must avoid 
+in order not to crash. 
+Ports and Sharing 
+Boxer’s spatial metaphor should prove to be an 
+important factor in helping people deal with com- 
+putational structures. It does, however, impose a 
+significant constraint on the structures that can be 
+represented-box 
+containment 
+is a strictly hierar- 
+chical relation. Using containment 
+only, shared data 
+structures could not be represented, nor could two 
+widely separated boxes be viewed at the same time 
+without moving one of them and thus changing the 
+state of the system. 
+N-4 
+BOOST! 
+A graphics box with five sprites includes a control panel for 
+rocket a little thrust; a click on the arrows rotates the rocket 
+piloting a rocket. A click on the BOOST ! sprite gives ihe 
+to the right or left. 
+FIGURE 6. Interaction with Sprites 
+888 
+Communications 
+of t/w ACM 
+September 1986 
+Volume 29 
+Number 9 
+Special Secti 
+-This 
+is 
+a port 
+to 
+the 
+box 
+named 
+SHARE. 
+Zhanqinq 
+either 
+box 
+wi 11 
+automati 
+call 
+y 
+change 
+the 
+other 
+one. 
+pPorti 
+I 
+This 
+is 
+a port 
+to 
+the 
+box 
+named 
+SHARE. 
+Chanqinq 
+either 
+box 
+will 
+automatically 
+change 
+the 
+other 
+one. 
+L 
+1 
+\ 
+J 
+I 
+The second box is a port to (the alternate view of) the box 
+named SHARE above it. Text typed into the port at the arrow 
+cursor has also automatically 
+appeared in the SHARE box. 
+The two lower boxes illustrate how ports can be used to 
+implement shared data: Any change to the ADDRESS or 
+PHONE fields in either box will also appear in the other box. 
+FIGURE 7. Examples of Port Structure in Boxer 
+In order to overcome this limitation, 
+Boxer in- 
+such as compact disks that would appear to users as 
+cludes a structure called a port, which is simply a 
+parts of their personally changeable Boxer systems. 
+view of a box at some other place in the system. A 
+We would also love to extend Boxer to incorporate 
+port behaves in most respects identically 
+to the box 
+sound and high-quality 
+moving pictures in graphics 
+it views-any 
+change in one will automatically 
+boxes. This is, however, the grand image of the me- 
+cause the same change in the other. Figure 7 shows 
+dium, and most users’ time will be spent in far more 
+a typical application of ports. Ports can also be used 
+modest pursuits than constructing such books. The 
+to provide cross-referencing in interactive 
+books or 
+important point is that we can imagine a progression 
+databases, to obtain multiple views of computational 
+from the equivalent of scribbling in this new me- 
+objects (e.g., to view a sprite in its graphics and data 
+dium, as children scribble with pencil and paper, to 
+form at the same time), to share combinations 
+of 
+the profound “scribblings” 
+of experts-a 
+path in 
+local data and procedure among objects, and to im- 
+which each new stage of understanding 
+and com- 
+plement various nonstandard scoping disciplines for 
+petence is rewarded with new opportunities 
+for 
+procedures. 
+personal expression. 
+THE GRAND IMAGE 
+CONCLUSION 
+As a final example, Figure a, page 868, shows a page 
+from the interactive 
+book on optics proposed earlier. 
+It should be clear how such a book can be con- 
+structed in Boxer as a natural evolution of text edit- 
+ing combined with writing simple procedures. It 
+should also be apparent that, once produced, such a 
+book can be readily modified and reconstructed by its 
+users-both 
+in small ways, as by adding marginal 
+notes, and more extensively, 
+as by modifying the 
+simulations and tools included in the book. 
+It is exciting to contemplate the possibilities of 
+interactive 
+books, published on high-density 
+media, 
+Boxer challenges, in a small way, the current view 
+of programming languages. More significantly, 
+it 
+challenges the current view of what programming 
+might be like, and for whom and for what purposes 
+programming languages should be created. We have 
+argued that some computer languages should be de- 
+signed for laypeople, and have presented an image of 
+how computation could be used as the basis for a 
+popular, expressive, and reconstructible 
+medium. 
+Computers will become substantially 
+more powerful 
+instruments of educational and social change to the 
+extent that such an image can be realized. 
+September 1986 
+Volume 29 
+Number 9 
+Communications of the ACM 
+867 
+jhoot 
+Ray 
+Shoot 
+Penci 
+1 
+Acknowledgments. 
+We gratefully 
+acknowledge the 
+efforts of all those members of the Boxer Groups at 
+MIT and Berkeley who have helped to make Boxer 
+(almost) a reality. Special thanks to Michael 
+Eisenberg, Gregor Kiczales, Leigh Klotz, Ed Lay, 
+and Jeremy Roschelle. 
+CR Categories 
+and Subject Descriptors: 
+D.2.2 [Software 
+Engineer- 
+ing]: Tools and Techniques--user 
+interfaces: D.2.6 (Software 
+Engineer- 
+ing]: Programming 
+Environments--Boxer; 
+D.3.0 (Programming 
+Lan- 
+guages]: General--Boxer: 
+H.1.2 [Models and Principles]: 
+User/Machine 
+Systems--huntarr 
+facfors; K.3.0 [Computers 
+and Education]: 
+General 
+General Terms: Human Factors, Languages 
+Additional 
+Key Words and Phrases: computational 
+media 
+REFERENCES 
+1. Abelson. H.. and disessa, A.A. Turtle Geomelry: The Computer as a 
+Medium for Exploring Mathematics. 
+MIT Press, Cambridge, 
+Mass., 
+1981. 
+2. Bolt, R.A. Spatial data-management. 
+Rep., Dept. of Architecture. 
+MIT. Cambridge. 
+Mass.. 1979. 
+3. diSessa. A.A. A principled 
+design for an integrated 
+computational 
+environment. 
+Hum.-Compui. 
+Interaction 
+I, 1 (1985). l-47. 
+4. disessa. A.A. Notes on the future of programming: 
+Breaking 
+the 
+utility 
+barrier. 
+In User-Centered Systems Design, D. Norman 
+and 
+S. Draper. Eds. Lawrence 
+Erlbaum. 
+Hillsdale, 
+N.J., 1986. 
+5. Goldberg. A.. and Robson. D. Smalltalk-80: 
+The Language and Its Im- 
+plementafion. Addison-Wesley. 
+Reading. Mass., 1983. 
+6. Papert, S. Mindstorms: 
+Computers, Children and Powerful Ideas. Basic 
+Books, New York. 1980. 
+Authors’ 
+Present Address: Andrea A. disessa. School of Education. 
+Uni- 
+versity of California. 
+Berkeley, 
+CA 94720: Harold Abelson. Laboratory 
+for Computer 
+Science. M.I.T.. Cambridge. 
+MA 02139. 
+Permission 
+to copy without 
+fee all or part of this material 
+is granted 
+provided 
+that the copies are not made or distributed 
+for direct commer- 
+cial advantage, 
+the ACM copyright 
+notice and the title of the publication 
+and its date appear. and notice is given that copying is by permission 
+of 
+the Association 
+for Computing 
+Machinery. 
+To copy otherwise. 
+or to 
+republish. 
+requires a fee and/or 
+specific permission. 
+666 
+Communications of the ACM 
+September 1986 
+Volume 29 
+Number 9 

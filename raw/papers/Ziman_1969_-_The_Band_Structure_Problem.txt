@@ -1,0 +1,1048 @@
+> 
+> 
+ 
+( 
+I 
+;, 
+JOURNAL OF RESEARCH of the Notional Bureau of Standards - A. Physics and Chemistry 
+Vol. 74A, No.2, M arch-April 1970 
+The Band Structure Problem* 
+J. M. Ziman 
+H. H. Wills Physics Laboratory, Bristol, BS 8, 1 TL, England 
+(October 10, 1969) 
+The num erical solution of the Sc h r;;di ll ~e r equation for a n electron in a dense assembl y of atoms 
+(i. e. a solid o r liquid meta l or semicondu cto r) has made great pro~ ress in th e past ten years. This is not 
+me re ly a consequ cnce of great e r co mputing power; we now ha ve a mu ch bett e r grasp of the mathemati-
+cal th eo ry of suc h solut ions. 
+By 1960 a number of prac ti cal methods had been de vised fo r the comput ation of the electron ic 
+structure of o rd e red crystals, bu t th ese lacked intuiti ve int e rp retation. The first adva nce was to re write 
+the O PW me t hod in te rms of pseudopote nt ials, thu s making sense of the f ree-clect ron t heo ry of me ta ls. 
+This de velop me nt has proved partic ul a rl y valuable in se miquan titat ive and e mpiri ca l in vesti ga tio ns of 
+Fe rmi s urfaces, transport properties, lattice d yna mics, co hesio n, el c. , but we ha ve had to wait unt il 
+recentl y for a ri gorou s ana lysis of th e c riteria for converge nce of th c various t ypes of llI ude l potc nt ial or 
+pseudopote nti al that have been postu lated. 
+The nex t s te p was to s how th at th e KKR (G rce n fun ction) mcth od could a lso be expressed as a 
+pseudopotenti a l, and then to de mons tra te th at thi s was also a form of APW ex pansion. The relati vc 
+comp utati unal power of th ese two meth ods ca n thus be a nalyzed, and questions a ns we re d conce rnin g 
+the fulfillm e nt of th e empty latti ce tes t, the appa rent lack of uniqu eness of th e cxpans ions, th e ad-
+vantages of " folding" matrix e le ments from di sta nt point s of the reciproca l latti ce, and the introdu cti un 
+of contributi ons from the inters titi al pote nti al. 
+At thi s s tage, the connecti ons between th e band structure proble m and the t-matri x theory of scat-
+tering were unco vered, a nd d-bands were see n to arise as resonances of thc muffin-tin we lls. T he KKR 
+ma trix co uld now be rewritt en as a mi xture of pseudo pote nti a l a nd tight -b ind ing e le me nts, in harm ony 
+with the e mpirical model Hamiltoni an represent ations of hybridised So p a nd d-ba nd s. Th is method not 
+only pe rm its more rapid comput ations, but s ho ws c learl y how th e width and positio n of s uch bands 
+shou ld de pend on th e atomic potenti al. 
+So me proble ms still re main. Fo r exa mple, present techniques do not seem adequate for first-princi-
+ples ca Iculations on molec ul ar crystals, wh ere the a nisotropy of th e int e rst it ia l potent ia l (i. e. eas y cha n-
+ne ls a lo ng bonds, but hi gh hills be twee n layers or chains) is probabl y the domina nt feature. 
+As for disordered syste ms- we know little for ce rtain and nothing qu antit atively. T he linear cha in 
+1lI0dei has been fu ll y s tudied but is quit e irrelevan t to the three-dimensional case. The present theoreti-
+cal confusion is exemplified by the equi concentrati on s ubstitutional alloy in th e ti ght-binding li mit; 
+some formulae give onl y one band, ot hers a llo w two. Again , the very possibilit y of producing band gaps 
+by diffraction of free electron s in a topologicall y disordered syste m (e.g. amorphous Ge) has not been 
+de mon strate d mathematicall y with a ny rigor. 
+Key words : APW; band structure; de nsity of states; disordered systems; KKR; pseudopotential ; 
+t-matrix; molecul a r crystals. 
+1. Algebra vs. Arithmetic 
+the Electronic De nsity of States to an unprejudiced 
+tribunal? 
+Any scientific problem or puzzle can seem interest-
+i' ing and significant if one gets sufficien tl y involved in it: 
+the diffic ulty sometimes is to persuade other people of 
+this importance. How should we defend our interest in 
+Not, surely, in terms of immediate use, but of long 
+term understanding. Electrons being the gl ue of a ll 
+" materials", their states within condensed ma tter are 
+of fundamental importa nce. No quantitati ve estima te 
+of any property of a metal, semiconductor , insul ator, 
+glass, liquid , mineral, et c., can begin without informa-
+tion about these states. In fact, we want all the wa ve 
+~ ---
+*An in vited pa pl'1" prl'sen tt,d a t 111(' 3d i\'latcrials I\esea r('h Sy mpos ium . Electronic Den -
+sity of Stales, Nove mbe r :3-6 , 1969. Ca i t hc r s bu r~ . .'vld. 
+241 
+----------
+functions of all the electrons outside of the closed 
+shells - a tall order, which cannot be fulfilled by direct 
+experiment. The next best thing is the energy spec-
+trum , or "density of states," although as we shall learn 
+in the course of this symposium, that cannot always be 
+deduced unambiguously from observed phenomena_ 
+Progress in this field therefore depends on sound 
+theoretical analysis of the hypothetical possibilities, as 
+well as careful experimental investigation of the facts_ 
+The calculation of electronic band structure is thus the 
+central mathematical problem of solid state physics_ 
+Every "exciting" topic or mysterious phenomenon - su-
+perconductivity, the Kondo effect, ferromagnetism , 
+Fermi s urfaces, the Cunn effect, Josephson tunnelling, 
+et c_,-eventually depends for its computable parame-
+ters on this mundane task. 
+It is sometimes argued, by the deeply unimaginative 
+follower of scientifc fashion , that this problem has been 
+solved long ago, and can safely be left to the brute 
+strength of more and more powerful computers_ This is 
+quite wrong; these elephants must be goaded and 
+guided by experienced mahouts, whose skill is to see 
+in advance the type of answer that is to be obtained, 
+and then to deploy the minimum of force to lever away 
+the obstacles_ A ream of computer print-out is useless 
+unless it agrees so perfectly with experiment that we 
+need never look back and see why and how it went 
+wrong_ Our task is to devise techniques for the theoreti-
+cal mastery of ever more complex systems, which 
+requires at every stage that we know exactly what we 
+are doing, analytically as well as numerically_ 
+This is well illustrated by the recent history of our 
+subject. Let me express this in personal terms_ A little 
+more than ten years ago, in gathering material for a 
+monograph [1] of which one chapter covered this topic, 
+I found that many techniques of band structure compu-
+tation had been proposed and tried out, but that there 
+were very few cases where the results had been con-
+firmed experimentally, or where they gave an insight 
+into the actual electronic structure of the materials_ It 
+was si mply not obvious , for example, that almost all the 
+calculated band structures for metals could have been 
+derived from the free electron system by perturbation 
+effects at the zone boundaries, because nobody had 
+programmed his computer to print out the data in that 
+form_ We knew from the success of the free electron 
+modeL that this could not be very far from the truth, 
+but we had not the imagination to rewrite the algebra so 
+as to see how this must arise within whatever method 
+of calculation we might happen to use_ 
+In the past decade, of course, computational 
+techniques have improved enormously in accuracy and 
+power, so that a whole body of expertise is now availa-
+ble for application in any particular case [2] - Given the J
+exact one-electron potential of a crystalline solid, we , 
+can compute the band structure to almost any desired :
+degree of accuracy_ But the trouble is that we do not al- I
+ways have this potential, complete with all the electron-
+-1-
+electron terms, spin-orbit interaction, core polarization, 
+exchange and correlation effects and so on, so that our J 
+first-principles computations just miss the answers we 
+are seeking_ Without an appeal to the basic algebraic 
+principles and governing features of the model, we then 
+flounder around, trying to adjust the parameters by trial / 
+and errOL Somebody else, using a different "method" -> ' 
+may get a different answer: is this due to deep discrep-
+ancies in the fundamental assumptions, or to errors of 
+approximation, or just numerical mistakes? 
+2. Pseudism 
+Now recall how our minds have been liberated by the 
+pseudopotential concept. There is no need to explain 
+this to the present audience_ Let us suppose that we 
+had tried to express the Bloch function of wave vector _
+k by a sum of simple plane waves 
+IJik = ~
+. 
+Q' ei(k+g) r 
+g 
+g 
+, 
+(1) 
+where g runs through the reciprocal lattice: we should > 
+have to solve the infinite set of linear equations 
+where r (g- g') is a Fourier component of the periodic 
+potential in the lattice and iff is the energy of the state <
+we are after. By rewriting the equations in terms of 
+orthogonalized plane waves we can show that the whole 
+problem is equivalent to solving a very similar set of -< 
+equations 
+(3) 
+1
+in which the pseudopotential components fml' are much 
+I 
+smaller than the original set r (g- g')_ Thus, the whole ; 
+problem is equivalent to the perturbation of free elec- I
+tron waves by a weak pseudopotential and can be 
+solved by elementary computation_ For a perfect / 
+Bravais lattice the value of r (g- g') or of filII' is a func-
+'1 
+tion only of the potential associated with a single atom 
+or ion - in the language of x-ray diffraction, it is just the '''" 
+"atomic form factor" in the formula for diffraction by 1
+an assembly of such objects at the appropriate Bragg 
+angle_ The band structures of most ordinary metals, --
+and many semiconductors, can be read at a glance_ Not 
+only 
+does 
+this 
+provide 
+us 
+with an admirable 
+242 
+parametrization of Fermi surfaces, optical spectra, 
+~ et c., in perfect crystals, but can be extended to include 
+almost all the properties of thermally excited, im pure 
+or disordered materials - electron-phonon interactions, 
+T electrical conductivity of solid and liquid metals, lattice 
+dynamics, phase stability of alloys, etc. In moments of 
+enthusiasm [3,4,5J we may perhaps be forgiven for pre-
+) tending that all the problems of the theory of metals are 
+cured by a strong dose of "pseudism". It is a wonderful 
+)- model for zeroth order calculations, and the ideal do-it-
+i yourself kit for the enthusiastic amateur. It had the ef-
+.-' fect of turning band structure theory from a rule of 
+" thumb technology into an elegant science. 
+/ 
+Nevertheless, the pseudopotential method is not the 
+ultimate solution to the band structure problem. In the 
+first place, the program of replacing the true atomic 
+, potential by a localized pseudo potential, independent 
+of energy and momentum, cannot be fulfilled exactly. 
+If, like Herman and his colleagues [6J one is trying to 
+make very accurate first principles calculations, 
+nothing is gained by rewriting the OPW equations in 
+this form. Indeed, there is a danger that the apparent 
+simplicity and rapid convergence of the pseudopoten-
+tial equations may seduce us into further approxima-
+tions which hide important effects; once having lost 
+touch with the exact equations, we slide easily into a 
+)t sloppy mess where qualitative and quantitative, first 
+principles and parametrized, features are inextricably 
+confused. 
+> 
+> 
+> FIGURE 1. 
+The true wave function t/J(") in the true potentiaL 0(,') is 
+replaced by the pseudo wove function q,(" ) in the pseudopoten· 
+tial w( ,·). 
+This type of confusion is compounded by the non-
+uniqueness of pseudo potentials. The original algebraic 
+proof of this arbitrariness came as something of a sur· 
+prise, but it is really quite obvious. We are asked, in ef. 
+fect to construct a weak potential that will reproduce 
+the effect of a strong potential on an electron wave of 
+given energy impin ging on the atom. The boundary con· 
+dition on the pseudo wave function-that it should 
+match the true wave function on the outside-is very 
+weak, and amounts to little more than fixing the value 
+of a few integrals over the pseudo potential. We know, 
+for example, that the s-wave scattering phase shift of 
+the true potential will be reproduced at low energies if 
+we choose the spatial average of the pseudopotential 
+correctly- and so on. Almost any fun ction containing 
+a few adjustable parameters can be made to fit these 
+conditions. Of course the problem of finding a fixed 
+local pseudo potential that will imitate the effects of the 
+true potential over a wide range of energy is much more 
+difficult, and has not been solved, but that is not what 
+we are asked to do. 
+This arbitrariness was exploited to the full by Heine 
+and Abarenkov [7] who chose the most elementary 
+pseudopotential functions so as to simplify the rest of 
+the algebra. It was natural to reproduce the core poten· 
+tial of a metallic ion with a square well of depth A{(g'), 
+which could be continued outwards as a simple 
+Coulomb potential; or as a screened Coulomb potential, 
+according as one is thinking of an isolated free atom or 
+of a "pseudo atom" in a condensed phase (fig. 2). In 
+fact, the value of A{(g') for a given angular momentum 
+can then be estimated from the optical term values, 
+in the tradition of the quantum defect method of Kuhn 
+and Van Vleck. 
+S uch a " model potenti al" is obviously good physics, 
+and can be more or less justified mathematically. It 
+copes very elegantly with one of the most diffi cult 
+aspects of the whole theory - the self-consiste ncy 
+proble m for the valence electrons - abo ut which, for 
+reasons of brevity, I shall say ver y little here. According 
+to Shaw [8] , the screening corrections can be calcu-
+lated accurately, although it pays to eliminate the 
+discontinuity at the surface of the squa re well by treat-
+RM 
+~ __________ o~_____________ r 
+\ 
+\ 
+\ 
+I 
+/ 
+-zr 
+F IGURE 2a. 
+Heine·Abarenkov pseudo(Jotential; before screening. 
+, .. r 
+-RM 
+o 
+FI GU RE 2b. After screening (from [5]). 
+243 
+ing the radius of this internal flat region as another ad-
+justable parameter, depending also on energy and mo-
+mentum (fig. 3). 
+E 
+r---- -- --, 
+I 
+I 
+\1 
+" 
+\ 
+\ 
+\ 
+/ 
+I 
+F IGUR E 3. 
+Shaw pseudofJotential. 
+Notice, however, the dangers of overelaboration. An 
+arbitrarily defined model pote ntial in real space is valu-
+able only in proportion to its algebraic or geometrical 
+simplicity, and will not bear much "improvement" in 
+the name of numerical precision or in order to get 
+better agree ment with experiment. In the event the 
+electronic structure depends on the " form factor" - the 
+Fourier transform of the pseudopotential- which might 
+then just as well be derived directly from the true 
+potential by some more powerful method, or which we 
+could also re present by som e simple empirical fun ction 
+[9] . 
+From a fOTl)1al point of view, the arbitrariness of the 
+pseudopotential is certainly quite worrying. How can 
+the electronic band structure de pend uniquely on the 
+periodic lattice potential if this arbitrary function can 
+be interposed in the calculation ? Well now, suppose we 
+had tried to solve the equations (2) for the Bloch func-
+tions expanded in simple plane waves. Since these are 
+an infinite set we should have had to proceed by suc-
+cessive approximations, just as if we are trying to sum 
+a series term by term. But these equations really have 
+many solutions of much lower energy than the one we 
+are looking for, corresponding to all the narrow tight-
+bound bands and an expansion in powers of r (g- g ') 
+simpl y does not converge for energies in the valence 
+band. We are trying to sum the Born series for scatter-
+ing by one of the atomic potentials, ignoring the fact 
+that it has numerous deep bound states. The pseu-
+dopotential trick removes all the effects of these bound 
+states, and gives us a convergent series. It is rather like 
+wanting to evaluate l/(l+X) when X is about 10: a power 
+series in X will not conve rge, but we can easily con· 
+struct a new series in some new variable y = (X- a), 
+say, which can be made to converge in the region of in· 
+terest. The actual terms in the series will depend on the 
+value of a, which may be any arbitrary number larger 
+than about 5 - but the fin al answer will be independent 
+of this choice. Thus the final value of the energy as a 
+function of wave vector comes out the same, whatever 
+II 
+form of pseudo potential we introduce into the equa- < 
+tions. 
+This suggests a possible criterion for a "best" pseu-
+dopotential: choose the fo rm of rgg' that causes the se-
+ries expansion for the Bloch functions to converge most 
+rapidly. There is a rather elaborate mathematical 
+I
+theory of the Born series, due to Weinberg, which can 
+be applied to this proble m [10] and which does dis-
+criminate in principle between various formulae. These ~­
+investigations are not, perhaps, of very great practical ) 
+value to the horny-handed programmer of computers, 
+but they are healthy in establishing the basic mathe-
+matical foundations of the whole technique. 
+--: 
+3. The Problem of Bound Bands 
+The most serious limitation of the pseudopotential 
+concept is that it applies only to the so-called "simple" 
+metals - those without d-states in the valence band. 
+There is, of course, a long tradition of representing 
+such states by the tight binding method, as a linear 
+combination of atomic orbitals. The coefficie nts a/. in '
+such combinations then have to satisfy a set of linear ' 
+equations of the form 
+where the index L stands for different angular momen-
+tum and magnetic quantum numbers; for example, the 
+five values of the component of angular momentum in 
+a band of d-states. The original bound state at WI. is 
+broadened into a band by the various overlap integrals ~ 
+r l•u (k), which can in principle be evaluated, although 
+in practice this is so complicated and inaccurate that 
+one treats them as adjustable parameters. 
+It used to be thought that all the states in metals 
+could be described in this way, by bringing in enough 
+different atomic orbital s. The picture of states over-
+lapping and broadening to make nice valence and con-
+duction bands illustrates one of the nursery rhymes of 
+our subject (fig. 4). Unfortunately, this is quite mislead- , 
+ing. What happens is that as the atomic potentials 
+overlap, and the barriers fall between atomic cells" 
+most of these atomic bound-state orbitals disappear. 
+The ordinary s and p valence levels of the atoms vanish 
+into a nearly free-electron band which can only be 
+described if one includes 'propagating wave functions 
+from above the spectrum of bound states of the 
+separate ions or atoms. 
+244 
+) 
+, I 
+) 
+> 
+( 
+> 
+p 
+s 
+r 
+FIGURE: 4. 
+Conventional pictare of energy bands from overlap 0/ 
+atomic orbitals. 
+We thus arrive at an impasse: we can describe ordi· 
+nary s - p bands in pseudopotential language, and 
+d-bands in tight binding language, but there seems no 
+common tongue, even when these bands overlap and 
+hybridize as in the transition metals. 
+4p 
+This difficulty never seems to have worried the ac-
+tive calculators of band structures: they used two 
+techniques that gave good numerical results in all 
+cases -the augmented plane wave method and the 
+Green function method. One of the main developments 
+in ba nd structure theory in the past 5 years has been to 
+show the mathe matical connections between these use-
+ful techniques and the concepts of pseudopotential and 
+tight-binding. 
+The idea of an augmented plane wave is quite si mpJ e. 
+At some given energy iff, one solves the Schriidinger 
+equation inside a spherical potential well, of radius 
+Rs, say. The solution is a linear combination of products 
+or radial functions and spherical harmonics of different 
+values of angular momentum. Now determine these 
+coefficients so that this solution matches on to a plane 
+wave of wave vector k outside the sphere. This function 
+is still not an exact solution of the Schr(idinger equa-
+tion , and has a discontinuity of slope at Rs; but we can 
+build up our Bloch function by combining a set of 
+these with wave vectors k, k + g, etc. just as in (1) 
+and then using the variational principle for the energy. 
+The coefficients satisfy a set of equation s exactly like 
+the pseudopoten tial equations (3) so that we can find 
+s-p band 
+(a) 
+k 
+(b) 
+FIGURE: 5, 
+(a) Conventional LCAO description 0/ formation 0/ metallic conduction band; (b) DescrilJtion in terms 0/ maDin-tin 
+potentials. 
+245 
+FIGURE 6. 
+An augmented plane wave. 
+the energy g' as a function of k by finding the roots of 
+the determinant in the usual way. 
+The actual formula for r gg,A PW is rather elaborate, so 
+I will not write it down; it depends upon k , and also 
+upon g' through the first derivatives of the radial solu-
+tions of the Schrodinger equation at Rs. At first sight 
+one might have thought that this could be interpreted 
+as an elaborate energy- and momentum-dependent form 
+factor, derivable from a pseudo potential; but this is not 
+the case. The difficulty is that f APW does not vanish in 
+the elementary case of an empty lattice -whereas we 
+should certainly expect a pseudopotential to be zero 
+when we remove the true potential to which it is sup-
+posed to be equivalent. The connection with the tight 
+binding formalism appears even more obscure, even 
+though one can compute perfectly good d-bands by this 
+method. 
+In des peration, we turn to the KKR method of Korrin-
+ga and of Kohn and Rostoker. This is called the Green 
+function method because it was originally derived in 
+that somewhat abstract language, but it really depends 
+upon a self-consistency argument; as the Bloch wave 
+proceeds through the crystal lattice, and encounters 
+the various atomic spheres, it suffers scattering or dif-
+fraction - but this diffraction must be exactly what is 
+needed to reproduce the wave and keep it on the move 
+without loss. Again , I will spare you from the algebra, 
+and merely report that, as in the APW method, one 
+uses the radial solutions of the Schrodinger equation in 
+FIGURE 7. 
+Scattered waves recombining as plane waves in KKR 
+method. 
+each atomic sphere and plane waves outside. The 
+result is yet another set of linear equations- this time 
+for the coefficients of the mixture of solutions of various 
+angular momentum in the sphere: 
+In this formula, the energy g' is K2, and TJI (K) is the 
+phase shift that would have been produced by the 
+atomic sphere in scattering a plane wave of this energy. J
+The "structure constants" BLu(K,K) depend on the 
+energy and momentum of the state being studied, but 
+otherwise can be laboriously computed from the geo-
+metrical structure of the lattice. 
+This does not look very much like either of our previ-
+ous formulae. Indeed , from the pseudopotential point )
+of view it looks quite wrong, for when we a pply the 
+empty lattice test we make YJI tend to zero, which 
+causes co t TJI to blow up. In fact these equations need 
+<-
+to be turned upside down if we are to understand them 
+physically [Ill The algebra is again a bit heavy, and 
+depends essentially on some of the analytic properties 
+of the structure constants, each of which is in fact a 
+sum over reciprocal lattice vectors of products of spher-
+ical harmonics and Bessel functions etc. The result is 
+a set of algebraic equations of the form of (3), with the 
+following expression for the "matrix elements of the 
+pseudopotential" : 
+r KKR __ 47rN 
+(2/+1 ) 
+,jl(l k-g IR.)j,(l k-g ' IR.,) p (cose , ) 
+, -
+L I 
+tan TJ l 
+1 . ( R ) 12 
+I 
+gg 
+gg 
+K 
+}I K 
+s 
+(6) 
+where 
+(7) 
+246 
+------------------
+--
+l In thi formula , jl and TJI are spherical Bessel fun ctions, 
+and PI (cos()!I!1') is the ordinary Legendre polynomialfor 
+i the angle bet ween vectors k - g and k - g'. 
+r 
+This formula is highly instructive, for a number of 
+reasons. 
+I 
+(i) 
+Consider an empty lattice, for which TJI = O. 
+) 
+Then TJ'I will also vanish, and with it tan TJ'I. 
+> 
+) 
+l 
+I 
+> 
+> 
+Thus fUll' is a genuine pseudopotential, which 
+goes to zero with the true potential. 
+(ii) When TJI is small, the difference between, say 
+tan TJ 'I and sin TJI exp (iTJ/) is negligible. Ignor-
+ing the ratios of spherical Bessel functions, filii' 
+looks just like a scattering amplitude for the ef-
+fect of our given potential on a single plane 
+wave. This is good physics: the crystal is made 
+up of an assembly of objects, each of which scat-
+ters the Bloch wave into itself. 
+(iii) 
+A strong potential, with man y dee p bound 
+states may, nevertheless, have quite small phase 
+shifts, so may behave like a weak pseudopote n-
+tial. Thus, the principle of subtracting away the 
+divergences due to the bound states a mounts to 
+simply represe ntin g each phase shift as the 
+smallest possible angle, modulo (7T). This is a 
+well· known properly of phase shifts. 
+(i v) 
+As shown by Lloyd [12], this form of matrix 
+element can be derived from a simple model 
+potential. We merely put a delta fun ction singu· 
+larity of potential over the surface of the sphere 
+of radius R., of strength to match the phase shift 
+TJI outside, for each value of l. 
+(v) 
+The connection with the APW formula was 
+discovered by Morgan [13]. Suppose we write 
+r AI'n' (0) for the values of the APW matrix ele· 
+ments in an empty la tti ce. Then 
+fAl'W = P,KR + fAI'W(O). 
+(8) 
+The APW matrix elements have these extra parts to 
+them, which do not really contribute to the band struc· 
+). ture, and which do not vanish for any value of L, even 
+for empty space. One can even derive f APW from a 
+model potential [12] , but this is much more com-
+/' plicated in form than the one for fKKlI and does not 
+vanish in empty space. 
+FI GU RE 8. 
+PseudofJotential for I'HII. 
+These properties of this new form of pseudo potential 
+suggest that it should be much easier than the APW 
+method to use in practice for simple metals, where we 
+need only introduce small phase shifts for a fe w values 
+of angular momenta. We may also use th e computa-
+tional device of "folding" the determina nt for large 
+values of g- g ', as if we were treatin g the diffraction 
+from distant zone boundaries as a small perturbation 
+[14]. This form is also said to be the best for conver-
+gence of the Born series in the Weinberg sense [10] , 
+whatever that may imply. But the whole question ofthe 
+relative computational efficiency of these methods and 
+their minor variants is quite complicated; all I would 
+say here is that the effort of comparing them is made 
+much more fruitful when we understand the basic 
+algebraic connections. 
+One furth er mystery needs c larification. Let us recall 
+that the basic algebraic equations (3) are for the pur-
+pose of discovering the coeffi cients f3u in so me expan-
+sion of the wave function in the appropriate plane 
+waves. Thus, if we had been using f ··I/'1I" in these equa-
+tions, we should have been writing 
+~Jk = L:; f3 gcpA I'1I' (k + g) 
+where cpAI'W (k + g) is augmen ted plane wave having 
+the form exp {i(k +g)· r } outside of the atomic sphere. 
+Now it turns oui. [13] that the KKR equations also sup-
+pose that the wave function has been expanded in aug-
+mented plane waves - but since the matrix elements (8) 
+are different in these equations the coeffici ents f3u will 
+be different. In other words, the Bloch function t/JI;, 
+which is supposed to be a unique solution to our band 
+structure proble m, has two entirely different represe n-
+tations in terms of the same set of basic functions. 
+This is permissible, because in fact we are only com-
+bining APW's to satisfy the Schrodinger equation 
+outside the spheres; the part within each sphere is au-
+tomatically determined by its adjustment to the boun-
+dary condition [15] . It is well known that a periodic 
+function defined over only part of the unit cell can be 
+Muffin tin 
+well 
+Interstitial 
+region 
+FIGURE 9. 
+Flinctioll defined as Bloch wave in interstitial region may 
+have arbitrary forrn in Inliffin-tin well. 
+247 
+represented by many Fourier expansions, depending on 
+what properties it is allowed to have in the excluded re-
+gion. The APW and KKR expansions both represent ~Jk 
+correctly - yet they are not made up of exactly the same 
+combinations of simple plane waves in the interstitial 
+regions. This point is perhaps worth emphasizing 
+because in either case we have a very explicit represen-
+tation of the wave function of the Bloch state, in a form 
+that is quite convenient for calculations of electron-
+electron interactions, self-consistency of potentials, 
+and optical, x-ray, photoemission, and positron-
+annihilation matrix elements, etc. 
+It has some times been held against the APW & KKR 
+methods that they can only be used for a "muffin-tin 
+potential" - i.e. for a periodic lattice of spherically 
+symmetric wells with "empty space" in between. But 
+this is not an absolute restriction. Suppose there really 
+is a significant non constant potential 'Yi in the intersti-
+tial region. Then we can take this into account by ad-
+ding to ryy' the corresponding Fourier component 
+'Yi (g - g' ) of this potential- made explicit by being 
+given a constant value across the mouths of the muffin-
+tin wells [16]. Thus, the level which I call the "muffin-
+tin zero" [17] cuts across the equipotential surfaces, 
+producing muffin-tin wells with bound states, which are 
+eliminated by a pseudopotential device, and ranges of 
+weak potential hills through which the valence elec-
+trons easily tunnel, and which can be represented 
+adequately by their Fourier transforms. If we go 
+further, and suppose that this interstitial potential had 
+been produced by the superposition of screened Cou-
+lomb potentials, or charge clouds, carried by the in-
+dividual atoms, then we can imagine 'Yi analysed into 
+these spherically symmetrical constituents arranged in 
+a lattice, and reassign these to the corresponding muf-
+fin-tin wells, whose deep potentials have by now been 
+replaced by a model potential or pseudo potential. In 
+other words, we arrive back precisely at the sort of 
+analysis implied by figure 2 or figure 3: the effect of the 
+atoms on the electrons is equivalent to diffraction by an 
+T'\(l(\ 
+(0) 
+o 
+Vi (g_gl) 
+° AA~
+rgg, 
+FIGURE 10. Lattice potential (a) dissected into an interstitial 
+potential and muffin-tin wells. 
+(a) i!i!il(-
+(b) - ~ I~I~ I ( 
+k) ~ 
+(d) ~" 
+(e) 
+FIGURE 11. 
+Overlapping patentials (a), summed to make lattice 
+potential (b) , dissected inta an interstitial potential and muffin-
+tin weLls (c), redef ined as pseudopotentiais and overlapping ex-
+ternal ports (d) , and recombined as pseudo-atom potentials (e). 
+assembly of screened model potentials, whose outer 
+fields may, within reason, be superposed without hin-
+drance. Thus we could use rl\I\R + 'Yi as the form factor 
+in any calculation where model potentials are em-
+ployed, e.g. resistivity of liquid metals, lattice dy-
+namics, etc. 
+This final demonstration of the equivalence of all 
+three methods of band structure - OPW, APW and 
+KKR - in the case of simple metals and semiconductors 
+is very satisfactory, but I am now worried about one 
+; 
+<-
+general point. Suppose we have a very anisotropic lat-
+tice -for example , the chain structure of Te, or the 
+layer structure of graphite. The separation of the poten-
+tial into muffin-tin wells and an interstitial potential 
+must be done at a level below the lowest barriers 
+between the atoms - for example, at the level of the 
+potential half way between neighbors along a chain. But 
+this may leave very high hills in the interstitial potential ,.
+between the chains or layers - and the unwillingness of 
+the electron to tunnel through such hills may not be 
+well expressed by an expansion in plane waves in this 
+region. Perhaps this is not a serious point after all; but 
+I mention it to show that we are now gaining confidence 
+to attack the electronic structure of more complex 
+molecular crystals, a field which has up to now been 
+dominated by an army of theoretical chemists wielding 
+innumerable linear combinations of atomic orbitals - a 
+248 
+) 
+FIG URE 12. 
+Potentials in a crystal of long chain molecules: electrons 
+occupy the valleys containing muffin-tin wells, separated by 
+high potential hills. 
+weapon whose fundamental effi cacy I now take leave 
+>to doubt. 
+4. Resonance Bands 
+> 
+What about d-bands, which can be computed numer--
+ically by the APW and KKR method, but whose empiri-
+> caJ description has usually been handled by the tight 
+binding formula? The answer to this question is per-
+haps one of the most elegant results of the recent 
+> theory. Let us proceed from, say (5), the original KKR 
+equations, which are not unlike the tight-binding equa-
+tions (4), in that the index L, labelling the unknown 
+coefficients, refers to various spherical harmonics, or 
+I 
+( 
+, , , , , , , , 
+I , , 
+components of angular momentum_ We might ask, for 
+exam pIe, what would ha ppen to the phase shift YJ I (K) if 
+the e nergy happened to coincide exactl y with a bound 
+state ?fl. of the atomic potentiaL To answer this ques-
+tion in general , we should need to stud y the theory of 
+scattering in the unphysicaJ regions where ?f lies below 
+the muffin-tin zero, making K pure imaginary; but it 
+turns out that a factor like ?fL - ?f then appears in 
+cot YJ I(K) just as we might expect. Now look at our 
+formula (6) for the KKR pseudopotential in the recip-
+rocal lattice representation: if cot YJ'I were to vanish, 
+at any energy, then tan YJ' I would become infinite, and 
+everything would go wrong_ Thus, if YJ ' I should ever go 
+through 7r/2 the band structure would be seriously 
+affected_ 
+Now this is a familiar situation in the general theory 
+of scattering by atoms, molecules or nuclei: the phase 
+shift YJI goes through 7r/2 in the positive energy region 
+whenever there is a " resonance" of angular momen-
+tum_ Thus, if the atomic or ionic potential has suc h a 
+resonance, this will give rise to significant band effects 
+in this neighborhood_ There is a standard theory of s uc h 
+phenomena, whic h tells us that we may write 
+W 
+tan YJI - ---
+?f - ?fl 
+(9) 
+for the phase shift of a resonance of width W cente red 
+on the energy ?fl _ It is easy to show, using (6), that this 
+has the effect of introd ucing a band of states of about 
+this width, at about this energy, in the nearly-free-
+electron spectrum [11]. 
+This argument can be carried further. Starting from 
+the KKR formulae and making syste matic transforma-
+tions and approximations, Heine [18] showed how one 
+could separate out a particular resonance te rm , and 
+keep this in the angular momentum representation, 
+with indices m ,m' for the different components of l, 
+while reproducing a typical pseudopotential expression 
+in the reci procal lattice representation g,g' . The matrix 
+of these equations can thus be written in the form 
+ygm 
+------------------------------~------------------------------
+* 
+"Illig 
+, , , , , , , , , , , 
+(10) 
+249 
+'/ 
+/ 
+/ 
+____ /----- }w 
+k 
+FI GURE 13. 
+Resonance band crossing nearly free band. 
+Without the submatrices Yllm et c., this would factorize 
+into a nearl y-free-electron, pseudopotential matrix, 
+such as we might expect to find in a simple metal with 
+an s-p band, together with an ordinary tight binding 
+matrix, corresponding to the overlapping and mixing of 
+the 5 degenerate d-levels of the free atom. The coeffi-
+cients Yum et c. then describe the hybridization of these 
+two systems of states, which must necessarily occur 
+when these bands cross one another. 
+As it happens (but not accidentally!) an empirical 
+" rnodel Hamiltonian" of just this form had already been 
+proposed for transition and noble metals [19J before it 
+was deduced directly from the KKR equations. We can 
+now, therefore, justify this type of expression in princi-
+ple, and even calculate the various coefficients directly 
+from the atomic potentiaL In fact there are now several 
+different versions of these equations, of varying compu-
+tability, convergence and analytical simplicity [20J but 
+all essentially equivalent of Heine's formula [5 ,I8J . 
+This reinterpretation of the tight-binding formalism, 
+and its unification with the other band structure 
+methods is very pleasing, but to my mind there is a 
+greater gain. Let us ask how resonances actually arise? 
+For an ordinary one-electron potential, we need to think 
+of the effects of the centrifugal barrier term l(l+ 1)/r2 in 
+the radial Schriidinger equation, which becomes impor-
+tant for l=2. A bound d-state is really constrained to 
+avoid the nucleus by this " potential". Now lower the or-
+dinary potential at the outer edges of the atom: the ef-
+fect may be to leave a potential dip within the core, 
+where a "virtual", long-li ved level could still exist, even 
+though, eventually, it wo uld have to decay as the elec-
+tron tunnelled out into free space. Thus, the original 
+bound d-state has become a d-resonance; if the poten-
+tial barrier is sufficiently thick, the resonance will be 
+sharp; it is not surprising that the language of over-
+lapping bound states applies to the bands produced in 
+such cases. 
+From this picture we can learn a lot about the gross 
+features of the density of states of the metal. We see, 
+LCL+I ) /r 2 
+F IGURE 14. How a bound state of the atom becomes a resonance 
+level of the muffin-tin weLL (See [/ 7]). 
+for exa mple, that although the little peaks and dips of 
+the d-band can be derived from general tight-binding 
+theory, especially when aided by group theory, the 
+width of this complex of bands will depend chiefly on 
+the width of the resonance, which is governed in turn 
+by the potential barrier produced by the centrifugal 
+force in the outer part of each muffin-tin welL Again, 
+the actual position of this band will be determined 
+mainly by the energy of the original d-state from which 
+it derives - and this is fixed on a scale relative to, say, 
+some deep state of the core. On this scale, however, the 
+position of the ordinary conduction band does not de-
+pend on any atomic orbitals, but is determined mainly 
+by the muffin-tin zero, which can only be calculated 
+correctly by taking very careful account of screening, 
+correlation energy, overlaps of potential, et c. We thus "
+discover the reason for a well-known difficulty in band 
+structure calculations - that the width of the d-band, 
+and its position relative to the Fermi level is very sensi-
+tive to the model, and cannot apparently be calculated 
+with the precision we would like. 
+n':tJ.~tp.~r:r.:~P!7 d band 
+'tMTZ 
+F IGURE 15. 
+How the position of the d-band within the conduction 
+band depends on the muffin-tin zero (See [J 7]). 
+250 
+)-
+I 
+5. Some Thoughts in Disorder 
+Now that we understand the electronic structure of 
+crystaLline soLds so very well, we are tempted to attack 
+disordered materials-liquids, alloys, amorphous and 
+glassy substances. This campaign has been actively 
+I 
+waged now for about a decade, but I am not sure that it 
+), has yielded many great prizes. The major difficulty, of 
+course, is that we must abandon Bloch's theorem, 
+I 
+which reduces the complexity of the problem in the per-
+> fect lattice by a divisor of the order of 1023• Without 
+l, crystal momentum as a good quantum number, we 
+flounder about in a mixture of approximate algebra and 
+( incomplete intuition, hoping to find some clearcut con-
+I cepts that will guide the interpretation of com plicated 
+experiments on messy materials. 
+It is true that the spectrum of the disorde red linear 
+array is now well understood [21] - and turns out to be 
+much more spiky than one would have guessed from 
+sim pie statistical considerations. Some of these fea-
+tures may persist in three-dimensional systems, but un-
+fortunately the mathematical methods used in the one-
+di mensional case seem ill-adapted to generalization. In 
+partic ular, real solid systems have two properties that 
+cannot be simulated at all by a linear c hain. In three 
+dimensions, a localized defect or impurity can be 
+avoided by a detour, so that it does not present an ab-
+solute barrier to an incident particle or excitation. In 
+three dimensions, also we may have "structural dis-
+order", which is no longer topologically equivalent to 
+any regular lattice, whereas in a linear chain the mere 
+succession of atoms prescribes an ordering, however 
+> wildly we vary the properties of the individual potential 
+wells. 
+Let me give two examples of simple cases where our 
+1, 
+present theory is inadequate. It is obvious enough that 
+I a disordered tran sition metal- e.g. liquid iron - should 
+have a d-band arising from the d-resonance, just as in 
+> any crystalline phase of about the same atomic volume 
+[22J. The mathematical theory of such a band is still 
+rather uncertain [23J, but there is no doubt about the 
+physics. Suppose, however, that we make an alloy-
+e.g_ of Ag and Au - whose constituent atoms have their 
+resonance at different energies; how far apart would 
+'1 these energies need to be to give us two distinct d-
+bands, and how would this depend on the relative con-
+centrations and relative ordering of the constituents? 
+The model can be made extremely elementary- equal 
+numbers of A and B type atoms, with a single bound s-
+state on each, substituted at random on a regular lattice 
+;> with a constant overlap integral V between nearest 
+neighbors_ Some highly respected statistical theories 
+which rely upon defining an average propagator in 
+such a medium , seem to insist that the bands will be 
+drawn out into a continuous broad spectrum as the two 
+levels move apart; others would allow a s plit to occur 
+when the spacing is rather larger than the width of 
+either band [24J. I feel sure, myself, that the latter pre-
+diction is correct, but we have still a great deal to do be-
+fore we can calculate the width of each band the shape 
+of the tails into the gap, and the nature of any levels in 
+these regions. How far, for example, do these bands de-
+pend upon the possibilities of "percolation", from one 
+atom to another of the same type, through large 
+distances - a property that depends peculiarly on the 
+dimensionality of the lattice and the relative concentra-
+tions of the components? 
+Another contradiction between mathematical theo-
+ries and physical intuition occurs in the case of 
+_ or~ 
+A 
+B 
+A 
+B 
+FIGUnE 16. 
+Does a mixed crystal have one bound bal1d or two ~ 
+Localized 
+t BL __ 
+~ 
+Non locoliH ~ ... "'''' 
+-' 
+Locoliztd 
+£ 
+w_ 
+O·~:~
+_ ---------------1-------------------
+--
+-fBr---_ 
+FIGUnE 17. 
+Regions of localized and l1ol1·localized states for an 
+"equiconcentratioll alloy". 
+00.00 
+••• 0. 
+.0.00 
+0 •••• 
+.000. 
+FIGUnE 18. A percolation chain in an equiconcentration alloy. 
+251 
+amorphous semiconductors. Let it be granted, for the 
+sake of argument, that amorphous Ge and Si are 
+"tetrahedral glasses"; each atom has four neighbors, 
+arranged more or less in the regular tetrahedral orienta-
+tion, just as in the regular diamond lattice, but the con-
+nectivity of the structure has been altered in a random 
+way, so that there is no long-range order. From the 
+point of view of a chemist, this system is a single 
+covalently bond-ed molecule: the saturation of all the 
+bonds implies that some energy of excitation is 
+required to create a carrier, so we should expect the 
+material to be a semiconductor. The substantial gap in 
+the optical spectrum of amorphous Ge supports this 
+reasonable interpretation. But suppose we were to treat 
+this by the conventional pseudopotential procedure, as-
+signing a model potential to each atom and then calcu-
+lating the diffraction effect on a free electron gas. In the 
+absence of long-range order, there would be no strong 
+Bragg reflections from well-defined lattice planes, and 
+thus no proper band gaps at the zone boundaries, etc.; 
+from the point of view of solid-state theory, this materi-
+al ought to be a metal. This antinomy needs to be 
+resolved if we are to understand the theory of disor-
+dered systems - or even the theory of the chemical 
+bond. There is some evidence - as yet merely qualita-
+tive [27] - that the diffraction approach can be made 
+to give a band gap if one takes into account the higher-
+order particle correlations. Thus, a glass differs from a 
+liquid in that three neighboring atoms may have a 
+strong tendency to be oriented so as to make a good 
+bond angle; this is a form of short-range order, implying 
+a strong constraint on the three-and four-body statisti-
+cal distributions of atoms. At the same time, the rela-
+tionship between the localized molecular orbitals of the 
+chemical bonds and the delocalized "Bloch states" of 
+the crystal or amorphous solid needs to be clarified 
+[28]. But these are only two of the numerous unsolved 
+problems in this field. 
+The above account of the band structure problem is 
+obviously very sketchy and incomplete - especially in 
+the total neglect of all electron-electron effects. We 
+shall obviously learn much more about it as this con-
+ference proceeds. But I think it is good to look back and 
+see what progress has been achieved - and even better 
+to look forward to whole Alps of ignorance still to be I
+.! 
+surmounted. 
+6. References 
+[1] Electrons and Phonons: (Oxford, Clarendon Press 1960). 
+[2] Methods in Computational Physics: Vol. 8: Energy 
+Bands of Solids: Edited by B. Alder, S. Fernbach, M. Roten· 
+berg (New York: Academic Press 1968). 
+[3] liman, J. M., Advances in Physics, 13,89 (1964). 
+<
+[4] Harrison, W. A. , Pseudopotentials in Metals (New York: 
+Benjamin 1966). 
+[5] Heine, V., The Physics of Metals (ed. ]. M. liman: Cam· 
+bridge, University Press, 1969) Chap. l. 
+[6] Herman, F., R. L. Kortum, C. D. Kuglin, J. P. Van Dyke and S .
+.....
+Skillman in Ref. 1, p. 193. 
+[7] Heine, V. and I. V. Abarenkov, Phil. Mag., 9,451, (1964). 
+[8] Shaw, R. W. and W. A. Harrison, Phys. Rev. 163,604 (1967). 
+R. W. Shaw, Phys. Rev. 174,769 (1968). 
+[9] Ashcroft, N, W. , J. Phys. C.l, 232 (1968). 
+[10] Rubio, ]. and F. Garcia·Moliner, Proc. Phys. Soc. 91,739; 92, 
+206 (1967). J. B. Pendry, J. Phys. C.l, 1065 (1968). 
+[11] liman,]. M. , Proc. Phys. Soc. 86,337 (1965). 
+[12] Lloyd, P., Proc. Phys. Soc. 86, 825 (1965). 
+[13] Morgan, G. ]., Proc. Phys. Soc. 89,365 (1966). K. H. Johnson, 
+Phys. Rev. 150,429 (1966). 
+[14] Lawrence, M.]. , Thesis, Bristol University (1969). 
+[15] Slater,]. c., Phys. Rev. 145,599 (1966). 
+[16] Scholsser, H. C. and P. M. Marcus, Phys. Rev. 131, 2529 
+(1963). F. Beleznay and M. J. Lawrence, J. Phys. C. 1, 1288 
+(1968), 
+[17] liman, j.'M., Proc. Phys. Soc. 91,701 (1967). 
+[18] Heine, V. , Phys. Rev. 153, 673 (1967). 
+'( 
+[19] Hodges, L. and H. Ehrenreich, Phys. Letters 16,203 (1965). 
+F. M, Mueller, Phys. Rev. 153,659 (1967). 
+[20] Hubbard,]., Proc. Phys, Soc. 92,921 (1967). R. L. Jacobs, ]. 
+Phys. C. 1,492 (1968). 
+[21] See, e.g. ]. Hori, Spectral Properties of Disordered 
+Chains and Lattices (Oxford: Pergamon Press 1968). 
+[22] Anderson, P. W. and W. L. McMillan, Teoria del mag-
+netisino nei metalli di transizione: Verenna Summer 
+School XXXVII (1967). 
+[23] Lloyd, P., Proc. Phys. Soc. 90,207,217 (1967). G. ]. Morgan,]. 
+Phys. C. 2,1446, 1454 (1969). 
+[24] liman ,]. M. ,]. Phys. C.2, 1230 (1969)(II). 
+[25] liman,]. M. , ]. Phys. C. 2,1532 (1968) (I). D. F. Holcomb and 
+]. ]. Rehr(to be published). 
+[26] raue, ]. , R. Grigorivici and A. Vaneu, Phys. Stat. Solid 15, 
+627 (1966). 
+[27] Fletcher, N. H., Proc. Phys. Soc. 91,724; 92, 265 (1967). J. M. 
+liman ,]. Phys. C. (1969) (III). 
+[28] Anderson, P. W., Phys. Rev. Letters 21 ,13, (1968), 
+(Paper 74A2-596) 
+252 

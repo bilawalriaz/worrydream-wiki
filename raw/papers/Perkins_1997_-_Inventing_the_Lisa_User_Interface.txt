@@ -1,0 +1,1036 @@
+Illustration by David Goldin
+41
+a r t i c l e
+T
+Roderick Perkins 
+Dan Smith Keller 
+Frank Ludolph
+INVENTING THE
+USER
+INTERFACE
+Today’s familiar Macintosh user interface is a direct descendant of
+the interface first developed and used on Apple’s Lisa computer.
+Instead of a text-based system that presented the user with a blank
+screen and blinking cursor, the Lisa displayed an electronic desktop,
+a picture that the user manipulated directly to tell the computer
+what to do. The electronic desktop, with its windows, menu bar,
+and icons was not part of the original design; rather, it was the
+result of a 4-year-long process of refining goals and developing,
+testing, and synthesizing many alternative ideas. In fact, the iconic
+desktop was first tried in 1980 and discarded! The final result (Fig-
+ure 1) not only made computers easier to use, it made them fun.
+T
+42
+i n t e r a c t i o n s . . . j a n u a r y  +  f e b r u a r y  1 9 9 7
+The authors were members of the software
+team that designed and implemented Lisa’s sys-
+tem software and applications. Rod Perkins
+joined the team in early 1979, shortly after the
+start of the project, to work on applications and
+prototypes of the early ideas about the appear-
+ance and workings of windows, dialogue boxes,
+and menus. Dan Keller and Frank Ludolph
+began working on Lisa in late 1980 and were
+responsible for what eventually became the
+Desktop Manager with folders and icons.
+Goals and Guiding Principles
+The new machine, first proposed in late 1978,
+was to be designed for general office use—a
+high-quality, easy-to-use computer for secre-
+taries, managers, and professionals that would
+give the individual more independence perform-
+ing multiple tasks without disrupting the office.
+The ease-of-use goal evolved during 1979 as the
+software team tried many ideas. Requirements,
+developed jointly by marketing and engineering,
+enumerated the following goals [4]. 
+Lisa must be fun to use. It will not be a
+system that is used by someone “because it is
+part of the job” or “because the boss told them
+to.” For this reason, special attention must be
+paid to the friendliness of the user
+interaction and the subtleties that
+make using Lisa rewarding and job
+enriching.
+Lisa will be designed to require extremely
+minimal user training and “hand holding.”
+The system will provide one standard method
+of interacting with a user in handling text,
+numbers, and graphics...
+The system will adhere to the concept of
+“gradual learning”... A user must be able to
+do some important tasks easily and with min-
+imal instruction or preparation... The more
+sophisticated features will be unobtrusive
+until they are needed.
+Errors will be handled consistently in as
+friendly a manner as possible, and the user
+will be protected from obvious errors...
+... A “Set-up” program will allow the user
+to customize several system attributes in order
+to “personalize” interaction with the system...
+in order to make the system uniquely personal
+for the user without interfering with the
+interface standards...
+(It should allow) a user to put whatever
+he/she is doing on “hold” in order to answer
+the phone, look up an address, or respond to
+an asynchronous interrupt (time for a meet-
+ing, mail received on the network, etc.)...
+In addition, the use of graphics in general
+user interaction will set Lisa apart from its
+competitors and will go a long way toward
+making the system friendly, easy and enjoyable
+to use. “Intuitive icons” can be designed to
+indicate certain messages to the user... 
+During the same period the engineering
+team developed several principles that would
+be used to achieve these goals. The interface
+would be “intuitive,” modeled on documents
+and other office-based objects instead of tradi-
+tional and unfamiliar computer concepts.
+Like the office, this electronic desktop would
+not be limited to showing only one thing at a
+time. Commands would be visible on the
+screen, consistent across applications, and
+modeless. When possible, commands would
+be replaced by direct actions using the mouse.
+Data were to be moved easily between docu-
+ments and displayed on the screen in a style
+known as WYSIWYG (“what you see is what
+you get”)—that is, the screen and printed
+output should look the same. 
+Some of these ideas came from team mem-
+bers with strongly held convictions, some
+came from other projects within Apple; and
+other ideas originated outside the company.
+Figure 1  
+The Lisa Desktop 
+(January 1983)
+W
+T
+43
+i n t e r a c t i o n s . . . j a n u a r y  +  f e b r u a r y  1 9 9 7
+Whatever the source, it took time for these
+goals and principles to develop and be assimi-
+lated by the Lisa team. 
+Beginnings of the Lisa
+When the Lisa project was started in late 1978
+the goal was to build a computer that would
+propel Apple into the business market of the
+1980s. The original plan was to build a cus-
+tom microprocessor that would be more pow-
+erful than the established Apple II computer
+and could provide greater flexibility for future
+machines. The Lisa hardware would have an
+Apple II–style bitmap screen and graphics
+support for creating simple line drawings
+using Logo™-style instructions. The hard-
+ware would also scroll the screen one line at a
+time to give a smooth scrolling effect. “Soft”
+function keys (soft keys) and cursor keys
+appeared on the keyboard to be used by the
+applications. The Lisa hardware was to be
+competitive with the specialized business
+equipment that existed in 1978, but with the
+added distinction of being a general-purpose
+computer. 
+The early hardware limited the user inter-
+face that the Lisa applications would have.
+The video capabilities of the hardware could
+not display high-resolution graphics. Fortu-
+nately, it was envisioned that word processing
+and databases would be the first applications,
+neither of which would rely heavily on graph-
+ics. Each application was to be distinctive in
+its use of the soft keys and cursor keys, there-
+by providing an easier interface to the user.
+Early prototypes of the Lisa applications were
+written on the Apple II until the new hard-
+ware could be used.
+Early User Interface 
+The first Lisa application, a data Forms Edi-
+tor, was started during Summer 1979. Forms
+Editor created the data entry forms for the
+database engine that would drive the Lisa soft-
+ware. Additionally, the Forms Editor could
+create simple line drawings such as a business
+organization chart. Even in this early applica-
+tion, the following familiar Lisa user interface
+concepts could be seen (Figure 2):
+• Easy to Manipulate. The user could cre-
+ate text, lines, boxes, and data fields; move
+them on the screen; and go back and edit
+them, all by using the cursor keys and a
+special selection key. The user would con-
+stantly receive visual feedback as things
+were drawn, which we felt would increase
+their feeling of control.
+• Intuitive. The soft keys displayed the
+options currently available. The user sim-
+ply pointed to the option desired instead
+of typing a command. There was no need
+for the user to remember complicated
+command sequences. Likewise, there were
+no hidden commands because all choices
+were clearly displayed on the screen. An
+arrow displayed what cursor movements
+were appropriate at a given moment. This
+display was useful for drawing and while
+filling in a form.
+• Friendly. The Lisa would prompt with
+messages instead of just waiting for a com-
+mand to be typed. The prompts could be
+a r t i c l e
+Figure 2  
+The Lisa display as
+seen on an Apple II
+screen (July 1979)
+Figure 3a  
+The Lisa display with a
+simple window, as seen
+on Lisa prototype hard-
+ware (February 1980)
+Figure 3b  
+The Lisa display with 
+a simple window and 
+dialogue box 
+(March 1980)
+44
+i n t e r a c t i o n s . . . j a n u a r y  +  f e b r u a r y  1 9 9 7
+answered by typing in a special message
+area or by selecting from the choices listed
+in the soft key display. Errors would be
+reported in a status panel or in the mes-
+sage area using clear, friendly English, not
+computer jargon. Users were prevented
+from making common errors by visibly
+indicating inappropriate commands.
+Although the first Lisa interface was con-
+sistent with the appearance of business equip-
+ment of 1979, it was not very exciting to use.
+It showed that Apple was serious about being
+businesslike, but the Lisa interface did not
+generate the same enthusiasm created by the
+emerging, highly graphic-oriented video game
+industry and programs found on the Apple II
+platform. The progress on the first interface
+established the correct goals, but left most of
+us dissatisfied with our hardware and soft key
+approach. Many people shared feelings that
+Apple could get better leverage from the Lisa
+hardware, especially from its bitmap display. 
+Outside Influences 
+In late 1979, two major events
+occurred that helped to change
+the thinking behind the design of
+the Lisa hardware and software: the
+announcement of the release of the Motorola
+68000 microprocessor and visits by a small
+group of Apple engineers to Xerox Corpora-
+tion’s Palo Alto Research Center (PARC). 
+The Motorola 68000 microprocessor had
+the performance to support both a higher res-
+olution bitmap display and a highly interactive
+user interface. This made the 68000 a natural
+replacement for the custom microprocessor
+designed for the Lisa and broadened the vision
+of what people thought possible with Lisa
+hardware. Lisa software could make use of this
+powerful new platform to expand on its user
+interface concepts. The team thought that
+with this processor the Lisa would be so fast
+that it would be waiting on the user most of
+the time! The idle time could then be used to
+drive a more elaborate user interface.
+In the summer of 1979, Apple was still a
+private company and sought additional ven-
+ture capital through a private offering of stock
+[14]. Xerox Corporation bought 100,000
+shares and agreed not to buy more than 5 per-
+cent of Apple. According to Mike Scott, the
+president of Apple at the time, the deal helped
+Apple gain access to Xerox’s research laborato-
+ry while limiting their access to Apple’s
+advance products.
+The visits to Xerox were prompted after a
+number of people at Apple read papers pub-
+lished by Xerox about their Smalltalk™ envi-
+ronment [3]. Smalltalk made extensive use of
+a mouse rather than a keyboard to control the
+cursor. A high-resolution bitmapped display
+allowed Smalltalk to prominently use graphics
+to enhance what the user viewed on the
+screen. It was a friendly yet powerful environ-
+ment that used the concept of modeless com-
+mands, which were reported to be less
+confusing for the user.
+The Apple group made two visits to Xerox.
+The purpose of the first visit, in December
+1979, was originally to see demonstrations of
+programs under development at Xerox—but
+not Smalltalk specifically. However, during
+that trip, the Apple group was given an
+impromptu Smalltalk demonstration. During
+the second visit there were additional demon-
+strations and another look at Smalltalk. The
+Apple team was very excited by the Xerox vis-
+its and sought to make the Lisa as exciting.
+Enthusiasm from that visit caused us to fur-
+ther rethink the Lisa’s user interface. 
+W
+A
+45
+i n t e r a c t i o n s . . . j a n u a r y  +  f e b r u a r y  1 9 9 7
+A Shift in Thinking
+After the Xerox visits, the user interface became
+more dynamic as our new hardware became
+available. We began experimenting with the
+mouse and changed our interface to include
+windows (Figures 3a and 3b) similar to those
+we saw in Smalltalk. The soft key dis-
+play was kept from the earlier
+interface, but it was now
+attached to the window.
+Using the soft keys retained
+the keyboard control that
+was thought to be impor-
+tant for a business-orient-
+ed machine. The mouse
+was introduced into the
+interface as an alternative
+to using the keyboard.
+We began to allow things
+to be drawn with either the
+mouse or the cursor keys.
+Likewise, the user could
+select an option either from the
+keyboard or by pointing with the
+mouse. The decision to become com-
+pletely mouse oriented was still hotly debated.
+A number of us felt that radical changes could
+not be made to the user interface because the
+Lisa was scheduled to be announced later in the
+year at the National Computer Conference of
+1980. 
+The interface was moving toward a standard
+that was called the Lisa “look and feel.” All the
+applications would be similar in their appear-
+ance and use commands that would be com-
+mon to each of them. This consistency
+reinforced our previously defined interface con-
+cepts because the user would interact
+with all the Lisa applications in
+the same manner. This also
+made writing the applications
+easier because the software
+to create the user interface
+could be shared by all the
+applications. 
+The first Lisa hard-
+ware using the 68000
+began to appear in
+Spring 1980. Numerous
+software prototypes of
+our user interface ideas
+were written and subse-
+quently incorporated into
+Forms Editor. For the first time
+we could see how the user inter-
+face looked as well as how it felt.
+Desktop Metaphor
+We had developed a model to describe the
+typical Lisa user. This user was a business per-
+son whose day was constantly interrupted
+with immediate requests to do other things.
+a r t i c l e
+Rod Perkins is a
+member of the 
+technical staff at
+Interval Research
+Corporation, 
+1801 Page Mill Road
+Building C, Palo
+Alto, CA  94304
+perkins@
+interval.com
+Frank Ludolph is
+senior user inter-
+face designer at Sun
+Microsystems, Inc.
+2550 Garcia Ave. 
+MS MTV-21-225,
+Mountain View, CA
+94025.
+Frank.Ludolph@
+sun.com
+Dan Smith Keller is
+a vice president for
+product development
+at PowerAgent, Inc.
+P.O. Box 507 
+Cupertino, CA 95015
+dan@keller.org
+Figure 4  
+The Lisa display with
+dialogue box (August
+1980)
+C
+From that user model it was
+decided that the Lisa had to
+offer an environment that safe-
+ly allowed several applications
+to be used simultaneously and
+would permit any of the user’s
+work to be put on hold. The
+job of the user interface was to
+portray this multitasked environment in a
+manner that would make sense to the user
+(Figure 4).
+After numerous experiments, a new inter-
+face was developed that became known as the
+Lisa desktop metaphor. The interface had
+multiple windows on the screen to display the
+different types of work conducted by the user.
+We called he work performed within the win-
+dows “documents”—to use a concept already
+familiar to the user. We decided that the user
+should not have to worry about which appli-
+cation went with which document. Instead,
+users would select the document they wanted
+and the Lisa would determine which applica-
+tion was needed. Switching between different
+documents was as obvious as pointing at the
+window containing the desired work. The
+window appearance was spruced up to look
+more like a file folder as we sought to create an
+electronic equivalent of the user’s real desktop.
+The Lisa desktop would have objects already
+familiar from a real desktop such as docu-
+ments, folders, calculator, and other handy
+tools; everything short of an electronic paper-
+clip to mangle. 
+Role of User Testing 
+Controversy surrounded a number of deci-
+sions that were made on the user interface, the
+introduction of the mouse being a good exam-
+ple. We were concerned that our target users
+would not accept using the mouse. We had
+investigated alternatives, such as the soft keys
+and even a light pen, but none proved to be as
+efficient. Our own experience with the mouse
+agreed with the research conduct-
+ed by Douglas Engelbart [2],
+who created the mouse while at
+SRI International, and with that by
+Xerox [1], which discussed the virtues of the
+mouse. We knew that users would benefit by
+using the mouse, but we had to make using it
+as easy as possible. We felt that
+the number of buttons affected
+how easy it was to use. Factions
+developed to promote their
+choice for the “correct” num-
+ber of mouse buttons. What
+ensued became known as the
+“button wars”—one of many
+wars that developed over interface issues.
+Normally, the user interface wars would
+end in a stalemate of opinions. We found it
+best during these times to test our opinions on
+the users for which we were designing. We
+would use as test subjects new Apple employ-
+ees who had no previous computer experi-
+ence. The first tests were conducted during
+Summer 1980 by Larry Tesler, the applica-
+tions software manager, and were observed by
+psychologists as well as ourselves. Many of the
+observations were recorded for later review
+and served as a form of détente between the
+warring factions. 
+Some of the engineers resisted taking time
+to make improvements derived from the user
+testing or from recommendations made by
+users themselves. A system was established
+whereby a troika, led by Larry Tesler with rep-
+resentatives from engineering and marketing
+groups, ruled on controversial issues. 
+User testing continued throughout the
+Lisa’s development for each application, the
+desktop manager, and new Lisa concepts such
+as pull-down menus, the location of scroll bars,
+and alert boxes. More than a year before first
+shipment, a special room was built to give a
+sneak preview of the Lisa to potential corporate
+customers. These “sneaks,” as they were called,
+generated positive feedback when participants
+were challenged to learn the user interface and
+be productive within 30 minutes of use. 
+Recommendations from the sneaks helped
+generate changes that fine-tuned the interface
+design. In some cases, the recommendations
+were misguided and were either rolled back or,
+more often, led to some other approach being
+taken. Many of the high priority changes were
+made before the final product shipped. The
+team felt this was an innovative approach for
+the personal computer industry because the
+user interface was being designed from the
+user’s perspective using their direct feedback.
+46
+i n t e r a c t i o n s . . . j a n u a r y  +  f e b r u a r y  1 9 9 7
+O
+W
+B
+In the case of the mouse button, it was dis-
+covered that with our user interface the three-
+button mouse used in Smalltalk had a slight,
+but not significant, advantage for the experi-
+enced users. Similar results were observed for
+the two-button mouse. For beginners, the
+extra buttons were confusing as the users
+sought to remember which button to press.
+The extra buttons also hindered learning the
+Lisa user interface quickly. The one button
+mouse was chosen to make the user interface
+easier for the first-time user.
+Arriving at an Interface 
+By the end of Summer 1980 the design of the
+Lisa user interface culminated in the release of
+the Lisa User Interface Standards document
+[5]. The document served as a guideline for
+what should and should not be done in the
+user interface. The document also began to
+involve the hardware as part of the overall user
+interface. 
+The scope of the user interface now includ-
+ed items such as the keyboard layout, how the
+machine was turned on and off, how the
+machine would be serviced—even whether
+there should be a door on the disk drive.
+These issues became part of shaping users’
+perceptions of the entire machine and defin-
+ing what would entice them to use it. 
+The interface would continue to evolve, but
+the release of this document signaled the birth
+47
+i n t e r a c t i o n s . . . j a n u a r y  +  f e b r u a r y  1 9 9 7
+of what eventually became the Lisa and Mac-
+intosh user interfaces (Figure 5). Only after
+the user interface standards were resolved did
+serious work begin on the applications. Work
+on Forms Editor and other prototypes
+became the basis for the other Lisa applica-
+tions.
+Early Days of the Desktop Manager
+With the basics of the interface defined, work
+began on filling out the rest of the user model
+of the system. In late 1980, we began design-
+ing the interface for the filing functions of
+the Lisa system. The questions we were try-
+ing to answer included
+• How are documents created or
+destroyed?
+• How are they located?
+• How are they returned to their filing
+homes?
+• How should their attributes be dis-
+played?
+In considering each of these questions, we
+were guided by the desire for consistency,
+ease of use, and efficiency.
+Desktop Icons Rejected!
+One of the first models we considered used
+desktop icons for performing the basic filing
+functions. Our interface to this point had
+only folder title tabs as document and folder
+a r t i c l e
+Figure 5  
+The Lisa display as seen in
+the Lisa User Interface
+Standards Document
+(October 1980)
+O
+48
+i n t e r a c t i o n s . . . j a n u a r y  +  f e b r u a r y  1 9 9 7
+icons. The title tabs could be moved into and
+out of filing folders by nesting. Destroying an
+object was accomplished by moving it into a
+wastebasket icon. Diskettes were to appear on
+the screen as desk drawers that could be
+opened to reveal folder tabs.
+A number of objections were raised early in
+the discussion of the icon model. The Lisa had
+only a 12-inch-diagonal display, and some
+thought that it was too small to display full-
+width documents and desktop icons simulta-
+neously. There was concern that simple tasks,
+such as deleting a document by dragging it to
+a wastebasket, would be too cumbersome if
+the user tried to locate the wastebasket buried
+under open documents. Locating documents
+in nested folders was also considered too
+unwieldy. The scenario of opening a series of
+nested folders, accumulating more and more
+desk clutter along the way while searching for
+a document, seemed to be less efficient than a
+real-world paper filing system. Some suggest-
+ed that people would spend an inordinate
+amount of time positioning icons and moving
+or resizing windows. 
+Others argued that mimicking
+the office filing system would
+simply give people an electronic
+version of a system that already had
+many problems. In particular, we thought that
+most paper filing systems had serious difficul-
+ties in both filing and retrieval. With all these
+things considered, but without producing a
+more detailed mock-up, we rejected the icon-
+ic filing interface as too inefficient and set out
+to design something superior.
+A Document Browser
+Our initial attempts at producing a more effi-
+cient human interface centered on something
+resembling the Smalltalk browser. The brows-
+er was used to locate and display objects in the
+Smalltalk system. It had a window with a top
+portion containing four lists of categories,
+allowing the hierarchical selection of an
+object, and an area below in which the select-
+ed object was displayed.
+We were interested in avoiding a strictly
+hierarchical filing system (Figure 6). We want-
+ed to free users from having to decide the cor-
+rect place to file a document and then the
+converse problem of trying to find where the
+document was filed. The upper area of our
+document browser contained various attribut-
+es that could be selected to narrow the choice
+of documents. As attributes were selected,
+documents with those attributes were dis-
+played in the lower area. In this model, docu-
+ments could be quickly located by type of
+document, keyword, author, and so on. 
+Our paper prototype seemed to work well
+for selecting a document but became awkward
+when trying to perform other operations such
+as moving, copying, or creating something
+Figure 6  
+Desktop Manager—
+The Document Browser
+(December 1980) 
+49
+i n t e r a c t i o n s . . . j a n u a r y  +  f e b r u a r y  1 9 9 7
+a r t i c l e
+“ W h a t  y o u  s e e  i s  A L L  y o u  g e t ”
+— H a r v e y  L e h t m a n
+A
+pple’s Lisa was an ambitious commercial product developed and intro-
+duced at a time when the best-selling personal computers had crude dot
+matrix character generation text (based on 5x7 or 7x9 character matrices
+generally presented on green phosphor displays limited to 40 or 80 columns of
+text.) Upon introduction in 1983, the Lisa offered a high resolution bit-mapped
+image with an array of character fonts and graphic images impossible to produce
+on the Apple II’s and III’s, IBM PC’s (introduced in 1981), Commodore
+64’s, and Atari machines of the day.
+At a time when personal computer user interfaces were still orient-
+ed to hobbyists, the Lisa user interface tried to present a style of
+interaction closer to the language of a general office user with little
+or no specialized computer experience. The WYSIWYG and desktop
+metaphor interface was a significant innovation on the Lisa. Follow-
+ing and enhancing on work previously developed at SRI International,
+Xerox PARC and other research laboratories, and taking advantage of
+new hardware technologies, these interface innovations consciously
+attempted to appeal to novice users. The Lisa was the first attempt to
+make such a system commercially available.
+However, in doing so Apple ironically ran counter to the philosophy
+and system development of the originator of many of the innova-
+tions the Lisa commercialized. Doug Engelbart and his team at SRI
+International, the Augmentation Research Center (ARC), were respon-
+sible for the development of the mouse, windowed display editors,
+linked hypertext, and innovations in computer typesetting, and net-
+working. The group was also among the initial nodes on the ARPANET
+in 1969 and served for many years as the Network Information Center.
+In many ways, the most superficial of Doug’s innovations contained in the
+oNLine System (NLS, later known as Augment) made their way into the systems
+from Xerox PARC (which included several former members of the ARC team): these
+included the mouse and windowed displays. Rather than concerning itself with
+the needs of the novice user, NLS was interested in creating a system that could
+satisfy the needs of sophisticated individual knowledge workers and experienced
+teams of knowledge workers while still being accessible to novices through a con-
+sistent interface that let useful work be done in a short period of time. The goal
+was the “augmentation” of the intellect of individuals and teams.
+Lisa’s (and PARC’s) attempted literal mimicking of the desktop and what
+appeared on the printed page were technical marvels, but largely ignored the
+power NLS offered for analyzing, filtering, and formatting documents made up of
+information anywhere in a network of knowledge. The system’s facilities, avail-
+able in the late 1960’s, for individual and team customization of functionality and
+creation of linked recorded dialogs, have only recently resurfaced in systems like
+the World Wide Web.
+WYSIWYG could very easily become WYSIAYG: “What you see is ALL you get.”
+The WYSIWYG and desktop metaphor fall apart as the domain of large data stor-
+age and shared file servers. Doug’s NLS suggested a world in which the computer’s
+power let users go beyond what they could do in the physical world.
+Harvey Lehtman is affiliated
+with the Institute of the
+Future, a nonprofit applied
+research and consulting firm.
+Harvey is a former member of
+Doug Engelbart’s Augmenta-
+tion Research Center and for-
+mer employee of Apple
+Computer Inc.
+Harvey G. Lehtman
+Institute for the Future
+2744 Sand Hill Road
+Menlo Park, Ca 94025-7020 USA
++1-415-854-6322
+Fax: +1-415-854-7850
+lehtman@netcom.com
+I
+I
+50
+i n t e r a c t i o n s . . . j a n u a r y  +  f e b r u a r y  1 9 9 7
+new. It also lacked a certain approachability.
+Its operation was not at all obvious when first
+encountered, and other team members felt
+that it was too abstract for office users.
+Twenty Questions Filer
+In an attempt to make the system easier for the
+first-time user we tried a hierarchical browser
+with more prompting, which became known as
+the “Twenty Questions Filer” (Figure 7). Select-
+ing Documents from the Desktop menu
+brought up a dialog window that prompted the
+user to select a disk, folder, and document, with
+statements such as “Choose a document from
+the list below.” After the user made a selection,
+an Action menu would appear with items such
+as Pull, Refile, Cross-file, and Discard. Select-
+ing one of these menu items would apply the
+action to the selected document. This system
+was fast and a bit easier to understand than the
+previous version but still somewhat abstract.
+We were running out of time on the project
+schedule and decided that despite its problems
+this was to be our filing interface.
+The system was fairly efficient because the
+filing dialogue could be brought
+up easily from a menu, and only
+a few mouse clicks were needed.
+However, after many months of imple-
+mentation, and some early user testing, a few of
+us were not satisfied with the interface. Some
+users were confused about the relationship of
+the selections in the upper area to the list below.
+They did not always notice the appearance of
+the Action menu after a selection was made and
+would not know how to continue from there.
+The constant prompting made users feel that
+they were playing a game of Twenty Questions.
+It also failed to achieve one of Lisa’s major
+goals—it wasn’t fun!
+“Son of Dataland”
+In a clandestine effort, some of us decided to fur-
+ther investigate the problem on our own and
+asked Bill Atkinson, who defined many aspects
+of the global human interface, for help. Bill
+recalled a trip to the M.I.T. Media Lab in which
+he saw a futuristic data navigation system called
+the “Spatial Data Management System” [7]. In
+this system, a person sat in a chair with two hand
+controls and faced a large screen, referred to as
+Dataland. The controls allowed you to “fly” over
+some data space projected on a large screen in
+front of you, in this case the Boston area, and
+then to zoom in to very fine levels of detail, or
+zoom out to see a huge geographical area.
+Bill adapted this idea to the filing problem by
+creating an enormous virtual desktop, perhaps a
+mile square, and then providing methods for
+very quickly moving around and zooming in or
+out. Documents were represented as small icons
+that could be organized spatially, with related
+Figure 7  
+The Twenty Questions
+Filer (July 1981)
+W
+51
+i n t e r a c t i o n s . . . j a n u a r y  +  f e b r u a r y  1 9 9 7
+documents placed near each other. The idea was
+incredibly simple but placed quite a burden on
+the user’s memory when the number of docu-
+ments became large. It also did not work well
+when multiple disks were online, representing
+several flat filing spaces.
+Office Model
+We were drawn to the simplicity of M.I.T.’s
+Dataland but thought that we needed some-
+thing more familiar to the office worker. Our
+newly formed Macintosh group was also
+experimenting with icons for its Finder. Slow-
+a r t i c l e
+’79
+’80
+’81
+’82
+’83
+’84
+MRD—Marketing Requirements Document
+ERS—Engineering Requirements Specification
+5/79 Jef Raskin proposes project
+code named Macintosh
+9/79 Macintosh Project Begins
+1/79 First visit to Xerox Parc
+11/80 National Computer Conference 
+(original proposed introduction date)
+1/81 Steve Jobs joins Macintosh Group
+8/81 IBM PC Announced
+10/81 Xerox Star Announced
+10/81 User Interface Council Started
+3/82 Jef Raskin resigns from Apple
+1/84 Macintosh Announced
+7/82 First Internal Icon Filer Release
+1/83 Lisa Announced
+6/83 Lisa Ships
+1/82 “Dialog Filer” Recipes
+2/82 First Cut & Paste between applications
+3/82 Icon Filer Proposal
+9/80 Lisa User Interface Standards Published
+11/80 Dan & Frank Start at Apple
+2/81 Graphics Editor ERS
+4/80 Lisa MRD Published
+7/80 Larry Tesler Starts at Apple; Personal Apps MRD
+8/80 Button Wars
+8/79 First Lisa application prototyped on Applle II
+10/79 First Lisa hardware with Bit-Sliced processor
+2/80 First Lisa hardware with 68000
+10/78 Lisa Proposal
+Spr ’79 Lisa Project Begins
+7/79 Rod starts at Apple
+T I M E L I N E
+E
+A
+52
+i n t e r a c t i o n s . . . j a n u a r y  +  f e b r u a r y  1 9 9 7
+ly, we were migrating back to icons for the
+sake of simplicity and approachability. 
+While searching the literature for informa-
+tion on other iconic systems, we uncovered an
+IBM research proposal for a graphical office
+system called Pictureworld [8]. In the concept
+paper, a large screen presented small icons for
+file cabinets, a desk pad, in/out trays, a waste-
+basket, and other objects. Touching a file cab-
+inet caused a prompting file folder to appear
+with a form for specifying search parameters.
+After the user filled out the form and pressed
+the “Do” button, a list of matches appeared.
+Selecting one of these documents caused the
+list to go away and the desk pad icon to
+become large in the center of the screen with
+the full-sized document placed on it. If anoth-
+er document was opened, the current docu-
+ment was reduced to an icon and was shown
+in the “Pending” box on the desk pad. Docu-
+ments and other objects were moved by
+touching arrows that automatically appeared
+on the screen, indicating valid transfer possi-
+bilities. The authors of the proposal perhaps
+underestimated the power of such an interface
+by the interesting statement, “We have not
+implemented a Pictureworld system and we
+make no claims for it as a potential product.”
+At about this time, the Xerox Star [10, 12],
+another office system with an iconic interface,
+was announced. The Star, however, was an
+actual implementation. It had a very large
+screen that easily accommodated the icons
+and full-sized documents, a luxury we didn’t
+have. Their use of icons though, seemed to
+give further validity to this approach. 
+In considering these models, we created
+several mock-ups that presented two levels of
+detail to the user. The first view was a look at
+the office as a whole. Here you could see the
+desk, filing cabinets, wastebasket, and other
+office objects. To view a document it was nec-
+essary to remove a document icon from the
+drawer and place it on the desk. The view
+would then change to one looking
+down on the desktop with
+documents at full size. After exper-
+imenting with this model for some
+time we realized that having the two different
+views (or “world swaps,” as they became
+known) was both confusing and inefficient.
+Final Desktop Model
+Eliminating the dual-view model brought us
+very close to the final design. We quickly
+implemented a working prototype, which pre-
+sented a single desktop on which both small
+icons and full-sized documents were kept.
+Design discussions with a few others helped to
+refine some of the ideas and prompted addi-
+tional cute and useful features such as windows
+zooming open and closed from their icons. We
+were pleased with how easily the remaining
+details of the interface fell into place.
+Revealing the new interface to the rest of
+the team drew mixed reactions. Some were
+thrilled with the new look and simplicity, and
+others were concerned about the lateness of
+the schedule. The new design was subjected to
+the same user testing philosophy that had
+guided development of the Lisa. It was found
+that key areas such as speed of learning, speed
+of task completion, level of comprehension,
+and error rate were all indistinguishable
+between the new iconic design and the Twen-
+ty Questions Filer. However, no user preferred
+the Twenty Questions design, and some pre-
+ferred the iconic Filer because it was more
+interesting and fun!
+Wayne Rosing, the engineering manager at
+the time, gave the go-ahead, and we raced to
+catch up with the rest of the Lisa team. After
+more than a year of looking for something
+highly efficient, we had come full circle, back
+to the more approachable, iconic, direct
+manipulation interface!
+In Retrospect
+As we look back at our experiences on the Lisa
+project, there are a few points and lessons that
+stand out as critical to the success of the user
+interface. Foremost is that from the very first
+proposal in 1978, the focus was on the user.
+This approach affected not only the interface
+but also the underlying software and hardware.
+A second critical factor was that the interface
+was developed through experience, and was not
+just some programmer’s idea of what should
+work. This experience was gained by extensive
+testing on representative users and the imple-
+mentation of several applications. The variety
+of the applications stressed the interface in
+unanticipated ways, highlighting weaknesses in
+PERMISSION TO COPY WITHOUT FEE,
+ALL OR PART OF THIS MATERIAL IS
+GRANTED PROVIDED THAT THE COPIES
+ARE NOT MADE OR DISTRIBUTED FOR
+DIRECT COMMERCIAL ADVANTAGE,
+THE ACM COPYRIGHT NOTICE AND
+THE TITLE OF THE PUBLICATION AND
+ITS DATE APPEAR, AND NOTICE IS
+GIVEN THAT COPYING IS BY PERMIS-
+SION OF THE ASSOCIATION FOR COM-
+PUTING MACHINERY. TO COPY
+OTHERWISE, OR PUBLISH, REQUIRES A
+FEE AND/OR SPECIFIC PERMISSION.
+©ACM 1072-5520/97/0100 $3.50
+53
+i n t e r a c t i o n s . . . j a n u a r y  +  f e b r u a r y  1 9 9 7
+References
+[1[ Card, Stuart K., English,
+William K., and Burr, Betty.
+Evaluation of mouse, rate-
+controlled isometric joy-
+stick, step keys, and text
+keys for text selection on a
+CRT. Ergonomics 21
+(1978): 601–613.
+[2] English, W.K., Engle-
+bart, D.C., and Berman,
+M.L. Display-selection
+Techniques for Text Manip-
+ulation. Transactions on
+Human Factors in Electron-
+ics, HFE-8, 1, March 5-15,
+1967.
+[3] Ingalls, Daniel H. H. The Smalltalk-76 Program-
+ming System Design and Implementation. Conference
+Record of the 5th Annual ACM Symposium on Princi-
+ples of Programming Languages, Tucson, Arizona, Janu-
+ary 1978.
+[4] Lisa Marketing Requirements Document. Internal
+company document. Apple Computer, Inc., April 1980.
+[5] Lisa User Interface Standards. Internal company
+document. Apple Computer, Inc., October 1980.
+[6] Morgan, Chris, Lenmons, Phil, and Williams,
+Gregg. An interview with Wayne Rosing, Bruce
+Daniels, and Larry Tesler. Byte 8,2 (February 1983):
+90–114.
+[7] Negroponte, Nicholas. Spatial Data Management.
+DARPA Order MDA903-77-C-0037, Massachusetts
+Institute of Technology, Cambridge, 1979.
+[8] Schild, W., Power, L., and Karnaugh, M. PIC-
+TUREWORLD: A Concept for Future Office Systems,
+IBM Research Report RC-8384, July 30, 1980.
+[9] Schmuker, Kurt J. The Complete Book of Lisa.
+Harper & Row, New York, 1984.
+[10] Seybold, Jonathan. Xerox’s “Star.” The Seybold
+Report 10,16 (April 27, 1982). Seybold Publications,
+Inc., Box 644, Media, Pa. 19063.
+[11] Seybold, Jonathan. Apple’s Lisa, a personal office
+system.” The Seybold Report (Jan. 28 1983). Seybold
+Publications, Inc., Box 644, Media, Pa. 19063.
+[12] Smith, D.C., Irby, C., Kimball, R., Verplank, B.,
+and Harslem, E. Designing the Star user interface. Byte
+7, 4 (April 1982): 242–282.
+[13] Williams, Gregg. The Lisa computer system.. Byte
+8, 2 (February 1983): 33–55.
+[14] Moritz, Michael. The Little Kingdom. William
+Morrow and Company, Inc., New York, 1984.
+a r t i c l e
+the original design. Finally, management’s com-
+mitment to ease of use in spite of tight sched-
+ules, and strong centralized control of the user
+interface, encouraged the engineers to make
+improvements that worked within the
+metaphor.
+The iconic desktop taught us something
+about the importance of efficiency. Originally
+rejected for reasons of inefficiency, we later res-
+urrected the iconic desktop to replace the
+“more efficient” Twenty Questions design.
+Why? Because it grabbed the attention of new
+users and enticed them to explore using it. We
+believe that by adding direct manipulation to
+an attractive graphical representation of the
+familiar desktop, the icons and controls shown
+on the screen became, in some sense, real and
+the interface began to disappear.
+We also learned something about the imple-
+mentation of metaphors. As a general rule they
+should, of course, be implemented as faithfully
+as possible; otherwise, the user may be con-
+fused when things don’t work as expected.
+However there are valid reasons for occasional-
+ly breaking out of the metaphor. The physical
+limitations of the computer, such as the display
+screen’s being smaller than a piece of paper, can
+force some changes. Sometimes the computer
+removes limitations of the metaphor—a desk
+does not “know” what is on it, but because a
+computer can keep track of what is on its screen
+the Lisa had a menu that listed everything on
+the desktop for quick access. No matter what
+the reasons, we worked to keep the total num-
+ber of differences small because each one bur-
+dens the user with another thing to remember.
+By combining a clear, concise presentation
+and an intuitive, smoothly operating set of con-
+trols with a distinctive style, the Lisa and Mac-
+intosh user interfaces popularized a new way of
+working with computers. (See [6, 9, 11, 13] for
+additional viewpoints and details and [12] for
+discussion of a similar project.)
+In these few pages, we could neither record
+and analyze all the important events in the
+development of the Lisa interface nor individu-
+ally credit all the people that contributed sig-
+nificantly to the appearance and operation of
+the final interface. We hope we have managed
+to convey a sense of the design process and
+trade-offs involved. 

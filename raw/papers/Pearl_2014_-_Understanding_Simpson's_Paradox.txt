@@ -1,0 +1,564 @@
+Understanding Simpson’s Paradox
+Judea Pearl
+Computer Science Department
+University of California, Los Angeles
+Los Angeles, CA, 90095-1596
+judea@cs.ucla.edu
+(310) 825-3243 Tel / (310) 794-5057 Fax
+Simpson’s paradox is often presented as a compelling demonstration of why we need
+statistics education in our schools. It is a reminder of how easy it is to fall into a web
+of paradoxical conclusions when relying solely on intuition, unaided by rigorous statistical
+methods.1 In recent years, ironically, the paradox assumed an added dimension when educa-
+tors began using it to demonstrate the limits of statistical methods, and why causal, rather
+than statistical considerations are necessary to avoid those paradoxical conclusions (Arah,
+2008; Pearl, 2009, pp. 173–182; Wasserman, 2004).
+In this note, my comments are divided into two parts. First, I will give a brief summary
+of the history of Simpson’s paradox and how it has been treated in the statistical literature
+in the past century. Next I will ask what is required to declare the paradox “resolved,” and
+argue that modern understanding of causal inference has met those requirements.
+1
+The History
+Simpson’s paradox refers to a phenomena whereby the association between a pair of variables
+(X, Y ) reverses sign upon conditioning of a third variable, Z, regardless of the value taken
+by Z. If we partition the data into subpopulations, each representing a speciﬁc value of the
+third variable, the phenomena appears as a sign reversal between the associations measured
+in the disaggregated subpopulations relative to the aggregated data, which describes the
+population as a whole.
+Edward H. Simpson ﬁrst addressed this phenomenon in a technical paper in 1951, but
+Karl Pearson et al. in 1899 and Udny Yule in 1903, had mentioned a similar eﬀect earlier.
+All three reported associations that disappear, rather than reversing signs upon aggregation.
+Sign reversal was ﬁrst noted by Cohen and Nagel (1934) and then by Blyth (1972) who
+labeled the reversal “paradox,” presumably because the surprise that association reversal
+evokes among the unwary appears paradoxical at ﬁrst.
+Chapter 6 of my book Causality (Pearl, 2009, p. 176) remarks that, surprisingly, only two
+articles in the statistical literature attribute the peculiarity of Simpson’s reversal to causal
+1Readers not familiar with the paradox can examine a numerical example in Appendix A.
+1
+Edited version forthcoming, The American Statistician, 2014. 
+TECHNICAL REPORT
+R-414 
+December 2013
+interpretations. The ﬁrst is Pearson et al. (1899), in which a short remark warns us that
+correlation is not causation, and the second is Lindley and Novick (1981) who mentioned
+the possibility of explaining the paradox in “the language of causation” but chose not to do
+so “because the concept, although widely used, does not seem to be well deﬁned” (p. 51).
+My survey further documents that, other than these two exceptions, the entire statistical
+literature from Pearson et al. (1899) to the 1990s was not prepared to accept the idea that
+a statistical peculiarity, so clearly demonstrated in the data, could have causal roots.2
+In particular, the word “causal” does not appear in Simpson’s paper, nor in the vast
+literature that followed, including Blyth (1972), who coined the term “paradox,” and the
+inﬂuential writings of Agresti (1983), Bishop et al. (1975), and Whittemore (1978).
+What Simpson did notice though, was that depending on the story behind the data,
+the more “sensible interpretation” (his words) is sometimes compatible with the aggregate
+population, and sometimes with the disaggregated subpopulations. His example of the latter
+involves a positive association between treatment and survival both among males and among
+females which disappears in the combined population. Here, his “sensible interpretation”
+is unambiguous: “The treatment can hardly be rejected as valueless to the race when it
+is beneﬁcial when applied to males and to females.” His example of the former involved
+a deck of cards, in which two independent face types become associated when partitioned
+according to a cleverly crafted rule (see Hern´an et al., 2011). Here, claims Simpson, “it
+is the combined table which provides what we would call the sensible answer.” This key
+observation remained unnoticed until Lindley and Novick (1981) replicated it in a more
+realistic example which gave rise to reversal. The idea that statistical data, however large,
+is insuﬃcient for determining what is “sensible,” and that it must be supplemented with
+extra-statistical knowledge to make sense was considered heresy in the 1950s.
+Lindley and Novick (1981) elevated Simpson’s paradox to new heights by showing that
+there was no statistical criterion that would warn the investigator against drawing the wrong
+conclusions or indicate which data represented the correct answer. First they showed that
+reversal may lead to diﬃcult choices in critical decision-making situations:
+“The apparent answer is, that when we know that the gender of the patient is
+male or when we know that it is female we do not use the treatment, but if the
+gender is unknown we should use the treatment! Obviously that conclusion is
+ridiculous.” (Novick, 1983, p. 45)
+Second, they showed that, with the very same data, we should consult either the combined
+table or the disaggregated tables, depending on the context. Clearly, when two diﬀerent
+contexts compel us to take two opposite actions based on the same data, our decision must
+be driven not by statistical considerations, but by some additional information extracted
+from the context.
+Thirdly, they postulated a scientiﬁc characterization of the extra-statistical information
+that researchers take from the context, and which causes them to form a consensus as to
+2This contrasts the historical account of Hern´an et al. (2011) according to which “Such discrepancy
+[between marginal and conditional associations in the presence of confounding] had been already noted,
+formally described and explained in causal terms half a century before the publication of Simpson’s article...”
+Simpson and his predecessor did not have the vocabulary to articulate, let alone formally describe and explain
+causal phenomena.
+2
+which table gives the correct answer. That Lindley and Novick opted to characterize this
+information in terms of “exchangeability” rather than causality is understandable;3 the state
+of causal language in the 1980s was so primitive that they could not express even the simple
+yet crucial fact that gender is not aﬀected by the treatment.4 What is important though,
+is that the example they used to demonstrate that the correct answer lies in the aggregated
+data, had a totally diﬀerent causal structure than the one where the correct answer lies in
+the disaggregated data. Speciﬁcally, the third variable (Plant Height) was aﬀected by the
+treatment (Plant Color) as opposed to Gender which is a pre-treatment confounder. (See an
+isomorphic model in Fig. 1(b), where Blood-pressure replacing Plant-Height.5)
+More than 30 years have passed since the publication of Lindley and Novick’s paper,
+and the face of causality has changed dramatically. Not only do we now know which causal
+structures would support Simpson’s reversals, we also know which structure places the correct
+answer with the aggregated data or with the disaggregated data. Moreover, the criterion for
+predicting where the correct answer lies (and, accordingly, where human consensus resides)
+turns out to be rather insensitive to temporal information, nor does it hinge critically on
+whether or not the third variable is aﬀected by the treatment. It involves a simple graphical
+condition called “back-door” (Pearl, 1993) which traces paths in the causal diagram and
+assures that all spurious paths from treatment to outcome are intercepted by the third
+variable. This will be demonstrated in the next section, where we argue that, armed with
+these criteria, we can safely proclaim Simpson’s paradox “resolved.”
+2
+A Paradox Resolved
+Any claim to a resolution of a paradox, especially one that has resisted a century of at-
+tempted resolution must meet certain criteria. First and foremost, the solution must explain
+why people consider the phenomenon surprising or unbelievable. Second, the solution must
+identify the class of scenarios in which the paradox may surface, and distinguish it from sce-
+narios where it will surely not surface. Finally, in those scenarios where the paradox leads to
+indecision, we must identify the correct answer, explain the features of the scenario that lead
+to that choice, and prove mathematically that the answer chosen is indeed correct. The next
+three subsections will describe how these three requirements are met in the case of Simpson’s
+paradox and, naturally, will proceed to convince readers that the paradox deserves the title
+“resolved.”
+3Lindley later regretted that choice (Pearl, 2009, p. 384), and indeed, his treatment of exchangeability
+was guided exclusively by causal considerations (Meek and Glymour, 1994).
+4Statistics teachers would enjoy the challenge of explaining how the sentence “treatment does not change
+gender” can be expressed mathematically. Lindley and Novick tried, unsuccessfully of course, to use condi-
+tional probabilities.
+5Interestingly, Simpson’s examples also had diﬀerent causal structure; in the former, the third variable
+(gender) was a common cause of the other two, whereas in the latter, the third variable (paint on card) was
+a common eﬀect of the other two (Hern´an et al., 2011). Yet, although this diﬀerence changed Simpson’s
+intuition of what is “more sensible,” it did not stimulate his curiousity as a fundamental diﬀerence, worthy
+of scientiﬁc exploration.
+3
+2.1
+Simpson’s Surprise
+In explaining the surprise, we must ﬁrst distinguish between “Simpson’s reversal” and “Simp-
+son’s paradox”; the former being an arithmetic phenomenon in the calculus of proportions,
+the latter a psychological phenomenon that evokes surprise and disbelief.
+A full under-
+standing of Simpson’s paradox should explain why an innocent arithmetic reversal of an
+association, albeit uncommon, came to be regarded as “paradoxical,” and why it has cap-
+tured the fascination of statisticians, mathematicians and philosophers for over a century
+(though it was ﬁrst labeled “paradox” by Blyth (1972)).
+The arithmetics of proportions has its share of peculiarities, no doubt, but these tend
+to become objects of curiosity once they have been demonstrated and explained away by
+examples. For instance, naive students of probability may expect the average of a product
+to equal the product of the averages but quickly learn to guard against such expectations,
+given a few counterexamples. Likewise, students expect an association measured in a mixture
+distribution to equal a weighted average of the individual associations. They are surprised,
+therefore, when ratios of sums, (a + b)/(c + d), are found to be ordered diﬀerently than indi-
+vidual ratios, a/c and b/d.6 Again, such arithmetic peculiarities are quickly accommodated
+by seasoned students as reminders against simplistic reasoning.
+In contrast, an arithmetic peculiarity becomes “paradoxical” when it clashes with deeply
+held convictions that the pecularity is impossible, and this occurs when one takes seriously
+the causal implications of Simpson’s reversal in decision-making contexts.
+Reversals are
+indeed impossible whenever the third variable, say age or gender, stands for a pre-treatment
+covariate because, so the reasoning goes, no drug can be harmful to both males and females
+yet beneﬁcial to the population as a whole.
+The universality of this intuition reﬂects a
+deeply held and valid conviction that such a drug is physically impossible. Remarkably, such
+impossibility can be derived mathematically in the calculus of causation in the form of a
+“sure-thing” theorem (Pearl, 2009, p. 181):
+“An action A that increases the probability of an event B in each subpopulation
+(of C) must also increase the probability of B in the population as a whole,
+provided that the action does not change the distribution of the subpopulations.”7
+Thus, regardless of whether eﬀect size is measured by the odds ratio or other comparisons,
+regardless of whether Z is a confounder or not, and regardless of whether we have the correct
+causal structure on hand, our intuition should be oﬀended by any eﬀect reversal that appears
+to accompany the aggregation of data.
+I am not aware of another condition that rules out eﬀect reversal with comparable as-
+sertiveness and generality, requiring only that Z not be aﬀected by our action, a requirement
+satisﬁed by all treatment-independent covariates Z. Thus, it is hard, if not impossible, to
+explain the surprise part of Simpson’s reversal without postulating that human intuition is
+governed by causal calculus together with a persistent tendency to attribute causal interpre-
+tation to statistical associations.
+6In Simpson’s paradox we witness the simultaneous orderings: (a1 + b1)/(c1 + d1) > (a2 + b2)/(c2 + d2),
+(a1/c1) < (a2/c2), and (b1/d1) < (b2/d2).
+7The no-change provision is probabilistic; it permits the action to change the classiﬁcation of individual
+units so long as the relative sizes of the subpopulations remain unaltered.
+4
+2.2
+Which scenarios invite reversals?
+Attending to the second requirement, we need ﬁrst to agree on a language that describes and
+identiﬁes the class of scenarios for which association reversal is possible. Since the notion
+of “scenario” connotes a process by which data is generated, a suitable language for such
+a process is a causal diagram, as it can simulate any data-generating process that operates
+sequentially along its arrows. For example, the diagram in Fig. 1(a) can be regarded as
+a blueprint for a process in which Z = Gender receives a random value (male or female)
+depending on the gender distribution in the population. The treatment is then assigned a
+value (treated or untreated) according to the conditional distribution P(treatment|male) or
+P(treatment|female). Finally, once Gender and Treatment receive their values, the outcome
+process (Recovery) is activated, and assigns a value to Y using the conditional distribution
+P(Y = y|X = x, Z = z). All these local distributions can be estimated from the data. Thus,
+the scientiﬁc content of a given scenario can be encoded in the form of a directed acyclic
+graph (DAG), capable of simulating a set of data-generating processes compatible with the
+given scenario.
+2
+1
+1
+L
+L
+L
+Z
+Treatment
+Gender
+X
+Treatment
+X
+(c)
+Recovery
+Recovery Y
+Recovery Y
+Z
+(d)
+X
+Z
+Y
+Treatment
+(a)
+X
+Z
+Y
+Blood
+pressure
+(b)
+Figure 1: Graphs demonstrating the insuﬃciency of chronological information. In models (c)
+and (d), Z may occur before or after the treatment, yet the correct answer remains invariant
+to this timing: We should not condition on Z in model (c), and we should condition on Z
+in model (d). In both models Z is not aﬀected by the treatment.
+The theory of graphical models (Pearl, 1988; Lauritzen, 1996) can tell us, for a given DAG,
+whether Simpson’s reversal is realizable or logically impossible in the simulated scenario. By
+a logical impossibility we mean that for every scenario that ﬁts the DAG structure, there is
+no way to assign processes to the arrows and generate data that exhibit association reversal
+as described by Simpson.
+For example, the theory immediately tells us that all structures depicted in Fig. 1 can
+exhibit reversal, while in Fig. 2, reversal can occur in (a), (b), and (c), but not in (d), (e),
+or (f). That Simpson’s paradox can occur in each of the structures in Fig. 1 follows from
+the fact that the structures are observationally equivalent; each can emulate any distribu-
+tion generated by the others. Therefore, if association reversal is realizable in one of the
+structures, say (a), it must be realizable in all structures. The same consideration applies
+to graphs (a), (b), and (c) of Fig. 2, but not to (d), (e), or (f) which are where the X, Y
+association is collapsible over Z.
+5
+X
+Y
+X
+Y
+Y
+Z
+X
+Y
+(a)
+(b)
+(c)
+X
+Y
+L
+L
+Z
+Z
+Z
+Y
+X
+(d)
+(e)
+(f)
+Z
+X
+Z
+Figure 2: Simpson reversal can be realized in models (a), (b), and (c) but not in (d), (e), or
+(f).
+2.3
+Making the correct decision
+We now come to the hardest test of having resolved the paradox: proving that we can make
+the correct decision when reversal occurs. This can be accomplished either mathematically or
+by simulation. Mathematically, we use an algebraic method called “do-calculus” (Pearl, 2009,
+p. 85–89) which is capable of determining, for any given model structure, the causal eﬀect of
+one variable on another and which variables need to be measured to make this determination.8
+Compliance with do-calculus should then constitute a proof that the decisions we made using
+graphical criteria is correct. Since some readers of this article may not be familiar with the do-
+calculus, simulation methods may be more convincing. Simulation “proofs” can be organized
+as a “guessing game,” where a “challenger” who knows the model behind the data dares an
+analyst to guess what the causal eﬀect is (of X on Y ) and checks the answer against the
+gold standard of a randomized trial, simulated on the model. Speciﬁcally, the “challenger”
+chooses a scenario (or a “story” to be simulated), and a set of simulation parameters such
+that the data generated would exhibit Simpson’s reversal. He then reveals the scenario (not
+the parameters) to the analyst. The analyst constructs a DAG that captures the scenario and
+guesses (using the structure of the DAG) whether the correct answer lies in the aggregated
+or disaggregated data. Finally, the “challenger” simulates a randomized trial on a ﬁctitious
+population generated by the model, estimates the underlying causal eﬀect, and checks the
+result against the analyst’s guess.
+For example, the back-door criterion instructs us to guess that in Fig. 1, in models (b)
+and (c) the correct answer is provided by the aggregated data, while in structures (a) and
+(d) the correct answer is provided by the disaggregated data. We simulate a randomized
+experiment on the (ﬁctitious) population to determine whether the resulting eﬀect is positive
+8When such determination cannot be made from the given graph, as is the case in Fig. 2(b), the do-calculus
+alerts us to this fact.
+6
+or negative, and compare it with the associations measured in the aggregated and disaggre-
+gated population. Remarkably, our guesses should prove correct regardless of the parameters
+used in the simulation model, as along as the structure of the simulator remains the same.9
+This explains how people form a consensus about which data is “more sensible” (Simpson,
+1951) prior to actually seeing the data.
+This is a good place to explain how the back-door criterion works, and how it determines
+where the correct answer resides. The principle is simple: The paths connecting X and
+Y are of two kinds, causal and spurious. Causative associations are carried by the causal
+paths, namely, those tracing arrows directed from X to Y . The other paths carry spurious
+associations and need to be blocked by conditioning on an appropriate set of covariates. All
+paths containing an arrow into X are spurious paths, and need to be intercepted by the
+chosen set of covariates.
+When dealing with a singleton covariate Z, as in the Simpson’s paradox, we need to
+merely ensure that
+1. Z is not a descendant of X, and
+2. Z blocks every path that ends with an arrow into X.
+(Extensions for descendants of X are given in (Pearl, 2009, p. 338; Pearl and Paz, 2013;
+Shpitser et al., 2010).)
+The operation of “blocking” requires a special handling of “collider” variables, which
+behave oppositely to arrow-emitting variables. The latter block the path when conditioned
+on, while the former block the path when they and all their descendants are not conditioned
+on. This special handling of “ colliders,” reﬂects a general phenomenon known as Berkson’s
+paradox (Berkson, 1946), whereby observations on a common consequence of two indepen-
+dent causes render those causes dependent. For example, the outcomes of two independent
+coins are rendered dependent by the testimony that at least one of them is a tail.
+Armed with this criterion we can determine, for example, that in Fig. 1(a) and (d), if we
+wish to correctly estimate the eﬀect of X on Y , we need to condition on Z (thus blocking the
+back-door path X ←Z →Y ). We can similarly determine that we should not condition on
+Z in Fig. 1(b) and (c). The former because there are no back-door paths requiring blockage,
+and the latter because the back-door path X ←◦→Z ←◦→Y is blocked when Z is not
+conditioned on. The correct decisions follow from this determination; when conditioning on
+Z is required, the Z-speciﬁc data carries the correct information. In Fig. 2(c), for example,
+the aggregated information carries the correct information because the spurious (non-causal)
+path X →Z ←Y is blocked when Z is not conditioned on. The same applies to Fig. 2(a)
+and Fig. 1(c).
+Finally, we should remark that, in certain models the correct answer may not lie in either
+the disaggregated or the aggregated data. This occurs when Z is not suﬃcient to block an
+active back-door path as in Fig. 2(b); in such cases a set of additional covariates may be
+needed, which takes us beyond the scope of this note.
+The model in Fig. 3 presents opportunities to simulate successive reversals, which could
+serve as an eﬀective (and fascinating) instruction tool for introductory statistics classes. Here
+9By “structure” we mean the list of variables that need be consulted in computing each variable Vi in
+the simulation.
+7
+we see that to block the only unblocked back-door path X ←Z1 →Z3 →Y , we need to
+condition on Z1. This means that, if the simulation machine is set to generate association
+reversal, the correct answer will reside in the disaggregated, Z1-speciﬁc data. If we further
+condition on a second variable, Z2, the back-door path X ←◦→Z2 ←Z3 →Y will
+become unblocked, and a bias will be created, meaning that the correct answer lies with
+the aggregated data. Upon further conditioning on Z3 the bias is removed and the correct
+answer returns to the disaggregated, Z3-speciﬁc data.
+Note that in each stage, we can set the numbers in the simulation machine so as to
+generate association reversal between the pre-conditioning and post-conditioning data. Note
+further that at any stage of the process we can check where the correct answer lies by
+subjecting the population generated to a hypothetical randomized trial.
+1
+3
+2
+5
+4
+Z
+Z
+Z
+Z
+Z
+Y
+X
+Figure 3: A multi-stage Simpson’s paradox machine. Cumulative conditioning in the or-
+der (Z1, Z2, Z3, Z4, Z5) creates reversal at each stage, with the correct answers alternating
+between disaggregated and aggregated data.
+This sequential, back and forth reversals demonstrate the disturbing observation that
+every statistical relationship between two variables may be reversed by including additional
+factors in the analysis and that, lacking causal information of the context, one cannot be
+sure what factor should be included in the analysis. For example, we might run a study and
+ﬁnd that students who smoke get higher grades, however, if we adjust for age, the opposite
+is true in every age group, namely, smoking predicts lower grades. If we further adjust for
+parent income, we ﬁnd that smoking predicts higher grades again, in every age-income group,
+and so on (Pearl, 2009, p. 425).
+3
+Conclusions
+I hope that playing the multi-stage Simpson’s guessing game (Fig. 3) would convince readers
+that we now understand most of the intricacies of Simpson’s paradox, and we can safely title
+it “resolved.”
+Acknowledgments
+This research was supported in parts by grants from NSF #IIS1249822 and #IIS1302448,
+and ONR #N00014-13-1-0153 and #N00014-10-1-0933. I appreciate the encouragement of
+8
+Ronald Christensen, conversations with Miguel Hern´an, and editorial comments by Madelyn
+Glymour.
+Appendix A – (Based on Pearl (2009, Chapter 6))
+Simpson’s paradox (Blyth, 1972; Simpson, 1951), refers to a phenomenon exempliﬁed in
+Fig. 4, whereby an event C seems to increase the probability of E in a given population p
+and, at the same time, decrease the probability of E in every subpopulation of p. In other
+words, if F and ¬F are two complementary properties describing two subpopulations, we
+might well encounter the inequalities
+P(E|C) > P(E|¬C),
+(1)
+P(E|C, F) < P(E|¬C, F),
+(2)
+P(E|C, ¬F) < P(E|¬C, ¬F).
+(3)
+Although such order reversal might not surprise students of probability, it appears paradox-
+ical when given causal interpretation. For example, if we associate C (connoting cause) with
+taking a certain drug, E (connoting eﬀect) with recovery, and F with being a female then –
+under the causal interpretation of (1)–(3) – the drug seems to be harmful to both males and
+females yet beneﬁcial to the population as a whole. Intuition deems such a drug impossible,
+and correctly so.
+The tables in Fig. 4 represent Simpson’s reversal numerically. We see that, overall, the
+recovery rate for patients receiving the drug (C) at 50% exceeds that of the control (¬C) at
+40% and so the drug treatment is apparently to be preferred. However, when we inspect the
+separate tables for males and females, the recovery rate for the untreated patients is 10%
+higher than that for the treated ones, for males and females both.
+Modern analysts explain away Simpson’s paradox by distinguishing seeing from doing
+(Lindley, 2002). The key idea is that the conditioning operator in probability calculus stands
+for the evidential conditional “given that we see,” and should not be used to compare “ef-
+fects,” “impacts,” “harms,” or “beneﬁts.” To quantify eﬀects, we must use the do(·) operator
+which represents the causal conditional “given that we do.” Accordingly, the inequality in
+(1),
+P(E|C) > P(E|¬C),
+is not a statement about C raising the probability of E, or C being a factor contributing to
+E, but rather a statement about C being an evidence for E, which may be due to factors
+that cause both C and E. In our example, for instance, the drug appears beneﬁcial overall
+because the males, who recover (regardless of the drug) more often than the females, are
+also more likely than the females to use the drug. Indeed, ﬁnding a drug-treated patient
+of unknown gender, we would do well inferring that the patient is more likely to be a male
+and hence more likely to recover, in perfect harmony with (1)–(3). In contrast, to represent
+the statement that the drug increases the chances for recovery, the appropriate inequality
+should read:
+P(E|do(C)) > P(E|do(¬C)),
+(4)
+9
+Combined
+E
+¬E
+Recovery Rate
+(a)
+drug (C)
+20
+20
+40
+50%
+no-drug (¬C)
+16
+24
+40
+40%
+36
+44
+80
+Males
+E
+¬E
+Recovery Rate
+(b)
+drug (C)
+18
+12
+30
+60%
+no-drug (¬C)
+7
+3
+10
+70%
+25
+15
+40
+Females
+E
+¬E
+Recovery Rate
+(c)
+drug (C)
+2
+8
+10
+20%
+no-drug (¬C)
+9
+21
+30
+30%
+11
+29
+40
+Figure 4: Recovery rates under treatment (C) and control (¬C) for males, females, and
+combined.
+and the statement that drug C has harmful eﬀect on both males and females should translate
+into the inequalities:10
+P(E|do(C), F) < P(E|do(¬C), F),
+(5)
+P(E|do(C), ¬F) < P(E|do(¬C), ¬F).
+(6)
+A simple proof in causal calculus (Pearl, 2009, pp. 180–182) demonstrates that (5) and
+(6) are inconsistent with (4), as long as the drug has no eﬀect on gender, i.e.,
+P(F|do(C)) = P(F|do(¬C)) = P(F).
+(7)
+This inconsistency accounts for the paradoxical ﬂavor of Simpson’s reversal, and carries
+profound implications on how humans process and interpret data.
+First, the fact the most people are (initially) surprised by reversals of the type shown in
+Fig. 4 indicates that people are predisposed to attribute causal interpretations to statistical
+data. Second, the fact that most people deem (4)–(6) to be impossible proves that people
+judgment is governed by causal, rather than statistical logic. It also proves that people store
+scientiﬁc and experiential knowledge (e.g., that drug does not change gender) in the form of
+cause-eﬀect relationships, rather than statistical relationships. Overall, Simpson’s paradox
+provides us with a solid proof of what Daniel Kahneman calls “causes trump statistics”
+(Kahneman, 2011, p. 166–174), and what I have described as “man is a causal processing
+machine” (Pearl, 2009, p. 180).
+10Note that none of (4)-(6) is entailed by the table of Fig. 4; the latter refelcts non-experimental data and,
+hence, cannot be given any causal interpretation whatsoever, without further (causal) assumptions.
+10
+References
+Agresti, A. (1983). Fallacies, statistical. In Encyclopedia of Statistical Science (S. Kotz
+and N. Johnson, eds.), vol. 3. John Wiley, New York, 24–28.
+Arah, O. (2008). The role of causal reasoning in understanding Simpson’s paradox, Lord’s
+paradox, and the suppression eﬀect: Covariate selection in the analysis of observational
+studies.
+Emerging Themes in Epidemiology 4 doi:10.1186/1742–7622–5–5.
+Online at
+<http://www.ete-online.com/content/5/1/5>.
+Berkson, J. (1946). Limitations of the application of fourfold table analysis to hospital
+data. Biometrics Bulletin 2 47–53.
+Bishop, Y., Fienberg, S. and Holland, P. (1975). Discrete multivariate analysis: theory
+and practice. MIT Press, Cambridge, MA.
+Blyth, C. (1972). On Simpson’s paradox and the sure-thing principle. Journal of the
+American Statistical Association 67 364–366.
+Cohen, M. and Nagel, E. (1934). An Introduction to Logic and the Scientiﬁc Method.
+Harcourt, Brace and Company, New York.
+Hern´an, M., Clayton, D. and Keiding, N. (2011). The Simpson’s paradox unraveled.
+International Journal of Epidemiology DOI:10.1093/ije/dyr041.
+Kahneman, D. (2011). Causes trumps statistics. In Thinking, Fast and Slow. Farrar, Straus
+and Giroux, New York, 166–174.
+Lauritzen, S. (1996). Graphical Models. Clarendon Press, Oxford. Reprinted 2004 with
+corrections.
+Lindley, D. (2002). Seeing and doing: The concept of causation. International Statistical
+Review 70 191–214.
+Lindley, D. and Novick, M. (1981). The role of exchangeability in inference. The Annals
+of Statistics 9 45–58.
+Meek, C. and Glymour, C. (1994). Conditioning and intervening. British Journal of
+Philosophy Science 45 1001–1021.
+Novick, M. (1983). The centrality of Lord’s paradox and exchangeability for all statistical
+inference. In Principals of modern psychological measurement (H. Wainer and S. Messick,
+eds.). Earlbaum, Hillsdale, NJ, 41–53.
+Pearl, J. (1988). Probabilistic Reasoning in Intelligent Systems. Morgan Kaufmann, San
+Mateo, CA.
+Pearl, J. (1993). Comment: Graphical models, causality, and intervention. Statistical
+Science 8 266–269.
+11
+Pearl, J. (2009). Causality: Models, Reasoning, and Inference. 2nd ed. Cambridge Uni-
+versity Press, New York.
+Pearl, J. and Paz, A. (2013). Confounding equivalence in causal inference. Tech. Rep.
+R-343w, <http://ftp.cs.ucla.edu/pub/stat ser/r343w.pdf>, Department of Computer Sci-
+ence, University of California, Los Angeles, CA. Revised and submitted, October 2013.
+Pearson, K., Lee, A. and Bramley-Moore, L. (1899). Genetic (reproductive) selection:
+Inheritance of fertility in man, and of fecundity in thoroughbred racehorses. Philosophical
+Transactions of the Royal Society of London, Series A 192 257–330.
+Shpitser, I., VanderWeele, T. and Robins, J. (2010). On the validity of covariate
+adjustment for estimating causal eﬀects. In Proceedings of the Twenty-Sixth Conference
+on Uncertainty in Artiﬁcial Intelligence. AUAI, Corvallis, OR, 527–536.
+Simpson, E. (1951). The interpretation of interaction in contingency tables. Journal of the
+Royal Statistical Society, Series B 13 238–241.
+Wasserman, L. (2004).
+All of Statistics:
+A Concise Course in Statistical Inference.
+Springer Science+Business Media, Inc., New York, NY.
+Whittemore, A. (1978). Collapsibility of multidimensional contingency tables. Journal
+of the Royal Statistical Society, B 40 328–340.
+Yule, G. (1903). Notes on the theory of association of attributes in statistics. Biometrika
+2 121–134.
+12

@@ -1,0 +1,1280 @@
+Imaginary Numbers are not Real — the Geometric
+Algebra of Spacetime
+AUTHORS
+Stephen Gull
+Anthony Lasenby
+Chris Doran
+Found. Phys. 23(9), 1175-1201 (1993)
+1
+Abstract
+This paper contains a tutorial introduction to the ideas of geometric alge-
+bra, concentrating on its physical applications. We show how the deﬁnition
+of a ‘geometric product’ of vectors in 2- and 3-dimensional space provides
+precise geometrical interpretations of the imaginary numbers often used in
+conventional methods. Reﬂections and rotations are analysed in terms of
+bilinear spinor transformations, and are then related to the theory of analytic
+functions and their natural extension in more than two dimensions (monogen-
+ics). Physics is greatly facilitated by the use of Hestenes’ spacetime algebra,
+which automatically incorporates the geometric structure of spacetime. This
+is demonstrated by examples from electromagnetism. In the course of this
+purely classical exposition many surprising results are obtained — results
+which are usually thought to belong to the preserve of quantum theory. We
+conclude that geometric algebra is the most powerful and general language
+available for the development of mathematical physics.
+2
+1
+Introduction
+. . . for geometry, you know, is the gate of science, and the gate
+is so low and small that one can only enter it as a little child.
+William K. Cliﬀord
+This paper was commissioned to chronicle the impact that David Hestenes’
+work has had on physics. Sadly, it seems to us that his work has so far not really
+had the impact it deserves to have, and that what is needed in this volume is that
+his message be AMPLIFIED and stated in a language that ordinary physicists
+understand. With his background in philosophy and mathematics, David is certainly
+no ordinary physicist, and we have observed that his ideas are a source of great
+mystery and confusion to many [1]. David accurately described the typical response
+when he wrote [2] that ‘physicists quickly become impatient with any discussion of
+elementary concepts’ — a phenomenon we have encountered ourselves.
+We believe that there are two aspects of Hestenes’ work which physicists should
+take particularly seriously. The ﬁrst is that the geometric algebra of spacetime is
+the best available mathematical tool for theoretical physics, classical or quantum
+[3, 4, 5]. Related to this part of the programme is the claim that complex numbers
+arising in physical applications usually have a natural geometric interpretation that
+is hidden in conventional formulations [4, 6, 7, 8]. David’s second major idea is
+that the Dirac theory of the electron contains important geometric information
+[9, 2, 10, 11], which is disguised in conventional matrix-based approaches. We hope
+that the importance and truth of this view will be made clear in this and the three
+following papers. As a further, more speculative, line of development, the hidden
+geometric content of the Dirac equation has led David to propose a more detailed
+model of the motion of an electron than is given by the conventional expositions of
+quantum mechanics. In this model [12, 13], the electron has an electromagnetic
+ﬁeld attached to it, oscillating at the ‘zitterbewegung’ frequency, which acts as a
+physical version of the de Broglie pilot-wave [14].
+David Hestenes’ willingness to ask the sort of question that Feynman speciﬁcally
+warned against1, and to engage in varying degrees of speculation, has undoubt-
+edly had the unfortunate eﬀect of diminishing the impact of his ﬁrst idea, that
+geometric algebra can provide a uniﬁed language for physics — a contention that
+1‘Do not keep saying to yourself, if you can possibly avoid it, ‘But how can it be like that?’,
+because you will get “down the drain”, into a blind alley from which nobody has yet escaped.
+Nobody knows how it can be like that.’ [15].
+3
+we strongly believe. In this paper, therefore, we will concentrate on the ﬁrst aspect
+of David’s work, deferring to a companion paper [16] any critical examination of
+his interpretation of the Dirac equation.
+In Section 2 we provide a gentle introduction to geometric algebra, emphasising
+the geometric meaning of the associative (Cliﬀord) product of vectors. We illustrate
+this with the examples of 2- and 3-dimensional space, showing that it is possible to
+interpret the unit scalar imaginary number as arising from the geometry of real
+space. Section 3 introduces the powerful techniques by which geometric algebra
+deals with rotations. This leads to a discussion of the role of spinors in physics.
+In Section 4 we outline the vector calculus in geometric algebra and review the
+subject of monogenic functions; these are higher-dimensional generalisations of
+the analytic functions of two dimensions. Relativity is introduced in Section 5,
+where we show how Maxwell’s equations can be combined into a single relation
+in geometric algebra, and give a simple general formula for the electromagnetic
+ﬁeld of an accelerating charge. We conclude by comparing geometric algebra with
+alternative languages currently popular in physics. The paper is based on an lecture
+given by one of us (SFG) to an audience containing both students and professors.
+Thus, only a modest level of mathematical sophistication (though an open mind) is
+required to follow it. We nevertheless hope that physicists will ﬁnd in it a number
+of surprises; indeed we hope that they will be surprised that there are so many
+surprises!
+2
+An Outline of Geometric Algebra
+The new math — so simple only a child can do it. Tom Lehrer
+Our involvement with David Hestenes began ten years ago, when he attended a
+Maximum Entropy conference in Laramie. It is a testimony to David’s range of
+interests that one of us (SFG) was able to interact with him at conferences for the
+next six years, without becoming aware of his interests outside the ﬁelds of MaxEnt
+[17], neural research [18] and the teaching of physics [19]. He apparently knew
+that astronomers would not be interested in geometric algebra. Our infection with
+his ideas in this area started in 1988, when another of us (ANL) stumbled across
+David’s book ‘Space-Time Algebra’ [20], and became deeply impressed. In that
+summer, our annual MaxEnt conference was in Cambridge, and contact was ﬁnally
+made. Even then, two more months passed before our group reached the critical
+mass of having two people in the same department, as a result of SFG’s reading
+4
+of David’s excellent summary ‘A Uniﬁed Language for Mathematics and Physics’
+[4]. Anyone who is involved with Bayesian probability or MaxEnt is accustomed to
+the polemical style of writing, but his 6-page introduction on the deﬁciencies of
+our mathematics is strong stuﬀ. In summary, David said that physicists had not
+learned properly how to multiply vectors and, as a result of attempts to overcome
+this, had evolved a variety of mathematical systems and notations that has come
+to resemble Babel. Four years on, having studied his work in more detail, we
+believe that he wrote no less than the truth and that, as a result of learning how
+to multiply vectors together, we can all gain a great increase in our mathematical
+facility and understanding.
+2.1
+How to Multiply Vectors
+A linear space is one upon which addition and scalar multiplication are deﬁned.
+Although such a space is often called a ‘vector space’, our use of the term ‘vector’
+will be reserved for the geometric concept of a directed line segment. We still
+require linearity, so that for any vectors a and b we must be able to deﬁne their
+vector sum a + b. Consistent with our purpose, we will restrict scalars to be real
+numbers, and deﬁne the product of a scalar λ and a vector a as λa. We would like
+this to have the geometrical interpretation of being a vector ‘parallel’ to a and of
+‘magnitude’ λ times the ‘magnitude’ of a. To express algebraically the geometric
+idea of magnitude, we require that an inner product be deﬁned for vectors.
+• The inner product a·b, also known as the dot or scalar product, of two vectors
+a and b, is a scalar with magnitude |a||b| cos θ, where |a| and |b| are the
+lengths of a and b, and θ is the angle between them. Here |a| ≡(a·a)
+1
+2, so
+that the expression for a·b is eﬀectively an algebraic deﬁnition of cos θ.
+This product contains partial information about the relative direction of any two
+vectors, since it vanishes if they are perpendicular. In order to capture the remaining
+information about direction, another product is conventionally introduced, the
+vector cross product.
+• The cross product a × b of two vectors is a vector of magnitude |a||b| sin θ
+in the direction perpendicular to a and b, such that a, b and a × b form a
+right-handed set.
+5
+2.2
+A Little Un-Learning
+These products of vectors, together with their expressions in terms of components
+(which we will not need or use here), form the basis of everyday teaching in
+mathematical physics. In fact, the vector cross product is an accident of our
+3-dimensional world; in two dimensions there simply isn’t a direction perpendicular
+to a and b, and in four or more dimensions that direction is ambiguous. A more
+general concept is needed, so that full information about relative directions can
+still be encoded in all dimensions. Thus, we will temporarily un-learn the cross
+product, and instead introduce a new product, called the outer product:
+• The outer product a∧b has magnitude |a||b| sin θ , but is not a scalar or a
+vector; it is a directed area, or bivector, oriented in the plane containing a
+and b. The outer product has the same magnitude as the cross product and
+shares its anticommutative (skew) property: a∧b = −b∧a.
+A way to visualise the outer product is to imagine a∧b as the area ‘swept out’ by
+displacing a along b, with the orientation given by traversing the parallelogram
+so formed ﬁrst along an a vector then along a b vector [3]. This notion leads
+to a generalisation (due to Grassmann [21]) to products of objects with higher
+dimensionality, or grade. Thus, if the bivector a∧b (grade 2) is swept out along
+another vector c (grade 1), we obtain the directed volume element (a∧b)∧c, which
+is a trivector (grade 3). By construction, the outer product is associative:
+(a∧b)∧c = a∧(b∧c) = a∧b∧c.
+(1)
+We can go no further in 3-dimensional space — there is nowhere else to go.
+Correspondingly, the outer product of any four vectors a∧b∧c∧d is zero.
+At this point we also drop the convention of using bold-face type for vectors
+such as a — henceforth vectors and all other grades will be written in ordinary
+type (with one speciﬁc exception, discussed below).
+2.3
+The Geometric Product
+The inner and outer products of vectors are not the whole story. Since a·b is a
+scalar and a∧b is a bivector area, the inner and outer products respectively lower
+6
+and raise the grade of a vector. They also have opposite commutation properties:
+a·b
+=
+b·a,
+a∧b
+=
+−b∧a.
+(2)
+In this sense we can think of the inner and outer products together as forming
+the symmetric and antisymmetric parts of a new product, (deﬁned originally by
+Grassmann [22] and Cliﬀord [23]) which we call the geometric product, ab:
+ab = a·b + a∧b.
+(3)
+Thus, the product of parallel vectors is a scalar — we take such a product, for
+example, when ﬁnding the length of a vector. On the other hand, the product of
+orthogonal vectors is a bivector — we are ﬁnding the directed area of something.
+It is reasonable to suppose that the product of vectors that are neither parallel nor
+perpendicular should contain both scalar and bivector parts.
+How on Earth do I Add a Scalar to a Bivector?
+Most physicists need a little help at this point [1]. Adding together a scalar and
+a bivector doesn’t seem right at ﬁrst — they are diﬀerent types of quantities. But
+it is exactly what you want an addition to do! The result of adding a scalar to a
+bivector is an object that has both scalar and bivector parts, in exactly the same
+way that the addition of real and imaginary numbers yields an object with both
+real and imaginary parts. We call this latter object a ‘complex number’ and, in
+the same way, we shall refer to a (scalar + bivector) as a ‘multivector’, accepting
+throughout that we are combining objects of diﬀerent types. The addition of scalar
+and bivector does not result in a single new quantity in the same way as 2 + 3 = 5;
+we are simply keeping track of separate components in the symbol ab = a·b + a∧b
+or z = x + iy. This type of addition, of objects from separate linear spaces, could
+be given the symbol ⊕, but it should be evident from our experience of complex
+numbers that it is harmless, and more convenient, to extend the deﬁnition of
+addition and use the plain, ordinary + sign.
+We have deﬁned the geometric product in terms of the inner and outer product
+of two vectors. An alternative and more mathematical approach is to deﬁne the
+associative geometric product via a set of axioms and introduce two ‘new’ products
+a·b ≡1
+2(ab + ba) and a∧b ≡1
+2(ab −ba). Then, for example, if we assert that the
+square of any vector should be a scalar, this would allow us to prove that the
+7
+product a·b is scalar-valued, since ab + ba = (a + b)2 −a2 −b2. This more axiomatic
+approach is taken in Chapter 1 of Hestenes & Sobczyk [5].
+2.4
+Geometric Algebra of the Plane
+A 1-dimensional space has insuﬃcient geometric structure to show what is going
+on, so we begin in two dimensions, taking two orthonormal basis vectors σ1 and σ2.
+These satisfy the relations
+σ1·σ1 = 1,
+σ2·σ2 = 1,
+σ1∧σ1 = 0,
+σ2∧σ2 = 0
+(4)
+and
+σ1·σ2 = 0.
+(5)
+The outer product σ1∧σ2 represents the directed area element of the plane and
+we assume that σ1, σ2 are chosen such that this has the conventional right-handed
+orientation. This completes the geometrically meaningful quantities that we can
+make from these basis vectors:
+1,
+scalar
+{σ1, σ2},
+vectors
+σ1∧σ2.
+bivector
+(6)
+We now assemble a Cliﬀord algebra from these quantities. An arbitrary linear
+sum over the four basis elements in (6) is called a multivector. In turn, given two
+multivectors A and B, we can form their sum S = A+B by adding the components:
+A
+≡
+a01
++
+a1σ1
++
+a2σ2
++
+a3σ1∧σ2
+B
+≡
+b01
++
+b1σ1
++
+b2σ2
++
+b3σ1∧σ2
+S
+=
+(a0 + b0)1
++
+(a1 + b1)σ1
++
+(a2 + b2)σ2
++
+(a3 + b3)σ1∧σ2.
+(7)
+By this deﬁnition of a linear sum we have done almost nothing — the power comes
+from the deﬁnition of the multiplication P = AB. In order to deﬁne this product,
+we have to be able to multiply the 4 geometric basis elements. Multiplication by a
+scalar is obvious. To form the products of the vectors we remember the deﬁnition
+ab = a·b + a∧b, so that
+σ2
+1 = σ1σ1 = σ1·σ1 + σ1∧σ1 = 1 = σ2
+2,
+σ1σ2 = σ1·σ2 + σ1∧σ2 = σ1∧σ2 = −σ2σ1.
+(8)
+8
+Products involving the bivector σ1∧σ2 = σ1σ2 are particularly important. Since
+the geometric product is associative, we have:
+(σ1σ2)σ1
+=
+−σ2σ1σ1 = −σ2,
+(σ1σ2)σ2
+=
+σ1
+(9)
+and
+σ1(σ1σ2)
+=
+σ2
+σ2(σ1σ2)
+=
+−σ1.
+(10)
+The only other product is the square of σ1∧σ2:
+(σ1∧σ2)2 = σ1σ2σ1σ2 = −σ1σ1σ2σ2 = −1.
+(11)
+These results complete the deﬁnition of the product and enable, for example, the
+processes of addition and multiplication to be coded as computer functions. In
+principle, these deﬁnitions could be made an intrinsic part of a computer language,
+in the same way that complex number arithmetic is already intrinsic to some
+languages. To reinforce this point, it may be helpful to write out the product
+explicitly. We have,
+AB = P ≡p01 + p1σ1 + p2σ2 + p3σ1∧σ2,
+(12)
+where
+p0
+=
+a0b0
++
+a1b1
++
+a2b2
+−
+a3b3,
+p1
+=
+a0b1
++
+a1b0
++
+a3b2
+−
+a2b3,
+p2
+=
+a0b2
++
+a2b0
++
+a1b3
+−
+a3b1,
+p3
+=
+a0b3
++
+a3b0
++
+a1b2
+−
+a2b1.
+(13)
+Multivector addition and multiplication obey the associative and distributive laws,
+so that we have, as promised, the geometric algebra of the plane.
+We emphasise the important features that have emerged in the course of this
+derivation.
+• The geometric product of two parallel vectors is a scalar number — the
+product of their lengths.
+• The geometric product of two perpendicular vectors is a bivector — the
+directed area formed by the vectors.
+• Parallel vectors commute under the geometric product; perpendicular vectors
+anticommute.
+9
+• The bivector σ1∧σ2 has the geometric eﬀect of rotating the vectors {σ1, σ2}
+in its own plane by 90◦clockwise when multiplying them on their left. It
+rotates vectors by 90◦anticlockwise when multiplying on their right. This
+can be used to deﬁne the orientation of σ1 and σ2.
+• The square of the bivector area σ1∧σ2 is a scalar: (σ1∧σ2)2 = −1.
+By virtue of the last two properties the bivector σ1∧σ2 becomes our ﬁrst candidate
+for the role of the unit imaginary i, and in 2-dimensional applications it fulﬁlls this
+role admirably. Indeed, we see that the even-grade elements z = x + yσ1σ2 form a
+natural subalgebra, equivalent to the complex numbers.
+2.5
+The Algebra of 3-Space
+If we now add a third orthonormal vector σ3 to our basis set, we generate the
+following geometrical objects:
+1,
+scalar
+{σ1, σ2, σ3},
+3 vectors
+{σ1σ2, σ2σ3, σ3σ1},
+3 bivectors
+area elements
+σ1σ2σ3
+trivector
+volume element
+(14)
+From these objects we form a linear space of (1 + 3 + 3 + 1) = 8 = 23 dimensions,
+deﬁning multivectors as before, together with the operations of addition and multi-
+plication. Most of the algebra is the same as in the 2-dimensional version because
+the subsets {σ1, σ2}, {σ2, σ3} and {σ3, σ1} generate 2-dimensional subalgebras, so
+that the only new geometric products we have to consider are
+(σ1σ2)σ3
+=
+σ1σ2σ3,
+(σ1σ2σ3)σk
+=
+σk(σ1σ2σ3)
+(15)
+and
+(σ1σ2σ3)2 = σ1σ2σ3σ1σ2σ3 = σ1σ2σ1σ2σ2
+3 = −1.
+(16)
+These relations lead to new geometrical insights:
+• A simple bivector rotates vectors in its own plane by 90◦, but forms trivectors
+(volumes) with vectors perpendicular to it.
+• The trivector σ1σ2σ3 commutes with all vectors, and hence with all multivec-
+tors.
+10
+The trivector σ1σ2σ3 also has the algebraic property of being a square root of
+minus one. In fact, of the eight geometrical objects, four have negative square
+{σ1σ2, σ2σ3, σ3σ1, σ1σ2σ3}. Of these, the trivector σ1σ2σ3 is distinguished by its
+commutation properties, and by the fact that it is the highest-grade element in
+the space. Highest-grade objects are generically called pseudoscalars, and σ1σ2σ3 is
+thus the unit pseudoscalar for 3-dimensional space. In view of its properties we
+give it the special symbol i:
+i ≡σ1σ2σ3.
+(17)
+We should be quite clear, however, that we are using the symbol i to stand for a
+pseudoscalar, and thus cannot use the same symbol for the commutative scalar
+imaginary, as used for example in conventional quantum mechanics, or in electrical
+engineering. We shall use the symbol j for this uninterpreted imaginary, consistent
+with existing usage in engineering. The deﬁnition (17) will be consistent with our
+later extension to 4-dimensional spacetime.
+2.6
+Interlude
+We have now reached the point which is liable to cause the greatest intellectual shock.
+We have played an apparently harmless game with the algebra of 3-dimensional
+vectors and found a geometric quantity i ≡σ1σ2σ3 which has negative square and
+commutes with all multivectors. Multiplying this by σ3, σ1 and σ2 in turn we get
+(σ1σ2σ3)σ3 = σ1σ2
+=
+iσ3,
+σ2σ3
+=
+iσ1,
+σ3σ1
+=
+iσ2,
+(18)
+which is exactly the algebra of the Pauli spin matrices used in the quantum
+mechanics of spin- 1
+2 particles! The familiar Pauli matrix relation,
+ˆσiˆσj = 1δij + jϵijkˆσk,
+(19)
+is now nothing more than an expression of the geometric product of orthonormal
+vectors. We shall demonstrate the equivalence with the Pauli matrix algebra
+explicitly in a companion paper [24], but here it suﬃces to note that the matrices
+ˆσ1 ≡
+ 
+0
+1
+1
+0
+!
+,
+ˆσ2 ≡
+ 
+0
+−j
+j
+0
+!
+,
+ˆσ3 ≡
+ 
+1
+0
+0
+−1
+!
+(20)
+11
+comprise a matrix representation of our 3-dimensional geometric algebra. Indeed,
+since we can represent our algebra by these matrices, it should now be obvious
+that we can indeed add together the various diﬀerent geometric objects in the
+algebra — we just add the corresponding matrices. These matrices have four
+complex components (eight degrees of freedom), so we could always disentangle
+them again.
+Now it is clearly true that any associative algebra can be represented by a
+matrix algebra; but that matrix representation may not be the best interpretation
+of what is going on. In the quantum mechanics of spin-1
+2 particles we have a case
+where generations of physicists have been taught nothing but matrices, when there
+is a perfectly good geometrical interpretation of those same equations! And it
+gets worse. We were taught that the (ˆσ1, ˆσ2, ˆσ3) were the components of a vector
+ˆσ, and how to write things like a · ˆσ = akˆσk and S2 = (ˆσ2
+1 + ˆσ2
+2 + ˆσ2
+3)¯h2/4. But,
+geometrically, {σ1, σ2, σ3} are three orthonormal vectors comprising the basis of
+space, so that in akˆσk the {ak} are the components of a vector along directions σk
+and the result akσk is a vector, not a scalar. With regard to S2, if you want to ﬁnd
+the length of a vector, you must square and add the components of the vector along
+the unit basis vectors — not the basis vectors themselves. So the result σkσk = 3
+is certainly true, but does not have the interpretation usually given to it.
+These considerations all indicate that our present thinking about quantum
+mechanics is infested with the deepest misconceptions. We believe, with David
+Hestenes, that geometric algebra is an essential ingredient in unravelling these
+misconceptions.
+On the constructive side, the geometric algebra is easy to use, and allows us to
+manipulate geometric quantities in a coordinate-free way. The σ-vectors, which play
+an essential role, are thereby removed from the mysteries of quantum mechanics,
+and used to advantage in physics and engineering. We shall see that a similar fate
+awaits Dirac’s γ-matrices.
+The algebra of 3-dimensional space, the Pauli algebra, is central to physics,
+and deserves further emphasis. It is an 8-dimensional linear space of multivectors,
+which we write as
+M =
+α
+scalar
++
+a
+vector
++
+ib
+bivector
++
+iβ
+pseudoscalar
+(21)
+where a ≡akσk, b ≡bkσk, and we have reverted to bold-face type for 3-dimensional
+vectors.
+This is the exception referred to earlier; we use this convention [4]
+12
+to maintain a visible diﬀerence between spacetime 4-vectors and vectors of 3-
+dimensional space. There is never any ambiguity concerning the basis vectors {σk},
+however, and these will continue to be written unbold.
+The space of even-grade elements of this algebra,
+ψ = α + ib,
+(22)
+is closed under multiplication and forms a representation of the quarternion algebra.
+Explicitly, identifying i, j, k with iσ1, −iσ2, iσ3, respectively, we have the usual
+quarternion relations, including the famous formula
+i2 = j2 = k2 = ijk = −1.
+(23)
+Finally in this section, we relearn the cross product in terms of the outer product
+and duality operation (multiplication by the pseudoscalar):
+a×b = −ia∧b.
+(24)
+Here we have introduced an operator precedence convention in which an outer or
+inner product always takes precedence over a geometric product. Thus a∧b is
+taken before the multiplication by i.
+The duality operation in three dimensions interchanges a plane with a vector
+orthogonal to it (in a right-handed sense). In the mathematical literature this
+operation goes under the name of the ‘Hodge dual’. Quantities like a or b would
+conventionally be called ‘polar vectors’, while the ‘axial vectors’ which result from
+cross-products can now be seen to be disguised versions of bivectors.
+3
+Rotations and Geometric algebra
+Geometric algebra is useful to a physicist because it automatically incorporates
+the structure of the world we inhabit, and accordingly provides a natural language
+for physics. One of the clearest illustrations of its power is the way in which it
+deals with reﬂections and rotations. The key to this approach is a theorem due to
+Hamilton [25]: given any unit vector n (n2 = 1), we can resolve an arbitrary vector
+x into parts parallel and perpendicular to n: x = x⊥+ x∥. These components are
+13
+identiﬁed algebraically through their commutation properties:
+nx∥
+=
+x∥n (scalar),
+nx⊥
+=
+−x⊥n (bivector).
+(1)
+The vector x⊥−x∥can therefore be written −nxn. Geometrically, the transforma-
+tion x →−nxn represents a reﬂection in a plane perpendicular to n. To make a
+rotation we need two of these reﬂections:
+x →mnxnm = Rx ˜R,
+(2)
+where R ≡mn is called a ‘rotor’. We call ˜R ≡nm the ‘reverse’ of R, because it is
+obtained by reversing the order of all geometric products. The rotor is even (i.e.
+viewed as a multivector it contains only even-grade elements), and is unimodular,
+satisfying R ˜R = ˜RR = 1.
+As an example, let us rotate the unit vector a into another unit vector b,
+leaving all vectors perpendicular to a and b unchanged (a simple rotation). We can
+accomplish this by a reﬂection perpendicular to the unit vector which is half-way
+between a and b (see Figure 1):
+n ≡(a + b)/|a + b|.
+(3)
+This reﬂects a into −b, which we correct by a second reﬂection perpendicular to b.
+Algebraically,
+x →b a + b
+|a + b| x a + b
+|a + b|b
+(4)
+which represents the simple rotation in the a∧b plane. Since a2 = b2 = 1, we deﬁne
+R ≡1 + ba
+|a + b| =
+1 + ba
+q
+2(1 + b·a)
+,
+(5)
+so that the rotation is written
+b = Ra ˜R,
+(6)
+which is a ‘bilinear’ transformation of a. The inverse transformation is
+a = ˜RbR.
+(7)
+14
+n
+-nan
+b
+a
+Figure 1: A rotation composed of two reﬂections
+The bilinear transformation of vectors x →Rx ˜R is a very general way of
+handling rotations. In deriving this transformation the dimensionality of the space
+of vectors was at no point speciﬁed. As a result, the transformation law works for
+all spaces, whatever dimension. Furthermore, it works for all types of geometric
+object, whatever grade. We can see this by considering the product of vectors
+xy →Rx ˜R Ry ˜R = R(xy) ˜R,
+(8)
+which holds because ˜RR = 1.
+As an example, consider a 2-dimensional rotation:
+ei = Rσi ˜R (i = 1, 2).
+(9)
+A rotation by angle θ is performed by the even element (the equivalent of a complex
+number)
+R ≡exp(−σ1σ2θ/2) = cos(θ/2) −σ1σ2 sin(θ/2).
+(10)
+As a check:
+Rσ1 ˜R
+=
+exp(−σ1σ2θ/2)σ1 exp(σ1σ2θ/2)
+=
+exp(−σ1σ2θ) σ1
+=
+cos θ σ1 + sin θ σ2,
+(11)
+15
+and
+Rσ2 ˜R = −sin θ σ1 + cos θ σ2.
+(12)
+The bilinear transformation is much easier to use than the one-sided rotation
+matrix, because the latter becomes more complicated as the number of dimensions
+increases. Although this is less evident in two dimensions, in three dimensions it is
+obvious: the rotor
+R ≡exp(−ia/2) = cos(|a|/2) −i a
+|a| sin(|a|/2)
+(13)
+represents a rotation of |a| radians about the axis along the direction of a. If
+required, we can decompose rotations into Euler angles (θ, φ, χ), the explicit form
+being
+R = e−iσ3φ/2e−iσ2θ/2e−iσ3χ/2.
+(14)
+We now examine the composition of rotors in more detail. In three dimensions,
+let the rotor R transform the unit vector along the z-axis into a vector s:
+s = Rσ3 ˜R.
+(15)
+Now rotate the s vector into another vector s′, using a rotor R′. This requires
+s′ = R′s ˜R′ = (R′R)σ3(R′R)˜,
+(16)
+so that the transformation is characterised by
+R →R′R,
+(17)
+which is the (left-sided) group combination rule for rotors. Now suppose that we
+start with s and make a rotation of 360◦about the z-axis, so that s′ returns to s.
+What happens to R is surprising; using (13) above, we see that
+R →−R.
+(18)
+This is the behaviour of spin-1
+2 particles in quantum mechanics, yet we have done
+nothing quantum-mechanical; we have merely built up rotations from reﬂections.
+How can this be? It turns out [24] that it is possible to represent a Pauli spinor
+|ψ ⟩(a 2-component complex spinor) as an arbitrary even element ψ (four real
+components) in the geometric algebra of 3-space (21). Since ψ ˜ψ is a positive-deﬁnite
+16
+scalar in the Pauli algebra we can write
+ψ = ρ
+1
+2R.
+(19)
+Thus, the Pauli spinor |ψ ⟩can be seen as a (heavily disguised) instruction to
+rotate and dilate. The identiﬁcation of a rotor component in ψ then explains
+the double-sided action of spinors on observables. The spin-vector observable, for
+example, can be written in geometric algebra as
+S = ψσ3 ˜ψ = ρRσ3 ˜R,
+(20)
+which has the same form as equation (15). This identiﬁcation of quantum spin with
+rotations is very satisfying, and provides much of the impetus for David Hestenes’
+work on Dirac theory.
+A problem remaining is what to call an arbitrary even element ψ. We shall call
+it a spinor, because the space of even elements forms a closed algebra under the
+left-sided action of the rotation group: ψ →Rψ gives another even element. This
+accords with the usual abstract deﬁnition of spinors from group representation
+theory, but diﬀers from the column vector deﬁnition favoured by some authors [26].
+4
+Analytic and Monogenic Functions
+Returning to 2-dimensional space, we now use geometric algebra to reveal the
+structure of the Argand diagram. From any vector r = xσ1 + yσ2 we can form an
+even multivector (a 2-dimensional spinor):
+z ≡σ1r = x + Iy,
+(1)
+where
+I ≡σ1σ2.
+(2)
+Using the vector σ1 to deﬁne the real axis, there is therefore a one-to-one corre-
+spondence between points in the Argand diagram and vectors in two dimensions.
+Complex conjugation,
+z∗≡˜z = rσ1 = x −Iy,
+(3)
+now appears as a natural operation of reversion for the even multivector z, and (as
+shown above) it is needed when rotating vectors.
+17
+We now consider the fundamental derivative operator
+∇≡σ1∂x + σ2∂y,
+(4)
+and observe that
+∇z = (σ1∂x + σ2∂y)(x + σ1σ2y) = σ1 + σ2σ1σ2 = 0,
+(5)
+∇z∗= (σ1∂x + σ2∂y)(x −σ1σ2y) = σ1 −σ2σ1σ2 = 2σ1.
+(6)
+Generalising this behaviour, we ﬁnd that
+∇zn = 0,
+(7)
+and deﬁne an analytic function as a function f(z) (or, equivalently, f(r)) for which
+∇f = 0.
+(8)
+Writing f = u + Iv, this implies that
+(∂xu −∂yv)σ1 + (∂yu + ∂xv)σ2 = 0,
+(9)
+which are the Cauchy-Riemann conditions. It follows immediately that any non-
+negative, integer power series of z is analytic. The vector derivative is invertible so
+that, if
+∇f = s
+(10)
+for some function s, we can ﬁnd f as
+f = ∇−1s.
+(11)
+Cauchy’s integral formula for analytic functions is an example of this:
+f(z) =
+1
+2πI
+I
+dz′ f(z′)
+z′ −z
+(12)
+is simply Stokes’s theorem for the plane [5]. The bivector I−1 is necessary to rotate
+the line element dz′ into the direction of the outward normal.
+This deﬁnition (8) of an analytic function generalises easily to higher dimensions,
+where these functions are called monogenic, although the simple link with power
+series disappears. Again, there are some surprises in three dimensions. We have all
+18
+learned about the important class of harmonic functions, deﬁned as those functions
+ψ(r) satisfying the scalar operator equation
+∇2ψ = 0.
+(13)
+Since monogenic functions satisfy
+∇ψ = 0,
+(14)
+they must also be harmonic. However, this ﬁrst-order equation is more restrictive,
+so that not all harmonic functions are monogenic. In two dimensions, the solutions
+of equation (13) are written in terms of polar coordinates (r, θ) as
+ψ =
+(
+rn
+r−n
+) (
+cos nθ
+sin nθ
+)
+.
+(15)
+Complex analysis tells us that there are special combinations (analytic functions)
+which have particular radial dependence:
+ψ1 = rn (cos nθ + I sin nθ) = zn,
+(16)
+ψ2 = r−n (cos nθ −I sin nθ) = z−n.
+(17)
+In this way we can, in two dimensions, separate any given angular component into
+parts regular at the origin (rn) and at inﬁnity (r−n). These parts are just the
+spinor solutions of the ﬁrst-order equation (14).
+The situation is exactly the same in three dimensions. The solutions of ∇2ψ = 0
+are
+ψ =
+(
+rl
+r−l−1
+)
+P m
+l (cos θ)eimφ,
+(18)
+but we can ﬁnd speciﬁc combinations of angular dependence which are associated
+with a radial dependence of rl or r−l−1. We show this by example for the case
+l = 1. Obviously, non-trivial solutions of ∇ψ = 0 must contain more than just a
+scalar part — they must be multivectors. For the position vector r we ﬁnd the
+following relations:
+∇rσ3
+=
+3σ3,
+(19)
+∇σ3r
+=
+−σ3,
+(20)
+∇rk
+=
+krk−2r.
+(21)
+19
+(Equation 20 can be derived from a more general formula given in Section 5.) We
+can assemble solutions proportional to r and r−2:
+1
+2 (3σ3r + rσ3)
+=
+r (2 cos θ + iσφ sin θ)
+(22)
+|r|−3rσ3
+=
+r−2 (cos θ −iσφ sin θ) ,
+(23)
+where σφ is the unit vector in the azimuthal direction.
+Alternatively, we can generate a spherical monogenic ψ from any spherical
+harmonic Φ:
+ψ = ∇Φσ3.
+(24)
+We have chosen to place the vector σ3 to the right of Φ so as to keep ψ within the
+even subalgebra of spinors. This practice is also consistent with the conventional
+Pauli matrix representation (20) [24]. As an example, we try this procedure on the
+l = 0 harmonics:
+Φ = 1
+−→
+ψ = 0
+Φ = r−1
+−→
+ψ = r−2 (cos θ −iσφ sin θ) .
+(25)
+For a selection of l = 1 harmonics we obtain
+Φ = r cos θ
+−→
+ψ = σ3σ3 = 1
+Φ = r−2 cos θ
+−→
+ψ = r−3 (−(3 cos2 θ −1) + 3iσφ sin θ cos θ) .
+(26)
+Some readers may now recognise this process as similar to that in quantum
+mechanics when we add the spin contribution to the orbital angular momentum,
+making a total angular momentum j = l ± 1
+2.
+The combinations of angular
+dependence are the same as in stationary solutions of the Dirac equation. In
+particular, (25) indicates that only one monogenic arises from l = 0. That is correct
+— only the j = 1
+2 state exists. Turning to (26) we see that there is one state with no
+angular dependence at all, and that the other has terms proportional to P m
+2 (cos θ).
+These can also be interpreted in terms of j = 1
+2 and j = 3
+2 respectively.
+The process by which we have generated these functions has, of course, nothing
+to do with quantum mechanics — another clue that many quantum-mechanical
+procedures are much more classical than they seem.
+20
+5
+The Algebra of Spacetime
+The spacetime of Einstein’s relativity is 4-dimensional, but with a diﬀerence. So
+far we have assumed that the square of any vector x is a scalar, and that x2 ≥0.
+For spacetime it is appropriate to make a diﬀerent choice. We take the (+ −−−)
+metric usually preferred by physicists, with a basis for the spacetime algebra [20]
+(STA) made up by the orthonormal vectors
+{γ0, γ1, γ2, γ3},
+where
+γ2
+0 = −γ2
+k = 1
+(k = 1, 2, 3).
+(1)
+These vectors {γµ} obey the same algebraic relations as Dirac’s γ-matrices, but our
+interpretation of them is not that of conventional relativistic quantum mechanics.
+We do not view these objects as the components of a strange vector of matrices,
+but (as with the Pauli matrices of 3-space) as four separate vectors, with a clear
+geometric meaning.
+From this basis set of vectors we construct the 16 (= 24) geometric elements of
+the STA:
+1
+{γµ}
+{σk, iσk}
+{iγµ}
+i
+1 scalar
+4 vectors
+6 bivectors
+4 pseudovectors
+1 pseudoscalar .
+(2)
+The time-like bivectors σk ≡γkγ0 are isomorphic to the basis vectors of 3-
+dimensional space; in the STA they represent an orthonormal frame of vectors in
+space relative to the laboratory time vector γ0 [4, 20]. The unit pseudoscalar of
+spacetime is deﬁned as
+i ≡γ0γ1γ2γ3 = σ1σ2σ3,
+(3)
+which is indeed consistent with our earlier deﬁnition.
+The geometric properties of spacetime are built into the mathematical language
+of the STA — it is the natural language of relativity. Equations written in the
+STA are invariant under passive coordinate transformations. For example, we can
+write the vector x in terms of its components {xµ} as
+x = xµγµ.
+(4)
+These components depend on the frame {γµ} and change under passive transfor-
+mations, but the vector x is itself invariant. Conventional methods already make
+good use of scalar invariants in relativity, but much more power is available using
+the STA.
+21
+Active transformations are performed by rotors R, which are again even multi-
+vectors satisfying R ˜R = 1:
+eµ = Rγµ ˜R,
+(5)
+where the {eµ} comprise a new frame of orthogonal vectors. Any rotor R can be
+written as
+R = ±eB,
+(6)
+where B = a + ib is an arbitrary 6-component bivector (a and b are relative
+vectors). When performing rotations in higher dimensions, a simple rotation is
+deﬁned by a plane, and cannot be characterised by a rotation axis; it is an accident
+of 3-dimensional space that planes can be mapped to lines by the duality operation.
+Geometric algebra brings this out clearly by expressing a rotation directly in terms
+of the plane in which it takes place.
+For the 4-dimensional generalisation of the gradient operator ∇, we take account
+of the metric and write
+∇≡γµ∂µ,
+(7)
+where the {γµ} are a reciprocal frame of vectors to the {γµ}, deﬁned via γµ·γν = δµ
+ν .
+As an example of the use of STA, we consider electromagnetism, writing the
+electromagnetic ﬁeld in terms of the 4-potential A as
+F = ∇∧A = ∇A −∇·A.
+(8)
+The divergence term ∇·A is zero in the Lorentz gauge. The ﬁeld bivector F is
+expressed in terms of the more familiar electric and magnetic ﬁelds by making a
+space-time split in the γ0 frame:
+F = E + iB,
+(9)
+where
+E = 1
+2 (F −γ0Fγ0) ,
+iB = 1
+2 (F + γ0Fγ0) .
+(10)
+Particularly striking is the fact that Maxwell’s equations [20, 27] can be written in
+the simple form
+∇F = J,
+(11)
+where J is the 4-current. Equation (11) contains all of Maxwell’s equations because
+the ∇operator is a vector and F is a bivector, so that the geometric product has
+both vector and trivector components. This trivector part is identically zero in the
+22
+absence of magnetic charges. It is worth emphasising [4] that this compact formula
+(11) is not just a trick of notation, because the ∇operator is invertible. We can,
+therefore, solve for F:
+F = ∇−1J.
+(12)
+The inverse operator is known to physicists in the guise of the Green’s propagators
+of relativistic quantum mechanics. We return to this point in a companion paper
+[16], in which we demonstrate this inversion explicitly for diﬀraction theory.
+It is possible here, as in three dimensions, to represent a relativistic quantum-
+mechanical spinor (a Dirac spinor) by the even subalgebra of the STA [6, 24], which
+is 8-dimensional. We write this spinor as ψ and, since ψ ˜ψ contains only grade-0
+and grade-4 terms, we decompose ψ as
+ψ =
+
+ρeiβ 1
+2 R,
+(13)
+where R is a spacetime rotor. Thus, a relativistic spinor also contains an instruction
+to rotate — in this case to carry out a full Lorentz rotation. The monogenic equation
+in spacetime is simply
+∇ψ = 0,
+(14)
+which, remarkably, is also the STA form of the massless Dirac equation [24].
+Furthermore, the inclusion of a mass term requires only a simple modiﬁcation:
+∇ψ = mψγ3i.
+(15)
+As a ﬁnal example of the power of the STA in relativistic physics, we give a
+compact formula for the ﬁelds of a radiating charge. This derivation is as explicit
+as possible, in order to give readers new to the STA some feeling for its character,
+but nevertheless it is still as compact as any of the conventional treatments in
+the literature. Let a charge q move along a world-line deﬁned by x0(τ), where τ
+is proper time. An observer at spacetime position x receives an electromagnetic
+inﬂuence from the charge when it lies on that observer’s past light-cone (Figure 2).
+The vector
+X ≡x −x0(τ)
+(16)
+is the separation vector down the light-cone, joining the observer to this intersection
+point. We can take equation (16), augmented by the condition X2 = 0, to deﬁne a
+mapping from the spacetime position x to a value of the particle’s proper time τ.
+In this sense, we can write τ = τ(x), and treat τ as a scalar ﬁeld. If the charge is
+23
+you are here
+light cone
+X
+x
+x ( )
+0 τ
+s
+t
+Figure 2: A charge moving in the observer’s past light-cone
+at rest in the observer’s frame we have
+x0(τ) = τγ0 = (t −r)γ0,
+(17)
+where r is the 3-space distance from the observer to the charge (taking c = 1). For
+this simple case the 4-potential A is a pure 1/r electrostatic ﬁeld, which we can
+write as
+A =
+q
+4πϵ0
+γ0
+X·γ0
+,
+(18)
+because X ·γ0 = t −(t −r) = r. Generalising to an arbitrary velocity v for the
+charge, relative to the observer, gives
+A =
+q
+4πϵ0
+v
+X · v,
+(19)
+which is a particularly compact and clear form for the Liénard-Wiechert potential.
+We now wish to diﬀerentiate the potential to ﬁnd the Faraday bivector. This
+will involve some general results concerning diﬀerentiation in the STA, which we
+now set up; for further useful results see Chapter 2 of Hestenes & Sobczyk [5].
+Since the gradient operator is a vector we must take account of its commutation
+properties. Though it is evident that ∇x = 4, we need also to deal with expressions
+such as
+∗
+∇a
+∗x, where a is a vector, and where the stars indicate that the ∇operates
+24
+only on x rather than a. The result [5] is found by anticommuting the x past the
+a to give ax = 2x·a −xa, and then diﬀerentiating this. Generalized to a grade-r
+multivector Ar in an n-dimensional space, we have
+∗
+∇Ar
+∗x= (−1)r(n −2r)Ar.
+(20)
+Thus, in the example given above,
+∗
+∇a
+∗x= −2a. (See equation (20) for a 3-
+dimensional application of this result.)
+We will also need to exploit the fact that the chain rule applies in the STA as
+in ordinary calculus, so that (for example)
+∇x0 = ∇τ v,
+(21)
+since x0 is a function of τ alone, and dx0/dτ ≡˙x0 = v is the particle velocity. In
+equation (21) we use the convention that (in the absence of brackets or overstars)
+∇only operates on the object immediately to its right.
+Armed with these results, we can now proceed quickly to the Faraday bivector.
+First, since
+0 = ∇X2 = ∇XX+
+∗
+∇X
+∗
+X= (4 −∇τ v)X + (−2X −∇τ Xv),
+(22)
+it follows that
+∇τ =
+X
+X·v.
+(23)
+As an aside, ﬁnding an explicit expression for ∇τ conﬁrms that the particle
+proper time can be treated as a scalar ﬁeld — which is, perhaps, a surprising
+result. In the terminology of Wheeler & Feynman [28], such a function is called
+an ‘adjunct ﬁeld’, because it obviously carries no energy or charge, being merely a
+mathematical device for encoding information. We share the hope of Wheeler &
+Feynman that some of the paradoxes of classical and quantum electrodynamics, in
+particular the inﬁnite self-energy of a point charge, might be avoidable by working
+with adjunct ﬁelds of this kind.
+To diﬀerentiate A, we need ∇(X·v). Using the results already established we
+have
+∇(vX)
+=
+∇τ ˙vX −2v −∇τ v2 = X ˙vX −2X −vXv
+X·v
+,
+(24)
+∇(Xv)
+=
+∇τ X ˙v + 4v −∇τ v2 = 2vXv + X
+X·v
+,
+(25)
+25
+which combine to give
+∇(X·v) = X ˙vX −X + vXv
+2(X·v)
+.
+(26)
+This yields
+∇A
+=
+q
+4πϵ0
+( ∇v
+X·v −
+1
+(X·v)2∇(X·v)v
+)
+=
+q
+8πϵ0(X·v)3 (X ˙vvX + Xv −vX) ,
+(27)
+so that
+∇·A = 0
+(28)
+and
+F =
+q
+4πϵ0
+X ∧v + 1
+2XΩvX
+(X · v)3
+.
+(29)
+Here, Ωv is the ‘acceleration bivector’ of the particle:
+Ωv ≡˙vv.
+(30)
+The quantity ˙vv = ˙v∧v is a pure bivector, because v2 = 1 implies that ˙v · v = 0.
+For more on the value of representing the acceleration in terms of a bivector, and
+the sense in which Ωv is the rest-frame component of a more general acceleration
+bivector, see Chapter 6 of Hestenes & Sobczyk [5].
+The form of the Faraday bivector given by equation (29) is very revealing.
+It displays a clean split into a velocity term proportional to 1/(distance)2 and a
+long-range radiation term proportional to 1/(distance). The ﬁrst term is exactly
+the Coulomb ﬁeld in the rest frame of the charge, and the radiation term,
+Frad =
+q
+4πϵ0
+1
+2XΩvX
+(X · v)3 ,
+(31)
+is proportional to the rest-frame acceleration projected down the null-vector X.
+Finally, we return to the subject of adjunct ﬁelds. Clearly X is an adjunct ﬁeld,
+as τ(x) was. It is easy to show that
+A = −q
+8πϵ0
+∇2X,
+(32)
+26
+so that
+F = −q
+8πϵ0
+∇3X.
+(33)
+In this expression for F we have expressed a physical ﬁeld solely in terms of a
+derivative of an ‘information carrying’ adjunct ﬁeld. Expressions such as (32) and
+(33) (which we believe are new, and were derived independently by ourselves and
+David Hestenes) may be of further interest in the elaboration of Wheeler-Feynman
+type ‘action at a distance’ ideas [28, 29].
+6
+Concluding Remarks
+Most of the above is well known — the vast majority of the theorems presented
+date back at least a hundred years. The trouble, of course, is that these facts, whilst
+‘known’, were not known by the right people at the right time, so that an appalling
+amount of reinvention and duplication took place as physics and mathematics
+advanced. Spinors have a central role in our understanding of the algebra of space,
+and they have accordingly been reinvented more often than anything else. Each
+reincarnation emphasises diﬀerent aspects and uses diﬀerent notation, adding new
+storeys to our mathematical Tower of Babel. What we have tried to show in this
+introductory paper is that the geometric algebra of David Hestenes provides the
+best framework by which to unify these disparate approaches. It is our earnest
+hope that more physicists will come to use it as the main language for expressing
+their work.
+In the three following papers, we explore diﬀerent aspects of this uniﬁcation,
+and some of the new physics and new insights which geometric algebra brings.
+Paper II [24] discusses the translation into geometric algebra of other languages
+for describing spinors and quantum-mechanical states and operators, especially
+in the context of the Dirac theory. It will be seen that Hestenes’ form of the
+Dirac equation genuinely liberates it from any dependence upon speciﬁc matrix
+representations, making its intrinsic geometric content much clearer.
+Paper III [27] uses the concept of multivector diﬀerentiation [5] to make many
+uniﬁcations and improvements in the area of Lagrangian ﬁeld theory. The use
+of a consistent and mathematically rigorous set of tools for spinor, vector and
+tensor ﬁelds enables us to clarify the role of antisymmetric terms in stress-energy
+tensors, about which there has been some confusion. A highlight is the inclusion of
+functional diﬀerentiation within the framework of geometric algebra, enabling us
+to treat ‘diﬀerentiation with respect to the metric’ in a new way. This technique is
+27
+commonly used in ﬁeld theories as one means of deriving the stress-energy tensor,
+and our approach again clariﬁes the role of antisymmetric terms.
+Paper IV [16] examines in detail the physical implications of Hestenes’ formula-
+tion and interpretation of the Dirac theory. New results include predictions for the
+time taken for an electron to traverse the classically-forbidden region of a potential
+barrier. This is a problem of considerable interest in the area of semiconductor
+technology.
+We have shown elsewhere how to translate Grassmann calculus [30, 31], and
+some aspects of twistor theory [32] into geometric algebra, with many simpliﬁcations
+and fresh insights. Thus, geometric algebra spans very large areas of both theoretical
+and applied physics.
+There is another language which has some claim to achieve useful uniﬁcations.
+The use of ‘diﬀerential forms’ became popular with physicists, particularly as a
+result of its use in the excellent, and deservedly inﬂuential, ‘Big Black Book’ by
+Misner, Thorne & Wheeler [33]. Diﬀerential forms are skew multilinear functions, so
+that, like multivectors of grade k, they achieve the aim of coordinate independence.
+By being scalar-valued, however, diﬀerential forms of diﬀerent grades cannot be
+combined in the way multivectors can in geometric algebra. Consequently, rotors
+and spinors cannot be so easily expressed in the language of diﬀerential forms. In
+addition, the ‘inner product’, which is necessary to a great deal of physics, has
+to be grafted into this approach through the use of the duality operation, and so
+the language of diﬀerential forms never uniﬁes the inner and outer products in the
+manner achieved by geometric algebra.
+This leads us to say a few words about the widely-held opinion that, because
+complex numbers are fundamental to quantum mechanics, it is desirable to ‘com-
+plexify’ every bit of physics, including spacetime itself. It will be apparent that
+we disagree with this view, and hope earnestly that it is quite wrong, and that
+complex numbers (as mystical uninterpreted scalars) will prove to be unnecessary
+even in quantum mechanics.
+The same sentiments apply to theories involving spaces with large numbers of
+dimensions that we do not observe. We have no objection to the use of higher
+dimensions as such; it just seems to us to be unnecessary at present, when the
+algebra of the space that we do observe contains so many wonders that are not
+yet generally appreciated.
+We leave the last words to David Hestenes and Garret Sobczyk [5]:
+Geometry without algebra is dumb! — Algebra without geometry is
+blind!
+28
+References
+[1] E.T. Jaynes. Scattering of light by free electrons. In A. Weingartshofer and
+D. Hestenes, editors, The Electron, page 1. Kluwer Academic, Dordrecht, 1991.
+[2] D. Hestenes. Cliﬀord algebra and the interpretation of quantum mechanics.
+In J.S.R. Chisholm and A.K. Common, editors, Cliﬀord Algebras and their
+Applications in Mathematical Physics (1985), page 321. Reidel, Dordrecht,
+1986.
+[3] D. Hestenes. New Foundations for Classical Mechanics (Second Edition).
+Kluwer Academic Publishers, Dordrecht, 1999.
+[4] D. Hestenes. A uniﬁed language for mathematics and physics. In J.S.R.
+Chisholm and A.K. Common, editors, Cliﬀord Algebras and their Applications
+in Mathematical Physics (1985), page 1. Reidel, Dordrecht, 1986.
+[5] D. Hestenes and G. Sobczyk. Cliﬀord Algebra to Geometric Calculus. Reidel,
+Dordrecht, 1984.
+[6] D. Hestenes. Vectors, spinors, and complex numbers in classical and quantum
+physics. Am. J. Phys., 39:1013, 1971.
+[7] D. Hestenes. Observables, operators, and complex numbers in the Dirac theory.
+J. Math. Phys., 16(3):556, 1975.
+[8] D. Hestenes. The design of linear algebra and geometry. Acta Appl. Math.,
+23:65, 1991.
+[9] D. Hestenes. Spin and uncertainty in the interpretation of quantum mechanics.
+Am. J. Phys., 47(5):399, 1979.
+[10] D. Hestenes and R. Gurtler. Local observables in quantum theory. Am. J.
+Phys., 39:1028, 1971.
+[11] D. Hestenes. Local observables in the Dirac theory. J. Math. Phys., 14(7):893,
+1973.
+[12] D. Hestenes. Quantum mechanics from self-interaction. Found. Phys., 15(1):63,
+1985.
+29
+[13] D. Hestenes. The zitterbewegung interpretation of quantum mechanics. Found.
+Phys., 20(10):1213, 1990.
+[14] L. de Broglie. La Réinterprétation de la Mécanique Ondulatoire. Gauthier–
+Villars, 1971.
+[15] R.P. Feynman. The Character of Physical Law. British Broadcasting Corpora-
+tion, 1965.
+[16] S.F. Gull, A.N. Lasenby, and C.J.L. Doran. Electron paths, tunnelling and
+diﬀraction in the spacetime algebra. Found. Phys., 23(10):1329, 1993.
+[17] D. Hestenes. Entropy and indistinguishability. Am. J. Phys., 38:840, 1970.
+[18] D. Hestenes. Inductive inference by neural networks. In G.J. Erickson and
+C.R. Smith, editors, Maximum Entropy and Bayesian Methods in Science and
+Engineering (vol 2), page 19. Reidel, Dordrecht, 1988.
+[19] D. Hestenes. Modelling games in the Newtonian world. Am. J. Phys., 60(8):732,
+1992.
+[20] D. Hestenes. Space–Time Algebra. Gordon and Breach, New York, 1966.
+[21] H. Grassmann. Die Ausdehnungslehre. Enslin, Berlin, 1862.
+[22] H. Grassmann. Der ort der Hamilton’schen quaternionen in der Ausdehnung-
+slehre. Math. Ann., 12:375, 1877.
+[23] W.K. Cliﬀord. Applications of Grassmann’s extensive algebra. Am. J. Math.,
+1:350, 1878.
+[24] C.J.L. Doran, A.N. Lasenby, and S.F. Gull. States and operators in the
+spacetime algebra. Found. Phys., 23(9):1239, 1993.
+[25] H. Halberstam and R.E. Ingram. The Mathematical Papers of Sir William
+Rowan Hamilton vol III. Cambridge University Press, 1967.
+[26] I.W. Benn and R.W. Tucker. An Introduction to Spinors and Geometry. Adam
+Hilger, Bristol, 1988.
+[27] A.N. Lasenby, C.J.L. Doran, and S.F. Gull. A multivector derivative approach
+to Lagrangian ﬁeld theory. Found. Phys., 23(10):1295, 1993.
+30
+[28] J.A. Wheeler and R.P. Feynman. Classical electrodynamics in terms of direct
+interparticle action. Rev. Mod. Phys., 21(3):425, 1949.
+[29] J.A. Wheeler and R.P. Feynman. Interaction with the absorber as the mecha-
+nism of radiation. Rev. Mod. Phys., 17:157, 1945.
+[30] A.N. Lasenby, C.J.L. Doran, and S.F. Gull. Grassmann calculus, pseudoclassi-
+cal mechanics and geometric algebra. J. Math. Phys., 34(8):3683, 1993.
+[31] C.J.L. Doran, A.N. Lasenby, and S.F. Gull. Grassmann mechanics, mul-
+tivector derivatives and geometric algebra. In Z. Oziewicz, B. Jancewicz,
+and A. Borowiec, editors, Spinors, Twistors, Cliﬀord Algebras and Quantum
+Deformations, page 215. Kluwer Academic, Dordrecht, 1993.
+[32] A.N. Lasenby, C.J.L. Doran, and S.F. Gull. 2-spinors, twistors and supersym-
+metry in the spacetime algebra. In Z. Oziewicz, B. Jancewicz, and A. Borowiec,
+editors, Spinors, Twistors, Cliﬀord Algebras and Quantum Deformations, page
+233. Kluwer Academic, Dordrecht, 1993.
+[33] C.W. Misner, K.S. Thorne, and J.A. Wheeler. Gravitation. W.H. Freeman
+and Company, San Francisco, 1973.

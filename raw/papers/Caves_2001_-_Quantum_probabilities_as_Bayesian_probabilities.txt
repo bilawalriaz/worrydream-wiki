@@ -1,0 +1,646 @@
+arXiv:quant-ph/0106133v2  14 Nov 2001
+Quantum probabilities as Bayesian probabilities
+Carlton M. Caves,(1)∗Christopher A. Fuchs,(1) and R¨udiger Schack(2)
+1Bell Labs, Lucent Technologies, 600–700 Mountain Avenue, Murray Hill, New Jersey 07974, USA
+2Department of Mathematics, Royal Holloway, University of London, Egham, Surrey TW20 0EX, United Kingdom
+(23 September 2001)
+In the Bayesian approach to probability theory, probabil-
+ity quantiﬁes a degree of belief for a single trial, without any
+a priori connection to limiting frequencies. In this paper we
+show that, despite being prescribed by a fundamental law,
+probabilities for individual quantum systems can be under-
+stood within the Bayesian approach. We argue that the dis-
+tinction between classical and quantum probabilities lies not
+in their deﬁnition, but in the nature of the information they
+encode. In the classical world, maximal information about
+a physical system is complete in the sense of providing def-
+inite answers for all possible questions that can be asked of
+the system. In the quantum world, maximal information is
+not complete and cannot be completed. Using this distinction,
+we show that any Bayesian probability assignment in quan-
+tum mechanics must have the form of the quantum probabil-
+ity rule, that maximal information about a quantum system
+leads to a unique quantum-state assignment, and that quan-
+tum theory provides a stronger connection between probabil-
+ity and measured frequency than can be justiﬁed classically.
+Finally we give a Bayesian formulation of quantum-state to-
+mography.
+I. INTRODUCTION
+There are excellent reasons for interpreting quantum
+states as states of knowledge [1].
+A classic argument
+goes back to Einstein [2]. Take two spatially separated
+systems A and B prepared in some entangled quantum
+state |ψAB⟩. By performing the measurement of one or
+another of two observables on system A alone, one can
+immediately write down a new state for system B—either
+a state drawn from a set {|φB
+i ⟩} or a set {|ηB
+i ⟩}, depend-
+ing upon which observable is measured. Since this holds
+no matter how far apart the two systems are, Einstein
+concluded that quantum states cannot be “real states of
+aﬀairs.” For whatever the real, objective state of aﬀairs
+at B is, it should not depend upon the measurements
+made at A. If one accepts this conclusion, one is forced
+to admit that the new state (either a |φB
+i ⟩or a |ηB
+i ⟩)
+represents partial knowledge about system B. In mak-
+ing a measurement on A, one learns something about B;
+the state itself cannot be construed to be more than a
+reﬂection of the new knowledge.
+The physical basis of Einstein’s argument has recently
+become amenable to experimental test. Zbinden et al. [3]
+have reported an experiment with entangled photons in
+which the detectors at A and B are in relative motion.
+The experimental data rule out a certain class of realistic
+collapse models, i.e., models in which the real state of
+aﬀairs at B changes as a result of the measurement at A.
+They also put a lower bound of 107 times the speed of
+light on the speed of any hypothetical quantum inﬂuence
+of the measurement at A on the real state of aﬀairs at B.
+We accept the conclusion of Einstein’s argument and
+start from the premise that “quantum states are states of
+knowledge.” An immediate consequence of this premise
+is that all the probabilities derived from a quantum state,
+even a pure quantum state, depend on a state of knowl-
+edge; they are subjective or Bayesian probabilities. We
+outline in this paper a general framework for interpreting
+all quantum probabilities as subjective.
+If two scientists have diﬀerent states of knowledge
+about a system, they will assign diﬀerent quantum states,
+and hence they will assign diﬀerent probabilities to the
+outcomes of some measurements. This situation is com-
+monly encountered in quantum cryptographic protocols
+[4], where the diﬀerent players, possibly including an
+eavesdropper, have diﬀerent information about the quan-
+tum systems they are handling. In a Bayesian framework,
+the probabilities assigned by the diﬀerent players are all
+treated on an equal footing; they are all equally valid.
+Subjective probability has, therefore, no a priori con-
+nection to measured frequencies and applies naturally to
+single quantum systems.
+The Bayesian approach has been very successful in
+statistics [5–7], observational astronomy [8], artiﬁcial in-
+telligence [9], and classical statistical mechanics [10].
+It seems to be the general opinion, however, that the
+Bayesian interpretation is not suitable for quantum-
+mechanical probabilities.
+The probabilities that come
+from a pure state are intrinsic and unavoidable.
+How
+can they not be objective properties when they are pre-
+scribed by physical law?
+How can Bayesian quantum
+state assignments be anything but arbitrary? Hasn’t the
+tight connection between probability and measured fre-
+quencies been veriﬁed in countless experiments? What
+is an experimenter doing in quantum-state tomography
+[11,12] if not determining the unknown objective quan-
+tum state of a system?
+In this paper we give answers to these questions. These
+answers turn out to be simple and straightforward. Af-
+ter a brief introduction to Bayesian probability theory,
+we use Gleason’s theorem [13] to show that any subjec-
+tive quantum probability assignment must have the form
+of the standard quantum probability rule. We then use a
+1
+version of the so-called Dutch-book argument [14,15] to
+show that if a scientist has maximal information about
+a quantum system, he must assign a unique pure state.
+Our next step is to show that in the case of maximal in-
+formation, there is a conceptually simple connection be-
+tween (subjective) probability and (measured) frequency,
+which is tighter than can be justiﬁed classically. Finally,
+we consider quantum-state tomography, where an exper-
+imenter is said to be determining the “unknown quan-
+tum state” of a system from the results of repeated mea-
+surements on many copies of the system. An “unknown
+quantum state” is an oxymoron if quantum states are
+states of knowledge, and we show how it can be elim-
+inated from the description of tomography by using a
+quantum version of the de Finetti representation theorem
+for exchangeable sequences [16,17]. We conclude with a
+brief summary and an outlook.
+II. BAYESIAN PROBABILITY AND THE
+DUTCH BOOK
+Bayesian probabilities are degrees of belief or uncer-
+tainty [6], which are given an operational deﬁnition in
+decision theory [5], i.e., the theory of how to decide in
+the face of uncertainty. The Bayesian approach captures
+naturally the notion that probabilities can change when
+new information is obtained. The fundamental Bayesian
+probability assignment is to a single system or a single
+realization of an experiment. Bayesian probabilities are
+deﬁned without any reference to the limiting frequency of
+outcomes in repeated experiments. Bayesian probability
+theory does allow one to make (probabilistic) predictions
+of frequencies, and frequencies in past experiments pro-
+vide valuable information for updating the probabilities
+assigned to future trials. Despite this connection, prob-
+abilities and frequencies are strictly separate concepts.
+The simplest operational deﬁnition of Bayesian prob-
+abilities is in terms of consistent betting behavior, which
+is decision theory in a nutshell. Consider a bookie who
+oﬀers a bet on the occurrence of outcome E in some situ-
+ation. The bettor pays in an amount px—the stake—up
+front. The bookie pays out an amount x—the payoﬀ—if
+E occurs and nothing otherwise. Conventionally this is
+said to be a bet at odds of (1 −p)/p to 1. For the bettor
+to assign a probability p to outcome E means that he is
+willing to accept a bet at these odds with an arbitrary
+payoﬀx determined by the bookie. The payoﬀcan be
+positive or negative, meaning that the bettor is willing
+to accept either side of the bet. We call a probability
+assignment to the outcomes of a betting situation incon-
+sistent if it forces the bettor to accept bets in which he
+incurs a sure loss; i.e., he loses for every possible out-
+come. A probability assignment will be called consistent
+if it is not inconsistent in this sense.
+Remarkably, consistency alone implies that the bettor
+must obey the standard probability rules in his probabil-
+ity assignment: (i) p ≥0, (ii) p(A ∨B) = p(A) + p(B)
+if A and B are mutually exclusive, (iii) p(A ∧B) =
+p(A|B)p(B), and (iv) p(A) = 1 if A is certain.
+Any
+probability assignment that violates one of these rules
+can be shown to be inconsistent in the above sense. This
+is the so-called Dutch-book argument [14,15]. We stress
+that it does not invoke expectation values or averages
+in repeated bets; the bettor who violates the probability
+rules suﬀers a sure loss in a single instance of the betting
+situation.
+For instance, to show that p(A∨B) = p(A)+p(B) if A
+and B are mutually exclusive, assume that the bettor as-
+signs probabilities pA, pB, and pC to the three outcomes
+A, B, and C = A ∨B. This means he will accept the
+following three bets: a bet on A with payoﬀxA, which
+means the stake is pAxA; a bet on B with payoﬀxB and
+thus with stake pBxB; and a bet on C with payoﬀxC
+and thus with stake pCxC . The net amount the bettor
+receives is
+R =
+( xA(1 −pA) −xBpB + xC(1 −pC)
+if A ∧¬B
+−xApA + xB(1 −pB) + xC(1 −pC)
+if ¬A ∧B
+−xApA −xBpB −xCpC
+if ¬A ∧¬B
+(1)
+The outcome A ∧B does not occur since A and B are
+mutually exclusive. The bookie can choose values xA,
+xB, and xC that lead to R < 0 in all three cases unless
+0 = det
+ 1 −pA
+−pB
+1 −pC
+−pA
+1 −pB
+1 −pC
+−pA
+−pB
+−pC
+!
+= pA + pB −pC .
+(2)
+The probability assignment is thus inconsistent unless
+p(A ∨B) = pC = pA + pB.
+In our experience physicists ﬁnd it diﬃcult ﬁrst to
+accept and then to embrace the notion that subjective
+probabilities receive their only operational signiﬁcance
+from decision theory, the simplest example of which is
+the Dutch-book argument in which probabilities are de-
+ﬁned to be betting odds. In the Dutch-book approach
+the structure of probability theory follows solely from
+the requirement of consistent betting behavior.
+There
+is no other input to the theory. For example, normal-
+ization of the probabilities for exclusive and exhaustive
+alternatives is not an independent assumption, so obvi-
+ous that it needs no justiﬁcation. Instead normalization
+follows from probability rules (ii) and (iv) above and thus
+receives its sole justiﬁcation from the requirement of con-
+sistent betting behavior.
+The only case in which consistency alone leads to a
+particular numerical probability is the case of certainty,
+or maximal information. If the bettor is certain that the
+outcome E will occur, the probability assignment p < 1
+means he is willing to take the side of the bookie in a bet
+on E, receiving an amount px up front and paying out x
+if E occurs, leading to a certain loss of x(1−p) > 0. Con-
+sistency thus requires that the bettor assign probability
+2
+p = 1. More generally, consistency requires a particu-
+lar probability assignment only in the case of maximal
+information, which classically always means p = 1 or 0.
+The quantum situation is radically diﬀerent, since
+in quantum theory maximal information is not com-
+plete [18]. This notwithstanding, we show that consis-
+tency still requires particular probability assignments in
+the case of maximal information and, what is more, that
+these probabilities are numerically equal to expected lim-
+iting frequencies. The keys to these results are Gleason’s
+theorem and a quantum variant of the Dutch-book argu-
+ment of the previous paragraph.
+III. GLEASON’S THEOREM AND THE
+QUANTUM PROBABILITY RULE
+In order to derive the quantum probability rule, we
+make the following assumptions about a quantum system
+that is described by a D-dimensional Hilbert space:
+(i) Each set of orthogonal one-dimensional projectors,
+ˆΠk = |ψk⟩⟨ψk|, k = 1, . . . , D (the vectors |ψk⟩make
+up an orthonormal basis), corresponds to the com-
+plete set of mutually exclusive outcomes of some
+measurement, i.e., answers to some question that
+can be posed to the system. Throughout this pa-
+per, what we mean by a “quantum question” is a
+measurement described by such a complete set of
+orthogonal one-dimensional projectors.
+(ii) The probabilities assigned to the outcomes are con-
+sistent in the Dutch-book sense given above.
+(iii) The probability assignment is noncontextual [20];
+i.e., the probability for obtaining the outcome cor-
+responding to a projector ˆΠ depends only on ˆΠ
+itself, not on the other vectors in the orthogonal
+set deﬁning a particular measurement. As a conse-
+quence, it can be denoted p(ˆΠ).
+Condition (ii) implies that, for each set of orthogonal
+one-dimensional projectors,
+D
+X
+k=1
+p(ˆΠk) = 1 .
+(3)
+Of course, this is simply the normalization condition, but
+in the Bayesian view, normalization is enforced only by
+the requirement of consistent betting behavior. Except
+in the special case of a two-dimensional Hilbert space,
+condition (iii) then implies that there exists a density
+operator ˆρ such that for every projector ˆΠ = |ψ⟩⟨ψ|,
+p(ˆΠ) = tr(ˆρ ˆΠ) = ⟨ψ|ˆρ|ψ⟩.
+(4)
+This is Gleason’s theorem [13]. It means that, under the
+assumptions of (i) the Hilbert-space structure of quantum
+questions, (ii) Dutch-book consistency, and (iii) probabil-
+ities reﬂecting the Hilbert-space structure, any subjective
+probability assignment must have the form (4), which
+is the standard quantum rule for probabilities.
+Hence
+Bayesian “degrees of belief” are restricted by the laws
+of nature, and any subjective state of knowledge about a
+quantum system can be summarized in a density operator
+ˆρ. Since one of the chief challenges of Bayesianism is the
+search for methods to translate information into proba-
+bility assignments, Gleason’s theorem can be regarded as
+the greatest triumph of Bayesian reasoning.
+IV. MAXIMAL INFORMATION AND UNIQUE
+STATE ASSIGNMENT
+Our concern now is to show that if a scientist has
+maximal information about a quantum system, Dutch-
+book consistency forces him to assign a unique pure state.
+Maximal information in the classical case means know-
+ing the outcome of all questions with certainty. Glea-
+son’s theorem forbids such all-encompassing certainty in
+quantum theory. Maximal information in quantum the-
+ory instead corresponds to knowing the answer to a max-
+imal number of questions (i.e., measurements described
+by one-dimensional orthogonal projectors). Suppose then
+that a scientist is certain about the outcome of all ques-
+tions that share one particular projector ˆΠ = |ψ⟩⟨ψ|.
+The scientist is certain that the outcome corresponding
+to this projector will occur in response to any of these
+questions, so Dutch-book consistency requires that its
+probability be p = 1. Now let ˆρ be the state assigned
+to the system. In the language of Gleason’s theorem, we
+have ⟨ψ|ˆρ|ψ⟩= 1. This implies that ˆρ = ˆΠ = |ψ⟩⟨ψ|.
+Gleason’s theorem further implies that the scientist can-
+not be certain about the outcome of any other questions,
+so this is the case where he has maximal information.
+Maximal information thus leads to the assignment of a
+unique pure state.
+Given the assumptions of Gleason’s theorem, if a scien-
+tist has maximal information, any state assignment that
+is diﬀerent from the unique pure state derived in the last
+paragraph is inconsistent in the Dutch-book sense; i.e.,
+it leads to a sure loss for a bet on the outcome of a mea-
+surement on a single system that includes the unique pure
+state among the outcomes. The Hilbert-space structure
+of quantum questions plus noncontextuality alone puts
+this tight constraint on probability assignments.
+We emphasize that the uniqueness of the quantum
+state assignment holds even though no measurement al-
+lows an experimenter to decide with certainty between
+two nonorthogonal pure-state assignments.
+Though
+maximal information leads to a unique pure state, the
+state assignment cannot be veriﬁed by addressing ques-
+tions to the system. Finding out the state assignment
+requires consulting the assigner or the records he leaves
+behind.
+This property is another reason for regarding
+quantum states as states of knowledge.
+3
+In both the classical and the quantum case, consistency
+enforces a particular probability assignment if and only if
+there is maximal information. In the classical case, max-
+imal information corresponds to certainty, i.e., the triv-
+ial probability assignment 1 or 0, so classically maximal
+information is complete. In quantum mechanics, maxi-
+mal information leads to a unique pure state assignment
+|ψ⟩⟨ψ|, which is equivalent to prescribing (generally non-
+trivial) probabilities for all possible measurements.
+In
+quantum mechanics, maximal information is not com-
+plete and cannot be completed.
+V. SUBJECTIVE PROBABILITY AND
+MEASURED FREQUENCY
+Up to this point, we have not mentioned repeated ex-
+periments or long-run frequencies. Both the Dutch-book
+argument and Gleason’s theorem are formulated for sin-
+gle systems. There is no justiﬁcation, at this point, for
+identifying the probabilities derived from Gleason’s the-
+orem with limiting frequencies. To make the connection
+between the above results and repeated measurements,
+an additional assumption is needed, namely that the
+Hilbert space of N copies of a quantum system is given
+by the N-fold tensor product of the single-system Hilbert
+space. In doing so, we are assuming that the N copies
+of the quantum system are labeled by some additional
+degree of freedom that renders irrelevant the symmetries
+required for identical particles.
+Now assume that a scientist has maximal information
+about N copies of a quantum system, speciﬁcally the
+same maximal information about each system. Apply-
+ing Gleason’s theorem and the Dutch-book argument of
+Sec. IV to the tensor-product Hilbert space leads to a
+unique pure product-state assignment ˆρ(N) = ˆΠ⊗· · ·⊗ˆΠ,
+where ˆΠ = |ψ⟩⟨ψ|.
+Suppose that repeated measure-
+ments are performed using the single-system projectors
+ˆΠk = |ψk⟩⟨ψk|, k = 1, . . . , D. The probability of obtain-
+ing the sequence of outcomes k1, . . . , kN is given by
+p(k1, . . . , kN) = tr
+
+ˆρ(N) ˆΠk1 ⊗· · · ⊗ˆΠkN
+
+= pk1 · · · pkN ,
+(5)
+where
+pk = tr(ˆΠ ˆΠk) = |⟨ψk|ψ⟩|2 .
+(6)
+This means that the outcomes of repeated measurements
+are independent and identically distributed (i.i.d.). The
+probability for outcome k to occur nk times, where k =
+1, . . . , D and P
+k nk = N, is given by the multinomial
+distribution,
+p(n1, . . . , nD) =
+N!
+n1! · · · nD! pn1
+1 · · · pnD
+D ,
+(7)
+which peaks for large N at nk ≃Npk, k = 1, . . . , D.
+The probability of observing frequencies nk/N close to
+pk converges to 1 as N tends to inﬁnity.
+In the classical case an i.i.d. assignment is often
+the starting point of a probabilistic argument.
+Yet in
+Bayesian probability theory, an i.i.d. can never be strictly
+justiﬁed except in the case of maximal information, which
+in the classical case implies certainty and hence trivial
+probabilities. The reason is that the only way to be sure
+all the trials are identical in the classical case is to know
+everything about them, which implies that the results
+of all trials can be predicted with certainty [19]. In con-
+trast, to ensure that all systems are the same in quantum
+mechanics, it is suﬃcient to have the maximal, but in-
+complete information that leads to a unique pure state.
+Thus the quantum i.i.d. assignment (7) is a consequence
+of Dutch-book consistency and the Hilbert-space struc-
+ture of quantum mechanics.
+To summarize, in quantum mechanics maximal infor-
+mation leads to nontrivial i.i.d. assignments. Maximal
+information means that the pure product-state assign-
+ment is the unique consistent state assignment.
+From
+the pure product-state assignment comes the i.i.d. for
+the outcomes of any repeated measurement.
+Together
+with elementary combinatorics, this gives the strict con-
+nection between probabilities and frequencies displayed
+in the laws of large numbers. In this sense, the equality
+between probability and limiting frequency holds only in
+quantum mechanics.
+VI. UNKNOWN QUANTUM STATES AND THE
+QUANTUM DE FINETTI REPRESENTATION
+An important practical use of repeated measurements
+on many copies of a quantum system is in quantum-state
+tomography [11,12]. The data gathered from the mea-
+surements is said to determine the “unknown quantum
+state” of the system. But what can an unknown quantum
+state mean? If a quantum state is a state of knowledge,
+then it must be known by somebody.
+If the Bayesian
+interpretation of quantum probabilities is to be taken se-
+riously, there must be a way to eliminate the “unknown
+quantum state” from the description.
+The key to this excision is to identify the salient fea-
+ture of the state of knowledge that applies when an ex-
+perimenter performs quantum-state tomography. That
+salient feature is that the experimenter can contemplate
+examining an arbitrarily large number of systems, all of
+which are equivalent from his perspective. This means
+(i) that the density operator ˆρ(N) for N systems should
+be symmetric, i.e., invariant under all permutations of
+the N systems, and (ii) that this symmetry should hold
+for all values of N, with the consistency requirement that
+ˆρ(N) arises from tracing out one of the systems in ˆρ(N+1).
+A sequence of density operators that satisﬁes these two
+properties is said to be exchangeable, by analogy with de
+4
+Finetti’s deﬁnition [14] of exchangeable multi-trial prob-
+abilities.
+The quantum de Finetti representation theorem [16,17]
+establishes that for any exchangeable sequence of density
+operators, ˆρ(N) can be written uniquely in the form
+ˆρ(N) =
+Z
+dρ p(ρ) ρ ⊗· · · ⊗ρ ,
+(8)
+where the tensor product includes N terms, the inte-
+gral runs over the space of density operators, and the
+“generating function” p(ρ) can be thought of as a nor-
+malized “probability density on density operators.” An
+exchangeable density operator captures what an exper-
+imenter knows about the systems he intends to exam-
+ine. It is a primary quantum-state assignment for multi-
+ple copies, with no mention of unknown quantum states.
+The content of the quantum de Finetti representation is
+that the exchangeable state assignment can nevertheless
+be thought of in terms of unknown density operators;
+ignorance of which density operator is described by the
+generating function.
+Exchangeability permits us to describe what is going
+on in quantum-state tomography.
+Suppose two scien-
+tists make diﬀerent exchangeable state assignments and
+then jointly collect data from repeated measurements.
+Suppose further that the measurements are “tomograph-
+ically complete”; i.e., the measurement probabilities for
+any density operator are suﬃcient to determine that den-
+sity operator. The two scientists can use the data D from
+an initial set of measurements to update their state as-
+signments for further systems.
+In the limit of a large
+number of initial measurements, they will come to agree-
+ment on a particular product state ˆρD ⊗ˆρD ⊗· · · for
+further systems, where ˆρD is determined by the data.
+This is what quantum-state tomography is all about. The
+updating can be cast as an application of Bayes’s rule to
+updating the generating function in light of the data [21].
+The only requirement for “coming to agreement” is that
+both scientists should have allowed for the possibility of
+ˆρD by giving it nonzero support in their initial generating
+functions.
+VII. SUMMARY AND OUTLOOK
+We promised simple answers, and it’s hard to imagine
+simpler ones.
+The physical law that prescribes quan-
+tum probabilities is indeed fundamental, but the reason
+is that it is a fundamental rule of inference—a law of
+thought—for Bayesian probabilities. It follows from re-
+quiring Dutch-book consistency for probability assign-
+ments that are faithful to the Hilbert-space structure of
+quantum questions. These same desiderata require a par-
+ticular pure-state assignment when a scientist has maxi-
+mal information, and because maximal information is not
+complete, they give a strict connection between observed
+frequencies and pure-state quantum probabilities. The
+notion of an “unknown quantum state,” irreconcilable
+with the idea of quantum states as states of knowledge,
+can be banished from quantum-state tomography using
+the quantum de Finetti representation.
+Quantum information science [22] is an emerging ﬁeld
+that uses quantum states to escape the constraints im-
+posed on information processing in a realistic/determin-
+istic world. The rewards in quantum information science
+are great: teleportation of quantum states, distribution
+of secret keys for encoding messages securely, and com-
+putations done more eﬃciently on a quantum computer
+than on any classical machine. The key to these rewards
+is that a quantum world is less constrained than a clas-
+sical one. As quantum information science harnesses the
+greater range of possibilities available in the quantum
+world, we believe it is imperative to understand and elu-
+cidate the fundamental principles underlying quantum
+mechanics. In this paper we show how to interpret quan-
+tum states consistently as states of knowledge, reﬂecting
+what we know about a quantum system.
+This is just
+one step in a broader program to try to disentangle the
+subjective and objective aspects of the quantum world
+[24]. We leave the last word to Edwin T. Jaynes [23],
+who inspired us to pursue the Bayesian view:
+Today we are beginning to realize how
+much of all physical science is really only in-
+formation, organized in a particular way. But
+we are far from unravelling the knotty ques-
+tion: “To what extent does this information
+reside in us, and to what extent is it a prop-
+erty of Nature?” . . . Our present QM formal-
+ism is a peculiar mixture describing in part
+laws of Nature, in part incomplete human
+information about Nature—all scrambled up
+together by Bohr into an omelette that no-
+body has seen how to unscramble.
+Yet we
+think the unscrambling is a prerequisite for
+any further advance in basic physical theory
+. . . .
+VIII. ACKNOWLEDGMENTS
+CMC was supported in part by U.S. Oﬃce of Naval
+Research Grant No. N00014-93-1-0116.
+∗
+Permanent address: Department of Physics and Astron-
+omy, University of New Mexico, Albuquerque, New Mex-
+ico 87131–1156, USA
+[1] C. A. Fuchs and A. Peres, “Quantum Theory Needs No
+‘Interpretation’,” Phys. Today 53(3), 70 (2000); “Quan-
+tum Theory – Interpretation, Formulation, Inspiration:
+Fuchs and Peres Reply,” 53(9), 14 (2000).
+5
+[2] A. Einstein, “Remarks concerning the essays brought to-
+gether in this co-operative volume,” in Albert Einstein:
+Philosopher-Scientist, 3rd ed., edited by P. A. Schilpp
+(Open Court, La Salle, IL, 1970), p. 665. Related ideas
+lie at the core of A. Einstein, B. Podolsky, and N. Rosen,
+“Can quantum-mechanical description of physical reality
+be considered complete?” Phys. Rev. 47, 777 (1935).
+[3] H. Zbinden, J. Brendel, N. Gisin, and W. Tittel, “Experi-
+mental test of nonlocal quantum correlation in relativistic
+conﬁgurations,” Phys. Rev. A 63, 022111 (2001).
+[4] N. Gisin, G. Ribordy, W. Tittel, and H. Zbinden, “Quan-
+tum cryptography,” Rev. Mod. Phys., to be published,
+quant-ph/0101098.
+[5] L. J. Savage, The Foundations of Statistics (Dover, New
+York, 1972).
+[6] J. M. Bernardo and A. F. M. Smith, Bayesian Theory
+(Wiley, Chichester, 1994).
+[7] D. Malakoﬀ, “Bayes oﬀers a ‘new’ way to make sense of
+numbers,” Science 286, 1460 (1999).
+[8] T. J. Loredo, “The promise of Bayesian inference for as-
+trophysics,” In Statistical Challenges in Modern Astron-
+omy, edited by E. D. Feigelson and G. J. Babu (Springer-
+Verlag, New York, 1992), p. 275.
+[9] Microsoft Research Division’s Decision Theory & Adap-
+tive Systems Group homepage:
+http://www.research.microsoft.com/dtas/.
+[10] E. T. Jaynes, Papers on Probability, Statistics and Statis-
+tical Physics (Kluwer, Dordrecht, 1983), edited by R. D.
+Rosenkrantz.
+[11] U. Leonhardt and H. Paul, “Measuring the quantum
+state of light,” Prog. Quant. Electron. 19, 89 (1995).
+[12] V. Buˇzek, G. Drobn´y, R. Derka, G. Adam, and H. Wiede-
+mann, “Quantum state reconstruction from incomplete
+data,” Chaos, Solitons and Fractals 10, 981 (1999).
+[13] A. M. Gleason, “Measures on the closed subspaces of a
+Hilbert space,” J. Math. Mech. 6, 885 (1957).
+[14] B. de Finetti, Theory of Probability (Wiley, New York,
+1990).
+[15] J. Earman, Bayes or Bust? A Critical Examination of
+Bayesian Conﬁrmation Theory (MIT Press, Cambridge,
+MA, 1992).
+[16] R. L. Hudson, and G. R. Moody, “Locally normal sym-
+metric states and an analogue of de Finetti’s theorem,”
+Z. Wahrschein. verw. Geb. 33, 343 (1976).
+[17] C. M. Caves, C. A. Fuchs, and R. Schack, “Unknown
+quantum states: The quantum de Finetti representation,”
+submitted to Am. J. Phys., quant-ph/0104088.
+[18] C. M. Caves and C. A. Fuchs, “Quantum information:
+How much information in a state vector?”
+in The
+Dilemma of Einstein, Podolsky and Rosen – 60 Years
+Later, edited by A. Mann and M. Revzen, Ann. Israel
+Phys. Soc. 12, 226 (1996).
+[19] E. T. Jaynes, Probability Theory: The Logic of Science,
+unpublished, available at http://bayes.wustl.edu.
+[20] H. Barnum, C. M. Caves, J. Finkelstein, C. A. Fuchs, and
+R. Schack, “Quantum probability from decision theory?”
+Proc. Roy. Soc. London A 456, 1175 (2000).
+[21] R. Schack, T. A. Brun, and C. M. Caves, “Quantum
+Bayes rule,” Phys. Rev. A 64, 014305 (2001).
+[22] C. H. Bennett and D. P. DiVincenzo, “Quantum infor-
+mation and computation,” Nature 404, 247 (2000).
+[23] E. T. Jaynes, “Probability in quantum theory,” in Com-
+plexity, Entropy and the Physics of Information, edited
+by W. H. Zurek (Addison-Wesley, Redwood City, CA,
+1990), p. 381.
+[24] C. A. Fuchs, “Quantum Foundations in the Light of
+Quantum Information,” to appear in Proceedings of the
+NATO Advanced Research Workshop on Decoherence and
+its Implications in Quantum Computation and Informa-
+tion Transfer, edited by A. Gonis (Plenum, New York,
+2001), quant-ph/0106166.
+6

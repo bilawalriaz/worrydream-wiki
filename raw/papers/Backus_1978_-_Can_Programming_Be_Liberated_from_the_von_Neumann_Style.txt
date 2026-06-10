@@ -1,0 +1,3553 @@
+197 7 ACM Turing Award Lecture 
+The 1977 ACM Turing Award was presented to John Backus 
+at the ACM Annual Conference in Seattle, October 17. In intro- 
+ducing the recipient, Jean E. Sammet, Chairman of the Awards 
+Committee, made the following comments and read a portion of 
+the final citation. The full announcement is in the September 
+1977 issue of Communications, page 681. 
+"Probably there is nobody in the room who has not heard of 
+Fortran and most of you have probably used it at least once, or at 
+least looked over the shoulder of someone who was writing a For. 
+tran program. There are probably almost as many people who 
+have heard the letters BNF but don't necessarily know what they 
+stand for. Well, the B is for Backus, and the other letters are 
+explained in the formal citation. These two contributions, in my 
+opinion, are among the half dozen most important technical 
+contributions to the computer field and both were made by John 
+Backus (which in the Fortran case also involved some col- 
+leagues). It is for these contributions that he is receiving this 
+year's Turing award. 
+The short form of his citation is for 'profound, influential, 
+and lasting contributions to the design of practical high-level 
+programming systems, notably through his work on Fortran, and 
+for seminal publication of formal procedures for the specifica- 
+tions of programming languages.' 
+The most significant part of the full citation is as follows: 
+'... Backus headed a small IBM group in New York City 
+during the early 1950s. The earliest product of this group's 
+efforts was a high-level language for scientific and technical corn- 
+putations called Fortran. This same group designed the first 
+system to translate Fortran programs into machine language. 
+They employed novel optimizing techniques to generate fast 
+machine-language programs. Many other compilers for the lan- 
+guage were developed, first on IBM machines, and later on virtu- 
+ally every make of computer. Fortran was adopted as a U.S. 
+national standard in 1966. 
+During the latter part of the 1950s, Backus served on the 
+international committees which developed Algol 58 and a later 
+version, Algol 60. The language Algol, and its derivative com- 
+pilers, received broad acceptance in Europe as a means for de- 
+veloping programs and as a formal means of publishing the 
+algorithms on which the programs are based. 
+In 1959, Backus presented a paper at the UNESCO confer- 
+ence in Paris on the syntax and semantics of a proposed inter- 
+national algebraic language. In this paper, he was the first to 
+employ a formal technique for specifying the syntax of program- 
+ming languages. The formal notation became known as BNF- 
+standing for "Backus Normal Form," or "Backus Naur Form" to 
+recognize the further contributions by Peter Naur of Denmark. 
+Thus, Backus has contributed strongly both to the pragmatic 
+world of problem-solving on computers and to the theoretical 
+world existing at the interface between artificial languages and 
+computational linguistics. Fortran remains one of the most 
+widely used programming languages in the world. Almost all 
+programming languages are now described with some type of 
+formal syntactic definition.' " 
+Can Programming Be Liberated from the von 
+Neumann Style? A Functional Style and Its 
+Algebra of Programs 
+John Backus 
+IBM Research Laboratory, San Jose 
+General permission to make fair use in teaching or research of all 
+or part of this material is granted to individual readers and to nonprofit 
+libraries acting for them provided that ACM's copyright notice is given 
+and that reference is made to the publication, to its date of issue, and 
+to the fact that reprinting privileges were granted by permission of the 
+Association for Computing Machinery. To otherwise reprint a figure, 
+table, other substantial excerpt, or the entire work requires specific 
+permission as does republication, or systematic or multiple reproduc- 
+tion. 
+Author's address: 91 Saint Germain Ave., San Francisco, CA 
+94114. 
+© 1978 ACM 0001-0782/78/0800-0613 $00.75 
+613 
+Conventional programming languages are growing 
+ever more enormous, but not stronger. Inherent defects 
+at the most basic level cause them to be both fat and 
+weak: their primitive word-at-a-time style of program- 
+ming inherited from their common ancestor--the von 
+Neumann computer, their close coupling of semantics to 
+state transitions, their division of programming into a 
+world of expressions and a world of statements, their 
+inability to effectively use powerful combining forms for 
+building new programs from existing ones, and their lack 
+of useful mathematical properties for reasoning about 
+programs. 
+An alternative functional style of programming is 
+founded on the use of combining forms for creating 
+programs. Functional programs deal with structured 
+data, are often nonrepetitive and nonrecursive, are hier- 
+archically constructed, do not name their arguments, and 
+do not require the complex machinery of procedure 
+declarations to become generally applicable. Combining 
+forms can use high level programs to build still higher 
+level ones in a style not possible in conventional lan- 
+guages. 
+Communications 
+August 1978 
+of 
+Volume 2 i 
+the ACM 
+Number 8 
+Associated with the functional style of programming 
+is an algebra of programs whose variables range over 
+programs and whose operations are combining forms. 
+This algebra can be used to transform programs and to 
+solve equations whose "unknowns" are programs in much 
+the same way one transforms equations in high school 
+algebra. These transformations are given by algebraic 
+laws and are carried out in the same language in which 
+programs are written. Combining forms are chosen not 
+only for their programming power but also for the power 
+of their associated algebraic laws. General theorems of 
+the algebra give the detailed behavior and termination 
+conditions for large classes of programs. 
+A new class of computing systems uses the functional 
+programming style both in its programming language and 
+in its state transition rules. Unlike von Neumann lan- 
+guages, these systems have semantics loosely coupled to 
+states--only one state transition occurs per major com- 
+putation. 
+Key Words and Phrases: functional programming, 
+algebra of programs, combining forms, functional forms, 
+programming languages, von Neumann computers, yon 
+Neumann languages, models of computing systems, ap- 
+plicative computing systems, applicative state transition 
+systems, program transformation, program correctness, 
+program termination, metacomposition 
+CR Categories: 4.20, 4.29, 5.20, 5.24, 5.26 
+Introduction 
+grams, and no conventional language even begins to 
+meet that need. In fact, conventional languages create 
+unnecessary confusion in the way we think about pro- 
+grams. 
+For twenty years programming languages have been 
+steadily progressing toward their present condition of 
+obesity; as a result, the study and invention of program- 
+ming languages has lost much of its excitement. Instead, 
+it is now the province of those who prefer to work with 
+thick compendia of details rather than wrestle with new 
+ideas. Discussions about programming languages often 
+resemble medieval debates about the number of angels 
+that can dance on the head of a pin instead of exciting 
+contests between fundamentally differing concepts. 
+Many creative computer scientists have retreated 
+from inventing languages to inventing tools for describ- 
+ing them. Unfortunately, they have been largely content 
+to apply their elegant new tools to studying the warts 
+and moles of existing languages. After examining the 
+appalling type structure of conventional languages, using 
+the elegant tools developed by Dana Scott, it is surprising 
+that so many of us remain passively content with that 
+structure instead of energetically searching for new ones. 
+The purpose of this article is twofold; first, to suggest 
+that basic defects in the framework of conventional 
+languages make their expressive weakness and their 
+cancerous growth inevitable, and second, to suggest some 
+alternate avenues of exploration toward the design of 
+new kinds of languages. 
+I deeply appreciate the honor of the ACM invitation 
+to give the 1977 Turing Lecture and to publish this 
+account of it with the details promised in the lecture. 
+Readers wishing to see a summary of this paper should 
+turn to Section 16, the last section. 
+1. Conventional Programming Languages: Fat and 
+Flabby 
+Programming languages appear to be in trouble. 
+Each successive language incorporates, with a little 
+cleaning up, all the features of its predecessors plus a few 
+more. Some languages have manuals exceeding 500 
+pages; others cram a complex description into shorter 
+manuals by using dense formalisms. The Department of 
+Defense has current plans for a committee-designed 
+language standard that could require a manual as long 
+as 1,000 pages. Each new language claims new and 
+fashionable features, such as strong typing or structured 
+control statements, but the plain fact is that few lan- 
+guages make programming sufficiently cheaper or more 
+reliable to justify the cost of producing and learning to 
+use them. 
+Since large increases in size bring only small increases 
+in power, smaller, more elegant languages such as Pascal 
+continue to be popular. But there is a desperate need for 
+a powerful methodology to help us think about pro- 
+614 
+2. Models of Computing Systems 
+Underlying every programming language is a model 
+of a computing system that its programs control. Some 
+models are pure abstractions, some are represented by 
+hardware, and others by compiling or interpretive pro- 
+grams. Before we examine conventional languages more 
+closely, it is useful to make a brief survey of existing 
+models as an introduction to the current universe of 
+alternatives. Existing models may be crudely classified 
+by the criteria outlined below. 
+2.1 Criteria for Models 
+2.1.1 Foundations. Is there an elegant and concise 
+mathematical description of the model? Is it useful in 
+proving helpful facts about the behavior of the model? 
+Or is the model so complex that its description is bulky 
+and of little mathematical use? 
+2.1.2 History sensitivity. Does the model include a 
+notion of storage, so that one program can save infor- 
+mation that can affect the behavior of a later program? 
+That is, is the model history sensitive? 
+2.1.3 Type of semantics. Does a program successively 
+transform states (which are not programs) until a termi- 
+nal state is reached (state-transition semantics)? Are 
+states simple or complex? Or can a "program" be suc- 
+cessively reduced to simpler "programs" to yield a final 
+Communications 
+August 1978 
+of 
+Volume 21 
+the ACM 
+Number 8 
+"normal form program," which is the result (reduction 
+semantics)? 
+2.1.4 Clarity and conceptual usefulness of programs. 
+• Are programs of the model clear expressions of a process 
+or computation? Do they embody concepts that help us 
+to formulate and reason about processes? 
+2.2 Classification of Models 
+Using the above criteria we can crudely characterize 
+three classes of models for computing systems--simple 
+operational models, applicative models, and von Neu- 
+mann models. 
+2.2.1 Simple operational models. Examples: Turing 
+machines, various automata. Foundations: concise and 
+useful. History sensitivity: have storage, are history sen- 
+sitive. Semantics: state transition with very simple states. 
+Program clarity: programs unclear and conceptually not 
+helpful. 
+2.2.2 Applicative 
+models. 
+Examples: 
+Church's 
+lambda calculus [5], Curry's system of combinators [6], 
+pure Lisp [17], functional programming systems de- 
+scribed in this paper. Foundations: concise and useful. 
+History sensitivity: no storage, not history sensitive. Se- 
+mantics: reduction semantics, no states. Program clarity: 
+programs can be clear and conceptually useful. 
+2.2.3 Von Neumann models. Examples: von Neu- 
+mann computers, conventional programming languages. 
+Foundations: complex, bulky, not useful. History sensitiv- 
+ity: have storage, are history sensitive. Semantics: state 
+transition with complex states. Program clarity: programs 
+can be moderately clear, are not very useful conceptually. 
+The above classification is admittedly crude and 
+debatable. Some recent models may not fit easily into 
+any of these categories. For example, the data-flow 
+languages developed by Arvind and Gostelow [1], Den- 
+nis [7], Kosinski [13], and others partly fit the class of 
+simple operational models, but their programs are clearer 
+than those of earlier models in the class and it is perhaps 
+possible to argue that some have reduction semantics. In 
+any event, this classification will serve as a crude map of 
+the territory to be discussed. We shall be concerned only 
+with applicative and von Neumann models. 
+3. Von Neumann Computers 
+In order to understand the problems of conventional 
+programming languages, we must first examine their 
+intellectual parent, the von Neumann computer. What is 
+avon Neumann computer? When von Neumann and 
+others conceived it over thirty years ago, it was an 
+elegant, practical, and unifying idea that simplified a 
+number of engineering and programming problems that 
+existed then. Although the conditions that produced its 
+architecture have changed radically, we nevertheless still 
+identify the notion of "computer" with this thirty year 
+old concept. 
+In its simplest form avon Neumann computer has 
+615 
+three parts: a central processing unit (or CPU), a store, 
+and a connecting tube that can transmit a single word 
+between the CPU and the store (and send an address to 
+the store). I propose to call this tube the yon Neumann 
+bottleneck. The task of a program is to change the 
+contents of the store in some major way; when one 
+considers that this task must be accomplished entirely by 
+pumping single words back and forth through the von 
+Neumann bottleneck, the reason for its name becomes 
+clear. 
+Ironically, a large part of the traffic in the bottleneck 
+is not useful data but merely names of data, as well as 
+operations and data used only to compute such names. 
+Before a word can be sent through the tube its address 
+must be in the CPU; hence it must either be sent through 
+the tube from the store or be generated by some CPU 
+operation. If the address is sent from the store, then its 
+address must either have been sent from the store or 
+generated in the CPU, and so on. If, on the other hand, 
+the address is generated in the CPU, it must be generated 
+either by a fixed rule (e.g., "add 1 to the program 
+counter") or by an instruction that was sent through the 
+tube, in which case its address must have been sent ... 
+and so on. 
+Surely there must be a less primitive way of making 
+big changes in the store than by pushing vast numbers 
+of words back and forth through the von Neumann 
+bottleneck. Not only is this tube a literal bottleneck for 
+the data traffic of a problem, but, more importantly, it is 
+an intellectual bottleneck that has kept us tied to word- 
+at-a-time thinking instead of encouraging us to think in 
+terms of the larger conceptual units of the task at hand. 
+Thus programming is basically planning and detailing 
+the enormous traffic of words through the von Neumann 
+bottleneck, and much of that traffic concerns not signif- 
+icant data itself but where to find it. 
+4. Von Neumann Languages 
+Conventional programming languages are basically 
+high level, complex versions of the von Neumann com- 
+puter. Our thirty year old belief that there is only one 
+kind of computer is the basis of our belief that there is 
+only one kind of programming language, the conven- 
+tional--von Neumann--language. The differences be- 
+tween Fortran and Algol 68, although considerable, are 
+less significant than the fact that both are based on the 
+programming style of the von Neumann computer. Al- 
+though I refer to conventional languages as "von Neu- 
+mann languages" to take note of their origin and style, 
+I do not, of course, blame the great mathematician for 
+their complexity. In fact, some might say that I bear 
+some responsibility for that problem. 
+Von Neumann programming languages use variables 
+to imitate the computer's storage cells; control statements 
+elaborate its jump and test instructions; and assignment 
+statements imitate its fetching, storing, and arithmetic. 
+Communications 
+August 1978 
+of 
+Volume 21 
+the ACM 
+Number 8 
+The assignment statement is the von Neumann bottle- 
+neck of programming languages and keeps us thinking 
+in word-at-a-time terms in much the same way the 
+computer's bottleneck does. 
+Consider a typical program; at its center are a number 
+of assignment statements containing some subscripted 
+variables. Each assignment statement produces a one- 
+word result. The program must cause these statements to 
+be executed many times, while altering subscript values, 
+in order to make the desired overall change in the store, 
+since it must be done one word at a time. The program- 
+mer is thus concerned with the flow of words through 
+the assignment bottleneck as he designs the nest of 
+control statements to cause the necessary repetitions. 
+Moreover, the assignment statement splits program- 
+ming into two worlds. The first world comprises the right 
+sides of assignment statements. This is an orderly world 
+of expressions, a world that has useful algebraic proper- 
+ties (except that those properties are often destroyed by 
+side effects). It is the world in which most useful com- 
+putation takes place. 
+The second world of conventional programming lan- 
+guages is the world of statements. The primary statement 
+in that world is the assignment statement itself. All the 
+other statements of the language exist in order to make 
+it possible to perform a computation that must be based 
+on this primitive construct: the assignment statement. 
+This world of statements is a disorderly one, with few 
+useful mathematical properties. Structured programming 
+can be seen as a modest effort to introduce some order 
+into this chaotic world, but it accomplishes little in 
+attacking the fundamental problems created by the 
+word-at-a-time von Neumann style of programming, 
+with its primitive use of loops, subscripts, and branching 
+flow of control. 
+Our fixation on yon Neumann languages has contin- 
+ued the primacy of the von Neumann computer, and our 
+dependency on it has made non-von Neumann languages 
+uneconomical and has limited their development. The 
+absence of full scale, effective programming styles 
+founded on non-von Neumann principles has deprived 
+designers of an intellectual foundation for new computer 
+architectures. (For a brief discussion of that topic, see 
+Section 15.) 
+Applicative computing systems' lack of storage and 
+history sensitivity is the basic reason they have not 
+provided a foundation for computer design. Moreover, 
+most applicative systems employ the substitution opera- 
+tion of the lambda calculus as their basic operation. This 
+operation is one of virtually unlimited power, but its 
+complete and efficient realization presents great difficul- 
+ties to the machine designer. Furthermore, in an effort 
+to introduce storage and to improve their efficiency on 
+von Neumann computers, applicative systems have 
+tended to become engulfed in a large von Neumann 
+system. For example, pure Lisp is often buried in large 
+extensions with many von Neumann features. The re- 
+suiting complex systems offer little guidance to the ma- 
+chine designer. 
+616 
+5. Comparison of von Neumann and Functional 
+Programs 
+To get a more detailed picture of some of the defects 
+of von Neumann languages, let us compare a conven- 
+tional program for inner product with a functional one 
+written in a simple language to be detailed further on. 
+5.1 A von Neumann Program for Inner Product 
+c.-~-0 
+for i .~ I step 1 until n do 
+c .--- c + ali]xbIi] 
+Several properties of this program are worth noting: 
+a) Its statements operate on an invisible "state" ac- 
+cording to complex rules. 
+b) It is not hierarchical. Except for the right side of 
+the assignment statement, it does not construct complex 
+entities from simpler ones. (Larger programs, however, 
+often do.) 
+c) It is dynamic and repetitive. One must mentally 
+execute it to understand it. 
+d) It computes word-at-a-time by repetition (of the 
+assignment) and by modification (of variable i). 
+e) Part of the data, n, is in the program; thus it lacks 
+generality and works only for vectors of length n. 
+f) It names its arguments; it can only be used for 
+vectors a and b. To become general, it requires a proce- 
+dure declaration. These involve complex issues (e.g., call- 
+by-name versus call-by-value). 
+g) Its "housekeeping" operations are represented by 
+symbols in scattered places (in the for statement and the 
+subscripts in the assignment). This makes it impossible 
+to consolidate housekeeping operations, the most com- 
+mon of all, into single, powerful, widely useful operators. 
+Thus in programming those operations one must always 
+start again at square one, writing "for i .--- ..." and 
+"for j := ..." followed by assignment statements sprin- 
+kled with i's and j's. 
+5.2 A Functional Program for Inner Product 
+Def Innerproduct 
+- (Insert +)o(ApplyToAll x)oTranspose 
+Or, in abbreviated form: 
+Def IP - (/+)o(ax)oTrans. 
+Composition (o), Insert (/), and ApplyToAll (a) are 
+functional forms that combine existing functions to form 
+new ones. Thus fog is the function obtained by applying 
+first g and then fi and c~f is the function obtained by 
+applyingf to every member of the argument. If we write 
+f:x for the result of applying f to the object x, then we 
+can explain each step in evaluating Innerproduct applied 
+to the pair of vectors <<1, 2, 3>, <6, 5, 4>> as follows: 
+IP:<< i,2,3>, <6,5,4>> = 
+Definition of IP 
+~ (/+)o(ax)oTrans: << 1,2,3>, <6,5,4>> 
+Effect of composition, o 
+~ (/+):((ax):(Trans: 
+<<1,2,3>, <6,5,4>>)) 
+Communications 
+August 1978 
+of 
+Volume 21 
+the ACM 
+Number 8 
+Applying Transpose 
+Effect of ApplyToAll, a 
+Applying × 
+Effect of Insert, / 
+Applying + 
+Applying + again 
+(/+):((ax): <<1,6>, <2,5>, <3,4>>) 
+(/+): <x: <1,6>, x: <2,5>, x: <3,4>> 
+(/+): <6,10,12> 
++: <6, +: <lO,12>> 
++: <6,22> 
+28 
+Let us compare the properties of this program with 
+those of the von Neumann program. 
+a) It operates only on its arguments. There are no 
+hidden states or complex transition rules. There are only 
+two kinds of rules, one for applying a function to its 
+argument, the other for obtaining the function denoted 
+by a functional form such as composition, fog, or 
+ApplyToAll, af, when one knows the functions f and g, 
+the parameters of the forms. 
+b) It is hierarchical, being built from three simpler 
+functions (+, x, Trans) and three functional forms fog, 
+a f, and/f. 
+c) It is static and nonrepetitive, in the sense that its 
+structure is helpful in understanding it without mentally 
+executing it. For example, if one understands the action 
+of the forms fog and af, and of the functions x and 
+Trans, then one understands the action of ax and of 
+(c~x)oTrans, and so on. 
+d) It operates on whole conceptual units, not words; 
+it has three steps; no step is repee, ted. 
+e) It incorporates no data; it is completely general; it 
+works for any pair of conformable vectors. 
+f) It does not name its arguments; it can be applied to 
+any pair of vectors without any procedure declaration or 
+complex substitution rules. 
+g) It employs housekeeping forms and functions that 
+are generally useful in many other programs; in fact, 
+only + and x are not concerned with housekeeping. 
+These forms and functions can combine with others to 
+create higher level housekeeping operators. 
+Section 14 sketches a kind of system designed to 
+make the above functional style of programming avail- 
+able in a history-sensitive system with a simple frame- 
+work, but much work remains to be done before the 
+above applicative style can become the basis for elegant 
+and practical programming languages. For the present, 
+the above comparison exhibits a number of serious flaws 
+in yon Neumann programming languages and can serve 
+as a starting point in an effort to account for their present 
+fat and flabby condition. 
+6. Language Frameworks versus Changeable Parts 
+Let us distinguish two parts of a programming lan- 
+guage. First, its framework which gives the overall rules 
+of the system, and second, its changeable parts, whose 
+existence is anticipated by the framework but whose 
+particular behavior is not specified by it. For example, 
+the for statement, and almost all other statements, are 
+part of Algol's framework but library functions and user- 
+defined procedures are changeable parts. Thus the 
+framework of a language describes its fixed features and 
+617 
+provides a general environment for its changeable fea- 
+tures. 
+Now suppose a language had a small framework 
+which could accommodate a great variety of powerful 
+features entirely as changeable parts. Then such a frame- 
+work could support many different features and styles 
+without being changed itself. In contrast to this pleasant 
+possibility, von Neumann languages always seem to have 
+an immense framework and very limited changeable 
+parts. What causes this to happen? The answer concerns 
+two problems of von Neumann languages. 
+The first problem results from the von Neumann 
+style of word-at-a-time programming, which requires 
+that words flow back and forth to the state, just like the 
+flow through the von Neumann bottleneck. Thus avon 
+Neumann language must have a semantics closely cou- 
+pled to the state, in which every detail of a computation 
+changes the state. The consequence of this semantics 
+closely coupled to states is that every detail of every 
+feature must be built into the state and its transition 
+rules. 
+Thus every feature of avon Neumann language must 
+be spelled out in stupefying detail in its framework. 
+Furthermore, many complex features are needed to prop 
+up the basically weak word-at-a-time style. The result is 
+the inevitable rigid and enormous framework of avon 
+Neumann language. 
+7. Changeable Parts and Combining Forms 
+The second problem of von Neumann languages is 
+that their changeable parts have so little expressive 
+power. Their gargantuan size is eloquent proof of this; 
+after all, if the designer knew that all those complicated 
+features, which he now builds into the framework, could 
+be added later on as changeable parts, he would not be 
+so eager to build them into the framework. 
+Perhaps the most important element in providing 
+powerful changeable parts in a language is the availabil- 
+ity of combining forms that can be generally used to 
+build new procedures from old ones. Von Neumarm 
+languages provide only primitive combining forms, and 
+the von Neumann framework presents obstacles to their 
+full use. 
+One obstacle to the use of combining forms is the 
+split between the expression world and the statement 
+world in von Neumann languages. Functional forms 
+naturally belong to the world of expressions; but no 
+matter how powerful they are they can only build expres- 
+sions that produce a one-word result. And it is in the 
+statement world that these one-word results must be 
+combined into the overall result. Combining single words 
+is not what we really should be thinking about, but it is 
+a large part of programming any task in von Neumann 
+languages. To help assemble the overall result from 
+single words these languages provide some primitive 
+combining forms in the statement world--the for, while, 
+and if-then-else statements--but the split between the 
+Communications 
+August 1978 
+of 
+Volume 21 
+the ACM 
+Number 8 
+two worlds prevents the combining forms in either world 
+from attaining the full power they can achieve in an 
+undivided world. 
+A second obstacle to the use of combining forms in 
+von Neumann languages is their use of elaborate naming 
+conventions, which are further complicated by the sub- 
+stitution rules required in calling procedures. Each of 
+these requires a complex mechanism to be built into the 
+framework so that variables, subscripted variables, 
+pointers, file names, procedure names, call-by-value for- 
+mal parameters, call-by-name formal parameters, and so 
+on, can all be properly interpreted. All these names, 
+conventions, and rules interfere with the use of simple 
+combining forms. 
+8. APL versus Word-at-a-Time Programming 
+Since I have said so much about word-at-a-time 
+programming, I must now say something about APL 
+[12]. We owe a great debt to Kenneth Iverson for showing 
+us that there are programs that are neither word-at-a- 
+time nor dependent on lambda expressions, and for 
+introducing us to the use of new functional forms. And 
+since APL assignment statements can store arrays, the 
+effect of its functional forms is extended beyond a single 
+assignment. 
+Unfortunately, however, APL still splits program- 
+ming into a world of expressions and a world of state- 
+ments. Thus the effort to write one-line programs is 
+partly motivated by the desire to stay in the more orderly 
+world of expressions. APL has exactly three functional 
+forms, called inner product, outer product, and reduc- 
+tion. These are sometimes difficult to use, there are not 
+enough of them, and their use is confined to the world 
+of expressions. 
+Finally, APL semantics is still too closely coupled to 
+states. Consequently, despite the greater simplicity and 
+power of the language, its framework has the complexity 
+and rigidity characteristic of von Neumann languages. 
+9. Von Neumann Languages Lack Useful 
+Mathematical Properties 
+So far we have discussed the gross size and inflexi- 
+bility of von Neumann languages; another important 
+defect is their lack of useful mathematical properties and 
+the obstacles they present to reasoning about programs. 
+Although a great amount of excellent work has been 
+published on proving facts about programs, von Neu- 
+mann languages have almost no properties that are 
+helpful in this direction and have many properties that 
+are obstacles (e.g., side effects, aliasing). 
+Denotational semantics [23] and its foundations [20, 
+21] provide an extremely helpful mathematical under- 
+standing of the domain and function spaces implicit in 
+programs. When applied to an applicative language 
+(such as that of the "recursive programs" of [16]), its 
+618 
+foundations provide powerful tools for describing the 
+language and for proving properties of programs. When 
+applied to avon Neumann language, on the other hand, 
+it provides a precise semantic description and is helpful 
+in identifying trouble spots in the language. But the 
+complexity of the language is mirrored in the complexity 
+of the description, which is a bewildering collection of 
+productions, domains, functions, and equations that is 
+only slightly more helpful in proving facts about pro- 
+grams than the reference manual of the language, since 
+it is less ambiguous. 
+Axiomatic semantics [11] precisely restates the in- 
+elegant properties ofvon Neumann programs (i.e., trans- 
+formations on states) as transformations on predicates. 
+The word-at-a-time, repetitive game is not thereby 
+changed, merely the playing field. The complexity of this 
+axiomatic game of proving facts about von Neumann 
+programs makes the successes of its practitioners all the 
+more admirable. Their success rests on two factors in 
+addition to their ingenuity: First, the game is restricted 
+to small, weak subsets of full von Neumann languages 
+that have states vastly simpler than real ones. Second, 
+the new playing field (predicates and their transforma- 
+tions) is richer, more orderly and effective than the old 
+(states and their transformations). But restricting the 
+game and transferring it to a more effective domain does 
+not enable it to handle real programs (with the necessary 
+complexities of procedure calls and aliasing), nor does it 
+eliminate the clumsy properties of the basic von Neu- 
+mann style. As axiomatic semantics is extended to cover 
+more of a typical von Neumann language, it begins to 
+lose its effectiveness with the increasing complexity that 
+is required. 
+Thus denotational and axiomatic semantics are de- 
+scriptive formalisms whose foundations embody elegant 
+and powerful concepts; but using them to describe avon 
+Neumann language can not produce an elegant and 
+powerful language any more than the use of elegant and 
+modern machines to build an Edsel can produce an 
+elegant and modem car. 
+In any case, proofs about programs use the language 
+of logic, not the language of programming. Proofs talk 
+about programs but cannot involve them directly since 
+the axioms of von Neumann languages are so unusable. 
+In contrast, many ordinary proofs are derived by alge- 
+braic methods. These methods require a language that 
+has certain algebraic properties. Algebraic laws can then 
+be used in a rather mechanical way to transform a 
+problem into its solution. For example, to solve the 
+equation 
+ax+bx=a+b 
+for x (given that a+b ~ 0), we mechanically apply the 
+distributive, identity, and cancellation laws, in succes- 
+sion, to obtain 
+(a + b)x = a + b 
+(a + b)x = (a + b) l 
+X~ 
+1. 
+Communications 
+August 1978 
+of 
+Volume 21 
+the ACM 
+Number 8 
+Thus we have proved that x = 1 without leaving the 
+"language" of algebra. Von Neumann languages, with 
+their grotesque syntax, offer few such possibilities for 
+transforming programs. 
+As we shall see later, programs can be expressed in 
+a language that has an associated algebra. This algebra 
+can be used to transform programs and to solve some 
+equations whose "unknowns" are programs, in much the 
+same way one solves equations in high school algebra. 
+Algebraic transformations and proofs use the language 
+of the programs themselves, rather than the language of 
+logic, which talks about programs. 
+10. What Are the Alternatives to von Neumann 
+Languages? 
+Before discussing alternatives to von Neumann lan- 
+guages, let me remark that I regret the need for the above 
+negative and not very precise discussion of these lan- 
+guages. But the complacent acceptance most of us give 
+to these enormous, weak languages has puzzled and 
+disturbed me for a long time. I am disturbed because 
+that acceptance has consumed a vast effort toward mak- 
+ing von Neumann languages fatter that might have been 
+better spent in looking for new structures. For this reason 
+I have tried to analyze some of the basic defects of 
+conventional languages and show that those defects can- 
+not be resolved unless we discover a new kind of lan- 
+guage framework. 
+In seeking an alternative to conventional languages 
+we must first recognize that a system cannot be history 
+sensitive (permit execution of one program to affect the 
+behavior of a subsequent one) unless the system has 
+some kind of state (which the first program can change 
+and the second can access). Thus a history-sensitive 
+model of a computing system must have a state-transition 
+semantics, at least in this weak sense. But this does not 
+mean that every computation must depend heavily on a 
+complex state, with many state changes required for each 
+small part of the computation (as in von Neumann 
+languages). 
+To illustrate some alternatives to von Neumann lan- 
+guages, I propose to sketch a class of history-sensitive 
+computing systems, where each system: a) has a loosely 
+coupled state-transition semantics in which a state tran- 
+sition occurs only once in a major computation; b) has 
+a simply structured state and simple transition rules; c) 
+depends heavily on an underlying applicative system 
+both to provide the basic programming language of the 
+system and to describe its state transitions. 
+These systems, which I call applicative state transition 
+(or AST) systems, are described in Section 14. These 
+simple systems avoid many of the complexities and 
+weaknesses of von Neumann languages and provide for 
+a powerful and extensive set of changeable parts. How- 
+ever, they are sketched only as crude examples of a vast 
+area of non-von Neumann systems with various attrac- 
+tive properties. I have been studying this area for the 
+619 
+past three or four years and have not yet found a 
+satisfying solution to the many conflicting requirements 
+that a good language must resolve. But I believe this 
+search has indicated a useful approach to designing non- 
+von Neumann languages. 
+This approach involves four elements, which can be 
+summarized as follows. 
+a) A functional style of programming without varia- 
+bles. A simple, informal functional programming (FP) 
+system is described. It is based on the use of combining 
+forms for building programs. Several programs are given 
+to illustrate functional programming. 
+b) An algebra of functional programs. An algebra is 
+described whose variables denote FP functional pro- 
+grams and whose "operations" are FP functional forms, 
+the combining forms of FP programs. Some laws of the 
+algebra are given. Theorems and examples are given that 
+show how certain function expressions may be trans- 
+formed into equivalent infinite expansions that explain 
+the behavior of the function. The FP algebra is compared 
+with algebras associated with the classical applicative 
+systems of Church and Curry. 
+c) A formal functional programming system. A formal 
+(FFP) system is described that extends the capabilities 
+of the above informal FP systems. An FFP system is 
+thus a precisely defined system that provides the ability 
+to use the functional programming style of FP systems 
+and their algebra of programs. FFP systems can be used 
+as the basis for applicative state transition systems. 
+d) Applicative state transition systems. As discussed 
+above. The rest of the paper describes these four ele- 
+ments, gives some brief remarks on computer design, 
+and ends with a summary of the paper. 
+I I. Functional Programming Systems (FP Systems) 
+11.1 Introduction 
+In this section we give an informal description of a 
+class of simple applicative programming systems called 
+functional programming (FP) systems, in which "pro- 
+grams" are simply functions without variables. The de- 
+scription is followed by some examples and by a discus- 
+sion of various properties of FP systems. 
+An FP system is founded on the use of a fixed set of 
+combining forms called functional forms. These, plus 
+simple definitions, are the only means of building new 
+functions from existing ones; they use no variables or 
+substitution rules, and they become the operations of an 
+associated algebra of programs. All the functions of an 
+FP system are of one type: they map objects into objects 
+and always take a single argument. 
+In contrast, a lambda-calculus based system is 
+founded on the use of the lambda expression, with an 
+associated set of substitution rules for variables, for 
+building new functions. The lambda expression (with its 
+substitution rules) is capable of defining all possible 
+computable functions of all possible types and of any 
+number of arguments. This freedom and power has its 
+Communications 
+August 1978 
+of 
+Volume 21 
+the ACM 
+Number 8 
+disadvantages as well as its obvious advantages. It is 
+analogous to the power of unrestricted control statements 
+in conventional languages: with unrestricted freedom 
+comes chaos. If one constantly invents new combining 
+forms to suit the occasion, as one can in the lambda 
+calculus, one will not become familiar with the style or 
+useful properties of the few combining forms that are 
+adequate for all purposes. Just as structured program- 
+ming eschews many control statements to obtain pro- 
+grams with simpler structure, better properties, and uni- 
+form methods for understanding their behavior, so func- 
+tional programming eschews the lambda expression, sub- 
+stitution, and multiple function types. It thereby achieves 
+programs built with familiar functional forms with 
+known useful properties. These programs are so struc- 
+tured that their behavior can often be understood and 
+proven by mechanical use of algebraic techniques similar 
+to those used in solving high school algebra problems. 
+Functional forms, unlike most programming con- 
+structs, need not be chosen on an ad hoc basis. Since 
+they are the operations of an associated algebra, one 
+chooses only those functional forms that not only provide 
+powerful programming constructs, but that also have 
+attractive algebraic properties: one chooses them to max- 
+imize the strength and utility of the algebraic laws that 
+relate them to other functional forms of the system. 
+In the following description we shall be imprecise in 
+not distinguishing between (a) a function symbol or 
+expression and (b) the function it denotes. We shall 
+indicate the symbols and expressions used to denote 
+functions by example and usage. Section 13 describes a 
+formal extension of FP systems (FFP systems); they can 
+serve to clarify any ambiguities about FP systems. 
+11.2 Description 
+An FP system comprises the following: 
+l) a set O of objects; 
+2) a set F of functions f that map objects into objects; 
+3) an operation, application; 
+4) a set F of functional forms; these are used to combine 
+existing functions, or objects, to form new functions in 
+F; 
+5) a set D of definitions that define some functions in F 
+and assign a name to each. 
+What follows is an informal description of each of 
+the above entities with examples. 
+11.2.1 Objects, O. An object x is either an atom, a 
+sequence <x~ .... , Xn> whose elements xi are objects, or 
+± ("bottom" or "undefined"). Thus the choice of a set A 
+of atoms determines the set of objects. We shall take A 
+to be the set of nonnull strings of capital letters, digits, 
+and special symbols not used by the notation of the FP 
+system. Some of these strings belong to the class of atoms 
+called "numbers." The atom ~ is used to denote the 
+empty sequence and is the only object which is both an 
+atom and a sequence. The atoms T and F are used to 
+denote "true" and "false." 
+There is one important constraint in the construction 
+of objects: if x is a sequence with J_ as an element, then 
+x = ±. That is, the "sequence constructor" is "±-pre- 
+serving." Thus no proper sequence has i as an element. 
+Examples of objects 
+± 
+1.5 ¢p AB3 
+<AB, 1, 2.3> 
+<.4, <<B>, C>, D> 
+<,4, ±> = ± 
+11.2.2 Application. An FP system has a single oper- 
+ation, application. Iff is a function and x is an object, 
+thenf:x is an application and denotes the object which 
+is the result of applying f to x. f is the operator of the 
+application and x is the operand. 
+Examples of applications 
++:<•,2> = 3 
+tI:<.A,B,C> = <B,C> 
+I:<A,B,C> = A 
+2:<A,B,C> = B 
+11.2.3 Functions, F. All functions fin F map objects 
+into objects and are bottom-preserving:f:± = ±, for allf 
+in F. Every function in F is either primitive, that is, 
+supplied with the system, or it is defined (see below), or 
+it is a functional form (see below). 
+It is sometimes useful to distinguish between two 
+cases in whichf:x=±. If the computation forf:x termi- 
+nates and yields the object _1_, we sayfis undefined at x, 
+that is, f terminates but has no meaningful value at x. 
+Otherwise we sayfis nonterminating at x. 
+Examples of primitive functions 
+Our intention is to provide FP systems with widely 
+useful and powerful primitive functions rather than weak 
+ones that could then be used to define useful ones. The 
+following examples define some typical primitive func- 
+tions, many of which are used in later examples of 
+programs. In the following definitions we use a variant 
+of McCarthy's conditional expressions [ 17]; thus we write 
+pl -+ el; ... ;pn ~ en; e,+l 
+instead of McCarthy's expression 
+(401---> el ..... pn ---~ en, T---~ en+l). 
+The following definitions are to hold for all objects x, xi, 
+y, yi, Z, Zi: 
+Selector functions 
+1 :X ~- X=<X1, ... , Xn> ""* X1; I 
+and for any positive integer s 
+S:X----X=<Xb...,Xn>&n~s--~ 
+xs;-L 
+Thus, for example, 3:<A,B,C> = C and 2:<A> = ±. 
+Note that the function symbols 1, 2, etc. are distinct from 
+the atoms 1, 2, etc. 
+Tail 
+thx -- x=<x~> ~ if; 
+x=<xl, 
+..., Xn> & n 2__2 ~ <x2, .... xn>; i 
+Identity 
+id:x - x 
+620 
+Communications 
+August 1978 
+of 
+Volume 21 
+the ACM 
+Number 8 
+Atom 
+atom:x - x is an atom ~ 
+T; x#3- ~ 
+F; ,1, 
+Equals 
+eq:x -- x=<y,z> & y=z----> T; x=<y,z> & y--~z---> F; ,1, 
+Null 
+null:x -= x=~ ~ 
+12, x~_l_ ~ 
+F; _1_ 
+Reverse 
+reverse:x = x=4~ ~ 
+dp; 
+X=<Xl, 
+... , Xn> 
+~ 
+<Xn, ... ; XI>; -J- 
+Distribute from left; distribute from right 
+distl:x - x=<y@> ---> ep; 
+X=<.V,<21 ..... an>> -----> <<f,&> 
+..... <y,,%>>; ± 
+distr:x -- x=<ff,y> ---) q~; 
+X=<<yl, 
+... , fn>,2> ---> <<.V1,Z>, ... , <fin,a>>; ± 
+Length 
+length:x - x=<x, ..... Xn> --+ n; x=qa ---> 0; ,1, 
+Add, subtract, multiply, and divide 
++ :x = x=<y,z> &y,z are numbers--+ y+z; ,1, 
+-:x - x=<y,z> & y,z are numbers ~ y-z; ,1, 
+x :x -- x=<y,z> & y,z are numbers ~ yXz; ,1, 
++:x - x=<y,z> & y,z are numbers---> y+z; ,1, 
+(where y+0 = ,1,) 
+Transpose 
+trans:x -- x=<4, ..... 4'> "--> ,/,; 
+X=<Xl, 
+... , Xn> 
+--+ <yl, 
+... , fro>; _1_ 
+where 
+Xi~"~-<Xil, ... , Xim> and 
+yj=<xtj ..... Xnj>, l_i__n, l_j_m. 
+And, or, not 
+and:x ~ x=<T,T> --> T; 
+x=<T,F> V x=<F,T> V x=<F,F> ---> F; 3- 
+etc. 
+Append left; append right 
+apndl:x = x=<y,ep> ~ <y>; 
+X~-<.V,<Z1 .... , Zn>> ~ 
+<y, Zl .... , Zn>; 3_ 
+apndr:x -= x=<q,,z>--+ <z>; 
+X=<<yl ..... yn>,Z> "-'> <yl ..... yn,,Z>; "1" 
+Right selectors; Right tail 
+lr:x - x=<x,, ..., Xn> ---) Xn; -J- 
+2r:x -- x=<x~, ..., x,> & n_2 -+ x,-,; 3- 
+etc. 
+tlr:x-- x=<x~> --+ 6; 
+x=<x, .... , x,> & n_>2 --+ <x, ..... Xn-,>; "1" 
+Rotate left; rotate right 
+rotl:x = x=~ ~ 4~; x=<xl> "--> <Xl>; 
+x=<x, ..... x.> & n_2 ---> <x2 .... , Xn,X,>; ± 
+etc. 
+11.2.4 Functional forms, F. A functional form is an 
+expression denoting a function; that function depends on 
+the functions or objects which are the parameters of the 
+expression. Thus, for example, iff and g are any func- 
+tions, then fog is a functional form, the composition off 
+621 
+and g, f and g are its parameters, and it denotes the 
+function such that, for any object x, 
+(fog) :x =f:(g:x). 
+Some functional forms may have objects as parameters. 
+For example, for any object x, ~c is a functional form, the 
+constant function of x, so that for any object y 
+Yc:y = y=l ~ 
+3-; x. 
+In particular, _T_ is the everywhere-_l_ function. 
+Below we give some functional forms, many of which 
+are used later in this paper. We usep, f, and g with and 
+without subscripts to denote arbitrary functions; and x, 
+Xl ..... x., y as arbitrary objects. Square brackets [...] are 
+used to indicate the functional form for construction, 
+which denotes a function, whereas pointed brackets 
+<...> denote sequences, which are objects. Parentheses 
+are used both in particular functional forms (e.g., in 
+condition) and generally to indicate grouping. 
+Composition 
+(fog):x =- f:(g:x) 
+Construction 
+[fi ..... fn]:x = <fi :x ..... fn:X> 
+(Recall 
+that 
+since 
+< .... 3_ .... > = _1_ and all functions are _L-preserving, so 
+is [fi ..... fn]-) 
+Condition 
+(p-+ f, g):x -- (p:x)=T---~ f:x; 
+(p:x)=F--+ g:x; ± 
+Conditional expressions (used outside of FP systems to 
+describe their functions) and the functional form condi- 
+tion are both identified by "---~". They are quite different 
+although closely related, as shown in the above defini- 
+tions. But no confusion should arise, since the elements 
+of a conditional expression all denote values, whereas 
+the elements of the functional form condition all denote 
+functions, never values. When no ambiguity arises we 
+omit right-associated parentheses; we write, for example, 
+pl ---)f,;p2--*f2; g for (pl---> fi; (/02-'-~ f2; g)). 
+Constant (Here x is an object parameter.) 
+~c:y = y=/~ 
+±; x 
+Insert 
+/f:x =- x=<xl> ~ Xl; x=<xl, ..., xn > & n_>2 
+-->f:<x,,/f:<x2 ..... Xn>>; ± 
+If f 
+has 
+a 
+unique 
+right 
+unit 
+ur # 
+±, 
+where 
+f:<x,ur> E {x, 3_} for all objects x, then the above 
+definition is extended:/f:q~ = ur. Thus 
+/+:<4,5,6> = +:<4, +:<5,/+:<6>>> 
+= +:<4, +:<5,6>> 
+= 15 
+/+:~=0 
+Apply to all 
+af:x - x=ep ~ 4'; 
+X=<XI 
+..... 
+Xn> ~ <f:x, ..... 
+f:Xn>; ± 
+Communications 
+August 1978 
+of 
+Volume 21 
+the ACM 
+Number 8 
+Binary to unary (x is an object parameter) 
+(bu f x) :y - f: <x,y> 
+Thus 
+(bu + l):x = l+x 
+While 
+(while p f): x ~ p: x= T --* (while p f): (f: x); 
+p:x=F---~ x; ± 
+The above functional forms provide an effective 
+method for computing the values of the functions they 
+denote (if they terminate) provided one can effectively 
+apply their function parameters. 
+11.2.5 Definitions. A definition in an FP system is an 
+expression of the form 
+Def l -- r 
+where the left side 1 is an unused function symbol and 
+the right side r is a functional form (which may depend 
+on/). It expresses the fact that the symbol I is to denote 
+the function given by r. Thus the definition Def last 1 - 
+loreverse defines the function lastl that produces the 
+last element of a sequence (or ±). Similarly, 
+Def last -- nullotl --> l; lastotl 
+defines the function last, which is the same as last 1. Here 
+in detail is how the definition would be used to compute 
+last: <1,2>: 
+last:<l,2> = 
+definition of last 
+action of the form (p--~fi g) 
+action of the form fog 
+definition of primitive tail 
+definition of last 
+action of the form (p-*~ g) 
+definition of selector 1 
+(nullotl ---, 1; lastotl):<l,2> 
+lastotl:<l,2> 
+since nullotl:<l,2> = null:<2> 
+=F 
+last:(tl:<l,2>) 
+last:<2> 
+(nullotl --~ l; lastotl):<2> 
+1:<2> 
+since nutlotl:<2> = null:oh = T 
+~2 
+The above illustrates the simple rule: to apply a 
+defined symbol, replace it by the right side of its defini- 
+tion. Of course, some definitions may define nontermi- 
+nating functions. A set D of definitions is well formed if 
+no two left sides are the same. 
+11.2.6 Semantics. It can be seen from the above that 
+an FP system is determined by choice of the following 
+sets: (a) The set of atoms A (which determines the set of 
+objects). (b) The set of primitive functions P. (c) The set 
+of functional forms F. (d) A well formed set of definitions 
+D. To understand the semantics of such a system one 
+needs to know how to compute f:x for any function f 
+and any object x of the system. There are exactly four 
+possibilities for f: 
+(l)fis a primitive function; 
+(2)fis a functional form; 
+(3) there is one definition in D, Deff- r; and 
+(4) none of the above. 
+Iff is a primitive function, then one has its description 
+622 
+and knows how to apply it. Iffis a functional form, then 
+the description of the form tells how to compute f: x in 
+terms of the parameters of the form, which can be done 
+by further use of these rules. Iff is defmed, Deff- r, as 
+in (3), then to fmdf:x one computes r:x, which can be 
+done by further use of these rules. If none of these, then 
+f:x - 
+.1_. Of course, the use of these rules may not 
+terminate for somefand some x, in which case we assign 
+the value f: x --- .1_. 
+11.3 Examples of Functional Programs 
+The following examples illustrate the functional pro- 
+gramming style. Since this style is unfamiliar to most 
+readers, it may cause confusion at first; the important 
+point to remember is that no part of a function definition 
+is a result itself. Instead, each part is a function that must 
+be applied to an argument to obtain a result. 
+11.3.1 Factorial. 
+Def ! - eq0 ~ ]; xo[id, !osubl] 
+where 
+Def eq0 -- eqo[id, 0] 
+Def subl - -o[id, ]] 
+Here are some of the intermediate expressions an FP 
+system would obtain in evaluating !: 2: 
+!:2 ~ (eqO--~ 1; ×o[id, !osubl]):2 
+xo[id, !osubl]:2 
+×:<id:2, !osubl:2> ~ ×:<2, !:1> 
+x:<2, x:<l, !:0>> 
+x:<2, X:<I,I:0>> ~ x:<2, x:<l,l>> 
+x:<2,1> ~ 2. 
+In Section 12 we shall see how theorems of the algebra 
+of FP programs can be used to prove that ! is the 
+factorial function. 
+11.3.2 Inner product. We have seen earlier how this 
+definition works. 
+Def 
+IP ~- (/+)o(ax)otrans 
+11.3.3 Matrix multiply. This matrix multiplication 
+program yields the product of any pair <re,n> of con- 
+formable matrices, where each matrix m is represented 
+as the sequence of its rows: 
+m = <ml, 
+... , mr> 
+where mi = <mil ..... mis> for i = 1 ..... r. 
+Def MM = (aalp)o(adistl)odistro[ 1, transo2] 
+The program MM has four steps, reading from right to 
+left; each is applied in turn, beginning with [1, transo2], 
+to the result of its predecessor. If the argument is <m,n>, 
+then the first step yields <rn,n'> where n' = trans:n. The 
+second step yields <<ml,n'> .... , <mr,n'>>, 
+where the 
+mi are the rows of m. The third step, adistl, yields 
+<distl:<ml,n'>, ..., distl:<mr,n'>> = <pl, ... ,pr> 
+where 
+Communications 
+August 1978 
+of 
+Volume 21 
+the ACM 
+Number 8 
+pi = distl:<mi, n'> -- <<mi,nl'>, 
+..., <mi,ns'>> 
+fori= 1 ..... r 
+and nj' is the jth column of n (the jth row of n'). Thus pi, 
+a sequence of row and column pairs, corresponds to the 
+i-th product row. The operator aedP, or a(etlP), causes 
+alP to be applied to each pi, which in turn causes IP to 
+be applied to each row and column pair in each pi. The 
+result of the last step is therefore the sequence of rows 
+comprising the product matrix. If either matrix is not 
+rectangular, or if the length of a row of m differs from 
+that of a column of n, or if any element of m or n is not 
+a number, the result is Z. 
+This program MM does not name its arguments or 
+any intermediate results; contains no variables, no loops, 
+no control statements nor procedure declarations; has no 
+initialization instructions; is not word-at-a-time in na- 
+ture; is hierarchically constructed from simpler compo- 
+nents; uses generally applicable housekeeping forms and 
+operators (e.g., af, distl, distr, trans); is perfectly general; 
+yields ± whenever its argument is inappropriate in any 
+way; does not constrain the order of evaluation unnec- 
+essarily (all applications of IP to row and column pairs 
+can be done in parallel or in any order); and, using 
+algebraic laws (see below), can be transformed into more 
+"efficient" or into more "explanatory" programs (e.g., 
+one that is recursively defined). None of these properties 
+hold for the typical von Neumann matrix multiplication 
+program. 
+Although it has an unfamiliar and hence puzzling 
+form, the program MM describes the essential operations 
+of matrix multiplication without overdetermining the 
+process or obscuring parts of it, as most programs do; 
+hence many straightforward programs for the operation 
+can be obtained from it by formal transformations. It is 
+an inherently inefficient program for von Neumann 
+computers (with regard to the use of space), but efficient 
+ones can be derived from it and realizations of FP 
+systems can be imagined that could execute MM without 
+the prodigal use of space it implies. Efficiency questions 
+are beyond the scope of this paper; let me suggest only 
+that since the language is so simple and does not dictate 
+any binding of lambda-type variables to data, there may 
+be better opportunities for the system to do some kind of 
+"lazy" evaluation [9, 10] and to control data management 
+more efficiently than is possible in lambda-calculus 
+based systems. 
+11.4 Remarks About FP Systems 
+11.4.1 FP systems as programming languages. FP 
+systems are so minimal that some readers may find it 
+difficult to view them as programming languages. 
+Viewed as such, a functionfis a program, an object x is 
+the contents of the store, and f:x is the contents of the 
+store after programfis activated with x in the store. The 
+set of definitions is the program library. The primitive 
+functions and the functional forms provided by the 
+system are the basic statements of a particular program- 
+ming language. Thus, depending on the choice of prim- 
+67.3 
+itive functions and functional forms, the FP framework 
+provides for a large class of languages with various styles 
+and capabilities. The algebra of programs associated 
+with each of these depends on its particular set of func- 
+tional forms. The primitive functions, functional forms, 
+and programs given in this paper comprise an effort to 
+develop just one of these possible styles. 
+11.4.2 Limitations of FP systems. FP systems have 
+a number of limitations. For example, a given FP system 
+is a fixed language; it is not history sensitive: no program 
+can alter the library of programs. It can treat input and 
+output only in the sense that x is an input andf:x is the 
+output. If the set of primitive functions and functional 
+forms is weak, it may not be able to express every 
+computable function. 
+An FP system cannot compute a program since func- 
+tion expressions are not objects. Nor can one define new 
+functional forms within an FP system. (Both of these 
+limitations are removed in formal functional program- 
+ming (FFP) systems in which objects "represent" func- 
+tions.) Thus no FP system can have a function, apply, 
+such that 
+apply: <x,y> = x :y 
+because, on the left, x is an object, and, on the right, x 
+is a function. (Note that we have been careful to keep 
+the set of function symbols and the set of objects distinct: 
+thus 1 is a function symbol, and 1 is an object.) 
+The primary limitation of FP systems is that they are 
+not history sensitive. Therefore they must be extended 
+somehow before they can become practically useful. For 
+discussion of such extensions, see the sections on FFP 
+and AST systems (Sections 13 and 14). 
+11.4.3 Expressive power of FP systems. Suppose two 
+FP systems, FP~ and FP2, both have the same set of 
+objects and the same set of primitive functions, but the 
+set of functional forms of FP~ properly includes that of 
+FP2. Suppose also that both systems car~ express all 
+computable functions on objects. Nevertheless, we can 
+say that FPi is more expressive than FP2, since every 
+function expression in FP2 can be duplicated in FP1, but 
+by using a functional form not belonging to FP2, FP~ can 
+express some functions more directly and easily than 
+FP2. 
+I believe the above observation could be developed 
+into a theory of the expressive power of languages in 
+which a language A would be more expressive than 
+language B under the following roughly stated condi- 
+tions. First, form all possible functions of all types in A 
+by applying all existing functions to objects and to each 
+other in all possible ways until no new function of any 
+type can be formed. (The set of objects is a type; the set 
+of continuous functions [T->U] from type T to type U is 
+a type. IffE[T----~U] and tET, thenft in U can be formed 
+by applying f to t.) Do the same in language B. Next, 
+compare each type in A to the corresponding type in B. 
+If, for every type, A's type includes B's corresponding 
+Communications 
+August 1978 
+of 
+Volume 21 
+the ACM 
+Number 8 
+type, then A is more expressive than B (or equally 
+expressive). If some type of A's functions is incomparable 
+to B's, then A and B are not comparable in expressive 
+power. 
+11.4.4 Advantages of FP systems. The main reason 
+FP systems are considerably simpler than either conven- 
+tional languages or lambda-calculus-based languages is 
+that they use only the most elementary fixed naming 
+system (naming a function in a det'mition) with a simple 
+fixed rule of substituting a function for its name. Thus 
+they avoid the complexities both of the naming systems 
+of conventional languages and of the substitution rules 
+of the lambda calculus. FP systems permit the definition 
+of different naming systems (see Sections 13.3.4 and 
+14.7) for various purposes. These need not be complex, 
+since many programs can do without them completely. 
+Most importantly, they treat names as functions that can 
+be combined with other functions without special treat- 
+ment. 
+FP systems offer an escape from conventional word- 
+at-a-time programming to a degree greater even than 
+APL [12] (the most successful attack on the problem to 
+date within the von Neumann framework) because they 
+provide a more powerful set of functional forms within 
+a unified world of expressions. They offer the opportu- 
+nity to develop higher level techniques for thinking 
+about, manipulating, and writing programs. 
+12. The Algebra of Programs for FP Systems 
+12.1 Introduction 
+The algebra of the programs described below is the 
+work of an amateur in algebra, and I want to show that 
+it is a game amateurs can profitably play and enjoy, a 
+game that does not require a deep understanding of logic 
+and mathematics. In spite of its simplicity, it can help 
+one to understand and prove things about programs in 
+a systematic, rather mechanical way. 
+So far, proving a program correct requires knowledge 
+of some moderately heavy topics in mathematics and 
+logic: properties of complete partially ordered sets, con- 
+tinuous functions, least fLxed points of functionals, the 
+first-order predicate calculus, predicate transformers, 
+weakest preconditions, to mention a few topics in a few 
+approaches to proving programs correct. These topics 
+have been very useful for professionals who make it their 
+business to devise proof techniques; they have published 
+a lot of beautiful work on this subject, starting with the 
+work of McCarthy and Floyd, and, more recently, that 
+of Burstall, Dijkstra, Manna and his associates, Milner, 
+Morris, Reynolds, and many others. Much of this work 
+is based on the foundations laid down by Dana Scott 
+(denotational semantics) and C. A. R. Hoare (axiomatic 
+semantics). But its theoretical level places it beyond the 
+scope of most amateurs who work outside of this spe- 
+cialized field. 
+If the average programmer is to prove his programs 
+67,4 
+correct, he will need much simpler techniques than those 
+the professionals have so far put forward. The algebra of 
+programs below may be one starting point for such a 
+proof discipline and, coupled with current work on al- 
+gebraic manipulation, it may also help provide a basis 
+for automating some of that discipline. 
+One advantage of this algebra over other proof tech- 
+niques is that the programmer can use his programming 
+language as the language for deriving proofs, rather than 
+having to state proofs in a separate logical system that 
+merely talks about his programs. 
+At the heart of the algebra of programs are laws and 
+theorems that state that one function expression is the 
+same as another. Thus the law [fig]oh =_ [foh, goh] says 
+that the construction off and g (composed with h) is the 
+same function as the construction of (f composed with 
+h) and (g composed with h) no matter what the functions 
+f, g, and h are. Such laws are easy to understand, easy to 
+justify, and easy and powerful to use. However, we also 
+wish to use such laws to solve equations in which an 
+"unknown" function appears on both sides of the equa- 
+tion. The problem is that iffsatisfies some such equation, 
+it will often happen that some extensionf' of f will also 
+satisfy the same equation. Thus, to give a unique mean- 
+ing to solutions of such equations, we shall require a 
+foundation for the algebra of programs (which uses 
+Scott's notion of least fixed points of continuous func- 
+tionals) to assure us that solutions obtained by algebraic 
+manipulation are indeed least, and hence unique, solu- 
+tions. 
+Our goal is to develop a foundation for the algebra 
+of programs that disposes of the theoretical issues, so 
+that a programmer can use simple algebraic laws and 
+one or two theorems from the foundations to solve 
+problems and create proofs in the same mechanical style 
+we use to solve high-school algebra problems, and so 
+that he can do so without knowing anything about least 
+fixed points or predicate transformers. 
+One particular foundational problem arises: given 
+equations of the form 
+f-po---} q0; ... ;pi---} qi; Ei(f), 
+(1) 
+where the pi's and qi's are functions not involvingf and 
+Ei(f) is a function expression involvingfi the laws of the 
+algebra will often permit the formal "extension" of this 
+equation by one more "clause" by deriving 
+Ei(f) -- pi+l ~ 
+qi+l; Ei+l(f) 
+(2) 
+which, by replacing El(f) in (1) by the right side of (2), 
+yields 
+f---po--* q0; ... ;pi+l ~ q~+l; Ei+l(f). 
+(3) 
+This formal extension may go on without limit. One 
+question the foundations must then answer is: when can 
+the least f satisfying (1) be represented by the infinite 
+expansion 
+f- po --~ qo; ... ; pn --~ qn; ... 
+(4) 
+in which the final clause involving f has been dropped, 
+Communications 
+August 1978 
+of 
+Volume 2 ! 
+the ACM 
+Number 8 
+so that we now have a solution whose right side is free 
+off's? Such solutions are helpful in two ways: first, they 
+give proofs of "termination" in the sense that (4) means 
+thatf:x is defined if and only if there is an n such that, 
+for every i less than n, pi: x = F and pn : X = T and qn : X 
+is defined. Second, (4) gives a case-by-case description 
+off that can often clarify its behavior. 
+The foundations for the algebra given in a subsequent 
+section are a modest start toward the goal stated above. 
+For a limited class of equations its "linear expansion 
+theorem" gives a useful answer as to when one can go 
+from indefinitely extendable equations like (l) to infinite 
+expansions like (4). For a larger class of equations, a 
+more general "expansion theorem" gives a less helpful 
+answer to similar questions. Hopefully, more powerful 
+theorems covering additional classes of equations can be 
+found. But for the present, one need only know the 
+conclusions of these two simple foundational theorems 
+in order to follow the theorems and examples appearing 
+in this section. 
+The results of the foundations subsection are sum- 
+marized in a separate, earlier subsection titled "expan- 
+sion theorems," without reference to f'Lxed point con- 
+cepts. The foundations subsection itself is placed later 
+where it can be skipped by readers who do not want to 
+go into that subject. 
+12.2 Some Laws of the Algebra of Programs 
+In the algebra of programs for an FP system variables 
+range over the set of functions of the system. The "op- 
+erations" of the algebra are the functional forms of the 
+system. Thus, for example, [f,g]oh is an expression of 
+the algebra for the FP system described above, in which 
+fi g, and h are variables denoting arbitrary functions of 
+that system. And 
+[fig]oh =_ [foh, goh] 
+is a law of the algebra which says that, whatever func- 
+tions one chooses for f, g, and h, the function on the left 
+is the same as that on the right. Thus this algebraic law 
+is merely a restatement of the following proposition 
+about any FP system that includes the functional forms 
+[f,g] and fog: 
+PROPOSITION: For all functions f, g, and h and all objects 
+x, ([f,g]oh):x =- [foh, goh]:x. 
+PROOF: 
+([fig]oh): x = [fig] :(h :x) 
+by definition of composition 
+= <f:(h:x), g:(h:x)> 
+by definition of construction 
+= <(foh):x, (goh):x> 
+by definition of composition 
+= [foh, goh]:x 
+by definition of construction [] 
+Some laws have a domain smaller than the domain 
+of all objects. Thus 1 o[f,g] -fdoes not hold for objects 
+x such that g:x = _1_. We write 
+definedog ; -~ lo [fig] --f 
+to indicate that the law (or theorem) on the right holds 
+within the domain of objects x for which definedog:x 
+= T. Where 
+Def defined - ~r 
+i.e. defined:x - x=± ---> ±; T. In general we shall write 
+a qualified functional equation: 
+p --->--->f- g 
+to mean that, for any object x, wheneverp:x = T, then 
+f:x=g:x. 
+Ordinary algebra concerns itself with two operations, 
+addition and multiplication; it needs few laws. The al- 
+gebra of programs is concerned with more operations 
+(functional forms) and therefore needs more laws. 
+Each of the following laws requires a corresponding 
+proposition to validate it. The interested reader will find 
+most proofs of such propositions easy (two are given 
+below). We first define the usual ordering on functions 
+and equivalence in terms of this ordering: 
+DEFINITIONf__<g iff for all objects x, eitherf:x = ±, or 
+f:x = g:x. 
+DEHNITIONf = g iff f<--g and g~_f. 
+It is easy to verify that _ is a partial ordering, thatf_g 
+means g is an extension off, and thatf-g ifff:x = g:x 
+for all objects x. We now give a list of algebraic laws 
+organized by the two principal functional forms in- 
+volved. 
+I 
+Composition and construction 
+1.1 
+[fl ..... fnlog = [flog, .... fnOg] 
+1.2 
+afo[g, ..... g.] -- [fog, ..... fogn] 
+1.3 
+/f°[gl ..... gn] 
+-f°[gl,/f°[g2 ..... gn]] 
+when n_~_2 
+=- fo[gl, fo[g2 ..... fo [gn-1, gn]---]] 
+/fo[g] -g 
+1.4 
+fo[Sc,g] - (bufx)og 
+1.5 
+1o [.fi ..... fn] --fl 
+s°[fl ..... fi ..... f~] _fi for any selector s, s_n 
+defmedofi (for all i~s, l_i_n) -->--> 
+SO[fi ..... fn] --fi 
+1.5.1 
+[fi°l ..... fnonlo[ga ..... gn] - [flog1 ..... fnogn] 
+1.6 
+tl°[fi] -- ~; and 
+tlo[J] ..... f~] _--< If2 ..... fn] 
+for n_>2 
+defmedof --~--~ tlo[fi] -= 
+and tlo[f ..... fn] -- L6 ..... f~] for n_>2 
+1.7 
+distlo[fi [g~ ..... gn]] -= [[f, gx] ..... [fign]] 
+defmedof-->--> distlo[f,~;] -~ 
+The analogous law holds for distr. 
+1.8 
+apndlo[fi [gl ..... gn]] ~- [figl ..... gn] 
+nullog-o--, apndlo[fig] - [f] 
+And so on for apndr, reverse, rotl, etc. 
+1.9 
+[ .... J_ .... ] - J_ 
+1.10 
+apndlo [fog, afoh] =- afoapndlo[g,h] 
+I.ll 
+pair & notonullol 
+> 
+apndlo[[ 1 o 1,2], distro[tlo 1,2]] - distr 
+625 
+Communications 
+August 1978 
+of 
+Volume 21 
+the ACM 
+Number 8 
+Wheref&g - ando[f,g]; 
+pair -= atom --~ F; eqo[length,2] 
+II 
+Composition and condition (right associated paren- 
+theses omitted) (Law II.2 is noted in Manna et al. [16], 
+p. 493.) 
+II.l 
+(p---~f', g)oh = poh --~ foh; goh 
+II.2 
+h o (p---~ g) -- p ~ h oj~ hog 
+II.3 
+oro[q,notoq] ---~---~ ando[p,q] ---~f, 
+ando[p,notoq] ~ g; h - p---> (q~f, g); h 
+II.3.1 p --~ (p--.~f; g); h =- p---~ f; h 
+III 
+Composition and miscellaneous 
+III.1 
+~of_< 
+de freed of_---~--->_ ~of= 
+III.l.l _[_of m fo± ==_ ± 
+IiI.2 
+foid = idof-=f 
+III.3 
+pair 
+> > lodistr- [lol,2] 
+also: 
+pair 
+> ~ lotl-2 
+etc. 
+IliA 
+a(fog) =- af o ag 
+III.5 
+nullog--,--, afog = 
+PROPOSITION 2 
+Pair & notonullo I --*--* 
+apndlo[[l 2, 2], distro[tlo 1, 2]] -= distr 
+where f± g is the function: ando[f, g], andf 2 -fof. 
+PROOF. We show that both sides produce the same result 
+when applied to any pair <x,y>, where x # ~, as per the 
+stated qualification. 
+CASE 1. X is an atom or i. Then distr: <x,y> = .k, since 
+x # $. The left side also yields ± when applied to <x,y>, 
+since tlo 1 :<x,y> = & and all functions are i-preserving. 
+CASE 2. x = <Xl ..... Xn>. Then 
+apndlo[[l 2, 2], distro[tlo 1, 2]]:<x, y> 
+= apndl: <<l:x, y>, distr: <tl:x, y>> 
+= apndl: <<xl,y>, $> = <<x~,y>> 
+if tl:x = q~ 
+= apndl: <<xl,y>, <<xz,y> ..... <Xn,y>>> 
+if tl:x # 
+= <<Xl ,y>, ... , <Xn,y>> 
+= distr: <x,y> 
+[] 
+IV 
+Condition and construction 
+IV.l 
+[fi ..... (p--~g;h) ..... fn] 
+- p---~ [fi ..... g ..... fn]; [fl ..... h ..... fi~] 
+IV.l.1 [fl ..... (pl --~ gl; ... ;pn ---> gn; h) ..... fm] 
+=pl 
+~ 
+[J~ ..... gl ..... fm]; 
+• .-;pn "-'> [fi ..... g. ..... fm]; Ill ..... h ..... fm] 
+This concludes the present list of algebraic laws; it is by 
+no means exhaustive, there are many others. 
+Proof of two laws 
+We give the proofs of validating propositions for laws 
+I. 10 and I. 11, which are slightly more involved than most 
+of the others. 
+PROPOSITION 
+1 
+apndl o [fog, afoh] ~ af o apndl o [g,h] 
+PROOF. We show that, for every object x, both of the 
+above functions yield the same result. 
+CASE 1. h:x is neither a sequence nor q,. 
+Then both sides yield ± when applied to x. 
+CASE 2. h:x = ~. Then 
+apndlo[fog, afoh]: x 
+= apndl: <fog:x, ~> = <f.'(g:x)> 
+afoapndlo[g,h ]: x 
+= afoapndl: <g:x, if> = af.'<g:x> 
+= <f.'(g:x)> 
+CASE 3. h:x = <yl ..... yn>. Then 
+apndlo[fog, afoh]: x 
+-- apndl: <fog:x, af." <yl ..... yn>> 
+----- <f." (g:x), f.'yl ..... f-'yn > 
+ofoapndlo[g,h ]: x 
+= afoapndl: <g:.x, <yl ..... 
+yn>> 
+= af'.<g:x, y~ ..... yn> 
+= <f." (g:x), f.'yl ..... J~yn> 
+[] 
+626. 
+12.3 Example: Equivalence of Two Matrix 
+Multiplication Programs 
+We have seen earlier the matrix multiplication pro- 
+gram: 
+Def MM - aaIP o adistl o distr o [1, transo2]. 
+We shall now show that its initial segment, MM', where 
+Def MM' - aaIP o adistl o distr, 
+can be defined recursively. (MM' "multiplies" a pair of 
+matrices after the second matrix has been transposed. 
+Note that MM', unlike MM, gives A_ for all arguments 
+that are not pairs.) That is, we shall show that MM' 
+satisfies the following equation which recursively defines 
+the same function (on pairs): 
+f-= null o 1 ~ q~; apndlo [alpodistlo [1 o 1, 2], fo [tlo 1, 2]]. 
+Our proof will take the form of showing that the follow- 
+ing function, R, 
+Def R m null o 1 --~ 6; 
+apndlo[aIpodistlo[l o 1, 2], MM'o[tlo 1, 2]] 
+is, for all pairs <x,y>, the same function as MM'. R 
+"multiplies" two matrices, when the first has more than 
+zero rows, by computing the first row of the "product" 
+(with aIpodistlo[lo 1, 2]) and adjoining it to the "prod- 
+uct" of the tail of the first matrix and the second matrix. 
+Thus the theorem we want is 
+pair 
+> ~MM'=R, 
+from which the following is immediate: 
+MM - MM' o [1, transo2] = R o [1, transo2]; 
+where 
+Def pair = atom --~ F; eqo]length, 2]. 
+THEOREM: pair--*--~ MM' = R 
+where 
+Communicat; ~ns 
+August 1978 
+of 
+Volume 21 
+the ACM 
+Number 8 
+Def MM' - aalP o adistl o distr 
+Def R -- nullo 1 ~ ~; 
+apndlo[alpodistlo[12, 2], MM'o[tlo 1, 2]] 
+PROOF. 
+CASE 1. pair&nullol 
+• ~MM'-=R. 
+pair&nullol 
+> >R--=6 
+bydefofR 
+pair & nullo 1 ---~---~ MM' - 
+since distr: <$,x> = $ 
+by def of distr 
+and aj~ = $ 
+by def of Apply to all. 
+And so: aaIP o adistl o distr: <~,x> = q~. 
+Thus pair & nullo 1 ---~---~ MM' - R. 
+CASE 2. pair & notonullo I ~ 
+MM' -- R. 
+pair & notonullo 1 ---~---~ R - R', 
+(l) 
+by def of R and R', where 
+Def R' - apndlo[alPodistlo[12, 2], MM'o[tlo 1, 2]]. 
+We note that 
+R' -- apndlo[fog, afoh] 
+where 
+f-= aIpodistl 
+g - [12, 21 
+h =- distro[tlo 1, 2] 
+af- a(alpodistl) = aalpoadistl 
+(by 111.4). 
+(2) 
+Thus, by I. 10, 
+R '= afoapndlo[g,h]. 
+(3) 
+Now apndlo[g,h] -= apndlo[[l 2, 2], distro[tlo 1, 2]], 
+thus, by I. 11, 
+pair & notonullo I ---~---> apndlo[g,h] = distr. 
+(4) 
+And so we have, by (1), (2), (3) and (4), 
+pair & notonullo 1 ---~---~ R - R' 
+- afodistr - aaIPoadistlodistr - MM'. 
+Case l and Case 2 together prove the theorem. 
+[] 
+12.4 Expansion Theorems 
+In the following subsections we shall be "solving" 
+some simple equations (where by a "solution" we shall 
+mean the "least" function which satisfies an equation). 
+To do so we shall need the following notions and results 
+drawn from the later subsection on foundations of the 
+algebra, where their proofs appear. 
+12.4.1 Expansion. Suppose we have an equation of 
+the form 
+f- 
+E(f) 
+(El) 
+where E(f) is an expression involvingf. Suppose further 
+that there is an infinite sequence of functionsfi for i = 0, 
+1, 2 ..... each having the following form: 
+fo-£ 
+J~+l mpo "-"> qo; .-. ;pi--~ qi; -1- 
+(E2) 
+627 
+where the pi's and qi's are particular functions, so that E 
+has the property: 
+E(fi) -fi+l for i = 0, 1, 2 .... 
+(E3) 
+Then we say that E is expansive and has the jS's as 
+approximating functions. 
+If E is expansive and has approximating functions as 
+in (E2), and iff is the solution of (El), thenf can be 
+written as the infinite expansion 
+f-po--* qo; ... ;pn ---> qn; ... 
+(E4) 
+meaning that, for any x, fix # ± iff there is an n _> 0 
+such that (a)pi:x = F for all i < n, and (b)pn:x = T, and 
+(c) qn:X # _l_. Whenf:x # ±, thenf.'x = qn:X for this n. 
+(The foregoing is a consequence of the "expansion theo- 
+rem".) 
+12.4.2 Linear expansion. A more helpful tool for 
+solving some equations applies when, for any function h, 
+E(h) - p0 ---, q0; El(h) 
+(LEI) 
+and there exist pi and qi such that 
+El(pi ---> qi; h) = pi+l ~ 
+qi+l; El(h) 
+for i = 0, 1, 2 .... 
+(LE2) 
+and 
+E,(i) - _[_. 
+(LE3) 
+Under the above conditions E is said to be linearly 
+expansive. If so, andf is the solution of 
+f ~- E(f) 
+(LE4) 
+then E is expansive and f can again be written as the 
+infinite expansion 
+f=-po--, q0;'... ;pn "-> qn; ... 
+(LE5) 
+using the pi's and qi's generated by (LE 1) and (LE2). 
+Although the pi's and qi's of (E4) or (LE5) are not 
+unique for a given function, it may be possible to find 
+additional constraints which would make them so, in 
+which case the expansion (LE5) would comprise a can- 
+onical form for a function. Even without uniqueness 
+these expansions often permit one to prove the equiva- 
+lence of two different function expressions, and they 
+often clarify a function's behavior. 
+12.5 A Recursion Theorem 
+Using three of the above laws and linear expansion, 
+one can prove the following theorem of moderate gen- 
+erality that gives a clarifying expansion for many recur- 
+sively defined functions. 
+RECURSION THEOREM: Letf be a solution of 
+f- p --~ g;, Q(f) 
+(1) 
+where 
+Q(k) - ho[i, koj] for any function k 
+(2) 
+and p, g, h, i, j are any given functions, then 
+Communications 
+August 1978 
+of 
+Volume 2 l 
+the ACM 
+Number 8 
+f-p---> 
+~,,poj-. Q(g); ... ;pojn'-> Q~(g); ... 
+(3) 
+(where Q~(g) is ho[i, Qn-a(g)°J], and j~ is joj n-1 for 
+n >__ 2) and 
+Qn(g) ___/h o[i, ioj, .... ioj n-a, gojn]. 
+(4) 
+PROOF. We verify thatp --> g;, Q(f) is linearly expansive. 
+Let p~, qn and k be any functions. Then 
+Q(pn ~ qn, k) 
+- 
+ho[i, (pn ---~ q~; k)°j] 
+by (2) 
+- ho[i, (pn°j--~ qn°j; koj)] 
+by II.l 
+- ho(p~oj---~ [i, qnOj]; [i, koj]) 
+by IV.l 
+- p~oj---~ ho[i, q~oj]; ho[i, koj] 
+by II.2 
+-p, oj-~ Q(q~); Q(k) 
+by (2) 
+(5) 
+Thus ifpo -p 
+and qo - g, then (5) gives px -poj and 
+ql = Q(g) and in general gives the following functions 
+satisfying (LE2) 
+pn -p°j n 
+and 
+qn -~ Qn(g). 
+(6) 
+Finally, 
+Q(i) -- ho[i, ioj] 
+- ho[i, &] 
+by III.l.l 
+= ho~ 
+by 1.9 
+~- i 
+by III.1.1. 
+(7) 
+Thus (5) and (6) verify (LE2) and (7) verifies (LE3), with 
+E1 -- Q. If we let E(--f) -= p ~ 
+g; Q(f), then we have 
+(LE1); thus E is linearly expansive. Since f is a solution 
+off-- E(f), conclusion (3) follows from (6) and (LE5). 
+Now 
+Q~(g) = ho[i, Qn-~(g)°J] 
+- ho[i, ho[ioj, .... ho[ioj n-~, goj n] ... ]] 
+by I. 1, repeatedly 
+-/ho[i, 
+ioj, .... iojn-l,'g°j ~] 
+by 1.3 
+(8) 
+Result (8) is the second conclusion (4). 
+[] 
+12.5.1 Example: correctness proof of a reeursive 
+factorial function. Letfbe a solution of 
+f-eq0--~ 
+]; ×o[id, fos] 
+where 
+Def s - -o[id, i] 
+(subtract 1). 
+Thenf satisfies the hypothesis of the recursion theorem 
+with p - eq0, g - L h - x, i - id, and j - s. Therefore 
+f- 
+eq0 --~ ]; ... ; eq0os n --~ Q~(h; ... 
+and 
+Q~()) _/× 
+o [id, idos ..... idos n-l, ]osn]. 
+NOW idos k -~ s k by III.2 and eq0os n --.--* los n - ] by 
+III.1, since eq0osn:x implies defmedosn:x; and also 
+eq0osn:x --- eq0: (x - n) - x=n. Thus if eq0osn: x = T, 
+then x = n and 
+QR(~): n = n × (n - 1) × ... × (n - (n - 1)) 
+x (l: (n - n)) = n!. 
+Using these results for ios ~, eq0os ~, and Qn(~) in the 
+previous expansion for f, we obtain 
+fix - x=O--~ 1; ... ; x=n 
+--~n×(n- 
+l) x...x 
+Ix l;... 
+Thus we have proved thatf terminates on precisely the 
+set of nonnegative integers and that it is the factorial 
+function thereon. 
+12.6 An Iteration Theorem 
+This is really a corollary of the recursion theorem. It 
+gives a simple expansion for many iterative programs. 
+ITERATION THEOREM: Letf be the solution (i.e., the least 
+solution) of 
+f - p---~ g;, hofok 
+then 
+f =_ p .-o g; pok ~ 
+hogok; ... ; pok n --o hnogok~; ... 
+PROOF. Let h' - ho2, i' =- id, f =- k, then 
+f -- p ---> g; h' o[i', foj'] 
+since ho2o[id, fok] - hofok 
+by 1.5 (id is defined except 
+for A_, and the equation holds for _1_). Thus the recursion 
+theorem gives 
+f_p___> g; ... ;pokn _.> Qnfg); ... 
+where 
+Qn(g) _ ho2o[id, Qn-l(g)ok] 
+=_ hoOn-t(g)ok =__ hnogok n 
+byI.5 
+[] 
+12.6.1 Example: Correctness proof for an iterative 
+factorial function. Letf be the solution of 
+f- 
+eq0ol --> 2;fo[so 1, ×] 
+where Def s - -o[id, i] (substract 1). We want to prove 
+thatf.'<x,l> = x! iff x is a nonnegative integer. Let p -= 
+eq0o 1, g - 2, h - id, k - [so 1, ×]. Then 
+f-p 
+--> g; hofok 
+and so 
+f-p--> 
+g; ... ;pokn ~ g°kn; ... 
+(1) 
+by the iteration theorem, since h n - id. We want to show 
+that 
+pair--->---> k n --- Jan, bn] 
+(2) 
+holds for every n _> 1, where 
+an - s% 1 
+(3) 
+bn -/× 
+° [s ~-1° 1 ..... so l, 1, 2] 
+(4) 
+Now (2) holds for n = 1 by definition of k. We assume 
+it holds for some n _ 
+1 and prove it then holds for 
+n + 1. Now 
+pair 
+~ ~ k n+l -= kok ~ =- [so 1, x]o[a,, b,] 
+(5) 
+since (2) holds for n. And so 
+628 
+Communications 
+August 1978 
+of 
+Volume 21 
+the ACM 
+Number 8 
+pair-->--* k ~+~ =- [soan, Xo[an, bn]] by 1.1 and 1.5 
+(6) 
+To pass from (5) to (6) we must check that whenever an 
+or bn yield £ in (5), so will the right side of (6). Now 
+soan =- s n+l° 1 -- an+l 
+(7) 
+×o[an, b.] -/× 
+° [s ~° 1, s n-lo 1 ..... so 1, 1, 2] 
+- b.+l by 1.3. 
+(8) 
+Combining (6), (7), and (8) gives 
+pair--->---> k ~+~ - [an+l, bn+l]. 
+(9) 
+Thus (2) holds for n = 1 and holds for n + 1 whenever 
+it holds for n, therefore, by induction, it holds for every 
+n _> 1. Now (2) gives, for pairs: 
+definedok n --,--. pok n = eq0o l o[an, bn] 
+- eq0oan = eq0os"o 1 
+(10) 
+defmedok n ---~--~ gok ~ 
+---- 2°[an, bn] --/× o [s~-X°l ..... sol, 1, 2] 
+(11) 
+(both use 1.5). Now (1) tells us thatf.'<x,l> is defined iff 
+there is an n such thatpoki:<x,l> = F for all i < n, and 
+pok":<x,l> = T, that .is, by (10), eq0os~:x = T, i.e., 
+x=n; and goId:<x,l> is defined, in which case, by (1 l), 
+f<x,l> 
+=/X:<I, 
+2 ..... x-I, x, 1> = n!, 
+which is what we set out to prove. 
+12.6.2 Example: proof of equivalence of two iterative 
+programs. In this example we want to prove that two 
+iteratively defined programs,f and g, are the same func- 
+tion. Letfbe the solution of 
+f=_pol ~ 2; hofo[kol, 2]. 
+Let g be the solution of 
+g - po 1 ~ 2; go[ko 1, ho2]. 
+Then, by the iteration theorem: 
+f - p0 ---, q0; ... ;pn ---) qn; ... 
+g --p6---> q6; ... " ' 
+'" 
+, p, ---) q ..... 
+where (letting r ° =- id for any r), for n = 0, 1 .... 
+pn -polo[kol, 
+2] n --polo[k%l, 2] 
+by 1.5.1 
+q, = h%2o[ko 1, 2] n -- h%2o[/Co 1, 2] 
+by 1.5.1 
+p'n-p°lo[k°l,h°2]n-p°lo[k%l,h%2] 
+by 1.5.1 
+q~ -= 2o[ko 1, ho2]" - 2o[/,3ol, hno2] 
+by 1.5.1. 
+Now, from the above, using 1.5, 
+defmedo2 ~ 
+p~ - po/Co 1 
+defmedoh%2 
+~ - p" - pok% 1 
+defmedo~o I 
+) • q~ = q~ - hno2 
+Thus 
+defmedohno2 
+) ) defmedo2 - f 
+defmedoh%2, 
+• • p~ - p" 
+and 
+f--po--> qo; ... ;pn---~ h%2; ... 
+g ---p~ ~ q~; ... ;p~ ~ h%2; ... 
+since pn and p" provide the qualification needed for q~ 
+-- q" - h%2. 
+Now suppose there is an x such thatfx # g:x. Then 
+there is an n such that pi:x = p¢:x = F for i < n, and p,:x 
+# p~:x. From (12) and (13) this can only happen when 
+h%2:x = ±. But since h is ±-preserving, hmo2:x = I for 
+all m _> n. Hencef:x = g:x = i by (14) and (15). This 
+contradicts the assumption that there is an x for which 
+fix # g:x. Hence f- 
+g. 
+This example (by J. H. Morris, Jr.) is treated more 
+elegantly in [16] on p. 498. However, some may find that 
+the above treatment is more constructive, leads one more 
+mechanically to the key questions, and provides more 
+insight into the behavior of the two functions. 
+12.7 Nonlinear Equations 
+The preceding examples have concerned "linear" 
+equations (in which the "unknown" function does not 
+have an argument involving itself). The question of the 
+existence of simple expansions that "solve .... quadratic" 
+and higher order equations remains open. 
+The earlier examples concerned solutions off-- E(f), 
+where E is linearly expansive. The following example 
+involves an E(f) that is quadratic and expansive (but 
+not linearly expansive). 
+12.7.1 Example: proof of idemlmtency ([16] p. 497). 
+Letfbe the solution of 
+f-= E(f) -p--~ id;f%h. 
+(1) 
+We wish to prove that f--f2. 
+We verify that E is 
+expansive (Section 12.4.1) with the following approxi- 
+(1) 
+mating functions: 
+j~-= i 
+(2a) 
+(2) 
+fn -- p ~ id; ... ; poh n-1 ----> hn-1; J. 
+for n > 0 
+(2b) 
+First we note that p ~ 
+fn - id and so 
+(3) 
+p°hi 
+> >fn°hi --- hi. 
+(3) 
+(4) 
+Now E(J~) -p --~ id; J_2oh ~-Jq, 
+(4) 
+and 
+(5) 
+E(fn) 
+(6) 
+- p ---> id;f~o(p ---> id; ... ;poh n-1 ~ 
+hn-12 j_)oh 
+(7) 
+-= p ~ id;fn°(p°h ~ h; ... ; p°h n --) h"; ± °h) 
+(8) 
+- p ..-.) id; poh --., f~oh; ... ; poh'~ ---~ f~ oh~; fn O i 
+- p---> id; p°h---~ h; ... ; p°h"--) hn; & 
+by(3) 
+-fn+~. 
+(5) 
+(9) 
+Thus E is expansive by (4) and (5); so by (2) and Section 
+(10) 
+12.4.1 (E4) 
+(11) 
+f = p --* id; ... ; poh ~ --* h"; .... 
+(6) 
+But (6), by the iteration theorem, gives 
+(12) 
+(13) 
+f- 
+p --) id;foh. 
+(7) 
+Now, ffp:x = T, thenf.'x = x =f2:x, by (1). Ifp:x = F, 
+then 
+(14) 
+(15) 
+fix = f2oh:x 
+by (1) 
+629 
+Communications 
+August 1978 
+of 
+Volume 21 
+the ACM 
+Number 8 
+= f'.(foh:x) =f.'(f.'x) 
+by (7) 
+= f2:x. 
+Ifp:x iS neither T nor F, thenf.'x -- ± =f2:x. Thus 
+f_f2. 
+12.8 Foundations for the Algebra of Programs 
+Our purpose in this section is to establish the validity 
+of the results stated in Section 12.4. Subsequent sections 
+do not depend on this one, hence it can be skipped by 
+readers who wish to do so. We use the standard concepts 
+and results from [16], but the notation used for objects 
+and functions, etc., will be that of this paper. 
+We take as the domain (and range) for all functions 
+the set O of objects (which includes ±) of a given FP 
+system. We take F to be the set of functions, and F to be 
+the set of functional forms of that FP system. We write 
+E(f) for any function expression involving functional 
+forms, primitive and defined functions, and the function 
+symbol f, and we regard E as a functional that maps a 
+function f into the corresponding function E(f). We 
+assume that all f ~ F are &-preserving and that all 
+functional forms in F correspond to continuous function- 
+als in every variable (e.g., [f, g] is continuous in bothf 
+and g). (All primitive functions of the FP system given 
+earlier are _L-preserving, and all its functional forms are 
+continuous.) 
+DEFINITIONS. Let E(f) be a function expression. Let 
+fo-=£ 
+fi+x ---- po ~ qo; ... ; pi ~ qi; J- 
+for i = 0, 1 .... 
+where pi, qi E F. Let E have the property that 
+E(fi)----fi+~ fori=0,1 ..... 
+Then E is said to be expansive with the approximating 
+functionsfi. We write 
+f=po---~ q0; ... ;pn---~ qn;-.. 
+to mean that f = limi{fi}, where the fi have the form 
+above. We call the right side an infinite expansion off. 
+We takef.'x to be defined iff there is an n _> 0 such that 
+(a) pi:x = F for all i < n, and (b) p,:x = T, and (c) qn:x 
+is defined, in which casef.'x = qn:X. 
+EXPANSION THEOREM: Let E(f) be expansive with ap- 
+proximating functions as above. Let f be the least func- 
+tion satisfying 
+f~ E(f). 
+Then 
+f-- p0 ~ q0; ... ; p, ~ qn; ... 
+PROOF. Since E is the composition of continuous func- 
+tionals (from F) involving only monotonic functions 
+(_l_-preserving functions from F) as constant terms, E is 
+continuous ([16] p. 493). Therefore its least fixed pointf 
+is limi{Ei(j-)} -= limi(fi} ([16] p. 494), which by defmition 
+is the above inf'mite expansion forf. 
+[] 
+630 
+DEFINITION. Let E(f) be a function expression satisfying 
+the following: 
+E(h) -po---~ qo; El(h) 
+for all h E F 
+(EEl) 
+where pi E F and qi E F exist such that 
+El(pi ~ qi; h) - pi+l ~ qi+l; El(h) 
+for all h E F and i = 0, 1 .... 
+(LE2) 
+and 
+EI(_T_) -= &. 
+(LE3) 
+Then E is said to be linearly expansive with respect to 
+these pi's and qi's. 
+LINEAR EXPANSION THEOREM: Let E be linearly expansive 
+with respect to pi and qi, i = 0, 1 ..... Then E is expansive 
+with approximating functions 
+fo- i 
+(1) 
+f,+l -po ~ q0; ... ;pi ~ qi; i. 
+(2) 
+PROOF. We want to show that E(fi) =-fi+~ for any i _ 0. 
+Now 
+E(fo) = p0---~ qo; E~ (i) ---- p0---~ q0; & --fi 
+(3) 
+by (LE1) (LE3) (1). 
+Let i > 0 be fLxed and let 
+fi = po ~ qo; W1 
+(4a) 
+W1 ~ px ~ ql; W2 
+(4b) 
+etc. 
+Wi--1 ~ pi-1 ~ 
+qi--1; ~. 
+(4-) 
+Then, for this i > 0 
+E(fi) - p0 ~ q0; El(fi) 
+by (LE1) 
+E~(fi) - pl ~ ql; El(Wa) by (LE2) and (4a) 
+El(w~) - p2 --~ q2; E~(w2) by (LE2) and (4b) 
+etc. 
+E~(wi-~) -= pi ~ qi; E~ (i) 
+by (LE2) and (4-) 
+- pi --~ qi; A- by (LE3) 
+Combining the above gives 
+E(fi) -f+l 
+for arbitrary i > 0, by (2). 
+(5) 
+By (3), (5) also holds for i -- 0; thus it holds for all i >__ 0. 
+Therefore E is expansive and has the required approxi- 
+mating functions. 
+[] 
+COROLLARY. If E is linearly expansive with respect to pi 
+and qi, i = 0, 1 ..... andfis the least function satisfying 
+f---- E(f) 
+(LE4) 
+then 
+f - po ~ qo; ... ; pn ---~ qn; .... 
+(LE5) 
+12.9 The Algebra of Programs for the Lambda Calculus 
+and for Combinators 
+Because Church's lambda calculus [5] and the system 
+of combinators developed by Sch6nfinkel and Curry [6] 
+Communications 
+August 1978 
+of 
+Volume 21 
+the ACM 
+Number 8 
+are the primary mathematical systems for representing 
+the notion of application of functions, and because they 
+are more powerful than FP systems, it is natural to 
+enquire what an algebra of programs based on those 
+systems would look like. 
+The lambda calculus and combinator equivalents of 
+FP composition, fog, are 
+hfgx.(f(gx)) --- B 
+where B is a simple combinator defined by Curry. There 
+is no direct equivalent for the FP object <x,y> in the 
+Church or Curry systems proper; however, following 
+Landin [14] and Burge [4], one can use the primitive 
+functions prefix, head, tail, null, and atomic to introduce 
+the notion of list structures that correspond to FP se- 
+quences. Then, using FP notation for lists, the lambda 
+calculus equivalent for construction is ~fgx.<fx,gx>. A 
+combinatory equivalent is an expression involving pret'Lx, 
+the null list, and two or more basic combinators. It is so 
+complex that I shall not attempt to give it. 
+If one uses the lambda calculus or combinatory 
+expressions for the functional forms fog and [fig] to 
+express the law 1.1 in the FP algebra, [f,g]oh = 
+[foh, goh], the result is an expression so complex that the 
+sense of the law is obscured. The only way to make that 
+sense clear in either system is to name the two function- 
+als: composition - B, and construction --- A, so that Bfg 
+=fog, and Afg --- [f,g]. Then 1.1 becomes 
+B(Afg)h -- A(Bfh)(Bgh), 
+which is still not as perspicuous as the FP law. 
+The point of the above is that if one wishes to state 
+clear laws like those of the FP algebra in either Church's 
+or Curry's system, one finds it necessary to select certain 
+functionals (e.g., composition and construction) as the 
+basic operations of the algebra and to either give them 
+short names or, preferably, represent them by some 
+special notation as in FP. If one does this and provides 
+primitives, objects, lists, etc., the result is an FP-like 
+system in which the usual lambda expressions or com- 
+binators do not appear. Even then these Church or Curry 
+versions of FP systems, being less restricted, have some 
+problems that FP systems do not have: 
+a) The Church and Curry versions accommodate 
+functions of many types and can define functions that 
+do not exist in FP systems. Thus, Bf is a function that 
+has no counterpart in FP systems. This added power 
+carries with it problems of type compatibility. For ex- 
+ample, in fog, is the range of g included in the domain 
+off? In FP systems all functions have the same domain 
+and range. 
+b) The semantics of Church's lambda calculus de- 
+pends on substitution rules that are simply stated but 
+whose implications are very difficult to fully compre- 
+hend. The true complexity of these rules is not widely 
+recognized but is evidenced by the succession of able 
+logicians who have published "proofs" of the Church- 
+Rosser theorem that failed to account for one or another 
+of these complexities. (The Church-Rosser theorem, or 
+Scott's proof of the existence of a model [22], is required 
+to show that the lambda calculus has a consistent seman- 
+tics.) The defmition of pure Lisp contained a related 
+error for a considerable period (the "funarg" problem). 
+Analogous problems attach to Curry's system as well. 
+In contrast, the formal (FFP) version of FP systems 
+(described in the next section) has no variables and only 
+an elementary substitution rule (a function for its name), 
+and it can be shown to have a consistent semantics by a 
+relatively simple fLxed-point argument along the lines 
+developed by Dana Scott and by Manna et al [16]. For 
+such a proof see McJones [18]. 
+12.10 Remarks 
+The algebra of programs outlined above needs much 
+work to provide expansions for larger classes of equations 
+and to extend its laws and theorems beyond the elemen- 
+tary ones given here. It would be interesting to explore 
+the algebra for an FP-like system whose sequence con- 
+structor is not _L-preserving (law 1.5 is strengthened, but 
+IV. 1 is lost). Other interesting problems are: (a) Find 
+rules that make expansions unique, giving canonical 
+forms for functions; (b) find algorithms for expanding 
+and analyzing the behavior of functions for various 
+classes of arguments; and (c) explore ways of using the 
+laws and theorems of the algebra as the basic rules either 
+of a formal, preexecution "lazy evaluation" scheme [9, 
+10], or of one which operates during execution. Such 
+schemes would, for example, make use of the law 
+1 o[f,g] _<fto avoid evaluating g:x. 
+13. Formal Systems for Functional Programming 
+(FFP Systems) 
+13.1 Introduction 
+As we have seen, an FP system has a set of functions 
+that depends on its set of primitive functions, its set of 
+functional forms, and its set of definitions. In particular, 
+its set of functional forms is fixed once and for all, and 
+this set determines the power of the system in a major 
+way. For example, if its set of functional forms is empty, 
+then its entire set of functions is just the set of primitive 
+functions. In FFP systems one can create new functional 
+forms. Functional forms are represented by object se- 
+quences; the first element of a sequence determines 
+which form it represents, while the remaining elements 
+are the parameters of the form. 
+The ability to define new functional forms in FFP 
+systems is one consequence of the principal difference 
+between them and FP systems: in FFP systems objects 
+are used to "represent" functions in a systematic way. 
+Otherwise FFP systems mirror FP systems closely. They 
+are similar to, but simpler than, the Reduction (Red) 
+languages of an earlier paper [2]. 
+We shall first give the simple syntax of FFP systems, 
+then discuss their semantics informally, giving examples, 
+and finally give their formal semantics. 
+631 
+Communications 
+August 1978 
+of 
+Volume 21 
+the ACM 
+Number 8 
+13.2 Syntax 
+We describe the set O of objects and the set E of 
+expre.,;sions of an FFP system. These depend on the 
+choice of some set A of atoms, which we take as given. 
+We assume that T (true), F (false), ff (the empty se- 
+quence), and # (default) belong to A, as well as "num- 
+bers" of various kinds, etc. 
+1) Bottom, ±, is an object but not an atom. 
+2) Every atom is an object. 
+3) Every object is an expression. 
+4) If 
+x~ ..... xn 
+are 
+objects 
+[expressions], 
+then 
+<xi ..... x~> is an object [resp., expression] called a 
+sequence (of length n) for n _> 1. The object [expression] 
+xi for 1 ___ i __% n, is the ith element of the sequence 
+<xl ..... xl ..... xn>. (ff is both a sequence and an atom; 
+its length is 0.) 
+5) If x and y are expressions, then (x:y) is an expression 
+called an application, x is its operator andy is its operand. 
+Both are elements of the expression. 
+6) If x = <xl ..... Xn> and if one of the elements of x is 
+_1_, then x = .1_. That is, <..., ± .... > = ±. 
+7) All objects and expressions are formed by finite use 
+of the above rules. 
+A subexpression of an expression x is either x itself or 
+a subexpression of an element of x. An FFP object is an 
+expression that has no application as a subexpression. 
+Given the same set of atoms, FFP and FP objects are 
+the same. 
+13.3 Informal Remarks About FFP Semantics 
+13.3.1 The meaning of expressions; the semantic 
+function p. Every FFP expression e has a meaning, #e, 
+which is always an object; #e is found by repeatedly 
+replacing each innermost application in e by its meaning. 
+If this process is nonterminating, the meaning of e is ±. 
+The meaning of an innermost application (x:y) (since it 
+is innermost, x and y must be objects) is the result of 
+applying the function represented by x to y, just as in FP 
+systems, except that in FFP systems functions are rep- 
+resented by objects, rather than by function expressions, 
+with atoms (instead of function symbols) representing 
+primitive and defined functions, and with sequences 
+representing the FP functions denoted by functional 
+forms. 
+The association between objects and the functions 
+they represent is given by the representation function, P, 
+of the FFP system. (Both p and # belong to the descrip- 
+tion of the system, not the system itself.) Thus if the 
+atom NULL represents the FP function null, then 
+pNULL = null and the meaning of (NULL:A) is 
+#(NULL:A) = (pNULL):A = null:A = F. 
+From here on, as above, we use the colon in two senses. 
+When it is between two objects, as in (NULL:A), it 
+identifies an FFP application that denotes only itself; 
+when it comes between a function and an object, as in 
+(oNULL):A or null:A, it identifies an FP-like application 
+that denotes the result of applying the function to the 
+object. 
+The fact that FFP operators are objects makes pos- 
+632 
+sible a function, apply, which is meaningless in FP 
+systems: 
+apply:<x,y> = (x:y). 
+The result of apply:<x,y>, namely (x:y), is meaningless 
+in FP systems on two levels. First, (x:y) is not itself an 
+object; it illustrates another difference between FP and 
+FFP systems: some FFP functions, like apply, map ob- 
+jects into expressions, not directly into objects as FP 
+functions do. However, the meaning of apply:<x,y> is 
+an object (see below). Second, (x:y) could not be even an 
+intermediate result in an FP system; it is meaningless in 
+FP systems since x is an object, not a function and FP 
+systems do not associate functions with objects. Now if 
+APPLY represents 
+apply, 
+then 
+the 
+meaning 
+of 
+(APPL Y:<NULL,A>) is 
+#(APPL Y:<NULL,A>) 
+= #((pAPPL Y):<NULL, A>) 
+= #(apply:<NULL,A>) 
+= It(NULL:A) = #((pNULL):A) 
+= #(null:A) = #F = F. 
+The last step follows from the fact that every object is its 
+own meaning. Since the meaning function/t eventually 
+evaluates 
+all 
+applications, 
+one 
+can 
+think 
+of 
+apply<NULL,A> as yielding F even though the actual 
+result is (NULL:A). 
+13.3.2 How objects represent functions; the repre- 
+sentation function #. As we have seen, some atoms 
+(primitive atoms) will represent the primitive functions of 
+the system. Other atoms can represent defined functions 
+just as symbols can in FP systems. If an atom is neither 
+primitive nor defined, it represents 1, the function which 
+is .1_ everywhere. 
+Sequences also represent functions and are analogous 
+to the functional forms of FP. The function represented 
+by a sequence is given (recursively) by the following rule. 
+Metacomposition rule 
+(p<X1 ..... Xn>):y = (pXl):<<Xl ..... Xn>, y>, 
+where the xi's and y are objects. Here pxl determines 
+what 
+functional 
+form 
+<Xl, ..., xn> 
+represents, 
+and x2 ..... Xn are the parameters of the form (in FFP, xl 
+itself can also serve as a parameter). Thus, for example, 
+let Def oCONST- 
+2ol; then <CONST, x> in FFP 
+represents the FP functional form ~, since, by the meta- 
+composition rule, ify ~ .1_, 
+(o<CONST, x>):y = (pCONST):<<CONST, x>,y> 
+= 20 I:<<CONST, x>,y> = x. 
+Here we can see that the first, controlling, operator of a 
+sequence or form, CONST in this case, always has as its 
+operand, after metacomposition, a pair whose first ele- 
+ment is the sequence itseff and whose second element is 
+the original operand of the sequence, y in this case. The 
+controlling operator can then rearrange and reapply the 
+elements of the sequence and original operand in a great 
+variety of ways. The significant point about metacom- 
+Communications 
+August 1978 
+of 
+Volume 21 
+the ACM 
+Number 8 
+position is that it permits the definition of new functional 
+forms, in effect, merely by defining new functions. It also 
+permits one to write recursive functions without a deft- 
+nition. 
+We give one more example of a controlling function 
+for a functional form: Def pCONS = aapplyotlodistr. 
+This defmition results in <CONS,fx ..... fn>--where the 
+fi are objects--representing the same function as 
+[pfl ..... #fn]. The following shows this. 
+(p<CONS,fl ..... fn>):X 
+= (pCONS):<<CONS,f~ ..... fn >,x> 
+by metacomposition 
+= aapplyotlodistr:<<CONS, fi ..... fn>,X> 
+by def of pCONS 
+= aapply:<<fi,x> . . . . .  <fn,X>> 
+by def of tl and distr and o 
+= <apply:<fi,x> ..... apply:<fn,x>> 
+by def of a 
+- <(fi:x) ..... (fn:X)> 
+by def of apply. 
+In evaluating the last expression, the meaning function 
+# will produce the meaning of each application, giving 
+pfi:x as the ith element. 
+Usually, in describing the function represented by a 
+sequence, we shall give its overall effect rather than show 
+how its controlling operator achieves that effect. Thus 
+we would simply write 
+(p<CONS, fl ..... fn>):x = <(fl:x) ..... (fn:X)> 
+instead of the more detailed account above. 
+We need a controlling operator, COMP, to give us 
+sequences representing the functional form composition. 
+We take pCOMP to be a primitive function such that, 
+for all objects x, 
+(p<COMP, fi ..... fn>):X 
+= (jq:(f2:(.-- :(fn:X)...))) 
+for n _> 1. 
+(I am indebted to Paul McJones for his observation that 
+ordinary composition could be achieved by this primitive 
+function rather than by using two composition rules in 
+the basic semantics, as was done in an earlier paper 
+[21.) 
+Although FFP systems permit the definition and 
+investigation of new functional forms, it is to be expected 
+that most programming would use a fixed set of forms 
+(whose controlling operators are primitives), as in FP, so 
+that the algebraic laws for those forms could be em- 
+ployed, and so that a structured programming style could 
+be used based on those forms. 
+In addition to its use in defining functional forms, 
+metacomposition can be used to create recursive func- 
+tions directly without the use of recursive definitions of 
+the form Deff =- E(f). For example, if pMLAST - 
+nullotl*2 --+ lo2; applyo[1, tlo2], then p<MLAST> 
+- 
+last, where last:x -- x = <xl, ..., xn> --+ Xn; 3_. Thus the 
+operator <MLAST>.works as follows: 
+p(<MLA ST>:<A,B>) 
+-- Ix(pMLAST:<<MLAST>,<A,B>>) 
+by metacomposition 
+= #(applyo[1, tlo2]:<<MLAST>,<A,B>>) 
+= #(apply:<<MLAST>,<B>>) 
+= #(<MLAST>:<B>) 
+= p(pMLAST:<<MLAST>,<B>>) 
+= ~(lo2:<<MLAST>,<B>>) 
+mn. 
+13.3.3 Summary of the properties of p and p. So far 
+we have shown how p maps atoms and sequences into 
+functions and how those functions map objects into 
+expressions. Actually, p and all FFP functions can be 
+extended so that they are defined for all expressions. 
+With such extensions the properties of p and/~ can be 
+summarized as follows: 
+1) # E [expressions ~ objects]. 
+2) If x is an object,/~x = x. 
+3) If e is an expression and e = <el ..... en>, then 
+/~e -- <#el, ...,/ten>. 
+4) p E [expressions ---> ]expressions ---> expressions]]. 
+5) For any expression e, pe --- p~e). 
+6) If x is an object and e an expression, then 
+px:e = px:~e). 
+7) If x and y are objects, then #(x:y) = #(px:y). In 
+words: the meaning of an FFP application (x:y) is found 
+by applying px, the function represented by x, to y and 
+then finding the meaning of the resulting expression 
+(which is usually an object and is then its own meaning). 
+13.3.4 Cells, fetching, and storing. For a number of 
+reasons it is convenient to create functions which serve 
+as names. In particular, we shall need this facility in 
+describing the semantics of definitions in FFP systems. 
+To introduce naming functions, that is, the ability to 
+fetch the contents of a cell with a given name from a 
+store (a sequence of cells) and to store a cell with given 
+name and contents in such a sequence, we introduce 
+objects called cells and two new functional forms, fetch 
+and store. 
+Cells 
+A cell is a triple <CELL, name, contents>. We use this 
+form instead of the pair <name, contents> so that ceils 
+can be distinguished from ordinary pairs. 
+Fetch 
+The functional form fetch takes an object n as its 
+parameter (n is customarily an atom serving as a name); 
+it is written ~'n (read "fetch n"). Its definition for objects 
+n and x is 
+"rn:x --- x = ~ ---> #; atom:x ~ 3-; 
+(l:x) = <CELL,n,c>---> c; l'notl:x, 
+where # is the atom "default." Thus ~'n (fetch n) applied 
+to a sequence gives the contents of the first cell in the 
+sequence whose name is n; If there is no cell named n, 
+the result is default, #. Thus l'n is the name function for 
+the name n. (We assume that pFETCH is the primitive 
+function such that p<FETCH, n> -- Tn. Note that Tn 
+simply passes over elements in its operand that are not 
+cells.) 
+633 
+Communications 
+August 1978 
+of 
+Volume 2 I 
+the ACM 
+Number 8 
+Store and push, pop, purge 
+Like fetch, store takes an object n as its parameter; it 
+is written J,n ("store n"). When applied to a pair <x,y>, 
+where y is a sequence, ~,n removes the first cell named n 
+from y, if any, then creates a new cell named n with 
+contents x and appends it to y. Before defining ~n (store 
+n) we shall specify four auxiliary functional forms. 
+(These can be used in combination with fetch n and store 
+n to obtain multiple, named, LIFO stacks within a 
+storage sequence.) Two of these auxiliary forms are 
+specified by recursive functional equations; each takes 
+an object n as its parameter. 
+(cellname n) - atom --, F; 
+eqo[length, 3] ---> eqo[[CELL, h], [1, 2]]; P 
+(push n) - pair -->apndlo[[CELL, h, 1], 2]; ± 
+(pop n) - null --> qb; 
+(cellname n)o 1 ---> tl; apndlo [1, (pop n)otl] 
+(purge n) =- null ---> ~; (cellname n)o 1 ---> (purge n)otl; 
+apndlo[1, (purge n)otl] 
+~,n - pair --> (push n)o[1, (pop n)o2]; £ 
+The above functional forms work as follows. For 
+x # ±, (cellname n):x is Tifx is a cell named n, otherwise 
+it is F. (pop n):y removes the first cell named n from a 
+sequence y; (purge n):y removes all cells named n from 
+y. (push n):<x,y> puts a cell named n with contents 
+x 
+at 
+the 
+head 
+of 
+sequence 
+y; 
+~n:<x,y> 
+is 
+(push n):<x, (pop n):y>. 
+(Thus (push n):<x,y> = y' pushes x onto the top of 
+a "stack" named n in y'; x can be read by ~n:y' = x and 
+can be removed by (pop n):y'; thus Tno(pop n):y' is the 
+element below x in the stack n, provided there is more 
+than one cell named n in y'.) 
+13.3.5 Definitions in FFP systems. The semantics of 
+an FFP system depends on a fixed set of definitions D 
+(a sequence of cells), just as an FP system depends on its 
+informally given set of def'mitions. Thus the semantic 
+function It depends on D; altering D gives a new It' that 
+reflects the altered definitions. We have represented D 
+as an object because in AST systems (Section 14) we 
+shall want to transform D by applying functions to it and 
+to fetch data from it--in addition to using it as the source 
+of function definitions in FFP semantics. 
+If <CELL, n,c> is the first cell named n in the se- 
+quence D (and n is an atom) then it has the same effect 
+as the FP definition Def n - pc, that is, the meaning of 
+(n:x) will be the same as that of Oc:x. Thus for example, 
+if <CELL, CONST,<COMP,2,1>> is the first cell in D 
+named 
+CONST, 
+then it has the same effect as 
+Def CONST =- 201, and the FFP system with that D 
+would fred 
+It(CONST:<<x,y>,z>) = y 
+and consequently 
+It(<CONST, A>:B) = A. 
+In general, in an FFP system with definitions D, the 
+meaning of an application of the form (atom:x) is de- 
+634 
+pendent on D; if Tatom:D # # (that is, atom is defined 
+in D) then its meaning is It(c:x), where c = Tatom:D, the 
+contents of the first cell in D named atom. If ~atom:D 
+= #, then atom is not defined in D and either atom is 
+primitive, i.e. the system knows how to compute patom:x, 
+and It(atom:x) = It(patom:x), otherwise It(atom:x) = ±. 
+13.4 Formal Semantics for FFP Systems 
+We assume that a set A of atoms, a set D of defini- 
+tions, a set P C A of primitive atoms and the primitive 
+functions they represent have all been chosen. We as- 
+sume that pa is the primitive function represented by a 
+if a belongs to P, and that pa = ± if a belongs to Q, the 
+set of atoms in A-P that are not defined in D. Although 
+p is defined for all expressions (see 13.3.3), the formal 
+semantics uses its definition only on P and Q. The 
+functions that p assigns to other expressions x are im- 
+plicitly determined and applied in the following semantic 
+rules for evaluating #(x:y). The above choices of A and 
+D, and of P and the associated primitive functions de- 
+termine the objects, expressions, and the semantic func- 
+tion #n for an FFP system. (We regard D as fixed and 
+write It for ltD.) We assume D is a sequence and that ~'y:D 
+can be computed (by the function ~'y as given in Section 
+13.3.4) for any atomy. With these assumptions we define 
+# as the least fixed point of the functional % where the 
+function ,it is defined as follows for any function # (for 
+all expressions x, xi, y, yi, z, and w): 
+(~'it)x = x ~ A ~ x; 
+x = <xl, ..., Xn> --"> <gXl ..... ItXn>; 
+x = 
+(y:z) 
+--, 
+(y E A & (~'y:D) = # --~ It((py)(itz)); 
+y E A & (l'y:D) -- w ~ #(w:z); 
+y = <yl ..... yn>---> It(yl:<y,z>); It(ity:z)); ± 
+The above description of It expands the operator of an 
+application by definitions and by metacomposition be- 
+fore evaluating the operand. It is assumed that predicates 
+like "x ~ A" in the above definition of ~'# are Z- 
+preserving (e.g., "± E A" has the value ±) and that the 
+conditional expression itself is also ±-preserving. Thus 
+(Tit)± - £ and (Tit)(±:z) - ±. This concludes the seman- 
+tics of FFP systems. 
+14. Applicative State Transition Systems 
+(AST Systems) 
+14.1 Introduction 
+This section sketches a class of systems mentioned 
+earlier as alternatives to von Neumann systems. It must 
+be emphasized again that these applicative state transi- 
+tion systems are put forward not as practical program- 
+ming systems in their present form, but as examples of 
+a class in which applicative style programming is made 
+available in a history sensitive, but non-von Neumann 
+system. These systems are loosely coupled to states and 
+depend on an underlying applicative system for both 
+Communications 
+August 1978 
+of 
+Volume 2 l 
+the ACM 
+Number 8 
+their programming language and the description of their 
+state transitions. The underlying applicative system of 
+the AST system described below is an FFP system, but 
+other applicative systems could also be used. 
+To understand the reasons for the structure of AST 
+systems, it is helpful first to review the basic structure of 
+avon Neumann system, Algol, observe its limitations, 
+and compare it with the structure of AST systems. After 
+that review a minimal AST system is described; a small, 
+top-down, self-protecting system program for file main- 
+tenance and running user programs is given, with direc- 
+tions for installing it in the AST system and for running 
+an example user program. The system program uses 
+"name functions" instead of conventional names and the 
+user may do so too. The section concludes with subsec- 
+tions discussing variants of AST systems, their general 
+properties, and naming systems. 
+14.2 The Structure of Algol Compared to That of AST 
+Systems 
+An Algol program is a sequence of statements, each 
+representing a transformation of the Algol state, which 
+is a complex repository of information about the status 
+of various stacks, pointers, and variable mappings of 
+identifiers onto values, etc. Each statement communi- 
+cates with this constantly changing state by means of 
+complicated protocols peculiar to itself and even to its 
+different parts (e.g., the protocol associated with the 
+variable x depends on its occurrence on the left or right 
+of an assignment, in a declaration, as a parameter, etc.). 
+It is as if the Algol state were a complex "store" that 
+communicates with the Algol program through an enor- 
+mous "cable" of many specialized wires. The complex 
+communications protocols of this cable are fixed and 
+include those for every statement type. The "meaning" 
+of an Algol program must be given in terms of the total 
+effect of a vast number of communications with the state 
+via the cable and its protocols (plus a means for identi- 
+fying the output and inserting the input into the state). 
+By comparison with this massive cable to the Algol 
+state/store, the cable that is the von Neumann bottleneck 
+of a computer is a simple, elegant concept. 
+Thus Algol statements are not expressions represent- 
+ing state-to-state functions that are built up by the use of 
+orderly combining forms from simpler state-to-state 
+functions. Instead they are complex messages with con- 
+text-dependent parts that nibble away at the state. Each 
+part transmits information to and from the state over the 
+cable by its own protocols. There is no provision for 
+applying general functions to the whole state and thereby 
+making large changes in it. The possibility of large, 
+powerful transformations of the state S by function 
+application, S---, f.'S, is in fact inconceivable in the von 
+Neumann--cable and protocol--context: there could be 
+no assurance that the new state f:S would match the 
+cable and its fLxed protocols unless f is restricted to the 
+tiny changes allowed by the cable in the first place. 
+We want a computing system whose semantics does 
+not depend on a host of baroque protocols for commu- 
+nicating with the state, and we want to be able to make 
+large transformations in the state by the application of 
+general functions. AST systems provide one way of 
+achieving these goals. Their semantics has two protocols 
+for getting information from the state: (1) get from it the 
+definition of a function to be applied, and (2) get the 
+whole state itself. There is one protocol for changing the 
+state: compute the new state by function application. 
+Besides these communications with the state, AST se- 
+mantics is applicative (i.e. FFP). It does not depend on 
+state changes because the state does not change at all 
+during a computation. Instead, the result of a computa- 
+tion is output and a new state. The structure of an AST 
+state is slightly restricted by one of its protocols: It must 
+be possible to identify a definition (i.e. cell) in it. Its 
+structure--it is a sequence--is far simpler than that of 
+the Algol state. 
+Thus the structure of AST systems avoids the com- 
+plexity and restrictions of the von Neumann state (with 
+its communications protocols) while achieving greater 
+power and freedom in a radically different and simpler 
+framework. 
+14.3 Structure of an AST System 
+An AST system is made up of three elements: 
+1) An applicative subsystem (such as an FFP system). 
+2) A state D that is the set of definitions of the 
+applicative subsystem. 
+3) A set of transition rules that describe how inputs 
+are transformed into outputs and how the state D is 
+changed. 
+The programming language of an AST system is just 
+that of its applicative subsystem. (From here on we shall 
+assume that the latter is an FFP system.) Thus AST 
+systems can use the FP programming style we have 
+discussed. The applicative subsystem cannot change the 
+state D and it does not change during the evaluation of 
+an expression. A new state is computed along with output 
+and replaces the old state when output is issued. (Recall 
+that a set of definitions D is a sequence of cells; a cell 
+name is the name of a defined function and its contents 
+is the defining expression. Here, however, some cells 
+may name data rather than functions; a data name n will 
+be used in l'n (fetch n) whereas a function name will be 
+used as an operator itself.) 
+We give below the transition rules for the elementary 
+AST system we shall use for examples of programs. 
+These are perhaps the simplest of many possible transi- 
+tion rules that could determine the behavior of a great 
+variety of AST systems. 
+14.3.1 Transition rules for an elementary AST sys- 
+tem. When the system receives an input x, it forms the 
+application (SYSTEM:x) and then proceeds to obtain its 
+meaning in the FFP subsystem, using the current state 
+D as the set of definitions. SYSTEM is the distinguished 
+name of a function defined in D (i.e. it is the "system 
+program"). Normally the result is a pair 
+635 
+Communications 
+August 1978 
+of 
+Volume 21 
+the ACM 
+Number 8 
+#(SYSTEM:x) = <o,d> 
+where o is the system output that results from input x 
+and d becomes the new state D for the system's next 
+input. Usually d will be a copy or partly changed copy 
+of the old state. If#(SYSTEM:x) is not a pair, the output 
+is an error message and the state remains unchanged. 
+14.3.2 Transition rules: exception conditions and 
+startup. Once an input has been accepted, our system 
+will not accept another (except <RESET, x>, see below) 
+until an output has been issued and the new state, if any, 
+installed. The system will accept the input <RESET, x> 
+at any time. There are two cases: (a) If SYSTEM is 
+defmed in the current state D, then the system aborts its 
+current computation without altering D and treats x as 
+a new normal input; (b) if SYSTEM is not defined in D, 
+then x is appended to D as its first element. (This ends 
+the complete description of the transition rules for our 
+elementary AST system.) 
+If SYSTEM is defmed in D it can always prevent 
+any change in its own definition. If it is not defined, 
+an ordinary input x will produce #(SYSTEM:x) = & 
+and the transition rules yield an error message and 
+an unchanged state; on the other hand, the input 
+<RESET, <CELL,SYSTEM, s>> will define SYSTEM 
+to be s. 
+14.3.3 Program access to the state; the function 
+O DEF$. Our FFP subsystem is required to have one new 
+primitive function, defs, named DEFS such that for any 
+object x ~ ±, 
+defs:x = pDEFS:x = D 
+where D is the current state and set of definitions of the 
+AST system. This function allows programs access to the 
+whole state for any purpose, including the essential one 
+of computing the successor state. 
+14.4 An Example of a System Program 
+The above description of our elementary AST system, 
+plus the FFP subsystem and the FP primitives and 
+functional forms of earlier sections, specify a complete 
+history-sensitive computing system. Its input and output 
+behavior is limited by its simple transition rules, but 
+otherwise it is a powerful system once it is equipped with 
+a suitable set of definitions. As an example of its use we 
+shall describe a small system program, its installation, 
+and operation. 
+Our example system program will handle queries and 
+updates for a file it maintains, evaluate FFP expressions, 
+run general user programs that do not damage the file or 
+the state, and allow authorized users to change the set of 
+definitions and the system program itself. All inputs it 
+accepts will be of the form <key, input> where key is a 
+code that determines both the input class (system-change, 
+expression, program, query, update) and also the identity 
+of the user and his authority to use the system for the 
+given input class. We shall not specify a format for key. 
+Input is the input itself, of the class given by key. 
+14.4.1 General plan of the system program. The state 
+636 
+D of our AST system will contain the definitions of all 
+nonprimitive functions needed for the system program 
+and for users' programs. (Each definition is in a cell of 
+the sequence D.) In addition, there will be a cell in D 
+named FILE with contents file, which the system main- 
+tains. We shall give FP definitions of functions and later 
+show how to get them into the system in their FFP form. 
+The transition rules make the input the operand of 
+SYSTEM, but our plan is to use name-functions to refer 
+to data, so the first thing we shall do with the input is to 
+create two cells named KEY and INPUT with contents 
+key and input and append these to D. This sequence of 
+cells has one each for key, input, and -file; it will be the 
+operand of our main function called subsystem. Subsys- 
+tem can then obtain key by applying ~KEY to its oper- 
+and, etc. Thus the definition 
+Def system -- pair--> subsystemoj~ [NONPAIR, defs] 
+where 
+f =- ~INPUTo[2, ~KEyoI1, defs]] 
+causes the system to output NONPAIR and leave the 
+state unchanged if the input is not a pair. Otherwise, if 
+it is <key, input>, then 
+f'.<key, input> = <<CELL,INPUT, input>, 
+<CELL,KEY, key>, dl ..... d.> 
+where D =<dl ..... dn>. (We might have constructed a 
+different operand than the one above, one with just three 
+cells, for key, input, and file. We did not do so because 
+real programs, unlike subsystem, would contain many 
+name functions referring to data in the state, and this 
+"standard" construction of the operand would suffice 
+then as well.) 
+14.4.2 The "subsystem" function. We now give the 
+FP definition of the function subsystem, followed by 
+brief explanations of its six cases and auxiliary functions. 
+Def subsystem --- 
+is-system-changeo T K E Y ---, [report-change, apply ]o[ ~ l N P U T, defs]; 
+is-expressiono~'KE Y --~ ['[ I N P U T, clefs]; 
+is-programo T KE Y--~ system-checkoapplyo[ ~ lNP UT, defs]; 
+is-queryo'~KE Y --> [query-response o H1NPUT, T FILE], clefs]; 
+is-update o I"KE Y --, 
+[report-update, J, FILEo[update, defs]] 
+o[~INPUT, TF1LE]; 
+[report-erroro[~KEY,'~lNPUT], defs]. 
+This subsystem has five "p ~ j~" clauses and a final 
+default function, for a total of six classes of inputs; the 
+treatment of each class is given below. Recall that the 
+operand of subsystem is a sequence of cells containing 
+key, input, and file as well as all the defined functions of 
+D, and that subsystem:operand =<output, newstate>. 
+Default inputs. In this case the result is given by the 
+last (default) function of the definition when key does 
+not satisfy any of the preceding clauses. The output is 
+report-error: <key, input>. The state is unchanged since 
+it is given by defs:operand = D. (We leave to the reader's 
+imagination what the function report-error will generate 
+from its operand.) 
+Communications 
+August 1978 
+of 
+Volume 21 
+the ACM 
+Number 8 
+System-change inputs. When 
+is-system-change o ~ KE Y:operand = 
+is-system-change:key = T, 
+key specifies that the user is authorized to make a system 
+change and that input = ~INPUT:operand represents a 
+functionfthat is to be applied to D to produce the new 
+statef:D. (Of coursef:D can be a useless new state; no 
+constraints are placed on it.) The output is a report, 
+namely report-change: <input,D>. 
+Expression inputs. When is-expression:key = T, the 
+system understands that the output is to be the meaning 
+of the FFP expression input; ~INPUT:operand produces 
+it and it is evaluated, as are all expressions. The state is 
+unchanged. 
+Program inputs and system self-protection. When is- 
+program:key = T, both the output and new state are 
+given by (pinput):D =<output, newstate>. If newstate 
+contains file in suitable condition and the definitions of 
+system and other protected functions, then 
+system-check: <output,newstate> =<output, newstate>. 
+Otherwise, system-check: <output, newstate> 
+= <error-report,D>. 
+Although program inputs can make major, possibly dis- 
+astrous changes in the state when it produces newstate, 
+system-check can use any criteria to either allow it to 
+become the actual new state or to keep the old. A more 
+sophisticated system-check might correct only prohibited 
+changes in the state. Functions of this sort are possible 
+because they can always access the old state for compar- 
+ison with the new state-to-be and control what state 
+transition will finally be allowed. 
+File query inputs. If is-query:key -- T, the function 
+query-response is designed to produce the output = 
+answer to the query input from its operand <input~file>. 
+File update inputs. If is-update:key = T, input speci- 
+fies a f'de transaction understood by the function update, 
+which computes updated-file = update: <input,file>. Thus 
+~FILE has <updated-file, D> as its operand and thus 
+stores the updated file in the cell FILE in the new state. 
+The rest of the state is unchanged. The function report- 
+update 
+generates 
+the 
+output 
+from 
+its 
+operand 
+<input,file>. 
+14.4.3 Installing the system program. We have de- 
+scribed the function called system by some FP definitions 
+(using auxiliary functions whose behavior is only indi- 
+cated). Let us suppose that we have FP definitions for 
+all the nonprimitive functions required. Then each defi- 
+nition can be converted to give the name and contents of 
+a cell in D (of course this conversion itself would be done 
+by a better system). The conversion is accomplished by 
+changing each FP function name to its equivalent atom 
+(e.g., update becomes UPDA TE) and by replacing func- 
+tional forms by sequences whose first member is the 
+controlling function for the particular form. Thus 
+~FILEo[update, defs] is converted to 
+<COMP,<STORE, FILE>, 
+<CONS, UPDATE, DEFS>>, 
+637 
+and the FP function is the same as that represented by 
+the FFP object, provided that update = pUPDA TE and 
+COMP, STORE, and CONS represent the controlling 
+functions for composition, store, and construction. 
+All FP definitions needed for our system can be 
+converted to cells as indicated above, giving a sequence 
+Do. We assume that the AST system has an empty state 
+to start with, hence SYSTEM is not defined. We want to 
+define SYSTEM initially so that it will install its next 
+input as the state; having done so we can then input Do 
+and all our definitions will be installed, including our 
+program--system--itseff. To accomplish this we enter 
+our first input 
+<RESET, <CELL, SYSTEM, loader>> 
+where loader = <CONS, <CONST, DONE>,ID>. 
+Then, by the transition rule for RESETwhen SYSTEM 
+is undefined in D, the cell in our input is put at the 
+head of D = ~, thus defining pSYSTEM - ploader - 
+[DONE, id]. Our second input is Do, the set of definitions 
+we wish to become the state. The regular transition rule 
+causes the AST system to evaluate 
+#(SYSTEM:Do) -- [DONE, id]:Do = <DONE, Do>. Thus 
+the output from our second input is DONE, the new 
+state is Do, and pSYSTEM is now our system program 
+(which only accepts inputs of the form <key, input>). 
+Our next task is to load the file (we are given an 
+initial value file). To load it we input a program into the 
+newly installed system that contains-file as a constant 
+and stores it in the state; the input is 
+<program-key, [DONE, store-file]> where 
+pstore-file =-- ~FILEo[file, id]. 
+Program-key identifies [DONE, store-file] as a program 
+to be applied to the state Do to give the output and new 
+state D1, which is: 
+pstore-file:Do = ~FILEo[file, id]:D0, 
+or Do with a cell containing file at its head. The output 
+is DONE:Do = DONE. We assume that system-check 
+will pass <DONE, D1> unchanged. FP expressions have 
+been used in the above in place of the FFP objects they 
+denote, e.g. DONE for <CONST, DONE>. 
+14.4.4 Using the system. We have not said how the 
+system's file, queries or updates are structured, so we 
+cannot give a detailed example of file operations. How- 
+ever, the structure of subsystem shows clearly how the 
+system's response to queries and updates depends on the 
+functions query-response, update, and report-update. 
+Let us suppose that matrices m, n named M, and N 
+are stored in D and that the function MM described 
+earlier is defined in D. Then the input 
+<expression-key, ( MMo [ ~ M, ~ N]o D EFS:#)> 
+would give the product of the two matrices as output and 
+an unchanged state. Expression-key identifies the appli- 
+cation as an expression to be evaluated and since defs:# 
+= D and [tM, ~'N]:D -- <m,n>, the value of the expres- 
+sion is the result MM:<m,n>, which is the output. 
+Communications 
+August 1978 
+of 
+Volume 2 l 
+the ACM 
+Number 8 
+Our miniature system program has no provision for 
+giving control to a user's program to process many 
+inputs, but it would not be difficult to give it that 
+capability while still monitoring the user's program with 
+the option of taking control back. 
+14.5 Variants of AST Systems 
+A major extension of the AST systems suggested 
+abow; would provide combining forms, "system forms," 
+for building a new AST system from simpler, component 
+AST systems. That is, a system form would take AST 
+systems as parameters and generate a new AST system, 
+just as a functional form takes functions as parameters 
+and generates new functions. These system forms would 
+have properties like those of functional forms and would 
+become the "operations" of a useful "algebra of systems" 
+in much the same way that functional forms are the 
+"operations" of the algebra of programs. However, the 
+problem of finding useful system forms is much more 
+difficult, since they must handle RESETS, match inputs 
+and outputs, and combine history-sensitive systems 
+rather than fixed functions. 
+Moreover, the usefulness or need for system forms is 
+less clear than that for functional forms. The latter are 
+essential for building a great variety of functions from 
+an initial primitive set, whereas, even without system 
+forms, the facilities for building AST systems are already 
+so rich that one could build virtually any system (with 
+the general input and output properties allowed by the 
+given AST scheme). Perhaps system forms would be 
+useful for building systems with complex input and 
+output arrangements. 
+14.6 Remarks About AST Systems 
+As I have tiled to indicate above, there can be 
+innumerable variations in the ingredients of an AST 
+system--how it operates, how it deals with input and 
+output, how and when it produces new states, and so on. 
+In any case, a number of remarks apply to any reasonable 
+AST system: 
+a) A state transition occurs once per major computa- 
+tion and can have useful mathematical properties. State 
+transitions are not involved in the tiniest details of a 
+computation as in conventional languages; thus the lin- 
+guistic yon Neumann bottleneck has been eliminated. 
+No complex "cable" or protocols are needed to com- 
+municate with the state. 
+b) Programs are written in an applicative language 
+that can accommodate a great range of changeable parts, 
+parts whose power and flexibility exceed that of any von 
+Neumann language so far. The word-at-a-time style is 
+replaced by an applicative style; there is no division of 
+programming into a world of expressions and a world of 
+statements. Programs can be analyzed and optimized by 
+an algebra of programs. 
+c) Since the state cannot change during the compu- 
+tation of system:x, there are no side effects. Thus inde- 
+pendent applications can be evaluated in parallel. 
+638 
+d) By defining appropriate functions one can, I be- 
+lieve, introduce major new features at any time, using 
+the same framework. Such features must be built into 
+the framework of avon Neumann language. I have in 
+mind such features as: "stores" with a great variety of 
+naming systems, types and type checking, communicat- 
+ing parallel processes, nondeterminacy and Dijkstra's 
+"guarded command" constructs [8], and improved meth- 
+ods for structured programming. 
+e) The framework of an AST system comprises the 
+syntax and semantics of the underlying applicative sys- 
+tem plus the system framework sketched above. By 
+current standards, this is a tiny framework for a language 
+and is the only fixed part of the system. 
+14.7 Naming Systems in AST and von Neumann 
+Models 
+In an AST system, naming is accomplished by func- 
+tions as indicated in Section 13.3.3. Many useful func- 
+tions for altering and accessing a store can be defined 
+(e.g. push, pop, purge, typed fetch, etc.). All these defi- 
+nitions and their associated naming systems can be in- 
+troduced without altering the AST framework. Different 
+kinds of "stores" (e.g., with "typed cells") with individual 
+naming systems can be used in one program. A cell in 
+one store may contain another entire store. 
+The important point about AST naming systems is 
+that they utilize the functional nature of names (Rey- 
+nolds' OEDANr~N [19] also does so to some extent within 
+avon Neumann framework). Thus name functions can 
+be composed and combined with other functions by 
+functional forms. In contrast, functions and names in 
+von Neumann languages are usually disjoint concepts 
+and the function-like nature of names is almost totally 
+concealed and useless, because a) names cannot be ap- 
+plied as functions; b) there are no general means to 
+combine names with other names and functions; c) the 
+objects to which name functions apply (stores) are not 
+accessible as objects. 
+The failure of von Neumann languages to treat 
+names as functions may be one of their more important 
+weaknesses. In any case, the ability to use names as 
+functions and stores as objects may turn out to be a 
+useful and important programming concept, one which 
+should be thoroughly explored. 
+15. Remarks About Computer Design 
+The dominance of von Neumann languages has left 
+designers with few intellectual models for practical com- 
+puter designs beyond variations of the von Neumann 
+computer. Data flow models [1] [7] [13] are one alterna- 
+tive class of history-sensitive models. The substitution 
+rules of lambda-calculus based languages present serious 
+problems for the machine designer. Berkling [3] has 
+developed a modified lambda calculus that has three 
+kinds of applications and that makes renaming of vail- 
+Communications 
+August 1978 
+of 
+Volume 21 
+the ACM 
+Number 8 
+ables unnecessary. He has developed a machine to eval- 
+uate expressions of this language. Further experience is 
+needed to show how sound a basis this language is for 
+an effective programming style and how efficient his 
+machine can be. 
+Mag6 [15] has developed a novel applicative machine 
+built from identical components (of two kinds). It eval- 
+uates, directly, FP-like and other applicative expressions 
+from the bottom up. It has no von Neumann store and 
+no address register, hence no bottleneck; it is capable of 
+evaluating many applications in parallel; its built-in op- 
+erations resemble FP operators more than von Neumann 
+computer operations. It is the farthest departure from 
+the yon Neumann computer that I have seen. 
+There are numerous indications that the applicative 
+style of programming can become more powerful than 
+the von Neumann style. Therefore it is important for 
+programmers to develop a new class of history-sensitive 
+models of computing systems that embody such a style 
+and avoid the inherent efficiency problems that seem to 
+attach to lambda-calculus based systems. Only when 
+these models and their applicative languages have proved 
+their superiority over conventional languages will we 
+have the economic basis to develop the new kind of 
+computer that can best implement them. Only then, 
+perhaps, will we be able to fully utilize large-scale inte- 
+grated circuits in a computer design not limited by the 
+von Neumann bottleneck. 
+16. Summary 
+The fifteen preceding sections of this paper can be 
+summarized as follows. 
+Section 1. Conventional programming languages 
+are large, complex, and inflexible. Their limited expres- 
+sive power is inadequate to justify their size and cost. 
+Section 2. The models of computing systems that 
+underlie programming languages fall roughly into three 
+classes: (a) simple operational models (e.g., Turing ma- 
+chines), (b) applicative models (e.g., the lambda calcu- 
+lus), and (c) von Neumann models (e.g., conventional 
+computers and programming languages). Each class of 
+models has an important difficulty: The programs of 
+class (a) are inscrutable; class (b) models cannot save 
+information from one program to the next; class (c) 
+models have unusable foundations and programs that 
+are conceptually unhelpful. 
+Section 3. Von Neumann computers are built 
+around a bottleneck: the word-at-a-time tube connecting 
+the CPU and the store. Since a program must make 
+its overall change in the store by pumping vast numbers 
+of words back and forth through the von Neumann 
+bottleneck, we have grown up with a style of program- 
+ming that concerns itself with this word-at-a-time traffic 
+through the bottleneck rather than with the larger con- 
+ceptual units of our problems. 
+Section 4. Conventional languages are based on the 
+programming style of the von Neumann computer. Thus 
+variables = storage cells; assignment statements = fetch- 
+ing, storing, and arithmetic; control statements = jump 
+and test instructions. The symbol ".----" is the linguistic 
+von Neumann bottleneck. Programming in a conven- 
+tional~von Neumann--language still concerns itself 
+with the word-at-a-time traffic through this slightly more 
+sophisticated bottleneck. Von Neumann languages also 
+split programming into a world of expressions and a 
+world of statements; the first of these is an orderly world, 
+the second is a disorderly one, a world that structured 
+programming has simplified somewhat, but without at- 
+tacking the basic problems of the split itself and of the 
+word-at-a-time style of conventional languages. 
+Section 5. This section compares avon Neumann 
+program and a functional program for inner product. It 
+illustrates a number of problems of the former and 
+advantages of the latter: e.g., the von Neumann program 
+is repetitive and word-at-a-time, works only for two 
+vectors named a and b of a given length n, and can only 
+be made general by use of a procedure declaration, 
+which has complex semantics. The functional program 
+is nonrepetitive, deals with vectors as units, is more 
+hierarchically constructed, is completely general, and 
+creates "housekeeping" operations by composing high- 
+level housekeeping operators. It does not name its argu- 
+ments, hence it requires no procedure declaration. 
+Section 6. A programming language comprises a 
+framework plus some changeable parts. The framework 
+of a von Neumann language requires that most features 
+must be built into it; it can accommodate only limited 
+changeable parts (e.g., user-defined procedures) because 
+there must be detailed provisions in the "state" and its 
+transition rules for all the needs of the changeable parts, 
+as well as for all the features built into the framework. 
+The reason the von Neumann framework is so inflexible 
+is that its semantics is too closely coupled to the state: 
+every detail of a computation changes the state. 
+Section 7. The changeable parts of von Neumann 
+languages have little expressive power; this is why most 
+of the language must be built into the framework. The 
+lack of expressive power results from the inability of von 
+Neumann languages to effectively use combining forms 
+for building programs, which in turn results from the 
+split between expressions and statements. Combining 
+forms are at their best in expressions, but in von Neu- 
+mann languages an expression can only produce a single 
+word; hence expressive power in the world of expressions 
+is mostly lost. A further obstacle to the use of combining 
+forms is the elaborate use of naming conventions. 
+Section 8. APL is the first language not based on 
+the lambda calculus that is not word-at-a-time and uses 
+functional combining forms. But it still retains many of 
+the problems of von Neumann languages. 
+Section 9. Von Neumann languages do not have 
+useful properties for reasoning about programs. Axio- 
+matic and denotational semantics are precise tools for 
+describing and understanding conventional programs, 
+639 
+Communications 
+August 1978 
+of 
+Volume 21 
+the ACM 
+Number 8 
+but they only talk about them and cannot alter their 
+ungainly properties. Unlike von Neumann languages, 
+the language of ordinary algebra is suitable both for 
+stating its laws and for transforming an equation into its 
+solution, all within the "language." 
+Section 10. In a history-sensitive language, a pro- 
+gram can affect the behavior of a subsequent one by 
+changing some store which is saved by the system. Any 
+such language requires some kind of state transition 
+semantics. But it does not need semantics closely coupled 
+to states in which the state changes with every detail of 
+the computation. "Applicative state transition" (AST) 
+systems are proposed as history-sensitive alternatives to 
+von Neumann systems. These have: (a) loosely coupled 
+state-transition semantics in which a transition occurs 
+once per major computation; (b) simple states and tran- 
+sition rules; (c) an underlying applicative system with 
+simple "reduction" semantics; and (d) a programming 
+language and state transition rules both based on the 
+underlying applicative system and its semantics. The 
+next four sections describe the elements of this approach 
+to non-von Neumann language and system design. 
+Section 11. A class of informal functional program- 
+ming (FP) systems is described which use no variables. 
+Each system is built from objects, functions, functional 
+forms, and definitions. Functions map objects into ob- 
+jects. Functional forms combine existing functions to 
+form new ones. This section lists examples of primitive 
+functions and functional forms and gives sample pro- 
+grams. It discusses the limitations and advantages of FP 
+systems. 
+Section 12. An "algebra of programs" is described 
+whose variables range over the functions of an FP system 
+and whose "operations" are the functional forms of the 
+system. A list of some twenty-four laws of the algebra is 
+followed by an example proving the equivalence of a 
+nonrepetitive matrix multiplication program and a re- 
+cursive one. The next subsection states the results of two 
+"expansion theorems" that "solve" two classes of equa- 
+tions. These solutions express the "unknown" function 
+in such equations as an infinite conditional expansion 
+that constitutes a case-by-case description of its behavior 
+and immediately gives the necessary and sufficient con- 
+ditions for termination. These results are used to derive 
+a "recursion theorem" and an "iteration theorem," which 
+provide ready-made expansions for some moderately 
+general and useful classes of "linear" equations. Exam- 
+ples of the use of these theorems treat: (a) correctness 
+proofs for recursive and iterative factorial functions, and 
+(b) a proof of equivalence of two iterative programs. A 
+final example deals with a "quadratic" equation and 
+proves that its solution is an idempotent function. The 
+next subsection gives the proofs of the two expansion 
+theorems. 
+The algebra associated with FP systems is compared 
+with the corresponding algebras for the lambda calculus 
+and other applicative systems. The comparison shows 
+some advantages to be drawn from the severely restricted 
+640 
+FP systems, as compared with the much more powerful 
+classical systems. Questions are suggested about algo- 
+rithmic reduction of functions to infinite expansions and 
+about the use of the algebra in various "lazy evaluation" 
+schemes. 
+Section 13. This section describes formal functional 
+programming (FFP) systems that extend and make pre- 
+cise the behavior of FP systems. Their semantics are 
+simpler than that of classical systems and can be shown 
+to be consistent by a simple fixed-point argument. 
+Section 14. This section compares the structure of 
+Algol with that of applicative state transition (AST) 
+systems. It describes an AST system using an FFP system 
+as its applicative subsystem. It describes the simple state 
+and the transition rules for the system. A small self- 
+protecting system program for the AST system is de- 
+scribed, and how it can be installed and used for file 
+maintenance and for running user programs. The section 
+briefly discusses variants of AST systems and functional 
+naming systems that can be defined and used within an 
+AST system. 
+Section 15. This section briefly discusses work on 
+applicative computer designs and the need to develop 
+and test more practical models of applicative systems as 
+the future basis for such designs. 
+Acknowledgments. In earlier work relating to this 
+paper I have received much valuable help and many 
+suggestions from Paul R. McJones and Barry K. Rosen. 
+I have had a great deal of valuable help and feedback in 
+preparing this paper. James N. Gray was exceedingly 
+generous with his time and knowledge in reviewing the 
+first draft. Stephen N. Zilles also gave it a careful reading. 
+Both made many valuable suggestions and criticisms at 
+this difficult stage. It is a pleasure to acknowledge my 
+debt to them. I also had helpful discussions about the 
+first draft with Ronald Fagin, Paul R. McJones, and 
+James H. Morris, Jr. Fagin suggested a number of im- 
+provements in the proofs of theorems. 
+Since a large portion of the paper contains technical 
+material, I asked two distinguished computer scientists 
+to referee the third draft. David J. Giles and John C. 
+Reynolds were kind enough to accept this burdensome 
+task. Both gave me large, detailed sets of corrections and 
+overall comments that resulted in many improvements, 
+large and small, in this final version (which they have 
+not had an opportunity to review). I am truly grateful 
+for the generous time and care they devoted to reviewing 
+this paper. 
+Finally, I also sent copies of the third draft to Gyula 
+A. Mag6, Peter Naur, and John H. Williams. They were 
+kind enough to respond with a number of extremely 
+helpful comments and corrections. Geoffrey A. Frank 
+and Dave Tolle at the University of North Carolina 
+reviewed Mag6's copy and pointed out an important 
+error in the definition of the semantic function of FFP 
+systems. My grateful thanks go to all these kind people 
+for their help. 
+Communications 
+August 1978 
+of 
+Volume 21 
+the ACM 
+Number 8 
+References 
+I. Arvind, and Gostelow, K.P. A new interpreter for data flow 
+schemas and its implications for computer architecture. Tech. Rep. 
+No. 72, Dept. Comptr. Sci., U. of California, Irvine, Oct. 1975. 
+2. Backus, J. Programming language semantics and closed 
+applicative languages. Conf. Record ACM Symp. on Principles of 
+Programming Languages, Boston, Oct. 1973, 71-86. 
+3. 
+Berkling, K.J. Reduction languages for reduction machines. 
+Interner Bericht ISF-76-8, Gesellschaft f'dr Mathematik und 
+Datenverarbeitung MBH, Bonn, Sept. 1976. 
+4. 
+Burge, W.H. Recursive Programming Techniques. Addison- 
+Wesley, Reading, Mass., 1975. 
+5. Church, A. The Calculi of Lambda-Conversion. Princeton U. 
+Press, Princeton, N.J., 1941. 
+6. Curry, H.B., and Feys, R. Combinatory Logic, Vol. 1. North- 
+Holland Pub. Co., Amsterdam, 1958. 
+7. 
+Dennis, J.B. First version of a data flow procedure language. 
+Tech. Mem. No. 61, Lab. for Comptr. Sci., M.I.T., Cambridge, Mass., 
+May 1973. 
+8. 
+Dijkstra, E.W. ,4 Discipline of Programming. Prentice-Hall, 
+Englewood Cliffs, N.J., 1976. 
+9. 
+Friedman, D.P., and Wise, D.S. CONS should not evaluate its 
+arguments. In Automata, Languages and Programming, S. Michaelson 
+and R. Milner, Eds., Edinburgh U. Press, Edinburgh, 1976, pp. 
+257-284. 
+10. Henderson, P., and Morris, J.H. Jr. A lazy evaluator. Conf. 
+Record Third ACM Symp. on Principles of Programming Languages, 
+Atlanta, Ga., Jan. 1976, pp. 95-103. 
+I1. Hoare, C.A.R. An axiomatic basis for computer programming. 
+Comm. ,4CM 12, 10 (Oct. 1969), 576-583. 
+12. Iverson, K. A Programming Language. Wiley, New York, 1962. 
+13. Kosinski, P. A data flow programming language. Rep. RC 4264, 
+IBM T.J. Watson Research Ctr., Yorktown Heights, N.Y., March 
+1973. 
+14. Landin, P.J. The mechanical evaluation of expressions. Computer 
+J. 6, 4 (1964), 308-320. 
+15. Mag6, G.A. A network of microprocessors to execute reduction 
+languages. To appear in Int. J. Comptr. and Inform. Sci. 
+16. Manna, Z., Ness, S., and Vuillemin, J. Inductive methods for 
+proving properties of programs. Comm..4 CM 16,8 (Aug. 1973) 
+491-502. 
+17. McCarthy, J. Recursive functions of symbolic expressions and 
+their computation by machine, Pt. 1. Comm. ,4CM 3, 4 (April 1960), 
+184-195. 
+18. Me Jones, P. A Church-Rosser property of closed applicative 
+languages. Rep. RJ 1589, IBM Res. Lab., San Jose, Calif., May 1975. 
+19. Reynolds, J.C. GEDANKEN--a simple typeless language based on 
+the principle of completeness and the reference concept. Comm. 
+ACM 13, 5 (May 1970), 308-318. 
+20. Reynolds, J..C. Notes on a lattice-theoretic approach to the theory 
+of computation. Dept. Syst. and Inform. Sci., Syracuse U., Syracuse, 
+N.Y., 1972. 
+21. Scott, D. Outline of a mathematical theory of computation. Proc. 
+4th Princeton Conf. on Inform. Sci. and Syst., 1970. 
+22. Scott, D. Lattice-theoretic models for various type-free calculi. 
+Proc. Fourth Int. Congress for Logic, Methodology, and the 
+Philosophy of Science, Bucharest, 1972. 
+23. Scott, D., and Strachey, C. Towards a mathematical semantics 
+for computer languages. Proc. Symp. on Comptrs. and Automata, 
+Polytechnic Inst. of Brooklyn, 1971. 
+641 
+Communications 
+August 1978 
+of 
+Volume 21 
+the ACM 
+Number 8 

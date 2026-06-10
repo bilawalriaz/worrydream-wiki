@@ -1,0 +1,1655 @@
+1961
+IRE TRANSACTIONS ON ELECTRONIC COMPUTERS
+31
+Games That Teach the Fundamentals
+of Computer Operation*
+DOUGLAS C. ENGELBARTt, MEMBER, IRE
+To the Reader:
+This paper is different. Its engineering content is neither novel nor difficult. It is, however, addressed to
+you, the computer engineering audience, to inform you of and instruct you in a novel method of teaching a
+group of laymen about computers. Very often schools call upon scientists and engineers in their vicinity to
+give presentations to their science or mathematics clubs. This is a valuable service we can provide. The tech-
+niques described in this paper are most appropriate to that end, and have been used by your editor and others,
+as well as by the author, who first suggested them. Try them if called upon, enjoy them, and if you find no
+other group to use them on, try them at your next party-it should be a howling success!
+Reprints of this article may be obtained from WGBE, the Working Group for Better Education, 815
+Washington St., Newtonville 60, Mass., for $0.75.-The Editor
+Summary-One who wishes to give a group of laymen a feeling
+comprehends the over-all significance of its role, anld
+for the way we computer engineers can coax sophisticated informa-
+yet the behavior of the combination of elements is obvi-
+tion-handling behavior from an organization of simple physical
+.
+fairly
+..
+elements can provide a striking on-the-spot example by training
+sly fairyoiticat
+enaion,
+t akesngeat
+his
+laymen
+to
+simulate
+various
+kinds
+of
+simple
+elements
+stretch of intuitive comprehension for the average lay-
+and by organizing them into
+a network whose behavior is obvi-
+man to feel that the construction of simple circuits
+ously more sophisticated than that of any element. Each individual
+that can perform tasks analogous to those assigned to
+watches the up-down hand position of one or two others, and adjusts
+him and
+his fellow participants would put no great
+his own hand position according to a response task which is equiva-
+strain on an electronics engineer. After participating in
+lent to that of an AND, OR, NOT, or flip-flop element-although task
+or
+on
+theexercises e
+scribed ber
+a
+stunt
+assignments are made in such a way that the participants don't hear
+or witnessing the exercises described below, a student
+a single esoteric word, nor realize that they might be doing "logic."
+can be expected to extend this feeling of acceptance to
+Counters, shift registers, and adders may be organized and operated
+functional
+computer
+structures
+such
+as
+counters,
+in a way which proves very entertaining to participants and on-look-
+registers, and adders, and it asks little more of him to
+ers, and yet which provides them with very realistic basic concepts
+accept the claim that other functions, such
+as those
+about how a computer might work.
+required
+of the different blocks
+in a block-diagram
+INTRODUCTION
+representation of a digital computer, can be realized by
+T
+HIS PAPER presents some examples of a form
+similar networks of similar elements. Other conicepts
+of teachinig metho(d that I have found to be verv
+that may
+be demonistrated
+by
+these
+exercises
+are
+effective in giving people of all levels of sophistica-
+pointed out later
+tion a useful inisight into the mysteries of digital-coni-
+The descriptionis of the two exercises that are giveii
+puter techniques. The novel feature of the teaching
+below will be presented as if the reader were being giveni
+mnethod is that it makes use of human participants to
+explicit instruction-s for running a group of students
+simulate the function of logical elements that are typical
+through these exercises. Since I have found it to be a
+of those used in digital computers. A group of such
+more effective presentation, the analysis of purpose will
+participants can be "wired" into a nletwvork that wvill
+often be left until proper function has been achieved
+functioni in a manner very similar to that of an actual
+and recognized. This is done partly in order that the
+digital network. Simulation procedure is given in detail
+student may learn to appreciate the "mnoronic" anid un-
+for two such examples which have proven to be particu-
+comprehending role of the buildinig-block elemenits, anid
+larly suitable for this purpose. Other exercises are in-
+partly so that there is a chan-ce for a few of the basic
+cluded in complete but brief form.
+concepts to dawn spontaneously upon the sttudent before
+Aside from the genleral parlor-game atmlosphere Of
+they are discussed.
+fun induced by these exercises, there are educational re-
+FIR
+RST SIMULATION EXERCISE
+sults of basic worth to be gained by the students. The
+mystry
+ssoiatd wth
+ompter
+teds
+o b
+disi-
+Obtain four participants and arrange them side by
+pated when a person is assignled a very low-order task
+side, facing the class, so that the class can easily watch
+in a system of like elements, where no single elemenlt
+them. Fig. 1 shows a possible arrangem1ent. The "signaal
+source" iS you, the instructor. The instructions you give
+* Receved bthe
+PEC, Jly 28,1960.to the participants should be heard by everyone. You
+t Stanlford Res. Inst., Menlo Park, Calif.
+need not identify individual
+participants differently,
+32
+IRE TRANSACTIONS ON ELECTRONIC COMPUTERS
+March
+other than will be done during the instructing period-
+signial of specified nature, he is to change the position
+the identifying letters in Fig. 1 are useful mainly for me
+of his hand. I usually use a hand clap for this signal, but
+to tell you what to do.
+any unique sound will do.
+Give the following instructions: 1) Each participant
+After giving the above instructions, and when
+it
+is to be recognized as being only in one of two condi-
+seems reasonably sure that they have been understood,
+tions, or states. Either his right hand is up (UP state), or
+give the four elements a test run to check their per-
+his right hand is down (DOWN state). No other char-
+formance. Have them all go to their DOWN states, and
+acteristic or attitude is to be recognized, and it is well
+then in your role as signal source begin emitting some
+to request that participants be very definite about the
+signals. Pause between successive signals until everyone
+positions of their hands so that no ambiguity is pre-
+seems sure that he has don-ie the right thing as a result
+sented to an observer. 2) Each participant or element
+of your last signal anid the changes it has induced. You
+will stay in whatever state he happens to be until he
+and the class watch for and poinlt out errors in per-
+gets a particular signal (each will await a different sig-
+formance. Fig. 2 shows the sequence of states which
+nal, to be specified later). When he gets the signal he has
+should occur. Notice that after sixteen signal "pulses"
+been told to wait for, he responds by changing the posi-
+the elements are all in the DOWN state again, and the
+tion of his hand. If he is UP when he gets his signal,
+same sequence of states will begin to repeat itself. It
+he changes to DOWN, and vice versa.
+generally takes but one or two cycles (sixteen to thirty-
+This completely defines the operating characteristics
+two signals) to obtain fairly reliable performance from
+of the elements, and it only remains to identify for them
+the elements.
+their respective signal sources to obtain a working net-
+When your four-element system seems to be func-
+work of "electronic elements." 3) Tell element D that
+tioning smoothly, it is time to introduce some simple
+he gets his signal from C; that every time C drops his
+props. You will need four cards, large enough so that the
+hand (goes from UP to DOWN), D is to recognize this
+numeral drawn on each can be seen clearly by everyone
+as his signal and is to respond by changing the position
+in the class. On one side of each card will be drawn the
+of his hand. He is not to pay any attention to C's chang-
+number
+1, 2, 4, or 8.
+It serves a definite purpose to
+ing from DOWN to UP, nor is he to be concerned with
+keep the four elemenlts from knowing what is on the
+anything at all being done by you or by elements A or
+cards (in fact, if you don't even let them guess that the
+B. 4) Element C gets his signal from element B, watch-
+faces contain numbers, so much the better), and so you
+inig for and responding to the change from UP to DOWVN
+should explain that each is to hold his card so that the
+in the same narrow-minlded fashion that was described
+class (but not he or his neighbors) can see its face when
+above. Similarly, B gets his signal from element A, and
+his hand is UP, but when his hand is DOWN, nobody
+changes the positioni of his (B's) hand whenever A goes
+(himself, neighboring element, or class) can see the face
+from UP to DOWN. This leaves only the establishment
+of the card. You then give the leftmost element (A) the
+of the signal to which A is to respond, to complete the
+card with the numeral 1, give the 2 to B, the 4 to C, and
+design of this piece of "electronic equipment." You tell
+the 8 to D. It is your responsibility to place the cards
+A that he is to receive his signal through his ears instead
+in their hanids so the niumerals will be right-side up when
+of through his eyes, as did the other elements. His atten-
+tioin is to be given only to you, the primary "signal
+source," and whenever he hears you emit an audible
+D
+C
+B
+A
+N
+0
+F
+1
+D
+~~~~~~2
+Four participants (simulating simple electronic devices)
+nII
+Lr
+3
+D
+C
+B
+A
+DD
+7
+LII
+10
+L
+D
+D
+11
+You (the primary
+D
+LI
+12
+signal source)
+LI
+LI
+g
+Cli
+13
+_
+I]
+LII
+[O
+O
+15
+(repeats)
+16
+D2
+17
+Audience
+etc
+Fig. 2-Chart showing sequence of hand position<s for elements of
+Fig.
+1 after successive signals. (Flag indicates hand UP, no flag
+________________________________-
+indicates hand DOW&N. N indicates numher of signals which sig-
+nals source emitted hefore the four hands arrived at the indicat-
+Fig. 1-General arrangement for first simulation demonstration,
+ed comhination of positions.)
+1961
+Engelbart: Games That Teach the Fundamentals of Computer Operation
+33
+the elements are UP. It improves the general effect later
+what was on the face of this card, nor was otherwise
+if the class doesn't see what's on the cards until the four-
+given any idea of the significance of the very simple
+element system begins to operate again.
+task which he was asked to perform, brings out the very
+With their numbered cards in their hands, and their
+important idea that proper organization can give a
+hands DOWN, the four elements are again ready to re-
+group of elements a capability which
+is significantly
+ceive signal pulses. As you emit succeeding pulses, the
+greater than any elemenit alone can possess. Later ex-
+array of numerals appearing before the class should fol-
+pansion of this idea, in the next exercise, does a great
+low the sequence shown in Fig. 3 (which is the same as
+deal to orient students about this basic procedure which
+the sequence of Fig.
+2, with the numerals drawn in).
+has been followed to obtain all of our electronic digital
+\Vithout your saying anything, many of the people in
+computers. In every case, we build upon the functional
+the class will catch on to the way the sum of the visible
+capabilities of very simple basic elements, organizing
+digits represents the pulse count, and it is fun to watch
+multitudes
+of them
+into
+a
+system
+which
+is
+very
+the spontaneous comprehension grow.
+sophisticated.
+I generally run the four elements quite slowly through
+It should also be pointed out here that the peculiar
+the first sixteen-signal cycle without giving any hint to
+way in which we have given a numerical weight to each
+the class as to what to expect. Then I might suggest that
+of these elements has allowed us to represent numbers
+they try "putting together" what is visible on the cards
+quite handily, even though the individual elements each
+at any time, before I run through another cycle. Not
+had only two states of existence. You can mention that
+until most of the class appears to see that counting is
+this is an example of a binary numbering system, which
+being accomplished do I let the elements see what is on
+is used in one form or another by essentially every elec-
+the face of their cards.
+tronic digital computer. If plenty of time is available,
+What has been simulated by your human partici-
+one may digress at this point to explain further about
+pants is, of course, a binary counter
+a device which is
+binary numbers. However, the next simulation exercise
+built up of very simple elements, but which nonetheless
+requires no deeper understanding than is usually ob-
+is capable of performing a relatively sophisticated task.
+tained directly from this first exercise.
+Pointing out that none of the individual elements knew
+SECOND SIMULATION EXERCISE
+D
+C
+B
+A
+N
+Here you will need nineteen participants, besides your-
+self. Nine of these will be of one general type, designated
+o
+by numbers, and ten will be of another basic type,
+wt]
+I
+designated by letters. There are many possible ways in
+which the elements may be arranged for this exercise,
+W
+1
+2
+but the arrangement shown in Fig. 4 is what I usually
+2
+m
+3
+use. The arrows indicate the preferred direction in which
+w41
+4
+the respective participants should face. Deploy your
+participants and give each a card, similar to those used
+ELI
+ELI
+in the first exercise, that will carry his idenitifying letter
+W3
+W
+|
+6
+or number. Most of the lettered cards have numbers on
+w
+E[
+7
+8
+(16)
+(8)
+(4) (2)
+(1)
+(8)
+(4)
+(2)
+(1)
+Xl
+[
+9
+w
+W
+10
+h i
+HG
+FE
+D CBA
+X
+X
+1~~~2
+12
+4~~~~~ ~~12
+Signal
+w
+source
+X
+W
+L4
+13
+Ls-
+W]
+_
+14
+EL
+17
+Fig. 4-Recommended arrangement of human elemenlts for second
+etc.
+simulation exercise. (Symbols in parentheses refer to the number
+weight to he given to the corresponding element. Groupings as
+shown are helpful for functional identification later. I usually seat
+Fig. 3-Representation of what audience sees, after successive signal
+numbered elements, with remainder of audience moved away a
+pulses, when
+"Elements"
+hold number-weight
+cards
+in
+their
+bit to set participants apart, and have lettered elements stand at
+hands.
+front.)
+34
+IRE TRANSACTIONS ON ELECTRONIC COMPUTERS
+March
+the backs (see numbers in parentheses in Fig. 4), but
+to watch them will have easier tasks. Also, remind the
+these are to be ignored for the time being.
+participants that UP and DOWN indications should be
+Next, each individual element must be instructed as
+definite, i.e., their hands should be all the way up or all
+to his task. Consider the numbered elements first. Each
+the way down, never at ambiguous in-between positions.
+has a job of watching one or two other elements, and
+Now instruct the lettered elements. They do not
+continually adjusting his state to respond to the ele-
+change their states in the same way as do the numbered
+ments he watches according to some assigned simple
+elements, which change continually to adjust to the
+rule. The assignment of elements for each to watch, and
+states of their watched elements. The lettered elements
+the nature of his response to the states of these elements,
+hold a given state until they get a signal from the sig-
+is listed in Table I. The interpretations of these task as-
+nal source. This signal is composed of two parts. First
+signments are as follows:
+comes a "bonk" (or other suitable signal, preferably a
+1) An UP-task elemenit wants to keep his hand UP,
+meaningless noise), whereupon each lettered element is
+but finds it possible only when both of the elements he
+to note the state of the particular element which he is
+watches are UP (otherwise, then, his hand is DOWVN).
+assigned to watch, and then comes a "bleep," whereupon
+2) A DOWN-task element wants to keep his hand
+each lettered element assumes the particular state which
+DOWN, but finds it possible only when both of the ele-
+he (just previously) observed his watched element to
+ments he watches are DOWN (otherwise, then, his hand
+have when the "bonk" signal occurred. The lettered ele-
+is UP).
+ments are not to change state until the "bleep" signal.
+3) An OPPOSITE-task element holds his hand in the
+It is roughly fifty per cent probable that at the time of
+state opposite from that of the elemenit he watches.
+the "bonk" signal, a lettered element will observe his
+watched element to be in the same state that he is, in
+Lwhich case he will not need to change his state when the
+ASSIGNMENTS FORTABLNUMBERDELEMNTS
+"bleep" signal occurs.
+ASSI(,NMEI.NT1S FOR THE NUMBERE}D E9.LEMENTS
+I usually give these lettered elemenits a traininiig ses-
+IN THE SECOND EXERCISE
+sionI in a imanner similar to those given the numbered
+Element
+Watches
+Task
+elements. In this case,
+I ask them all to pretend they
+1
+A, E
+UP
+are assigned to watch my right arm, and I put it in dif-
+2
+1, K
+UP
+ferent positions and emit the "bonk-bleep" signals.
+I
+3
+1, K
+DOWN
+usually try to trick them by changing my hand im-
+5
+3, 4
+DOWP
+iediatately after the "bleep" (which may happen in
+7
+3 K
+OPPOSITE
+actual operation, and to which they aren't supposed to
+8
+6, 7
+UP
+respond). For some reason, this temporary-storage task
+9
+2, 8
+DOWN
+is the most likely of any to give you trouble later on
+during operation, and it is worthwhile to spend a little
+extra time in traininig.
+Participanits with OPPOSITE tasks usually iieedl 11o
+The elemenit which each particular lettered elemenit
+training or practice, but I genierally give the other types
+is assigned to watch
+is shown in TIable
+II. Again
+it
+of participants some practice. For inistanice, after de-
+would be wise to ask everyone to hold his ideintification
+ploying the nine nunmbered elenmenits anid givinig themii
+card in his UP-DOWN hand, an-d to assumne very def-
+their identification cards, I ask Participanits 1, 2, 5, anid
+imite hand positions.
+It
+is also worth stressinig that,
+8 to stand. I explain that later each will be assigined to
+while the numbered elements respond instaintly to any
+watch some two particular elements, anid tell them how
+change in their watched elemenits, no matter when they
+atn UP element is supposed to respond. For practice, I
+ask them to pretend that they have been assigned to
+watch both of rmy hands, and theii I run through dif-
+TABLE II
+ferent up anid down combiniationis of miiy two armus anid
+ASSIGNMENTS FOR THE LETTERED ELEMENTS
+Imake sure that they all respond correctly. When they
+IN THE SECOND EXERCISE
+seem to have learned, I ask them to be seated and then
+E-
+r
+ask Participanits 3, 4, 6, and 9 to stanid. Their DOWN
+Element
+Watches
+task is described, and I give them practice arm signlals
+A B
+inl a similar fashion. Despite the inlverse similarity be-
+c
+D
+tweeln UP and DOW\N tasks, it always seems to take
+D
+DUmm111
+DOWn1*
+longer to train the DOXVN elements.
+F
+C
+It may help to have the individual's task designationl
+G
+H
+written on his identification card, and then to wvrite
+9
+these task interpretations on the blackboard for all to
+K
+5
+see. Ask
+all participants
+to hold
+their identification
+* D pretends to be watchinlg a "'dummny" elemenlt whose hand is
+cards in their UP-DOW\N hands so that those assigned
+always down.
+1961
+Engelbart: Games That Teach the Fundamentals of Computer Operation
+35
+occur, the lettered elements onily change when they are
+F, G in UP state), with the numbered sides of their
+told to do so by the signal source, no matter what their
+cards showinig, and point out that the states of the two
+watched elements do.
+groups A to E and F to J nlow represent the two num-
+In this second exercise, I usually describe the response
+bers 3 and 6.
+characteristics of every element (and give him some
+This is the point at which people are to realize that
+training exercise) before I define the "interconnections,"
+all of the activity associated with the five "honk-bleep"
+i.e., before I define where each of them is to look for his
+signals was the "thinking" process by which this little
+particular hand-changing information.
+I often prepare
+computing system added the numbers 3 and 6 to get 9.
+a small card for each participant, describing his par-
+After these five signals, the digit held by elements A to
+ticular task and telling him whom to watch, and then as
+D will have disappeared, while that held by elements
+I pass these out I repeat this information aloud so that
+E to J will have beeni replaced by the sumn of the original
+everyone can follow the process of "wiring together this
+two digits.
+network of electronic elements." If you can put Tables I
+In case the five "bonk-bleep" signals did not result in
+and II on a blackboard, or reproduce them and hand
+having onily E and II of the lettered elements in the
+them out, this will be particularly helpful to nonpar-
+UP state, you must do some trouble-shooting in your
+ticipating observers.
+(Interested and observant non-
+computer to find out which elemeiit or elements failed
+participants can often help you spot malfunctioning
+to functioni properly. Establish the initial coniditionis
+elements during operation of this "network." Encourag-
+again, and begin going through the sequence of opera-
+ing this can provide you with a real help, and will give
+tions. Use of the sequence chart of Fig. 5 should enable
+the nonparticipants some sense of participation.)
+you to locate the "defective" component(s), and from
+You are now ready to try out your twenty-elemient
+there it is a matter of judgment whether the individual
+digital system (which includes you, the signal source)
+situations call for repair or replacemenit. Very ofteni a
+to see how it performs. You should expect some mal-
+guilty element will realize its inistakes and cure itself,
+functions at first. Warn your group that you are getting
+so you may never find what caused a given nmalfunic-
+ready for them to operate as a system, and have every-
+tion of the network.
+one pay attention while you set Elements A through K
+Once your little computing system seems to be work-
+to specific initial states. Ask that the lettered elements
+ing reliably, you can try adding other pairs of digits. In
+be sure to show the lettered identification sides of their
+each case, decide upon the two digits to be added, and
+cards to the main group when their hands are in the
+enter them inito the two "registers" (have the register
+UP position. Then try the following initial setting, for
+elements A to D and E to J show the number-weight
+example. Have A, B, F, and G take the UP state, and
+sides of their cards during the setting operationi, and
+the rest of the lettered elements take the DOWN state.
+try to get them to decide for themselves which elenmenits
+M\Iake a niote of this initial state in some conlspicuous
+should be UP when they are told the digit which they
+way so that you and the group can refer to it later.
+are to represent). When the registers are set, have the
+Now tell all of your numbered elemenits to assume
+lettered elements turn their cards so as to show their
+the states dicated by their tasks and by the states of
+respective identities durinig the subsequent "thinking"
+their assigned elements, and to keep doing this through
+operations. Now the numbered elements are to become
+all of the successive changes of this operation. When the
+different hands have stopped oscillatin-g between the
+.i.
+After "Bonk-Bleep" Signals
+UP and DOWN states, say "bonk," pause a moment
+Element
+State
+1
+2
+3
+4
+5
+for the lettered elements to decide what they are sup-
+A
+x
+x
+posed to do, and then say "bleep." You will want to
+B
+x
+give four more of these "bonk-bleep" signals (five in
+C
+all), pausing between each to allow the elements to per-
+E
+x
+x
+x
+form their tasks and come to equilibrium, before the
+F
+X
+X
+X
+particular operation of this system is finished.
+H
+X
+X
+After the fifth "bonk-bleep" signal, you should find
+J
+x
+x
+(in this example) that onily E and H of the lettered ele-
+K
+X
+X
+ments are in the UP state (states of numbered ele-
+1
+x
+ments are not pertinent at this time). If the system has
+3
+|x
+|x
+|x
+|
+|x
+given you this result, note this in the same manner as
+4
+x
+x
+x
+you noted the initial states of the lettered elements, and
+6
+x
+|x
+|x
+Xx
+|x
+then have these two elements turn their cards so that
+7
+X
+X
+X
+x
+x
+x
+the group can see their associated number weights.
+8
+X
+Xx
+x
+Point out that the associated 1 and 8 serve to indicate
+-
+-___
+__-
+-
+___
+that the states of Elements E to J now represent the
+Fig. 5-Sequence of states, for each element of the system identified
+number 9. Then ask the lettered elements to assume the
+by Fig. 4 and Tables 1 anld 11, durinlg an operationt cycle which
+states they held at the start of this operation (A, B,
+state. (X indicates UP state, blank space indicates DOWN state.)
+36
+IRE TRANSACTIONS ON ELECTRONIC COMPUTERS
+March
+active, and assume states in accordance with
+their
+while the sum is being constructed bit by bit and moved
+tasks and the states of their watched elements. Then
+into the upper register from the left.
+you are to emit your sequence of five judiciously-spaced
+All of the numbered elements belong in the functional
+"bonk-bleep" signals, after which you ask the E to J
+group designated as the "adder." These are the decision-
+elements to show their number weights so that the re-
+making elements, and are commonly called "logic" ele-
+sult of the addition operation may be seen.
+ments by people in the computer art. There is a way to
+It is interesting to test this little computer in several
+initerpret the roles of the numbered elements, different
+ways. For instance, try adding zero to a number, or add
+from that given by the assigniments anid task descrip-
+some number to zero. Also, add two numbers whose
+tions associated with Table I, which brings out the con-
+sum is greater than fifteen, to give element J a chance
+cept of "logic elemenits" quite clearly.
+(I purposely
+to end in the UP state. (The maximum sum that can be
+avoid mentioning either "logic" or this other interpreta-
+represented is 31, and if the actual sum, S, which should
+tion until after the exercise has worked, so that it is
+result from a given addition operation is greater than
+easier to prove to the class that the elements them-
+31, theni the number to expect as a result is S-32.)
+selves don't know about logic
+they are designed to
+respond to UP's and DOXVN's in certain ways, and it is
+GENERAL DISCUSSION
+our interpretation that invests them with the property
+It may be helpful to the class to show them a sketch
+of doing logic.) An UP-task element can be called an
+such as Fig. 6, where the general function of the different
+AND element. For instance, Element 1 will be in the
+groups of elements used in the seconld simulation exer-
+UP state if Element A is UP and Element E is UP. A
+cise is portrayed. They seem to appreciate being told
+DOWN-task elenient can be called an OR element
+that this is the type of so-called block diagram which a
+(e.g., Element 3 will be in the UP state if Element A is
+computer engineer would use to represent this little
+UP or Element E is UP, or if both are UP). An OP-
+computer. During the successive addition steps, the
+POSITE-task element can be called a NOT element
+patterns which initially represented the addend and
+(e.g., Element 7 is UP if Element 5 is not UP). The
+augend are shifted to the right, to make the successive
+function of the adder can be designated by two state-
+rightmost bits of information available to the logical
+ments, one of which states the conditions of A, E, and
+network of the adder. In this type of addition, there is a
+K for which the state of J should go to UP at the next
+carry to consider between successive steps just as there
+"bleep" signal, and the other of which does likewise for
+is between
+the successive steps involved
+in adding
+K. These statements are compounded only from (A
+multidigit
+decimal
+numbers.
+Between
+each
+"bonk-
+UP),
+(E UP), (K UP), (AND), (OR), and (NOT)
+bleep" signal, our adder network takes into account the
+statement components, anid the logic network of the
+states of the current "least significant digits" in the
+adder compounds
+these same
+things
+in
+a
+physical
+registers, and the state of the carry-storage element K,
+manner.
+to decide what the next states of the elements J and K
+For instance, J should go to the UP state next if any
+should be. At the next "bonk-bleep" signal, J and K as-
+one, or else all three, of A, E, and K are UP. If (A) is
+sume their new states as determined for them by the
+used to designate the statement, "A is UP," and (NOT
+"logic" network in the adder during the preceding in-
+A) for "A is not UP" (and so on for the other elements),
+terval, while the remaining patterns in the two registers
+we can use our AND, OR and NOT elements to gen-
+move another step to the right. In this fashion, the two
+erate the condition equivalent to the foregoing state-
+original numbers shift off the right end of their registers,
+ment: (J) next if [(A) AND (NOT E) AND (NOT K)]
+J
+H
+G
+F
+E
+(16)
+(8) [(4)
+(2)
+(1)
+Adder,
+k
+-i
+>consisting of
+(Addend, then sum)
+a network of
+(intermediate carry)
+C
+~B
+A
+leClock-pulsel
+>
+~~~~~~~source, which
+(4)
+f
+(1
+"logic" elenXelments.Aycroie
+through K.
+(Augend)
+Fig. 6-Functional diagram of simple adding machine which can be simulated by the twenty human "Elements"
+(including clock source) of Fig. 4.
+1961
+Engelbart: Games That Teach the Fundamentals of Computer Operation
+37
+OR [(NOT A) AND (E) AND (NOT K) ] OR [(NOT
+groups of routines into a "program" which, finally,
+A) AND (NOT E) AND (K)] OR [(A) AND (E) AND
+in conjunction with the physical machine we have
+(K) ].
+constructed, gives us the impressive information-
+It can be noted that there are more AND-OR-NOT's
+handling facility with which the "computer" awes
+used here than in our adder network. Part of the prob-
+the uninitiated.
+lem of a computer engineer is to devise logical networks
+4) Just as in real electronic computers, the proper re-
+which use the fewest elements for each job, and the net-
+sult in our little system depended upon every ele-
+work used for our adder is the result of just such a
+ment operating correctly every time. This points
+component-minimizationi study. It would take quite a
+out the tremendous emphasis
+that has
+to
+be
+bit of study for someone not a computer engineer or
+placed upon reliability in the engineering design of
+logician to analyze our adder network and see that its
+a computer. If we used enough people, we could
+logical condition for the next J state is equivalent to the
+simulate an entire computer with the same kinds
+ones given above.
+of "elements" that we used above in the second
+Each of the lettered elements provides the function of
+simulation exercise; however, people are far too
+temporary storage
+for some UP-DOWN
+state that
+unreliable to allow such a computer to give de-
+represents information which we want temporarily to
+pendable results.
+save. At each "bonk-bleep" signal, a storage element
+takes new information from either another storage ele-
+Props nee fore
+st
+iu
+o
+x
+s
+ment, or a logic element whose state depends upon that
+of one or more storage elements within some AND-OR-
+1) For the first exercise you need four cards (I use
+NOT condition. This is the very essence of the workings
+4- by 6-inch white cards), each with a different
+of any digital computer.
+one of the numerals 1, 2, 4, or 8 drawn clearly anid
+heavily on one side, leaving the other side blank.
+CONCLUSION
+2) For the second exercise you need nineteen similar
+Svaipttcan gain
+cards. On nine of these are printed, respectively,
+Severalese exercimpo artabeneftswinedithe
+st
+entsg
+para-
+the digits 1 through 9, preferably on both sides of
+from these exercises are mentioned in the opening para-
+the card. On one side of each of the other ten is
+graphs of the paper. These lessons can be better appre-
+printed a different one of the letters A, B, C, D,
+ciated after having read through the exercise descrip-
+El F, G, H, J, K, and on the other sides of the first
+tions, and will be especially appreciated after actually
+nine of these are printed the numbers associated
+running through the exercises with a group. It might be
+with the given lettered elements in Fig. 4. Element
+worth tabulating these and other benefits so that you
+K can have its letter printed on both sides.
+can better poinlt them out to your class:
+1) Organization of functional elements of a given de-
+APPENDIX I
+gree
+of
+capability
+can
+yield
+a
+system
+which
+possesses a considerably higher degree of capabil-
+ADDITIONAL EXERCISES
+ity.
+A condensed description is included here for each of
+2) Any given participating element need not have the
+three other human-simulated digital networks that has
+faintest comprehension as to the function of the
+proven useful to me in the past. Anyone who enjoys
+system, or as to his role in that system.
+logical design will no doubt generate his own types and
+3) From 1) and 2) it is easy to realize that no mys-
+variations of such exercises if he becomes interested.
+tical powers of comprehension or intelligence have
+to be provided by physical phenomena. All of the
+capability in a computer is achieved by repeated
+The first exercise (Fig. 1) demonstrated a pure binary
+application of principle 1). First we organize raw
+counter, to which could be added more, similar, count-
+physical phenomena into special shapes and a spe-
+ing elements to provide count capacity up to ever higher
+cial environment to get unit elements possessing
+numbers of significant binary "digits." It is interesting
+capabilities such as simulated by our participants.
+to demonstrate that a slight complication in the design
+Then we organize groups of these elements to get
+can provide decimal presentation of the count. The ar-
+functional blocks, which we further organize to get
+rangement shown in Fig. 7 accomplishes this. As can he
+a basic computer, capable of performing a limited
+noted in Table III, the lettered elements have tasks
+repertoire of very specific tasks. After this we must
+which are the same as those of the corresponding count-
+organize the sequences of task commands given to
+ing elements in the first exercise, except that here most
+the computer in order to obtain a "routine"> which
+of them must be alert to a secondary signal that may
+enables the computer to do a fairly complicated
+tell them to go unconditionally to the DOWN state.
+task. Generally, then, we must cleverly assemble
+The numbered elements
+1 and 3 have (lecision tasks
+38
+IRE TRANSACTIONS ON ELECTRONIC COMPUTERS
+March
+H
+(8)
+D
+(8)
+ILKI
+{
+G
+(4)
+L
+{
+C
+(4)
+F
+(2)
+B
+(2)
+21771
+E
+(1)
+[7]
+A
+(1)
+Primary
+signial
+source
+(handclap)
+Fig. 7
+Distribution of elements for a two-stage decimal cotunter.
+TABLE III
+TASK ASSIGNMENT FOR THE Two-STAGE
+DECIMAL COUNTER OF FIG. 7
+Element
+Task
+A
+Chaniges state whenever hears clap.
+B
+Changes state wheniever sees A go from UP to DOWN
+except goes to DOWN when hears "alpha," no matter
+what A does then.
+Changes state whenever sees B go from UP to DOWN,
+C
+except goes to DOWN when hears "alpha," no matter
+what B does then.
+Changes state whenever sees C go from UP to DOWN,
+D
+except goes to DOWN when hears "alpha," no matter
+what C does then.
+E
+Changes state whenever hears "alpha."
+Chaniges state whenever sees E go from UP to DOWN,
+F
+except goes to DOWN when hears "beta," no matter
+what E does then.
+Changes state whenever sees F go from UP to DOWN,
+G
+except goes to DOWN when hears "beta," no matter
+what F does then.
+Changes state whenever sees G go from UP to DOWN,
+H
+except goes to DOWN when hears "beta," no matter
+what G does then.
+1
+Goes UP whenever B and D are both UP, otherwise is
+DOWN.
+2
+Emits the word "alpha" whenever it sees 1 go to UP.
+3
+Goes UP whenever F and H are both UP, otherwise is
+DOWN.
+4
+Eimits the word "beta" whenever it sees 3 go to UP.
+exactly similar to those of UP elenments in the adder net-
+this into a "beta" signal that tells the second stage to
+work of the second exercise. Elements 2 and 4 are of a
+reset to zero, and which can be used as a count-one
+new type; each is a kiind of a signal translator and dis-
+signal by a third stage if desired.
+tributer.
+Element
+1
+recognizes the binary ten-count
+state of the first stage, and Element 2 translates this
+Register Transfer Control-(Fig. 8 and Table IV)
+into the verbal "alpha" signal which is recognized as a
+This exercise provides some conceptual insight into
+set-to-zero signal by the first stage and a count-one
+the manner in which information may be transferred
+signal by the second stage. Similarly, Element 3 recog-
+from one place to another under automatic control. The
+nizes the ten-count state of the second stage (after the
+temporary-storage Elements A1 through H operate just
+tenth "alpha" signal), whereupon element 4 translates
+as did those in the adder network of the second exercise,
+1961
+Engelbart: Games That Teach the Fundamentals of Computer Operation
+39
+(8)
+(4)
+(2)
+(1)
+(8)
+(4)
+(2)
+(1)
+H
+G
+F
+E
+L
+,
+K
+ID
+C
+B
+A
+Primary
+4
+3
+2
+1
+4'
+signal
+I
+~~~~~~source
+8
+7
+6
+5
+"boiik-bleep"
+Fig. 8-Distribution of elements for register-transfer-control exercise.
+TABLE IV
+TASK ASSIGNMENTS FOR THE ELEMENTS* OF THE REGISTER-TRANSFER-CONTROL EXERCISE SHOWN IN FIG. 8
+Temporary Storage Elements
+Logic Decision Elements
+Element
+|
+Watches
+Element
+Watches
+Task
+A
+B
+1
+K
+OPPOSITE
+B
+C
+2
+1, A
+UP
+C
+D
+3
+K, E
+UP
+D
+4
+4
+2, 3
+DOWN
+E
+F
+5
+L
+OPPOSITE
+F
+G
+6
+5, E
+UP
+G
+H
+7
+L, A
+UP
+H
+8
+8
+6, 7
+DOWNNVN
+K
+Stays as set
+L
+Stays as set
+* Lettered elemenits note position of their assignied elenmenit at sound of "book," then assuime that position at sounld of "bleep," iio nmatter
+what the assigned element does at "bleep.'" Nutmiibered elements wait for no external signal, bLut responid iimmediately to any chanige of their
+assigned element(s).
+anid so, with four successive "bonk-bleep" signial pairs,
+Expanded 4dder Network
+(Fig. 9 anld Table V)
+anly nunmber-represeinting UP-DOWN pattern in either
+Four innovations are incorporated
+in the exercise
+register will be shifted out the right ends, and some new
+described here (innovationis to the exercise in Fig. 4),
+pattern- will be shifted in from the left. For any given
+and any one innovation may be introduced by itself.
+replacement cycle like this, the states held by Elements
+Refer to the distribution of elemenits in Fig. 9, anid their
+K anid L during the cycle determine what pattern is
+task assignmelnts in Table V.
+shifted anew into each register.
+If K is UP, Register
+Saving the augend: The addition of one temiiporary-
+ABCD ends up with the pattern originally in Register
+storage element to the complement of Fig. 4 allows the
+EFGH, and if K is DOWN, ABCD ends with the same
+original contents of Register ABCD to be returned to it,
+pattern it originally held. If L is UP, Register EFGH
+which seems to enrich the demolnstrationi for most lay-
+ends up with the patterii originally held in Register
+men: Add Element L, assigned to watch Element A, and
+ABCD, and if L is DOWN, EFGH ends with the same
+reassign Element D to watch Elemelnt L.
+pattern it originally held. By suitably setting L and K,
+Optional add or subtract: The additioni of one decisioni
+we can make either one of the original patterns end up
+element in the adder allows the "operator" of this niet-
+in both registers, make the patterns interchange be-
+work the option of having his five "bonk-bleep" signal
+tween registers, or make the patterns both return to
+pairs result in either adding or subtracting the number
+their original locations.
+in the ABCD register to (or from) the number in the
+Since students have already learned that the patternis
+EFGHJ register: Introduce Element
+10, assigned to
+represent information, they can get a feeling for the
+watch Element A. Its task is different depending upon
+possibilities of moving iniformation here and there in a
+whether we want to add or subtract. We also give per-
+mnachine. From experience with the adder network, or
+manent reassignments to Elements 1 and 3, which must
+with
+further
+reflection upon
+this
+exercise,
+they can
+each substitute Element 10 for Element A in its respec-
+see that L and K could be elements of other registers,
+tive watching assignment. Element K is also involved
+or
+otherwise
+be
+temporary-storage
+elements
+whose
+in the operational changes. Here is the procedure then.
+states are conltrolled by decision elements and
+else-
+XVe enter the desired numbers into the two registerss. If
+where-contained information, so that the concept of
+we want an addition operation, Element 10 is instructed
+automatically
+controlled
+information,
+transfer
+gains
+to duplicate every move of Element A, and everything
+some substance with them,
+jlse is done as before. If we want a subtraction opera-
+40
+IRE TRANSACTIONS ON ELECTRONIC COMPUTERS
+March
+K
+J
+H
+G
+F
+E
+D
+C
+B
+A
+Primary Signal
+L
+source
+(bonk-bleep)
+10
+1
+2
+3
+4
+5
+ita3rt
+6
+7
+8
+/9
+9
+-y
+X
+W
+V
+U
+T
+S
+R
+Q
+P
+N
+M
+Fig. 9-Distribution of elements for expanded adder network, with simplified tasks for temporary storage (lettered) elements, with auto-
+matically metered "bonk-bleep" signals, and with subtraction option.
+TABLE V
+TASK ASSIGNMENTS FOR THE ELEMENTS IN THE EXPANDED ADDER NETWORK OF FIG. 9*
+Decision Elements
+Temporary-Storage Elements
+"Bonk" changers
+"Bleep" changers
+Element
+Watches
+Task
+Element
+Watches
+Element
+Watches
+10
+A
+Same, for add
+All
+B
+A
+M
+Opposite, for
+subtraction
+1
+10, E
+Up
+N
+C
+B
+N
+2
+1, K
+Up
+P
+D
+C
+P
+3
+10, E
+DowIn
+Q
+L
+D
+Q
+4
+1, K
+Down
+R
+F
+E
+R
+5
+3, 4
+Up
+S
+G
+F
+S
+6
+3, K
+Down
+T
+H
+G
+T
+7
+5
+Opposite
+U
+J
+H
+U
+8
+6, 7
+Up
+V
+9
+J
+V
+9
+2, 8
+Down
+W
+5
+K
+W
+11
+a,ye
+Up
+X
+A
+L
+X
+Counting Elements
+Element
+Responds to
+as
+"Bleep"
+d3
+a changing from UP to DOWN
+ly
+, changing from UP to DOWN
+* The primary signal source emits "bonk-bleep" signals uintil Element 11 changes to UP. Each temporary-storage element, when he hears
+his part of the "bonk-bleep" signal, is to change immediately to the state held at that time by his assigned or watched element. Each counting
+element responds by changing state when it gets its assigned signal. A numbered element waits for no signal, but adjusts immediately when its
+watched element(s) change.
+tionl, Element 10 is inistructed always to do the opposite
+one would expect to find. I usually artfully avoid this
+from what Elemenlt A does. (Being a numbered element,
+result if I don't have time to discuss it, by making sure
+Element 10 waits for no signals, but adjusts instantly
+that the difference will be a positive number. If there is
+to any change of Elenment A.) Furthermore, for sub-
+time, the students can be given a feeling for how this
+traction we ask Element K to begin in the UP state,
+situation can be automatically detected (watch K, if it
+but otherwise we proceed with the five "bonk-bleep"
+is UP at the end, the answer is right as it is, but if K
+signal pairs in exactly the same manner as before.
+isDOWN itisknown thatwhatwe see is actually 32-d),
+If the number in the ABCD register is larger than the
+and
+automatically
+corrected
+(e.g.,
+make
+Elements
+initial number in the EFGHJ register, the subtraction
+E, F, G, H, J, and K change state, direct Element 10 to
+operation will result in the number 32-d remaining in
+stay clamped to DOWN, and go through another series
+the EFGHJ register, where -d is the negative difference
+of five "bonk-bleep" signal pairs, with everyone except
+1961
+Engelbart: Games That Teach the Fundamentals of Computer Operation
+41
+Element 10 responding as usual. This will result in a
+pairs you have emitted. To help in this situation, to give
+number in Register EFGHJ that we know to be the
+the students a picture of how further automatic control
+negative difference, and in Register ABCD still holding
+is brought into the picture, and to make use of more
+its original number.)
+participants, you can utilize four more participants to
+Simpler temporary-storage elements: As noted earlier
+keep track of this for you and automatically stop you
+in the paper, there seems usually to be more trouble with
+when you have emitted the right number of signal pairs.
+temporary-storage elemenits than with any of the other
+Elements a,
+3, and y are organized into a counting
+kinds. If enough participants are available, it is easy to
+chain, with assignments exactly similar to those ele-
+get around this by adding more elements so that all can
+ments in the
+first exercise. They count how maniy
+have simpler tasks-in a manner exactly analogous to
+"bleeps" have been emitted. Element 11, assigned to
+what is often done with the electronic components. Ex-
+watch Elements a and y with the UP task, will go to
+tra Elements M through X are added, as shown in Fig.
+the UP state after the fifth "bonk-bleep" signial pair
+9, and the watching assignments of all lettered elements
+has been emitted. To get your autonmatic signal meter-
+are changed, as indicated in Table V. This allows each
+ing, then, you make a point of seeing that Elemenits a,
+lettered element to be able to switch to the state its
+/3, and y know they are to be all in the DOWN state
+watched element is in when the given element receives
+whenever your arithmetic operation is to begin, and
+his particular single signal, rather than listening for two
+then you continue emitting your "bonks" anid your
+signals and having to remember on the second signal
+"bleeps" and monitoring everyone's performanice until
+what he saw on the first signal. This eliminates a source
+you see Element 11 go to the UP state. Commenting
+of trouble, and also allows more people to participate.
+upon the trouble of keeping count of your signals, and
+It also is a much easier operating system to trouble-
+then installing this metering system, after the rest of
+shoot, in case things do go wrong.
+the adder network has been broken in,
+is something
+"Bonk-bleep" signal metering: Sometimes, under the
+which somehow delights most audiences, as they see you
+pressure of monitoring the behavior of so many ele-
+incorporate a digital design for which they already have
+ments,
+it becomes hard for you, the primary signal
+a background to provide a service they can easily under-
+source, to keep track of how many "bonk-bleep" signal
+stand.
+Discussion
+logic elements were saved, and the show
+TABLE A-II
+went on. The revised assignments for logic
+ASSIGNMENTS FOR ELEMENTS IN AN ENGELBART-
+The Editor can report the following ex-
+elements are given in Table A-I. The assign-
+STYLE PARALLEL AD)DER
+periences using Engelbart-style human com-
+ments
+for
+register
+elements
+remain
+un-
+E-le-
+Watches
+Task
+Function
+puters at the high-school level.
+changed, and are given in Engelbart's Table
+ment
+1) In using the binary counter (Engel-
+II. See Engelbart's Second Simulation Exer-
+A1
+-
+Hold assigned position
+Input bit
+bart's Fig. 1) it was found that the partici-
+cise for further explanation.
+Bi
+-
+Hold assigned position
+Input bit
+pants "cheated," i.e., they soon sensed the
+Ks
+A1, B1
+UP
+Carry out
+rhythm of the procedure and all began using
+the audible source signal to govern their
+TABLE A-I
+Ai*
+-
+Hold assigned position
+Input bit
+ASSIGNMENTS FOR LOGIc ELEMENTS FOR A SERIAL
+Bi
+-
+Hold assigned position
+Input bit
+actions. To avoid this the source signal was
+ADDER USING INEQUIVALENCE
+Pi
+Ai, B:
+UP
+Logic
+changed to a touch on the left arm of Ele-
+Ni
+Ai, Bi
+Inequivalence
+Logic
+Qi
+Ni, Ki..1
+UP
+Logic
+ment A, and so was not observable by the
+Element
+Watches
+Task
+Ki
+Pi, Qi
+DOWN
+Carry out
+other elements. In other words we observed
+A E
+Si
+Ni, Ki-i
+Inequivalence
+Sum bit
+,EInequivalence
+crosstalk and eliminated it!
+2
+1, K
+UP
+2) A simple
+shift
+register,
+with end-
+3
+A, E
+UP
+* i2, 3,...
+.
+5
+2, 3
+DOWN
+around shift, proved to be a very rewarding
+9
+1, K
+Inequivalence
+exercise. Attempts at high speed provoked
+shown in Table AnIl
+fithefst (eat-signifi-
+breakdown, and showed clearly several dis-
+cant) and the general (ith) stage are tabu-
+tinct types of error.
+4) The serial adder has provoked a re-
+lated. The last (most-significant) stage, n,
+3) One group contained only 15 mem-
+action among bright high-school students to
+is like the general (ith)
+stage, except that
+bers. Hence we could not use the serial adder
+the effect that we are using an awful lot of
+Kn, the carry-out, should be interpreted as
+(Engelbart's Fig. 4). We could have short-
+machinery and time for a simple process.
+the (n+1)th bit of the total sum. The total
+ened the registers, but preferred to reduce
+We then point out, of course, that the regis-
+number of participants required
+is 7n-3,
+the number of logic elements by using an
+ters can be lengthened at will to add larger
+i.e., 4, 11, 18,
+*
+-
+-
+.
+"inequivalence" element that responds by
+numbers with little additional equipment,
+In each case we have found it most de-
+assuming the UP state whenever the two
+but admit that time certainly is spent. As a
+sirable to have the
+instructions
+for each
+elements it is watching are DIFFERENT,
+counter-example, a parallel adder may be
+participant typed at the head of his 4 by 6
+and the DOWAN state otherwise. This con-
+built. The number of elements then required
+identification card.
+cept proved easy
+for the students
+(even
+certainly is large, but the time required for
+H. E. TOMPKINS
+though it's not so easy to fabricate as a sin-
+addition
+is small. A design for two stages
+Univ. of New Mexico
+gle electronic element).
+As a result, four
+of a parallel adder using inequivalence
+is
+Albuquerque, N. M.

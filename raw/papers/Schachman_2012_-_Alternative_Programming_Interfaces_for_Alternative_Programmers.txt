@@ -1,0 +1,911 @@
+Alternative Programming Interfaces for Alternative Programmers
+Toby Schachman
+New York University, Interactive Telecommunications Program
+tqs@alum.mit.edu
+Abstract
+This paper seeks to broaden the view of what programming
+is, who programs, and how programming ﬁts in to larger sys-
+tems. With growing frequency, people are approaching pro-
+gramming from unlikely backgrounds such as the arts. Of-
+ten these new programmers bring with them ways of work-
+ing which are incompatible with mainstream programming
+practices, but which allow for new possibilities in program-
+ming interfaces. This paper makes suggestions for the de-
+sign of these new programming interfaces. It presents as a
+case study and demonstration Recursive Drawing. Recur-
+sive Drawing is a reimplementation of the textual program-
+ming language Context Free as a graphical, directly manip-
+ulable interface. Instead of a compiler or interpreter, Recur-
+sive Drawing’s programming interface is modeled as a con-
+straint solver. This allows the programmer to modify the pro-
+gram’s source code by manipulating the program’s output.
+Additionally, the design of the interface focuses on program
+transformation, rather than program construction.
+1.
+Introduction
+This paper posits the emergence of a new generation of “al-
+ternative programmers.” This new generation has no pro-
+gramming background, but has a need to program comput-
+ers in order to realize their goals. Indeed they approach pro-
+gramming from unrelated backgrounds, from well-developed
+disciplines with their own paradigms for understanding the
+world.
+This inﬂux of new programmers provides an opportunity
+to radically shift the way programming is done. But to real-
+ize this opportunity, we will need to be sensitive to the back-
+grounds and goals of this new generation, and to reconsider
+the activity of programming itself.
+[Copyright notice will appear here once ’preprint’ option is removed.]
+This paper explores the notion of alternative program-
+ming interfaces for the next generation of alternative pro-
+grammers.
+Sections 2 and 3 deﬁne these terms, with the goal of ex-
+panding the scope of what is traditionally considered pro-
+gramming and who are traditionally considered program-
+mers.
+Section 4 introduces a case study, Recursive Drawing.
+Recursive Drawing is a reimplementation of the textual pro-
+gramming language Context Free as a graphical, directly
+manipulable programming interface. The following sections
+are illustrated with examples from Recursive Drawing.
+Section 5 suggests an alternative to the linear nature of
+programming. Instead of compilers, programming interfaces
+are implemented as constraint solvers, which allows the pro-
+grammer to modify the source code by modifying a running
+process.
+Section 6 suggests shifting our focus from program con-
+struction to program transformation.
+Section 7 discusses the strengths and weaknesses of Re-
+cursive Drawing and directly manipulable programming in-
+terfaces in general.
+Section 8 concludes.
+2.
+What are Alternative Programming
+Interfaces?
+I will address programming interfaces from three perspec-
+tives: physical, conceptual, and social.
+2.1
+Physical Interfaces
+Physical interfaces concern the human body and the com-
+puter’s “body”–its hardware inputs and outputs–and the af-
+fordances allowed by each of these bodies.
+The dominance of the text medium tends to dictate the
+form of physical interfaces. The human communicates to
+the computer through typing on the keyboard. The computer
+communicates back through whichever outputs the program
+addresses: the screen, speakers, or other peripherals. But
+even if a program is intended to create audio or graphical
+output, throughout much of the programming process the
+computer communicates to the programmer through text on
+the screen (through the console).
+1
+2012/4/14
+Communicating text back and forth through these inter-
+faces has proven to be effective because this medium can
+be made largely unambiguous (through formal languages),
+it emulates how we communicate intellectually with other
+humans (talking and writing), and we have evolved conven-
+tions (syntax and semantics) for densely packing abstract in-
+formation into this form.
+Alternative physical interface possibilities for program-
+ming include:
+1. Visual interfaces. These exploit the full graphical capabil-
+ities of the screen rather than just text, and often encour-
+age human input through a spatial pointing device such as
+a mouse, trackpad, or stylus, in addition to or replacing
+keyboard input.
+2. Touch screen interfaces. Building on visual interfaces,
+but with the human touching the screen directly. Two
+potential advantages over mouse-based visual interfaces
+are a more direct feeling of manipulation of the screen’s
+output, and the expressive possibilities of multiple points
+of contact (multitouch).
+3. Arbitrary interfaces. These include the human communi-
+cating to the computer using physical gestures in space,
+sounds, or the manipulation of peripheral sensors such as
+knobs and accelerometers. The computer communicates
+back visually, aurally, or haptically.
+None of these alternative physical interfaces have pro-
+duced widely adopted general purpose programming envi-
+ronments. However, they have had signiﬁcant success in lim-
+ited domains. Patching environments such as Pd [20], Max
+[19], vvvv [3], Quartz Composer [16], and Isadora [7] use
+visual interfaces with dataﬂow semantics to program interac-
+tive audio and visual works. Rebecca Fiebrink’s Wekinator
+[11] uses arbitrary inputs (such as cameras and accelerome-
+ters) and arbitrary outputs (usually sound) to program novel
+musical instruments using a supervised learning workﬂow
+both on the part of the computer (recognizing human ges-
+tures) and the human (learning to “play” the instrument).
+I see three reasons to continue pursuing these alternative
+physical interfaces, in growing order of importance:
+1. We have the technology. The programming interfaces to-
+day are largely a result of the technological evolution
+of the computer going all the way back to mainframes
+and teletypes. This historical bias suggests that alterna-
+tive physical interfaces may have dormant potentials.
+2. Alternative physical interfaces allow new workﬂows for
+programming. Communicating text back and forth is
+a turn-based experience. Programmer talks, computer
+talks, etc. Alternative interfaces can allow for a contin-
+uous feedback loop between human and computer. For
+example, each of the patch-based visual environments al-
+low the user to adjust parameters with sliders, and see
+the results of these changes in realtime. This live coding
+workﬂow is possible with text–syntax highlighting is a
+form of realtime feedback, for example–but the medium
+does not naturally support it. This is why textual inter-
+faces supporting live coding are often augmented with
+visual inputs like sliders, as in Bret Victor’s “Inventing on
+Principle” demonstrations [24] and OpenEnded Group’s
+Field [4].
+3. Alternative physical interfaces engage different parts of
+the human brain. Textual interfaces engage the “lan-
+guage center” of our brain. We have difﬁculty express-
+ing concepts to the computer which we cannot translate
+through this part of our brain. Yet many of our most
+profound ideas we think of visually or kinesthetically.
+Alan Kay relates an anecdote about the mathematician
+Jacques Hadamard, who polled the great mathematicians
+and scientists of his day about how they “do their thing.”
+Most replied that they did not think using mathematical
+symbols (the language center of mathematics) but rather
+imagined ﬁgures or even experienced sensations. Einstein
+replied, “I have sensations of a kinesthetic or muscular
+type.” [15]
+2.2
+Conceptual Interfaces
+Conceptual interfaces concern the the metaphors we use to
+think about our programs. Examples include objects, actors,
+structures, and streams. Conceptual interfaces are largely
+equivalent with the semantics of a programming language.
+They are the key mental structures that must exist solidly and
+isomorphically in the mind of the programmer and the mind
+of the computer (that is, in its implementation), in order for
+programmer and computer to collaborate effectively.
+2.3
+Social Interfaces
+Social interfaces concern programming’s relationship to so-
+ciety and how program creation interacts with social sys-
+tems. It addresses the questions:
+1. What is programming and how does it relate to the rest of
+the world?
+2. How should we program together?
+3. Who should program?
+A traditional, now humorously out-dated view, is that pro-
+gramming is calculating. Computer operators feed problems
+into a (physically huge) computer which spits out an an-
+swer. Calculation (usually prefaced with “cold”) is the an-
+tithesis of humane, creative activity. We have made inroads
+towards a new perspective, where programming is seen as
+a creative, collaborative process between human and ma-
+chine. This is largely due to pioneering work such as Ivan
+Sutherland’s Sketchpad [22] and Douglas Engelbart’s NLS
+[10]. Yet the traditional view still maintains a hold on the
+collective (un)consciousness. Many people are intimidated
+by computers, or intimidated by programming. They see the
+2
+2012/4/14
+computer as The Other, a soulless entity with whom they
+cannot engage.
+The next question concerns how we relate to our human
+collaborators in programming. People have always worked
+together in teams when appropriate, but the internet and
+platforms such as GitHub [2] have made the world of code
+more like an ecosystem than ever before.
+The semantics of a language often reﬂect and reinforce
+the organizational structures that collaborate using the lan-
+guage. Social interactions are subtle–and I want to avoid
+making sweeping generalizations–but for the purposes of
+illustration I will provide a stereotyped example: Java’s
+semantics reinforce an insulated hierarchical organization
+of programmers where one programmer cannot “step on
+the toes” of another. Contrast this with Ruby, whose se-
+mantics encourage substantial monkeying with the lan-
+guage internals. Ruby’s semantics thus require more cross-
+communicative teams, necessarily smaller, or alternatively
+the top-down institution of conventions like Rails [13].
+I am not implying that any one way of collaborating is
+better or worse, just that there is a relationship between pro-
+gramming interface design and the way we work with each
+other. I see substantial opportunities to research the sociolog-
+ical implications of human collaboration in programming.
+Finally, the question of who should program I will ad-
+dress in the next section.
+3.
+Who are Alternative Programmers?
+Many profound advances in programming were the result
+of people reconsidering the question, who are the program-
+mers? Engelbart’s NLS expanded the view of programmers
+from business analysts and artiﬁcial intelligence researchers
+to any information worker [10]. Smalltalk originally focused
+on children as programmers [15]. Hypercard was developed
+and distributed at Bill Atkinson’s insistence that “end users”
+need programming capabilities [6]. Even web programming,
+at least initially, promoted a culture where anybody could
+contribute their content or software to the web.1
+I believe a new generation of programmers is emerging.
+These “alternative” programmers are people who do not self-
+identify as programmers, but who regularly program com-
+puters in order to achieve their goals. Alternative program-
+mers can include for example musicians, performers, writ-
+ers, visual artists, designers, scientists, architects, and ac-
+tivists.
+Evidence of this emergence includes:
+1. The growth of the DIY hacker and maker cultures, with
+hacker spaces, hackathons, workshops, and meetups.
+These serve as social support structures for alternative
+programmers.
+1 There seems to be a pattern where an environment is developed for al-
+ternative programmers, then as a consequence of success is overtaken by
+“real” programmers. Adobe Flash, originally designed for animators who
+wanted to work with interaction, also follows this pattern.
+2. Platforms and communities built around beginner-friendly,
+dive-right-in programming, such as Arduino [1] and Pro-
+cessing [12].
+3. The ubiquitous use of computers as a means of creative
+expression, ranging from editing video for YouTube to
+using Max for live performances.
+Some alternative programmers take well to the current
+ecosystem of programming interfaces. But certain creative
+processes–relied on by alternative programmers in their pri-
+mary work–are inadequately accommodated by traditional
+programming interfaces. For example:
+1. Non-linear workﬂows. Traditionally, programmers build
+software towards a speciﬁcation. The traditional program-
+ming process works best when this speciﬁcation is clear
+and unambiguous. But many alternative programmers
+work towards more ambiguous goals, driven for exam-
+ple by feelings, intuitions, or emotions. To support these
+goals, programming interfaces must support exploration
+and discovery.
+2. Improvisation. Improvisation is the art of tuning the
+mind’s rhythms and momentum to allow for the organic
+exploration of a conceptual space. Improvisation is usu-
+ally brought up in the context of music, but it is often
+central to the process of writers, visual artists, and other
+creative explorers. To support improvisation, a program-
+ming interface must ﬁrst provide continuous feedback, as
+turn-based feedback will impart its own rhythm on the
+improvisation. Second it must let the improviser work di-
+rectly in the representation of concern. Any need to trans-
+late to a different representation, for example to translate
+a visual or musical idea to numerical values, can break
+the “ﬂow” of improvisation.
+The use of computers in general for creative expression
+prompts the question: Where do we draw the line between
+programming and authoring–the use of specialized com-
+puter tools to produce specialized results? I don’t have a
+good answer but I encourage the reader to take a broad view
+of programming. For the purposes of this paper, I will take
+programming to mean any instance of designing a system.
+Bret Victor’s distinction between static and dynamic pictures
+may also be helpful [23].
+Like Smalltalk or Hypercard, I intend to blur the line
+between programmer and user, between programming and
+authoring. Consequently, throughout this paper the reader is
+encouraged to play with substituting the words “user” and
+“programmer.”
+4.
+Case Study: Recursive Drawing
+To explore and demonstrate alternative programming inter-
+faces, I created Recursive Drawing. Recursive Drawing is
+a reimplementation of the textual programming language
+3
+2012/4/14
+Context Free [9] as a graphical, directly manipulable inter-
+face.
+Context Free is similar in thrust to Logo’s Turtle Graph-
+ics [18]. It is a small, elegant programming language for
+creating graphics. But the two languages diverge fundamen-
+tally in their semantics and the programming experience they
+induce. Logo has imperative semantics and induces in the
+programmer a “body syntonic” feeling. The programmer di-
+rects a drawing robot’s movements through space. Context
+Free has pure (side-effect free) semantics and induces in the
+programmer a more abstract, disembodied feeling. The pro-
+grammer declaratively nests spatial transformations. Each
+declaration is independent of any global context, hence the
+name Context Free.
+In Context Free, the programmer speciﬁes rules. A rule
+is simply a list of references to other rules, each with a
+spatial transformation (e.g. translation, rotation, scale) to
+apply to that rule. There are two primitive rules, circle and
+square, which simply draw the shape. Rules can reference
+themselves. See Figure 1 for an example. 2
+Figure 1. A basic example of Context Free. The rule
+DRAWING draws a circle, then draws itself translated one
+unit to the right and scaled by a factor of 0.8.
+Through self-reference, Context Free encourages the ex-
+ploration of self-similar shapes: fractals. These shapes are
+co-recursively generated inﬁnite structures, the graphical
+equivalent to Lisp’s streams [5] or Haskell’s inﬁnite data
+structures [14]. Execution of a Context Free program can be
+understood as the recursive substitution of rules with their
+deﬁnitions. Context Free features a form of lazy evaluation,
+in that when drawing to the screen, recursion halts when
+the shapes are too small to be seen (i.e., at a suitably small,
+sub-pixel size).
+Context Free presents a paradox. On one hand, it features
+semantics which are considered advanced, even esoteric, by
+the mainstream programming community: referential trans-
+parency and co-recursive structures. On the other hand, it is
+visually intuitive and has been enthusiastically adopted by
+artists.
+2 Context Free has many more features, but these basic ones will be sufﬁ-
+cient for the purposes of this paper.
+Recursive Drawing was inspired by this paradox, along
+with Bret Victor’s challenge to create directly manipula-
+ble programming interfaces [23]. Directly manipulable in-
+terfaces not only feature continuous feedback, but also al-
+low the programmer to manipulate the program using a rep-
+resentation that resembles the ﬁnal output of the program, in
+this case graphics. Note that graphical programming inter-
+faces are not necessarily directly manipulable. For example,
+patch-based languages can produce graphics but in this case
+the programmer manipulates the patches, not the graphical
+output itself.
+Context Free presented a comparatively easy target for
+a directly manipulable interface. Its output representation is
+graphical and its semantics are based around spatial trans-
+formations. Thus user interface conventions from graphical
+authoring tools such as Photoshop could be employed by
+the programming interface. Additionally, lazy evaluation is a
+powerful abstraction which allows very small programs, so I
+could mitigate the information density constraints that often
+plague graphical programming interfaces.
+Dynamic interaction is central to the point of Recursive
+Drawing, so I encourage the reader to watch a short video
+demonstration of Recursive Drawing or to try it out (in the
+browser). These resources are available at:
+http://totem.cc/onward2012
+In the following sections I will contrast Context Free with
+Recursive Drawing in order to illustrate alternative program-
+ming interfaces. I am not claiming that Recursive Drawing is
+a better way to program than Context Free, or even that any
+of these alternative interfaces are better than traditional in-
+terfaces. I only wish to illustrate that alternative possibilities
+are available.
+5.
+Rethinking Causality
+Programming is traditionally a forward-progressive, linear
+activity. We think in procedures: one thing leads to another.
+We have a goal in mind, and in order to reach our goal we
+start at the foundation and build our software step by step.
+This section explores relaxing this notion of linear, forward
+progression.
+5.1
+Cause and Effect
+Changing the source code of a program so as to effect a
+speciﬁcally desired change in its output is a very common
+activity in programming. Indeed, in the context of traditional
+programming interfaces, this activity can be seen as equiva-
+lent to debugging.
+Traditionally, if a programmer wants to change the output
+of a program in a speciﬁc way, she must solve two problems:
+1. Find the line(s) of code which resulted in the part of the
+output she is concerned with.
+2. Understand the relationship between this code and the
+output, in order to adjust the code accordingly.
+4
+2012/4/14
+To deal with the ﬁrst problem, the programmer must trace
+backwards in the causal chain ending at the output. That is,
+she must trace back to the line of source code which initially
+started the chain. Some tools keep track of this chain of
+causality, and attach this history to the output in some form.
+For example:
+1. Stack traces show the chain of functions which were
+called to reach a given point in the execution of a pro-
+gram.
+2. Console logging is often performed for the sole purpose
+of determining if certain code has been reached. Here, the
+programmer manually does a binary search through the
+source code, testing whether different parts of code are or
+are not part of the causal chain of concern.
+3. A DOM inspector in a browser allows the programmer to
+point at an element on the screen and see what node of
+the DOM tree was responsible for drawing it. However,
+the programmer cannot look further back in the causal
+chain to see, for example, what line of Javascript was
+responsible for creating that DOM node.
+4. Patch-based languages graphically show the ﬂow of data
+through the system. Because there are no side-effects, the
+ﬂow of data is equivalent to the ﬂow of causality.
+To deal with the second problem, understanding the relation-
+ship between code and output, a programmer usually uses
+some form of test-and-repeat. This activity can take the form
+of:
+1. A purely mental procedure. The programmer simulates
+the computer’s operation step-by-step in her head.
+2. Turn-based feedback with the computer. The program-
+mer changes the code and recompiles, or interacts with
+a REPL.
+3. Continuous feedback with the computer: live coding.
+A program is a collection of causal relationships, and to
+program effectively the programmer must understand these
+causal relationships. The tools and processes mentioned
+above help build this understanding, and help solve the prac-
+tical need of effecting a desired output with a program. But
+I believe we can go further by rethinking the nature of our
+programming interfaces.
+5.2
+Constraints Generalize Procedures3
+We currently think of a programming interface as a one-way
+causality ﬂow: a procedure. This one-way arrow is embod-
+ied by a compiler, interpreter, or live coding environment.
+Compilers are functions. They take input (source code) and
+3 “Constraints Generalize Procedures” is a section of “Building Robust Sys-
+tems” by Gerald Sussman [21]. In this essay, Sussman discusses tracking
+the provenance of information (keeping track of the causality chain), and
+generalizing procedures to constraints so as to allow causality to ﬂow in
+multiple directions.
+return output (a running process). REPLs and live coding
+environments are stream processors. They take a stream of
+input (source code modiﬁcations) and incrementally modify
+a running process.
+The alternative is to think of a programming interface as
+a two-way causality ﬂow: a constraint system. Instead of
+specifying a compiler, the programming interface speciﬁes
+a constraint solver.
+The traditional workﬂow proceeds as normal. When the
+programmer modiﬁes the source code, these modiﬁcations
+propagate via the constraints to the running process. But al-
+ternatively, the programmer can manipulate the running pro-
+cess, and these modiﬁcations will back-propagate to modify
+the source code.
+To illustrate, Context Free uses the one-way procedural
+programming model whereas Recursive Drawing uses the
+two-way constraint model.
+For example, when working with a self-referential rule
+in Context Free, the programmer can modify the transfor-
+mation under which the rule calls itself. Because the rule is
+self-referential, this initial transformation gets called on it-
+self iteratively so as to produce different recursive effects.
+The only way to adjust the recursive effects is to adjust the
+initial transformation. However in Recursive Drawing, the
+programmer can modify a shape at any depth in the recur-
+sion (Figure 2). This modiﬁcation then back-propagates to
+the rule deﬁnition which speciﬁes the initial transformation.
+This feature is implemented as a constraint solver (in this
+case, with a numerical algorithm).
+Figure 2. The programmer can modify a shape at any depth
+in the recursion. This modiﬁcation back propagates to the
+rule deﬁnition.
+It is important to note that users intuitively think of the
+common drag-and-drop convention as a constraint-based op-
+eration. When the user presses down the mouse button in
+preparation for dragging, she expects that the mouse pointer
+and the point she pressed on will remain constrained to-
+gether. So when she moves the mouse, the object she is drag-
+ging moves with it. Recursive Drawing’s constraint model is
+a generalization of this convention.
+The major design challenge of programming interfaces
+as constraint solvers is providing the user with the power to
+5
+2012/4/14
+specify what is constrained in the current context. With pro-
+cedural programming interfaces, the programmer modiﬁes a
+line of source code and expects every other line of source
+code to stay the same.4 But if the programmer modiﬁes the
+output, there may be multiple ways to change the source
+code in order to produce the new output. The programming
+interface must then either infer further, “natural” constraints,
+or the programmer must be able to manually specify further
+constraints so as to remain in control of her program.
+Recursive Drawing currently solves this problem by only
+allowing the direct editing of the rule which is currently
+shown in the workspace. Thus it assumes that every other
+rule’s deﬁnition is constrained to its current state. However I
+don’t believe this is always the most “natural” constraint to
+impose. A further line of research would be to reimplement
+Recursive Drawing on a touch-screen interface. With this
+interface, the programmer could drag, or more accurately
+constrain, with multiple ﬁngers at a time, allowing more
+expressive modiﬁcations to the program.
+6.
+Programming: Construction or
+Transformation?
+Much of the design process in programming is concerned
+with how information is represented: the model. The pro-
+grammer carefully chooses the data structures with which
+the program is built. The programming language designer
+carefully chooses the primitive constructs with which pro-
+grammers will build their programs. Both of these workﬂows
+reﬂect a reductionist mindset. Elements are deﬁned by the
+smaller elements they are made up of. This forms an “ab-
+straction pyramid”, with primitives on the bottom and the
+ﬁnished piece of software on top.
+The abstraction pyramid has served us well in the past.
+Reductionism allows us to reason at the relevant level of the
+pyramid. It can enable us to build quite complex software
+(tall pyramids) because we can build on previously laid
+foundations. But a reductionist mindset can also reduce our
+ﬂexibility and produce cognitive dissonance when a piece of
+software is approached from a different perspective.
+For example, users approach software differently than the
+creators of the software. Discrepancies inevitably arise be-
+tween the model underlying the program and the model that
+forms in the user’s mind. Many recognize these discrepan-
+cies as the root cause of usability issues [17]. Often it is ar-
+gued that the model needs to be simpliﬁed–made more ele-
+gant and powerful–so that the user can more fully grasp it.
+This is often true but it misses a subtle issue. A creator of
+software is concerned with its reductionist nature–the pyra-
+mid of pieces it’s made out of. But the user of software is
+concerned with what she can do with the software. That is,
+the user is only concerned with the aspects of the software
+4 This can be tedious for certain types of modiﬁcations, which is why
+modern IDEs relax this constraint by supporting advanced search-and-
+replace functionality
+which are operationally relevant in the context of a larger
+system [8].
+The same applies to programmers approaching existing
+code. When we choose our representation for the program,
+we limit the ways in which we can easily modify the pro-
+gram. By “easily modify” I mean transforming the program
+without choosing new primitives–what programmers appro-
+priately call “refactoring.” This is why experienced develop-
+ers think long and hard about the primitives they will use
+before they touch the keyboard.
+Is there a way make refactoring cheaper? Is there an
+approach to program design that will not conceptually lock
+us in to the primitives we initially choose, so that we can
+open our minds to the various contexts in which our software
+might be used?
+This is of course a deep challenge, but I believe we can
+better attack it with a shift in mindset.
+I suggest we shift our focus from program construction
+to program transformation. Instead of concentrating on the
+primitives and what we can build from them, we concen-
+trate on the transformations we might want to apply to our
+program in various contexts. In other words, I’m suggesting
+we think of programs operationally rather than reductively.
+We deﬁne a program by its relationships to other (potential)
+programs, not by the atoms which constitute it.
+This is analogous to the shift in mindset from set theory
+to category theory. In set theory, we deﬁne a property of a
+set in terms of its elements. In category theory, we deﬁne a
+property of a set in terms of its relationships to other sets.
+I’ll provide two examples from Recursive Drawing. In
+each case, I will show how my initial design reﬂected a
+reductionist mindset, then how I rethought the issue from
+a transformation-centric mindset.
+6.1
+Relativity
+The ﬁrst example relates to how we traditionally use coordi-
+nate systems. In Context Free, the underlying representation
+consists of a hierarchy of coordinate systems. The nest-able
+coordinate system is a key primitive on which Context Free
+programs are built.
+Now, recursively nested spatial transformations are in-
+trinsic to the concept of Context Free, but their representa-
+tion as coordinate systems is an implementation detail which
+is forced on the programmer. Indeed early versions of Recur-
+sive Drawing did the same thing. Every coordinate system
+was explicitly shown in the interface as arrows. Additionally,
+the user could only manipulate the drawing by manipulating
+the arrows. (Figure 3)
+When we force an underlying representation on the pro-
+grammer, program transformations can only be performed
+with respect to that underlying representation. Indeed this
+is the only way to tweak a Context Free Art program. The
+programmer must tweak a value which makes a change with
+respect to the coordinate system that the value lives in.
+6
+2012/4/14
+Figure 3. An early version of Recursive Drawing. Coordi-
+nate systems are explicitly shown as arrows in the interface.
+But as Recursive Drawing’s interface evolved, I found
+that it was more intuitive to tweak a shape by transforming
+it with respect to the other shapes. That is, it didn’t matter
+where a shape was or how it was oriented with respect to the
+underlying coordinate system, it only mattered how it related
+to the other shapes. Thus Recursive Drawing’s canvas–the
+model it presents to the programmer–has no center, orienta-
+tion, or scale. Shapes are positioned, oriented, and sized with
+respect to each other.
+6.2
+Ontology
+The second example relates to ontology: how we divide a
+program into separate objects, or equivalently, how we de-
+ﬁne identity. A reductionist mindset implies a ﬁxed ontology.
+But in life, we can shift between contexts. Each context pro-
+vides a different way to divide the world. Analogously, we
+would like our ontology to change depending on the context
+in which we’re working with a program.
+A heuristic we can use to produce an ontology in a given
+context is based on the transformations that the context sup-
+ports. Given two things, A and B, if in our context every
+transformation we apply to A also uniformly applies the
+same transformation to B and vice versa, then A and B can
+be considered identical in that context.
+To illustrate, say we have a rigid body like a coffee cup.
+It is unclear that this should be a single object if we’re
+looking at it in the context of atoms or quantum clouds.
+However, in the context of everyday interactions, we can
+identify the coffee cup as a single entity. We determine
+this based on the transformations available in our everyday
+interaction context. If I transform the handle of the cup by
+lifting it two feet upwards, then the rest of the cup is also
+lifted two feet upwards. Rigidity by deﬁnition implies that a
+transformation on any given point of the object must apply
+uniformly to every other point on the object. In this way,
+an operational context–a set of allowable transformations–
+implies an ontology.
+This principle was violated in early versions of Recur-
+sive Drawing. In an initial design, during editing, the highest
+level (the rule to be modiﬁed) and the lowest level (a prim-
+itive shape, circle or square) of the hierarchy were always
+highlighted when the programmer hovered her mouse over
+a shape (Figure 4, above). This was intended to show the
+relevant parts of the abstraction pyramid, to help the pro-
+grammer comprehend the reductionist model. But in user
+testing, I found that users were confused about what shape
+would move when they performed a manipulation. An im-
+provement was made when highlighting the lowest level was
+changed to highlighting all shapes which would transform
+uniformly if the user started dragging (Figure 4, below). If it
+moves the same, it is the same. This more closely mapped a
+user’s intuition about what constituted a singular object.
+Figure 4. Above, highlighting based on the abstraction
+pyramid. Below, highlighting based on what will transform
+uniformly.
+In each of these examples, when I started from a reduc-
+tionist perspective, the primitives of the model determined
+the transformations that were available to the programmer.
+This could be seen as a pernicious form of representation
+exposure. In the alternate version, the transformations avail-
+able in a given context were considered ﬁrst. These transfor-
+mations then implied an appropriate model to display to the
+programmer in that context.
+7.
+Strengths and Weaknesses of Recursive
+Drawing
+Context Free powerfully exploits recursion, allowing pro-
+grammers to create complex graphics with surprisingly short
+and elegant code. Recursive Drawing extends this strength,
+encouraging experimentation with graphical co-recursive
+structures.
+This experimentation can lead to unexpected insights
+which would be difﬁcult to attain in a textual programming
+interface. For example, these are all insights I had into the
+mathematics of these shapes while playing with Recursive
+Drawing:
+7
+2012/4/14
+1. Seeing how a convergent transformation applied itera-
+tively always converges to the same point despite its ini-
+tial position. This is perhaps the graphical equivalent of
+saying if you keep dividing by 2 you will approach 0 no
+matter what number you start at. By dragging around the
+base case, I was able to gain a kinesthetic understanding
+of this principle. (Figure 5)
+Figure 5. Convergent transformations always converge to
+the same point.
+2. Seeing how spirals, with iterative rotation amounts close
+to exact divisors of 360 degrees, create second-order spi-
+rals. (Figure 6)
+Figure 6. A single spiral creating second-order spirals.
+3. Seeing how the Fibonacci series is exponential binary
+branching with one branch “carried up a level.” (Figure
+7)
+Recursive Drawing has several weaknesses compared to
+Context Free.
+The programmer loses some control over her program be-
+cause Recursive Drawing does not expose the underlying
+Figure 7. Binary tree (above) and Fibonacci tree (below).
+representations of numbers and coordinate systems. For ex-
+ample, in Context Free, one can adjust a number manually,
+in an exact way so as to, for example, make one shape ex-
+actly 3 times larger than another. Further, by manually con-
+trolling the nesting of coordinate systems, it is possible in
+Context Free to specify an exact origin point around which
+a shape should rotate. By contrast, in Recursive Drawing in
+its current iteration, shapes can only be transformed approx-
+imately, and can only be rotated with respect to the origin of
+a primitive shape in the drawing. However, I am conﬁdent
+that this functionality can be adequately addressed in further
+iterations of Recursive Drawing by allowing the program-
+mer to specify additional constraints, for example as is done
+in Sutherland’s Sketchpad.
+A more subtle problem is that the programmer loses con-
+trol because she has less conceptual distance from her cre-
+ation. This paper argues that textual interfaces may be in-
+appropriate for certain types programming, but their weak-
+ness is also a strength in that they force the programmer to
+take a step back and consider her problem from a different
+perspective (in this case, from the traditional programming
+perspective). On the other hand, Recursive Drawing makes
+it easy to experiment wildly. This experimentation can cause
+8
+2012/4/14
+the creator to lose sight of her original vision. Directly ma-
+nipulable interfaces of the future will need to ﬁnd a balance
+in supporting both experimentation and meticulous control.
+Directly manipulable interfaces thus share a problem with
+textual programming interfaces: they both make some things
+easier to do than others, and some ways of working easier
+than others. This can have repercussive inﬂuences on the
+programs we make and our conception of what program-
+ming is about. In order to more fully explore the universe
+of programming possibilities, we must always maintain vig-
+ilant awareness of this inﬂuence.
+8.
+Conclusion
+The physical, conceptual, and social dimensions of our pro-
+gramming interfaces reinforce our notions of what program-
+ming is about. The programming community self-selects for
+members who can think using the dominant paradigms of
+the community.
+By reaching out to alternative programmers, who do not
+naturally think in these paradigms, we have the opportunity
+to transform the nature of programming. But to do so we
+will need to reconsider in a broad sense the nature of our
+programming interfaces.
+In particular, our traditional programming interfaces are
+tightly coupled to the medium of text. They thus primarily
+engage the language center of our brain. While great thinkers
+and great programmers work on problems internally using
+their visual and kinesthetic intuition, these impulses must
+be ﬁltered and processed through the symbolic manipula-
+tion part of the mind in order to communicate them to the
+computer.
+Recursive Drawing is a reconsideration of the textual lan-
+guage Context Free using a graphical, directly manipulable
+interface. Direct manipulation means working with the pro-
+gram in a representation that closely resembles the output of
+program.
+Two design principles were used in the creation of Recur-
+sive Drawing: the programming interface is thought of as a
+two-way constraint solver rather than a one-way compiler,
+and the interface focuses on the program transformations
+available in various contexts, rather than program creation
+from ﬁxed foundational primitives.
+Directly manipulable interfaces naturally encourage ex-
+perimentation. This can lead to new insights and deeper un-
+derstanding of the programming model. It can also distract
+from a programmer’s original intention. Creators of directly
+manipulable interfaces will thus need to carefully balance
+experimentation and control, and maintain awareness of the
+inﬂuences a programming interface can have on the pro-
+grams we create.
+Acknowledgments
+Thanks to my test users, whose discoveries and frustrations
+pointed the way in the development of Recursive Drawing.
+Thanks to my thesis advisor, Nancy Hechinger, for com-
+ments on drafts of this paper and encouragement.
+References
+[1] Arduino. URL http://www.arduino.cc/.
+[2] Github. URL https://github.com/.
+[3] vvvv - a multipurpose toolkit. URL http://vvvv.org/.
+[4] Field, 2008. URL http://openendedgroup.com/field.
+[5] H.
+Abelson,
+G.
+Sussman,
+and
+J.
+Sussman.
+Struc-
+ture and Interpretation of Computer Programs.
+Mit
+Electrical
+Engineering
+and
+Computer
+Science
+Se-
+ries. Mit Press, 1996.
+ISBN 9780262011532.
+URL
+http://books.google.com/books?id=2p887sEWtAYC.
+[6] B. Atkinson. Hypercard, 1987.
+[7] M.
+Coniglio.
+Isadora.
+URL
+http://www.troikatronix.com/isadora.html.
+[8] A. Cooper. The Inmates Are Running the Asylum. Macmillan
+Publishing Co., Inc., Indianapolis, IN, USA, 1999.
+ISBN
+0672316498.
+[9] C. Coyne, M. Lentczner, and J. Horigan. Context free, 2005.
+URL http://www.contextfreeart.org/.
+[10] D. C. Engelbart. Augmenting Human Intellect: A Conceptual
+Framework. Technical report, Air Force Ofﬁce of Scientiﬁc
+Research, 1962.
+[11] R. Fiebrink. Real-time Human Interaction with Supervised
+Learning Algorithms for Music Composition and Perfor-
+mance. PhD thesis, Princeton University, Princeton, NJ, USA,
+January 2011.
+[12] B. Fry and C. Reas.
+http://processing.org/.
+URL
+http://processing.org/.
+[13] D.
+H.
+Hansson.
+Ruby
+on
+rails.
+URL
+http://rubyonrails.org/.
+[14] P. Hudak, S. Peyton Jones, P. Wadler, B. Boutel, J. Fairbairn,
+J. Fasel, M. M. Guzm´an, K. Hammond, J. Hughes, T. Johns-
+son, D. Kieburtz, R. Nikhil, W. Partain, and J. Peterson. Re-
+port on the programming language haskell: a non-strict, purely
+functional language version 1.2. SIGPLAN Not., 27(5):1–164,
+May 1992. ISSN 0362-1340. doi: 10.1145/130697.130699.
+URL http://doi.acm.org/10.1145/130697.130699.
+[15] A.
+Kay.
+Doing
+with
+images
+makes
+symbols:
+Communicating
+with
+computers,
+1987.
+URL
+http://archive.org/details/AlanKeyD1987.
+[16] P.-O. Latour. Quartz composer, 2005.
+[17] D. Norman.
+The Design of Everyday Things.
+Basic
+Books. Basic Books, 2002.
+ISBN 9780465067107.
+URL
+http://books.google.com/books?id=w8pM72p dpoC.
+[18] S. Papert.
+Mindstorms: children, computers, and powerful
+ideas. Basic Books, Inc., New York, NY, USA, 1980. ISBN
+0-465-04627-4.
+[19] M.
+S.
+Puckette.
+Max,
+.
+URL
+http://cycling74.com/products/max/.
+[20] M. S. Puckette. Pure data, . URL http://puredata.info/.
+[21] G. J. Sussman. Building robust systems an essay. Technical
+report, 2007.
+9
+2012/4/14
+[22] I. E. Sutherland.
+Sketchpad: a man-machine graphi-
+cal communication system.
+In Proceedings of the May
+21-23, 1963, spring joint computer conference, AFIPS
+’63
+(Spring),
+pages
+329–346,
+New
+York,
+NY,
+USA,
+1963. ACM.
+doi: 10.1145/1461551.1461591.
+URL
+http://doi.acm.org/10.1145/1461551.1461591.
+[23] B.
+Victor.
+Dynamic
+pictures,
+2011.
+URL
+http://worrydream.com/DynamicPicturesMotivation/.
+[24] B.
+Victor.
+Inventing
+on
+principle,
+2012.
+URL
+http://vimeo.com/36579366.
+10
+2012/4/14

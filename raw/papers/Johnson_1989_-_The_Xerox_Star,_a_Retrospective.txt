@@ -1,0 +1,3842 @@
+The Xerox Star: 
+A Retrospective 
+Jeff Johnson and Teresa L. Roberts, US West Advanced 
+Technologies 
+William 
+Verplank, 
+IDTwo 
+David C. Smith, Cognition, 
+Inc. 
+Charles H. Irby and Marian 
+Beard, Metaphor 
+Computer 
+Systems 
+Kevin Mackey, 
+Xerox 
+x 
+crox introduced 
+the 8010 “Star” 
+Information 
+System 
+in April 
+of 
+1Y8 I. That 
+introductton 
+was an 
+important 
+event in the history 
+of personal 
+computing 
+because 
+it changed 
+notions 
+of 
+how 
+interacttve 
+systems 
+should 
+be de- 
+signed. 
+Several 
+of Star’s 
+designers. 
+some 
+of us responsible 
+for the origmal 
+dectpn 
+and others 
+for recent 
+improvements, 
+de- 
+scribe in this article 
+where Star came from. 
+what 
+is distinctive 
+about 
+it. and how 
+the 
+original 
+design 
+has changed. 
+In doing 
+so. 
+we hope to correct 
+some misconception\ 
+about Star that we have seen in the trade 
+press and to relate some of what we have 
+learned 
+from 
+designing 
+it. 
+For brevity, 
+we use the name 
+“Star” 
+here to refer to both Star and its successor, 
+Viewpoint. 
+“ViewPoint” 
+refers 
+exclu- 
+sively 
+to the current 
+product. 
+What Star is 
+Star was designed 
+as an office 
+automa- 
+tion system. 
+The idea was that profession- 
+als in a business 
+or organization 
+would 
+have 
+workstations 
+on their 
+desks 
+and 
+would 
+use them to produce, 
+retrieve, 
+dis- 
+tribute, 
+and 
+organize 
+documentation, 
+presentations, 
+memos, 
+and reports. 
+All 
+of 
+the workstations 
+in an organization 
+would 
+The Xerox Star has 
+significantly 
+affected 
+the computer 
+industry. 
+In this retrospective, 
+several of Star’s 
+designers 
+describe its 
+important 
+features, 
+antecedents, 
+design 
+and development, 
+evolution, 
+and some 
+lessons learned. 
+be connected 
+via Ethernet 
+and vvould share 
+access to file servers. 
+printers. 
+etc. 
+Star’s designers 
+assumed 
+that the target 
+users were interested 
+in getting 
+their work 
+done and not at all interested 
+in computers. 
+Therefore. 
+an important 
+design goal was to 
+make the “computer” 
+as invisible 
+to users 
+as possible. 
+The applications 
+included 
+in 
+September 
+1989 
+0018.91h2/89/0900-(~1 
+l$Ol.OO 0 
+1989 IEEE 
+the system 
+were those that office 
+profes- 
+sionals 
+would 
+supposedly 
+need: 
+docu- 
+ments, 
+business 
+graphics. 
+tables. 
+personal 
+databases, 
+and electronic 
+mail. 
+The 
+set 
+was fixed. 
+always 
+loaded, 
+and automati- 
+cally 
+associated 
+with 
+data files. 
+sliminat- 
+ing the need to obtain. 
+install. 
+and start the 
+right 
+application 
+for a given 
+task or data 
+ftle. 
+Users 
+could 
+focus 
+on their 
+work. 
+oblivtous 
+to concepts 
+like softvvare. 
+oper- 
+ating systems. 
+applications. 
+and programs. 
+Another 
+important 
+assumption 
+was that 
+Star’s 
+users would 
+be casual. 
+occasional 
+users rather than people who spent most of 
+their time at the machine. 
+This assumption 
+led to the goal of having 
+Star be easy to 
+learn and remember. 
+When 
+Star was introduced 
+in 1981. its 
+bitmapped 
+screen. 
+windows. 
+mouse- 
+driven 
+interface, 
+and icons 
+were 
+readily 
+apparent 
+features 
+that 
+clearly 
+distin- 
+guished 
+it from 
+other 
+computers. 
+Soon. 
+however, 
+others 
+adopted 
+these 
+features. 
+Today, 
+windows. 
+mice, and icons are more 
+common. 
+However. 
+Star’s 
+clean, 
+consis- 
+tent user interface 
+has much 
+more 
+to do 
+with its details than with its gross features. 
+We list here the features that we think make 
+Star what 
+it is, categorized 
+according 
+to 
+their level in the system 
+architecture: 
+ma- 
+chine and network, 
+window 
+and file man- 
+ager, user interface. 
+and document 
+editor. 
+11 
+Machine 
+and network 
+level. Impor- 
+tant aspects of Star can be found in the low- 
+est levels of its architecture: the machine 
+and the network of which it is a part. 
+Distributed, 
+personal 
+computing. 
+Though currently 
+available in a stand- 
+alone configuration, 
+Star was designed 
+primarily 
+to operate in a distributed 
+computing 
+environment. 
+This approach 
+combines the advantages and avoids the 
+disadvantages of the two other primary ap- 
+proaches to interactive computing: time- 
+shared systems and stand-alone personal 
+computers. 
+Time-shared systems, dominant through 
+tbe sixties and seventies, allow sharing of 
+expensive 
+resources like printers 
+and 
+large data stores among many users and 
+help assure the consistency of data that 
+many must use. Timesharing has the disad- 
+vantages that all users depend upon the 
+continued functioning of the central com- 
+puter and that system response degrades as 
+the number of users increases. 
+Persona1 computers, which have re- 
+placed timesharing as the primary mode of 
+interactive computing, 
+have the advan- 
+tage, as one Xerox researcher put it, “of 
+not being faster at night.” Also, a collec- 
+tion of personal computers is more reliable 
+than are terminals connected to a central- 
+ized computer: system problems are less 
+apt to cause a total stoppage of work. The 
+disadvantages of PCs, of course, are the 
+converse of the advantages of timeshar- 
+ing. Companies that use stand-alone PCs 
+usually see a proliferation of printers, in- 
+consistent databases, and nonexchange- 
+able data. 
+The solution, pioneered by researchers 
+at Xerox (see “History 
+of Star develop- 
+ment” below) and embodied in Star, is to 
+connect personal workstations with a lo- 
+cal area network and to attach shared re- 
+sources (file servers, database servers, 
+printers) to that same network. 
+Mouse. An interactive computer system 
+must provide a way for users to indicate 
+which operations they want and what data 
+they want those operations to be per- 
+formed on. Users of early interactive sys- 
+tems specified operations and operands 
+via commands and data descriptors (such 
+as text line numbers). As video display ter- 
+minals became common, it became clear 
+that it was often better for users to specify 
+operands - 
+and sometimes operations - 
+by pointing to them on the screen. It also 
+became clear that graphic applications 
+should not be controlled solely with a key- 
+board. In tbe sixties and seventies, people 
+invented many different pointing devices: 
+the light pen, the trackball, the joystick, 
+cursor keys, tbe digitizing tablet, the touch 
+screen, and the mouse. 
+Like other pointing devices, the mouse 
+allows easy selection of objects and trig- 
+gering of sensitive areas on the screen. Tbe 
+mouse differs from touch screens, light 
+pens, and digitizing pads in that it is a rela- 
+tive pointing device: the movement of the 
+pointer on the screen depends upon mouse 
+movement rather than position. Unlike 
+light pens, joysticks, and digitizing pads, 
+the mouse (and the corresponding pointer 
+on the screen) stays put when the user lets 
+go of it. 
+To achieve satisfactory mouse-track- 
+ing performance, Star handles the mouse 
+at a very low level. In some workstations, 
+the window system handles mouse track- 
+ing, with the result that the mouse pointer 
+often jerks around the screen and may even 
+freeze for seconds at a time, depending 
+upon what else the system is doing. The 
+mouse is a hand-eye coordination device, 
+so if the pointer lags, users just keep mov- 
+ing the mouse. When the system catches 
+up, the mouse moves beyond the user’s 
+target. We at Xerox considered this unac- 
+ceptable. 
+Star uses a two-button mouse, in con- 
+trast with the one-button mouse used by 
+Apple and the three-button mouse used by 
+most other vendors. Though predecessors 
+of Star developed at Xerox Palo Alto Re- 
+search Center (see “History of Star devel- 
+opment” 
+below) 
+used a three-button 
+mouse, Star’s designers wanted to reduce 
+tbe number of buttons to alleviate confu- 
+sion over which button did what. Wby stop 
+at two buttons instead qf reducing the 
+number to one, as Apple did? Because 
+studies of users editing text and other ma- 
+terial showed that a one-button mouse 
+eliminated button-confusion 
+errors only 
+at the cost of increasing selection errors to 
+unacceptable levels. 
+Bitmapped display. Until 
+recently, 
+most video display terminals were charac- 
+ter-mapped. 
+Such displays enable vast 
+savings in display memory, which, when 
+memory was expensive, made terminals 
+more affordable. 
+Some windowing 
+systems allow win- 
+dows to overlap each other. Other systems 
+don’t; the system adjusts the size and posi- 
+tion of windows as they are opened and 
+closed. Star’s windowing 
+system could 
+overlap windows and often did (for ex- 
+ample, property sheets appeared in win- 
+dows overlapping application windows). 
+However, early testing revealed that users 
+spent a lot of time adjusting windows, usu- 
+ally so they did not overlap. Because of 
+this, and because Star’s 17-inch screen 
+reduced the need for overlapping 
+win- 
+dows, the designers decided to constrain 
+application windows to not overlap. How- 
+ever, some situations benefit from over- 
+lapping application windows. This, added 
+to a subsequent reduction in the standard 
+screen size to 15 inches (with a 19-inch 
+screen optional), resulted in optional con- 
+straints for Viewpoint, 
+Star’s successor, 
+with the default setting allowing applica- 
+tion windows to overlap one another. 
+In the seventies, researchers at Xerox 
+PARC decided that memory would get 
+cheaper eventually and that a bitmapped 
+screen was worth the cost anyway. They 
+thus developed the Alto, which had a 
+screen 8.5 inches wide and 10.5 inches tall 
+and an instruction set specially designed 
+Integrated applications. “Integrated” 
+has become a buzzword used to describe 
+many things. Here, it means that text, 
+graphics, tables, and mathematical 
+for- 
+mulas are all edited inside documents. In 
+many other systems, different 
+types of 
+content are edited in separate application 
+for manipulating display memory. 
+Like the Alto, Star’s display has a reso- 
+lution of 72 pixels per inch. The number 72 
+was chosen for two reasons. First, there are 
+72 printer’s points per inch, so 72 pixels 
+per inch allows for a smooth interface with 
+the world of typesetting and typography. 
+Second, 72 pixels per inch is a high enough 
+resolution 
+for on-screen legibility 
+of a 
+wide range of graphics and character sizes 
+(down to about eight points - 
+see Figure 
+l), but not so high as to cause an onerous 
+memory 
+burden, which 
+a screen that 
+matched the 300 dots-per-inch 
+printer 
+resolution would have. Unlike many PC 
+graphic displays, the pixel size and density 
+are the same horizontally 
+and vertically, 
+which simplifies the display software and 
+improves image quality. 
+Window and file manager level. Just 
+above Star’s operating system (not dis- 
+cussed here) are facilities upon which its 
+distinctive user interface rests. 
+Windows. Systems now commonly al- 
+low several programs to display informa- 
+tion simultaneously in separate areas of 
+the screen, rather than each taking up the 
+entire display. Star was the first commer- 
+cial system to provide this capability. 
+12 
+COMPUTER 
+Figure 1. Viewpoint 
+screen image. Star’s bitmapped display, once unique in the marketplace, is non much more common. 
+Such a display permits WYSIWYG 
+editing, display of proportionally 
+spaced fonts, integrated text and graphics, and 
+graphical 
+user interfaces. 
+windowa 
+and then cut and paated together. 
+For example, 
+a MacDraw 
+drawing 
+put into 
+a Microsoft 
+Word 
+or Aldus 
+Pagemaker 
+document 
+can no longer be edited; rather, 
+the 
+original 
+must 
+be re-edited 
+with 
+MacDraw 
+and then substituted 
+for the old 
+drawing 
+in the document. 
+Not even Star is fully 
+integrated 
+in the 
+sense used here. For example, 
+though the 
+original 
+structured 
+graphics 
+editor. 
+the 
+new one (see “History 
+of Star develop- 
+ment” 
+below). 
+and the table and formula 
+editors all operate inside text files, spread- 
+sheets 
+and freehand 
+drawings 
+are cur- 
+rently 
+edited 
+in separate application 
+win- 
+dows 
+and transferred 
+into 
+documents, 
+where they are no longer fully 
+editable. 
+User-interface 
+level. Star’s 
+user inter- 
+face is its most outstanding 
+feature. In this 
+section 
+we discuss 
+important 
+aspects 
+of 
+the interface 
+in detail. 
+L>csXrol~ r,~~rt~/~llor-. Star. unlike 
+all con- 
+ventional 
+55 sterns and many 1% Indow- 
+and 
+mouse-based 
+ones. uvx 
+an analogy 
+with 
+real office\ 
+to make 
+the system 
+easy to 
+learn. This analogy 
+is called “the 
+Deshtop 
+metaphor.” 
+To quote from an early article 
+about Star: 
+Even user‘\ initial view of Star 1s the Deal- 
+top. which rc\embles the top of im office de\k. 
+together 
+M lth surrounding 
+furnlturr 
+and 
+equipment. It repre\ent\ ;1 uorhmg en\,ron- 
+ment, where current protect, and accesrtble 
+resource\ re\~de. On the xreen are dl\pla)ed 
+picture\ of famtltar office ohJeCt5. such ;i\ 
+documents. folder\. file drawers. In-haslets. 
+and out-haArts. 
+These object\ ilre displayed 
+as small pictures. or icons. 
+The Desktop i\ the prtncipal Star technque 
+for realizing 
+the phy\icnl 
+offlce metaphor 
+The tcon\ on it are vlvble. concrete emhodi- 
+ments of the correspondmg phq\ical oh,jects. 
+Star users are encouraged to think of the ob- 
+jects on the Desktop in physical terms. YOU 
+can move the icon\ around to arrange your 
+Having 
+uindow 
+s and a mouse doe\ not 
+make a system an embodtment 
+of the Desh- 
+top metaphor. 
+In a Desktop 
+metaphor 
+s) \- 
+tcm, 
+users 
+deal mainly 
+with 
+data file\. 
+oblivious 
+to the existence 
+of program”. 
+They do not “invoke 
+a text editor.” 
+the! 
+“open 
+a document.” 
+The system 
+knows 
+the type of each file and notifies 
+the relc- 
+vant 
+application 
+program 
+when 
+one is 
+opened. 
+Most 
+systems, 
+including 
+M indowed 
+ones. use a Tools metaphor. 
+in which 
+users 
+deal mainly 
+with 
+applications 
+as tools. 
+Users 
+start one or more 
+application 
+pro- 
+grams (such as a word processor 
+or spread- 
+sheet), then specify 
+one or more data files 
+to edit with each. Such systems do not ex- 
+September 
+1989 
+I3 
+plicitly 
+associate applications with data 
+tiles. Users bear the burden of doing that - 
+and of remembering not to try to edit a 
+spreadsheet file with the text editor or vice 
+versa. User convention distinguishes dif- 
+ferent kinds of files, usually with filename 
+extensions (such as memo.txt). 
+Star re- 
+lieves users of the need to keep track of 
+which data file goes with which applica- 
+tion. 
+SunView is an example of a window 
+system based upon the Tools metaphor 
+rather than the Desktop metaphor. Its users 
+see a collection 
+of application program 
+windows, each used to edit certain tiles. 
+Smalltalk-80, 
+Cedar, and various Lisp 
+environments also use the Tools metaphor 
+rather than the Desktop metaphor. 
+This is not to say that the Desktop meta- 
+phor is superior to the Tools metaphor. The 
+Desktop metaphor targets office automa- 
+tion and publishing. It might not suit other 
+applications (such as software develop- 
+ment). However, we could argue that ori- 
+enting users toward their data rather than 
+toward application programs and employ- 
+ing analogies with the physical world are 
+useful techniques in any domain. 
+The disadvantage of assigning data files 
+to applications 
+is that users sometimes 
+want to operate on a file with a program 
+other than its “assigned” 
+application. 
+Such cases must be handled in Star in an ad 
+hoc way, whereas systems like Unix allow 
+you to run almost any file through a wide 
+variety of programs. Star’s designers feel 
+that, for its audience, the advantages of 
+allowing users to forget about programs 
+outweighs this disadvantage. 
+Generic commands. One way to sim- 
+plify a computer system is to reduce the 
+number of commands. Star achieves sim- 
+plicity 
+without sacrificing 
+functionality 
+by having a small set of generic commands 
+apply- to all types of data: Move, Copy, 
+Open, Delete, Show Properties, and Same 
+(Copy Properties). 
+Dedicated function 
+keys on Star’s keyboard invoke these 
+commands. Each type of data object inter- 
+prets a generic command in a way appro- 
+priate for it. 
+Such an approach avoids the prolifera- 
+tion of object-specific commands and/or 
+command modifiers found in most sys- 
+tems, such as Delete Character, Delete 
+Word, Delete Line, Delete Paragraph, and 
+Delete File. Command modifiers are nec- 
+essary in systems in which selection is 
+only approximate. 
+Consider the many 
+systems in which the object of a command 
+is specified by a combination of the cursor 
+location and the command modifier. For 
+example, Delete Word means “delete the 
+word that the cursor is on.” 
+Modifiers are unnecessary in Star be- 
+cause exact selection of the objects of 
+commands is easy. In many systems, the 
+large number of object-specific 
+com- 
+mands is made even more confusing by 
+using single-word 
+synonyms instead of 
+command modifiers 
+for similar opera- 
+tions on different objects. For example, 
+depending upon whether the object of the 
+command is a file or text, the command 
+used might be Remove or Delete, Dupli- 
+cate or Copy, and Find or Search, respec- 
+tively. 
+Careful choice of the generic com- 
+mands can further reduce the number of 
+commands required. For example, you 
+might think it necessary to have a generic 
+command 
+Print 
+for printing 
+various 
+things. Having Print apply to all data ob- 
+jects would avoid the trap that some sys- 
+tems fall into of having separate com- 
+Direct 
+manipulation 
+Jeff Johnson and Teresa L. Roberts 
+Stars Desktop metaphor is based upon the more general 
+principle of “direct manipulation.“l~ What, exactly, is direct 
+manipulation? Consider the following passage from a descrip- 
+tion of Apples Macintosh: 
+Imagina driving a car that has no steering wheel, scceterator, 
+brake pedal, turn signal mr, or gear selector. In place of all the 
+familii manual controls, you hava only a fypwrifw kayboa& 
+Anytime you want to turn a comer, change lanes, stow down, 
+speedup,honkyourhom,orbadcup,youhevetotypeacommend 
+saqwnca on the keyboard. lJrMtwat& 
+the car can’t undemtand 
+Englicrhsen~.Insteed,youmuethoklCbwnaspedalkeywith 
+onafi~andlypainaomelettefaandnumbwa,auchaa 
+WCTLAS5.” whkzh means. “slow to M, turn left, and aocelarata 
+to $5.” 
+NodoubtyoucouldlaamtodfiveauchacarifyouhadauffWnf 
+motivstionanddeterminsUon.Butwhyttother,whsnsomanycars 
+use fern&r contmfs? Most peoole wouldn”t.3 
+Actually, It isn’t famlllarfty that makes real cars easier to 
+drive than the hypothegcal “computer car” would be - 
+cars 
+are certainly not familiar to those who are just learning to drive 
+them. What makes real cars easier to drive is the dtrecmess of 
+their controls. Real carshave distfnct interfaces to tha spaed 
+control (the accelerator pedal), the dtrec6on control (the steer- 
+ing wheel), the gears (the gearshi handle), the radio (several 
+knobs and buttons), etc. Each interface is speciaffy d&gned 
+for controlling its respective fun&on. In contrast, tha hypo- 
+thetia 
+“computer-car” has only one control: a keyboard. 
+Direct manipulation requires that distinct functions be in- 
+voked and controlled in spatially dlsttnct locations, in ways that 
+are speckic and appropriate for the particular function being 
+controlled. Data objects should be selected and operated on 
+by simulated physical contact rather than by abstract verbal 
+reference: “That one” rather than “The one in row 6.” Continu- 
+ous functkms (such as screen brightness and color saturation) 
+shouM bs controlled via continuous controls such as sltders, 
+knobs, and dials. Discrete functkms (such as character font 
+family) sh~td be ccntroiled via discrete means such as com- 
+mands, muMposit& &t&es, 
+or menus. In effect, a dii 
+manipulation system has a dfrent 
+input channel for every 
+funckontheusercanhaveftperform. 
+Conventional interfaces are indirect in that there is a single, 
+general interface to all func6onafky (such as a keyboard and 
+command language or a menu). In other words, there is only 
+one input channel for atl kinds of input; different kinds of input 
+are distinguished linguistk?ally, rather than spatially. 
+Having a different interface to each functkm may seem to 
+contradict the goal of having a con&tent interface, but in fact 
+does not Slmitar functions should fndeed have sfmflar user in- 
+terfaces across contexts. Mrect manipulation requires, how- 
+aver, that dHerent functions shouM have distinct interfaces, 
+just as a car has distfnct interfaces to its various functions. 
+Directness versus indirectness ls not a simpfe dichotomy: 
+we can speak of degrees of directness. Consider a graphics 
+ad&or for creating itlustrations. In the foflwving sequence of in- 
+twfacee, each conteine all of the indir&on 
+of the pmvtous 
+oneandaddsanewlevel: 
+14 
+COMPUTER 
+sheets. illustration\. 
+directories. 
+etc., but 
+it ih nonetheless 
+unnccej\ary. 
+In Star. u\- 
+ers simply 
+Cop! 
+to ;t printer icon whateve 
+they hant 
+to print. 
+Similarly. 
+the Movr 
+command 
+is used to invoke 
+Send Mail 
+b> 
+moving 
+;I document 
+to the out-basket. 
+Of’ course. not everything 
+cm 
+he 
+done 
+via generic 
+commands. 
+Some operations 
+are object-specific. 
+For example, 
+a word 
+might 
+USC italics. 
+but italics 
+are meaning- 
+les\ for a triangle. 
+In Star. object-specific 
+operations 
+are provided 
+via 
+selection- 
+dependent 
+“soft” 
+function 
+keys and via 
+menus attached 
+to application 
+windou\. 
+nil-lJ(,t 
+nlurli/llrlurroll 
+utfd 
+,~rtr/‘llic~ul 
+I~.SPI’ i,ltofi~c,c~. Traditional 
+computer 
+\yh- 
+terns require users to remember 
+and type a 
+great deal ju\t 
+to control 
+the system. This 
+Impedes 
+learning 
+and retention. 
+espe- 
+cially 
+by casual 
+users. Star‘s 
+deigner\ 
+favored 
+an approach 
+emphasiring 
+rccog- 
+nition 
+over 
+recall. 
+seeing 
+and pointing 
+over remembering 
+and typing. 
+This 
+sug- 
+gested 
+using 
+menus 
+rather 
+than 
+com- 
+mands. However. 
+the designers 
+wanted to 
+go beyond 
+a conventional 
+menu-based 
+approach. 
+They wanted 
+users to feel that 
+they are manipulating 
+data directly. 
+rather 
+than iz\uinp 
+commanda 
+to the \\ stem to do 
+11,~ happens 
+“behind 
+the user’s 
+back.” 
+it. Star’\ 
+dc\iyners 
+also 
+wanted lo ercploit 
+You needn’t 
+fiddle uith 
+the system to un- 
+the tremendou\ 
+communication 
+po\\ihili- 
+drr\tand 
+what‘s 
+going on: you can under- 
+ties of the display. 
+The! 
+uanted 
+to mo\e 
+stand by inspection. 
+away 
+from 
+strictly 
+verbal 
+communica- 
+Onr of Star‘s designer\ 
+wrote 
+tion. 
+Therefore. 
+they 
+based the system 
+heavily 
+upon 
+principle\ 
+that 
+are now 
+When r\cr\thmp 
+,n u computer \\\tem 
+I\ 
+hnown 
+as direct manipulation 
+and graphi- 
+\~\lblc on the \cri‘en. thr dl\pln> hecomr\ 
+~31 control. 
+reallt>, Otqrct\ 
+and acttons can he undrr- 
+‘ 
+Star user\ control the system h) manipu- 
+stood purely in term\ 
+ot their ett’ect\ 
+upon the 
+d~\pla\, Thl\ va\tl\ 
+\mlpl~f~e\ under\tand- 
+. 
+lating 
+fraphical 
+elements 
+on the screen. 
+,ns and reduce\ learmn~ time.- 
+elements that represent the state of the 5~4 
+tern and data created by user\. The system 
+An example of this philosophy 
+IS the fact 
+does not distlnfuish 
+between 
+input 
+and 
+that. 
+unlike 
+many 
+v,indowbn\ed 
+corn 
+output. 
+Anything 
+displayed 
+(output) 
+b) 
+puter 
+system\ 
+(e\en 
+some developed 
+at 
+the system can bc pointed to and acted upon 
+Xerox). 
+Star has no hidden 
+menus - 
+all 
+b) the u\er (input). 
+When Star display\ 
+a 
+available 
+menus 
+arc marked 
+uith 
+menu 
+directory. 
+it (unlike 
+MS-DOS 
+and Unix) 
+i\ 
+buttons. 
+not displaying 
+a list ofthe name\ ofthe files 
+For a more detailed 
+explanation 
+of di- 
+in the directory. 
+it is displaying 
+the filej 
+rc‘ct manipulation. 
+see the \idebar. 
+thcmselvc\ 
+so that the user can manrpulate 
+them. User\ of this type of system have the 
+feeling 
+that they are operating 
+upon the 
+data directly. 
+rather than through 
+an apent 
+Computer 
+user5 
+often 
+have 
+di fficultl 
+managin_e their files. 
+Before 
+Star existed, 
+-like 
+fetching 
+a book from a library 
+shelf 
+~1 secretary 
+at Xerox 
+complamed 
+that she 
+yourself 
+rather than asking someone to do 
+couldn’t 
+keep trach of the files on her disk. 
+It for you. 
+An inspection 
+of her system revealed file, 
+‘4 relntcd principle 
+is that the grate of the 
+narned~memo. 
+memo 1, memo07 1379. let- 
+system always shous in the display. 
+Noth- 
+ter. etc. Naming 
+thing\ 
+to keep track 
+of 
+(1) The most direct interface for moving a circle would have 
+the user point directly at the screen and pull the circle to its new 
+location. 
+(2) Introducing 
+a mouse, bitpad, or joystick adds one level of 
+indirection: 
+moving the mouse, bitpad stylus, or joystick on the 
+desk moves the pointer on the screen. Some users have diff- 
+culty with this indirection. 
+(3) Arrow keys introduce another level - 
+and another kind - 
+of indirection: 
+the keystroke 
+movements 
+required to move the 
+screen pointer, and hence the circle, do not resemble the de- 
+sired movement 
+of the circle. 
+(4) Typing a command to move the circle is still more indirect 
+Though typing a command 
+involves 
+movements 
+(keystrokes), 
+we are inclined to thmk of the movements 
+as incidental; they 
+could just as well be speech. Thus, it is no longer a matter of 
+movement - 
+similar or not - 
+in one place corresponding 
+to 
+movement 
+in another place; rather, it is the syntax and seman- 
+tics of the command 
+that determine 
+what happens, 
+Differences 
+in directness 
+can be very subtle. Contrast the 
+following two methods of changing the size of a window on the 
+display: 
+(1) Grabbing onto a corner of the window and stretching the 
+window to the desired size. 
+(2) Clicking on the desired window, choosing Resize from a 
+command 
+pull-down menu, then pointing to where the win- 
+dow’s new border is to be moved. 
+It is sometimes 
+said that mouse-driven 
+user interfaces 
+are 
+direct while keyboard 
+user interfaces 
+are indirect. Note, how- 
+ever, that both methods 1 and 2 above use a mouse, yet 
+method 2 is less direct than method 1. 
+The above examples 
+involve an illustration tool and a win- 
+dow manager. Such apphcations 
+are actually in a special cate- 
+gory with respect to direct manipulation, 
+because the images 
+on the screen are what the application 
+is intended to manipu- 
+late. The purpose of many applications 
+(such as databases, 
+command 
+and control, and file management) 
+is to allow users 
+to manipulate 
+informatlon 
+that is only represented 
+on the 
+screen in some way (for example, pictorially 
+or textually). 
+Such 
+applications 
+therefore 
+have one inherent level of indirection. 
+Systems 
+having direct-manipulation 
+user interfaces 
+encour- 
+age users to think of them as tools rather than as assistants, 
+agents, or coworkers. 
+Natural-language 
+user interfaces, 
+which are inherently 
+indirect, encourage 
+the reverse. As direct- 
+manipulation 
+interfaces 
+become more prevalent 
+and as pro- 
+gress is made In natural-language 
+understanding 
+and genera- 
+tion, it will be interesting to see which way users prefer to think 
+about their computers. 
+References 
+1. 
+E. HutchIns, 
+J. Hollan. 
+and D.A 
+Norman, 
+“Direct 
+Manlpulatlon 
+interfaces,” In User-centered System Desjgn, D.A Norman and S 
+Draper, eds.. Erlbaum Associates, H&dale, New Jersey, 1986. 
+pp. 67-124. 
+2. 
+B. Shnelderman, 
+“Direct 
+Manipulation: 
+A Step Beyond 
+Program- 
+mung Languages,” 
+Computer, 
+Vol 
+16, No. 8, Aug 
+1983, pp. 57-68. 
+3. 
+L. Poole, “A Tour of the Mac Desktop,” 
+MacWorld, 
+Vol 
+1, No. 1, 
+1984, pp. 16-21. 
+September 
+1989 
+I5 
+them is bothersome enough for program- 
+mers, but completely unnatural for most 
+people. 
+Star alleviates this problem partly by 
+representing data files with pictures of 
+office objects called icons. Every applica- 
+tion data file in the system has an icon rep- 
+resenting it. Each type of file has a charac- 
+teristic icon shape. If a user is looking for a 
+spreadsheet, his or her eye can skip over 
+mailboxes, printers, text documents, etc. 
+Furthermore, Star allows users to or- 
+ganize files spatially rather than by dis- 
+tinctive naming. Systems having hierar- 
+chical directories, such as Unix and MS- 
+DOS, provide an abstract sort of “spatial” 
+file organization, but Star’s approach is 
+concrete. Files can be kept together by 
+putting them into a folder or simply by 
+clumping them together on the Desktop, 
+which models how people organize their 
+physical worlds. Since data files are repre- 
+sented by icons, and files are distinguished 
+by location and specified by selection 
+rather than by name, users can use names 
+like memo, memol, letter, etc., without 
+losing track of their files as easily as they 
+would with most systems. 
+As bitmap-, window-, and mouse-based 
+systems have become more common, the 
+use of the term “icon” 
+has widened to re- 
+fer to any nontextual symbol on the dis- 
+play. In standard English, “icon” 
+is a term 
+for religious statues or pictures believed to 
+contain some of the powers of the deities 
+they represent. It would be more consis- 
+tent with its normal meaning if “icon” 
+were reserved for objects having behav- 
+ioral and intrinsic properties. Most gra- 
+phical symbols and labels on computer 
+screens are therefore not icons. In Star, 
+only representations of files on the Desk- 
+top and in folders, mailboxes, and file 
+drawers are called icons. 
+Few modes. A system has modes if user 
+actions differ in effects or availability in 
+different situations. Tesler has argued that 
+modes in interactive 
+computer systems 
+are undesirable because they restrict the 
+functions available at any given point and 
+force users to keep track of the system’s 
+state to know what effect their actions will 
+have.’ Though modes can be helpful in 
+guiding users through unfamiliar 
+proce- 
+dures or for handling exceptional activi- 
+ties, they should be used sparingly and 
+carefully. 
+Star avoids modes in several ways. One 
+is the extensive use of generic commands 
+(see above), which drastically reduces the 
+number of commands needed. This, in 
+turn, means that designers need not assign 
+double-duty (that is, different meanings in 
+different modes) to physical controls. 
+A second way is by allowing applica- 
+tions to operate simultaneously. 
+When 
+using one program (such as a document 
+editor), users are not in a mode that pre- 
+vents them from using the capabilities of 
+other programs (such as the desktop man- 
+ager). 
+A third way Star avoids modes is by us- 
+ing a noun-verb command syntax. Users 
+select an operand (such as a file, a word, or 
+a table), then invoke a command. In con- 
+ventional 
+systems, arguments 
+follow 
+commands, either on a command line or in 
+response to prompts. Whether a system 
+uses noun-verb or verb-noun syntax has a 
+lot to do with how mqded it is. In a noun- 
+verb system such as Star, selecting an ob- 
+ject prior to choosing a command does not 
+put the system into a mode. Users can de- 
+cide not to invoke the command without 
+having to “escape out” of anything or can 
+select a different object to operate on. 
+Though Star avoids modes, it is not 
+completely 
+modeless. For example, the 
+Move and Copy commands require two 
+arguments: the object to be moved and the 
+final 
+destination. 
+Though less moded 
+ways to design Move and Copy exist, these 
+functions currently require the user to se- 
+lect the object, press the Move or Copy key, 
+then indicate the destination 
+using the 
+mouse. While Star waits for the user to 
+point to a destination, it is in Move or Copy 
+mode, precluding other uses of the mouse. 
+These modes are relatively 
+harmless, 
+however, because (1) the shape of the cur- 
+sor clearly indicates the state of the system 
+and (2) the user enters and exits them in the 
+course of carrying out a single mental plan, 
+making it unlikely that the system will be 
+in the “wrong” 
+mode when the user begins 
+his or her next action. 
+Objects have properties. 
+Properties 
+allow objects of the same type to vary in 
+appearance, layout, and behavior. 
+For 
+example, files have a Name property, char- 
+acters have a Font family property, and 
+paragraphs have a Justified 
+property. 
+Properties may have different types of val- 
+ues: the Name property of a file is a text 
+string; the Size property of a character 
+might be a number or a choice from a menu; 
+the Justified property of a paragraph is ei- 
+ther “on” 
+or “off.” 
+In Star, properties are 
+displayed and changed in graphical forms 
+called property sheets. 
+Property-based systems are rare. Most 
+computer systems, even today, allow us- 
+ers to set parameters for the duration of an 
+interactive session or for the duration of a 
+command, but not for particular data ob- 
+jects. For example, headings in Wordstar 
+documents do not “remember” 
+whether 
+they are centered or not; whether a line is 
+centered is determined by how the pro- 
+gram was set when the line was typed. 
+Similarly, 
+directories 
+in Unix do not 
+“remember” 
+whether files are to be listed 
+in alphabetical or temporal order; users 
+must respecify 
+which 
+display 
+order 
+they want every time they invoke the 1s 
+command. 
+Progressive disclosure. It has been said 
+that “computers promise the fountains of 
+utopia, but only deliver a flood of informa- 
+tion.“4 Indeed, many computer systems 
+overwhelm their users with choices, com- 
+mands to remember, and poorly organized 
+output, much of it irrelevant to what the 
+user is trying to do. They make no presump- 
+tions about what the user wants. Thus, they 
+are designed as if all possible user actions 
+were equally likely and as if all informa- 
+tion generated by the system were of equal 
+interest to the user. Some systems dimin- 
+ish the problem somewhat by providing 
+default settings of parameters to simplify 
+tasks expected to be common. 
+Star goes further towards alleviating 
+this problem by applying a principle called 
+“progressive 
+disclosure.” 
+Progressive 
+disclosure dictates that detail be hidden 
+from users until they ask or need to see it. 
+Thus, Star not only provides default set- 
+tings, it hides settings that users are un- 
+likely to change until users indicate that 
+they want to change them. Implicit in this 
+design are assumptions about which prop- 
+erties will be less frequently altered. 
+One place progressive 
+disclosure 
+is 
+used is in property sheets. Some objects 
+have a large number of properties, many of 
+which are relevant only when other prop- 
+erties have certain values (see Figure 2). 
+For example, on the page layout property 
+sheet, there is no reason to display all of the 
+properties for specifying running header 
+content and position unless the user actu- 
+ally specifies that the document will have 
+running headers. 
+Another example of progressive disclo- 
+sure is the fact that property displays in 
+Star are temporary, displayed on demand. 
+In some systems, the properties of the cur- 
+rent selection are displayed at all times, 
+through codes embedded in the te.xt or in an 
+area of the screen reserved for that pur- 
+pose, even though the user usually doesn’t 
+care. 
+16 
+COMPUTER 
+Figure 2. Progressive 
+disclosure. 
+Star’s property 
+sheets, like the rest of the interface, 
+use a principle 
+known as progressive 
+disclosure to avoid overwhelming 
+users with information, 
+Llsually, users don’t need to see an object’s properties: 
+they only 
+need to see and perhaps change its assigned style. Users see an object’s properties 
+only upon request. Also, even when a user 
+sets a property 
+sheet to show an object’s properties, 
+as shown here, some information 
+remains hidden until the user asks to 
+see it. For example, there is no need to clutter 
+the property 
+sheet here with boxes for entering numbers for “Other” 
+values of 
+Line Height. Spacing Before Paragraph, 
+or Spacing After Paragraph 
+until the user actually 
+sets the property 
+to “Other.” 
+A highlq refined manifestation 
+of Pro- 
+gressive 
+disclosure 
+recently 
+added to 
+Viewpoint 
+is stoles. which allows users to 
+regard document content (such as a para- 
+graph) as having a single style rule instead 
+of a large number of properties. 
+Thus, 
+styles hide needless detail from users. 
+C‘on.sistcr~c~~. Because Star and all of its 
+applications 
+were designed 
+and devel- 
+oped in-house, its designers had more toll- 
+trol over its user interface than is usually 
+the case with computer systems. Because 
+the designers paid close attention to detail. 
+they achieved a very high degree ofconsis- 
+tency. The left mouse button always se- 
+lects; the right always extends the selec- 
+tion. Mouse-sensitive 
+areas always give 
+feedback when the left button goes down. 
+but never take effect until the button comes 
+“P. 
+El~r/‘/lcl\i.s o,, ,yf’c’rf ,ppl1rc 
+(Ilid .s~‘,-c’t’,I 
+(ILcsI,~II. Windows. 
+icons. 
+and property 
+sheets are uselrss if users can’t easily dis- 
+tinguish 
+them from the background 
+or 
+each other. can’t easily see which labels 
+correspond to which object\. or can’t cope 
+with the visual clutter. To assure that Star 
+presents information 
+in a maximally 
+per- 
+celvahle and useful fashion. Xerox hired 
+graphic 
+designers 
+to deTermIne the ap- 
+pearance and placement of screen objects. 
+These designers applied various written 
+and unwritten 
+principles 
+to the design of 
+the window headers and borders, the Desk- 
+top background. 
+the command 
+buttons, 
+the pop-up menus. the propert) sheets. and 
+the Desktop 
+icons. The most important 
+principles 
+are 
+l The illusion 
+of manipulable 
+objects. 
+One goal. fundamental to the notion of d- 
+rect manipulation. 
+is to create the illusion 
+of manipulable objects. It should be clear 
+that objects can be selected and how to se- 
+lect them. It should be obvious when the) 
+are selected and that the next action will 
+apply to them. Whereas the usual task ot 
+graphic designers is to present informa- 
+tion for passive viewing. 
+Star’s designers 
+had to figure out how to present informa- 
+tion for manipulation 
+as well. This show\ 
+mo%t clearly 
+in the Desktop icons. uith 
+their clear figure/ground 
+relationship: 
+the 
+icons stand by themselves, with self-con- 
+tained labels. Windows reveal in their bor- 
+ders the “handles” 
+for scrolling. 
+paging. 
+window-specific 
+commands, 
+and pop-up 
+menus. 
+l Visual order and user focus. One of the 
+most 
+obvious 
+contributions 
+of good 
+graphic design is appropriate visual order 
+and focus on the screen. For example, in- 
+September 1989 
+I7 
+Figure 3. Visual order and user focus. The large amount of contrast present on the screens of many window systems (left 
+screen) makes it difftcult to focus on the relevant information. 
+The selection should be the user’s main focus: it is the object of 
+the next operation. The right screen shows how Star/ViewPoint’s 
+screen design focuses attention on the selection. 
+Figure 4. Visual order and user focus. Four candidate sets of icons were designed 
+and tested for Star. A representative sample from each set is shown here. In Star, 
+the icon selected by the user is indicated by inverting its image. Candidate icon 
+sets in which the images are mostly white allow icons to stand out when selected. 
+The set that best satisfies thii criterion, the one on the upper left, was chosen. 
+I8 
+tensity and contrast, when appropriately 
+applied, draw the user’s attention to the 
+most important features of the display. 
+In some windowing 
+systems, window 
+interiors have the same (dark) color as the 
+Desktop background. 
+Window 
+content 
+should have high intensity relative to the 
+Desktop, to draw attention to what is im- 
+portant on the screen. In Star, window con- 
+tent background is white, both for high 
+contrast and to simulate paper. 
+Star keeps the amount of black on the 
+screen to a minimum to make the selection 
+stand out (see Figure 3). In most window- 
+ing systems, window headers and other 
+areas of the screen are black, making the 
+selection hard to find. This principle is so 
+important that Star’s designers made sure 
+that the display hardware could fill the 
+nonaddressable border of the screen with 
+Desktop grey rather than leaving it black as 
+in most systems. Star also uses icon images 
+that turn from mostly white to mostly black 
+when selected (see Figure 4) and allows at 
+most one selection on the screen at a time. 
+l Revealed structure. Often, the more 
+powerful the program used, the greater the 
+distance between intention and effect. If 
+only effect is displayed and not intention, 
+the user’s task of learning the connection 
+is much more difficult. A good graphical 
+interface can make apparent to the user 
+these connections between intention and 
+effect, that is, “revealed structure.” 
+For 
+example, there are many ways to deter- 
+mine the position and length of a line of text 
+on a page. It can be. done with page margins, 
+paragraph indentations, centering, tabs, 
+blank lines, or spaces. The WYSIWYG, or 
+COMPUTER 
+“what you see is what you get,” view of all 
+these would be identical. That would be 
+enough if all that mattered to the user was 
+the final form on paper. But what will hap- 
+pen if characters are inserted‘? If the line is 
+moved to another page, where will it land? 
+WYSIWYG 
+views are sometimes not 
+enough. 
+Special views are one method of reveal- 
+ing structure. In Star, documents can show 
+“Structure” 
+and/or “Non-Printing 
+Char- 
+acters” if desired (see Figure 5). Another 
+convenient means for revealing structure 
+is to make it show up during selection. For 
+example, when a rectangle is selected in a 
+graphics frame, eight control points high- 
+light it, any of which can attach to the cur- 
+sor during Move or Copy and can land on 
+grid points for precise alignment. The 
+control point highlighting allows a user to 
+distinguish a rectangle from four straight 
+Iines; both might produce the same printed 
+effect but would respond differently 
+to 
+editing. 
+l Consistent and appropriate graphic 
+vocabulary. Property sheets (see Figure 2) 
+present a form-like display for the user to 
+specify detailed property settings and ar- 
+guments to commands. They were de- 
+signed with a consistent graphic vocabu- 
+lary. All of the user’s targets are in boxes: 
+unchangeable information such as a prop- 
+erty name is not. Mutually exclusive val- 
+ues within choice parameters appear with 
+boxes adjacent. Independent “on/off” 
+or 
+state parameters appear with boxes sepa- 
+rated. The current settings are shown in- 
+verted. Some of the menus display graphic 
+symbols rather than text. Finally, there are 
+text parameters consisting of a box into 
+which text or numbers can be typed, cop- 
+ied, or moved, and within which text edit- 
+ing functions are available. 
+l Match the medium. It is in this last prin- 
+ciple that the sensitivities 
+of a good 
+graphic designer are most apparent. The 
+goal is to create a consistent quality in the 
+graphics that is appropriate to the product 
+and makes the most of the given medium. 
+Star has a large black and white display. 
+The solutions the graphics designers de- 
+vised might have been very different had 
+the display had grey-scale or color pixels. 
+A common problem with raster displays 
+is “jaggies”: 
+diagonal lines appearing as 
+staircases. With careful design, jaggies 
+can be avoided, for example, by using only 
+vertical, 
+horizontal, 
+and 4%degree 
+angles. Also important is controlling how 
+the edges of the figures interact with the 
+texture of the ground. Figure 6 shows how 
+edges are carefully matched to the back- 
+September 1989 
+. . . . . . . . . . . . . . . . . . . . . . ..f....................... 
+gTl-tc peace sign 
+is 3 styljzetj 
+reii- 
+ditim.of 
+the, 
+: foo!print 
+0f.a 
+it-. '- 
+CJ ‘.’ C .tt-te inter- 
+: na?imal 
+bird of 
+] pe:?ce, 
+. . . . . . . . . I... . . . . . . . . . . . . . . . . 
+-.,.,.... 
+..__ 
+. . 
+. 
+. .._..................................... 
+. . . . . . . . 
+. . . . . 
+- 
+. 
+. 
+. . . . . . . . . . . 
+. 
+. 
+. .._ 
+. . . 
+. . . . 
+_._.. 
+‘ 
+Figure 5. Revealed structure. At the top is the WYSIWYG 
+view of mixed text and 
+graphics. The middle two panels show that structure is revealed when an object is 
+selected. When a line segment is selected, its control points are shown. When text 
+is selected, the text string is revealed. The bottom panel shows the effect of the 
+Show Structure and Show Non-Printing 
+Characters commands, which is to re- 
+veal the location of embedded graphics and text frames (dotted lines) and “new 
+paragraph” 
+and Space characters. 
+ground texture so that they have a consis- 
+tent quality appearance. 
+Document editor level. At the top level 
+of Star’s architecture are its applications, 
+the most prominent of which is the docu- 
+ment editor. 
+WYSIWYG document editor. Within the 
+limits 
+of screen resolution, 
+Star docu- 
+ments are displayed as they will print, in- 
+cluding typographic features such as bold- 
+face, italics, proportional 
+spacing, vari- 
+able font families, and superscripts, and 
+layout features such as embedded graph- 
+ics, page numbers, headers, and footers. 
+This is commonly referred to as “what you 
+see is what you get,” or WYSIWYG. 
+Star adheres to this principle even in 
+domains where other WYSIWYG 
+docu- 
+ment editors do not. For example, mathe- 
+matical formulas are created and edited in 
+documents using a WYSIWYG editor that 
+has knowledge built into it about the ap- 
+pearance and layout of mathematical sym- 
+bols. A square root sign has a slot for an 
+d 
+Figure 6. Match the medium. Many . 
+graphic refinements were made during 
+the design process. For example, the 
+turned corner of the document icon 
+was moved to the top so that the three 
+lines of label would line up with the la- 
+bels of other icons. Also, icons were 
+carefully sized and positioned against 
+the gray background to create 
+smoother lines. 
+19 
+expression and grows when the expres- 
+sion becomes large (see Figure 7). In most 
+systems, mathematical formulas are cre- 
+ated either by putting together special 
+characters to make mathematical symbols 
+or by using a special in-line notation (such 
+as sqrt(sigma( 1, n, (x*3)/2))) to represent 
+the formula that will eventually be printed. 
+Formulas created with such systems usu- 
+ally require several print-edit cycles to get 
+right. 
+Extended character set for multilingual 
+capability. 
+Star uses 16-bit character 
+codes, in contrast to most of the computer 
+industry, which uses seven- or eight-bit 
+character codes (for example, ASCII or 
+EBCDIC). The Star character set is a su- 
+perset of ASCII. The reason for a 16-bit 
+code is a strong market requirement for 
+enhanced multilingual 
+capabilility 
+com- 
+ing from Xerox’s subsidiaries in Europe 
+and Japan. Most systems provide non- 
+English 
+characters 
+through 
+different 
+fonts, so that the eight-bit 
+“extended” 
+ASCII codes might be rendered as math 
+symbols in one font, Greek letters in an- 
+other font, and Arabic in yet another. This 
+has the effect that when any application 
+loses track of font information while han- 
+dling the text (which happens often in 
+some systems), a paragraph of Arabic may 
+turn into nonsensical Greek or math sym- 
+bols or something else, and vice versa. 
+Star uses 16-bit character codes to per- 
+mit the system to reliably handle European 
+languages and Japanese, which uses many 
+thousands of characters. 
+All Star and 
+Viewpoint systems have French, German, 
+Italian, Spanish, and Russian language 
+capabilities 
+built in. The Japanese lan- 
+guage capability was developed as part of 
+the original Star design effort and released 
+in Japan soon after Star’s debut in the 
+United States. Since that time, many more 
+characters have been added, covering Chi- 
+nese, Arabic, Hebrew, and nearly all Euro- 
+pean languages. 
+As explained in several articles by Joe 
+Becker, the designer of Star’s multilin- 
+gual capabilities, 
+handling many of the 
+world’s languages requires more than an 
+expanded character set.5 Clever typing 
+schemes and sophisticated rendering al- 
+gorithms are required to provide a multi- 
+lingual capability that satisfies customers. 
+The document is the heart of the world 
+and unifies it. Most personal computers 
+and workstations give no special status to 
+any particular application. Dozens of ap- 
+plications are available, most incompat- 
+ible with each other in data format as well 
+as user interface. 
+Star, in contrast, assumes that the pri- 
+mary use of the system is to create and 
+maintain documents. The document edi- 
+tor is thus the primary application. 
+All 
+other applications exist mainly to provide 
+or manipulate 
+information 
+whose ulti- 
+mate destination 
+is a document. Thus, 
+most applications are integrated into the 
+document editor (see “Integrated 
+appli- 
+cations” above), operating within frames 
+embedded in documents. Those applica- 
+tions that are not part of the document 
+editor support transfer of their data to 
+documents. 
+History 
+of Star 
+development 
+Having described Star and Viewpoint, 
+we will describe where they came from and 
+how they were developed. Figure 8 graphs 
+this history, showing systems that influ- 
+enced Star and those influenced by it. 
+Pre-Xerox. 
+Although 
+Star was con- 
+ceived as a product in 1975 and was re- 
+leased in 198 1, many of the ideas that went 
+into it were born in projects dating back 
+more than three decades. 
+Memex. The story starts in 1945, when 
+Vannevar Bush, a designer of early calcu- 
+lators and one of President Franklin D. 
+Roosevelt’s 
+science advisors, wrote an 
+article describing his vision of the uses of 
+electronics and information 
+technology. 
+At a time when computers were new, 
+room-sized, 
+and used only for military 
+number-crunching, 
+Bush envisioned 
+a 
+personal, desktop computer for non-nu- 
+merical 
+applications. 
+He called it the 
+Memex. Due to insufficient 
+technology 
+and insufficient imagination on the part of 
+others, Bush’s ideas languished for 15 
+years. 
+Sketchpad. In the sixties, people began 
+to take interactive computing seriously. 
+One such person was Ivan Sutherland. He 
+built an interactive graphics system called 
+Sketchpad that allowed a user to create 
+graphical figures on a CRT display using a 
+light pen. The geometric shapes users put 
+on the screen were treated as objects: after 
+being created, they could be moved, cop- 
+ied, shrunk, expanded, and rotated. They 
+could also be joined together to make 
+larger, more complex objects that could 
+then be operated upon as units. Sketchpad 
+influenced Star’s user interface as a 
+as well as its graphics applications. 
+NLS. Also in the sixties, Douglas Engel- 
+bart established a research program at 
+Stanford Research Institute (now called 
+SRI International) for exploring the use of 
+computers “to augment the knowledge 
+worker” 
+and human intellect in general. 
+He and his collegues experimented with 
+different types of displays and input de- 
+vices (inventing 
+the mouse when other 
+pointing devices proved inadequate) and 
+developed a system commonly known as 
+NLS.* 
+NLS was unique in several respects. It 
+used CRT displays when most computers 
+used teletypes. It was interactive (i.e., on- 
+line) when almost all computing 
+was 
+batch. It was full-screen-oriented 
+when 
+the few systems that were interactive were 
+line-oriented. 
+It used a mouse when all 
+other graphic interactive 
+systems used 
+cursor keys, light pens, joysticks, or digit- 
+izing tablets. Finally, it was the first sys- 
+tem to organize textual and graphical in- 
+formation in trees and networks. Today, it 
+would be called an “idea processor” or a 
+“hypertext 
+system.” 
+The Reactive Engine. While Engelbart 
+et al. were developing 
+ideas, some of 
+which eventually 
+found their way into 
+Star, Alan Kay, then a graduate student, 
+was doing likewise. His dissertation, The 
+Reactive Engine, contained the seeds of 
+many ideas that he and others later brought 
+to fruition in the Smalltalk language and 
+programming 
+environment, 
+which, 
+in 
+turn, influenced Star. Like the designers of 
+NLS, Kay realized that interactive appli- 
+cations do not have to treat the display as a 
+“glass teletype” and can share the screen 
+with other programs. 
+Xerox PARC. In 1970, Xerox estab- 
+lished a research center in Palo Alto to 
+explore technologies that would be impor- 
+tant not only for the further development of 
+Xerox’s then-existing product line (copi- 
+ers), but also for Xerox’s planned expan- 
+sion into the office systems business. The 
+Palo Alto Research Center was organized 
+into several laboratories, each devoted to 
+basic and applied research in a field related 
+to the above goals. The names and organi- 
+*The actual name of the system was On-Line System. 
+A second system called Off-Line System was abbrevi- 
+ated FLS, hence NLS’s strange abbrewiation. NLS is 
+now mark&d by McDomtell Douglas under the name 
+Augment. 
+20 
+COMPUTER 
+Here is an elementary 
+integral: 
+I 
+Figure 7. WYSIWYG formula editing. Mathematical formulas are edited in Star in a highly WYSIWYG fashion, in contrast 
+to most systems, in which formulas are specified via in-line expressions or by constructing them from pieces in a special 
+character font. 
+Memex 
+Macintosh 
+5 
+Metaphor 
+Workstation 
+V 
+Mac II 
+k 
+Viewpoint 2.0 
+Cognition 
+MCAE 
+System 
+ess 
+:ript 
+Figure 8. How systems influenced later systems. This graph summarizes how various systems related to Star have influenced 
+one another over the years. Time progresses downwards. Double arrows indicate direct successors (i.e., follow-on versions). 
+Many “influence arrows” are due to key designers changing jobs or applying concepts from their graduate research to 
+products. 
+September 1989 
+21 
+Figure 9. The Xerox Alto. The Alto, developed at Xerox PARC in the seventies. 
+was a prototype for Star. Both its hardware design and the many programs writ- 
+ten for it by PARC researchers strongI> influenced Star’s designers. 
+zation 
+of the 
+labs 
+have 
+changed 
+o\er 
+the 
+years. 
+but 
+the research 
+topic\ 
+habe 
+stayed 
+the same: 
+materials 
+science. 
+laser 
+physics. 
+integrated 
+circuitry. 
+computer-aided 
+de- 
+sign 
+and 
+manufacturing, 
+user 
+intertacea 
+(not 
+necessaril! 
+to computers). 
+and con- 
+puter 
+science 
+(including 
+netuorking. 
+da- 
+tabases. 
+operating 
+systems. 
+languages 
+and 
+programming 
+en\ ironments. 
+praph- 
+its. 
+document 
+production 
+systems. 
+and 
+artificial 
+intelligence). 
+Alto. 
+PARC 
+researchers 
+were 
+fond 
+of the 
+22 
+slogan “The 
+best ua\ 
+to predict 
+the future 
+is to invent 
+it.” 
+After 
+some 
+initial 
+ewperi- 
+ments 
+with 
+time-shared 
+systems. 
+thej 
+began 
+searching 
+for 
+a new 
+approach 
+to 
+computing. 
+Among 
+the founding 
+members 
+of PARC 
+was Alan 
+Kay. 
+He and his colleagues 
+were 
+acquainted 
+with 
+NLS 
+and 
+liked 
+its nov>el 
+approach 
+to human-computer 
+interaction. 
+Soon. 
+PARC 
+hired 
+several 
+people 
+who 
+had 
+worked 
+on NLS. 
+In I97 I. the center 
+signed 
+an agreement 
+with 
+SRI 
+licensing 
+Xerox 
+to 
+use the mouse. 
+Kay 
+and 
+others 
+were 
+dedi- 
+cated 
+to a vision 
+ot personal 
+computers 
+in a 
+distributed 
+environment. 
+In tact. 
+the) 
+coined 
+the 
+term 
+“personal 
+computer” 
+in 
+1973. 
+long before 
+iiiicrocompt~t~r~ 
+started 
+vv hat 
+has 
+been 
+called 
+the 
+“personal 
+com- 
+puter 
+revolution.” 
+One result 
+of thc 
+search 
+for 3 ncvv q- 
+preach 
+M ;I\ the Alto 
+(set‘ 
+Figure 
+9 1, The 
+.-\I10 v.;15 ;I minicomputer 
+that had a remov- 
+ahlc. 
+2.5.megabyte 
+hard 
+dish 
+path 
+tllopp> 
+dishs 
+did not exist 
+;II the time) 
+and 17X to 
+256 
+hilob) 
+tcs 
+of 
+mcmor~. 
+L’nlil\e 
+rno\t 
+machines 
+of 
+its day. 
+the 
+Alto 
+;IIW had a 
+rnIcropro~rammable 
+instruction 
+set. 
+ii 
+“full-page“ 
+t t OJ 
+x W/1 inch. 
+600 
+x 
+800 
+pixel) 
+bitmapped 
+graphic 
+display. 
+about 
+50 hitobhtes 
+of high-speed 
+dispta) 
+nlt‘n~- 
+orb. 
+and a mouse. 
+The 
+first 
+Alto 
+became 
+operational 
+in 
+1972. 
+At tirst. 
+onl! a halt-doren 
+OI- w Al- 
+tos 
+were 
+built. 
+Atter 
+software 
+that 
+ex- 
+plaited 
+the 
+Alto‘s 
+capahilitics 
+hccamc 
+av ailabtc. 
+d~~~~a~id for 
+them 
+frcvv 
+trcmcn- 
+dousl). 
+spreading 
+be! and 
+PARC 
+into 
+Xerox 
+as a \v hole 
+and even 
+to external 
+cus- 
+tamers. 
+EventualI!. 
+Xerox 
+built 
+more than 
+a thousand 
+Altos. 
+Fti~r-rrcjr. 
+Another 
+product 
+of 
+the 
+neu 
+approach 
+v+ as the 
+Ethernet. 
+With 
+its stair- 
+dardired. 
+layered 
+communications 
+proto- 
+cots. 
+Ethernet 
+provided 
+a uay 
+of connect- 
+ing 
+computers 
+much 
+more 
+tlcxibt) 
+than 
+previousI> 
+possible. 
+Soon 
+after 
+the 
+first 
+Altos 
+uere 
+built. 
+they 
+uere 
+networked 
+together. 
+Eventually. 
+the 
+network 
+greu 
+to 
+thousands 
+of worhstations 
+(Altos 
+and 
+Alto 
+successors) 
+within 
+Xerox’s 
+uorlduidc 
+organization. 
+Sn~ni/rcl/l\. 
+Alan 
+Kay mas OIW of the main 
+advocates 
+of 
+the 
+Alto. 
+His 
+Learning 
+Rc- 
+search 
+Group 
+began 
+using 
+the Alto 
+to build 
+prototypes 
+for 
+a personal 
+computing 
+s\ 4- 
+tern 
+“of 
+the future” 
+- 
+a portable 
+machine 
+that 
+vvoutd 
+provide 
+not 
+canned 
+apptica- 
+tions 
+but rather 
+the building 
+blocks 
+neces- 
+sar:, for 
+users 
+to build 
+the tools 
+and 
+appli- 
+cations 
+they 
+needed 
+to solve 
+their 
+own 
+in- 
+formation 
+processing 
+problems. 
+The 
+tech- 
+nologies 
+needed 
+to build 
+a lap 
+computer 
+with 
+the 
+power 
+of the 
+envisioned 
+system 
+(called 
+the 
+“DlnaBook”) 
+here 
+unavait- 
+able 
+at the time 
+and still 
+are. 
+The 
+prototypes 
+developed 
+by 
+Kay’s 
+group 
+evolved 
+into 
+the Smalttalk 
+language 
+and 
+programming 
+env,ironment. 
+Smatt- 
+talk 
+further 
+promoted 
+the 
+notion 
+of 
+per- 
+sonal 
+computing; 
+pioneered 
+complete, 
+interactive 
+programming 
+environments; 
+and 
+refined 
+and 
+soliditied 
+concepts 
+of ob- 
+ject-oriented 
+programming 
+that 
+had 
+been 
+COMPUTER 
+extant only in vestigial forms in previous 
+systems. Most importantly 
+for Star, 
+Smalltalk demonstrated the power of gra- 
+phical, 
+bitmapped 
+displays; 
+mouse- 
+driven input; windows; and simultaneous 
+applications. This is the most visible link 
+between Smalltalk and Star, and is perhaps 
+why many people wrongly believe that 
+Star was written in Smalltalk. 
+Pygmalion. 
+The first large program to 
+be written in Smalltalk was Pygmalion, the 
+doctoral thesis project of David C. Smith. 
+One goal of Pygmalion was to show that 
+programming a computer does not have to 
+be primarily a textual activity. It can be 
+accomplished, given the appropriate sys- 
+tem, by interacting with graphical ele- 
+ments on a screen. A second goal was to 
+show that computers can be programmed 
+in the language of the user interface, that is, 
+by demonstrating what you want done and 
+having the computer remember and repro- 
+duce it. The idea of using icons - 
+images 
+that allow users to manipulate them and in 
+so doing act upon the data they represent- 
+came mainly from Pygmalion. After com- 
+pleting Pygmalion, Smith worked briefly 
+on the NLS project at SRI before joining 
+the Star development team at Xerox. 
+Bravo, Gypsy, and BravoX. At the same 
+time that the Learning Research Group 
+was developing Smalltalk for the Alto, 
+others at PARC, mainly Charles Simonyi 
+and Butler Lampson, were writing an ad- 
+vanced document editing system for it 
+called Bravo. Because it made heavy use of 
+the Alto’s bitmapped screen, Bravo was 
+unquestionably the most WYSIWYG text 
+editor of its day, with on-screen underlin- 
+ing, boldface, italics, variable font fami- 
+lies and sizes, and variable-width charac- 
+ters. It allowed the screen to be split, so 
+different documents or different parts of 
+the same document could be edited at once, 
+but did not operate in a windowed environ- 
+ment as we use the term today. Bravo was 
+widely used at PARC and in Xerox as a 
+whole. 
+From 1976 to 1978, Simonyi and others 
+rewrote Bravo, incorporating many of the 
+new user-interface ideas floating around 
+PARC at the time. One such idea was 
+modelessness, promoted by Larry Tesler3 
+and exemplified in Tesler’s prototype text 
+editor, Gypsy. Simonyi et al. also added 
+styles, enhancing users’ ability to control 
+the appearance of their documents. The 
+new version was called BravoX. 
+Shortly thereafter, Simonyi joined Mi- 
+crosoft, where he led the development of 
+Microsoft Word, a direct descendent of 
+BravoX. Another member of the BravoX 
+team, Tom Malloy, went to Apple and 
+wrote LisaWrite. 
+Draw, Sil, Markup, 
+Flyer, 
+and Doodle. 
+Star’s graphics capability (its provisions 
+for users to create graphical images for 
+incorporation into documents, as opposed 
+to its graphical user interface) owes a great 
+deal to several graphics editors written for 
+the Alto and later machines. 
+Draw, by Patrick Beaudelaire and Bob 
+Sproull, and Sil (for Simple Illustrator) 
+were intellectual successors of Suther- 
+land’s Sketchpad (see above): graphical 
+object editors that allowed users to con- 
+struct figures out of selectable, movable, 
+stretchable geometric forms and text. In 
+turn, Star’s graphic frames capability is in 
+large measure an intellectual successor of 
+Draw and Sil. 
+Markup was a bitmap graphics editor 
+(that is, a paint program) written by Wil- 
+liam Newman for the Alto. Flyer was an- 
+other paint program, written in Smalltalk 
+for the Alto by Bob Flegel and Bill Bow- 
+man. These programs inspired Doodle, a 
+paint program written for a later machine 
+by Dan Silva. Doodle eventually evolved 
+into Viewpoint’s 
+Free-Hand Drawing 
+application. Silva went on to write De- 
+luxepaint, a paint program for PCs. 
+Laser 
+printing. 
+Fancy graphics capa- 
+bilities in a workstation are of little use 
+without hard-copy capability to match it. 
+Laser printing, invented at PARC, pro- 
+vided the necessary base capability, but 
+computers needed a uniform way to de- 
+scribe output to laser printers. For this pur- 
+pose, Bob Sproull developed the Press 
+page-description 
+language. Press was 
+heavily used at PARC, then further devel- 
+oped into Interpress, Xerox’s commercial 
+page-description language and the lan- 
+guage in which Star encodes printer out- 
+put. Some of the developers of Interpress 
+later formed Adobe Systems and devel- 
+oped Postscript, a popular page descrip- 
+tion language. 
+Laurel 
+and Hardy. 
+A network of per- 
+sonal workstations suggests electronic 
+mail. Though electronic mail was not in- 
+vented at PARC, PARC researchers 
+(mainly Doug Brotz) made it more acces- 
+sible to nonengineers by creating Laurel, 
+a display-oriented tool for sending, re- 
+ceiving, and organizing e-mail. The expe- 
+rience of using Laurel inspired others to 
+write Hardy for an Alto successor ma- 
+chine. Laurel and Hardy were instrumen- 
+tal in getting nonengineers at Xerox to use 
+e-mail. The use of e-mail spread further 
+with the spread of Star and Viewpoint 
+throughout Xerox. 
+OfficeTalk. 
+One more Alto program 
+that influenced Star was OfficeTalk, 
+a 
+prototype office automation system writ- 
+ten by Clarence (“Skip”) 
+Ellis and Gary 
+Nutt. OfficeTalk supported standard of- 
+fice automation tasks and tracked jobs as 
+they went from person to person in an or- 
+ganization. Experience with OfficeTalk 
+provided ideas for Star because of the two 
+systems’ similar target applications. 
+Summing up. The debt that Star owes to 
+the Alto and its software is best summed up 
+by quoting from the original designers, 
+who wrote in 1982: 
+Alto served as a valuable prototype for 
+Star. 
+Alto users have had several thousand 
+work-years of experience with them over a 
+period of eight years, making Alto perhaps 
+the largest prototyping 
+effort in history. 
+There were dozens of experimental 
+pro- 
+grams written for the Alto by members of the 
+Xerox Palo Alto Research Center. Without 
+the creative ideas of the authors of these sys- 
+tems, Star in its present form would have been 
+impossible. 
+. In addition, we ourselves pro- 
+grammed various aspects of the Star design 
+on the Alto. 
+Star. To develop Star and other office 
+systems products, Xerox created the 
+Systems Development Department. SDD 
+was staffed by transferring people from 
+other parts of Xerox, including PARC, as 
+well as by hiring from outside. Thus, con- 
+trary to what has often been stated in the 
+industry press, Star was not developed at 
+PARC, but rather in a separate product- 
+development organization. 
+When SDD was formed, a decision was 
+made to use Mesa, an “industrial- 
+strength” dialect of Pascal conceived at 
+SRI and further developed at PARC, as the 
+primary product programming language. 
+SDD took over development and mainte- 
+nance of Mesa from the Computer Science 
+Laboratory at PARC, freeing CSL to de- 
+velop Mesa’s research successor, Cedar. 
+Star hardware. 
+Star is often discussed 
+as if it were a computer. In fact, Star is a 
+body of software.* However, using the 
+*The official 
+name for Star was the Xerox 
+8010 Infor- 
+mation 
+System. 
+The machine 
+was called 
+the 8CNlO Se- 
+ries Network 
+Systems 
+Processor. 
+Originally, 
+“Star” 
+was only an internal 
+name. 
+September 1989 
+23 
+name Star to refer to the machine is under- 
+standable since the machine was designed 
+in conjunction with the software to meet 
+the needs of the software design. This is in 
+sharp contrast to the usual approach, in 
+which software is designed for existing 
+computers. 
+The 8000 Series workstation was based 
+upon a microcoded proc&sor 
+designed 
+within Xerox especially to run the object 
+code produced by the Mesa compiler. Be- 
+sides being microprogrammed 
+to run 
+Mesa, the processor provided low-level 
+operations for facilitating 
+display opera- 
+tions. For example, the bitblt operation for 
+manipulating rectangular arrays of screen 
+pixels is implemented as a single instruc- 
+tion. As sold, the machine was configured 
+with at least 384 kilobytes of real memory 
+(expandable to 1.5 megabytes), a local 
+hard disk (10, 29, or 40 megabytes), a 17- 
+inch display, 
+a mechanical 
+mouse, an 
+eight-inch floppy disk drive, and an Eth- 
+ernet connection. The price was initially 
+$16,500 with software. 
+Even though the machine was designed 
+to run Star, it also ran other software. In 
+addition to selling it as the 8010 “Star” 
+workstation, Xerox sold it as a server ma- 
+chine and as an Interlisp and a Smalltalk 
+workstation. 
+Star software. Alhough Star incorpo- 
+rated ideas from a number of predecessors, 
+it still required a mammoth design effort to 
+pull all of those ideas - 
+as well as new 
+ideas - 
+together to produce a coherent 
+design. According to the original design- 
+ers, “. . . it was a real challenge to bring 
+some order to the different user interfaces 
+on the Alto.“’ 
+About 30 person-years went 
+into the design of the user interface, func- 
+tionality, and hardware. 
+To foster uniformity 
+of specifications 
+as well as thoughtful and uniform design, 
+Star’s designers develo+d a strict format 
+for specifications. Applications 
+and sys- 
+tem features were to be. described in terms 
+of the objects that users would manipulate 
+with the software and the actions that the 
+software provided for manipulating 
+ob- 
+jects. This “objects and actions” analysis 
+was supposed to occur at a fairly high level, 
+without regard to how the objects would 
+actually be presented or how the actions 
+would actually be invoked by users. A full 
+specification 
+was then written from the 
+“objects and actions” 
+version. This ap- 
+proach forced designers to think clearly 
+about the purpose of each application or 
+feature and fostered recognition of similar 
+operations across specifications, 
+allow- 
+ing what might have seemed like new op- 
+erations to be handled by existing com- 
+mands. 
+When SDD was formed, it was split be- 
+tween two locations: Southern California 
+(El Segundo) and Northern 
+California 
+(Palo Alto). Few people were willing 
+to 
+transfer one way or the other, leaving SDD 
+with the choice of losing many competent 
+engineers or being creative. SDD’s man- 
+agement took the creative route: they put 
+the Ethernet to work, attaching the devel- 
+opment machines at both sites to a net- 
+work, connecting the two sites with a 56- 
+kilobit-per-second 
+leased line, encourag- 
+ing heavy use of electronic mail for work- 
+related communication, 
+and developing 
+tools for facilitating 
+distributed, 
+multi- 
+party development. 
+As might be expected from Star’s ori- 
+gins, most of the design and prototyping 
+work was done in Palo Alto, whereas most 
+of the implementation 
+was done in El 
+Segundo. Though this split was handled 
+creatively, some of Star’s designers now 
+believe it caused problems not overcome 
+by extensive use of e-mail. For example, 
+the implementors 
+did not benefit from 
+much of the prototyping done at PARC. 
+The development process has been re- 
+counted in detail elsewhere6 and will not be 
+repeated here. Suffice it to say that the Star 
+development effort 
+l involved 
+developing 
+new network 
+protocols and data-encoding schemes 
+when those used in PARC’s research 
+environment proved inadequate; 
+l involved a great deal of prototyping 
+and user testing; 
+l included a late redesign of the proces- 
+sor; 
+l included several software redesigns, 
+rewrites, 
+and late additions, 
+some 
+based on results from user testing, 
+some based on marketing considera- 
+tions, and some based on systems con- 
+siderations (see below); 
+l included a level of attention to the re- 
+quirements of international 
+custom- 
+ers unmatched in the industry; and 
+l left much of what was in the Star Func- 
+tional Specification 
+unimplemented. 
+Tajo/XDE. 
+Since the machine upon 
+which Star ran was developed in parallel 
+with the software, it was not available 
+early-on for use as a software development 
+platform. Early prototyping and develop- 
+ment was done on Altos and successor re- 
+search machines developed 
+at PARC. 
+Though the Mesa language ran on these 
+machines, development 
+aids for Mesa 
+programmers were lacking. 
+When the 8000 Series workstation be- 
+came available, the systems group within 
+SDD began working on a suitable develop- 
+ment environment. Known internally 
+as 
+Tajo and externally 
+as Xerox Develop- 
+ment Environment (XDE), the completed 
+development environment and the numer- 
+ous tools written to run in it were quickly 
+adopted 
+by programmers 
+throughout 
+SDD. Star’s later improvements adopted 
+many good ideas from Tajo. 
+ViewPoint. 
+Though Star’s introduc- 
+tion at NCC ‘81 was lauded in the industry 
+press, initial sales were not what had been 
+hoped. Almost immediately, efforts were 
+launched to improve its performance, ex- 
+tensibility, 
+maintainability, 
+and cost. 
+Viewpoint software. Even before Star 
+was released, the implementors realized 
+that it had serious problems from their 
+point of view. Its high degree of integra- 
+tion and user-interface consistency had 
+been achieved by making it monolithic: 
+the system “knew” 
+about all applica- 
+tions, and all parts of the system “knew” 
+about all other parts. It was difficult to cor- 
+rect problems, add new features, and in- 
+crease performance. 
+The monolithic 
+architecture also did not lend itself to dis- 
+tributed, multiparty 
+development. 
+This created pressure to rewrite Star. 
+Bob Ayers, who had been heavily involved 
+in the development of Star, rewrote the 
+infrastructure of the system according to 
+the more flexible Tajo model. He built, on 
+top of the operating system and low-level 
+window manager, a “toolkit” 
+for building 
+Star-like applications. 
+In the new infrastructure, 
+transfer of 
+data between different applications was 
+handled through strict protocols involv- 
+ing the user’s selection, thus making appli- 
+cations independent from one another. 
+The object-oriented user interface, which 
+requires that the system associate applica- 
+tions with data files, was preserved by 
+having applications 
+register themselves 
+with the system when started, telling it 
+which type of data file they correspond to 
+and registering procedures for. handling 
+keyboard and mouse events and generic 
+commands. User-interface 
+consistency 
+was fostered by building many of the stan- 
+dards into the application toolkit. The de- 
+velopment 
+organization 
+completed the 
+toolkit and then ported or rewrote the exist- 
+ing applications and utilities to run on top 
+of it. 
+24 
+COMPUTER 
+Other 
+software 
+changes included 
+. stylesheets. 
+for facilitating 
+control 
+of 
+document 
+appearance. 
+. the addition 
+of several 
+applications 
+and utilities. 
+including 
+a Free-Hand 
+Drawing 
+prograrn 
+and an IBM 
+PC 
+Lessons from 
+emulation 
+application: 
+experience 
+. optional 
+window 
+tiling 
+constraints. 
+so 
+that users can have 
+dews if desired: 
+overlapping 
+bill 
+. rcdexigned 
+screen 
+graphics 
+(icons. 
+mands of a more sophisticated 
+public: 
+windous. 
+property 
+sheets. command 
+buttons. 
+and menus) 
+to accommodate 
+a smaller 
+screen and to meet the de- 
+So what have we learned 
+We believe. 
+the following: 
+from all this’? 
+Pay attention 
+to industr! 
+trends. 
+Partly 
+out of excitement 
+over 
+designers 
+didn’t 
+pa> enough 
+attention 
+to 
+what they 
+were doing. 
+PARC 
+researchers 
+and Star’s 
+and 
+. impro\ ‘ed performance 
+the 
+“other” 
+personal 
+computer 
+rrvolu- 
+tion 
+occurring 
+outside 
+of Xerox. 
+B) the 
+late seventies. Xerox had its o&n powerful 
+To underscore 
+the fact that the new 
+\y\- 
+technical 
+tradition 
+(mouse-driven. 
+nrt- 
+tern 
+has 
+3 
+Viewpoint. 
+VieM Point I .O was 
+released in 
+substantial 
+miprovemcnt 
+over 
+the old. the name uas changed from Star to 
+WOI 
+applications). 
+blinding 
+Star’\ 
+designers 
+to 
+-hcd workstations 
+uith 
+large bitmap- 
+ped screens 
+and multIpIe. 
+simultaneou\ 
+19x5. 
+the need to approach 
+the marhet 
+with 
+cheap. stand-alone 
+PCs. The result uas a 
+I ic~f’oi~l 
+Irrrr-tlw~ur~ In addition 
+to re- 
+product 
+that uas highly 
+unfamiliar 
+to its 
+hardu are up 
+vising 
+the software. 
+Xerox 
+brought 
+the 
+60X5 workstation. 
+The new machine 
+was 
+to date by designing 
+a com- 
+plctelq 
+neu 
+cchicle 
+for 
+VtewPoint: 
+the 
+days. of course. such systems are no 
+intended 
+customers: 
+businesses. 
+Noua- 
+unusual. 
+DeLcloping 
+Star and Viewpoint 
+In- 
+longer 
+de\ipned 
+to take advantage of advances in 
+ory costs, new disk technologies. 
+and new 
+integrated 
+circuitry. 
+reduction5 
+in rnern- 
+Lolved 
+developing 
+several enabling 
+tech- 
+nologies. 
+for networking. 
+cornmunicat- 
+ing with servers. describing 
+pages to laser 
+standards in keyboard 
+design. as well a5 to 
+printer,. 
+and developing 
+software. 
+At the 
+provide 
+IBM 
+PC compatibility. 
+The 60X5 
+time they were developed, 
+these technolo- 
+workstation 
+has a Mesa processor 
+plus an 
+gies were unique 
+in the industry. 
+Xerox 
+optional 
+IBM-PC-compatible 
+processor. 
+elected to keep them proprietary 
+for fear of 
+one megabyte 
+of real memory 
+(expand- 
+losing 
+its competitive 
+advantage. 
+U’lth 
+able to 3 megabytes). 
+a hard disk (I(1 to X0 
+hindsight. 
+ue can say that it might 
+habe 
+megabytes). 
+a choice of a IS- or a 19.inch 
+been better to release these technologies 
+display. 
+an optical 
+mouse. 
+a ne\* 
+key- 
+into the public 
+domain 
+or to market them 
+cost was initially 
+$6.340 
+with 
+the Vieu- 
+board. a 5%mch 
+floppy disk drive. and. of 
+Point software. 
+Like the 8010. the 6085 is 
+course. an Ethernet 
+connection. 
+The base 
+sold as a vehtcle for Interlisp 
+and Smalltalk 
+as well as for Viewpoint. 
+proaches 
+developed 
+at other 
+companies 
+early. so that they rnight have become in- 
+have 
+become 
+the 
+industry 
+standards. 
+Xerox’s 
+current participation 
+In the devel- 
+dustry 
+standards. 
+Instead. 
+alternative 
+ap- 
+opment of various industry 
+standards indi- 
+cates its desire to reverse this trend. 
+Rcc,cr~t l’iclw,Poinf 
+c~/~on~q~~s. The 
+re- 
+cently 
+released Viewpoint 
+2.0 adds man\ 
+features 
+relevant 
+to desktop 
+publishing. 
+These include 
+l Xerox 
+ProIllustrator. 
+a new 
+vector 
+graphics 
+editing 
+application 
+designed 
+mainly 
+for professional 
+illustrators: 
+l Shared Books, 
+support 
+for groups 
+of 
+users 
+working 
+on multipart 
+docu- 
+ments; 
+l a Redlining 
+feature. for tracking 
+dele- 
+tions and insertions 
+in documents: 
+l cursor keys, for moving 
+the insertion 
+point 
+during 
+keyboard-intensive 
+work; 
+and 
+Pay attention 
+to what 
+customers 
+want. The personal 
+computer 
+revolution 
+has shown the futility 
+of trying 
+to antici- 
+pate all of the applications 
+that customers 
+WIII want. Star should have been designed 
+from the start to be open and extensible 
+by 
+users, as the Alto was. In hindsight, 
+exten- 
+sibility 
+was one of the keys to the Alto’s 
+popularity. 
+The problem 
+wasn’t 
+that Star 
+lacked 
+functionality, 
+it was that It didn’t 
+have the functionality 
+customers 
+wanted. 
+An example 
+is the initial 
+lack of a spread- 
+sheet application. 
+The designers 
+failed 
+to 
+appreciate 
+the significance 
+of this applica- 
+tion, which may have been more important 
+even than M ord-processing 
+in expanding 
+the personal 
+computer 
+re\ olution 
+beyond 
+enpineers 
+and hobb\,ists 
+into 
+business. 
+E\entualll 
+realizing 
+that Star’s 
+closed- 
+ne\s M as a problem. 
+Xerox replaced it M ith 
+VieuPotnt. 
+a more 
+“open” 
+sl3tcrn 
+that 
+altoNs 
+user\ to pick and choose applicu- 
+ttons that the) 
+need. including 
+a spread- 
+sheet and 
+IBM 
+PC software. 
+Apple 
+Corn- 
+puter learned the \ame lesson \\ith 
+its LIU 
+computer 
+and similarI> 
+replaced 
+it with 
+a 
+cheaper one ha\ ing it rnorc 
+open 
+dtx 
+are 
+architecture: 
+the Macintosh. 
+linofi 
+your competition. 
+Star’s initial 
+per-workstation 
+price 
+uas 
+near that ot 
+time-shared 
+minicomputers. 
+dedicated 
+uord-processors. 
+and other Glared 
+con- 
+puting 
+facilrties. 
+Star was. hour\er. 
+corn 
+peting 
+for desktop 
+\pace with 
+microcon- 
+puter-based 
+PCs. 
+VleNPoint 
+has cor- 
+rccted that problem: 
+The 6085 co\ts about 
+the same as its competition. 
+Establish 
+firm 
+performance 
+goals. 
+Star‘s 
+designers 
+should 
+have established 
+performance 
+goals. 
+documented 
+them 
+111 
+the functional 
+specifications. 
+and stuck to 
+thern as the! 
+dehcloped 
+Star. Where 
+per- 
+formance 
+goats couldn‘t 
+be met. the corrc- 
+spending 
+functionality 
+should 
+have been 
+cut. 
+In lieu of speed. the designer\ 
+should 
+habe made the user interface 
+more respon- 
+\ive. 
+Designing 
+systems 
+to handle 
+user 
+input 
+more intelligentI> 
+can mahc them 
+more 
+responsive 
+without 
+necessaril! 
+mahing 
+them 
+execute 
+functions 
+taster. 
+The) 
+can operate 
+as>,nchronouslq 
+u Ith 
+respect to user input. making 
+use of bach- 
+ground 
+processes. keeping 
+up uith 
+impor- 
+tant user action\. 
+dela),ing 
+unimportant 
+tasks (such as refreshing 
+irrelevant 
+areas 
+of the screen) until time permits. and ship- 
+ping tasks called for by early user actlons 
+but rendered 
+moot 
+by later ones. Vieu- 
+Point nob makes use of background 
+proc- 
+esses to increase its responsiveness. 
+Avoid geographically 
+split develop- 
+ment organizations. 
+Having 
+a develop- 
+ment organization 
+split between Palo Alto 
+and El Segundo 
+was probably 
+a mlstahe. 
+less for reasons of distance per se than for 
+lack of shared 
+background 
+in “PARC- 
+style” 
+computing. 
+However. 
+the adverse 
+effect of sheer distance on communrcation 
+was certainly 
+a factor. 
+Don’t be dogmatic about the Desktop 
+metaphor and direct manipulation. 
+Di- 
+rect manipulation 
+and the Desktop 
+meta- 
+September 
+1989 
+25 
+phor aren’t the best way to do everything. 
+Remembering and typing is sometimes 
+better than seeing and pointing. For ex- 
+ample, if users want to open a file that is one 
+of several hundred in a directory (folder), 
+the system should let users type its name 
+rather than forcing them to scroll through 
+the directory trying to spot it so they can 
+select it. 
+Many aspects of Star were correct. 
+Though certain aspects of Star perhaps 
+should have been done differently, most of 
+the aspects of Star’s design described at 
+the beginning of this article have with- 
+stood the test of time. These include 
+l Iconic, direct-manipulation, 
+object- 
+oriented user interface. The days of cryp- 
+tic command languages and scores of 
+commands for users to remember (a la 
+Unix and MS-DOS) should have passed 
+long ago. 
+l Generic commands and consistency 
+in general. Even Macintosh 
+could use 
+some lessons in this regard: the Duplicate 
+command copies files within a disk, but 
+users must drag icons to copy them across 
+disks and must use Copy-Paste to copy 
+anything else. 
+l Pointing 
+device. 
+Although 
+cursor 
+keys have some advantages and certainly 
+would have enhanced Star’s market ap- 
+peal (as they have Viewpoint’s), 
+Star’s 
+designers stand by the system’s primary 
+reliance on the mouse. This does not imply 
+a commitment to the mouse per se, but 
+rather to any pointing device that allows 
+quick pointing 
+and selection. As inter- 
+faces evolve in the future, high-resolution 
+touch screens and other more exotic de- 
+vices may replace mice as the pointing 
+devices of choice. 
+l High-resolution 
+display. Memory is 
+now cheap, so the justification for charac- 
+ter displays is gone. 
+l Good graphic design. Screen graphics 
+designed by computer programmers will 
+not satisfy customers. The Star designers 
+recognized their limitations in this regard 
+and hired the right people for the job. As 
+color displays gain market presence, the 
+participation 
+of graphic designers will 
+become even more crucial. 
+l 16-bit character set. An eight-bit char- 
+acter set (such as ASCII) cannot accom- 
+modate international 
+languages 
+ade- 
+quately. Star and Viewpoint’s 
+use of a 
+16-bit character set and of special typing 
+and rendering algorithms for foreign lan- 
+guages is the correct approach. 
+l Distributed, 
+personal 
+computing. 
+26 
+Though the reorientation of the industry 
+away from batch and time-shared comput- 
+ing toward personal computing had noth- 
+ing to do with Xerox, PARC, or Star, it was 
+an important part of the computing phi- 
+losophy that led to Star. 
+S 
+tar has had an indisputable influ- 
+ence on the design of computer sys- 
+tems. For example, the Lisa and 
+Macintosh might have been very different 
+had Apple’s designers not borrowed ideas 
+from Star, as the following 
+excerpt of a 
+Byte magazine interview of Lisa’s design- 
+ers shows: 
+Byte: Do you have a Xerox Star here that you 
+work with? 
+Tesler: No, we didn’t have one here.. We went 
+to the NCC [National Computer Conference] 
+when the Star was announced and looked at it. 
+And in fact it did have an immediate impact. 
+A few months after looking at it we made some 
+changes to our user interface based on ideas 
+that we got from it. For example, the desktop 
+manager we had before was completely dif- 
+ferent; it didn’t use icons at all, and we never 
+lied it very much. We decided to change ours 
+to the icon base. That was probably the only 
+thing we got from Star, I think. Most of our 
+Xerox inspiration was Smalltalk rather than 
+Star.7 
+Elements of the Desktop metaphor ap- 
+proach also appear in many other systems. 
+The history presented here has shown, 
+however, that Star’s designers did not in- 
+vent the system from nothingness. Just as 
+it has influenced systems that came after it, 
+Star was influenced by ideas and systems 
+that came before it. It is difficult to inhibit 
+the spread of good ideas once they are ap- 
+parent to all, especially in this industry. 
+Star was thus just one step in an evolution- 
+ary process that will 
+continue both at 
+Xerox and elsewhere. That is how it should 
+be.0 
+Acknowledgments 
+When Star was anuounced, several articles on 
+it appeared in trade magazines, journals, and ai 
+conferences. Many of these were reprinted in 
+the Xerox publication Office Systems Technol- 
+ogy.* Since then, several more articles have been 
+published that are relevant to this retrospective. 
+They include an article from MacWorld9 that 
+described the historical antecedents of Apple 
+Computer’s Lisa and Macintosh computers, 
+which share much of Star’s history. This retm- 
+spfzctive owes a great deal to those previous writ- 
+ings. We also acknowledge the valuable contri- 
+butions that Joe Becker, Bill Mallgren, Doug 
+Carothers, Linda Bergsteinsson, and Randy 
+Polen of Xerox, and Bob Ayers, Ralph Kimball, 
+Dave Fylstra, and John Shoch made to this retro- 
+spective. Finally, we acknowledge the helpful 
+suggestions made by the first and second au- 
+thors’ colleagues at US West Advanced Tech- 
+nologies and several anonymous reviewers to 
+improve the quality of the article. 
+References 
+1. 
+2. 
+3. 
+4. 
+5. 
+6. 
+I 
+8. 
+9. 
+D.C. Smith et al., “The Star User Interface: 
+An Overview,” Proc. AFIPS Nat’1 Com- 
+puter Conf.. June 1982, pp. 515-528. 
+D.C. Smith, “Origins of the Desktop Meta- 
+phor: A Brief History,” presented in a panel 
+discussion, “The Desktop Metaphor as an 
+Approach to User Interface Design,” in 
+Proc. ACM Annual Conf., 1985, p. 548. 
+L. Tesler, “The Smalltalk Environment,” 
+Byte, Vol. 6, No. 8, Aug. 1981, pp. 90-147. 
+L. Winner, “Mythinformation,” 
+Whole 
+Earth Review, No. 44, Jan. 1985. 
+J. 
+Becker, 
+“Multilingual 
+Word 
+Processing,” Scientific 
+American, 
+Vol. 
+251, No. 1, July 1984, pp. 96-107. (See 
+“Further reading” for other articles on 
+Star’s multilingual capability.) 
+E.F. Harslem and L.E. Nelson, “A Retro- 
+spective on the Development of Star,” 
+Proc. Sixth Id1 
+Conf. on Sofiware Engi- 
+neering, Sept. 1982, Tokyo, Japan. Re- 
+printed in Office 
+Systems 
+Technology, 
+OSD-R8203A, Xerox Corp., pp. 261-269. 
+G. Williams, 
+“The 
+Lisa Computer 
+System,” Byte, Vol. 8, No. 2, Feb. 1983, pp. 
+33-50. 
+Ofice Systems Technology, OSD-R8203A, 
+Xerox Corp. 
+T. Nate, “The Macintosh Family Tree,” 
+MacWorld, Nov. 1984, pp. 134-141. 
+Further 
+reading 
+For interested readers, we provide here a 
+guide to further reading on Star and related top- 
+of this retrospecive will appear in an upcoming 
+Prentice-Hall book series. Also, the September 
+issue of ZEEE Spectrum includes an article, “Of 
+Mice and Menus,” on graphical user interfaces 
+past and present. The authors of that article con- 
+sulted several people who contributed to or are 
+mentioned in this Star retrospective. 
+In the following bibliography, readings are 
+categorized according to whether they pertain 
+to work done prior to the establishment of Xerox 
+PARC, to work done at PARC, to the original 
+Star design done at Xerox SD?,8 to enhance- 
+ments to Star and ViewPoint, and to work on re- 
+lated topics. 
+Pre-Xerox 
+Bush, V., “As We May Think,” 
+Atlantic 
+Monthly, Vol. 176, No. 1, July 1945, pp. lOl- 
+108. 
+COMPUTER 
+Engelbart, D.C., and W.K. English, “A Re- 
+search Center for Augmenting Human Intel- 
+lect,” 
+Proc. FJCC, Vol. 33, AFIPS, 1968, pp. 
+395-410. 
+English, W.K., D.C. Engelbart, and M.L. Ber- 
+man, “Display-Selection Techniques for Text 
+Manipulation,” IEEE Trans. Human Factors in 
+Electronics, 
+HFE-8, 1967, pp. 21-31. 
+Kay, A.C., The Reactive Engine, PhD thesis, 
+University of Utah, Salt Lake City, 1969. 
+Sutherland, I.E., Sketchpad: A Man-Machine 
+Graphical 
+Communications 
+System, PhD the- 
+sis, MIT., Cambridge, Mass., 1963. 
+Xerox pre-Star 
+Card, S., W.K. English, and B. Burr, “Evalu- 
+ation of Mouse, Rate-Controlled Isometric 
+Joystick, Step Keys, and Text Keys for Text Se- 
+lection on a CRT.” Emonomics. Vol. 21, 1978. 
+pp. 601-613. 
+- 
+Ellis, C., and G. Nutt, “Computer Science and 
+Office Information Systems,” Xerox PARC 
+Tech. Report SSL-79-6, 1979. 
+Geschke, CM., J.H. Morris, Jr., and E.H. Satter- 
+thwaite, “Early 
+Experience with Mesa,” 
+Comm. ACM, Vol. 20, No. 8, 1977, pp. 540-553. 
+Ingalls, D.H., “The 
+Smalltalk Graphics 
+Kernel,” Byte, Vol. 6, No. 8, Aug. 198 1, pp. 168- 
+194. 
+Kay, A.C., and A. Goldberg, “Personal Dy- 
+namic Media,” Computer, Vol. 10, No. 3, March 
+1977, pp. 31-41. 
+Kay, A.C., “Microelectronics and the Personal 
+Computer,” Scientific American, Vol. 237, No. 
+3, Sept. 1977, pp. 230-244. 
+Smith, D.C., Pygmalion: A Computer Program 
+to Model and Simulate Creative Thought, Birk- 
+hauser Verlag, Base1 and Stuttgart, 1977. 
+Thacker, C.P., et al., “Alto: A Personal Com- 
+puter,” in Computer Structures: Principles and 
+Examples, D. Siewioek, C.G. Bell, and A. New- 
+ell, eds., McGraw Hill, New York, 1982. 
+Star 
+Curry, G., et al., “Traits- 
+An Approach to Mul- 
+tiple-Inheritance Subclassing,” Proc. ACM 
+Conf. on Office Automation Systems (SIGOA), 
+1982. 
+Dalal, Y.K., “Use of Multiple Networks in the 
+Xerox Network System,” Computer, Vol. 15, 
+No. 10, Oct. 1982, pp. 82-92. 
+Johnsson, R.K., and J.D. Wick, “An Overview 
+of the Mesa Processor Architecture,” SlGPlan 
+Notices, Vol. 17, No. 4, 1982. 
+Lipkie, D.E., et al., “Star Graphics: An Object- 
+Oriented Implementation,” Computer Graph- 
+ics, Vol. 16, No. 3, July 1982, pp. 115-124. 
+Shoch, J.F., et al., “Evolution of the Ethernet 
+Local Computer Network,” Computer, Vol. 15, 
+No. 9, Aug. 1982, pp. 10-27. 
+Smith, D.C., et al., “Designing the Star User 
+Interface,” Byte, Vol. 7, No. 4, April 1982, pp. 
+242-282. 
+Sweet, R.E., and J.G. Sandman, Jr., “Empirical 
+Analysis of the Mesa Instruction Set,” SlGPlan 
+Notices, Vol. 17, No. 4, 1982. 
+Star/Viewpoint enhancements 
+Becker, J., “Typing Chinese, Japanese, and 
+Korean,” Computer, Vol. 18, No. 1, Jan. 1985, 
+pp. 27-34. 
+Becker, J., “Arabic Word Processing,” Comm. 
+ACM, Vol. 30, No. 7, July 1987, pp. 600-610. 
+Bewley, W.L., et al., “Human Factors Testing 
+in the Design of Xerox’s 8010 Star Office 
+Workstation,” Proc. ACM Conf. on Human 
+Factors in Computing Systems, 1983, pp. 72- 
+77. 
+Bushan, A., and M. Plass, “The Interpress Page 
+and Document Description Language,” Com- 
+puter, Vol. 19, No. 6, June 1986, pp. 72-77. 
+Curry, G., and R. Ayers, “Experience with 
+Traits in Star,” Programming 
+Productivity: 
+Is- 
+sues for the Eighties, IEEE Computer Society 
+Press, Los Alamitos, Calif., 1986, Order #681. 
+Halbert, D., “Programming by Example,” 
+Xerox OSD Tech. Report OSD-T84-02, 1984. 
+Lewis, B., and J. Hodges, “Shared Books: Col- 
+laborative Publication Management for an Of- 
+fice Information System,” Proc. ACM Conf. on 
+Office Information 
+Systems, 1988. 
+Miscellaneous 
+Bly, S., and J. Rosenberg, “A Comparison of 
+Tiled and Overlapping Windows,” Proc. ACM 
+Conf. on Computer-Human 
+Interaction, 
+1986, 
+pp. 101-106. 
+Goldberg, A., Smalltalk-80: 
+The Interactive 
+Programming 
+Environment, 
+Addison-Wesley 
+Publishing, Reading, Mass., 1984. 
+Goldberg, A., and D. Robson, Smalltalk-80: 
+The Language 
+and its Implementation, 
+Ad- 
+dison-Wesley Publishing, Reading, Mass., 
+1984. 
+Halasz, F., and T. Moran, “Analogy Consid- 
+ered Harmful,” Proc. ACM Conf. on Human 
+Factors in Computing Systems, Gaithersburg, 
+MD, 1982, pp. 383-386. 
+Houston, T., ‘The Allegory of Software: Be- 
+yond, Behind, and Beneath the Electronic 
+Desk,” Byte, Dec. 1983, pp. 210-214. 
+Johnson, J., “Calculator Functions on Bitmap- 
+ped Computers,” SIGCHI Bulletin, Vol. 17, 
+No. 1, July 1985, pp. 23-28. 
+Johnson, J., “How Closely Should the Elec- 
+tronic Desktop Simulate the Real One?” 
+SIGCHI Bulletin, Vol. 19, No. 2, Oct. 1987, pp. 
+21-25. 
+Johnson, J., “Modes in Non-Computer De- 
+vices,” in press, Int’l J. Man-Machine 
+Studies, 
+1989. 
+Johnson, J., and R. Beach, “Styles in Document 
+Editing Systems,” Computer, Vol. 21, No. 1, 
+Jan. 1988, pp. 32-43. 
+Malone, T.W., “How Do People Organize 
+Their Desks: Implications for the Design of 
+Office Information Systems,” ACM Trans. on 
+Office Information Systems, Vol. 1, No. 1, 1983, 
+pp. 99-l 12. 
+Rosenberg, J.K., and T.P. Moran, “Generic 
+Commands,” Proc. First Int’l Conf. on Human- 
+Computer Interaction 
+(Interact-84), 
+1984, pp. 
+1,360-l ,364. 
+Jeff Johnson is a user-interface researcher at 
+Hewlett-Packard Labs. While working on this 
+article, he was a member of the Advanced User 
+Interfaces Group of US West Advanced Tech- 
+nologies. Before that, he worked at Xerox de- 
+signing and implementing enhancements to the 
+Star/ViewPoint system, and at Cromemco as a 
+software engineer and manager. He received BA 
+and PhD degrees in cognitive psychology from 
+Yale and Stanford universities, respectively. 
+Teresa L. Roberts is a user-interface researcher 
+in the Advanced User Interfaces Group at US 
+West Advanced Technologies. She spent 10 
+years at Xerox, designing and evaluating parts 
+of the Star user interface. She received a PhD in 
+computer science from Stanford University. 
+William Verplank is an interaction &sign con- 
+sultant with IDTwo and a lecturer in human fac- 
+tors and design at Stanford University. He 
+Teitelman, W., “A Tour Through Cedar,” 
+worked at Xerox from 1978 to 1986, doing user 
+IEEE Software, April 1984. 
+testing and user-interface design for Star and 
+ViewPoint. He received a BS in mechanical en- 
+Whiteside, J., et al., “User Performance with 
+Command, Menu, and Iconic Interfaces,” 
+gineering from Stanford University and MS and 
+PhD degrees in man-machine systems from 
+Proc. ACM SIGCHI ‘85, 1985, pp. 185-191. 
+MIT. 
+28 
+COMPUTER 
+Keader~ ma! contact Jett Johnxm at He\* tett-P;~cLard Lab\. t SO t Page 
+.Mlll Rd.. I ALI, Palo Alto. CA 03303. 
+September 1989 
+At GTE’s Computer and Intelligent Systems 
+Laboratory, we are creating opportunities to 
+apply new ideas to research and development 
+projects for improved information and telecom- 
+munication systems. By expanding our scope 
+and responsibility, we can better support GTE’s 
+telecommunications businesses. And our ac- 
+tivities create challenges for individuals at the 
+MSiPhD level in Computer Science. Join us as 
+we continue to make history in teIecommunica- 
+tions technology. 
+Our present areas of interest include: 
+Distributed 
+Operating 
+Systems 
+We are currently growing a group that is conduct- 
+ing research in distributed operating systems and 
+distributed transaction systems. These systems 
+will unify a network of cooperating autonomous, 
+heterogeneous processors and replicated data- 
+bases. Issues concern not only the tradeoffs between 
+network and distributed operating systems, but 
+the interoperability of software components imple- 
+mented on a mix of platforms and languages; included 
+are such topics as transport, access, apphcation, 
+distributed control and control migration. Research 
+is conducted using synthesis and prototyping with 
+emphasis on architectural and applicability issues. 
+We are looking for individuals at all levels of ex- 
+perience, however, we require a PhD in Computer 
+Science along with a familiarity with the various 
+current approaches to the design of distributed 
+systems. Significant experience with at least one 
+such system is highly desirable. 
+Intelli 
+f? 
+ent Database 
+ystems 
+Our Distributed Object Management (DOM) pro- 
+ject is conducting research into interconnectivity 
+and intelligent interoperability among heterogeneous 
+computer systems. We require PhD-level re- 
+searchers at all levels with a minimum of 2 years’ 
+experience in databases, operating systems, 
+distributed systems or artificial intelligence. 
+Software Reusability 
+Topics of interest in the area of software 
+reusability include domain analysis, object-oriented 
+development, reuse centered software pro- 
+cesses, tools support for reusability and software 
+classification. This area requires an MSiPhD in 
+Computer Science and a minimum of 2 years’ 
+experience in at least one of the above areas. 
+GTE Laboratories 
+offers attractive 
+facili- 
+ties located in a quiet, wooded setting 
+just 
+outside of Boston, 
+as well as a highly 
+competitive 
+salary and benefits 
+package. 
+We invite 
+you to send a resume to 
+Vanessa Stern, GTE Laboratories, 
+Inc., 
+Box CACMS, 40 Sylvan Road, Waltham, 
+MA 02254. 
+An equal opportunity 
+emnlover. 
+M/F/H/V. 
+m 
+Laboratories 
+THE POWER IS ON 

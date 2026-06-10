@@ -1,0 +1,601 @@
+979
+P. Michelucci (ed.), Handbook of Human Computation, 
+DOI 10.1007/978-1-4614-8806-4_76, © Springer Science+Business Media New York 2013
+ Introduction 
+ This chapter, like most if not all the other chapters in this book, was written and 
+edited on a digital computer. That computer can perform incredible feats of numeri-
+cal computation at blindingly fast speeds, store massive amounts of data, and be used 
+as a tool for everything from writing to music production to scientiﬁ c analysis to 
+communication. The abilities of a digital computer, however, are insigniﬁ cant next to 
+the computational power of the network of human beings, their communication infra-
+structure, and the accumulated knowledge tapped into by those individuals respon-
+sible for building it. No single human being knows how to build a modern computer 
+from scratch. Indeed, no one knows how to build a computer mouse, or a lead pencil, 
+or many of the complex tools we rely on for modern living from scratch (Read  1958 ; 
+Ridley  2010 ). For that matter, hardly any of us know how to make simple two-strand 
+twisted string from local raw materials, something that practically every adult once 
+knew how to do. A key factor that enables us as human beings to solve complex 
+problems and achieve a level of dominance over a wide variety of environments from 
+the desert to the arctic to the deep ocean is not simply our individual big brains, but 
+our capacities for extreme sociality, to cooperate and learn from one another, and our 
+ability to build on previous knowledge and to accumulate culture. 
+ It is often said that the human brain is like a computer. It processes information, 
+takes in input, produces output, stores and retrieves memory. Groups of people, 
+ Human Cumulative Cultural Evolution 
+as a Form of Distributed Computation 
+ Paul  E.  Smaldino and  Peter  J.  Richerson 
+ P. E.  Smaldino (*) 
+ Center for Advanced Modeling in the Social, Behavioral, and Health Sciences , 
+ Johns Hopkins University ,  Baltimore ,  MD ,  USA 
+ e-mail: paul.smaldino@gmail.com 
+ P. J.  Richerson 
+ Department of Environmental Science and Policy ,  University of California, Davis ,  Davis ,  CA ,  USA 
+ e-mail: pjricherson@ucdavis.edu 
+980
+then, are like supercomputers. They can process in parallel, allocate resources, and 
+divide tasks to produce faster and better solutions to problems than lone individuals 
+can manage, and that are more than the sum of the individuals’ abilities were they 
+working separately (Smaldino  in press ). For example, Woolley and colleagues pre-
+sented small groups with a number of tasks requiring different types of collabora-
+tions to solve them (Woolley et al.  2010 ; see also Woolley and Hashmi this volume). 
+Their results showed, ﬁ rstly, that groups’ performance between tasks were corre-
+lated, pointing to an emergent “collective intelligence” for each group conﬁ gura-
+tion, and secondly, that a group’s performance was uncorrelated with the intelligence 
+of its individual members, but rather stemmed from their ability to communicate in 
+a understanding and democratic fashion. 
+ If groups of humans are like a supercomputer, then what of human  cultures , 
+which store and process the cumulative innovations and collaborations of genera-
+tions of individuals? Cumulative culture allows human societies to act as  super- 
+duper computers. Humans are unique in the animal kingdom for our tremendous 
+capacity to learn from one another. Our relatively fast and accurate imitation and 
+willingness to teach others allows us to acquire complex skills without having to 
+reinvent them for ourselves. Individuals sometimes improve upon the skills they 
+have acquired and these improvements can be passed on to those who learn from the 
+inventor. Furthermore, we are smart shoppers in the marketplace of ideas. We selec-
+tively adopt innovations from others that work better or whose use is correlated with 
+success. Human social learning cumulatively ratchets up technology and innovation, 
+providing groups with progressively better solutions to the problems they encounter 
+(Tennie et al.  2009 ; Boyd et al.  2011 ). By such means Stone Age bowyers produced 
+bows that modern engineers ﬁ nd to be approximately optimal designs (Allely et al. 
+ 1992 ). From this perspective, the human-based genetic algorithm (Kosorukoff  2001 ; 
+Grier, this volume), a computational technique in which human users are involved in 
+both judging the ﬁ tness of problem solutions as well as suggesting novel solutions, 
+is simply an application of evolutionary processes that have been driving human 
+innovation since the ancient hominins began to make multi-part tools. 
+ In this chapter, we will ﬁ rst discuss how social learning can increase the ﬁ tness 
+of a population by allowing cultural innovations to accumulate. We will then dis-
+cuss the importance of population size and social connectivity on maintaining those 
+innovations, with a focus on the fragility of human computational systems to sudden 
+isolation or population loss. We end with a consideration of the implications of our 
+discussion on the design of human computation systems in the future. 
+ Roger’s Paradox: Why Social Learning Is Not Enough 
+ In a complex world in which decisions must often be made quickly and in which 
+skills may be difﬁ cult to acquire, individual trial-and-error learning can be overly 
+costly in terms of time, cognitive capacity, and the potential consequences of a poor 
+decision. A hunter-gatherer learning on his own may spend months trying to con-
+struct a hunting apparatus or, much worse, misread animal tracks and be eaten by a 
+P.E. Smaldino and P.J. Richerson
+981
+predator. Social learning—which includes knowledge or behaviors acquired via 
+teaching, imitation, or social inﬂ uence (e.g., you learn to play video games because 
+your friends all hang out and play Xbox)—helps individuals to gain important skills 
+without the time costs and risks associated with individual, trial-and-error learning. 
+It may therefore seem obvious that the adoption of a strategy of social learning 
+should beneﬁ t a population—increasing its ﬁ tness, in the language of evolutionary 
+biology. Yet, it turns out that if the only beneﬁ t of social learning is to avoid the 
+costs of trial-and-error, then social learning strategies will be indeed adopted but 
+will  not increase the ﬁ tness of the population. 
+ This apparent paradox was demonstrated by Rogers ( 1988 ) via a simple mathe-
+matical model. Suppose a hypothetical world in which there are two possible behav-
+iors, either of which individuals can adopt to help them survive and reproduce. 
+Suppose also that the environment changes periodically between two states, and that 
+in each of these states a different behavior yields a ﬁ tness advantage over the other 
+behavior. Finally, suppose that individuals in this world fall into two categories of 
+learner, and that learning strategies are passed on from parents to their children. 
+ Individual learners always learn the optimal behavior for the environment, but at a 
+heavy cost.  Social learners choose an individual from the previous generation at 
+random and adopt that individual’s behavior. Because they simply copy the behavior 
+of another individual, social learners avoid the cost of individual learning. 
+ When social learners are rare, they will have higher ﬁ tness than individual learn-
+ers, and their prevalence in the population will therefore increase. However, as 
+social learners become more common, a social learner becomes increasingly likely 
+to learn her behavior from a fellow social learner. The state of the environment is not 
+stable, so social learners risk learning an out-of-date behavior, and transmitting that 
+incorrect behavior to social learners in subsequent generations. Thus, as the preva-
+lence of social learners increases, their ﬁ tness begins to fall, until it again reaches 
+the ﬁ tness of individual learners (Fig.  1 ). In other words, we should expect social 
+learning strategies to evolve in a social species, but the introduction of social 
+0
+0.25
+0.5
+0.75
+1
+Fitness
+Proportion of Social Learners
+Individual Learners 
+Social Learners 
+Average
+Social learning
+increases 
+Social learning
+decreases 
+ Fig. 1  Rogers’ model. Social 
+learners have higher ﬁ tness 
+than individual learners when 
+rare, and their invasion brieﬂ y 
+increases the average ﬁ tness 
+of the population. However, 
+as the proportion of social 
+learners in the population 
+increases, the population 
+stabilizes at a mixed 
+equilibrium ( vertical line ) in 
+which the average ﬁ tness is 
+identical to that of a 
+population of individual 
+learners (Adapted from 
+Rogers ( 1988 )) 
+ 
+Human Cumulative Cultural Evolution as a Form of Distributed Computation
+982
+learning behavior does not, in and of itself, increase the average ﬁ tness of popula-
+tions of that species. Boyd and Richerson ( 1995 ) studied variations on Rogers’ 
+model, including ones in which social learners could identify and preferentially 
+learn from individual learners and ones in which there were more than two behav-
+iors. They showed that Rogers’ results were robust: social learning on its own does 
+not increase the mean ﬁ tness of a population.
+ Cumulative Culture 
+ One way of getting around Roger’s paradox is if social learning can improve the 
+efﬁ ciency of individual learning. For example, suppose individuals sample multiple 
+behaviors, and choose one if it is obviously better than the others. If there is an 
+insufﬁ ciently clear signal, and one behavior is not obviously superior, then the indi-
+vidual chooses a random behavior through imitation. This strategy of “conditional 
+social learning” has been shown to increase the mean ﬁ tness of the population rela-
+tive to a population of individual learners under a variety of conditions (Boyd and 
+Richerson  1995 ; Enquist et al.  2007 ; Ehn and Laland  2012 ). In this and related 
+scenarios, behaviors can always be hypothetically learned by individuals through 
+trial and error. Social learning can be adaptive if it hastens the spread of beneﬁ cial 
+behaviors. Indeed, this seems to be the primary beneﬁ t of social learning in non- 
+human apes (Tennie et al.  2009 ). Nonetheless, human groups have utilized social 
+learning to make extremely large adaptive gains, much larger than would be facili-
+tated solely through the increased spread of beneﬁ cial behaviors.  The key to human 
+success is the spread of incremental innovations based on existing behaviors—often 
+quite complex behaviors—which naïve individuals would be unable to learn on 
+their own . Human social learning based on teaching and imitation is so efﬁ cient that 
+a Stone Age bowyer could acquire an advanced technology like a bow that already 
+incorporated the hard-won innovations of dozens if not hundreds of his ancestors 
+before he contemplated innovations that might improve it still further. 
+ Humans are the most successful vertebrate species on the planet. We have man-
+aged to conquer a vast range of environments from the desert to the tropics to the 
+Arctic. We have modiﬁ ed our environments to facilitate our survival and our expan-
+sion. At the dawn of the agricultural revolution 10,000 years ago, the entire human 
+population across the globe was approximately ﬁ ve million (Keinan and Clark 
+ 2012 ). Today, over 37 million people live in the Tokyo metropolitan area alone. We 
+have achieved this success through the process of  cumulative culture . By this, we 
+mean that learned information and behaviors are reliably transmitted and improved 
+upon, such that those improvements can in turn be transmitted through learning. 
+ Cumulative culture allows individuals to build on previous adaptations. To exploit 
+this, humans have evolved psychological mechanisms, heuristics, and biases that 
+facilitate the acquisition of useful knowledge and behaviors (Henrich and McElreath 
+ 2003 ; Tomasello et al.  2005 ; Herrmann et al.  2007 ; Hill et al.  2009 ). This includes 
+P.E. Smaldino and P.J. Richerson
+983
+learning from individuals who have demonstrated success either directly or by proxy, 
+indicated by traits like status or prestige (Henrich and Gil-White  2001 ). Symbolic 
+communication additionally allows for transmission of behaviors and practices with-
+out direct observation. Stories, myths, and moral doctrines play an important role in 
+the cultural transmission of norms of social behavior as well as useful information 
+about survival (Chudek and Henrich  2011 ). Moreover, the spread of organizational 
+norms through narratives, religions, and other social institutions have enabled the 
+creation and transmission of emergent group-level traits that rely on social organiza-
+tion and division of labor (Henrich and Boyd  2008 ; Smaldino  in press ). The capaci-
+ties of human populations for the storage and transmission of collective information 
+constitute a feat of evolutionary computing unmatched in the natural world. 
+ Why Culture Is Common but Cultural Evolution Is Rare 
+ Since cumulative culture has made our species so outstandingly successful, why 
+didn’t this capacity evolve long ago and lead to many highly cultural species? After 
+all, most “killer” adaptations like internal skeletons, camera-type eyes, and efﬁ cient 
+ﬂ ight have been around for hundreds of millions of years and characterize many 
+lineages. At least two answers are possible. First, cumulative culture would be very 
+difﬁ cult to get started if the capacity for it is costly, as our large brains suggest it is 
+(Aiello and Wheeler  1995 ). The problem is that it takes many large brains operating 
+over many generations to evolve complex cultural adaptations. The ﬁ rst individuals 
+to pay the cost for a capacity for cumulative culture would ﬁ nd no useful complex 
+traits to imitate and hence would get no ﬁ tness payoff to cover the overhead of the 
+capacity (Boyd and Richerson  1996 ). Second, the kind of environment that makes 
+complex cumulative culture useful may be of very recent vintage. Theoretical mod-
+els suggest that cumulative culture is most useful in moderately variable environ-
+ments, especially environments that vary on time scales too short for genes to track. 
+Cultural evolution is rapid compared to genetic evolution and can thus generate 
+adaptations to more ephemeral environmental changes than can genes (Perreault 
+ 2012 ). We have known for decades that the earth’s climates became much more 
+variable during the Plio-Pleistocene—from 5.3 million years ago to about 11.5 
+thousand years ago—than they were during the preceding 60 million years (Zachos 
+et al.  2001 ). Until recently, however, the best data described climate variation on 
+time scales too long to favor costly culture. As better paleoclimate data has come 
+available, we have begun to resolve climate variation at the millennial and submil-
+lennial scale that in theory should favor a capacity for cumulative culture. This 
+variation appears to have been increasing over the last few glacial cycles (Loulergue 
+et al.  2008 ), in rough parallel to human brain size increase and the increasing sophis-
+tication of stone tools. In other words, paleoclimate data for the last several hundred 
+thousand years shows a steady increase in environmental variability that appears to 
+be tracked by the emergence and spread of cumulative culture. 
+Human Cumulative Cultural Evolution as a Form of Distributed Computation
+984
+ Innovation, Environment, and Population Size 
+ The ability to socially learn and accumulate culture provides opportunities for the 
+expansion of humans’ ability to problem-solve. However, the ability to learn and 
+adapt does not necessarily lead to the runaway growth of cultural innovation. As a 
+prime example, anatomically modern humans ﬁ rst appeared in Africa between 160 
+and 200 kya (kya = thousand years ago; McBrearty and Brooks  2000 ; White et al. 
+ 2003 ; McDougall et al.  2005 ), and had spread to most of the habitable parts of the 
+globe between 90 and 40 kya (Ambrose  1998 ; Ray et al.  2005 ). Yet the appearance 
+of agriculture and the comparatively rapid growth of culture, technology, and popu-
+lation size only occurred around 11 kya. Why is this the case? It seems unlikely that 
+it took somewhere between 30 and 150,000 years for humans to happen upon the 
+idea of domesticating crops and adopting stationary (as opposed to nomadic) life-
+styles. Richerson et al. ( 2001 ) have argued that the drier, highly variable, low CO 2 
+world of the last glacial period would have been unfavorable for the evolution of 
+agriculture until about 11,000 years ago, which is in fact when agriculture began to 
+develop. It is true that anatomically modern humans were present in Africa during 
+the last interglacial period without developing agriculture, and our understanding of 
+events in Africa leading up to anatomical moderns spreading out of Africa around 
+50 kya is still rudimentary (Richerson et al.  2009 ). Nevertheless, the case is strong 
+that it was the right mix of biological and cultural preparedness and worldwide cli-
+matic factors that triggered the widespread adoption of agriculture, sowing the 
+seeds of modern civilization. 
+ Even in the relatively stable global climate of the last 11,000 years, cultural inno-
+vations have required the right social and environmental circumstances to thrive and 
+evolve. One of the best markers of cumulative cultural evolution is the presence of 
+complex technology. Before most of the world was connected by webs of commu-
+nication and commerce, tremendous variability could be found in the complexity of 
+each culture’s toolkits. What factors determine the limits of a cultural population’s 
+technological complexity? 
+ Population Size and Connectedness Predict Technological 
+Complexity 
+ Cumulative culture allows for complex technologies to be maintained and transmit-
+ted across generations. As a result, humans have developed technologies that have 
+allowed them to survive and ﬂ ourish in wide ranges of environments. Spears and 
+kayaks are useful for ﬁ shing in marine environments, but would be quite difﬁ cult for 
+naïve individuals to make and exploit on their own. Inuit populations living in Arctic 
+climates learned to make warm skin clothing, build sleds, and breed and train dogs 
+for sled travel. All of these cultural adaptations were essential for their long-term 
+survival in the icy climate of the frozen North. The creation of all of these 
+P.E. Smaldino and P.J. Richerson
+985
+technologies depends on the ability to transmit and maintain complex and cumula-
+tive information and behaviors. However, learning complex behaviors and technolo-
+gies is not easy. For example, not everyone is a great model for learning. In a 
+generation, there may be only one or two great kayak builders. Moreover, not every-
+one has the ability or the proclivity to learn complex skills. From among many stu-
+dents, a gifted teacher may have only a few gifted pupils who can go on to teach 
+others to the same high standard. How might these factors inﬂ uence the mainte-
+nance and transmission of complex cultural adaptations? 
+ Using a mathematical model, Henrich ( 2004 ) showed that if (1) there is indi-
+vidual variation in learning ability, and (2) students are usually less skilled than their 
+teachers, then more complex skills will require larger population sizes in order to be 
+maintained. Powell et al. ( 2009 ) then extended Henrich’s model and showed that it 
+is not necessarily the absolute size of the population that matters, but rather the 
+number of effective teachers available. Thus, contact with other groups can com-
+pensate for a given group’s small population size. On the other hand, this theory 
+implies that smaller and more isolated groups should have less complex technology 
+than larger and more connected groups. Kline and Boyd ( 2010 ) analyzed ﬁ shing 
+and marine foraging toolkits from ten small-scale societies in Oceania and found 
+that, as the models predicted, population size was the best predictor of toolkit com-
+plexity, and also that higher rates of contact with other groups were associated with 
+greater toolkit complexity, especially in relatively small groups. 
+ When Disaster Strikes 
+ If larger and more connected populations are associated with increased technologi-
+cal complexity, what happens if there is a catastrophic event that suddenly shrinks 
+the population or isolates a group from outside contact? Several documented cases 
+suggest that this can lead to a loss of previously held technologies (Boyd et al.  2011 ). 
+A well-known example is the case of the Tasmanians (Diamond  1978 ; Henrich 
+ 2004 ; Davidson and Roberts  2009 ). Isolated from mainland Australia after the seas 
+began to rise at the end of the last glacial period, humans on Tasmania were stranded 
+for about 8,000 years on an island that could not sustain more than a few thousand 
+people, and remained isolated from the rest of the world until their ﬁ rst contact with 
+Europeans in the late eighteenth century (Pardoe et al.  1991 ). Over the next several 
+thousands of years following their isolation, the Tasmanians lost a number of previ-
+ously held technologies, such as bone tools and ﬁ shing hooks and the ability to make 
+cold-weather clothing, which were nevertheless maintained in Aboriginal communi-
+ties on the Australian mainland. Moreover, the archaeological record on Tasmania 
+points to a gradual loss of technology following their isolation. For example, the 
+record indicates that between 8,000 and 5,000 years ago the Tasmanian diet was 
+heavily dependent on ﬁ sh. However, the presence of ﬁ sh in their diet (as seen in the 
+archaeological record) was declining by 5,000 years ago and had completely disap-
+peared by 3,800 years before present, even though the relative proportions of other 
+Human Cumulative Cultural Evolution as a Form of Distributed Computation
+986
+elements in the Tasmanians’ diet did not shift much. Other technologies that 
+appeared on the mainland after the Tasmanian separation may have never arisen on 
+the island at all. For example, boomerang use was widespread on the mainland by 
+the time of European contact, and the remains of boomerangs dating back to over 
+11,000 years ago have been found in a peat bog in South Australia, but none have 
+ever been found in Tasmania (Davidson and Roberts  2009 ). 
+ Technological Complexity in the Modern World 
+ The past two centuries have seen exponential growth in both the size of the human 
+population on Earth and the complexity of our technology. Each new technological 
+innovation has built upon previous or contemporary technologies, and those innova-
+tions have spread with startling speed. Consider that a person alive today born 100 
+years ago would have witnessed the inventions of—just to name a few—the televi-
+sion, the transistor radio, modern plastics, the jet airplane, the electric guitar, the 
+microwave, the credit card, the remote control, the compact disc, personal comput-
+ers, cell phones, the internet, GPS, DNA ﬁ ngerprinting, Prozac, Viagra, gene 
+sequencing, smart phones, and unmanned drone aircraft. Consider also that in that 
+time, the world population has not only quadrupled, but has become vastly more 
+connected. Three-fourths of the world’s people now have access to cell phones 
+(World Bank  2012 ). Social media such as Facebook, Twitter, and Google + allow 
+information, ideas, and norms to spread faster and wider than ever before. The 
+research university and other formal educational and R&D organizations spread 
+technical information to ever larger numbers of students and support ever larger 
+numbers of research scientists, design engineers, manufacturing specialists and 
+maintenance technicians. 
+ Access to advanced technologies is extremely widespread. However, the knowl-
+edge and ability to create innovative new technologies rests in the hands of rather 
+few individuals in each separate ﬁ eld. Moreover, many technologies require compli-
+cated collaborations between individuals with different skill sets and access to 
+resources—a prerequisite fulﬁ lled by large numbers of people with access to com-
+munication networks and substantial wealth. As our population grew and became 
+more interconnected, our capacities to invent and sustain complex technologies 
+increased. However, the maintenance of those technologies is not guaranteed. For 
+example, it may be that the number of highly trained engineers necessary to sustain 
+(much less advance) modern highly complex technology is quite large. If the global 
+human computer were to suffer some kind of setback (due to a political, economic, 
+or environmental shock), the loss of individual experts or the reduced communica-
+tion between them might further exacerbate the original setback, much as a shrink-
+age of population size and/or contact caused the loss of complex technology on 
+Tasmania and on remote Paciﬁ c islands. As an example from a complex society, 
+consider also the setbacks to technology and knowledge in the former Western 
+Roman Empire after its political collapse. Depopulation and the fragmentation of 
+P.E. Smaldino and P.J. Richerson
+987
+the formerly uniﬁ ed polity and economy resulted in declines in literacy and the hol-
+lowing out of civil engineering skills so advanced by the Romans. Old buildings and 
+roads fell into ruin and new construction did not recover to Roman standards until 
+the Late Medieval period. 
+ How Fragile Is the Global Human Computer? 
+ Could a disaster characterized by a sudden loss of either population or connected-
+ness really lead to a global loss of technology? Maybe not. The world is extremely 
+well connected. This may create redundancies and plasticity that could prevent loss 
+of technology, provided the damage was not too extensive. Consider an analogy to 
+the human brain. Damage to the left hemisphere of the cerebral cortex, such as 
+caused by a stroke or traumatic brain injury, can cause difﬁ culties in the production 
+or comprehension of language (aphasia). However, if a patient speaks more than 
+one language, she may show differential patterns of damage and recovery between 
+languages, making the patient more likely to regain or retain language use in at least 
+one language (Goral et al.  2002 ). Increased social connections whereby similar 
+technologies are produced via slightly different pathways may increase the robust-
+ness of complex technologies. We also have large information reserves in the forms 
+of books and internet databases. Although the Romans had books, the printing press 
+had not yet been invented, and as such dissemination of information was limited. 
+Merlin Donald ( 1991 ) has argued that literacy and numeracy, leading to the external 
+storage of information, is one of the great advances (of three) in the origin of the 
+modern mind. The unaided human brain has a limited memory and a limited ability 
+to handle quantitative calculations. Literacy and numeracy not only relieve these 
+limitations but also increase connectedness via books and other forms of written 
+communication. Mass literacy and inexpensive mass media following the invention 
+of the printing press greatly multiplied the number of people who could participate 
+in advancing and spreading technology and other innovative ideas. 
+ Nevertheless, it is possible that technology may be lost should disaster strike. 
+Much of our specialized knowledge is collected by institutions, and that knowledge 
+could rapidly vanish. Skilled people can die, books can be burned, and computers 
+can wear out. Cumulative culture creates infrastructures that facilitate the persis-
+tence and growth of technologies and innovations. The maintenance of modern 
+medicine, for example, leans on the infrastructure of the medical school system as 
+much as it does on the availability of information. If young would-be doctors didn’t 
+have anywhere to train, it would be difﬁ cult for them to become as skilled as today’s 
+highly trained doctors regardless of the persistence of medical textbooks. If the 
+population necessary to maintain a particular technology were to suffer a loss, it is 
+not clear that recovery would be swift. 
+ Even if a technology  is lost, knowledge of the technology’s existence and its 
+associated beneﬁ ts may help to recover it. The archaeological evidence shows that 
+for thousands of years following their separation from the mainland, the Tasmanians’ 
+Human Cumulative Cultural Evolution as a Form of Distributed Computation
+988
+diet involved large quantities of ﬁ sh. When European’s visited the island, however, 
+the islanders were astonished at their success in pulling ﬁ sh out of the ocean, but 
+refused offers of ﬁ sh to eat (Davidson and Roberts  2009 ). This taboo on eating ﬁ sh 
+almost certainly arose after the islanders stopped ﬁ shing, along with their loss of the 
+technology to make bone ﬁ shing hooks. Importantly, the taboo would have also dis-
+suaded potential innovators from re-inventing ﬁ shing equipment, or prevented such 
+technology from spreading should it have arisen. While this taboo may have helped 
+to concentrate efforts on the acquisition of land-based sources of food, it also poten-
+tially halted technological innovation. In contrast, some of the more recent techno-
+logical innovations in the modern world were driven by science ﬁ ction writers’ 
+visions of what could be. It is possible that, in the aftermath of a technology loss, 
+recovery could be aided by visions of what once was. 
+ The Future of Innovation 
+ Is it possible for human computation to improve the operation of cumulative culture, 
+so that we may avoid catastrophic technology loss altogether? We can draw insight 
+from how it has been improved in the past, focusing on the last ten millennia and 
+particularly on the most recent centuries and even decades. Table  1 details some of 
+these mechanisms. Contemporary web-based efforts to speed the rate of innovation 
+(e.g. Spigit.com, Innocentive.com, Google Scholar) are based on further improve-
+ments along the lines outlined in Table  1 . Electronic storage is so cheap that we can 
+aspire to have the sum total of human knowledge stored in electronic media. Even 
+today a large fraction of that total is available to those of us with access to the web and 
+a research library with electronic journal subscriptions. Top universities are offering 
+free online courses and Wikipedia has authoritative micro-courses on a host of topics. 
+Given that much innovation involves novel combinations of ideas, the ability to rap-
+idly access a wider variety of ideas and skills should increase the rate of innovation.
+ Two limitations to the power of the internet to help speed innovation remain. 
+First, intellectual property issues must be solved. Book and journal publishers have 
+ Table 1  Culturally evolved mechanisms for improving the efﬁ cacy of cumulative culture 
+ Mechanism 
+ Examples 
+ Development of off-line storage 
+of information 
+ Literacy, numeracy, and cheaper media such as 
+clay tablets, paper, and electronic storage 
+ Improvements in the dissemination 
+of information 
+ Cheap printing, lending libraries, internet search 
+engines 
+ Improvements in the capacity of individuals 
+to innovate and the number of individuals 
+prepared to learn 
+ Mass education, specialized scientiﬁ c and 
+technical occupations, specialist textbooks 
+and journals 
+ Development of institutions designed 
+to favor innovation 
+ Intellectual property rights, research universities, 
+lavish government support for basic and 
+applied research, “Silicon Valley culture” 
+P.E. Smaldino and P.J. Richerson
+989
+so far prevented rapid, inexpensive access to all potentially useful information, even 
+in the realm of academic publishing where authors expect to be paid mainly in the 
+form of prestige rather than money. Companies that crowdsource innovation, like 
+Spigit and Innocentive, restrict access to their services to a closed community to 
+protect intellectual property rights. Complicating the issue, the protection of intel-
+lectual property rights likely provides a key incentive for innovators in the modern 
+world of global interconnections. Users of information will often be strangers who 
+will not be inclined to bestow prestige rewards on innovators, much less material 
+rewards. Some small, simple, and automated per-view or per-download royalties 
+would compensate creators of group-beneﬁ cial innovations, who would not other-
+wise beneﬁ t from their work. 
+ Second, as Polanyi ( 1966 ) argued, much knowledge is “tacit”—the ﬁ ngertip feel 
+for things that is very difﬁ cult, if not impossible, to reduce to print or pictures. For 
+example, to educate scientists we still rely on the highly personalized, labor inten-
+sive PhD system pioneered in Germany in the early nineteenth century precisely 
+because it allows for the transfer of tacit knowledge. Similarly, ﬁ rms expect to have 
+to inculcate their organization’s ethos into technical and management hires. And 
+one might reasonably entertain the possibility that most undergraduate students pre-
+fer to attend residential universities, perhaps not entirely for the parties. Thus, the 
+need to transmit tacit knowledge is enduring, and as such, seems to act as a funda-
+mental limit on the rate of cumulative cultural evolution. 
+ As we proceed into the future, what it means to improve our ability to generate 
+and maintain cultural innovations may grow considerably less straightforward. The 
+pace of evolution is set by the rates of dissemination and innovation. Human com-
+munities are now integrated with digital devices that are themselves excellent learn-
+ers, ratcheting up our ability to innovate. With more people producing more 
+technology with more variation than ever before, culture is evolving at increasing 
+rates. A concern, however, is that modern cumulative culture operates much more 
+rapidly in some areas than in others. Technology that can be adopted by an indi-
+vidual, for example, can often spread faster than institutions that require coordina-
+tion among many individuals. 
+ Which problems we solve with our technology will depend partly on what we 
+perceive to be the salient problems. Culture inﬂ uences how we perceive the world 
+(Smaldino and Richerson  2012 ). If our problems continue to be framed in terms of 
+the accumulation of wealth and power, then the human computational engine will 
+surely continue to apply its problem-solving powers in that sphere. That strategy, 
+however, will very likely lead to a catastrophe with the potential to disable the infra-
+structure of the global human computer that made it possible. As Nardi writes in her 
+eloquent chapter (this volume), “There is no energy cornucopia waiting for us to tap 
+into; we live on a speciﬁ c planet, with speciﬁ c resources. We are in the process of 
+using up those resources.” A more promising direction, in terms of prolonging the 
+existence of our impressive culture achievements, is to attempt to guide the evolu-
+tionary forces that shape cultural change toward those individual mindsets and 
+social and legal institutions that promote forethought and sustainability. 
+Human Cumulative Cultural Evolution as a Form of Distributed Computation
+990
+ Summary 
+ Cumulative culture is the engine that drives the remarkable power of the global 
+human computer. It enables societies to act as super-duper computers by ratcheting 
+up technological and cultural innovations. Once culture can accumulate, the ability 
+of a society to maintain and spread complex technologies is directly related to the 
+size of the population and its connectivity with other populations. Larger and more 
+connected societies can maintain more complex technologies. This also means that 
+sudden isolation or a drop in population size can lead to a loss of technology. The 
+modern world maintains highly complex technology requiring the interactions of 
+many varied, superbly trained individuals. A catastrophic loss in terms of either life 
+or connectivity has the potential to trigger what some may consider an equally dev-
+astating loss of technology. While our interconnected society may have the resources 
+to avert such a second-order crisis, our best bet in the face of a loss of technology is 
+to retain knowledge of its existence in our collective memory and to continue devel-
+oping the kinds of human computational tools that have served us in the past. As the 
+accelerated pace of our cultural evolution comes at the cost of increased resource 
+use, however, we may need to focus on shifting the evolutionary forces that guide 
+the norms and institutions that deﬁ ne the psychological state space of problems and 
+solutions. It would be a shame to damage the global human computer through a 
+product of its own doing. 
+ References 
+ Aiello LC, Wheeler P (1995) The expensive-tissue hypothesis: the brain and the digestive system 
+in human and primate evolution. Curr Anthropol 36:199–221 
+ Allely S, Baker T, Comstock P, Hamm J, Hardcastle R, Massey J, Strunk J (1992) The traditional 
+Bowyer’s Bible. Lyons Press, Guilford 
+ Ambrose SH (1998) Late Pleistocene human population bottlenecks, volcanic winter, and differ-
+entiation of modern humans. J Hum Evol 34:623–651 
+ Boyd R, Richerson PJ (1995) Why does culture increase human adaptability? Ethol Sociobiol 
+16:125–143 
+ Boyd R, Richerson PJ (1996) Why culture is common but cultural evolution is rare. Proc Br Acad 
+88:73–93 
+ Boyd R, Richerson PJ, Henrich J (2011) The cultural niche: why social learning is essential for 
+human adaptation. Proc Natl Acad Sci 108:10918–10925 
+ Chudek M, Henrich J (2011) Culture–gene coevolution, norm-psychology and the emergence of 
+human prosociality. Trends Cogn Sci 15:218–226 
+ Davidson I, Roberts DA (2009) On being alone: the isolation of the Tasmanians. In: Crotty M, 
+Andrews DA (eds) Turning points in Australian history. University of New South Wales Press, 
+Sydney, pp 18–31 
+ Diamond JM (1978) The Tasmanians: the longest isolation, the simplest technology. Nature 
+273:185–186 
+ Donald M (1991) Origins of the modern mind: three stages in the evolution of culture and cognition. 
+Harvard University Press, Cambridge 
+P.E. Smaldino and P.J. Richerson
+991
+ Ehn M, Laland K (2012) Adaptive strategies for cumulative cultural learning. J Theor Biol 
+301:103–111 
+ Enquist M, Eriksson K, Ghirlanda S (2007) Critical social learning: a solution to Rogers’ paradox 
+of non-adaptive culture. Am Anthropol 109:727–734 
+ Goral M, Levy ES, Obler LK (2002) Neurolinguistic aspects of bilingualism. Int J Biling 
+6:411–440 
+ Henrich J (2004) Demography and cultural evolution: how adaptive cultural processes can produce 
+maladaptive losses – the Tasmanian case. Am Antiq 69:197–214 
+ Henrich J, Boyd R (2008) Division of labor, economic specialization and the evolution of social 
+stratiﬁ cation. Curr Anthropol 49:715–724 
+ Henrich J, Gil-White FJ (2001) The evolution of prestige: freely conferred deference as a mecha-
+nism for enhancing beneﬁ ts of cultural transmission. Evol Hum Behav 22:165–196 
+ Henrich J, McElreath R (2003) The evolution of cultural evolution. Evol Anthropol 12:123–135 
+ Herrmann E, Call J, Hernández-Lloreda MV, Hare B, Tomasello M (2007) Humans have evolved 
+specialized skills of social cognition: the cultural intelligence hypothesis. Science 317: 
+1360–1366 
+ Hill K, Barton M, Hurtado AM (2009) The emergence of human uniqueness: characters underly-
+ing behavioral modernity. Evol Anthropol 18:187–200 
+ Keinan A, Clark AG (2012) Recent explosive human population growth has resulted in an excess 
+of rare genetic variants. Science 336:740–743 
+ Kline MA, Boyd R (2010) Population size predicts technological complexity in Oceania. Proc R 
+Soc Lond B 277:2559–2564 
+ Kosorukoff A (2001) Human based genetic algorithm. IEEE Trans Syst Man Cybern 5:3464–3469 
+ Loulergue L, Schilt A, Spahni R, Masson-Delmotte V, Blunier T, Lemieux B, Barnola J-M, 
+Raynaud D, Stocker TF, Chappellaz J (2008) Orbital and millennial-scale features of atmo-
+spheric CH4 over the past 800,000 years. Nature 453:383–386 
+ McBrearty S, Brooks AS (2000) The revolution that wasn’t: a new interpretation of the origin of 
+modern human behavior. J Hum Evol 39:453–563 
+ McDougall I, Brown FH, Fleagle JG (2005) Stratigraphic placement and age of modern humans 
+from Kibish, Ethiopia. Nature 433:733–736 
+ Pardoe C, Bowdler S, Brace CL, Plomley NJB, Turner CG, Wolpoff MH (1991) Isolation and 
+evolution in Tasmania [and comments and reply]. Curr Anthropol 32:1–21 
+ Perreault C (2012) The pace of cultural evolution. PLoS One 7:e45150 
+ Polanyi M (1966) The tacit dimension. Doubleday, Garden City 
+ Powell A, Shennan S, Thomas MG (2009) Late Pleistocene demography and the appearance of 
+modern human behavior. Science 324:1298–1301 
+ Ray N, Currat M, Berthier P, Excofﬁ er L (2005) Recovering the geographic origin of early modern 
+humans by realistic and spatially explicit simulations. Genome Res 15:1161–1167 
+ Read L (1958) I, pencil: my family tree as told to Leonard E. Read. In: The freeman; reprinted by 
+The library of economics and liberty. Retrieved 27 Feb 2013 from  http://www.econlib.org/
+library/Essays/rdPncl1.html 
+ Richerson PJ, Boyd R, Bettinger RL (2001) Was agriculture impossible during the Pleistocene but 
+mandatory during the Holocene? A climate change hypothesis. Am Antiq 66:387–411 
+ Richerson PJ, Boyd R, Bettinger RL (2009) Cultural innovations and demographic change. Hum 
+Biol 81:211–235 
+ Ridley M (2010) The rational optimist: how prosperity evolves. HarperCollins, New York 
+ Rogers AR (1988) Does biology constrain culture? Am Anthropol 90:819–831 
+ Smaldino PE (in press) The cultural evolution of emergent group-level traits. Behav Brain Sci 
+ Smaldino PE, Richerson PJ (2012) The origins of options. Front Neurosci 5:50 
+ Tennie C, Call J, Tomasello M (2009) Ratcheting up the ratchet: on the evolution of cumulative 
+culture. Philos Trans R Soc B 364:2405–2415 
+ Tomasello M, Carpenter M, Call J, Behne T, Moll H (2005) Understanding and sharing intentions: 
+the origins of cultural cognition. Behav Brain Sci 28:675–735 
+Human Cumulative Cultural Evolution as a Form of Distributed Computation
+992
+ White TD, Asfaw B, DeGusta D, Gilbert H, Richards GD, Suwa G, Howell FC (2003) Pleistocene 
+ Homo sapiens from Middle Awash, Ethiopia. Nature 423:742–747 
+ Woolley AW, Chabris CF, Pentland A, Hashmi N, Malone TW (2010) Evidence for a collective 
+intelligence factor in the performance of human groups. Science 330:686–688 
+ World Bank (2012) Mobile phone access reaches three quarters of planet’s population. 
+Retrieved 27 Feb 2013 from  http://www.worldbank.org/en/news/press-release/2012/07/17/
+mobile-phone-access-reaches-three-quarters-planets-population 
+ Zachos JC, Shackleton NJ, Revenaugh JS, Palike H, Flower BP (2001) Climate response to orbital 
+forcing across the Oligocene-Miocene boundary. Science 292:274–278 
+P.E. Smaldino and P.J. Richerson

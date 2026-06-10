@@ -1,0 +1,3449 @@
+•< 
+AD-761 962 
+FLEX-A   FLEXIBLE   EXTENDABLE   LANGUAGE 
+Alan C.   Kay 
+Utah University 
+Prepared for: 
+Advanced Research Projects Agency 
+June  1968 
+DISTRIBUTED BY: 
+KJTn 
+National Technical information Service 
+U. S. DEPARTMENT OF COMMERCE 
+5285 Port Royal Road, Springfield Va. 22151 
+DISCLAIMER NOTICE 
+THIS DOCUMENT IS THE BEST 
+QUALITY AVAILABLE. 
+COPY FURNISHED CONTAINED 
+A SIGNIFICANT NUMBER OF 
+PAGES WHICH DO NOT 
+REPRODUCE LEGIBLY. 
+c 
+Technical Report 4-7 
+Alan C. Kay 
+CO 
+Q 
+i  : 
+FLEX -  A FLEXIBLE EXTENDABLE LANGUAGE 
+June, 1968 
+COMPUTER "SCIENCE 
+Information Processing Systems 
+University of Utah 
+Salt Lake City,  Utah 
+D D C 
+JT^^ man 
+JUN 20 19B 
+SEitHITFiSlMJ 
+«-JL., 
+Rooroduced by 
+NATIONAL TECHNICAL 
+INFORMATION SERVICE 
+U S Dopartmont of Commorce 
+i Springfield VA 22151 
+Advanced Research Projects Agency • Department of Defense ' ARPA Order 829 
+Program code number 6D30 
+Appv^ved for public release; 
+"Di -'.ribuiion Uldimited 
+1 
+..,.,:.., —:-,Y^r*.f ;,:
+Vi:iJ Y -. J;-.ii:.;, i >-.^i.vx.-r^,--.p-.v^, ,^^i -. .. .,>.HJj».vli*Wc**fli..!.*»«»* *^,'.U'i«,t,
+i iJJJIil i'iiH lOVi V T:
+]
+iof 
+Acknowledgments 
+This work could not have prospered without the 
+challenging and pertinent criticisms of many people.  I 
+would particularly like to thank Professor David C. Evans 
+and Robert S. Barton of the University of Utah, for 
+providing an inspirational environment in which to work. 
+I also wish to thank'c. Stephen Carr for many hours of 
+fascinating discussion (both here and there) that certainly 
+has had a lot to do with the present form of the work. 
+Preceding page blank 
+in 
+Table of Content« 
+I. 
+II. 
+Ill, 
+IV. 
+V. 
+VI. 
+Abstract 
+Preface 
+Introduction ....   
+ 
+The Language Environment 
+A. Pormalisms   
+B. FLEX   
+C. SCRIBE ....-.•••' 
+The User's Environment . . . . 
+The Pragmatic Environment    .   . 
+Progress to Date  .   .   
+ 
+References 
+Vita  .   .   . 
+... 
+..... 
+.... 
+▼■ 
+.      1 
+2 
+'8 
+9 
+.     44 
+.     «4 
+.     66 
+.     S8 
+.   100 
+.   101 
+iv 
+m 
+Abstract 
+The FLEX system consists of merged "hardware" and 
+"software" that is optimized towards handling algorithmic 
+operations in an interactive, man-machine dialog. 
+The basic form is that of a hardware implementation 
+of a parametric compiler embedded in an environment that 
+is well-suited for semantically describing and prag- 
+matically executing a large class of languages.  The semantic 
+language is called FLEX, includes the compiler-compiler 
+as a string operator and is used as the basic medium for 
+carrying out processes.  It is of a higher-level nature 
+and may itself be used for desciibing many algorithmic 
+processes. 
+The machine itself is designed to be of the desk-top 
+variety and sell at a low price.  Because of these design 
+parameters, many compromises in time and space had to be 
+made to save money.  The software system is implemented in 
+read-only memory.  To allow any possibility at all of 
+debugging such a scheme, the algorithms involved were 
+distilled down to their essence so that the entire system 
+for the machine can be displayed (in flow diagram form) on 
+a small wall chart. 
+In many senses the described system is a "syntax- 
+directed" computer. 
+■ 
+I.  PretacK 
+Tnis is ö  working document submitted as wörk-in- 
+progress for the degree of Master of Science.  It propobe-. 
+an integrated hardware-software system for performing 
+algorithmic operations. 
+The following is intended to be a complete and concise 
+description of the system rather than a mere report of 
+results in the hope that readers will not have to spend 
+valuable time trying to figure out how it is all accomplished, 
+Apologies for any and all gaps, chasms, and crevices. 
+o 
+v;,w,i.* 
+II.  Introduction 
+The FLEX language Is intended to be a simple yet 
+powerful and comprehensive notation to express computer- 
+oriented algorithms.  It follows the traditions set by 
+ALGOL 60 and several generations of EULER. [1,21! 
+a. Calculation 
+At the lowest level of use FLEX is easier to learn than 
+either FORTRAN or ALGOL.  The use of it as a desk calculation 
+language may be mastered in a few minutes. For example: 
+we may wish to evaluate a qalculation involving only numbers. 
+The expression is simply entered through the keyboard as 
+shown. Assigning the answer to the reserved word "display" 
+indicates that the answer is to be returned to the CRT. 
+,diaplay^l.6*2.9522/(19.7-9.2); 
+4.4985905 
+At this level of use the entered FLEX code is 
+executed statement by statement so that it acts as an 
+interactive language. The " ' " is supplied by the 
+processor and indicates to the user that FLEX is ready 
+for input. 
+MMnaRHmMm" 
+At any time the entered text nay be modified by 
+using the powerful text editor associated with the language, 
+b.   variables 
+The next step for the initiate would be the evalu~ 
+ation of simple algorithms using variables as well at 
+constants and perhaps a more, interesting display of results. 
+The following routine should be studied. 
+'begin 
+new a,b,o/d; 
+b+l;c-«-19.3; 
+d^glaj;.«-" aa''# (a-Ht>*c/l. 2+c) 
+♦ -d»" # ^d^a-b+c*1..2); 
+»=18,883333 b=30.243333 
+Notice that no format statements or separate write 
+commands are required. The handling of strings of textual 
+characters is a primitive operation within FLEX and the 
+catenation operator "#" is used to connect together literal 
+strings enclosed by quotes: "a=n
+/ to numbers generated 
+by executing arithmetic assignment statements. 
+The whole is realized as one string of characters 
+at the display end and is Output on the lower half of the 
+screen as shown. 
+n 
+mMrtnMwwi»>Sf:WirWrf»!t ^ 
+The creation of variables is indicated to FLEX, by 
+the use of the reserved word new followed by a list of 
+variable names. Type neid not be specified. FLEX is 
+entirely free form in nature. There are no card column 
+numbers to worry about as: in FORTRAN. 
+c. Decisions 
+Decision-making and branching are handled by one ccmr 
+prehensive statement, it is of the form if C~l then ]  | 
+else I  I. The boxes may be any construct in the language 
+including blocks and entire programs. 
+In almost all cases this eliminates the need and 
+use of one of the most common pitfalls in programming: 
+the label and associated go to statement. These are 
+provided in FLEX but they will rarely be used. Former 
+PORTtfAN programmers who convert to ALGOL find that they 
+almost never need to use labels or go top and time spent 
+in debugging gets reduced by a sizable factor. 
+d. The use of Blocks as in ALGOL 60- 
+The scope of variable identifiers may be delimited 
+by further use of the parentheses begin.end. For example» 
+begin 
+new a,b,c,d,e,f ,* 
+a-«-b+ci-d+e; 
+begin- 
+new a,fc,cf 
+a*b+c+d+e; 
+end; 
+jf-<-a+b; 
+end; 
+Within a block delineated by a begin end, pair, all 
+identif.teirs declared by a new list are considered to be 
+local to that block. An identifier used in the block 
+but npt declared there will be the one declared in the 
+nearest containing block. 
+In the example above 'a' in the outermost, block is 
+given a value in the assignment 
+a*-b+c+d+e ; 
+following this a new block is entered and a new declaration 
+is executed: new a^c.  Effectively this overrides the 
+previous declaration so that, in this inner block, the 
+ii i.^.-.-.-'v:-. cv ,/■«...■i
+,'v -, -• ,  j .-,; ■,,,...,,!, .,.,. „,, ... -'(••! 
+variables a,brc are considered to be totally new and 
+local.  In the assignment of identical form: 
+atb+c+d+e; 
+the a,b,c are from the inner bl6ök arid the dfh  are from the 
+outer block. The a>b>c of the outer block are not 
+touched. 
+Ifhert the end of the inner block is reached, the 
+inner block ceases to exist; we ar^ again in the scope of 
+the outer block.  The assignment f«-a+b sets f to the 
+value a+b wher«i a,b are the outer block variables. 
+The use of Block structute in this way allows sections 
+ot ptö^rams Written as blockpto be arbitrarily inserted 
+O Without, f*ar of destruction when variable names happen to 
+J(J*tc!h Äi can-eMily happen in unstructured languages like 
+FÖRTÄÄH. 
+The use of  the word new means just that. The vari- 
+ables following are created fresh each time a block is 
+entered; 
+e.   Mfeendabilitv 
+NiW binary and unary operators rpay be declarfBd 
+giving the programmer powerful control over the language 
+itself. For example, the functions max and mio may be 
+useful as operators, i.e.: 
+begin new max, min; 
+bop max «-'new a,b. if a>b then a else b'; 
+bO£»min «-'new a,b. if a<b then a else b'; 
+a-«-b+c*d max b-c*d? '"If d>b, then a+'b»1* 
+In this manner the programmer may tailor th« bperatof 
+structure of FLEX to suit his needs. This feature both 
+eases the programming burden and causes the program ±0 
+be easier to read and be understood by others. 
+FLEX may also be extended by either modifying itself 
+via the compiler-compiler contained in the language or 
+a wholly new language may be created using the same tools. 
+The use of the operators corri. and scribe will be discussed 
+in a later chapter, 
+f.   Comments 
+Comments are handled very simply.  Any tei^t 
+inserted between, the symbols 
+,',-,,f will be ignored by 
+FLEX.  !Ühis allows comments to be inserted anywhere- 
+even in the middle of an arithmetic expression. 
+Examples: 
+a-^b+c*dl ' 'this expression is simple111; 
+a-t-b'' "this expression is simple'' 
+l+c*d; 
+This in^jcpfihaction has barely scratched the surface 
+of the FLEX language»  It was not intended as an exposition 
+of FLEX, but only to give the average user (a FORTRANer) 
+a feel for the more comprehensive discussions that follow. 
+■>*rM-*,KWl.*T**^WM^%&W^^JS£>Vt,iKil   . 
+ü 
+Hl.    The LaMguaaa ^Environment 
+A.    Bacplanätion o| the Feramliims Ueafl 
+Syntax 
+Two formalisms are used to describe the syntax of 
+FLEX» A variant of BNF (Backus Normal Form) (with , 
+factoring) and the syntax-chart method developed by 
+Burroughs Corporation. Uoi 
+For an example, let us describe a FLEX identifier. 
+In Englishi An identifier is a text string 
+of arbitrary length starting 
+with a letter and thereafter 
+composed of either letter* of 
+numbers. 
+<ident>ii"<l«tter>  |<ident> 
+< letter> |<ident><number> 
+In BMFi 
+In Chart: 
+i 
+'. -   fcl—»lletierl 
+nunfcerj 
+- 
+tEroa 
+.A box says that the construct is defined elsewhere 
+on the chart; a lozenge indicates that this is the definition. 
+Semantics and Pragmatics 
+The semantics and pragmatics of FLEX will be 
+largely described in English (drawing heavily from 
+accepted notions in mathematics and computer science). 
+Whenever possible, FLEX, itself, will be used 
+for description and, indeed, this is done in the 
+SCRIBE chapter where FLEX is presented written in 
+itself. 
+8 
+Uli    The L«nau«<ita ^EnVironmant 
+A.    Explanation of th» FormmlimB ümed 
+Syntax 
+Two formalisna are used to describe the syntax of 
+FLEXt A variant of BMF (Backus Normal Forn) (with , 
+factoring) and the syntax-chart aethod developed by 
+Burrpughs Corporation. Uo] 
+For an example, let us describe a FLEX identifier. 
+in Englishi An identifier is a text string 
+of arbitrary length starting 
+with a letter and thereafter 
+composed of either letters of 
+numbers• 
+T *•»     ^ident>« i-<letter> |<ideiit> 
+in wirs    <tetter> |<ident><nuinber> 
+In Chert: 
+IE£E3 
+A box says that the construct is defined elsewhere 
+on the chart; a lozenge indicates that this is the definition. 
+Semantics and Pragmatics 
+The semantics and pragmatics of FLEX will be 
+largely described in English (drawing heavily from 
+accepted notions in mathematics and computer science). 
+Whenever possible, FLEX, itself, will be used 
+for description and, indeed, this is done in the 
+SCRIBE chapter where FLEX is presented written in 
+itself. 
+. iMrTtti** 
+'f.': ""'■'"■'/i „IM**.. •..:   i  .,,,        •     '       , ,.      ■■■imi.mi-.MtiJriTrfimii-i ^-^^-lRhtl^■rl'ln"l'rOTW|yJr^ffn^''rflTT^^1fIT^^WT»T^^liT^fJ^wylllll^tmyl^ 
+™ 
+B«omaM of the r«cur»iv« nature of FLBX («ad fth« 
+FLEX dMcription) it i« impommihlm to doscribo 1t 
+in« iiiMar ordor. Thoroforo, aomm solldioo hau 
+boon placod on the usexli intuition for MM of the 
+examples presented. 
+ExMple» 
+The exanplee will be largely presented in FLEX 
+althoofh occasionally they will be drawn fron 
+ALOOZ» (0 and FORTRAN to present some interesting 
+contrasts. 
+B. The FLBX Language 
+1. ftmtactic Atoat« 
+Byntax 
+<letter>ts - A|l|...Y|Zja|bj...y|z|A| 
+<difrit>tt - 0|1|2|3|...|9 
+<deii*iter>ii - r | i I ( I ) f t I • I M H « I * I » I T IJI l| ♦ 
++ 1- |* |/j* |- I»
+1 l< l> 1^ l»I.A|v|Vl 
+<reserved werdB>:» -   begin j end I new I if-| then | else | 
+^tt"i ' ^pe t^ilTfloSTI sin r 
+COB | gvan I abFTFana | pranZTThashl 
+exp i irTsgrn iSHTisn I any iwtf  . 
+wKTleTas nEo IS   ^ SSStt n[i£ll 
+bop | uop | name Tv^lTpap | act | 
+Icrminite | ieave"7 xinTyin I plat | 
+plpt FpTTn [control | 
+Semantics 
+The text charactere are simply numbers cf small 
+precision. The numbering ftarto with {0,,,,,9) for 
+("0
+,•,...,"f*
+,) and continues with (10,12...60) for 
+... 
+10 
+("A"....,"2-) and 111,1.3.^61) for (wa",, ..,"»■) .• 
+A special space symbol XB -nvmber^l  62, The' Aeliaiters 
+are numbered' frtom §3 on«  {true, false) are identical 
+with (1.0). 
+Pragmatics 
+Text characters are integer®. 
+Justification 
+Many internal character sets have been used by 
+the industry. The principle! reasons for this one 
+are: 
+1, It is sortable, 
+2, It is easily extendable for number systems 
+of higher radix than 10. 
+3, It eliminates a table lookup for every 
+character that is input to the compiler. 
+<identifier>:: «<letters j <identifiers <letter> 
+{ •  . i . ;. • ;     j<identifier> <digit> 
+<integer>   :; = <digit> | ^integer> ^digit> 
+<number>   :: = < integer >i.{<integer > j} 
+(.<integer> 
+<text char> :« = <l©tter> j <digit> i <delim> 
+■'?•';?»-»«»«„,, 
+•iiiiSl 
+■nNMMM MM '."^rw^cr.-r-aw.ra, 
+vassevi'jAt T^TWtliiün ilWMiii Ji'n ■■!■ iMi«. 
+11 
+o 
+~^N        fniegerh—W digit 
+(A)® " ©0 (b)   f (z 
+u 
+(texr chat 
+letter 
+digit 
+delimeter 
+•v  -,- 
+Semantics 
+<Reserved words> have the form of identifiers but 
+are considered to be semantical.ly identical to <delimiters>. 
+Indeed, many «preserved words> have their exact counterparts 
+among the delimiters >.  For example, begin and (,end and) 
+are exactly identical -- so are/N and and, ^/and or. 
+<Identifiers> are considered to be names for con- 
+structs in the system and the basic flow of FLEX consists 
+of assigning these names dynamically to the various objects 
+which may be created. 
+<Numbers> are either integers or fractions.  The 
+precision will be unspecified for this chapter. 
+Primaries 
+12 
+primary 
+selector 
+paramei-ers 
+process description 
+Q—"»I   text       [ >Q 
+list 
+* selector 
+parameters 
+b 
+<primary> 
+<variable> 
+<parameter> 
+<literal> 
+= <literal>|<variable>{parameters>} 
+= {<op>}<identifier> 
+= <list>{<parameter>}|<selector>{<parameter> } 
+= ^ I00! <list>{<selector> {< parameter > } } | 
+<process description>|"<text char>" 
+<op> 
+= val | mop i bop | ucp j act 
+w« „ .-..■..     . 
+;_,, .„l',.,,..,..,,, .,,        _ -. - . ^ _ ^ . I ^ ■ „,,r--,LtlJJI.„..,.„.,..„„, 
+^p.^ 
+a. Variables 
+{ 
+1. «simple variable > Seimantics. Although this is not tile 
+.   smalle&t syntactic ullit for a non* 
+literal, in'some cas«s it acts as 
+the smallest semantiO unit. 
+1&. <ident> 
+lb, val<ident> 
+Semantics. 
+rr 
+This has attributes 
+name 
+2, type 
+3, topology 
+4, value 
+all of which may be assigned dynamic 
+cally.      
+Semantics.«  The val overrides any 
+value~tEat may have been assigned. 
+On the left side of the assignment 
+arrow xt will destroy any previous 
+value. 
+Justification.  This allows the 
+programmer to override name 
+considerations to reassign a 
+procedure quotation and to access 
+a name. 
+1c. map<ident> 
+Id. bo£<ident> 
+Semantics.  This allows a user- 
+derivecTprocess description (pro- 
+cedure) to be assigned to the access 
+path of the variable.  This allows 
+complicated user structures to be , 
+indexed in the same manner as FLEk 
+defined data structures.  The map is 
+described more completely in the ' 
+section on <selectors>. 
+Semantics,  This moves the <ident> 
+into the parsing table as a binary 
+operator.  If the ident has had a 
+^Body^ assigned to it, then it 
+will act as a binary operator. 
+le. uop<ident> 
+Pragmatics.  A simple name inclusion 
+using EKe generality of the quotation 
+to full advantage. 
+Justification.  The language may be 
+extended in a simple manner. 
+Note: Same as bop except <ident> is 
+parsed as a unary operator. 
+..■»>' ■I'm 
+•j* '• 
+•• •■.>■•• 
+14 
+Examples; 
+jH-x+y  '' 'same as a««-x+y' •» 
+val p^-'b' 
+p-^x+y  • • • same as fc+x+y' •' 
+böp may-'new a,b; if a<b then b else a' 
+2. <simple varlable> <selector>      Semantics. The 
+<slni^le variable>' is 
+assumed to contain data. 
+Selection is performed 
+äs in ALGOL 60 and 
+Euler.  Tt acts like a 
+simple variable after 
+selection, 
+3. <8lmple variable> <list> Semanticfe, This is 
+just a procedure 
+activation with actual 
+parameters. 
+4. <sitople variable> <selector> <list>Semantics. selection 
+is performed first. 
+It then acts like a 
+simple Variable. 
+5. Notfti All further generalizations of this,type are 
+evaluated from left to right applying procedure 
+activation and selection where needed. 
+Examples: 
+a [x,y,x] (b^d); •'• "a" is an array of procedures'11 
+a (b/C^d)  [x,yfz]; '" "a" is a procedure delivering an array"' 
+w' 
+15 
+b. Literale 
+1. ß Semantics. Mean« undefined.  It is the rMtt&t 
+SI illegal operations. All identifiers are set 
+to this at declaration time. 
+Pragmatics.  The logical word is flagged. 
+Justification.  Allows a much more free syntax 
+while still permitting a check of illegality. 
+2. oo Semantics.  Is the result of division by zero. 
+It is also used to map extendable arrays. 
+Pragmatics.  The logical word is flagged. 
+Justification.  Permits checking for overflow 
+and declaring unspecifxed bounds without 
+giving rise to a fatal error. 
+3. <number> Semantics.  A fraction of unspecified 
+precxsion. 
+PriagHtatics.  Space is created to confeai« it, 
+Justification.  Useful for arithmetic. 
+4. Vtext:^' Semantics. A text literal is identical 
+to the string quote of ALGOL 60.  It has 
+as wide a use as the <number>. Also, it 
+will be seen later that com "a+b*D" is 
+equivalent to 'a+b*D,c 
+Pragmatics. A text literal is mapped and 
+stored as a one-dimensional array. 
+Justification.  Needed to generate^ text. 
+Examples; 
+If a ^ fithen b-«-a+1.34; 
+if a -^b 7^ «then display«-a 
+else display*-"error in a"; 
+displayHLf a-rb ^ »then a else "error in a"; 
+__ 
+ ■.: .; .  ..■-■,,.,„,^_ 
+1« 
+5. The Ligt 
+Syntax 
+<List> 
+•nalT 
+in<Body> 
+^<io*y>) 
+StatewentN 
+List J 
+<9ody>»t«<0«cl«riition 
+Li«t> 
+Otmtmmnt Limt> 
+| <8tat«n8iit Li«t> 
+Saaantifl«. The mmning of  a list depends greatly on its 
+form. All Hats «re thought of as executable elements that 
+are delimited by the parenthetic pairs begin end or ( ). 
+Bxectttten of the <Bedy> takes place first. Nhat remains 
+(if anything) is then handled as an operand. 
+Taken as a unit, the list may have value or it may con- 
+sume itself during execution.  If a declaration is present 
+then the list acts as an ALGOL Block in that identifiers 
+declared in it are considered local to the list. 
+•Pragmatics. The extent of a list is delineated both by 
+parentheses and by commas. A list during execution is 
+considered to be a vector on the runtime stack whose 
+topology is determined by keeping track of the list of 
+delimiters. 
+Justification.  Here we have one concept and one construction 
+replacing many that have been considered useful in ALGOLic 
+languages. Also, by adopting this form, mnay useful new 
+constructs are possible. 
+17 
+w/ 
+O 
+it» 
+iii 
+111 
+111 
+111 
+ExampXea 
+(a+bxc) ' * *' MB &  simple ©rllihmatic 
+((2,1), (3,2))        
+,», as an array litar«! 
+begin"-« Iß+e t  x^a-b end ' * * a« an ALGOLic compound  atatenent 
+prod (afb/c-fd*)      *'' an an actual parameter ilftt 
+begin '^i' as a valued block 
+new a,b,c. 
+a*a+(b^a*2+c); 
+end 
+The Declaration List 
+Syntax 
+<Declaration List>:.t?={^Declaration List^}<Deälaration> 
+<Declaration>; t-*ne*r<identifier list>; 
+<Identi£ier List>::={<identirier list>,}«identifier> 
+Declaration 
+T.int - 
+-o 
+identic 
+„ iJ.§^ i3*0 
+identifier 
+i : 
+■■■— 
+It 
+s^aumtAo», th« ptttpos« ®t a &mi%mfctim i» t» er^iiii «tad 
+dfttaxnln« tht'soop« of « nrnti väildk Mil @«rv« «i a Idkoli 
+or r«pr«a«nt«tlv« of some Iast$tta$@ eleraent«. A HMM 
+hat M It« Mopa tho <lM»dy> in which it %mm  4ool«ro«. Sinoo 
+both tyf ani top01O9y may he  as@ifned ä^naatcallf aotliiatff 
+aoro nood be dono than to list the new nstnoo for oaoh <body>. 
+Itaw doclaratiens may be considered to be exeeiitod-in 
+the eenee that a vector consisting of undefined ▼aluea (Q) 
+it created in the runtime stack for th® duration of the 
+block. Fositiona in the vector correspond to each 
+identifier declared. 
+Jttetifioation« Block structure has proved to be an estremelv 
+useful aM important concept in ALGOLic langixafos. Besides 
+aidinf the proframmer freatly in his own debugginf# block 
+structure is also the ideal way t® delimit the scope of 
+users in a nultiprogramming and/©r time-sharing environment. 
+Examplesi 
+'''«fbjC are local to block A.'•' 
+Aibegin 
+new a.,h,c. 
+a"«-a+(b+c-2) ; 
+B:begin 
+new a.   ••'this a*is local to' block B and supersedes''• 
+•*b+c+2;  '''the previous declaration, b,c are''' 
+end        •«»from block A.•'' 
+•♦■•+2l    '''thiB a is the one declared in Block A''' 
+end; 
+19 
+The Statewnt List 
+SyRtax 
+<St*tement Li«t>: :«{<StÄt®ment LIst;-/} valued '«l«ient> 
+<valu«d eleinent> ! s«! <valued eiament >; ><Btat«B«nt> 
+Ptata—nt 
+List 
+® 
+c'em^ntlcs  Both commas dud Kern:colons have their usual 
+Ai<GOL meanings .ilthough th.y are allowed a much more 
+flexible usage.  A comma deiluUto ^laments in a vector so 
+it rnay be consideredi to preserve ehe value of the previous 
+expression or statement.  A semicolon, then, may be considered 
+to destroy the value 01 the previo.is expression or statement. 
+As seen above, borh delimiters may be freely mixed in d <body>, 
+Pragmatics.  A semicolon flu.snes the top eiemenc in the run- 
+time stack. A comma, increases the vector count by 1. 
+and leaves the top of the stack intact. 
+Justification.  Ab seer, m fcht. examples, this construct 
+allows great freedom and flexibility in creauing lists of 
+values and is pragmaticaliy quite simple. 
+Reoroduced from 
+Ees.  availablejopy. 
+Me^iWAViiA^rv.':''*' !>.»■'■—*-T.-,,.■,!■., 
+i-^wWiOIW 
+20 
+ExamglM« 
+••'sinipl© li2.t,,, 
+(l»if a then b glgg c# " *b or c is left dependlnf en ifh«th«r 
+1   ——■•   a j_s true or false'' * 
+BtX4-.5*(X<fA/X)|  • •,8t«t«mefttö followed by *;" are not 
+retained1*• 
+if X2-A>e then 
+qqto d elae b+X+.iS, "Wttm öi h is  left *hen sqrt 
+algorithm terminates''' 
+x+y)  ••'value of x+y is ie^t'•• 
+21 
+The Statement 
+Syntax 
+statement 
+:=<empty>|<expression>| go to <statement>| 
+<variable><-<statement> j ^variable>as<statement> 
+| if < statement >then< stat -:iTient>else< statement> 
+|<identifier>:<statement> 
+Iwhile<statement>do<statement> 
+stafemenf 
+variable 
+rif 
+-{gofoj-*- stafemeni- 
+sf-afement 
+variable     "-»■(asj    »■    statemenf 
+—>-(Tise) 1 
+statement 
+statement 
+A   identifier     —5^-/ . \- 
+statement 
+~—]statement I—*\§°)—HZ
+5Ete'^^Z] 
+Semantics.  All statements are considered to have value 
+except for the go to statement (which is not considered 
+to be a fundamental language concept, out is included for 
+practical reasons).  The go to initiates an unconditional 
+branch in program control to the label specified by the 
+(label-valued) <statement>.  For the same reasons the 
+labeled statement is not considered to be a language 
+primitive.  The other statement types will be considered 
+separately, 
+■™™«™Mra„„...„™_„ ..._^      _ _   ^ —r -r, .vr.;--!! „-" ^■•"-^-^^^■-^^■^^^"y IrV,, ,;,il^l^l;^.l„l.,i,.i,i„ä;,,,,|,l,l^|,,,|-|| ,1-,—..„ „„,,,  _______:  
+,      ,(  • .    .■.•■,•••     ,'    ..  .  ,. 
+?2 
+Pragmatics. Since the syntax of a otat«ment> is 00 frMi» 
+and more meaningless constructions are permitted, the 
+limiting factor of produced nonsense is execution-time 
+semantic checking. ,. 
+The values of feihe statements are fetched into the 
+runtime stack and are operated on in turn by the,many 
+operators of the languages. 
+Examples t 
+abc: a*b+z, 
+go to if a then abc else xyz; 
+xyz: go to f [a-«-a+lJ^ab"c; 
+, 
+*;!':■;>>■ 
+^J 
+23 
+The Expression: A. Presentation of Operators 
+Syntax 
+<expression>i:*{<fekpressiön><binary>}<unexp> 
+<unexp>    i:«<unary op><unexp>I<primary> 
+<unary op> : t* Heaa j Tail | type j   |   | sin | COB | • ••• 
+|com | scribe |... 
+<binary op>   :•,=  *   \  *   \  /   \  //  \  mod   \   +   \  ~  \  *   \  ?  \   <   \ 
+■       > I < I > I A 1 V iV| S | ^| of | is |...| 
+<user binary ops>| ••• j #... 
+ö   •••    ____„„ ___. _ _ 
+A ^~  "Uinary opV»>pu.nexp ]■  primary J 
+Note:  Binary operators are given in order of precedence. 
+Unary operators associate from the right. 
+Semantics.  All operators generalize whenever possible to 
+arrays and lists. 
+a.  Unary Operators 
+Operator  Meaning 
+logical negation 
+unary minus 
+floor x:  integer part of x 
+ceil x:  if_ floor x=x then x else floor 
+x+1; 
+ ~™—».i—- 
+■d-ra irtTfitim e-«««: «-•uii
+,tnwi.w^:.Tw-ai*^Tr>^»E»»-';"w ywtf..n'*t&z*v tMWNM .^^.^  :  ... Z _:. 
+I» ■   * 
+24 
+Operator  Meaning 
+head 
+tail: 
+sin, cos 
+ab 8 
+scribe 
+com 
+yields current disposition of a primary 
+first element of a list 
+list with the head deleted 
+the usual trig functions 
+absolute value 
+described in Section C. The operiuid it 
+a string in "scribe" format which 
+defines a language. The result is a 
+set of tables for the compiler-compiler 
+(com) in effect a compiler, 
+described in Section C. As a unary 
+operator com accepts a string for one. 
+operand, and assumes 'he FLEX language 
+tables as the other.  The refcult is a 
+compilation of the tes^t resulting in 
+an executable process description. 
+b. Binary Operators 
+Operator «  Meaning 
+Arithmetic 
+/ 
+mod 
+x+y means xy in the usual mathematical 
+sense for fractions 
+x*y means x.y in the usual mathematical 
+sense for fractions 
+x/y means jj/y in the usual mathematical 
+sense for fractions 
+x^y means floor (x/y) in the usual 
+mathematical sense for fractions 
+K  mod y means floor (x-(x y*y)) In the 
+usual mathematical sense for fractions 
+x+y means xt-y  in the usual mathematical 
+sense for fractions 
+x-y means x-y in the usual mathematical 
+sense for fractions 
+_:<:■■■<■■■ ■  ..■.'■   ■■■ . .. -...^ ;m 
+L ttuiMixin&attBUt&itmi0Mmmmmtmmm 
+25 
+Operator '   Koanin^ 
+relational 
+"»I
+1» <»j<»^ *» yield true or false 
+logical 
+r   t   r/r=# ,  the usual logical operators yield 
+true' or false 
+compilative 
+com described in Section C. As a binary- 
+operator com accepts tables created 
+by scribe for its left operand and, 
+for its right operand takes a string 
+in the new object language.  The 
+result is a compilation of the text 
+resulting in an executable process 
+description. 
+ramye 
+—        *;he 12, operator describes a range of 
+integer values either atcending or 
+descending, useful in any kind of 
+interaction, A'[3 to- 6] means («f3J. 
+a[4]r afS], a[6J, ).  "abcdfg"{'2 to 51 
+rasahs "bcdf".. —" 
+the b^ operator modified the interval 
+within the range of a to. 1 by 3 to 
+10 insane f'l   Ä  T  in^-*"     ■*•   —* 
+10 means (1, 4,  7, 10) 
+associative 
+of, is, isn, These operators permit the formation 
+and storage of relations between 
+names, 
+We may say:  John is son of Bill 
+and:  Eric is.son oF Bill 
+We may then ask questions: 
+.• 
+I . 
+26 
+x*? is son of Billf 
+-x will contain: ('John/', 'Eric') 
+x^John is son of ? 
+-x will contain ('Bill') 
+x+7  is ? of Bill 
+-x will contain ((•son», "John"), ('son', 'Eric')) 
+The e operation yields a logical result. 
+The possible associative operators follow. 
+form j^eanong 
+x is y of z creates and stores the relationship 
+x isn y of z destroys the relationship if it exists 
+xey of z asks if relationship is true 
+xjty  of z asks if relationship is false 
+— in general we ask for 
+x R y of ? all z having relation y with x 
+x R ? of z all relationship between x and z 
+x R ? jpf ? all relations that x is involved in 
+? R y of_ z all values with relation y with z 
+? R y of ? all pairs having relation y 
+? R ? of z  all relations and values that z is involved 
+in 
+Concatenation 
+# is the concatenation operator.  The result is the 
+concatenation of the two operands.  The topology 
+of the result is the most general topology of the 
+two operands. 
+»ftw ojytsa n iMMIti 
+•riiti&w&Stf&iiifxm «'ft<»waftiw,ww.i««Uii4-_u,,3Jfjljll,„ 
+i. - i 
+». ' 
+dPjL 
+27 
+array 
+array 
+array 
+list 
+B 
+literal 
+A#E 
+array 
+Tiit 
+list 
+■ j £Xrendable array 
+ L_ir x ^ e
+ i""-^----! g a rray 
+j extencuibi--" fist 
+b. 
+c. 
+Pragmatics 
+a. .Unarx. operators replace the   top element of the 
+process stock with the result. 
+Binary operators replace the top two elements 
+of the process stock with the result. 
+The associative operators are really trinary in 
+■nature and therefore three names are actually 
+collected in the stack before any action is taken. 
+The resultant name replaces the three operands. 
+Justification 
+The use of binary and unary operators is justified both 
+by tradition and the fact that fewer parentheses are 
+needed than with functional notation. 
+"Beoroduced from 
+,} 
+> ..^ 
+28 
+The Expression;  B,  Generalization of Operatora 
+ScojDe 
+If an operation is legal between two operands then it 
+is also legal between other structures that have these 
+operands as elements. 
+Arrays and Lists 
+If the dimensicas are* different between operands, then 
+a logical "adjustment" ii moade which logically creates 
+enough copies of the operand of smaller dimension until 
+the dimensions are matched.  Then the operation is performed 
+as a vector operation. 
+(a, b, c) * (x, y, z) means la * x,b * y,c *2) 
+a * (x, y, z) means (a * x,a * y,a * z) 
+(a^) * (x, y, z) meana (a * x,b * yfz) 
+t 
+Examples of Expressions; 
+display 
+,,a=
+,, (b+2-4gc) #"£=" #if a<b then -c'else-g; 
+Note;  if h^2,  q=2,   c=4 then this would output on the CRT; 
+| a= -44 EgT] 
+•'^^-H^^Kmrnmsz^K^ 
+21 
+Th^ Conditional Sfatsni evL 
+Syntax 
+if <8tatecicnt> then <statement> else «.statements 
+^henV-^ s tat emeriti ^else' 
+i statement 
+statenent 
+Semantics 
+The value of the atateiaent tcilm^in^ the  if muit be 
+reducible to true or false (one ^r sero). if'a one« 
+the statement-.following the theh' is eseecuted, then the 
+statement following; the entire conditional statement is 
+executed. If a zero, the sequence is similar to the above 
+except the statement following the else  is executed instead 
+of the then. 
+The entire conditional staterrient has a value equal to 
+that of the executed branch. 
+Note: This, the so-called "Long-form: of the if 
+statement, is the only type presently available.  It 
+includes the "shortform: semantically since the empty 
+statmnent is allowed.  If it proves awkward to use, then 
+the short form will also be added. 
+Pragmatics 
+; There are only two jumps needed in the underlying 
+environments  Jump-Unconditional and Jump-if-top-stack- 
+xero. These are invisible to the user and are ihserted 
+during the parse. 
+.* '. "i iX 
+!',•' •  JA ■ 
+30 
+Examples t 
+if a-'-b+c-d+e+.S-G 
+thea b^a+b» 
+eise b-^'a-b';.... 
+if a<b<c 
+than (a*b; h+c) 
+elaeT ••'use of empty statement''' 
+tj»- 
+I 
+--:-..—■      ■ _■ 
+,>'    .      1 
+MMMMUMM iMMUruuw 
+'' ('!;.'■'•■' ■•l. 
+31 
+Tlie Assi^nweni-.  S ha Ueiserit 
+Syntax 
+variable 1-^0—►|stateroe^t] 
+fvariablQ>-v<statement> 
+Semantics 
+The value of the assignment statement is considered to 
+be the value of the <stfttement> mid  is assigned to the 
+variable in a number of ways depending on which attribute 
+of a variable is to be assigned, 
+A« will, be-seen later, besides attaching a nunerio 
+value to a name, we may also dynamically specify the 
+particular topology of that value. This includes gross 
+structure auch as whether the data is an array of such 
+and such site, is a single item, or possibly a directed 
+graph or tree.  Fine structure may also be indicated. 
+An item can be considered to be a number, a character, a 
+byte of any iidth, a quotation of a program, a record, etc. 
+Pragmatics 
+The operator has a value for its right operand and 
+a name for its left operand. The value is left in the 
+stack and the name is destroyed. 
+32 
+Examples; 
+»♦•b+c1 
+a^-array (x, (5*b,c), (1,2)) 
+(if a<b then a else b)-<-b-fc 
+a^-b^c^b-fc 
+a-«-b*c+ (d^-b-fc) 
+aVb+c" 
+'"value of b+c is nsamd  a*'1 
+'"a becomes the name for the 
+procedure b+c• " ; 
+•"a is mapped as a two- 
+dimensioned array whose 
+elements are x bits wide*'* t 
+•''either a or b is assigned 
+b+c depending on previous 
+values of a^b1''; 
+'' 'multiple assignment'' *; 
+'''nested assignment1''j 
+• 11 assignment of a text 
+literal'"; 
+- ; ■ 
+33 
+The AsGunte Statement 
+Syntax 
+lyylable-|--»^g)-^8tatement]  <variable> as <8tatement> 
+Semantics 
+This is a generalization of the assignment statement 
+in that the <variable> "takes on" or "assumes" values 
+indicated by the <statement> one at a time if a loop is 
+indicated by an interative while statement. Outside of a 
+while only the first possible value is assumed and execution 
+continues. .The value of the assume statement is boolean: 
+—being true if the variable has just assumed a value and 
+false when there are no more possible values which may be 
+assumed. 
+Pragmatics 
+The as operator has a value for its right operand 
+and a name for its left operand.  After all possible 
+assignments are done, the value in the stack is replaced 
+by a boolean value, 
+Justificatidn 
+This particularly general form is most useful in 
+iteration .and applies itself well to all kinds of operands. 
+Examples 
+Will be given in the section on the while statement. 
+'BwurovntfWriuvvauTOVf.^^, 
+pa . ■ 
+• *.. 
+•-•;.   .  ■■■.•••5  .;,i. .■.3-  •• 
+'/■.."■■ " 34 
+The Iterative Statgggnt 
+Syntax 
+J^ile <8t«tement> do <stateinent> 
+Saaantica 
+The statement following the do will be executed as 
+long as the statement following the while is true. If 
+it becomes false, then control transfers to the next 
+sequential statement. 
+Pragmatics 
+Similar to the if statement except that a jurip back 
+is inserted after the statement following the do. 
+Justification 
+Besides covering a great many iterative situations 
+in a simple manner, the while statement allows for the 
+complete cessation of use of the 30^0 and <label>. 
+Examples I 
+*!lile I as 1 b^ 2 to 13  • • -as an ALGOLike for statement'. • 
+do <6tate>; 
+!±ile I as 1  x<5  ••«as ALGOLike for while state''' 
+do <state>; 
+!*ii£I as (1,5,3,! to 10,3 b^ -2 to -1) ...whichever list-■- 
+' J « (5,10,A bi B to 0 ■  .    ...ruhe-out, first will-.. 
+ao <8tate>; ,,,. 
+terminate execution*'• 
+k> 
+./ . • . . . •  ■ 
+35 
+while X as ((Jones is parent of?)A (male is sex of ?)) 
+do <state>; ' "X will assume all sons of ■Tones" • 
+•36 
+6. The  grgggag Pegcription 
+Syntax 
+-process de8orl9tlMi>: P 
+Semantics 
+The process description is the backbone of the FUQC 
+language* The user at a console is considered to be inslte 
+a process and he is handled by the system as just another 
+active process. 
+The quotation may be named in the same manner as- other 
+literals in the language.  A process may be created fron the 
+process description in one of two ways: as a serial 
+procedure which is executed before the calling program 
+is resumed, or as a parallel execution entity which' runs 
+concurrently and independently of the parent process. 
+In either case, if a new follows the ', the variables 
+named are taken to be the formal paxamebars of the process 
+description. 
+Pragmatics 
+The <Body> enclosed by the quotes is compiled separatoly 
+and set aside in the same manner as other literals.  If 
+it is named, a reference is placed in the variable name ° 
+area where it may be easily retrieved. A new stack is,.,. ■ 
+created for each process and an event notice is entered 
+I 
+u 
+if 
+ixito  the  process que.  User processes are executecl on & 
+"z'ound robin" basis with a time quantum of about 10-1€ «a. 
+'Pfccaassa that are alive may ba acfr-ve or passive; these 
+states may be changed by themselves or by an interrupt 
+by the re&I time processes. 
+Justification 
+Procedures and data hanöüng are the keys to a 
+successful language.  In FLEX both these concepts have 
+beer, generalized in a powerful msnner. 
+Exömpl?.s yf simple procesures; 
+i    *■ 'b1;  *''a "run-time" equivalence statement',
+1' 
+\    - 'b+c'T ,l,simple quotation without parameters''' 
+/    •*■  if b<c then 'b+c' else "b-c1 ; '■ ' 'conditional 
+assignment 
+,'r' 
+i i • 
++  5;     '''the name ^ is assignee to the value of b1 
+ä    +• z;     '''the name b Is assigned to the value of z' ' ' 
+val a ■*- 'c';   '''a is re,quivdlenced to c' ' " 
+z    -t- x'     ' ' 'the name z is assigned to the value of 
+b+c"' 
+x    "•- z;    '''a pragmatic error is generated since si is 
+a value''' 
+for <- 'new a, b, c, d, e; '''an ALGOLike "for" procedurfe''' 
+a «" b; 
+loop: if a <_" d 
+then (e; a -f- a<-c; goto loop) 
+else '; 
+ALGOL 
+for I: =1 step 1 until 50 do 
+^egin a :[I] .. = i + 5. 
+b [I + 2] : = 1 
+end ; 
+38 
+FLEK . 
+for  ('I-, 1, 1, 50, 
+'a [I] - 1*5; b[I+2] 4- j t) 
+Note:  a^^c.d^e are the formal parameters.  Enclosing, an 
+actual parameter in quotes is. equivalent to the  ' 
+ALGOL "call by name".  Unquoted actual parameters, 
+are equivalent to value calls.  Nesting is obviously 
+easy. 
+:; 
+VI 0 J 
+39 
+The "Case" Statement 
+One of•. the most useful concepts in prograimnlng is the- 
+protected branch.  This is illustrated by the if-Statestent* 
+if B then <3tat>l else <stat>0 
+ts 
+, m*j stat 1 
+This concept.-can,.eas 11 y be. genecaXized to n branches» 
+» » 
+It is quickly accomplished in FLEX by the following method: 
+a t. ('^stat 0>'f '<5tatl>', "\   '<statn-l>', ^stat^'); 
+and used: 
+a[B] ; 
+Parallel Processing 
+If, in the previous example, the entire vector was 
+indicated instead of jupt one element: 
+' a; 
+,.._,. 
+%0: 
+0 
+tfean PLEX would execute the n statements in "Farallel", 
+This is also a protected scheme.  The global process 
+is passive until all ©f the n  statements are done. To , 
+create and- release a process which will execute concurrently 
+with the global process, the followiag is done: 
+act for ('I', 1, 1, 50, »b [1]  * I'); 
+The for-loop will be executed in parallel with the state- 
+ments following this calli 
+We may also do: 
+a "- '('«istat 0>', '<stat 1>V/ •••^<8tat n~l>\   Uaim^n**)h 
+act a; 
+The n statements will be executed in parallel with the 
+global process and with themselves. 
+Coroutines 
+Another useful concept in programming is the coroutine 
+which is simply a process description which allows a return 
+from the middle of the code.  The exit point is sayed and, 
+when the code is again called, control is transferred 
+to the previous exit point rather than to the beginning. 
+The. leave reserved identifier facilitates this feature- 
+it indicates to the event scheduler that the current 
+process is to be passivated and the current program step 
+saved. 
+-« ^ 
+■^ " 
+I 
+41 
+7;  The Selector 
+Syntax 
+<Selector>::- [<Body>] 
+Semantics 
+The construction [<Body>J is used to pass parameter» 
+to the access mechanisms of FLEX.  It is used both with the 
+FLEX mapping operators array and field, and with user- 
+defined maps to select from some previously defined data 
+structure. 
+Pragmatics 
+A data descriptor may be marked with the information that 
+a segment is mapped.  The map is executed to finally 
+produce a data descriptor of the selected element. 
+Justification 
+The separation of structure and data is the prime 
+consideration in any useful file system and allows great 
+flexibility as well as the use of "stupid" channels. 
+42 
+if^v 
+System Mapping 
+Syntax 
+«.feline array>;;«array Li«t 
+oäefine field> 
+:;«array 
+::=field List 
+Semantics 
+a. Array 
+■. Ths first parameter is the byte size of the elements 
+in bits.  The following parameters describe the lower and 
+upper bounds of each dimension of the array.  A logical 
+"procedure" is assigned to the map of the variable.  The 
+actual parameters are reconciled with the bounds when an 
+access is requested to produce a descriptor or a value of 
+the element selected. 
+b. Field 
+The operator produces a logical procedure which may 
+be assigned to a variable just like any other quotation. 
+The procedure operates on a descriptor describing a field 
+of bits to produce a description of a new field.  The first 
+parameter is the offset .n bits of the new field in relation 
+to the old.  The second parameter is the and bit of the 
+new field. 
+. 
+43 
+Pragmatics 
+Both routines are called and executed like any other 
+sxmple procedure. 
+Justification 
+These routines allow the user to extract an arbitrary 
+sequence of bits from some other sequence of bits. 
+Examples: 
+a *■ array (7, 1 to 10, -255 to 0) ' ' 'a is mapped as a 
+two-dimensionaT array whose elements are 7 bits wide''' 
+a t-f -3] ,,,selection of a byte''' 
+a [5,1 '"selection of a row'" 
+a [2  to 5, -10 to -2] ,,,selection of a new square array''' 
+id *- field. (0 to 15) ; wages *■  field (16 to 31) ; 
+son *■  field (32 to 32 + 16) ; son 2 + field (32 + 15 to 63); 
+'•'this is a definition of the fields of a 64 bit wide 
+record,  a use follows''1 
+employee +  array (64, üFto'.lGOO) ; employee ■*•  tape 2; 
+display «■ wages (employee [3 to 15]), 
+display ■*-  employee [son (employee [5])]; 
+44 
+C.  The SCRIBE Language 
+Introduction 
+Although SCRIBE is a super-set of the core language 
+FLEX, it. is presented last with the feeling that some 
+intuitive grasp of the language environment will have been 
+achieved by now. 
+SCRIBE has its roots in the "Floyd-Evans production 
+scheme" 14,5] and FSL [6,7].  Basically it is a bottom-up, 
+bounded-context recognizer that uses FLEX as a sublanguage 
+to express sanantic relationships.  Because of its bounded- 
+^ context properties, it will deliver the canonical parse of 
+any language (which may be expressed in this form) without 
+backing up.  This ability allows a one-pass compiler to be 
+created simply and compactly; ideal attributes for inclusion 
+in the hardware of a machine. 
+The Basic Elements of SCRIBE 
+There are four levels of description necessary for 
+creating a language translator: meta declaration, terminal 
+declaration, the syntax algorithm, and semantic relation- 
+ships. 
+■£, 
+f.., 
+45 
+1.  Meta Declaration 
+^P^Th^i&ent ii,tu^y^0 ^etas  *■   {<id.ent>) ; 
+' Semantles 
+"l       ——^ 
+A meta symbol in SCRIBE is an <identifier> which has 
+the same use as £he symbols enclosed in <> in BNP; it is 
+used for tawnomic purposes as a generic or class name for 
+a certain construotion. The meta symbols ident, delim, 
+text are autoinatically included in any meta symbol listv 
+Pragmatics 
+The meta symbol« are transliterated to unique integers 
+which may bo used in generating the canonical p^rae. 
+Ju&tificatioji 
+The use of  meta symbols as class names is Well-justified 
+in phrase structure language theory. 
+Examples; 
+nfitas +  (a^xp, term, factor, prim); 
+i i 
+o 
+■■'k> :. 
+•'•''?■   A   ■'•■■,, 
+». 
+4€ 
+2'  Terminal Declaration 
+Syntax 
+fterrasj—-r~W4^\ 
+term list 
+delin 
+r—^^i 
+ident 
+equate list 
+»öta name—^(^syinbols 
+terminal 
+«7 
+fcsny     (<tm ll8t>|i 
+<t«a» Ust>it« l<tm3m l*Mt>,} <tem«fttry> 
+<t@Ka •iitry>ri»««lli2> ( <l*ent>  | <«tpuito»  | 'rlmn 
+««^ata llst»M-    [KeqiMte li«t>f ]  <ei«nfery> 
+<«fn«z^>ti« <«^im>  | <Went> 
+<olm® &mi>§xmmnt>ti* <ni<sta name> t-(<t«r« iiflt>) 
+S 
+TWäIEäI aynbole are the syntactic atoms of a lanfuaf». 
+In theory they «r« treated as ainfle characters but, 
+kecaoe© of ilnltAtlonB of character sets, aggregates of 
+charaoter« nay «lee «enote a .terminal symbol. For exaarpl«: 
+"+n  an« ".« are terminal in FLEX ah« so also are begin 
+an* nmrt identifiers whose meaning is reserved.  SCRI1E 
+allowe terminal symbols to be declared either in the form ■ 
+•f single character delimiters or as identifiers. 
+It may be that more than one representative for a 
+terminal is desire« for purposes of serving more than one 
+character set or for clarification, begin and "(" are 
+«n example fro» FLEX.  Syntactically the two representation. 
+are equal and ma^.be declared in SCRIBE as an equate: 
+.fbegin, "("). 
+,  Many terminal symbols may belong to the same syntactic 
+class and an ability to assign them to a meta symbol can 
+.         ____. ,    .        .III;I l ■ 
+48 
+save a great deal of effort in writing the syntactic algorithm. 
+The multiply operators provide an example; they arfe usually 
+assigned the same level of precedence and this fact can 
+be indicated in SCRIBE by the class assignment:  mop *-■•{ 
+("•*" ,."/"," T" ) ,  This provides an abbreviation or "parse 
+name!' for the three delimeters. 
+In fact, every terminal symbol can be considered to 
+have both an "external name", which is the character 
+itself, and a "parse nanie'r
+! which is either the same as 
+the external name or is a meta symbol indicating membership 
+in a   class.  All comparisons in the syntax section are done 
+on the parse name. 
+Pragmatics 
+A table is built from the indicated relationships so 
+that the textual scanner may separate the terminal' symbols, and 
+discover their external and parse names. 
+Justification 
+The terminal declaration supplies a finite state 
+algorithm in the machine with enough information to 
+completely strip down the text into primary syntactic 
+atoms which is typically the dirtiest 30b in compiling. 
+Examples: 
+'''from both sections--to declare all symbols necessary 
+for handling arithmetic expressions'1' 
+MMMHMmwiMi  ,■■„  ■   
+Ö 49 
+© 
+I 
+. 
+metas <- (aexp, term, fact, prim, aop, mop); 
+terms ^ ( "{", ")"/(%", "exp"), mop ^ ("*", "/", "v"), 
+aop <- ("+", "-")); 
+o 
+3- The SynKix Algorifhm 
+Syn tax 
+SO 
+O 
+JMö)H-E2 ttem 
+■♦^A^- semantic WT^ 
+0 
+syntax ■»- (^pattern list).  ); 
+<pattern list> :: =   ^pattern list)  ;\ <pattern> 
+<pottern>    .=    "I^stack pictures> "t"   <Semantic> ^can.    ,   go. <ident>, ^ntiO"! " 
+"' "<ident>   •    <pattern> 
+<stackp,cture>   ::=   ?<nieta symbol>*-] <parse names> 
+(parse names>     :: = |{f<symbol>]  4symbol^ ^ymboh?   ^symbo^ 
+<Symboi> ::=      A   kmeta symbol)    |   ^ferm symbo^ 
+6emantic> ::   =    <\6en^     Uemply> 
+<scan> ;:   =    scan   |    scan 2   |   ^e;npty^ 
+,    ,..,.._. 
+Ill< nlllMill 
+3:: 
+SI 
+S®a«jatice 
+, , When a scan o^ramiua.Ä Is iesu#«[.   tha t«Kt at thm current 
+point Is serutiwia:®*! Mid. & toxsiiaai syafe®! is isolated. 
+This is. looked up in the taM© that wa© Wr^afeed by tl 
+terms daclaration and this parse xmtm mui föKtsrMl ©f the 
+«yasl?©l  is puahad into thm v»p.r§^ stmsk,', 
+Exmmlmt 
+' text i •!■..;. 
+ja   .a   j&   p?  ih  A  «a   p   .     ^ jK  TWi 
+.----'• , ■  ' 4.  4. ..4. 
+oaraa stack   jLaent  aop   ident  ., t.'paroe name fiele 
+I'' ' '' ■  i     i  ■    I    • • 
+1 i)tflp^tJuMtert-J:tii^^-«rtM^^^'^-."'^Yy"''a*^^J''WJ'j|'^'«MWj^ 
+after 3 
+scans» 
+'aal- 
+I i 
+' «WWiniH» liWllWWffcytwiiMlaw» mil r 
+■ i tvnxMAWwwtW'^•(i'Mut «•■««.■4: ■ 
+a3 ^   ,,, »ext-naii© field 
+3, . • .value field 
+.'«■•.WJ,.li(M«J»j.Vl.il»iUU"-*M 
+The parse^nawe field in the stack contains the class .:. 
+names for the two identifiers and the "+".  The value field 
+which .'is used by the semantic processor is blank.. 
+A  pattern to recognize this configuration would be: 
+j aexp *■ ident aop ident j sum, scan, go axp; exr  1   | ,- 
+The section "ident aop ident" asks, if that, configuration 
+is present in the stack-..  It is, so the semantic routine 
+"sum" is executed.  This will be a routine writtei? in FLEX 
+and defined in the next section.  It will be able to use 
+the pointers I and J  which after a successful pattern match 
+are set to the lower and upper bounds of the pattern in 
+the stack. 
+(K always pdlnts 
+52 
+I 
+J K 
+parse stack |a ident 
+, abp i 
+. ident 
+after a    |a 'aal' 
+"4," 
+•Maa1 
+match;     1 
+• • 
+0 
+0   1 
+0 
+to the top of the etack). 
+After the return from the seaantic routine, th© first 
+section is examined to  see whether or not a reehjotioa ia 
+r«»quested..' "aexp-»-"-
+; i£ present so tlte region of the stack 
+between 1 «4 J^willbe replaced with "aexp" in location-1. 
+' ■ *: ■. ■' .    • . I' J K 
+parse-stijclf i^.?\aeyp: "j v„, 
+afteK...fc|ie 
+« 
+reductioni 
+';a 
+\1 
+o 
+Now the.<scan>■field is examined.  A single scan is requested 
+and executed. ; 
+textj; tsL i a M^aTXTT 
+IS T | "7 a 
+i ■■ .t—,.!.,-.-■■*,ii f «f«.,. 
+X i 5 i 
+parse stack )  aeXp j mop j 
+after scan: I  'aal 
+I • j   II i; »I 
+i-^l™.! 
+•..- I«astly# the go is executed and control' is passed to 
+another pattern -in this case, the pattern labeled "axp" 
+^«^«««««u^aoumw^ÄwwaBÄs^an^,^^^^^^^;^,^,^,,^ 
+\ 
+53 . 
+If the pattern match had not baen successful, then the 
+last field would have been examlneoL.  If <aapty> control 
+would be transferred to the next sequential pattern. 
+If an <ident> is present, then the semantic routine mmed 
+by the ident will be called—for this case it would be 
+"•rrl". 
+A "Ä" will always be accepted in the match. 
+Pragmatics 
+The handling of text, parse stack and petteirns is 
+accomplished by a compact "wired-in" algorithm.  The pattttrna 
+themselves require only 64 "bits apiöce. 
+Justification 
+^ The algorithmic form of the syntax handler though 
+somewhat removed from the phrase structure descriptive 
+method, allows the user much more knowledge of what is 
+going on at each point and thus makes for a very compact 
+description of a language.  It is this feature which allows 
+the tables for FLEX and SCRIBE to be implemented in hard- 
+ware. 
+| 
+«HSf« 
+54 
+example "' combining the above three sections to form a recognizer for arithmatlc 
+expressions'' ' 
+metas *- (aexp, term, factor, primary, aop, mop); 
+terms*-  ("(",")", ("f'VW).  mop^-C'*","/"," "),  aop*-("+"," ")); 
+syntax^— ( 
+■ --v 
+start: 
+atoms: 
+atom t 
+prim: 
+fact: 
+term: 
+aexp: 
+&     1 
+, scan 
+>££ atoms     , 
+"("    | 
+, scan 
+,£o  atoms     , 
+aop    j 
+, scan 
+,jjo atom 1  , 
+j primary *- 
+ident 
+Idt 
+, scan 
+,go prim      , 
+| primary ♦" 
+num 
+nm 
+, scan 
+,go prim      ,   err'- 
+| factoro-factor "f"    primary 
+& 
+opr 
+,go  fact      , 
+|factor *-                    primary 
+A 
+,go fact      , 
+1                                       factor 
+"t" 
+scan 
+,go atoms    , 
+j term*- term mop      factor 
+& 
+opr 
+,go  term      , 
+|term *~                      factor 
+b. 
+,go  term      , 
+I                                    term 
+mop 
+. 
+scan 
+,go atoms. 
+1 aexp ♦-aexp aop       term 
+A 
+opr                    , scan 
+,£0   aexp      , 
+j aexp ♦-          aop       term 
+A 
+unsum                   , 
+••S2  aexp      ' 
+jaexp 4-                       term 
+A, 
+1 
+'££  aexp      ' 
+j                                      aexp 
+aop 
+1 
+scan 
+.go atoms    , 
+j primary*-    "("      aexp 
+")" 
+1 
+scan 
+,go prim      , 
+1                                      aexp 
+ft 
+.jgo halt      ,   trr2 
+Notice the  similarity between the above and  the p base structure definition for 
+arithmetic expressions:''' 
+<aexp>:: = 4iexp]> <äop>  <;term"> 
+lUaopi ^term> 
+t ^term^ 
+< term>:: = <term> <mop>  ifactor> 
+I ^.factor^ 
+^factor>:: = <factor>t^primary> 
+I. ^factor^ 
+<pritnary>:;- ident (   num ) ((aexp>) 
+<aop,>::= +|- 
+<mop>::= *\l |-^ 
+. ^  . _»__.™™..™__ iü;  ,,, „,.,,„„-;„,„.„„,„,  
+55 
+4.  Semantic Relationships 
+Syntax 
+semantics ^ <list>; 
+Semantics 
+»i i 
+All identifiers used in the semantic fields are con- 
+sidered to b© global to the <list>,  as are the various system 
+routines to aid the compiler writer. The identifiers 
+must be defined by a quotation assignment in the <list>. 
+Additional content in the <list> is left to the programmer/s. 
+discretion. The system aids will be described separately. 
+Pragmatics 
+Essentially, the semantics are in the form of a <case> 
+statement with each <case> bafrhg one of the identifiers 
+found in the semantic fields of the patterns. 
+Justification 
+The use of FLEX as a powerful descriptive language 
+for providing semantic referrents to the maching allows 
+translation building to be relatively easy. 
+Examples 
+(Will be given after exposition of system aids) 
+jgr-'V 
+56 
+Global Data Structures and Algorithms 
+A ■  ■'■ne Symbol Tab 1 e 
+The symbol table is a stack in which information may 
+be retained about 
+<:identifiers" in the system.  Automatic 
+controls for handling block structure are provided. 
+W 
+JJ -* 
+IT 
+1 
+1 
+■   1 
+1       i       i 
+I 
+1 
+t       i         J_ 
+1 
+            J      
+name   flag  value 
+Symbol Table Routines 
+New Block 
+II and JJ delimit a block of symbols.  New block 
+causes a push to occur and II and JJ are reset to handle 
+a new group of symbols. 
+Old Block 
+A
+-E££ of the symbols delimited by II and JJ is performed 
+and 11, JJ are reset to their lower level values. 
+find (name, from, to, found) 
+57 
+A search is performed in the raiwre sjMscified.  "found" 
+is set to true and a global variable LL contains the 
+desired location if a match occurs.  Otherwise "found" 
+is set to false. 
+enter (name, flag, value, enor) 
+A search is performed in the current block.  if a 
+match is not made, then the "name, flag, ^alue" indi ated 
+are pushed into the current block.  If a match was made 
+denoting that a symbol with the same name already exists 
+in the current block, "error" is set to true and no entry 
+is made, 
+S.  Code Generation 
+System aids in this area are currently somewhat 
+primitive.  A canonical parse will deliver operators and 
+operands to the semantic routines in a polish post fix 
+order—all that need be done is to generate the two kinds 
+of operators that the FLEX polish requires.  The following 
+routines will eventually be replaced with machine independent 
+aids. 
+sop- fop) 
+In the FLEX machine simple operators are identical 
+with their delimiter representation,  sop ("+") will 
+generate an "add" command. 
+cop (op, value; 
+Compound operators are necessary for specifying declara- 
+tions, variables, procedure calls, etc.  Their description 
+... : ......:..__. 
+ . 1 , ,   ' .  
+:  . _.__^  
+58 
+and use is supplied in Section V on pragmatics of the 
+machine.  The user's intuition wiii be relied on, 
+scrval (loc, value) 
+Stores just into the value field of a compound operator 
+at the specified location, 
+strop (loc, op) 
+Stores 3ust into the value field of a compound operator 
+at the specified location^ 
+Giobal names 
+"cpd" is the current process description segment into 
+which code is being generated.  "P" is the current code 
+location. 
+59 
+o 
+Examples: '" a simple compiler for arithmetic assignment statements delimited 
+by   "   #   "   '" 
+metas «,. (body, stat, aexp, term, factor, primary, aop, mop); 
+terms*- (";",   "(,)",   "  ".   "     "^op      ("* ", "/", "    "), 
+aop      (" + ",   " - " ) ); 
+Start: 
+On: 
+Atoms; 
+Atom 1 J 
+Syntax    *•• (,   | 
+Body   ♦— 
+|    Set up 
+ident    "♦- " 1 
+aexp: 
+Fold: 
+(aexp.*- aexp aop 
+j aexp ♦- aop 
+|aexp <- 
+"(" | 
+«op | 
+Ident I 
+nutn I 
+b. | 
+Ä I 
+"t" | 
+Ä I 
+A I 
+mop I 
+A I 
+^ ! 
+ft I 
+idt 
+lira 
+opr 
+opr 
+I 
+primary *- < 
+jprimary ** 
+prim:    | factor   factor "f"    primary 
+| factor ■*- primary 
+fact:     I factor 
+I terra*- term mop      factor 
+|tarm *- factor 
+term:     \ terra 
+terra &        i   opr 
+tern & j unsura 
+term 
+I *exp 
+jprlmary 4-    "("      aexp 
+jstat* ident    "♦- " aexp *• | assign 
+(body^ body stat    ";   " | 
+jbody «. body  stat    "# " I 
+Semonttc» #• ( 
+set up^new biock; cop ("new",A) '"set up for handling variables'" '; 
+idt *- 'enter (ext (I), JJ+I, errr )"* if name not there, put in '"; 
+'cop ("value call", vakje (LL)) '" generate a fetch request '" '; 
+nm *-   numb  (ext (I )) '"generate a literal for a number'" ' ; 
+op ♦- * sop  (ext (I+l) '"pick up and output operator from external name 
+unsum^if ext (T) = "-" then soo (un min) else' '"unary minus'" 
+assign*-enter (ext (I), JJ+I, error) '"if name not there put in": 
+cop ("name caliy value (LL)) "'generate an address request1"; 
+sop C'-«-")  '"generate a store comm-ind"' '); 
+aop 
+, scan 
+go start, 
+, scan 2 go on 
+err 1  j 
+, scan 
+go atoms 
+err 2  j 
+, scan 
+,J5£ atoms 
+, scan 
+.jgo atom 1 
+, scan 
+,go prim 
+, scan 
+,££ prim 
+,go fact 
+,££ fact 
+err1   | 
+, scan 
+,£0 atoms 
+,fiO  terra 
+»go terra 
+.scan 
+,£0 atoms, 
+, scan 
+,£0 aexp  , 
+'•^ aexp  ' 
+>££ aexp  • 
+, scan 
+,££ atoms  , 
+.scan 
+,££ prim  , 
+, go fold, 
+err 3  | 
+, scan 2 
+, £o arr, 
+, go halt. 
+err 4  j) ); 
+60 
+'The compiler for FLEX itself is a good example' 
+flex4-scribe 
+metas_*- (body, list, stat, self, prim, labl, svar, var, 
+expr, factor, term, arit, rexp, rterm, aterm, 
+andl, oterm, orl, bool, assert, utm, uex, ifcl 
+trupart, aop, mop, rel, lop, asop, bup, unop, 
+iter, sop, set); 
+terms *- (",",";",(begin, "("),   (end, ")"), "\","i", 
+"C", "]", ":", new, if, then, else, "#"/"-"/.", 
+com, unop*-(scribb, type, ( "p,  ceiO/fJ", floor), 
+sin, cos, qtan, "T!, abs, rand, prand, hash, exp. 
+In, sort, length), "f", aop^-f+'■,"-"), mop-«- 
+r*", "/", "~n,.mod),rel4-(,,=","#", "<", V, 'V, 
+ar)f "A", "V",    lop^-CV", "S", '>"), sop^- 
+fn", V, "C"), «op4-(ls, isn, "6", "$"), of, 
+while, to, by,.do, 'bo", "11", tops-4-(bop, uop, 
+val, map), ident-^-farray, field, act, leave, term, 
+xin, yin, pist, plpt, piln, co^rol), (goto, go), ("?", 
+"any"), ar-H"^-", as)); 
+syntax-»-C" patterns. 
+I 
+head: I body 
+bod; I body 
+empt: I body • 
+I body ■ 
+I body • 
+I stat - 
+I selr <• 
+* I 
+"*" I quot 
+body  new I new 
+body   ";" I 
+body   "," I coml 
+body end I endl 
+body   "'" | equotl 
+body   "]" I esell 
+i, scan fi* aid, jump field ,    error field 1"' 
+, scan 
+, go head 
+, scan 
+, go bod 
+,      errl          1; 
+, scan2 
+, go decl 
+, scan 
+, go empt 
+, scan 
+, go empt 
+,scan 
+,go lis         , 
+, scan 
+, go sta        , 
+, scan 
+, go sei        , 
+0 
+61 
+atoms:   I    body • 
+I    body • 
+I    prim • 
+I    prim • 
+I    prim ■ 
+i    prim - 
+I 
+I 
+I 
+I 
+I 
+next: 
+pri: 
+I    labl • 
+I    svar • 
+I Jvar ■ 
+decl:    I body • 
+I body • 
+svr:       I body < 
+mbr:     I body ■ 
+I var   < 
+I 
+I prim " 
+I prim < 
+I expr 
+I expr 
+im 
+I 
+n^ii 
+1      quot 
+,scan' 
+»go bod/            j; 
+begin 
+/Scan 
+/go bod/            j; 
+lit 
+1      push 1 
+»scan 
+/gO pri/                    j; 
+"fl." 
+1      pushl 
+/Scan 
+/go pri/             1; 
+■w 
+1      pushl 
+/Scan 
+/9opri/             I; 
+no» 
+1      pushl 
+,scan 
+#go pri,              1; 
+if 
+/scan 
+/go atoms,          I; 
+while 
+/scan 
+/go atoms,          |; 
+com 
+,scan 
+,go atoms,          I; 
+unop 
+/Scan 
+,go atoms,          i; 
+aop 
+/scan 
+/go atoms,          1; 
+goto 
+/Scan 
+/go atoms,          I; 
+A 
+/Scan 
+/go next/           j; 
+ident 
+n.ii 
+label 
+/scan 
+/go atoms,         /; 
+ident 
+A 
+nops 
+/ 
+/go sur/              |; 
+tops 
+ident 
+' tps 
+/scan 
+/go sur/    err2  |; 
+body 
+ident 
+n   n             . 
+/ 
+decll 
+/$can2 
+/go decl,           |; 
+body 
+ident 
+it.»              , 
+/                1 
+decl2 
+,scan 
+,go empt, err3   1; 
+begin      | 
+/scan 
+,go bod,            j; 
+"C"      1 
+/Scan 
+,go bod,            |; 
+svar 
+A                  | 
+» 
+,go vr,               |; 
+var 
+ar            | 
+/Scan 
+/go atoms,         I; 
+var 
+A                 | 
+/ 
+/go pri/             |. 
+unop 
+prim 
+*                 1 
+unop 
+/ 
+/go pri/             |; 
+com 
+prim 
+A                     1 
+popl 
+/ 
+,go exp,            |; 
+com 
+prim 
+A                     1 
+uncom / 
+»go exp,             |; 
+prim 
+com         | 
+,scan 
+,go atoms,         1; 
+fact: 
+trm: 
+art 
+rtm: 
+rxp: 
+anl: 
+01: 
+bl: 
+st: 
+prim «- prim 
+factor -4- 
+term ^-term 
+term*- 
+arit^-arlt 
+arlt •«- 
+arit -4- 
+rexp^-rterm 
+rterni'*— 
+rexp ■4|_ 
+atomi ^— 
+andl ^— 
+andl "4— 
+oterm ^— 
+orl  <4- 
+orl  -4- 
+bool ■4— 
+bool "4- 
+set 
+set 
+set 
+prim     f 
+II A II , 
+t       Pnm     A 
+prim     A 
+mop factor A 
+factor A 
+term      mop 
+oop     term      . 
+aop     term     A 
+term 
+arit 
+rel      arit 
+arit 
+aop 
+A 
+rterm    rel 
+rterm     . 
+rxp        "A" 
+«P       A 
+atsrm and 1     . 
+and I    V" 
+and 1 
+oterm or   I      . a 
+bool    lop or 1   . 
+orl 
+asserM-set 
+bool 
+sop     bool 
+bool 
+set 
+set 
+asop   set 
+- lop 
+A 
+A 
+sop 
+asop 
+A 
+popl 
+popl 
+popl 
+unmin 
+popl 
+mark 
+fill 
+mark 
+fill 
+popl 
+popl 
+scan 
+scan 
+scan 
+scan 
+scan 
+scan 
+scan 
+scan 
+scan 
+asop 
+62 
+go   atoms / ■; 
+go   prl ,1; 
+go    fact , I; 
+go    trm ,1; 
+go   trm , I; 
+go   atoms , I; 
+go   or t ,1; 
+go   art ,1; 
+go   a rt ,1; 
+go   atoms , I; 
+go    rxp , I; 
+go   rtm , I; 
+go   atoms /I; 
+go   rxp , I; 
+go   atoms , I; 
+go   an 1 ,1; 
+go   an 1 ,1; 
+go   atoms , I; 
+go   Ol ,1; 
+go   Ol ,1; 
+go   bl ,1; 
+go   bl ,1; 
+go   atoms , i; 
+go   st ,1; 
+go   st ,1; 
+go    atoms ,h 
+go   atoms # I; 
+go   ast , I; 
+6 3 
+utm^-assert of 
+set 
+A 
+,go 
+ut          , 
+utm*- 
+set 
+Ä 
+'SI 
+ut          , 
+ait: 
+asserf 
+of 
+scan 
+,§£ 
+atoms        , err 4           j 
+ut: 
+uex^-uex bup 
+utm 
+^ 
+pop 1 
+./§£ 
+ve          , 
+uex4- 
+utm 
+1 
+,go 
+ve          , 
+ve: 
+vex 
+bop 
+scan 
+/go 
+atoms    j 
+expr-«t-expr "*" 
+vex 
+A 
+pop 1 
+,go 
+exp 
+expr>*- 
+vex 
+A 
+'ä° 
+exp 
+exp; 
+expr 
+"#" 
+scan 
+'S£ 
+atoms 
+stat-*- 
+expr 
+A 
+'32. 
+sta 
+err 5            | 
+sta: 
+stat*-var 
+ar 
+stat 
+A 
+pop 1 
+'SB. 
+sta 
+staf-*- 
+iabl 
+stat 
+A 
+'S° 
+sta 
+stat--<H 
+frupart 
+stat 
+A 
+fill 
+/go 
+sta 
+sfat »f- 
+gots 
+stat 
+A 
+unop 
+'S£ 
+sta 
+stal- H~ 
+iter 
+stat 
+A 
+itr 
+'32. 
+sta 
+if cU- 
+if 
+stat 
+then 
+mark 
+, scan 
+fgO 
+atoms 
+Iruparf -4- -   ifcl 
+stat 
+else 
+els 
+, scan 
+,ga 
+atoms 
+iter -«H 
+while stat 
+do 
+whl 
+, scan 
+,go 
+atoms 
+body -«$— 
+body 
+stat 
+II      II 
+com 2 
+, scan 
+'i£ 
+empt 
+body -<- 
+body 
+stat 
+ii, ii 
+cln2 
+, scan 
+'32. 
+empt 
+list ■+- 
+body 
+stat 
+end 
+end 
+, scan 
+/9£ 
+lis 
+staf -4- 
+body 
+stat 
+"lÄ" 
+equot 
+, scan 
+'S° 
+sta 
+sclr ■^- 
+body 
+stat 
+"J 
+esel 
+, scan 
+'S£ 
+sei 
+, err6            ' 
+lis: 
+svar -4- 
+svar 
+list 
+& 
+[ 
+,90 
+sur 
+svar •<»- 
+list 
+A 
+1 
+,90 
+mbr 
+sei: 
+svar ^j— 
+svar 
+sein 
+A 
+1 
+,go 
+svr 
+r err7                | 
+64 
+IV.  The User's Environment 
+Introduction 
+Most interactive systems use a special command language 
+for handling files, initiating jobs and communicating with 
+the compilers.  In the FLEX system this language is FLEX- 
+no other languages need be learned.  There are also no 
+special entities called "files" in the system as will be 
+seen. 
+Admitting the User to the Machine 
+When it is desired to allow a new user access to the 
+machine, a process is created and named with his password. 
+This process will not terminate during the period that he 
+is allowed to use the machine.  Most of the time it will 
+lie passive on the secondary storage waiting to be 
+reactivated which is simply done by the user typing in 
+his password on the console. 
+The user's process is activated, and he is now able 
+to communicate with the machine through FLEX and the 
+powerful editor which controls a free-running compiler that 
+is translating everything that is entered through the 
+keyboard to FLEX code.  Since his process is also declared 
+active, the pragmatic system will attempt to execute all 
+produced code.  This will appear to the user as though his 
+commands at this lowest level are being executed statement 
+by statement. 
+\ J 
+SB 
+By these means the user may entertain himself by 
+performing calculations, editing text, generating new 
+compilers, and generally going where his thoughts lead 
+him.  When he desires to cease running, he simply types in 
+a leave-  This is the coroutine exit command and, since . 
+the routine which called him is the process scheduler 
+itself, his process is passivated and the reentry point 
+retained. 
+On the next day (or next week) when he again types. 
+in his password, his process is reactivated and control is 
+passed to the reentry point; he is where he was the last 
+time on the machine.  This is why files (and file handling 
+systems) are unnecessary on the FLEX machine.  Any declara- 
+tions he may have made (and possibly stored data in), 
+have been saved to be used again. 
+Scope of the User 
+The user at the console is considered to be inside a 
+process description which in turn is interior to the FLEX 
+system and environment. This concept of system globality 
+fits well the FLEX philosophy and provides a convenient 
+meane of allowing the user access to entities such as the 
+FLEX language tables themselves, reserved identifiers 
+whose meaning he may wish to redefine, etc. 
+fc '* 
+o 
+v"  The Pragma-tic Envxr@3puant 
+1,  IntroduotLon 
+In this chaptei we dirst coiisider the isrobiems ot 
+j^tiysiCäily raalizxng the p'-j. lo.'jophies prascjnted In Lhe 
+px'sv.f.ous sections. 
+There have been numeroa:-, iipproachea to  solving this  -■' 
+problem; some successful, many more vmsiiccassful ,  Cesis^ter 
+programs in general also seam to work according to the ■ 
+same ratio. 
+One bottleneck 13 the attempt, to "do alJ things for all 
+people"; another is to try to make the program work at 
+100% efficiency .100% of the Lime,,  The first method 
+usually entails huge, unmanageable programs; the second 
+means that much fast hardware will have to be used. 
+The FLEX environment on the object machine takes a 
+drrterent tack.  First the machine structure may be designed 
+so that it. is compatible both with the language that will 
+be executed and with the problems that will be solved. 
+Second, a statistica.l viewpoint is adopted,  For almost 
+ail computer problems m general, on any machine (and m 
+particular those problems for which the obiect machine is 
+suited) neither 100% efficiency 100% or the time nor 
+blinding speed is necessary,  Fortunately from the software 
+point of „lew, the .first is not needed and thankfully, for 
+the price tag, neither is the second, 
+ !  ! ___: :  ;      ^ ;  
+67 
+The environment seeks to keep the overheads to a 
+minimum for things that are done 9 0-9 8% of the time. 
+This means that most of the time the machine will act as 
+though it were far larger and faster than it actually is. 
+Witness some statistics from Stanford where a Burroughs 
+B-5000, a machine suited for algorithmic languages, actually 
+ran most problems faster than an IBM 7090—a machine whose 
+hardware was significantly faster than the B-5000. 
+Of course, occasionally, the piper must be paid.  The 
+FLEX system seeks a graceful degradation in performance 
+ds the load goes up.  The machine simply appears to slow 
+down.  When there are too many active segments or numerous 
+quite large segments in core memory, an increasing burden 
+is put on the secondary storage.  Where, most of the time, 
+the cheap secondary storage allows the machine to look 
+as though it had a large core memory, now saturation will 
+force operating speeds to approach the speed of the 
+secondary storage rather than that of the primary. 
+Another interesting consequence of this point of view 
+is that the environment works quite independently of the 
+particular storage limitations and conversely the efficiency 
+of the machine depends very much on diese same limitations. 
+J 
+63 
+What aTofss this aiüan 
+100 
+Ideal ' lachijji. 
+performance 
+—M«^ 
+^.. 
+4Jc 
+\8k     V 
+m 
+'xrikm.o t v^  m mty$r- 
+S  of   time 
+It means   that  for 
+1 
+lOv, 
+V^ 
+0% 
+most   problems,   an   .increase' in /tiemory 
+■  will   not:   drastically   inprove  performance,   but   ic 
+will  dramatically  reduce  the percent  or  t«  spent  m 
+ov-rh-ad when th®  Rystem becomes  cloggcu/ 
+It als© m»ÄR£  that   the  physlcaj   w^*,^ »^.x,  K„   - 
+v     ■'  ' ■•Ja-'tTTient ol  programs—a h&n&y 
+not   run  any  differently  with 
+n   sxgnificantiy   better; 
+'■":f the ä?ys}t.(Säa, 
+feature,     Most proqrams  •■ill.       i 
+an iß«r®»?-a  In s««-oryj   «   Crv >-iii  ru 
+still  fewöx  V7xll  cmttirmf   c 
+Reproduced  from 
+best  available  copy. 
+Brj-...r. 
+«9 
+«A 
+2.  Segment and Process Control 
+a. Segments 
+In the FLEX operating environment the basic logical 
+structure and the basic physical structure are one and the 
+same: The segment. Logically, the segment is a contiguous 
+string of 16-bit words in core memory and secondary storage 
+whose length may be changed with varying degrees of 
+effort. 
+Addressing in the system is relative to the segment 
+not to any particular memory location so that a particular 
+segment may be moved anywhere without disturbing access 
+t to it. 
+segment | displacemenF 
+Typical Segment Address  ' 
+Cor^' Memory 
+High speed memory initially consists of one segment called 
+garbage. All other segments, in the system are created by 
+portioning the garbage.  An attempt is made by the system 
+to intersperse garbage segments between active segments. 
+This allows some expansion without rearrangement of other 
+■segments.  This strategy will work well with relatively 
+static entities like process descriptions (code), and 
+arrays.  Process stacks are another matter and some 
+shuffling is required. 
+•\ 
+70 
+ga.baqe 
+f / S / .' 
+».'//// 
+■///// 
+•f/.f/ 
+■///// 
+'///// 
+'///■// 
+■<•/-/ / 
+. .',•//.■ 
+'/■//// 
+> .■■ /.' / 
+■r-rr ////// 
+s.■///' / 
+,•////// 
+.•///• , s 
+/////// 
+/////// 
+/////■/•/ 
+//////f 
+//.'/.' s .• 
+/ /1- / / / 
+/////// 
+/'ss// 
+//'//// 
+/////// 
+" / 
+• ' r 
+ss 
+/ // 
+. / 
+/■/■/ 
+/ / / 
+' / / 
+.' / 
+' / / 
+"/ 
+/•/ 
+/// 
+/// 
+// / 
+segment   1 
+segment 2 
+seamen n 
+TTrrrrrrm-rrrrr 
+"55 jgrnenr 
+■fy-rrrr-r V 
+-rrrrrrrrrm 
+segment "7" 
+////////////////i 
+.............. 
+segment 3 
+Segment Allocation in Core Storage 
+At this point paging she ild be considered.  With 
+paging, the logical entity (variable length segments) 
+would be made up of one or more pages of some fixed size. 
+Paging has some advantages in that reclamation of garbage 
+and. transfer to secondary storage is made easier.  The 
+disadvantages, however, outweigh the advantages for the 
+address path is more complicated requiring two table 
+lookups rather than one. 
+segment"" "page "| displacement 
+Typical Paged Address 
+In keeping with the strategy of optimizing most used 
+operations (and accessing memory is certainly at the top 
+of the list), while allowing a certain amount of dirty 
+work a small percentage of the time, paging is rejected 
+as too expensive for every access.  Accordingly, segments 
+are mapped contiguously and memory must be reordered when 
+one segment threatens to overrun another. 
+71 
+iT"^ 
+//////////////// 
+segment   2 
+segment 1 
+segment  2 
+^TTTTm-rrTy-nrrrr 
+growing   segmem 
+segment   1 
+«^ J I*I 111111 P P ,. 
+SSSS/'S///////// 
+r s //,'''"''''/' / 
+'''///'//////s//* 
+'//'///S/////S//, 
+'////SS/////////, 
+''////I1////////// 
+'////ss////////// 
+f'///ys/s//s/,/// 
+segment   2 
+*>f>fn J / / > r i i i , , 
+segment   1 
+remapping segment reclaiming garbage 
+There are several ways to remap segments.  The cheapest 
+is to find a large enough area of garbage and reallocate 
+the segment.  If this cannot be done, then garbage must be 
+collected and arranged to form a large contiguous free 
+space which may then be used for allocation and new segment 
+creation. 
+If no garbage is available then some must be created by 
+transferring one or more active segments to secondary 
+storage.  This operation is usually called swapping.  if 
+there are many segments in the system, but only a few are 
+used at any one time, then the swapping overhead will be 
+low and the machine will act as though its usable core 
+memory is much longer.  If there are many segments, and 
+many are accessed, then a system clog is created, and the 
+apparent access time becomes longer. 
+In all cases when a segment is expanded, it is not 
+lengthened by just one word but by a number of words equal 
+to some fraction of its current length.  This allows some 
+room for further expansion without disturbing the system. 
+f. 
+72 
+•' 
+Second a rv Meniory 
+As it is pseudo-random in nature, secondary memory is 
+handled in a  similar manner.  The scale is larg^; the time 
+sJower, the intervals between garbage collection longer. 
+Once a segment is swapped out it will remain in the 
+secondary'Mneraory until an access is requested. 
+We now have the same problem that was presented to'us 
+:' 
+in cure:  garbage must be found to accommodate the. segment 
+being swapped m  Again 11 no garbage can be found (bi: ..-O 
+made), it must be created by first swapping out one or •; ' 
+more active segments.  vhen ehe access-request may be 
+swapped :. n, ■  • 
+The realization of these algorithms will be presented 
+after process control is discussed since both operations are 
+inter twined. 
+b'  Process Contro1 
+The basic data, structure has been discussed—now the 
+basic execution entity will be covered:  the process. 
+Definition of Terras 
+A ££££^££_.^s££.LEli£{l. iS a segment that contains 
+executable code genera Lea by the compiler.  By its very '■ ■■ 
+nature this code is reentrant, which means that it does 
+not modify itself and therefore may be in several stages 
+o f e K e c u t ion a t a g i v e n 11 me. 
+73 
+A process is just an instance of execution of a process 
+description; there may be more than one process in 
+existence at one time for a given process description. 
+Parallel processes are required for operation of the 
+system.  The I/O, the display, the keyboard, the compiler, 
+etc.,.must be able to run concurrently with the user^s 
+.programs and with themselves.  Moreover, the compiler. ',■ 
+which is interacting with the user at the keyboard may' 
+have to cun in parallel wich a logical "copy" of itself 
+executing the com operator in a user program. 
+Since this mechanism is needed it is no trick to allow 
+the user in FLEX to create concurrent processes of his 
+own-'-ail handled by the same algorithms. 
+This ability is literally invaluable for all kinds 
+of prograirmung, recursion, and event-oriented simulation— 
+a pnrtfe use for the MM-8 00 0. 
+Process Creation 
+The basic idea is   simple.  Since the process description 
+(the code} does not modify itself, it can contain no data. 
+Therefore, it must have some way of accessing data which is 
+independent of itself. 
+r- 
+I 
+process 
+description 
+reentry point A 
+reentry point B 
+...__ ~-__™™___„ 
+u 
+74 
+^^gg£„..P4.iS£A.gligi}_wxth Two Seta of Bata 
+One way this has  b«en done in conventional B«-chi«*s.i« 
+to create a separate data area for each process and to force 
+the  process description to access all its. data through 
+a base register which contain the low order-address of the 
+öösired data«  Now the process description «lay be switched 
+from one process (the handling of data A)- to another (the 
+handling of data B)  with ease provided, the reentry point 
+of each process is retained while the other is being 
+©Keouted, 
+To effectively run the two processes in parallel, a 
+fixed time of execution may be assigned to one process 
+before the other one must be started up.  This is the 
+H££ quantum and typically is about 10 me. 
+It is not difficult to generalize this idea to the 
+FLEX environment and the segment system. 
+2kl^E£0££s^escri£tion is a segment.  Each data 
+are* becomega segment and the base registar refers to the 
+data segment name.  The reentry points may becott*  p&rt of 
+their associated data.  All that remains is to formulate 
+a scheme for scheduling the execution of each process.  A 
+Bimple list containing the process names which is visited 
+"round-robin" fashion every 16 ms will do. 
+I  ß A^ 
+i 
+f 
+ct 
+o 
+c 
+B 
+JT" RF   
+• I 
+cut rent  event 
+<3 
+i 
+a    o 
+t     r 
+ö 
+A 
+fe RF 
+- 
+/ 
+process 
+description 
+for both A 
+and B 
+u 
+FLFX Proceas Cootro' 
+he figure shows the; system about to execute B-  This 
+..,.- Coiled uct-ivatiou.  Dunny execution, process B is said 
+ro  '.;:■■  •..", SXVL: and trie peiiod during the duration of B's 
+' ...i u.. quanc.'.jTi is said to be an event of B.  All entities 
+.n the figu.ve ate segm^^.ts, and thus may be swapped, 
+i'c^- (■■;:_,:,tack 
+Bf.cause of the well-nested propertieb ot algorithmic 
+.'. . i;:;,iau':,.-: ;.n geneial, and FLEX in particular, the data for 
+a r. r cf.as IG an extendable ^.egitent called a process stack. 
+3'-:
+-L.- inioi'mcttion which is necessary for each event rs 
+r>-1 a: ned m the base of the s>.ack, such as the process 
+description name and the reentry point associated with it. 
+tv, ;. le C is having an ev'nt , the ether proc^s:-es are 
+a a ...a to be passive.  When the pruce&g stack is collapsed. 
+' 
+S^S^uiiSi 
+, 
+._. .__„ _:...^ .„■,r.,^.._. 
+_,  
+76 
+and the process name is removed from the event list, 
+the process is said to be terminated. 
+Passivation 
+A process may be made passive by more than just the 
+ending of an event.  In general, when a process initiates 
+an I/O operation, it will be passivated while the I/O 
+( 
+is running. 
+Indeed, all the £eal-time processes such as the I/O, 
+the display, the keyboard handler, etc,, because they 
+cannot wa.lt when something that involves them is happening, 
+have the ability to passivate (or interrupt) any other 
+process and to activate themselves. 
+■.I. ■ • . ■       -. '. ■     '  ■ ■ 
+The round-robin algorithm must be modified slightly 
+to accommodate the real-time processes. 
+r 
+, i 
+B K. 
+ -j  "~ 
+i 
+ ) 
+i 
+i 
+;tcr\- 
+keyf"^ 
+I/Q 
+Event List 
+P.. S. 
+I/O  PD , ' 
+in 
+read-only 
+memory 
+    
+o 
+77 
+Ail the real-time event notices are logically 
+clustered.  Between each event they are scanned by the 
+scheduler to see if act.vatäon is required.  If not, the 
+process pointed to by the current-event pointer is activated,' 
+At any timo an outside rnteerupt may point into the real- 
+time area.  When this happens,- the current er-ent is passi- 
+va't.ed and the real-time event activated. 
+A FORTRAN or ALGOL program consists of just one 
+process and so do many proarams in FLEX.  Therefore process. 
+hand liny „nd access should be optimized-  This is accomplished 
+■by filtering every request to memory through one of four 
+jase registers.  Since the rearrangement of memory requires 
+an ££^^äiA£flJof .the iiarbatje process, during an event, core 
+memory is still and the base registers may contain 
+absolute addresses.  These addresses are calculated "during■" 
+an activation and are the only contact with absolute address 
+that (..he entire system has.  (Excluding the garbage 
+collector,, of course.) 
+Base Re go. sters 
+During an event one base register is free for system 
+use.  Another holds the base address of the process 
+description; the next contains the base address for the 
+process stack.  The last, as will be seen later, will aid  ■• 
+i n a c c e s s i n g o 111 e r s e g m e n t s . 
+o 
+i •/"//'i-i-V,    memory .•cV.r-'...•,'.Vi 
+78 
+V ) 
+-Us»- 
+procf 
+cfescri 
+ess, 
+iption 
+process   stack 
+segment's 
+emofy 
+base reg 
+con Ire I 
+addressing 
+It can be Beer, that although the FLEX environment 
+has effectively dene; away with direct addressing and 
+introduced relative (.and moveable) data entities in the 
+segmenting scheme, brings actually hold still for the major 
+part of the time and the basic overhead during an event 
+is a short add whose time will be absorbed by the micro 
+code hardware. 
+Data Segments Associatnd with a Process Stack 
+The exact format of a process-stack will be discussed 
+in the next section or execution.  Now it will suffice to 
+say that each slot in : le process stack is associated 
+with a different vari .. le name in FLEX.  During compilation 
+a variable name in trn Tformed to a relative index in the 
+stack.  The slot :'-tse"  may hold a number or a pointer (called 
+a descriptor), 
+Q 
+79 
+u 
+If the variable remains unmapped and contains only 
+--numbers-- then this data may be accessed directly with 
+no overhead.  If, however, a <list>, any other, entity, 
+or a map is assigned to the variable then the data is ■ 
+put in a fresh segment and a descriptor is created 
+containing the new segment name and a description of the 
+data.  The descriptor is stored in the' slot and is effe- 
+tiveiy a self-typed indirect address. 
+Example: 
+'new a/bfC 
+a " 1. ; 
+b-(3,4,5) '; 
+» 
+'c' num 
+■b' data 
+name 
+3    1 
+'a' num 
+1.0 
+P.D. 
+re- 
+entry 
+num 
+■ r 
+5.0 
+num 
+4.0 
+num 
+3.0 
+process stack 
+segment 'namel' 
+Program and Realization (Schematic) 
+The slots are created in order and are initially set 
+to A.  'a' contains a 1.0 while 'b' contains a descriptor 
+which effectively points to the freshly created segment 
+'name 1'.  Or course, the data descriptor in "I" cannot 
+ :   
+80 
+qontal-n the absclufe address for'tnäta&  1-' b&üause 'name 1' 
+mav have miurated to secondary storage during some other 
+ferocesses «vont..  So it .must contain a name for the segment 
+and the absolute address at any given time tm&t  be looked up., 
+unique names for froshly-created segments are doled 
+.it by a system routine and consist simply of a 12-16 bit 
+intagejc. 
+Tas ipegnient Ässociat i-on^a-bi-B 
+Thts operation thai needs to be performed is the sarae 
+as the associative operations m FLEX and the same 
+m^ohan.israR ar.d format^ are used.  When a segment is qreated 
+or braucht into core storage, we wish to form an association 
+{ s thus-;  Z.oc i_s base address of ceg-name; 
+The Lnvsrse operation needs to be performed when the 
+segment is  accessed:  ? is base-address of seg-name; 
+This will return the absolute location of the segment 
+Which will be placad in the fourth base register and then 
+used.  When a segment is swapped out or destroyed, the 
+apaociati'on needs to be removed: 7  isn basev-'address of 
+seg-name; 
+If the association.fails, then the segment is residing 
+or the aocondary storage and a somewhat more leisurely 
+gie^rch may be made to find it and bring it into the core 
+jnemory. 
+"watrjxjsizfi-f.-wct isC 
+■ 
+81 
+gj?6 Association Structure 
+This will be covered xn great detail in the next 
+ion, but the  operation may be-demonstrated 
+y.  Of course, the table itself is a segment 
+and has a logical format as shown: 
+section on axecut 
+schematicall 
+ab s 
+link  a del 
+'v^y 'name 1' 
+HV 'name 2' 
+free expan,; 
+The Segme.n t Tab 1 e 
+A s s o c i a 11 v e h aid w.: ■ i 
+it cannot; be used to n i 
+and others [81 have sir 
+stimulate an associate ri,^,;r 
+used is similar to than 
+technique is derived troni 
+end 
+prohibitively expensive, so 
+the information.  Feldman [7] 
+hashing may be used to 
+very effectively.  The method 
+•AP [9i, although the hashing 
+ifferent source. 
+82 
+The name, a 12-16 bit number, is reduced by the hash 
+to a 4,5, or 6 bit number which is used as an index to 
+search the table.  Since not even the best hashing 
+algorithm can totally eliminate the possibility of two 
+names hashing to the same place (as 'name 1' and "name 2» 
+have done) provisions must be made for this eventuality. ■ 
+After the index selects a row, a comparison must be 
+made.to see if we have uniqueness.  If we do (percentage 
+dependent on the hash size), then the absolute address 
+• may be delivered without further ado.  If the name column 
+contains a zero, then there is nothing in core memory that 
+hashes to this slot, and the segment must be out on 
+secondary storage.' The same" applies to the case where the 
+comparison fails and the link field is zero indicating 
+a chain is piresent.  The overhead for a good hit is 2 650 
+Us memory cycles.  That for ä fault is 1 or 2 650 yjs 
+'memory cycles. 
+Now the high overhead case is considered.  If the 
+absolute address of 'name 2' is required, a chain of 
+multip/le hits must be followed. Fortunately, this does 
+not happen very often. 
+In all the associative structures the percentage of 
+multiple hits is calculated.  2-4% is the maximum allowable 
+level; when this is exceeded, the associations are 
+iwiwaawfrta.-gj'- 
+m> 
+S3 
+recalculated for a larfs:  /:^hi»f ar«s wMch pulls the 
+ffiultiple hits down to a sairo level., 
+This scheme folluv;:- ,.;u: philosophy of the FLEX 
+environment. Most of the Lima it leeks like something 
+much better than it is;   a  assccl®ti¥e taemoryl  For 2-41 
+or the time it looks J      U.st-procss^ng table. . ." 
+Segment Creation 
+A segment .1B croai   r>y converting an area of garbage 
+into active storage.        for this segment must be found 
+and entered into the sen    table,. 
+Since creation and   ,, ruction are dynamic, a way 
+must be fcuhd to maximaJ Ly utilize the small number of 
+segment names available,    ■., could he  done by maintaining 
+a pool of unused names .in >. de..; to provide a new, unique 
+label for a segment—bur tro s is CQstly in terms of 
+storage, so a different path is taken. 
+When it is desired   create a. segment, garbage is 
+found (or made) in the usual way.  The machine contains 
+a random number generate! which is used to select a name. 
+Ar. access request for ■; h*     name is then made to see whether 
+or not that number is aJ  -ady m use as a segment name. 
+If it is, a new random ..■,*<•, .1.3 done and a new test is 
+made.  Very rarely wii !   -.elected name be in  use, so the 
+algorithm will almost aJw^ys work the fiist time. 
+H 
+Reproduced from 
+best available copy. 
+■«irw-.v.ßJfrÄStsjW*»'. 
+v J 
+8.4 
+The new name may then be entered into the segment 
+table along with the absolute address of the displayed 
+garbage and segment creation is accomplished. 
+Criteria for swapping 
+How is a segment picked for transfer to secondary 
+storage for the purpose of creating garbage?  No swapping 
+algorithm has been shown to be really satisfactory.  The 
+one presented here will work quite well, and following the 
+FLEX philosophy, requires no bookkeeping on each memory 
+access, 
+The influence of the compiler extends directly down 
+to the lowest level of the machine and provides information 
+that is not commoniy available on other machines.  Some 
+of this information has to  do with an insight into the use 
+to which eaph segment will be put which may be partially 
+derived from mapping conventions and process use. 
+The volume of segments mapped as 8-bit bytes (text) 
+will tend to be high—yet use is limited by-storage äna \- 
+display restrictions.  One might hope that these segments 
+will migrate to secondary storage in a fairly rapid manner. 
+General data segments have a somewhat higher priority— 
+yet they are clearly the next level to be thrown out. 
+Process descriptions and process stacks certainly 
+have a higher need to remain in primary storage in order 
+to sustain a rich amount of process activity. 
+L, ^M-.^V".-« ... 
+ ;       ■ 
+85 
+The real-time processes, the event list, the segment 
+table, and other system entities need to maintain residency 
+in primary storage all of the time.  Therefore, they 
+should never be swapped,. 
+0-  2 0'  3(r      40" 
+oy-, 
+Priority:        12    3    4 
+These priorities may be expressed as a v/eighted 
+conditional probability or as the number of standard 
+(■fc) deviations on a normal curve. 
+The swapping scheme now works as follows,  A random 
+number is selected just $s in segment creation.  This is 
+hashed to locate a slot in the segment table and thus, 
+eventually, a segment.  The type field is examined for 
+priority and a question  is asked whose answer is 
+weighted towards that priority.  For the normal curve 
+weighting scheme, the probability of a ;yes answer to the 
+question:  "Should this segment be swapped?" is: 
+ area of a number 
+total area of a curve 
+If the segment was text, then it would have a 57% 
+probability of being swapped and a corresponding 33% chance 
+wwwwwMhiaia^.    i „„^.M..,„^„        
+ ...r.... 
+86 
+of staying in.  A system segment (having.priority 4) 
+will have a zero chance of being swapped. 
+Suppose now that a segment is in heavy use and is 
+swapped.  Then it will come right back in—but the chance 
+for it being swapped again is now quite small since a 
+random selection is used.  Conversely, a segment in little 
+use will simply remain swapped. 
+The end result is that ail segments in primary storage 
+are scrutinized uniformly and those that are active tend 
+to remain while those that are not will tend toward 
+secondary storage. 
+„,_, _..„. _   
+ja!*?!* 
+87 
+The Sfratefly For Segmenf and Procer;s Control 
+It now remains to put everything together. 
+p 
+R    E 
+0    V 
+0 
+T 
+H 
+E 
+R 
+C    E 
+E     N 
+S    T 
+S    L 
+T. 
+S 
+T 
+active 
+'B' 
+active 
+'A' 
+active 
+Key  6 
+active 
+Display 
+active    I/o 
+status   name 
+DD 
+. y 
+- 
+• 
+s 
+J* 
+Base  Registers 
+The doited lines are affective pointer:   ("leaning that the reference really has to go 
+through the segment iable.   An event for   A' is taking place as shown by the base register 
+configuration. 
+MtMK^a-o'' tmm 
+name  cai■ et -ck   u 
+uujnp   tn 
+7m   :  ta: 
+[Jy.mp 
+ie 
+LS<S 
+a > sp.lacement 
+d.i üp I'V erne- ■ '. 
+dxsplaceMienz 
+number   oi   ■. a c 
+nmaber   oJ    p^i.a 
+meteis 
+-■-mmas 
+'..■ector   s ize 
+I.). 1. era i 
+), n t (
+:' q e i 
+.labe • 
+.'   address 
+-1 ..      I'-^- 
+!CU- ion 
+a.     The Process   Deaaription 
+A pi.     sä  aescrlptxo.ti  .U;.  a  s®piuant  that m&y im «Sf«c«ite4 
+b     the  hardwar:   of   fche  FLEX m-achiM,     Ther® are basically 
+.htre  K.'.näö  of   entities  contained  ID,  this  segirwsnt:     sisipl« 
+..Dti: a.or a ?   compound  op&ntors,   a/\d numeric  and   string 
+t e t 4: 
+(I 
+I        7 i .i » ■. I 
+...^.J.....::.^.,  i l |   op code   j   ^alue   j 
+-.,1.    :'±'',' l   ■ v    ,„.;.:/„ A compound operat jr 
+■■i se determines  the  length to be 
+L,3--s     
+; -:•   the FLEX operators  üxe 
+'npilöd   us   sjimplr-  cn> --,.     '"he  r.arnes,   requests   for 
+I 
+jumps,   !:•■      nie.  rr.impound   operators, 
+7,he  cc    pot ad •;, po]    i oi 
+2IL.£2§£. Yj:L.::J.l mean ing 
+\
+v^,i ■. e     all       stac k   i ;idex 
+find  a   value,   put  it  on,top of 
+B t a;."" k 
+o;e^te  ö  dsscrxptor,   put  it 
+on   top of   stack 
+Jump if top of stack true 
+Jump if top of stack false' 
+Jump unconditionally 
+create space 
+to match actual with formal 
+parameters '   | 
+create .. new segment 'vector 
+S12r long 
+create  a   stack  number   from 
+'integer ' 
+used tor operand for goto'a 
+rarmwwiUM-iwit'i MM. t*a&mmmimmiiMl»Mm*mMuUmM»*m*mm >*■ mumm 
+^ , . :  
+Lack:   i   vc   ä   
+#aP     .   m  I   *W^   ß 
+.Hi»*W 
+HZ   •! i   * 
+Th^;  coding   is  very  compa.c\:..      To  aöd.^two nurabejC^^   it  tal 
+2<!   '..lb   LI   1   opes snd   in  Bism&k".       ].J££ 
+8   ci ' .    ■ i.  both  opef.   ids  in  stsacks 
+Th.j.s   : ;■  moio  t.espe-cfcab]      ■ ■ ■■.■:i mcml: sxngiä address machines 
+I jy   a   ^c>. i !    amount' . 
+L        4 Li i        7 40 
+1       lit :i       num-  , | 
+^al-jo^lwVÄJ';'-»■ *  ^JfiMto!--- 
+ca   com     m   v. ■    shapes  and   sizes,      s;''--^ßra 
+'.04,!   can   bt:   hand by  t.iie  short  form,     Lar^p3t 
+tiumtaers   sre  hahdied  by    longer   forms. 
+'e'C ■' ■.:.- 
+Th OT.pj Lei   ;.; ■ ihe  operators   in polish  post^Mx 
+f:orm.     Execution  iß  clone  .serially  except for   jumps, 
+■:,.-... and   intermediate   results   ar®  stored   in  the 
+procesK   stack   which  has   thiC   following   logical   form: 
+..■. .■VM-il,;.,-,,_,.v,..,.jl_| 
+n'i<s»iöv.^^1.„^.-^i.oS«ÄMÄ**iiri., „,„. 
+,■.':'*'-"" 
+90 
+V    > 
+,.;  i  ., 
+\/ Ci   ;, , i ;'      ■,  i 
+I 
+: 
+■■ Loc k 
+.fe'% 
+/ 
+y/// 
+.' 
+i 
+■K    u    ;;i ■    ■ 
+in ,■ 
+I 
+i: 
+Stu 1 I 
+v;nti- . ;- s   \ 
+new   Ci,b;   b*-50. I.; 
+.(i'ipüi ar j.es 
+K•   ■ jRO 5w p J MC... 
+i ~, ^iJilG 
+■i' 5.4  begin 
+:.\ ' ^    [nttraT5.4 1 
+new x/y;   x-93,4 ; 
+:    S!BI!]_SÜ3J3B 
+Ic-O,    (new   i^^Hfi^Sj 
+■ rium [j- -0] i nwjl | ptoTil I lit  5] 
+&*i no,*hi 
+^_       1   i in   in. .MirC      .in I.-   —   '   Li m-irtmKii TH.IIJIJ     fcV^vi',..i*^fr—' j-^-t "« —w 
+ej^c 
+cottirail 2 1 FeD.ct I 
+  vJ j -^ ^y; j 
+and 
+ti '^. y icomma]2j  end] M 
+nex^  pperator 
+to ijie executed 
+, w$lgr «w*Mi-»^i*m^—- 
+28  16-bit words 
+, ^produced from 
+' ^'j^Üable^py.  ig 
+,   SB» 
+■ 
+til 
+hi\K   ■ >:   ■■■ ; 
+■  al) 'iiiätn-HlfxoA 
+Reproduced  from 
+best available copy. 
+e ttion o .itinf 
+»Inl Air 
+■ ■ id toy 
+®s the 
+, .,■  Ht 3 Ij» 
+■ Lso 
+ibles  a 
+.    -   - segment 
+- 
+ced 
+sation 
+the 
+■ 
+—WMilim-.  
+u 
+13 
+■ 
+- 
+op< ■ ;-. new segnant; frmi the- v^ct^r 
+ä data deiä.crifjtof..     Tlni» 
+«eA fio^.® «severs i 
+Prooesaos 
+A procodure call rocesi activation)   is realized 
+( 
+a f   Cf   1) ; 
+,he drawing. 
+Reproduced from 
+best available copy. 
+„J- rcr 
+.... 
+vc 
+TcT~l 
+■' 
+n>*:  
+;i  v..ct ,;       ex 
+■ 
+If ■ ■ 
+■ ng hat n >a 
+ict pasai 
+ite the i 
+.■ntxi the 
+built up m the stack 
+'"j cröÄta» the status 
+e vector from the parent 
+r.-vunt) ,   enters an event 
+sivatjM the parent process, 
+parent process will be 
+'' ft^^tivates^ it by executing. 
+eplaced by an 
+68fl is to be created, then 
+t. :'>ame eiwcent that the parent 
+eturn from the new process 
+.-, while a leave will simply 
+"v- around. 
+93 
+i . 
+Recursion 
+Recursion is easy in the FLEX environment.  Each 
+parent process simply creates a new child which is linked 
+to the patent by the returns.  The | call | operator is 
+used so that juat one instance of the recursion is active 
+at any one time« 
+Following is a subroutine which calls itself for . 
+determining the factorial of a number. 
+fact ♦ 'new a. if a -■ 1 then 1 else a * fact (a-1) ' ; 
+'"This creates the following structures when activated by 
+the next statement11' 
+display - "fact (3) = "#fact (3); 
+fact. (3) =6.0 
+.4. . 
+parent 
+1st 
+instance 
+N  2 
+N "2 
+!  ''/' j' 
+" ■"" 
+I , 
+2nd 
+instance 
+LEi 
+'Ni 
+1 
+"T 
+3rd 
+instance 
+Reproduced from 
+I best available copy. 
+All returns from a call as well as reactivating the 
+parent process also transfer the top element in t*ie stack 
+from the returned process to the top element in the stack 
+of the parent process.  This ^ the way results are passed 
+back when a procedure is used as a function. 
+94 
+v r 
+Input/Output Conventions 
+I/O Devices 
+I/O in FLEX does not require an^ special statements; 
+it is handled as a generalization of the assignment 
+statement.  How is this realized m actuality? 
+Each device has a reserved variable name associated 
+with it and, hence, there also exists a slot in a process 
+stack somewhere in the system that is also associated 
+with this name.  This process stack is the I/O process 
+stack and is pointed to by the "1/0" event request in the 
+real-time sectior ot the process control que. 
+v 
+r 
+e 1 
+a 
+1 
+1 
+\ 1 
+HI 
+1 
+I/O 
+event | 
+que 
+I/O Control 
+'tape 3' 
+'tape 2' 
+.' tape 1' 
+'tape 0' 
+DR1 
+DR2 
+DR3 
+'printer DD 
+'printer !ß_ 
+' punch ' 
+: f5 
+Line Going Out ... 
+^ 
+^ ^S 
+15 1 
+'^'.M ds' !D£l2/2 \^ 
+l/O process 
+stack 
+x b 
+Card Coming In... 
+An I/O interrupt uses the number of the device that 
+caused it as an index into the I/O process stack.  In the 
+95 
+slot associated with the dovice there is either an Ü 
+or a data descriptor poirting to a segment which contains 
+data to go out or data coming in.  The figure shows an 
+execution ot the statement: 
+printer 2 *   "al3  = " # ai3# " b22='
+,#b22; 
+Since no format of any Kind has been specified, a 
+FLEX free-format is assumed.  As the concatenations are 
+executed, a scratch segment is created in the usual way 
+to contain the generated string.  When the %" is executed 
+it first looks at the description for the storand.  It is 
+marked as a temporary and therefore only a name transfer 
+is needed rather than a copy.  This is done into the slot 
+in the I/O process stack which is now marked active. 
+Some time in the near future the I/O system will 
+deliver an interrupt saying that printer 2 is free.  The 
+"printer 2" device number (in this case:  4) finds the 
+data description in the stack indicating that something has 
+to go out.  This is set up and that data is squirted out 
+on the channel coax.  The "printer 2" slot is now marked 
+empty and life goes on as before. 
+If the above FLEX statement were in a loop for printing 
+out consequentively generated values of al3 and B2?, it 
+might very well be possible that another "printer 2" 
+assignment might be made before the previous line was 
+.   »—  -—.. 
+96 
+transferred out.  The answer ^s simple.  If the "printer 2" 
+Liot doos not contain an &,   then the current process is 
+passivated until the next txtie around the round-robin.  By 
+then the line may or may not have gone out and the 
+algorithm is continued.  Eventually the line will be printed 
+and the current "printer 2" statement will be executed. 
+Naturally, more than one line may be output m one statement- 
+a vector of lines may be assigned.  The above just says 
+that an I/O statement to a unit must be physically realized 
+before another to the same unit may be made. 
+Input is similar.  While assignments to the printer 
+have been going on, the card reader had been active.  An 
+interrupt occurred saying that it had something to deliver. 
+A data descrj pt'".r was found showing a read request (one is 
+alv/ays there for pure input devices) and a card image was 
+delivered to a newly created scratch segment.  Sometime 
+later a FLEX statement might be executed: 
+new card - format I (cards); 
+Formats in FLEX are simply functions or user-declared 
+unary operators which take a string as an argument and 
+deliver a string as a reult.  The card image (being a 
+temporary) is renamed as the first parameter of format 1 
+and is thereupon operated on. 
+Pure input devices are immediately supplied with a 
+new data descriptor input request.  So the "cards" section 
+is again set up to receive a card. 
+f 
+,!„,„     ^M*mMmi&ma**, 
+97 
+Two-Way Devices 
+These are handled in a similar manner to the printer 
+and punch except that both read-request and write-request 
+data descriptors are used. Also, it is important to note 
+that, since all I/O devices are just variables in the 
+system, they may be mapped and then selected on as the 
+data enters or leaves the machine.  Suppose only the 
+first five words are needed from a tape record, then the 
+following statement might be appropriate: 
+buffer ■<- tape 3 [0 to 4] ; 
+Only the first five words will be read in and transferred. 
+      ■! I      HI—«—I 
+98 
+VI.  Progress to Date 
+Implementation 
+Two FLEX compilers have been programmed in ALGOL 
+on the UNIVAC 1108 and have been running since mid-February 
+1968.  Several partially successful attempts were made 
+to combine the compilers with a number of the operating 
+text editors at the University of Utah.  The failures 
+were partially due to the inadequacies of ALGOL as a 
+real-time and process language in general, and in parti- 
+cular, to the very real defects of the UNIVAC version of 
+ALGOL-60. 
+Implementation of the interpreter has been severely 
+delayed for several reasons—the main one being that it 
+took longer than expected to work out a rationale for a 
+segmenting and swapping system that would work on such a 
+small scale. 
+Current implementation is now taking place on an IBM 
+1130 partially because the machine can be dedicated most 
+of the time to this task and partly also because it is 
+small and does not tempt one into grandiose schemes. 
+Implementation on a PDP-10 is also being contemplated. 
+Future Expansion 
+The process-oriented nature of FLEX should make it an 
+ideal kernel for numerous discrete simulation schemes. 
+99 
+A search for primitives in tiUf as well as in  the semantic 
+transformation area is currently going on, and it is expected 
+that some fruit will be available for plucking in the next 
+month on. this field of discourse. 
+Application packages are also being studied with a 
+view toward both allowing FLEX to do something useful and 
+providing a test-bench on which to evaluate the system. 
+To this end, the solid-state circuit design program developed 
+by W.R. Sutherland on the TX-2 computer at Lincoln Labora- 
+tories is being eye-balled.  FLEX and LEAP (the implementa- 
+tion language at Lincoln) share some properties-notably 
+the ability to store and retrieve associations~and it 
+will be interesting to notice the difference between the 
+2 56k words of fast memory on the TX-2 versus 4 to 8k 
+smaller^words on the FLEX machine. 
+n 
+w 
+REFERENCES 
+Ifrnr In ^n'' "Rep0rt 0n the A1gorithmic Language 
+ÄLGOL-60, Communications of the ACM 3 (May. 196 0) 
+pp  299-314 ~"  vliaJf' J-you). 
+fir^i ^."EU.ler " A ?enera^2ation Of ALGOL, and its 
+^ne ACM 9  vn •n: IT   l'   Part II',,  Communicatxons of 
+_ne_ACM 9 (January, February, 1966), pp. 13-25, 88-99:  
+^loyd  R.S , "A Descript ve Language for Symbol 
+n  t^ -o0n'" Journal  i the ACM 8 (October, 1961), 
+P     K 7 ;-(- 584 'ft 
+iU 
+A . "An ALGOL-6 0 Compiler," Annual Revxew in 
+_i£ Prog) amminq,. Vo I  4, 1964, pp. 87-124.  
+fo 
+1962. 
+100 
+^ 1    'nJ ; "A Formai Semantics for Computer Languages 
+0 o ;   ?? f^1?" In ä c-nP]ier-Compiler," Communica- 
+—2-^ • th£ ^CM 9 (January, 1966), pp. 3-9.  E
+- 
+n TdS ^f" ^' "TITfL ComPa^-Compiler Reference Manual 
+UJ 1'  umcoln Laboratories, MIT, January, 1967. 
+oldmn J  "Aspe ts of Associated Processing," MIT 
+Lab r ror  rechmcal Note 1965-13, April, 1965. 
+ill. A,, "A Note on the Use of Scrambled Addressing 
+Associative Memories," unpublished paper, December, 
+Rov.er^ P  and Feldman, J., "The LEAP Language and 
+DS..-43;;'octob;:,M-967L:nCOin ^^ ^—al Note 
+Cha't' WAL^ 'er.' L  '^ W^choff' R" "A Syntactical 
+19 1  P   ?!     Communxcatlona of tha ACM 14 (September, 
+NOTE:      F rformiSlfS  exposttlon  on compiler-compilers  and 
+a   tcrmid.ble  biography  on   the  subject  see: 
+Svff3'..J;     "      GrieS'   D'   "T^nslator Writing 
+iKa®   s       Commum   ations  of   the  ACM  11   (February, 
+1968)      pp.   77-^3, * ' 

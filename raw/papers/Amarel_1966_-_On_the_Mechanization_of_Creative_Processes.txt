@@ -1,0 +1,311 @@
+112
+Ieee spectrum April 1966
+On the mechanization of
+The goal of mechanizing certain creative processes
+in problem solving is attainable, but not in the near
+future. The problem is to find workable computer
+procedures for evolving "appropriate" representa-
+tions in given problem-solving situations. The answer
+may lie in the extensionof ideas that were developed
+for some elementary theory-formation procedures.
+There is no general agreement on the nature of crea-
+tivityor the characteristics of a creativeact. Such an act is
+often surprising, has elements of a new approach,and is
+not stereotypic. Beyond these phenomenological prop-
+erties, one finds that a creativeact has a strong elementof
+synthesis. It is usually associated with ill-defined goals or
+it involves reformulation of externally imposed goals.
+Some students of the human mind feel that formation of
+powerful imagery, abstraction to appropriate spaces,
+flexible associations, and rich generation of analogies are
+key element sof creative processes. Others feel that, in
+addition to these elements, some mysterious, unexplain-
+able processes control the genesis of ideas and insights
+in man'screativeprocess. If weexcludethe beliefin such
+unexplainableprocesses, then it is reasonable to attempt
+explications of(at leastsome) creative processes in terms
+of information-processing models. Explications of this
+type will essentially amount to advancing operational
+definitionsof creative processes. By studying the implica-
+tions of such proposed definitions, by testing themversus
+existing notions of creative behavior, by subsequently
+improving the proposed
+and so on, we can
+hope to attain a satisfactory understanding of the notion
+of a creative process. In this manner, there is a chance
+that we can arrive both at a psychological theory of
+creativeprocesses and at the logicalprinciples that under-
+lie computer realizationsof such processes.
+I would like to present here some tentative ideas on an
+operationaldefinitionof creative processes in the general
+context of problem-solving processes. My comments are
+restricted to some of the creative processes that occur in
+the problem-solving activities of the physical scientist,
+the engineer, and the mathematician.
+An important type ofproblem confronting thephysical
+scientist is the formation of theories that organize em-
+pirical knowledge in certain desired ways. A common
+problem for the engineer is to evolve a design that satis-
+fies desired goals. One of theproblems of the mathemati-
+cian is to prove theoremsin a formal system. In the last
+decade, several procedures have been developed for
+solving by computerproblemsof thesethreetypes. Much
+of the present research in artificialintelligenceis directed
+to extending the scope andpower of such problem-solv-
+ing procedures. It is my belief that some of the difficult
+problems that we are now facing in the design of more
+powerful problem-solving procedures are related to the
+problem of mechanizing certain creativeprocesses.
+Extending the power of problem-solving procedures
+Two central notions are involved in a problem-solving
+procedure:
+a problem state—a description of a
+problem situation including goals, available resources,
+and intermediateresults; and second, a set of relevant
+moves that can be applied from a state to obtain new
+states. The relevant moves commonlyreflect the rules of
+the game, the rules of inference, the grammar,the avail-
+able composition, etc., that can be used by a problem-
+solving procedurein thecourse ofan attempt to construct
+a solution. In designingproblem-solvingprocedures one
+must find appropriatedescriptionsfor problem statesand
+for transformation of states via moves. In other words,
+one must face the problem of defining a problem-state
+space;I call this the problem ofrepresentation.A closely
+related problem is the problem of evaluation.It involves
+the choice of concepts and methods for evaluatinga va-
+riety of measures of progress—as well as estimatesof ex-
+pected search efforts—that can be associated with points
+in state space and also with transition between points
+in that space. A third major problem is that ofcontrolling
+the search for a solution in state space. Here one needs
+overall strategies and specific decision functions for
+intelligently selecting problems—solving moves between
+problem states so that a solution can be found with as
+smalla computational cost as possible. Most ofthe effort
+expended on machine problem solving so far has been
+directed to this third problem; specifically, to the study
+of a variety of schemes for heuristic search.'
+In the present state of the artificial intelligence art,
+the designer of a problem-solving procedureis required to
+solvewithoutaidfrom the machinetheproblems ofchoos-
+ing a statespace, a basisfor evaluation,and a strategy for
+heuristic search. The relatively intelligent behavior of
+the machine thatsolves problems in accordance with the
+problem-solving procedure formulatedby the designer is
+therefore circumscribed by the choices ofrepresentation
+evaluationand control thatare madeby the designer.
+Amarel—Mechanization of creative processes
+113
+Ideas on an operational definition oj
+creative processes in the general con-
+text of problem solving are presented
+—restricted
+to such processes that
+occur
+in
+the problem-solving
+ac-
+tivities of the physical scientist, the
+engineer, and the mathematician
+creative processes
+Saul Amarel
+RCA Laboratories
+Improvement in the power of problem-solving pro-
+cedures can be achieved by making appropriatechanges
+in the rules thatcontrolsearch, in the methods of evalua-
+tion, and in the modes of representation. Severalattempts
+have already been made to adjust certain parameters
+automatically in local decision rules that control search,
+and also in evaluation functions—on the basis of sta-
+tistical learning techniques. 2 However, no schemes exist
+as yet for general nonparametric control of the search
+and evaluation parts of problem-solving
+procedures.
+In our work with proving theorems of the proposi-
+tional calculus by the method of natural deduction we
+have developed a sequence of procedures of increasing
+power in order to evaluate the nature of improvements
+that occur at different stages of this evolution. The most
+spectacularimprovement was obtainedwhen theproblem
+representation was changed in an "appropriate" way—
+the shift in representation has transformed the problem
+to one of finding appropriateclosures to certain directed
+graphs. The new problem representation immediately
+suggests to human problem solvers a new, more power-
+basis for evaluation and search the result is a much
+better goal-oriented, thus less
+problem-solv-
+ing process. We had similar experiencewith other rela-
+tivelysimple transportationscheduling problems. Indeed,
+the importance of "having the right point of view,"
+"casting the problem in the appropriate
+"con-
+ceptualizingthe problem correctly" has been recognized
+for some time by students of problem-solving processes. 3
+Finding the "most appropriate"space
+I think that creative problem solvingis closely related
+to the notion of directing the search for solution in the
+"most appropriate"space. More specifically, I would like
+to suggest that theformation ofan appropriateconcept of
+problem space, where a given problem is to be treated—
+in otherwords, the solutionof theproblem ofrepresenta-
+tion—is a creative process. This process could also be
+regarded as a process of building an appropriatemodel.
+While the use of given models in problem solving has al-
+ready been considered by workers in artificial intelli-
+gence,4 the dynamic aspects of evolving an appropriate
+model so far have received little attention.
+It is commonly asserted that by furnishing a manwith
+convenient graphical displays of appropriatemodels, he
+will be stimulated to provide the creative contribution
+expected from him in his problem-solving partnership
+with the machine. Clearly, someone has to choose the
+appropriatemodels to be displayed in specific situations;
+I consider this selection of models as demanding the
+main measureof creativity thatenters theproblem-solving
+process. If the man's function in his partnership with the
+machine is not only to utilize models (that facilitate his
+searchfor a solution)but also toform and modifymodels
+during the problem-solvingprocess, then he will indeed
+be exercising his creative powers. This point of view has
+certain implicationsregarding theflexibility and power of
+model-building languages that are needed in a genuine
+creative problem-solvingsystem involving man-machine
+interaction. Also, it may provide a test framework for
+identifyingthe part thatcreative processes play in prob-
+lem solving.
+Creative processes and theory formation
+Ifwe start with the assumption that the function of a
+creative process in problem solving is the formationof an
+appropriateproblem representation(the growth of appro-
+priate symbolizations or of suitable models), then the
+mechanismsthatcome intoplay in a creativeprocess will
+have much in common with theory-formation mecha-
+nisms. In the theory-formation problem of the physical
+scientist the objectiveis to construct efficientlyaninforma-
+tion structure, in terms of existing linguistic and con-
+ceptual resources, that would summarize "elegantly"
+and "explain" a set (usually large) of empirically ob-
+tained relationships in a given area. The information
+structure, because of its mode of construction, expresses
+the empirical knowledge in terms of existing theoretical
+constructs, thus incorporating the new empirical infor-
+mation in the main body of theoretical knowledge. It
+also provides an appropriatebasis for solving problems
+and answering questionsin the given area. In the model-
+formation problem of the problem solver the objective
+is to construct a theory in terms of appropriatelinguistic
+and mathematical constructs that expresses in a con-
+venient mannei to the problem solver the properties of
+the problemstate space.
+In our work on theory-formation processes we have
+studied specifically procedures for the automatic forma-
+11
+n descnpt
+appropriat
+1
+JOSS
+it
+building models (a model of for
+evolve a model for a certain coi
+again natural to ask how it is
+machine an appropriatemodel tl
+le the
+lei. 4 Again, I
+:hine formation ofanotl
+:onsider the constructioi
+lei as involving a
+creative process
+Mechanization of creative processes
+In general, I think that many of the ideas used in
+theory-formation procedures can be transferred to the
+mechanization of processes for evolving appropriate
+representations (or for recognizing that a certain formal
+systemprovides an appropriatemodel) in given problem-
+solving situations. If we agree that such representation
+selection processes are creative processes, then we can
+alreadyenvision an approach (through theory-formation
+ideas,which, admittedly, are still at a very early stage of
+development)to the mechanizationof creative processes
+in problem solving. However,evenif a general approach
+"d
+ing quotation
+ments: "The
+■c
+being purely presented but can be stated a
+jnstructing ever higher types. These are as trar
+dinals and thi
+ranscending them by seeing previously unseen
+;ive a sequence of such numbers. Now it seems tl
+ted proce
+conscious. But it is not given till it is made completely
+conscious. But then it ought to be constructable purely
+mechanical1
+I find this statement remarkable because it as
+the notions ofvisualization(symbolizationor rep
+tion), of a hierarchy of such visualizations, and
+scious
+self-reflectiveness with
+the
+creative
+pre
+furthermore. it ends with a note of confidence ah
+possiblemechanizationofcreative processes
+This article is an expanded version
+the author
+F
+view as expressed in a panel discussion on the mechaniz
+creative processes that took place on May 28 at the 19'i65 IFIP
+E.
+A
+ir
+Feigenbaum; other panelists were J. McCarthy, V. Neisser
+A
+G.
+and
+1
+I-
+tideis sponsored by the Air Force Officeof ScientificR
+F
+of the Office of Aerospace
+under Contract N
+■8)- 1184.
+6.
+REFERENCES
+Newell, A., and Ernst,
+IFIP Congress 65. W. A. I
+Washington, D.C: SpartanBooks, 1965,pp. 17-24.
+2. Slagle, "A multipurpose theorem—proving
+Proc.
+the IFIP
+;ton, D.C. : Spartan Be
+in
+Minsky, M. L., "M
+W. A. X
+Spartan
+196
+5. Amarel,
+"Oj
+M.
+V
+\V
+Amarel, S.,
+Wi
+Hebrew University, Jerusalem, Isr
+I
+Amarel,
+: Spartan Books, to be pub
+N
+Post, I
+nore efficient. Not
+:ussing the imporl
+)n space is used
+ition). Hence, il
+ble to evolve ir
+iut we are a
+nplete seem
+Congress in New York, N.Y. T
+3. Polya, G, Mathematical Discovery, vols.
+1 and 2. New V
+Wiley, 1964.

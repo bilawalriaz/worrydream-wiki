@@ -1,0 +1,931 @@
+Geometric Algebra: A natural representation of three-space
+James M. Chappell,∗Azhar Iqbal, and Derek Abbott
+School of Electrical and Electronic Engineering,
+University of Adelaide, SA 5005, Australia
+(Dated: February 23, 2016)
+Abstract
+Historically, there have been many attempts to produce an appropriate mathematical formalism
+for modeling the nature of physical space, such as Euclid’s geometry, Descartes’ system of Cartesian
+coordinates, the Argand plane, Hamilton’s quaternions and Gibbs’ vector system using the dot and
+cross products. We illustrate however, that Cliﬀord’s geometric algebra (GA) provides the most
+elegant description of physical space. Supporting this conclusion, we ﬁrstly show how geometric
+algebra subsumes the key elements of the competing formalisms and secondly how it provides
+an intuitive representation of the basic concepts of points, lines, areas and volumes.
+We also
+provide two examples where GA has been found to provide an improved description of two key
+physical phenomena, electromagnetism and quantum theory, without using tensors or complex
+vector spaces. This paper also provides pedagogical tutorial-style coverage of the various basic
+applications of geometric algebra in physics.
+1
+arXiv:1101.3619v4  [physics.hist-ph]  21 Feb 2016
+I.
+INTRODUCTION
+Einstein once stated, ‘Everything should be made as simple as possible, but not one bit
+simpler’, and in this paper we ask the question: ‘What is the simplest mathematical repre-
+sentation of three-dimensional physical space that is nevertheless complex enough to satis-
+factorily describe all its key properties?’
+The presence of exactly ﬁve regular solids leads to the conclusion that we live in a three-
+dimensional world. If we lived in a world with four spatial dimensions, for example, we
+would be able to construct six regular solids, and in ﬁve dimensions and above we would ﬁnd
+only three1. Also, the gravity and the electromagnetic force laws have been experimentally
+veriﬁed to follow an inverse square law to very high precision2, indicating the absence of ad-
+ditional macroscopic dimensions beyond three space dimensions. Hence a three-dimensional
+coordinate system, as proposed by Descartes, appears to be a good starting point to describe
+physical space. For three-space, however, as well as positional coordinates, we realize that
+we also need to be able to represent rotations at each point in this space. In the plane, the
+algebra of complex numbers can be used for rotations and in three space, the algebra for
+rotations is given by Hamilton’s quaternions. Hence, in order to form a uniﬁed algebra of
+three-space we need to integrate the algebra of the complex numbers and quaternions within
+the framework of Cartesian coordinates. This was achieved by Cliﬀord in 1873, who named
+his system, Geometric Algebra (GA).
+A.
+Historical development
+Pythagoras famously stated that numbers and their relationships, underlie all things.
+This mathematical idealism of Pythagoras was masterfully applied by Euclid, to geometry,
+deriving his famous set of geometrical theorems based on a few simple axioms that formed
+the ﬁrst comprehensive theory for the physical world3. The next major breakthrough in
+mathematical science did not come though till the seventeenth century and it has been
+extensively debated by historians, why there was such a slow down in the progress of science
+and mathematics following the Greek explosion. Various suggestions have been provided to
+answer this, such as the Roman empire suppressing dissent and not sponsoring the arts4,
+but more recently it has been proposed, that the algebraic and numerical system used by the
+2
+Greeks, had inherent limitations, which were roadblocks to further progress5 and illustrates
+in this case the importance of the mathematical framework utilized in order to promote
+scientiﬁc progress. For example, in the Greek system, the length along the diagonal of a
+unit square, we know today as
+√
+2, being an irrational number, did not exist in the Greek
+numeric system, which was based solely on integers and their ratios.
+However with the arrival of Hindu-Arabic numbers in about 1000 AD into Europe, which
+included a zero that allowed positional representation for numbers, together with the accep-
+tance of negative numbers in 1545 AD, allowed for the concept of a complete number line to
+be developed. This then paved the way for Descartes to revolutionize the Greek system in
+1637, by proposing a union of algebra and geometry using Cartesian coordinates. He stated
+‘Just as arithmetic consists of only four or ﬁve operations, namely, addition, subtraction,
+multiplication, division and the extraction of roots, which may be considered a kind of divi-
+sion, so in geometry, to ﬁnd required lines it is merely necessary to add or subtract lines.’
+Descartes thus postulated an equivalence between line segments and numbers, something
+the Greeks were not prepared to do. This achievement is identiﬁed by John Stuart Mill, ‘the
+greatest single step ever made in the exact sciences’6.
+The Cartesian coordinate system proposed by Descartes, becomes confused, however,
+with the later development of the Argand diagram, which, while isomorphic to the Cartesian
+plane, consists of one real and one imaginary axis, and so not compatible with the idea
+of space as isotropic. To add to the confusion, Hamilton in 1843 generalized the complex
+numbers to three space, deﬁning the algebra of the quaternions using the basis elements i, j, k
+that can also be used as a basis for three dimensional space. This confused state of aﬀairs,
+on exactly how to represent three-space coordinates and rotations, was ﬁnally resolved by
+William Cliﬀord in 1873. Cliﬀord accepted the Cartesian coordinate system of Descartes, but
+then integrated the algebra of complex numbers and quaternions as the rotation operators
+within this space. Cliﬀord also achieved a fulﬁllment of Descartes’ original vision of a vector
+being able to be manipulated in the same way as ordinary algebraic quantities, by deriving
+a multiplication and division operation for vectors. Additionally Cliﬀord’s system extended
+this idea to its natural conclusion, allowing not just lines, but also areas and volumes to
+be also treated in this same way. Cliﬀord however also extended this idea by claiming that
+‘That this variation of the curvature of space is what really happens in that phenomenon
+which we call the motion of matter, whether ponderable or ethereal.’7 This foreshadowed the
+3
+idea used by Einstein many years later for his theory of gravity. The properties of spacetime
+as espoused in general relativity were nicely expressed by Drude8: ‘The conception of ether
+absolutely at rest is the most simple and the most natural, at least if the ether is conceived
+to be not a substance but merely space endowed with certain physical properties.’
+B.
+Cliﬀord’s deﬁnition of three-space
+How did Cliﬀord solve the problem of forming an integrated description of three-space
+that combined Cartesian coordinates and the algebra of complex numbers and quaternions?
+Following Cliﬀord, we ﬁrstly represent the three degrees of freedom in a Cartesian coordinate
+system by the algebraic constants e1, e2 and e3 as shown in Fig. 1, which we deﬁne to have
+a positive square, that is e2
+1 = e2
+2 = e2
+3 = 1. The next crucial step is then to specify these
+elements as anticommuting, that is ejek = −ekej for j ̸= k.
+These few deﬁnitions are
+suﬃcient to deﬁne Cliﬀord’s system.
+Geometrically, the basis elements e1, e2, e3, the bivectors e2e3, e1e3 and e2e3 and the
+trivector e1e2e3, are natural constructs to represent unit lines, unit areas, and unit volumes
+respectively. We also ﬁnd that the compound algebraic elements, the bivectors e2e3, e1e3
+and e2e3 all square to minus one, for example, (e1e2)2 = e1e2e1e2 = −e1e1e2e2 = −1,
+using the anticommutivity and positive square of the basis elements. We can now identify
+an isomorphism of the three bivectors with the three quaternions of Hamilton, so that
+i ↔e2e3, j ↔e1e3, k ↔e1e2,thus integrating the quaternions into Cliﬀord’s system. Also,
+in the plane, the bivector e1e2 can be used as a replacement for the unit imaginary √−1,
+forming a complex-like number a + ib, where we deﬁne i = e1e2.
+The ﬁnal compound
+element, the trivector j = e1e2e3 also squares to minus one and commutes with all basis
+elements and so is isomorphic to the scalar unit imaginary √−1 in three dimensions. Now,
+because the unit imaginary is no longer required in Cliﬀord’s system, and because the unit
+imaginary was ﬁrst used in complex numbers that are isomorphic to GA in two dimensions,
+we will adopt the widely used symbol i = e1e2 to represent the unit imaginary when in two
+dimensions, and in three dimensions, we will adopt j = e1e2e3, a commonly used symbol in
+electrical engineering to represent the unit imaginary. This distinction between two forms of
+the unit imaginary √−1, as i and j in two and three dimensions respectively, has physical
+signiﬁcance that we illustrate when describing Dirac’s equation for the electron, in a later
+4
+section.
+FIG. 1: The elements of Cliﬀord’s model for three space. This consists of three unit vectors e1, e2
+and e3, three unit areas e2e3, e3e1 and e1e2 and a unit volume j = e1e2e3. The pure scalars then
+deﬁning points to form a complete algebraic description of three-dimensional physical space.
+Now, using the trivector j we also ﬁnd the dual relations e1e2 = je3, e3e1 = je2 and
+e2e3 = je1. For example, je1 = e1e2e3e1 = e2
+1e2e3 = e2e3, as required. These relations can
+be summarized by the relation epeq = δpq + jϵpqrer, where p, q, r ∈{1, 2, 3} and δ, ϵ are the
+well known Kronecker delta function’s and the antisymmetric tensor respectively, which we
+see describes the Pauli algebra, in fact. Hence, we can use Cliﬀord’s basis vectors ek to
+replace the three Pauli matrices σk commonly used to describe quantum mechanical spin.
+The competing mathematical systems that Cliﬀord uniﬁed are shown in Fig. 2. In the
+plane the unit imaginary √−1 is replaced with the bivector i = e12, using the subscript
+notation e12 = e1e2. Hamilton’s three quaternions i, j and k representing rotations about
+the three available axes, can be replaced with the bivectors e23, e13 and e12 respectively,
+as shown, with the Cartesian axes described by unit vectors e1, e2 and e3. Thus Cliﬀord’s
+5
+FIG. 2: Cliﬀord’s representation of three space. Firstly, the Cartesian plane is deﬁned by the
+vectors e1 and e2, with the bivector e12 identiﬁed with the unit imaginary used to deﬁne the
+Argand diagram. The inverse of a vector v is also shown in red, both for the Cartesian case and
+for the Argand plane. In 3D, deﬁned by the vectors e1, e2 and e3, the non-commuting quaternions
+i, j and k are replaced by the three bivectors e23, e13 and e12 as shown.
+system, consisting of just the three elements e1, e2 and e3, uniﬁes Cartesian coordinates,
+complex numbers and the quaternions into a single mathematical system.
+C.
+The Cliﬀord vector product
+Using the three basis elements we can deﬁne a vector v = v1e1+v2e2+v3e3, where vi ∈ℜ,
+and given a second vector u = u1e1 + u2e2 + u3e3, we can ﬁnd their algebraic product using
+the distributive law of multiplication over addition, giving
+uv
+(1)
+= (e1u1 + e2u2 + e3u3)(e1v1 + e2v2 + e3v3)
+= u1v1 + u2v2 + u3v3 + (u2v3 −v2u3)e2e3 + (u1v3 −u3v1)e1e3 + (u1v2 −v1u2)e1e2
+= u · v + u ∧v,
+6
+which produces a sum of the dot and wedge products. This algebraic product is commonly
+referred to as the geometric product. If we now use the dual relations established earlier,
+we can transform this result to
+uv = u1v1 + u2v2 + u3v3 + j ((u2v3 −v2u3)e1 + (u1v3 −u3v1)e2 + (u1v2 −v1u2)e3) (2)
+= u · v + ju × v,
+which now forms a resultant in the form of a complex-like number consisting of the dot and
+cross products. Both the wedge product form and the cross product form are useful, though
+the dual relation, allowing the cross product form, only applies in three dimensions. Hence
+we can see that the dot and the cross products indeed appear intrinsic to three dimensional
+space, however the advantage of the Cliﬀord system is that they are uniﬁed into a single
+invertible number.
+We can also identify a limitation of deﬁning the cross product as a
+separately deﬁned product, as it does not naturally extend to higher dimensional spaces,
+whereas the formulation in Eq. (1) does. The expression in Eq. (2) generated by simply
+expanding the brackets deﬁning two vectors thus provides an alternative calculation tool to
+the conventional method of calculating the determinant of a 3 × 3 matrix formed from the
+components of the two vectors. Cliﬀord’s description of vector products relying solely on the
+elementary rules of algebra, thus has the advantage of avoiding the additional mathematical
+machinery required when handling traditional row or column vectors.
+As can be seen from Eq. (1), for the case of a vector multiplied by itself, the wedge
+product will be zero and hence the square of a vector v2 = v · v, becomes a scalar quantity.
+This then allows us to deﬁne the inverse of a vector v as
+v−1 = 1
+v2v.
+(3)
+Checking this result we ﬁnd vv−1 =
+1
+v2vv = 1 as required, so that we can form the vector
+division u
+v ≡uv−1.
+We can now compare the inverse of a Cartesian vector with the inverse of complex number.
+Given a complex number z = reiθ we ﬁnd the inverse z−1 = (1/r)e−iθ, that has an inverse
+length, with a negative angle. For a Cartesian vector v = e1reiθ = r cos θe1 + r sin θe2 in
+Cliﬀord’s system, we ﬁnd the inverse vector v−1 = (1/r)e1eiθ = (1/r) cos θe1 + (1/r) sin θe2
+that is a vector of inverse length, but in the same direction as the original vector, as shown
+in Fig. 2. The negative direction for the angle θ for the case of the inverse of a complex
+7
+number, forming an inverse rotation, also conﬁrms their natural role as rotation operators
+rather than as a replacement for Cartesian vectors.
+As a simple application of Cliﬀord’s geometric product, given two vectors a = a1e1 +
+a2e2 + a3e3 and b = b1e1 + b2e2 + b3e3, we can produce a third vector c = a + b, as shown
+in Fig. 3. We then ﬁnd that
+c2 = (a + b)2 = a2 + b2 + ab + ba = a2 + b2 + 2a · b,
+(4)
+using the the result from Eq. (2) that ab + ba = a · b + ja × b + b · a + jb × a = 2a · b =
+−2|a||b cos C, where C is the angle between the vectors a and b, a result also known as the
+law of cosines for triangles. Note the minus sign in the relation a · b = −|a||b cos C as the
+angle deﬁned by a · b produces the exterior angle π −C in this case.
+FIG. 3: Deriving the law of cosines for triangles. From the diagram we have the vector relation
+that c = a + b, that gives using the geometric product c2 = a2 + b2 + 2a · b.
+D.
+Example 1: Area calculation
+Inspecting Fig. 4(a), we might wish to know the area enclosed by the two vectors, which
+we can calculate from a variety of geometrical constructions, to be u1v2−u2v1. Alternatively,
+from Eq. (1), we can write the product of the two vectors
+uv = u · v + u ∧v = u1v1 + u2v2 + (u1v2 −u2v1)e1e2,
+(5)
+8
+FIG. 4: Calculating areas using the geometric product. For two vector u and v we can ﬁnd the
+area of the parallelogram Ap = ⟨uv⟩2 and the area of the triangle At = 1
+2⟨uv⟩2, as shown.
+then we can see that the area is given by the bivector term u∧v. The bivector e1e2 represents
+a unit area, and so it is natural to expect this component to represent the area. Therefore
+we can write for the area of the parallelogram
+Ap = ⟨uv⟩2,
+(6)
+where the notation ⟨uv⟩2 means to retain the second grade or bivector terms. Dimensionally
+this also makes sense, because we are looking for a result with dimensions of area or squared
+length. This argument also applies to three dimensions, where the volume will therefore
+need to be grade 3, that is for three vectors we ﬁnd the enclosed volume V = ⟨uvw⟩3 as
+expected. Thus a routine calculation of the geometric product, followed by the selection of
+the desired components dimensionally, allows the relevant information to be extracted.
+Consequently, if we wish to ﬁnd the area of a triangle with two sides given by u and v
+where the third side is then given by u + v, as shown in Fig. 4(b), then clearly we form an
+area At = 1
+2⟨uv⟩2. Picking any two sides of the triangle will produce the same area, that is
+u ∧v = (u + v) ∧v = u ∧(u + v) as u ∧u = v ∧v = 0. This approach to calculating
+areas can also be extended to more general shapes simply by dividing the shape into a set
+of triangles and then summing the triangles.
+9
+E.
+The multivector
+In GA, the basis elements e1, e2 and e3 are algebraic constants and so we are free to
+add the various scalar, vector, bivector and trivector components together. In fact, adding
+all available components, we form the space of multivectors ℜ⊕ℜ3 ⊕V2 ℜ3 ⊕V3 ℜ3, an
+eight-dimensional real vector space also denoted by Cℓ3(ℜ), which can be written
+M = a + v + jw + jt,
+(7)
+which shows in sequence, a scalar a, vector v = vkek, bivector jw = jwkek and trivector jt
+terms, where k ∈{1, 2, 3}. This general three-space multivector can be used to represent
+lines, areas and volumes within three dimensions, as well as a diverse range of physical
+phenomena such as electromagnetic ﬁelds. As already noted the bivectors are isomorphic to
+the three quaternions i, j, k, and we ﬁnd the multivector a + jb = a + jb1e1 + jb2e2 + jb3e3
+isomorphic to a quaternionic number q = a + b1i −b2j + b3k. We have already identiﬁed
+e1, e2 and e3 with the Pauli matrices, and for a Pauli spinor, representing a spin-1
+2 particle,
+we have the mapping
+|ψ⟩=
+
+a + ia3
+−a2 + ia1
+
+↔ψ = a + ja1e1 + ja2e2 + ja3e3 = a + ja,
+(8)
+where i = √−1, also mapping to the even sub algebra of the multivector, which shows the
+equivalence of GA bivectors, Pauli spinors and quaternions9.
+We will also see later how the electromagnetic ﬁeld antisymmetric tensor F µν, maps as
+follows into the vector and bivector components of the multivector10
+F µν ↔F = E + jB,
+(9)
+with the dual tensor Gµν given in GA by simply G = jF. We have found that the scalars and
+bivectors can be used to represent the Pauli spinors, and the vector and bivector components
+used to describe the electromagnetic ﬁeld and so we might ask if there is any physical
+phenomena that requires the full multivector, as shown in Eq. (7) for its representation.
+We ﬁnd, in fact, that the wave function used to represent the electron in Dirac’s relativistic
+wave equation, maps to the full multivector.
+The great versatility of the three-space multivector is demonstrated in Table I, being able
+to replace a large variety of mathematical structures and formalisms, as well as elegantly
+describe many physical phenomena11.
+10
+GA multivector
+Alternate formalism
+Description
+v1e1 + v2e2 + v3e3
+[σ1, σ2, σ3]T
+Vectors/Pauli matrices
+a + ib, i = e12
+a + ib,
+i = √−1
+Complex numbers
+a + be23 + ce13 + de12 a + bi + cj + dk, |ψ⟩=
+
+a + ia3
+−a2 + ia1
+
+Quaternions/Pauli spinors
+E + jB
+F µν, µ, ν ∈{0, 1, 2, 3}
+Electromagnetic ﬁeld tensor
+a + E + jB + jb
+ψµ, µ ∈{0, 1, 2, 3}
+Complex Dirac wave function
+TABLE I: An illustration of how the GA multivector replaces a variety of alternate mathematical
+formalisms.
+F.
+Common algebraic operations on a multivector
+Descartes claimed that the ﬁve common algebraic operations of addition, subtraction,
+multiplication, division and square root, could be applied to his line segments, however this
+idea can now be extended to areas and volumes as well as composite quantities described
+by the multivector in Eq. (7). The multivector represents a set of elements, containing a
+line element, an areal element (bivector) and a volume element (trivector). When algebraic
+operations are applied to these sets of geometric elements, we form a new set of geometric
+elements within the space of multivectors.
+FIG. 5: A multivector M = a + v + jw + jt representing a point, line, area and volume, that can
+be added, subtracted, multiplied or divided by other multivectors.
+11
+1.
+Working with multivectors
+Addition and subtraction are simply deﬁned by adding like components, that is, if M1 =
+a1 + v1 + jw1 + jt1 and M2 = a2 + v2 + jw2 + jt2, then M1 + M2 = (a1 + a2) + (v1 + v2) +
+j(w1 + w2) + j(t1 + t2) and similarly for subtraction. The multiplication operation M1M2
+is simply formed by expanding the brackets containing each multivector, as for the product
+of two vectors.
+For the general multivector M = a+v+jw+jt, it is useful to deﬁne two automorphisms.
+Firstly reversion, that reverses the order of the basis products, giving M † = a + v −jw −jt
+and space inversion M ∗= a −v + jw −jt.
+We can then deﬁne Cliﬀord conjugation
+¯
+M = M †∗= a −v −jw + jt, that gives M ¯
+M = a2 −v2 + w2 −t2 + 2j(at −v · w), a
+commuting complex-like number. We therefore ﬁnd the inverse to M
+M −1 = ¯
+M/(M ¯
+M).
+(10)
+The multivector inverse fails to exist when M ¯
+M = 0 or when a2+w2 = v2+t2 and at = v·w,
+which we can write as the single condition (v + jw)2 = (a + jt)2. The previously deﬁned
+vector inverse in Eq. (3) obviously now becomes a special case of this general multivector
+inverse. This formula also applies as well in one and two dimensional space.
+2.
+The square root of a multivector
+In order to fully satisfy Descartes ideal of common algebraic operations being applicable
+to geometric quantities, such as lines and areas, we now also seek the square root of a
+multivector.
+Given a general two-dimensional multivector M = a + v + ib, then seeking a multivector
+N, such that N 2 = M, we ﬁnd
+N = M
+1
+2 = ± 1
+2c
+ 2c2 + v + ib
+
+,
+(11)
+where we ﬁnd from the quadratic formula that c2 = a±
+√
+a2−v2+b2
+2
+.
+However, if we use the amplitude of a multivector, deﬁned as
+|M| =
+p
+M ¯
+M,
+(12)
+12
+which is in general a complex-like number, then we can write the square root given in
+Eq. (11) as
+M
+1
+2 = ±
+1
+p
+M + ¯
+M ± 2|M|
+(M ± |M|)
+(13)
+that allows a deﬁnition of the square root without the need to select individual components
+from the multivector under consideration. It appears we may have deﬁned the square root
+operation recursively, as the root operation also appears in the denominator. However we
+reserve the square root symbol √for the case where the argument is always real or complex-
+like and so is already well deﬁned using complex number theory. Conveniently, we ﬁnd that
+this result also applies unchanged in three dimensions, so that we therefore have a general
+result for the square root of a multivector up to and including dimension three12.
+Also, because multivector multiplication is associative we can now ﬁnd all the rational
+powers M p/2q, where p, q are integers. However, to take powers of multivectors, including
+fractional powers such as square roots, it is more general to achieve this through logarithms
+and exponents.
+Exponential map of a multivector
+The exponential of a multivector is deﬁned by constructing the Taylor series
+eM = 1 + M + M 2
+2! + M 3
+3! + . . . ,
+(14)
+which is absolutely convergent for all multivectors M 5.
+Given a three-dimensional multivector a + v + jw + jt, then deﬁning F = v + jw, we
+ﬁnd F 2 = (v + jw)2 = v2 −w2 + 2jv · w. We then deﬁne |F| =
+√
+F ¯F = −j
+√
+F 2 and so we
+can write F = j ˆF|F|, where ˆF = F/
+√
+F 2 and ˆF 2 = 1. Hence
+ea+v+jw+jt = ea+jtej|F| ˆF
+(15)
+= ea+jt
+ 
+1 + j ˆF|F| −|F|2
+2!
+−j ˆF|F|3
+3!
++ |F|4
+4!
++ . . .
+!
+= ea+jt 
+cos |F| + j ˆF sin |F|
+
+.
+If |F| = 0, then referring to the second line of the derivation above, we see that all terms
+following j ˆF|F| are zero, and so, in this case ea+v+jw+jt = ea+jt(1 + v + jw).
+13
+We can thus write a multivector in polar form
+a + v + jw + jt = rejφF/|F| = r
+
+cos φ + F
+|F| sin φ
+
+,
+(16)
+where r = |M| and φ = arccosh
+
+a+jt
+|M|
+
+. Hence
+log(a + v + jw + jt) = log |M| + arccos
+a + jt
+|M|
+ F
+|F|.
+(17)
+This result being a generalization of the well known result for quaternions, when v = t = 0.
+We can now also deﬁne the multivector power M P = elog(M)P, where P can now also be
+generalized to a multivector, allowing many exotic possibilities. For example, we could raise
+the multivector 2 + ˆv to the power of the unit vector ˆv, giving
+(2 + ˆv)ˆv = elog(2+ˆv)ˆv = 2 + ˆv,
+(18)
+using Eq. (17) and Eq. (15).
+Using the exponential function, the full set of trigonometric and inverse trigonometric
+functions can now also be found for general multivector arguments12. For example, we can
+take the cosine of a vector, giving cos v = cosh |v|.
+G.
+The geometry of the multivector
+Having shown how the multivector, representing a set of geometric elements, consisting
+of a point, line, area and volume, is subject to the common algebraic operations, we can
+now ask some elementary geometrical questions such as: What is the result of multiplying
+a line by an area? We can calculate this for a line v and a generally oriented area jw as
+vjw = jv ∧w + jv · w = −v × w + jv · w. As might have been expected this forms a
+volume jv ·w, and if the line is not perpendicular to the plane, we also produce a line, given
+by the vector −v × w in the plane of jw and orthogonal to v, as shown in Fig. 6.
+H.
+Reﬂection of vectors
+Assuming a light ray with an incident vector a, is impinging on a plane mirror jˆn, with
+a unit normal ˆn, ﬁnd the reﬂected vector. We ﬁnd the reﬂected vector, simply as follows,
+b = −ˆnaˆn.
+(19)
+14
+FIG. 6: A line v multiplied by an area jw. This produces a volume jv · w as expected but also a
+line −v × w perpendicular to v in the plane of jw.
+FIG. 7: A light ray incident on a plane mirror jˆn. We ﬁnd the reﬂected ray b = −ˆnaˆn.
+If we reﬂect b in the same mirror we will recover the original vector a because ˆn2 = 1,
+however if we reﬂected b in a slight rotated mirror plane j ˆm we will in fact ﬁnd a rotated
+vector
+b = ˆmˆnaˆn ˆm = ( ˆm · ˆn + ˆm ∧ˆn)a(ˆn · ˆm + ˆn ∧ˆm).
+(20)
+Now we have the unit bivector ˆB = ˆm ∧ˆn/ sin θ describing the plane of rotation and
+θ = arccos ˆm · ˆn is the angle between the vectors ˆm and ˆn, then
+b = (cos θ + ˆB sin θ)a(cos θ −ˆB sin θ) = eθ ˆBae−θ ˆB,
+(21)
+which will rotate the vector a an angle of 2θ radians in the plane described by the unit
+bivector ˆB.
+15
+I.
+Rotation of vectors
+Therefore, if we wish to rotate a vector v by an angle θ, then we can use the operation,
+v′ = RvR† = ejwθ/2ve−jwθ/2
+(22)
+where R = ej ˆwθ/2. The unit bivector j ˆw sets the plane of rotation, with a perpendicular
+axis ˆw, that rotates all vectors θ radians within this plane. In two dimensions this formula
+reduces to the single sided operator v′ = eiwθv due to the anticommuting nature of i = e12
+over vectors. The rotation formula in two dimension now analogous to the conventional
+formula for the rotation of vectors in the Argand plane.
+If we allow a unit vector u to represent the axis of a magnetic dipole. Then placing
+our particle in a magnetic ﬁeld B, then using the rotation formula in Eq. (22), we ﬁnd the
+precession about the B direction, given by
+u′ = ejBtue−jBt,
+(23)
+where we can see the precession is steady in time, and the rate of precession given by the
+strength of the ﬁeld.
+Rotations in geometric algebra are superior to orthogonal matrices in representing 3D
+rotations on four points: (i) it is easier to determine the bivector representation of a ro-
+tation than the matrix representation, (ii) they avoid the problem of gimbal lock, (iii) it
+is more eﬃcient to multiply bivectors than matrices, and (iv) if a bivector product is not
+quite normalized due to rounding errors, then we simply divide by its norm, whereas if
+a product of orthogonal matrices is not orthogonal, then we need to use Gram-Schmidt
+orthonormalization, which is numerically expensive and not canonical.
+J.
+Interpreting solutions of quadratics using GA
+Imaginary numbers ﬁrst appeared as the roots to quadratic equations, enabling solutions
+to equation such as x2 + 4 = 0, with a solution x = 2√−1. However, Gauss noted in 1825
+that ‘The true metaphysics of the square root of minus one is elusive’.
+However, with GA we can now supply a real geometrical solution to this equation, using
+the unit area i = e12, with x = 2e12, that on substitution gives (2e12)2 + 4 = 0, that indeed
+solves the equation. In fact many geometrical square roots of minus one exist, and in two
+16
+dimensions we can write a general solution to M 2 = −1, as M = x + i
+√
+1 + x2, where
+x = x1e1 + x2e2.
+Hence in GA, we can write a solution x = a + ib, which from de Moivre’s theorem, gives
+R = reiθ = r(cos θ + i sin θ). In two-space we can rotate vectors using the equation
+v′ = Rv,
+(24)
+that will rotate a vector v = v1e1 + v2e2 by θ radians in a clockwise direction. For example,
+if R = eiπ/2 = i = e12, then if v = e2, then v′ = Rv = e1e2e2 = e1, or a clockwise
+rotation by π/2 degrees. Also, if we seek to rotate a vector by π radians then we ﬁnd that
+v′ = eiπv = −v. This also illuminates the mysterious formula eiπ = −1, that simply means
+in this context, that rotating a vector by π radians ﬂips its sign or in other words inverts its
+direction.
+Hence solutions of quadratics using complex numbers imply that we are using rotation
+operators in the plane, instead of simply scaling along the real number line. This also explains
+why we always have two symmetrical complex solutions, if they exist, as they represent ±θ
+directions for the rotation operation. So given a quadratic equation ax2 + bx + c = 0, and
+substituting a rotor solution x = −re−iθ, we can, acting with the quadratic equation on a
+general vector v on the left, produce the vector equation
+ar2e2iθv −breiθv + cv = 0,
+(25)
+where we used the property of exponentials that (eiθ)2 = e2iθ. Hence, in order to solve the
+quadratic these three vectors must sum to zero, that can be shown visually in Fig. 8, where,
+without loss of generality, we have chosen a reference direction v = e1.
+From Fig. 8 we ﬁnd
+r2 = c
+a that gives r = p c
+a and θ = arccos
+
+b
+2√ac
+
+.
+1.
+Quadratic equation example
+Assuming we are required to solve the quadratic
+x2 + x + 1 = 0
+(26)
+then we ﬁnd the isosceles triangle shown in Fig. 9.
+From the property of isosceles triangles
+17
+             	
+-A
+A
+A
+A
+A
+A
+A
+A
+A
+A
+A
+A
+AK
+br
+c
+ar2
+θ
+θ
+FIG. 8: Graphical solution to a quadratic equation. To solve graphically, we need to vary r ∈ℜ
+and θ ∈[0, π/2) while ensuring the arrows close in a triangle. Note that we have an isosceles
+triangle and real solutions correspond to θ = 0.
+             	
+-A
+A
+A
+A
+A
+A
+A
+A
+A
+A
+A
+A
+AK
+r
+1
+r2
+θ
+θ
+FIG. 9: Solving x2 + x + 1 = 0 graphically. From the isosceles triangle we see that r = ±1, and
+hence we have an equilateral triangle, which implies θ = π/3. Therefore x = −re±iθ = −1
+2 ± i
+√
+3
+2 .
+we have r = 1 and we therefore realize, in this case, that we have an equilateral triangle,
+and hence θ = π
+3, and hence we have the solution
+x = −e±iπ/3 = −1
+2 ± e12
+√
+3
+2 ↔−1
+2 ±
+√
+−1
+√
+3
+2 ,
+(27)
+in agreement with the standard quadratic formula.
+Using GA we therefore have a new
+method of solving quadratic equations.
+Other extensions now present themselves for the quadratic equation, such as expanding
+the solution space further to allow x to be a quaternion (represented by bivectors), or to
+18
+promote x, and a, b, c to become full multivectors. In the quaternion case, geometrically it
+represents the diagram in Fig. 8 being rotated out of the plane around the line c.
+K.
+Calculus and elementary diﬀerentiation
+When applying calculus within the framework of GA, the one key addition is the need to
+respect the non-commuting nature of all products, however this allows many simpliﬁcations.
+For example for the product rule between vectors (that now utilize the geometric product)
+we ﬁnd
+(fg)′ = f ′g + fg′
+(28)
+the same as for algebraic variables, where the prime symbol represents diﬀerentiation with
+respect to some variable. This now replaces the two separate rules for the dot and cross
+products, that (f · g)′ = f ′ · g + f · g′ and (f × g)′ = f ′ × g + f × g′. For the more general
+case of the vector gradient, deﬁned by ∇= e1
+∂
+∂x + e2
+∂
+∂y + e3
+∂
+∂z, we ﬁnd for a vector ﬁeld
+v = v1e1 + v2e2 + v3e3 that
+∇v = ∇· v + j∇× v
+(29)
+forming a convenient union of the divergence and curl. However there is no reason why we
+cannot apply the gradient to a general multivector ﬁeld, as ∇M, where M is a three-space
+multivector.
+L.
+Maxwell’s equations in GA
+Electromagnetism is one of the foundational theories of physics and Maxwell’s equations13
+were ﬁrst published in 1865.
+Maxwell’s original equations were written for three-space,
+requiring 12 equations in 12 unknowns. These equations were later rewritten by Heaviside
+and Gibbs, in the then newly developed formalism of dot and cross products, which reduced
+them to the four equations now seen in most modern textbooks10 and shown below in S.I.
+19
+units
+∇· E = ρ
+ϵ ,
+(Gauss’s law);
+(30)
+∇× E + ∂tB = 0,
+(Faraday’s law);
+∇× B −1
+c2∂tE = µJ, (Amp`ere’s law);
+∇· B = 0,
+(Gauss’s law of magnetism),
+where E, B, J are conventional three-vector ﬁelds, with E the electric ﬁeld strength and B
+the magnetic ﬁeld strength and ∇is the three gradient deﬁned previously.
+However inspecting the form of the geometric product for uv = u·v +ju×v, we can see
+that these equations can now be combined. If we multiply the second and fourth equations
+by j, then the ﬁrst and second equations can be combined along with the third and fourth
+to give
+∇E + ∂tjB = ρ
+ϵ
+(31)
+∇jB + 1
+c2∂tE = −µJ,
+where ∇E = ∇· E + j∇× E. However, these two remaining equations can now be added
+to produce
+1
+c∂t + ∇
+
+(E + jcB) = ρ
+ϵ −cµJ.
+(32)
+If we deﬁne the electromagnetic ﬁeld F = E +jcB and the four-gradient ∂= 1
+c∂t +∇, with
+the source J = ρ
+ϵ −cµJ, we ﬁnd
+∂F = J.
+(33)
+We can see that the B ﬁeld, is written as a pseudovector jB, as part of the ﬁeld F. The
+diﬀerent nature of the E and B ﬁelds is thus evident from the GA formalism but obscured in
+the tensor and Gibbs’ vector formalism, where both are represented as simply polar vectors.
+Also if we wish to describe Maxwell’s original four equations as shown in Eq. (30) in plain
+English we would ﬁnd it very cumbersome, however with GA, inspecting Eq. (33), we can
+simply say that the gradient of the ﬁeld F observed is proportional to the electromagnetic
+sources present.
+20
+M.
+The Dirac equation
+The Dirac equation is the relativistic wave equation describing spin-1
+2 particles. We ﬁnd
+using GA, that we can write the free Dirac equation in real three-space as
+∂F = −mF ∗i,
+(34)
+where the ﬁeld F is now the full multivector F = a + E + jB + jb, and F ∗signiﬁes space
+inversion of the multivector F and i = e1e2 deﬁned earlier.
+The similarity of Dirac’s equation with Maxwell’s equation now becomes evident, com-
+paring Eq. (34) and Eq. (33). Also setting m = 0 in the Dirac equation, in accordance with
+a massless photon, we ﬁnd ∂F = 0, which is the source free Maxwell equation. Also, with
+the GA form of the Dirac equation, we can see that it describes a multivector ﬁeld, given
+by Eq. (7), over real three-space, that is, at each point in three-space we have a multivector
+valued ﬁeld deﬁned. This is clearly a signiﬁcantly simpliﬁed representation of the Dirac
+equation, which is normally considered embedded in four-dimensional spacetime employing
+4 × 4 complex matrices, as shown in Appendix B.
+N.
+Spacetime
+It might be argued that the correct framework for physical theories is Minkowski space-
+time that includes a fourth dimension for time. However, this can be once again absorbed
+into GA in three dimensions without the addition of an extra dimension. For simplicity
+we illustrate here the case for two dimensions, though, because most interactions typically
+considered in special relativity are planar, it is still practically very useful. If we deﬁne a
+spacetime event multivector as
+S = x + it
+(35)
+where x = x1e1 + x2e2 is the space coordinate and t is the time, where i = e12, the bivector
+of the plane. We then ﬁnd that
+S2 = (x + it)(x + it) = x2 −t2 + t(xi + ix) = x2 −t2
+(36)
+using the fact that ix is anticommuting, thus producing the conventional spacetime dis-
+tance, with the negative contribution to the metric from the time component. If we deﬁne
+21
+the Lorentz transformation as L = eφiˆveiθ, applied to the spacetime coordinates using the
+transformation S′ = LS ¯L, where ¯L = e−iθe−φiˆv, we ﬁnd
+(S′)2 = eφiˆveiθSe−iθe−φiˆveφiˆveiθSe−iθe−φiˆv = eφiˆveiθS2e−iθe−φiˆv = S2,
+(37)
+using the fact that S2 is a scalar, thus leaving the spacetime distance invariant, deﬁning
+the restricted Lorentz group14. When applied to a spacetime event S, we ﬁnd for φ = 0
+pure rotations, and for θ = 0, we ﬁnd pure boosts. This example used to brieﬂy illustrate
+the capacity of GA to embody the properties of spacetime without the requirement of an
+additional dimension15.
+II.
+CONCLUSION
+In this paper we ask the question ‘What is the simplest and most natural mathematical
+representation of three-dimensional physical space?’ and we illustrate that GA provides a
+natural formalism subsuming the algebra of complex numbers and quaternions into a single
+algebraic system over a real ﬁeld. We provide pedagogical examples illustrating that Clif-
+ford’s GA is an elegant mathematical system that successfully represents the key properties
+of physical space, such as points, lines, areas and volumes as well as a simpliﬁed repre-
+sentation of physical theories with the two examples of Maxwell’s equations and the Dirac
+equation, both being written as single equations in real three dimensional space. We also
+show how the multivector, shown in Eq. (7), can be viewed as a generalized number, useful
+in representing diﬀerent physical and geometrical quantities, such as electromagnetic ﬁelds,
+but still subject to the basic algebraic operations of addition, subtraction, multiplication,
+division and square root.
+At a more elementary level, we show how a general quadratic equation can be solved
+without recourse to complex numbers, giving the solutions geometric meaning as rotations
+in the plane.
+We adopt the symbols i = e12 in two dimensions and j = e123 for three dimensions as two
+geometric replacements for the generic scalar unit imaginary √−1, and we note a distinction
+between i and j in the GA form of the Dirac equation in Eq. (34).
+The development of GA is now expanding rapidly, with beneﬁts being found in research
+into quantum ﬁeld theory16, quantum tunneling17, quantum computing18, spacetime11,19,20,
+22
+general relativity and cosmology21–23, computer vision24, protein folding25, optics and
+metamaterials26–28, conformal algebra29, electrodynamics30, electrical circuit analysis31 and
+EPR-Bell experiments32.
+Many commentators believe that Cliﬀord’s mathematical system ‘should have gone on
+to dominate mathematical physics’33, but, Cliﬀord died young, at the age of just 33 and
+vector calculus was heavily promoted by Gibbs and rapidly became popular, eclipsing Clif-
+ford’s work, which in comparison appeared strange with its non-commuting variables. With
+the beneﬁt of hindsight, the non-commuting nature of GA reﬂects the non-commutivity of
+rotations in three-space, and hence is exactly what is required for these variables. Gibbs’
+system of vectors was relatively eﬃcient with regard to Maxwell’s equations, but with the
+new scientiﬁc discoveries of quantum mechanics and relativity it was found that standard
+vector analysis needed to be supplemented by many other mathematical techniques such as:
+tensors, spinors, matrix algebra, Hilbert spaces, diﬀerential forms etc. and as noted in34,
+‘The result is a bewildering plethora of mathematical techniques which require much learning
+and teaching, which tend to fragment the subject and which embody wasteful overlaps and
+requirements of translation.’ Conversely as we have seen GA is a natural formalism for not
+only Maxwell’s equations, Eq. (33 and also quantum mechanics, Eq. (34, but also special
+relativity15.
+With regard to an educational setting, we also have shown that geometric algebra pro-
+vides a natural representation of the basic properties of physical space, allowing intuitive
+manipulation of lines, areas and volumes using elementary algebraic operations, such as ad-
+dition and multiplication. Vectors can now be treated like normal algebraic quantities that
+also have an inverse, with the added simpliﬁcation that the dot and cross products do not
+need to be separately deﬁned but are produced as a byproduct from the geometric product.
+Hence it appears to be an excellent formalism to introduce into high-school and undergrad-
+uate university curricula as a powerful tool for basic geometrical analysis of space, which
+can be naturally extended to the study of university level subjects in electromagnetism,
+quantum theory and special relativity.
+23
+III.
+APPENDIX
+A.
+Dirac equation
+Dirac extended Schr¨odinger’s and Pauli’s equation into a relativistic setting in 1928,
+producing the equation
+γµ∂µψ = −mψi,
+(38)
+where i = √−1 and which uses the Einstein summation convention, where
+γ0 =
+
+
+1 0
+0
+0
+0 1
+0
+0
+0 0 −1
+0
+0 0
+0
+−1
+
+
+, γ1 =
+
+
+0
+0
+0 1
+0
+0
+1 0
+0
+−1 0 0
+−1
+0
+0 0
+
+
+, γ2 =
+
+
+0 0 0 −i
+0 0 i
+0
+0
+i 0 0
+−i 0 0 0
+
+
+, γ3 =
+
+
+0
+0
+1
+0
+0
+0
+0 −1
+1
+0
+0
+0
+0 −1 0
+0
+
+
+.
+(39)
+The gamma matrices satisfy the relation and
+{γµ, γν} = 2gµν,
+(40)
+as expected for a set of orthonormal basis vectors. Hence, the opinion of many people,
+that Dirac rediscovered Cliﬀord’s geometric algebra with its anti-commuting basis vectors.
+Dirac’s complex, four-space equation using 4×4 complex matrices, is isomorphic to the real
+three-space version, shown in Eq. (34).
+∗Electronic address: james.chappell@adelaide.edu.au
+1 H. S. M. Coxeter, Regular Polytopes, Dover Pubns, 1973.
+2 C. D. Hoyle, U. Schmidt, B. R. Heckel, E. G. Adelberger, J. H. Gundlach, D. J. Kapner, H. E.
+Swanson, Phys. Rev. Lett. 86 (2001) 1418–1421.
+3 A. Wedberg, A History of Philosophy, Clarendon Press, Oxford, 1982.
+4 B. Russell, A History of Western Philosophy, Simon and Schuster, New York, 1945.
+5 D. Hestenes, New Foundations for Classical Mechanics: Fundamental Theories of Physics,
+Kluwer Academic Publishers, New York, 1999.
+6 J. S. Mill, An Examination of Sir William Hamilton’s Philosophy, University of Toronto Press,
+Toronto, 1979.
+24
+7 W. K. Cliﬀord, Proceedings of the Cambridge Philosophical society 2 (1876) 157–158.
+8 P. Drude, The Theory of Optics, Longmans, Green, New York, 1920.
+9 J. M. Chappell, A. Iqbal, M. A. Lohe, L. Von Smekal, Journal of the Physical Society of Japan
+78 (2009) 054801.
+10 D. J. Griﬃths, Introduction to Electrodynamics, Prentice Hall, 1999.
+11 D. Hestenes, American Journal of Physics 71 (2003) 104–121.
+12 J. M. Chappell, A. Iqbal, L. J. Gunn, D. Abbott, PloS ONE 10 (2015).
+13 J. C. Maxwell, Royal Society Transactions 155 (1865) 459–512.
+14 J. R. Zeni, W. A. Rodrigues, International Journal of Modern Physics A 7 (1992) 1793–1817.
+15 J. M. Chappell, N. Iannella, A. Iqbal, D. Abbott, PLoS ONE 7 (2012) e51756.
+16 C. E. Dolby, S. F. Gull, Annals of Physics 293 (2001) 189–214.
+17 A. D. Challinor, A. N. Lasenby, S. S. Somaroo, C. J. L. Doran, S. F. Gull, Phys. Lett. A 227
+(1997) 143–152.
+18 R. Parker, C. Doran, Analysis of One and Two Particle Quantum Systems Using Geometric
+Algebra, Boston, MA: Birkh¨auser, pp. 213–226.
+19 D. Hestenes, American Journal of Physics 71 (2003) 691–714.
+20 D. R. Rowland, American Journal of Physics 78 (2010) 187–194.
+21 M. Berrondo, J. Greenwald, C. Verhaaren, American Journal of Physics 80 (2012) 905–912.
+22 A. N. Lasenby, C. J. L. Doran, S. F. Gull, Cosmological Consequences of a Flat-Space Theory
+of Gravity, Kluwer Academic, Dordrecht, pp. 387–396.
+23 S. D. C. Doran, A. Lasenby, I. Hinder, Phys. Rev. D 71 (2005) 124020.
+24 J. Lasenby, W. J. Fitzgerald, C. J. L. Doran, A. N. Lasenby, Int. J. Comp. Vision 36 (1998)
+191–213.
+25 P. Chys, P. Chacn, J. Comput. Chem. 33 (2012) 1717–1729.
+26 A. G. Santos, J. Quirino M. Sugon, D. J. McNamara, J. Opt. Soc. Am. A 29 (2012) 89–98.
+27 J. Quirino M. Sugon, D. J. McNamara, American Journal of Physics 72 (2004) 92–97.
+28 S. A. Matos, C. R. Paiva, A. M. Barbosa, The European Physical Journal Applied Physics 49
+(2010) 33006.
+29 L. Hu, K. Hao, X. Huang, Y. Ding, in: Y. Wu (Ed.), Software Engineering and Knowledge
+Engineering: Theory and Practice, volume 114 of Advances in Intelligent and Soft Computing,
+Springer Berlin Heidelberg, 2012, pp. 417–424.
+25
+30 T. G. Vold, American Journal of Physics 61 (1993) 505–513.
+31 M. Castro-Nunez, R. Castro-Puche, Circuits and Systems I: Regular Papers, IEEE Transactions
+on 59 (2012) 2056–2064.
+32 J. Christian, Arxiv preprint abs/1203.2529 (2012).
+33 C. J. L. Doran, A. N. Lasenby, Geometric Algebra for Physicists, Cambridge University Press,
+Cambridge, 2003.
+34 P. Simons, Dialectica 61 (2009) 381–395.
+26

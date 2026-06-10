@@ -1,0 +1,2162 @@
+THREE-DIMENSIONAL STRUCTURES were created by 8 com­
+puter using programs developed by Gary Watkins, a graduate stu­
+dent at tbe University of Utah. The simple "wire frame" version of 
+the interlocking blocks (top left) is readily produced because no 
+effort is made to remove hidden lines. By using special programs, 
+however, the hidden lines can be identified and the structure can 
+be displayed as a solid (top right). In this case the electron beam in 
+the display tube generates surfaces by a raster technique, point by 
+point and line by line; the entire process takes about a minute per 
+image. To make pictures in color three different black-and-white 
+images are created on the screen, one for each primary color, and 
+then photographed through filters on color film. As the two pic­
+tures at the bottom demonstrate, the computer program can also 
+create highlights, as if the pictures were taken with a flashbulb. 
+© 1970 SCIENTIFIC AMERICAN, INC
+COMPUTER DISPLAYS 
+Pictures "painted" rapidly and accurately by an electron bean1 under 
+computer control are helping designers and engineers at lTIany tasks. 
+COlTIputer displays can also help to clarify con1plex physical phenomena 
+W
+hereas a microscope enables us 
+to examine the structure of a 
+subminiature world and a tele­
+scope reveals the structure of the uni­
+verse at large, a computer display en­
+ables us to examine the structure of a 
+man-made mathematical world simu­
+lated entirely within an electronic mech­
+anism. I think of a computer display 
+as a window on Alice's Wonderland in 
+which a programmer can depict either 
+objects that obey well-known natural 
+laws or purely imaginary objects that 
+follow laws he has written into his pro­
+gram. Through computer displays I have 
+landed an airplane on the deck of a mov­
+ing carrier, observed a nuclear particle 
+hit a potential well, flown in a rocket at 
+nearly the speed of light and watched a 
+computer reveal its innermost workings. 
+My interest for some years has been 
+the programming of computers to draw 
+pictures on the face of a cathode ray 
+tube. Obviously computers can produce 
+pictures in other ways, such as by means 
+of mechanical plotters or by printing 
+arrays of symbols, but because the essen­
+tial problems in creating pictures by 
+computer can be understood by con­
+Sidering images produced by electron 
+beams I shall ignore these other forms of 
+output. I shall also ignore the kinds of 
+computer-driven picture tubes that pre­
+sent modest amounts of text at high 
+speed in such places as airline terminals 
+and brokerage offices; their operation is 
+straightforward. 
+Computer displays have become of 
+major importance to two groups of peo­
+ple. One group has a pictorial problem 
+in the workaday world for which it 
+would like computer help. These users, 
+for example, may want to shape a metal 
+paj·t on a computer-controlled machine 
+tool; they begin by describing the part 
+to a general-purpose computer, which 
+by Ivan E. Sutherland 
+draws a picture of the part and verifies 
+that the description is accurate. Other 
+users employ computers to produce the 
+intricate high-resolution photographic 
+masks required for making integrated 
+electronic circuits [see bottom illustra­
+tion on next two pages]. Similar pictorial 
+problems in which computers can help 
+arise in highway planning, automobile 
+and aircraft deSign, topographical map­
+ping, architecture, the layout of publi­
+cations and the production of clothing 
+patterns. In these and many more areas, 
+written language is far from adequate. 
+The other group using computer dis­
+plays is interested in gaining insight into 
+complex natural or mathematical phe­
+nomena. These users simulate physical 
+situations of various kinds in the com­
+puter and use display devices to present 
+the results of the simulation. For ex­
+ample, an organic chemist II)ay want to 
+synthesize 
+a 
+particular molecule; 
+he 
+creates a picture of the molecule on a dis­
+play screen and then initiates a program 
+by which the computer presents a selec­
+tion of simpler molecules from which 
+the desired substance can be synthesized 
+[see illustrations on pages 72 and 73]. 
+An engineer designing a communication 
+circuit asks the computer for a graph 
+showing how circuit response varies with 
+frequency. A physician studying how 
+blood flows through the arteries obtains 
+a plot that reveals high vorticity at ex­
+actly the locations where the lesions of 
+atherosclerosis are most common. A 
+physicist programs a computer to illus­
+trate how elementary particles interact 
+with their own electric fields to give his 
+students some feeling for quantum-me­
+chanical behavior. A circuit designer 
+draws a circuit and asks a computer to 
+simulate its operation and to plot its per­
+formance in a graph of voltage and cur­
+rent. A feedback theorist describes the 
+location of poles and zeros on a com­
+plex plane and watches as the computer 
+plots the root locus. A mathematician en­
+ters the equations for conformal map­
+pings and observes the maps produced 
+by each equation. A pilot practices take­
+offs and landings on a simulated airfield 
+that can assume any orientation on the 
+display screen as he operates "controls" 
+for engine power and aircraft attitude. 
+All these people, interested in educating 
+themselves or others, use computer dis­
+plays as one of many tools for gaining 
+deeper understanding of a problem. 
+Two Kinds of Display 
+Two broad classes of computer-dis­
+play systems are now in common use: 
+calligraphic displays and raster displays. 
+Calligraphic displays "paint" the parts of 
+a picture on the cathode ray tube in any 
+sequence given by the computer. The 
+electron beam in a calligraphic display 
+is moved from place to place in a pattern 
+that traces out the individual lines and 
+characters that make up the picture. Ras­
+ter displays make pictures in the same 
+way that television sets do: the image is 
+painted in a fixed sequence, usually from 
+left to right and from top to bottom. The 
+calligraphic display has the advantage 
+that information to be displayed can be 
+stored in computer memory in any order, 
+whereas information for a raster display 
+must first be sorted from top to bottom 
+and from left to right so that it can be 
+put on the screen in the correct se­
+quence. On the other hand, the deflec­
+tion amplifiers, deflection yokes and oth­
+er electronic components needed for a 
+raster display are much less costly than 
+those required for a calligraphic display, 
+not only because they need not be so 
+carefully made but also because suitable 
+components are now mass-produced. 
+57 
+© 1970 SCIENTIFIC AMERICAN, INC
+2 
+3 
+11 
+12 
+13 
+,--
+I 
+, 
+11 
+I 
+I 
+I 
+! 
+'--
+COMPUTER DESIGN OF "GREEK TEMPLE" demonstrates the 
+versatility and speed of present·day graphic displays and computer 
+programs. The sequence was photographed at the International 
+Business Machines Research Laboratory; the computer was an 
+IBM 1 130 with a 2250 display unit. The "draftsman" begins by ask· 
+4 
+5 
+14 
+15 
+ing the computer to display three geometric solids selected from a 
+library of shapes on file in a disk memory : a hexahedron, a cylin­
+der and a triangular prism (1). The remaining operations are car­
+ried out by pressing keys on an "interactive" console that can copy, 
+move, rotate or distort anything placed on the screen. The drafts-
+The task of sorting information from 
+top to bottom and from left to right for 
+presentation on raster displays has large­
+ly precluded their use for anything but 
+presentations of text. In principle, how­
+ever, a raster display has the potential of 
+producing pictures with a range of light 
+and dark tones, in color if desired, that 
+proVide a realism unequaled by the line 
+drawings of a calligraphic display. The 
+potential of this type of presentation can 
+be seen in the pictures on page 56, which 
+were made in our laboratory at the Uni­
+versity of Utah by photographing a low­
+speed simulation of a raster display. I 
+shall describe later some recent algo-
+rithms, or mathematical routines, for 
+sorting picture information to eliminate 
+hidden surfaces in making raster dis­
+plays. I believe such displays will have 
+become a common form of computer 
+output within a very few years. 
+The information to be projected on the 
+face of a computer display tube is speci-
+DESIGN OF INTEGRATED CIRCUITS exploits the flexibility and pre­
+cision now provided by interactive computer displays. This sequence, 
+photographed at Fairchild Semiconductor, was made with a Sanders dis­
+play unit coupled to an IBM 1130 computer. The goal in this applica­
+tion is to end up with photolithographic masks in which line patterns 
+are located with an accuracy of 50 millionths of an inch. The resolution 
+58 
+of the display is defined by a coordinate grid of 1,024 lines and 
+1,024 columns. The coordinates of the lines drawn on the face 
+of the cathode ray tube are recorded magnetically and then 
+used to control digitally driven machines that cut greatly en­
+larged versions of the masks. Subsequently the masks are op­
+tically reduced in size to the tiny dimensions characteristic of 
+© 1970 SCIENTIFIC AMERICAN, INC
+6 
+16 
+7 
+8 
+17 
+18 
+man lengthens the cylinder (2) and rotates the three elements to a 
+plan view (3). He then adds five more columns (4, 5, 6, 7). The dis· 
+play is rotated (8) until the columns are viewed at eye level (9) . 
+The hexahedron is then moved to a position below the columns 
+(10) and widened (11). The emerging temple is rotated to a side 
+9 
+10 
+19 
+20 
+view (12) and the hexahedron is lengthened until it becomes a 
+floor slab (13). The prism is raised (14) and lengthened (15). 
+Again the temple is rotated (16) and the prism is widened to form 
+a roof (17), The finished temple is displayed from above (18). Back 
+at ground level the viewer walks toward it (19) and enters (20). 
+fied in terms of a coordinate system that 
+covers the tube face. This coordinate sys­
+tem can be thought of as a grid of points 
+that covers the face of the tube even 
+though the grid is not actually etched on 
+the glass. The resolution of the display 
+system can be specified by saying how 
+many rows and columns of points there 
+are in the coordinate system. Most mod­
+ern display systems have a minimum res­
+olution of 1,024 rows and 1,024 columns 
+and a few systems have four times as 
+many rows and columns. To specify a 
+point on a 1,024-by-l,024 array requires 
+that each x and y value contain 10 bi­
+nary digits, or "bits" (210 = 1,024); to 
+specify a point in a 4,096-by-4,096 array 
+requires 12 bits for each coordinate. 
+Higher resolution is not generally sought 
+because it is difficult to maintain accu­
+racy at higher resolutions and also be­
+cause the diameter of the electron beam 
+is so large that having higher deflection 
+resolution improves the appearance of 
+integrated circuits. This circuit will be 150 mils on a side and 
+contain a total of 16 "cells" of seven different types. The pat· 
+tern in frame 1 is a mask that specifies the location of metal 
+interconnections in a logic cell containing 13 diodes and tran­
+sistors. In designing the pattern the operator uses a light pen 
+to indicate the two end points of a line segment and the dis· 
+play program automatically completes the line. The pen is also used to 
+move elements around. In this frame the ultimate cell is magnified 308 
+diameters. In frame 2, at lower magnification (77 diameters) , a variety 
+of cells are being summoned up from memory and are being moved into 
+position with the help of grid points. In frame 3 the routing for one lev­
+el of metal interconnections is being added. In frame 4 the job is done. 
+59 
+© 1970 SCIENTIFIC AMERICAN, INC
+the picture oniy slightly. Recently, how­
+ever, workers at 'the Bell Telephone 
+Laboratories have built a device that 
+uses a very fine laser beam to produce 
+computer-controlled film images with a 
+resolution of 32,000 lines and 26,000 
+columns. The device is being used to 
+make high-resolution circuit masks [see 
+top illustration on pages 66 and 67]. 
+Although modern calligraphic displays 
+have the ability to post dots, straight 
+lines and text, the earliest display sys­
+tems could post only individual dots on 
+the screen. The computer specified the x 
+and y coordinate for each dot to be 
+posted. 
+The coordinate specifications 
+were converted from digital form to ana­
+logue voltages, which were then ampli­
+fied to drive the deflection system of the 
+cathode ray tube [see top illustration on 
+page 65]. After the transients in the con­
+version process and the deflection sys­
+tem had subsided, the electron beam 
+was turned on for a microsecond or so to 
+plot the indicated dot. Characters and 
+lines could be built out of individual 
+dots, bllt of course not very quickly. 
+To speed up the process of drawing 
+lines and characters, special analogue 
+circuits have been developed that auto­
+matically trace outlines on the screen in 
+a continuous process. To post a charac­
+ter the character-generator circuit pro­
+duces a wave form for the x and y deflec­
+tion systems and an associated pattern 
+for turning the beam on and off; the two 
+combined cause the character to appear 
+[see bottom illustration on page 65]. To 
+post a straight line on the screen, the 
+analogue line generator will produce 
+coordinated "ramp" wave forms for the 
+x and y deflection systems so that the 
+electron beam moves smoothly and con­
+tinuously from one end of the straight 
+line to the other. Modern display sys­
+tems can produce characters in about 
+five microseconds each and straight lines 
+in three to 40 microseconds, depending 
+on length. Some display systems include 
+analogue equipment for producing sim­
+ple curves, such as circles, automatically, 
+but such facilities are still rare. 
+To produce a straight line all the way 
+across a display screen in 40 microsec­
+onds is a prodigious feat of electrical 
+engineering. The human eye has a re­
+markable ability to detect even slight 
+deviations from straightness. Moreover, 
+if two lines are plotted end to end, any 
+error in their length such as might be 
+produced by overshooting or a failure of 
+the electron beam to be turned on 
+promptly will show up either as an over­
+lap or as a gap in the lines. The lines 
+must be traced not only straight but also 
+at a constant rate because any change in 
+the beam's rate of motion will show up 
+as a change in the brightness of the line. 
+To be sure, one can compensate for 
+changes in the writing rate of the line by 
+changing the electron-beam current, but 
+such a compensation circuit must be ac­
+curate or discrepancies will be visible. 
+No display system that I know of is en-
+tirely satisfactory in performance, and 
+even the best need periodic tuning to 
+keep operating well. Considering the 
+difficulty of the task, it is amazing that 
+the systems work at all. 
+The Logic of Displays 
+III addition to the analogue circuits for 
+generating lines and characters, a com­
+puter-display system must incorporate 
+digital logic circuits to connect the dis­
+play to the computer. Because the logic 
+needed for this purpose often has char­
+acteristics in common with the process­
+ing unit of a computer, I have come 
+to call these digital circuits the display 
+processor. The display processor fetches 
+information from a memory where the 
+picture to be posted is defined and con­
+verts it to the elementary driving Signals 
+for the analogue circuits that generate 
+lines and characters. 
+The display processor interprets dif­
+ferent formats of information in the 
+memory to give them meaning in terms 
+of the picture produced. For example, it 
+may interpret sequences of characters to 
+produce rows of text on the screen, or it 
+may distinguish sequences of connected 
+line segments from isolated line seg­
+ments, in each case producing the in­
+dividual commands required by 
+the 
+analogue line generator to yield the de­
+sired picture. The display processor ac­
+counts for more than half of the cost of 
+many display systems and strongly af-
+COMPUTER 
+DIGITAL TO ANALOGUE 
+CONVERTERS 
+DEFLECTION 
+AMPLIFIERS 
+10-BIT BINARY 
+X VALUE 
+X-COORDINATE 
+VOLTAGE 
+TO DEFLECTION PLATES 
+OR COILS 
+CATHODE RAY 
+TUBE 
+10-BIT BINARY 
+Y VALUE 
+Y-COORDINATE 
+VOLTAGE 
+SYNCHRONIZING 
+SIGNAL 
+TIMING CIRCUITS 
+COMPUTER DISPLAY EQUIPMENT consists basically of a dig. 
+ital computer, which specifies the point·by·point coordinates of the 
+desired display, together with circnits that convert the digital out· 
+put into analogue form for deflecting the electron beam in a 
+cathode ray tube. If the values of x and yare each specified by 10 
+binary digits (O's and I's), the electron beam can be directed to any 
+60 
+INTENSIFICATION PULSE 
+point in an array consisting of 1,024 lines (the y axis )  and 1,024 
+points per line (the x axis\. With only the circuits shown here, the 
+image on the screen would have to be built up from discrete points. 
+More modern d,isplays include analogue function generators to 
+sweep the electron beam in a continuous fashion to generate 
+smooth lines, numbers, letters of the alphabet and special symbols. 
+© 1970 SCIENTIFIC AMERICAN, INC
+The sun breaks through a winter overcast to light the undercast of the New York metropolis. 
+. 
+SCIENTIFIC
+. 
+The September Issue of AMERICAN 
+wIll be devoted to 
+the single topic of 
+TECHNOLOGY AND THE ENVIRONMENT 
+under the title of 
+TI I EJ BIOSPI I EJ 
+RYSZARO HOROWITZ 
+© 1970 SCIENTIFIC AMERICAN, INC
+© 1970 SCIENTIFIC AMERICAN, INC
+© 1970 SCIENTIFIC AMERICAN, INC
+Every rent a car company wlll 
+rent you a car. And that's where 
+the comparison ends. 
+There are about 15,000 places in this 
+rent new Ford Torinos, Mustangs, Lincoln 
+country where you can rent a car. 
+Continentals, Mercury Cougars, and about 
+They go from local guys with 
+28 other kinds of cars, including convertibles, 
+a handful of cars to 
+station wagons, sports cars, and even trucks. 
+national companies 
+Most of these things help you when you 
+with thousands. 
+rent or return the car. But we've learned 
+Some merely hand you 
+that people can use a lot of help in between. 
+the keys to a car. 
+You can know where you want to go but 
+Some, in comparison 
+- not how to get there. So we give you 
+to the ones who do 
+We can rent you a car at over a 
+state, city, and even airport maps 
+nothing, do a lot. 
+hundred airports you've never even heard of. 
+on which we'll trace the 
+But nobody else does everything Hertz does. 
+best route. 
+We know places where 
+First, we make it easier to rent a car. 
+If you don't 
+you can ward off an attack 
+We can have a car 
+have a place 
+of the midnight hungries. 
+waiting for you in any of 
+to stay or if you want 
+over 100 countries, 
+a good meal at an odd 
+in practically 
+hour, we can suggest 
+every major 
+a few places. 
+airport, and 
+We even wrote a 
+in many that 
+book for each of many 
+aren't so 
+U.S. cities that'll tell 
+major. 
+you everything you 
+If you 
+need to know about them. 
+want to rent 
+If you're on vacation, we have special 
+a car in one 
+rates for the United States, Canada, Hawaii, 
+that take children and dogs. 
+city and 
+Europe, and practically anyplace else. 
+drop it off in any of over 1500 others, we'll 
+If you're not, we have commuter rates, 
+arrange it for a small drop-off charge. 
+airport rates, etc., etc. 
+(In 50 U. S. cities and many overseas, there's 
+Lastly, we rent you a Ford that's 
+no drop-off charge. Ask us for details.) 
+probably better maintained than the 
+In a number of cities, we have 
+/; 
+car you left at home, a car that's 
+the only office where you can rent a car or 
+checked out, washed, 
+return it at any hour of the day 
+and serviced every time 
+or night. 
+it's rented. 
+If you want to drive 
+As you can tell, we're 
+something other than a 
+not just a place to rent a car. 
+regular Ford Galaxie, 
+We consider it our business 
+ask for it when you make 
+to help people travel as pain-
+your reservation. You can 
+We'll rent you a Ford your wife 
+lessly as possible. 
+might never dream of letting you own. 
+Hertz 
+You don't just rent a car. You rent a company. 
+ClH[RT1' SYST(/oI.',,"C.,lS70 
+© 1970 SCIENTIFIC AMERICAN, INC
+fects the programming techniques that 
+must be used with the system. Moreover, 
+not much 
+progress 
+has 
+been 
+made 
+in standardizing the design of display 
+processors. For these reasons prospective 
+users must carefully weigh the character­
+istics of competitive systems. 
+For the past six or seven years my own 
+professional interest has been in improv­
+ing the design of display processors. My 
+colleagues and I have designed or in­
+fluenced the design of a series of dis­
+play processors of increasing complexity. 
+Although we know that the evolution of 
+display-processor design is far from com­
+plete, we have learned much about how 
+the design of a display processor inter­
+acts with the programming requirements 
+for the display system. Like computer 
+systems themselves, displays require a 
+great deal of programming to make them 
+useful; enlightened display-processor de­
+sign simplifies the programming task. 
+The 
+objective 
+of 
+most 
+computer­
+graphics programs is easily stated: to 
+represent objects of some kind and to 
+provide a means for manipulating them. 
+For example, if one is designing the mask 
+for an integrated electronic circuit, the 
+objects to be represented are the tran­
+sistors, resistors, gates, wiring and other 
+elementary components from which the 
+circuit is to be built. In depicting an or­
+ganic molecule the objects to be repre­
+sented are the individual atoms of the 
+molecule and the bonds between them. 
+In each application the objects are repre­
+sented in the memory of the computer in 
+a format suitable to the application. For 
+instance, it may be convenient to list the 
+atoms one after another in a table, giving 
+the type and the three-dimensional co­
+ordinates for each atom. It may be con­
+venient to represent the bonds by listin g 
+each bond in a table with the index num­
+bers of the two atoms it joins. Such a stor­
+age format is conveFlient not only for dis­
+play but also for the scientific programs 
+that will manipula te this "data base." 
+The data base for a computer-display 
+application is utilized in many ways. If 
+the user wants to change the program he 
+is working on, he may give commands 
+that cause the computer to change the 
+data base by replacing, adding or delet­
+ing information. Thus the user might add 
+a new atom to his molecule. If he is ex­
+plot'ing some line of thought, he may ask 
+that computations be done on the data 
+base. For example, the computer might 
+compute the total weight of the molecule 
+represented, or it might compute new co­
+ordinates for the atoms corresponding to 
+some quantum-mechanical law the user 
+is trying to understand. Finally, the user 
+will want to see some pictorial represen­
+tation of the data base on his computer­
+display system. It is important to note 
+that the pictorial representation of the 
+information in the data base is only one 
+of many ways the information is used. 
+The Data behind the Display 
+The format of the information in the 
+data base is not usually suitable for direct 
+use by the display processor. The data 
+base represents all the relevant facts 
+about 
+the 
+objects 
+being 
+considered, 
+whereas the display processor needs in­
+formation about the particular appear­
+ance of the objects. For instance, the 
+data base may distinguish among dif­
+ferent types of chemical bond, all of 
+which look the same on the display. Or 
+the data base may identify different 
+kinds of atoms according to their atomic 
+number, whereas in the display they are 
+to be presented with a different code 
+letter, such as C or H or N. The appear­
+ance of the objects can be derived from 
+the data base by a suitable program and 
+stored for use by the display processor. 
+The results of this computation form a 
+"display file" [see bottom illustration on 
+next page]. The display file is a second­
+ary representation of the objects stored 
+in the data base. 
+Conversion of the information from 
+the data base to the display file involves 
+geometric computation, selection of the 
+relevant information and expansion of 
+compact notations into individual lines 
+and characters for display. Thus the two­
+dimensional 
+coordinates 
+required 
+to 
+make a perspective presentation of the 
+molecule 
+from 
+a 
+selected 
+viewpoint 
+might be computed from the three-di­
+mensional coordinates known for each 
+atom. If a magnified view of some por­
+tion of the object is desired, it can be 
+DOT-BY-DOT method of generating lines and characters was originally used in computer 
+graphics. Newer analogue techniques are much faster and create cleaner images (see below)_ 
+t 
+>­
+f­
+(jj 
+Z 
+w 
+f­
+Z 
+t 
+>­
+f-
+(jj 
+Z 
+w 
+f­
+Z 
+.----,---r-.--,--..,.---.,-------
+TIM E ----;:0. 
+TIM E ---;:,. 
+-------
+3 .... 
+--------
+'-
+-------
+...... " 
+"\ 
+--- ----..\ 
+--'-___ ......J _ _____ 1 
+I 
+I 
+1 
+I 
+I 
+I 
+I 
+I 
+1 I 
+\ 
+\ 
+\ 
+\ 
+\ 
+\ 
+1 
+1 
+I 
+I 
+I 
+I 
+1 
+1 
+X----7 
+READY FOR 
+NEXT CHARACTER 
+t 
+Y 
+ANALOGUE CHARACTER GENERATOR produces separate wave forms for the x and y 
+deflections of the electron beam, along with an on-off intensity pattern. Such display sys­
+tems can write a character in a few microseconds and a page of text in several milliseconds. 
+65 
+© 1970 SCIENTIFIC AMERICAN, INC
+HIGH-RESOLUTION LASER BEAM produced this test pattern 
+using a new computer-display technique developed by the Bell 
+Telephone Laboratories. One-third of the 15-by-2 1-centimeter test 
+pattern is reproduced here actual size. Normally the device is used 
+to make masks for integrated circuits. Modulators and lenses con­
+trol the fine beam of an argon laser, which is deflected to scan a 
+photographic plate by a 10-sided mirror rotating on air bearings. 
+The laser beam produces an image consisting of 32,000 scan lines 
+with 26,000 image points per line. The accuracy of the beam can 
+be controlled to better than one arc second, equivalent to a de­
+viation of less than a third of an inch in a line a mile long. Not 
+only is the device extraordinarily accurate but also it can produce 
+provided by geometric scaling as the dis­
+play file is prepared. Particular items of 
+information in the data base can be 
+selected for display or omitted entirely. 
+For example, it may be desirable to omit 
+from the picture all hydrogen atoms and 
+all bonds connected to them so that the 
+heavier part of the molecule can be seen 
+more clearly. Finally, the compact nota-
+tions of the data base can be expanded 
+into appropriate symbols on the screen. 
+Each atom might be converted into a 
+circle with a letter in it; each bond might 
+be converted into a pair of lines (in per­
+spective, if that is desired). 
+It has long been recognized that the 
+dual representation commonly used in 
+display applications-the data base and 
+INPUT FROM KEYBOARDS, CONTROLS, DRAWING TABLETS, ETC. 
+1 INPUT 
+COMPUTATION 
+PROGRAMS 
+PROGRAMS 
+DISPLAY FILE 
+the display file-leads to a complex pro­
+-gram. In many display systems the user 
+can point to an object of interest on the 
+screen by using a light pen, a device that 
+identifies a specific point on the screen 
+by producing a brief pulse when the 
+electron beam sweeps past that point. 
+This tells the computer that some object 
+in the display file is to be changed. The 
+CATHODE RAY TUBE 
+DISPLAY-FILE 
+GENERATOR 
+PROGRAMS 
+SIMPLE 
+DISPLAY PROCESSOR 
+OUTPUT PROGRAMS 
+I 
+I·I---) 
+TO OTHER OUTPUT DEVICES 
+. 
+. 
+(PRINTERS, PLOTTERS, 
+_ 
+_ 
+MAGNETIC TAPE, ETC.) 
+TYPICAL PROGRAM STRUCTURE for computer displays has 
+the form shown here. Information about objects is stored in the 
+data base. Information about the appearance of the objects is 
+66 
+stored in the display file. The actual appearance of the objects is 
+specified by programs in the display-file generator. These programs 
+perform geometric operations and expand the definition of objects. 
+© 1970 SCIENTIFIC AMERICAN, INC
+(:)/lliilliii 
+I I 
+11111 11111 
+11111 
+11111 
++ 
+I 
+MI 
+in 12 minutes a circuit mask that formerly 
+took 12 hours of machine time. A portion of 
+the test pattern is enlarged 10 diameters at 
+the right. The effective resolution exceeds 40 
+lines per millimeter, which is remarkable 
+over a field measuring 15 by 21 centimeters. 
+computer must somehow be able to re­
+late each item in the display file to the 
+item in the data base that caused it to 
+appear. 
+If, having identified the item in the 
+data base, the computer is instructed to 
+change it, the computer must then also 
+change the relevant parts of the display 
+file. If the display picture is to be kept up 
+to date so that changes appear promptly 
+after they are initiated, computation of 
+the display file must be done quickly. 
+Unfortunately 
+general-purpose 
+digital 
+computers are not well suited to this kind 
+of geometric computation. For all these 
+reasons designers of display processors 
+have begun to provide more computing 
+capability in the display processor to en­
+able it to interpret the data base directly, 
+thus eliminating the need for a display 
+file altogether [see illustration below]. If 
+the design is successful, changes in the 
+data base will instantly be reflected in 
+the picture and an identification of a 
+part of the picture will instantly identify 
+the corresponding item in the data base. 
+SpeCialized display processors deSigned 
+to handle such graphical computations 
+are now beginning to reach the market. 
+An early innovation in display proc­
+essors, now almost universal, provided 
+them with the ability to display many 
+symbols from a single symbol definition 
+in memory. With this capability the 
+display file can contain a single definition 
+of a transistor symbol and several refer­
+ences to that symbol's definition. For 
+each reference the display processor 
+fetches the individual lines of the symbol 
+from the single definition and traces the 
+transistor symbol again in a different po­
+sition on the display screen [see "a" in 
+illustration on page 79]. ObViously all 
+coordinate information in the symbol is 
+INPUT FROM KEYBOARDS, CONTROLS, DRAWING TABLETS, ETC. 
+1 INPUT 
+COMPUTATION 
+PROGRAMS 
+PROGRAMS 
+DISPLAY 
+PROCESSOR 
+OUTPUT 
+PROGRAMS 
+CATHODE RAY 
+TUBE 
+TO OTHER OUTPUT DEVICES 
+(PRINTERS, PLOTTERS 
+MAGNETIC TAPE. ETC.) 
+ADVANCED DISPLAY PROCESSOR eliminates the display file and display-file generator 
+by prcviding more powerful computation and selection functions. This simplifies program­
+ming by eliminating elaborate cross-references between the data base and the display file. 
+One gift 
+works many 
+wonders 
+Photo contributed by Harold Halma 
+GIVE 
+THE 
+UNITED 
+WAY 
+Hel p work wonders for the 
+poor, the sick, the aged, the 
+young. Give them the hope, 
+the health and the happi­
+ness they might never have 
+without you, 
+Your fair share gift 
+works many wonders 
+THE UNITED 
+(6) WAY *o 
+27.5 million families benefit from child care, 
+family service, youth guidance, health pro­
+grams, disaster relief and services for the Armed 
+Forces through 31,300 United Way agencies. 
+67 
+© 1970 SCIENTIFIC AMERICAN, INC
+2 
+3 
+4 
+5 
+RIDE IN "ROCKET CAR" down a "country road" was pro­
+grammed by a group under Judah L_ Schwartz at the Massachusetts 
+Institute of Technology, which has found computer displays valu­
+able in demonstrating abstruse physical phenomena_ The road is 
+lined with telephone poles shaped like inverted L's_ The middle 
+number under the picture shows the rocket's velocity as a decimal 
+fraction of the velocity of light (the decimal point before the first 
+digit is omitted). The number at bottom left of the screen is the 
+number of telephone poles passed. The upper number at bottom 
+right is the reading of clocks by the side of the road; the lower 
+number shows the time aboard the rocket. The rocket-borne clock 
+shows a lower cumulative reading than the roadside clocks do, 
+stored with respect to the location of the 
+symbol, and the location for the symbol 
+must be established before the symbol 
+definition is called on. This symbol capa­
+bility in display processors is identical 
+with the subroutine capability found in 
+all general-purpose computers. Like the 
+subroutine capability, it makes possible 
+more compact coding because many 
+symbols can be created from a single 
+definition. 
+Unfortunately including subroutine 
+capability in the display processor tends 
+to introduce new complexities in the dis­
+play programming. A display processor 
+capable of handling subroutines must 
+remember during the execution of each 
+subroutine the location of its call; if the 
+display file is changed, such information 
+may be lost. Moreover, the number of 
+parameters that can be provided to dis­
+play subroutines is generally limited to a 
+simple indication of position. Symbols of 
+different sizes must have different defi-
+1 
+1 
+f, 
+y
+\ 
+I 
+\ \ 
+2 
+2 
+nitions in the display file even though 
+the size of an object may be represented 
+in generalized form in the data base. The 
+display file for a processor equipped for 
+subroutining takes on a structure that 
+may correspond in part, but not entirely, 
+to the structure of the data base, and the 
+display-programming system has to de­
+cide when to call on this structure. The 
+subroutining capabilities in the display 
+processor prove most useful when the 
+structure that the display processor can 
+interpret is sufficiently rich to represent 
+everything wanted in the data base. If 
+the symbol parameters available in the 
+subroutining capability cannot handle 
+the variability of the symbols represent­
+ed in the data base, it is often not worth 
+the effort of using the subroutining capa­
+bili ty a t all. 
+The fact that information in display 
+subroutines can be specified with respect 
+to a symbol origin makes it possible to 
+specify a position that is outside the 
+3 
+4 
+3 
+4 
+I 
+I I 
+$ 
+boundary of the display screen. Unfor­
+tunately a capacity of only 10 or 12 
+"bits" of information is usually provided 
+in the memory registers that hold the 
+screen coordinates. Thus if the displace­
+ment of an image produces values that lie 
+outside the screen, those values will be 
+truncated to the required 10 or 12 bits by 
+the removal of the most significant parts 
+of the sum. 
+The "Windowing" Problem 
+The effect of such truncation is that 
+the coordinate positions immediately 
+beyond the right edge of the screen 
+appear at the left edge of the screen, and 
+the coordinate positions just above the 
+top of the screen appear at the bottom of 
+the screen. Symbols that overlap an edge 
+of the screen will reappear at the op­
+posite edge. Consequently if screen co­
+ordinates are merely truncated to 10 or 
+12 bits, the screen will appear to have 
+5 
+5 
+QUANTUM·MECHANICAL SCATTERING, representing what 
+happens when a particle of given energy meets a barrier, is de­
+picted in these M.LT. computer displays. The particle is represent­
+ed by a Gaussian curve, or wave packet, which is the probability 
+distribution for finding a particle, such as a proton, in a given re-
+gion of space. In the upper sequence the particle has only half the 
+energy needed to pass through a square barrier. Nevertheless, at 
+the peak of the collision (frames 5, 6) the wave packet penetrates 
+the barrier, thereby indicating a finite probability for finding the 
+particle in a region that should be inaccessible to it according to 
+© 1970 SCIENTIFIC AMERICAN, INC
+6 
+6 
+6 
+7 
+8 
+9 
+10 
+demonstrating the dilation of time experienced by objects (and 
+observers) traveling at a large fraction of the velocity of light. As 
+the rocket car accelerates, the telephone poles appear to bend over 
+the road, as viewed by an observer in the car. Actually they are 
+leaning away from the observer because the tops of the poles are 
+farther away from him than the bottoms of the poles and thus light 
+from the tops takes slightly longer to reach his eye. Therefore he 
+sees the top of each pole at an earlier point in time, hence farther 
+down the road, than the bottom of the pole. The horizontal memo 
+bers atop the poles appear to rotate away from the observer and 
+finally to bend down. This is a more complicated result of the 
+special theory of relativity and was not put into computer program. 
+the topology of a torus. The phenomenon 
+is particularly annoying if one end of a 
+short line moves off the edge of the 
+screen only to reappear at the other edge. 
+The line between such end points will 
+cross the entire screen going in the wrong 
+direction. 
+The cures for these well-known dif­
+ficulties all provide the display user with 
+a drawing area much larger than the 
+actual display screen. By one means or 
+another the display hlbe is made to be­
+have as if it were a window through 
+which this much larger drawing can be 
+seen. The computations involved in pro­
+viding this illusion are called windowing. 
+When properly provided, windowing 
+seems to be a natural part of the way the 
+display operates. Objects that move off 
+the screen disappear smoothly at a well­
+defined edge. Only when windowing is 
+missing from a computer-display system 
+is the absence of this feature immediate­
+ly evident. 
+7 
+7 
+There are two basic methods of win­
+dowing. One method is to provide the 
+display system with larger analogue de­
+flection voltages than are needed for cov­
+ering the screen itself and simply to 
+blank out the beam anytime it is deflect­
+ed beyond the edge of the screen. This 
+procedure, although it is widely used, 
+has the shortcoming that it places an 
+additional burden of accuracy on the 
+analogue deflection system and that it 
+must of necessity operate slowly, since 
+there is no way to speed up the beam 
+when it is drawing parts of the picture 
+outside the viewing area. The second 
+method of windowing is to provide a 
+mechanism to precompute digitally the 
+actual coordinates of the part of the pic­
+ture that should appear in the window. 
+In this method the display tube is pro­
+vided only with valid data and so does 
+not waste time drawing invisible parts 
+of pictures. This alternative, often called 
+clipping, is widely programmed in soft-
+8 
+9 
+8 
+9 
+ware for sophisticated computer-graph­
+ics systems. 
+Windowing is the most important of 
+several kinds of geometric computation 
+needed in preparing information for 
+presentation on a display screen. Unfor­
+tunately the programs required for win­
+dowing in an ordinary general-purpose 
+digital computer, even a big and fast one, 
+can process only about 1,000 line seg­
+ments per second. If additional compu­
+tations are needed, for instance to pre­
+sent a two-dimensional perspective view 
+of a three-dimensional object, the opera­
+tion takes substantially longer. Recently 
+my colleagues and I have spent much 
+time developing special display proces­
+sors that overcome these delays by trans­
+ferring the necessary computations to 
+high-speed, special-purpose digital cir­
+cuits. These processors make it easy to 
+obtain 
+rapid, 
+dynamically 
+changing 
+views of three-dimensional objects [see 
+top illustration on next two pages]. 
+10 
+10 
+the pre·quantum·mechanical description of nature. Subsequently 
+the packet is reflected and the probability distribution is flattened. 
+In the lower sequence the energy of the wave packet is exactly 
+equal to the barrier height. In classical physics the particle should 
+lose all its energy on entering the barrier and remain there for· 
+ever. In quantum physics a small probability packet gets tern· 
+porarily trapped inside the barrier (frames 7,8, 9, 10) while most 
+of the packet is reflected. In addition a small, flat packet is trans· 
+mitted. This indicates the probability of a particle's "tunneling" 
+through the barrier when the experiment is repeated many times. 
+69 
+© 1970 SCIENTIFIC AMERICAN, INC
+11 
+DIG 
+ElB 
+wEJ DIG 
+G B 
+Q 0 
+13 
+TAKEOFF AND LANDING ON AIRCRAFT CARRIER have 
+been simulated by the Evans & Sutherland Computer Corporation 
+for the Naval Training Device Center. The display system used for 
+this demonstration is installed at Bolt, Beranek and Newman Inc. 
+It follows the design illustrated at the bottom of page 67, in which 
+circuit hardware in the display processor replaces a "software" pro­
+gram for handling information stored in the data base. Only such a 
+14 
+15 
+system provides the computing speed needed for this kind of real­
+time simulation in which two complex objects are moving rapidly 
+in three·dimensional space. Frame 1 shows what the "pilot" sees 
+looking down the deck before takeoff. Through a keyboard on the 
+computer he can adjust the engine throttle and the attitude of the 
+aircraft. At the left of the screen is a vertical line with a cross that 
+indicates the aircraft's altitude. The two boxes at the bottom right 
+I became involved in the development 
+of such high-speed displays through 
+a desire to present an observer with 
+a simulated three-dimensional environ­
+ment. My idea was very simple: Mount 
+miniature cathode ray tubes on the user's 
+head, one tube in front of each eye, so 
+that the computer can control exactly 
+what he sees. Measure the position of the 
+user's head and compute a perspective 
+picture appropriate to that viewing posi­
+tion. As the user turns his head, the per­
+spective picture should change just as if 
+the object portrayed were really in the 
+room with him. There is no need to mea­
+sure his eye position because the picture 
+presented on his glasses is not changed 
+by the part of it on which he chooses to 
+focus. 
+Because 
+the 
+three-dimensional 
+objects he sees -will appear to remain 
+stationary in space as he moves around 
+HEAD-MOUNTED DISPLAY at the University of Utah employs 
+a display processor similar to that used for the aircraft carrier se­
+quence. Two miniature cathode ray tubes are built into the goggles. 
+A mechanical linkage tells the computer where the viewer is look­
+ing at each instant. The display processor instantaneously supplies 
+70 
+the correct image for each head position. The viewer is free to look 
+anywhere in a 300-degree circle and can look up and down through 
+an angle of about 45 degrees. Two samples of what he sees are 
+shown at the right. The objects grow larger or smaller and move 
+with relation to one another as the observer moves around. 
+© 1970 SCIENTIFIC AMERICAN, INC
+, 16 
+8 
+17 
+18 
+EJ B  
+19 
+EJ El  
+0 8  BEl 
+e a  
+EJ ZI  
+of the 8creen indicate the aircraft's compass heading (east at take· 
+o ff )  and the direction to the carrier's superstructure. At bottom left 
+are an artificial horizon and a rate·of·climb indicator. Frames 2 
+through 7 show the aircraft moving down the deck and becoming 
+airborne. The pilot sees the horizon tilt ( 8) as he banks to the left. 
+In the next four displays ( 9, 10, 11, 12) the view from the left win· 
+dow of the aircraft is shown on the left half of the screen while the 
+view ahead appears on the right half. Ordinarily the two windows 
+are on separate screens in their normal relation to the pilot. As the 
+pilot continues to bank, the carrier disappears from the left win· 
+dow and reappears in the front window (12, 13) . Still flying coun· 
+terclockwise in a large circle, assisted by being able to see the car· 
+rier's wake, the pilot lines up the carrier for his approach (14, 15, 
+16, 17), and then finally levels off for a perfect landing (18, 19, 20 ) .  
+them, an illusion that the objects are 
+present in the room with the observer 
+should be created. The equipment il­
+lustrated at the bottom of the opposite 
+page was designed to create this illusion. 
+The head-mounted display does in­
+deed provide the illusion of seeing three­
+dimensional objects at identifiable loca­
+tions in the user's environment. Because 
+the objects presented are transparent and 
+made of glowing lines essentially free of 
+texture, no one is fooled into thinking 
+they are real. On the other hand, even 
+naive observers are able to identify the 
+size of the objects portrayed and are able 
+to move themselves into an appropriate 
+viewing position to examine a particular 
+feature of the objects portrayed. 
+Logic of High·Speed Displays 
+The significant thing about the head­
+mounted display project is not the opera­
+tional results but rather that it forced us 
+to think carefully about the problems of 
+presenting a real-time perspective pic­
+ture. vVe needed a solution to the win­
+dowing problem in three dimensions be­
+cause as the user turns his head away 
+from objects they move out of the field 
+of .view provided by the optical system. 
+If the objects are to move smoothly out 
+of view, the correct end points for the 
+parts still in view must be very rapidly 
+computed, and prompt decisions must be 
+made in order to omit parts that are 
+entirely out of view. Since no general­
+purpose digital computer is capable of 
+doing these computations fast enough to 
+present dynamic views of any but the 
+most trivial objects, we were forced to 
+design and build special-purpose equip­
+ment to do rotation, windowing and 
+perspective computation. Having a good 
+solution to the windowing problem in 
+three dimensions quickly led us to a solu­
+tion in two dimensions for our latest de­
+sign for a display processor. 
+Computing a perspective picture of a 
+"wire frame" three-dimensional object is 
+really rather easy. The position of each 
+part of the object on the screen is com­
+puted by projecting the object onto the 
+screen in straight lines [see top illustra­
+tion on page 74J .  Fortunately straight 
+lines in three-dimensional space project 
+into straight lines on the screen. Thus the 
+rotation and projection computations for 
+each line segment need be done only for 
+the ends of the line; the center parts of 
+the line can be filled in by the two·di­
+mensional analogue line generator. If 
+windowing or clipping in three dimen­
+sions is done before projection, the prob­
+lems of dividing by a zero or a negative 
+depth coordinate are avoided [see bot-
+tom illustration on page 74J. The digital 
+pi·ocessing equipment we developed for 
+the head-mounted display project is able 
+to accept information in three dimen­
+sions, convert it to an appropriate view­
+point and viewing direction and present 
+valid display-screen coordinates to an 
+ordinary line generator for drawing a 
+perspective picture on the screen. 
+vVe have found it particularly useful to 
+have a display system in which a three­
+dimensional computing engine is built 
+into the display processor. In the first 
+place, coordinate information for display 
+can be in three dimensions instead of in 
+two. Symbols can be scaled on the draw­
+ing as well as merely being positioned, 
+and three-dimensional symbols can be 
+rotated to any desired angle with respect 
+to other objects in the drawing. Since 
+clipping is done in the display processor, 
+the processor can accept the stored data 
+to a resolution much finer than the actual 
+resolution of the display itself. Such data 
+can be regarded as a drawing on a huge 
+piece of paper (a piece covering a square 
+mile, say), any part of which, or all of 
+which, can be presented on the display 
+screen. For many applications such ca­
+pabilities can eliminate the need for a 
+display file altogether and so greatly sim­
+plify the programming of the display. 
+Again our hope is to operate the display 
+7 1  
+© 1970 SCIENTIFIC AMERICAN, INC
+COMPUTER·AIDED CHEMICAL SYNTHESIS program was developed at Harvard Uni· 
+versity by W. Todd Wipke under the direction of Elias J. Corey. The computer is supplied 
+with a library of chemical compounds and chemical reactions, together with a program for 
+manipulating this information. By interacting with the computer the chemist can select the 
+most efficient way to synthesize a desired compound. The chemist starts his "conversation" 
+with the computer by drawing the structure of the target molecule on a writing tablet. The 
+tablet contains a coordinate grid that relays the position of the pen to the di splay screen. 
+Here a molecule related to the target molecule appears on the screen at the left, while the 
+screen at right displays a variety of chemical pathways to the target in the form of a "tree." 
+The development of these displays is depicted in the pictures at bottom of these two pages. 
+2 
+3 
+9 
+11 
+processor directly on the data base so 
+that changes in the data base are iostant­
+ly reflected in the display. 
+To provide for flexibility in the format 
+of the data bases, we have chosen four 
+typical fOlms in which information com­
+monly appears in applications [see il­
+lustration on page 79]. In the first form 
+a sequence of coordinate values is simply 
+connected by a sequence of straight 
+lines. This form is the common one for 
+connecting data points on a graph. In the 
+second form disjoint lines are repre­
+sented by pairs of pointers that indicate 
+the location of the coordinate data to 
+be used for the end points. This format 
+would be useful for representing the 
+bonds in a molecule. The coordinates 
+can be either two- or three-dimensional. 
+The disjoint-line format is useful in a 
+variety of pictOrial representations. 
+The third fOlm is the simple sub­
+routine, where standard format param­
+eters for position, size and rotation are 
+provided. For all fixed-geometry sym­
+bols, such as those used in making 
+circuit diagrams, this form is adequate. 
+We have also 
+designed 
+the 
+display 
+processor so that it does not execute any 
+subroutine that is entirely outside the 
+viewing 
+area. 
+This 
+provision 
+greatly 
+4 
+12 
+CHEMICAL SYNTHESIS PROBLEM i s  presented to a venerable 
+PDP·l computer at Harvard by a chemist who uses a writing tablet 
+to draw a picture of the molecule he wants to make. By frame 3 he 
+has drawn the basic structure of a molecule with eight carbon 
+atoms. He adds a double bond at the extreme right of the molecule 
+( frame 4) , then bends the bond into the proper stereochemical con· 
+figuration (5, 6 ) .  Addition of an oxygen atom ( 0 ) ,  a nitrogen atom 
+(N) and another carbon atom ( indicated by the line projecting 
+from the nitrogen ) completes the skeleton structure of the target 
+molecule : longifolene ( 7). The computer is now asked to search 
+for somewhat simpler compounds that can be converted to longi. 
+folene in a single chemical step. The result of the search is shown 
+by the tree in frame 8. Longifolene is designated by the 1 at the top 
+of the tree; three related compounds, designated 2, 3 and 6, are 
+72 
+© 1970 SCIENTIFIC AMERICAN, INC
+13 
+speeds up the display of magnified views 
+of complex objects. Finally, complete 
+subroutines are available for displaying 
+objects that are similar in a non geometric 
+way. For example, cross-hatched boxes 
+can be defined by position, size and 
+type of cross-hatching. Such boxes are 
+not geometrically similar because the 
+number of cross-hatch lines must be 
+computed from the size of the box; 
+moreover, the angle of the cross-hatch­
+ing must be constant regardless of the 
+size or orientation of the box. 
+The Hidden-Surface Problem 
+In spite of the advances that have 
+been made in computer graphics in the 
+past decade, most of the objects dis­
+played are still in the form of line draw­
+ings. It is difficult to present solid objects 
+with to day's computer displays ; indeed, 
+only half a dozen research installations 
+even try. The preliminary efforts are 
+nonetheless rewarding. The difficulty is 
+in computing what parts of an object are 
+visible from a given viewing position and 
+what parts are not. If an object repre­
+sented in three dimensions is to be 
+rendered as being solid, some parts of 
+the object must be able to obscure other 
+6 
+14 
+parts hidden behind it. Many workers 
+have tackled this "hidden-surface prob­
+lem," and in the past few years several in­
+teresting solutions have been developed. 
+The effectiveness of a solution to the 
+hidden-surface problem can best be de­
+scribed in terms of the growth of the 
+solution time with the complexity of 
+the situation. Almost any method will 
+work adequately with very simple situ­
+ations, but because the computation 
+time required by some methods grows 
+with the square of the situation com­
+plexity, much computation time may be 
+required for complex situations. Four 
+years ago I showed in Scientific Ameri­
+can a computer-drawn picture of a solid 
+object produced by Lawrence C. Rob­
+erts, which was typical of the best then 
+available [see "Computer Inputs and 
+Outputs," by Ivan E. Sutherland; SCI­
+ENTIFIC AMERICAN, September, 1966] . 
+His program took 1.5 minutes to draw a 
+picture containing 40 separate blocks 
+from which hidden lines had been re­
+moved; the computing time was roughly 
+proportional to the square of the number 
+of objects examined. Today general-pur­
+pose computers of not much greater 
+power can produce pictures such as 
+those shown on page 56 in about a third 
+7 
+15 
+of the time, and the growth law of these 
+programs appears to be about N log N, 
+where N is the number of objects. 
+The traditional approach to the hid­
+den-surface problem was to compare 
+each object in the picture with every oth­
+er object to see which was obscured. 
+This procedure requires N - 1 compari­
+sons for the first object, N - 2 for the 
+second object, N - 3 for the third object, 
+and so on, for a total of (N2 - N) -;- 2 
+comparisons. Moreover, the computa­
+tions must be executed in three dimen­
+sions with high precision because they 
+are done before projection onto 
+the 
+screen. The new methods consider only 
+the task of computing the picture rather 
+than the task of comparing objects. If a 
+picture of the television type is to be pro­
+duced, there are, after all, only some 
+250,000 points on the television screen at 
+which intensities can be displayed. Why 
+bother to compute to any better preci­
+sion than that? 
+The most elegant, although perhaps 
+not the fastest, algorithm to date is one 
+invented by John Warnock of the Uni­
+versity of Utah and somewhat embel­
+lished by others 
+(including 
+myself). 
+·Warnock's algorithm concentrates on 
+computing 
+shades 
+for 
+parts 
+of 
+the 
+8 
+16 
+I rnH¶-
+t 
+1 1- 1- f 
+OUTPUT 
+STRUCTURE 
+ItlDE:.' 
+w 
+x I\  
+" " ,z, " " ' " 
+listed at the ends of the hranches of the tree. The chemist asks to 
+see the structures of these three molecules and they are presented 
+to him iu frames 9, 10 and 11, together with coded information at 
+the left of the screen that descrihes the chemical reaction that will 
+convert each to longifolene. The computer also evaluates each reac· 
+tion and assigns a priority, or preference. The computer is then 
+asked to find related compounds that can he converted into com· 
+pound No. 3. While the search proceeds the computer can be asked 
+what it is "thinking." The words "Computing" (frame 12) and 
+"Pair matches ?" (frame 1 3 )  appear on the screen. The last remark 
+indicates the computer is puzzled whether a particular molecular 
+structure is identical with another one. Two routes to compound 
+No. 3 appear in frame 14 and five routes to compound No. 2 ap­
+pear in frame 15. In the last frame the search is carried still deeper. 
+73 
+© 1970 SCIENTIFIC AMERICAN, INC
+y 
+x 
+X' _ X' D  
+s - Z' 
+Y' -Į 
+s -
+Z' 
+PERSPECTIVE PROJECTION for a computer display is obtained by placing the origin of 
+the coordinate system at the observer's eye. The projection of all points on the screen is 
+then readily computed from the geometry of similar triangles. The diagram shows how the 
+two end points, 1 and 2, of an arrow are projected to the points ls and 2s' The first equa· 
+tion states that Xs is to x as the distance to the screen, D, is to z. Other dimensions are ob· 
+tained similarly. Objects extending beyond the screen must be "clipped," as shown below. 
+o 
+y 
+p 
+o 
+R 
+"CLIPPING," OR "WINDOWING," PROBLEM arises when objects in real space extend 
+beyond the limits of the screen or lie behind the observer. In the latter case ( top ) z has a 
+negative value. Although the equations are correct for such points, the result would be to 
+project the object upside down. The problem can be avoided ( bottom ) if all lines are first 
+clipped off at planes defined by the edges of the screen. If one applied the usual equati?ns 
+to the point P, a numerical overflow would result. Point R in the line RS would project to 
+point R"', and points close to R would project upward on the screen. By proper windowing, 
+or clipping, the line P'Q appears on the screen correctly as P"Q" and R'S appears as R"S". 
+74 
+screen , and also on computin g shades for 
+as large an area as is possible at 0I1e time. 
+I shall descrihe Warnock's algorithm in 
+some detail not only because it sho\vs 
+m uch ingenuity in the solution of a dif­
+ficult problem in computer graphics but 
+also because it utilizes a particularly ap­
+pealing technique of computation. 
+Data for Warnock's algorithm are de­
+fined in terms of a collection of surfaces 
+that form the objects to be shown. The 
+simplest com putations result if these 
+surfaces are planes bounded by straight 
+lines, but the algorithm could be ap­
+plied to more complex surfaces. Each 
+surface is assigned a color and a shade, 
+and each surface is considered to be 
+opaque. Rotation and translation are 
+used to get the surfaces into the ob­
+server's coordinate system, and a per­
+spective division is performed to posi­
+tion the objects on the screen. Depth 
+information is preserved through the 
+perspective projection. 
+vVarnock's program now breaks the 
+screen up into a few subregions and ap­
+plies a standard procedure to each one. 
+The standard procedure is to sort all 
+surfaces by x and y position to de­
+termine whether they are entirely out­
+side the subregion, surround it or par­
+tially intersect it. This sorting is done by 
+first considering gross measures of the 
+surface's position (such as: Is its leftmost 
+point to the right of the subregion?) and 
+then considering, if necessary, the indi­
+vidual edges of the surface. Obviously 
+surfaces that are outside the subregion 
+need not be considered further. The al­
+gorithm then considers the surfaces that 
+surround or intersect the region and at­
+tempts to prove that certain of them are 
+hidden by others. For example, if a sur­
+rounding surface can be shown to be 
+in front of all other surfaces throughout 
+the region, all the other surfaces are 
+eliminated and the program can shade 
+the entire region according to the shade 
+of that surface. If there is only a single 
+edge in the subregion, perhaps the pro­
+gram can fill in the appropriate pair of 
+shades. 
+The important thing about Warnock's 
+algorithm is its response to a subregion 
+in which the situation is too complicated 
+to handle. In such cases the algorithm 
+simply subdivides the subregion into 
+smaller regions. The sorting task for a 
+subdivided region is Simpler than it was 
+for its predecessor because all surfaces 
+that surrounded the predecessor will sur­
+round any of its subdivisions, and all sur­
+faces that were found to lie off to the 
+side of the predecessor will also lie to the 
+side of its subdivisions. Only those sur­
+faces that partially intersected the prede-
+© 1970 SCIENTIFIC AMERICAN, INC
+Are you sure you're at the 
+right address? 
+Write: 
+We bel i eve ca reer a dva ncement may depen d as much on b e i n g  
+i n  t h e  r i ght p l a ce a t  t h e  r i g h t  t i m e  a s  it d o e s  on a b i l ity . I f  y o u  
+a g ree , t h e n  n o w  ( wh i l e  there i s  l ots of summert i m e  f o r  m a k i n g  
+a move ) y o u  shou l d  look i nto w h a t  is ha ppen i n g  at N C R . 
+N C R  i s  now the second l a rgest company i n  the wor l d  i n  the 
+computer systems b u s i ness - supp l y i n g  h a r dwa re and softwa re 
+a n swers for a who l e  wor l d  fu l l  of expa n d i n g  ma rkets . But the 
+more a n swers we work out , the more questions we sti r u p .  
+That's why w e  a re sti l l  grow i n g  ra p i d l y . Why w e  need more 
+e n g i neers , of a l l  degrees . M o re phys i c i sts , too . And softwa re 
+peop l e .  That's why N C R  cou l d  be the ri ght p l ace -
+a n d  n o w  the r i g ht t i m e - for you to a dvance your ca reer . 
+I n  many pos itions you wou l d  be ha n d l i n g s i g n i f i ca nt l y  
+more respons i b i l ity tha n y o u  d o  now , beca use o u r  e m p l oyees 
+a dvance as fa st as they a re a b l e  to a ssume a d d itiona l duties . 
+U n l ess you a re a bs o l ute l y  s u re you 're a t  the r i ght a ddress , 
+te l l  u s  about your backgrou n d  a n d  ca reer objectives . 
+T. F .  Wade, Executive a n d  Profes s i o n a l  P l acement 
+The National Cash Reg i ster Com pa ny, Dept. S C - 6  
+D ayto n ,  O h i o  45409 
+We are an Equal O pportunity Employer M/F 
+© 1970 SCIENTIFIC AMERICAN, INC
+Credit card fraud is now costing AI 
+But therE 
+• 
+• 
+stanng us rl# 
+EWYO 
+CREDI 
+William 
+20 West 
+New Yor 
+7-
+© 1970 SCIENTIFIC AMERICAN, INC
+lericans a record $200,000,000 a year. 
+; a remedy 
+"ht in the face. 
+BANK 
+CARD 
+Field 
+rd St. 
+N. Y. 
+The number of credi t  cards in 
+Americans' wallets has zoomed to 
+300,000,000. And the upsurge has 
+been a bonanza for the swi ndler. 
+Credi t cards are stolen from 
+wallets,handbags,bureau drawers, 
+and mailboxes. Some are thrown 
+carelessly in trash baskets, and are 
+found by scavengers uninhibited 
+by scruples. 
+E v e n  o r g a n i z e d  c r i m e  h a s  
+gotten into the act. They have 
+developed soph i s ti c a te d  tech· 
+n iques of forgery, and organized 
+a thriving black market, where 
+the going rate for a credit card is 
+over $50. 
+Unless i t  provi des complete and 
+positive iden tification, no credi t  
+card is i m m u n e ,  n o  credi t-card 
+holder free of the danger. 
+Worst of all, the efforts by law 
+en forcemen t and private agencies 
+to stop the thievery have had little 
+s uccess. The problem has been 
+attacked by state and federal leg­
+i s l a t ures. B u t  t h e  losses keep 
+mounting. 
+However, there is an answer. 
+Of a l l  the m e t h o d s  devised t o  
+keep credi t  cards o u t  o f  the 
+hands of crimin als, none 
+h a s  p r o v e n  as e f f e c ­
+t i v e  as the Polaroid 
+Portrai t ID System. 
+It puts the owner's picture (in 
+full color) and pertinent data on 
+a single piece of film, and seals i t  
+wi th a chemically bonded lami­
+na tion . 
+I t's almost impossible to alter 
+it wi thout detection . 
+As a result, few criminals would 
+be foolish enough to try to use a 
+Polaroid ID card. 
+They can forge a signature, but 
+not a face. 
+Recen tly, there has been dra­
+matic evidence of the degree of i ts 
+secur i ty. One of the many bank­
+ing insti t utions that have installed 
+the Polaroid Portrai t  ID System 
+gave their cardholders a guaran tee 
+of complete and uncondi tional 
+freedom from fi n ancial loss due 
+to lost or stolen cards. No deduct­
+ible; no limit based on date of 
+notification ;  simply no loss a t  all. 
+The Polaroid portrait ID card 
+is made in a number of formats. 
+So there's a style that suits just 
+about any situation that calls for 
+fast, posi tive iden tification. 
+I f  you'd like more detailed in­
+form a ti on, wri t e  to : Pol aroi d 
+Corporation, Dept. 57- 1 90, Cam­
+bridge, Mass. 02 1 39. 
+We'll show you how to solve 
+the problem in the s n a p  of a 
+shutter. 
+Polaroid® 
+The Polaroid Portrait 
+ID System. 
+© 1970 SCIENTIFIC AMERICAN, INC
+SheH hug us if she could. 
+M o re p re c i s e l y, s h e ' d  h u g  o u r  J o h n 
+We l s h .  
+O n e  of J o h n ' s  c u stomers m a n u fac­
+tu res concrete stat u e s .  H e  casts t h e m  
+i n  9 0 0  p o u n d  stee l m o l d s  w h i c h  m u st 
+be c l ea n ed of res i d u a l  concrete with a 
+hot m i n e ra l  acid afte r each cast i ng. 
+Hot ac i d  c l e a n s  away concrete eas­
+i l y. 50 eas i l y, that i f  l eft u n checked, it 
+can also attack and pit the steel m o l d s .  
+That's why J o h n ' s  customer was test i n g  
+M A I NTM 3 3 5  a c i d  i n h i b i t o r - f o r  t h e  
+safety, eco n o m y  a n d  p ro l o nged bath 
+l i fe i t  prom i sed. But h e  d i d n 't expect to 
+test i t  u n d e r  such severe cond i t i o n s .  
+U s i n g  h i s  e l ectrica l l y  powered crane, 
+h e  l owered o n e  of his m o l d s  i n t o  the 
+h o t  m i n e r a l  a c i d .  A n d  t h e n  i t  h a p ­
+pened . The power fa i l ed . 
+W i t h  n o  power to l i ft t h e  m o l d  o u t  
+of t h e  ac i d ,  J o h n 's customer was s u re i t  
+wou l d  be corroded beyo n d u s e  by t h e  
+t i m e  power was resto red . 
+A n d  i t  w o u l d  h a v e  b e e n  t o o  i f  it 
+were n ' t  fo r MA I N  3 3 5 .  Th i s  u n sched­
+u l e d a c i d  e x p o s u re t e s t  p ro v e d  t h a t  
+M A I N  3 3 5  e s t a b l i s h e s  a b a r r i e r  b e ­
+tween the stee l m o l d  a n d  t h e  acid, p re­
+ve n t i n g  corros i o n .  
+J o h n  k n ew MA I N  3 3 5  cou l d  effec­
+t i v e l y  i n h i b i t  a c i d  c o r ro s i o n  u n d e r  
+n o r m a l  acid c l ea n i n g  co n d i t i o n s .  B u t  i t  
+t o o k  h i s  c u s t o m e r ' s  p a r t i c u l a r  a c i d  
+c l ean i n g  operat i o n  and a powe r fa i l u re 
+to s u bsta n t i ate o u r  c l a i m s  that MA I N  
+3 3 5  i s  effective even u n d e r  seve re a c i d  
+expos u re co n d i t i o n s .  
+Th i s  MA I N  3 3 5  s u ccess i s  o n l y  o n e  
+exam p l e  o f  t h e  way Ab bott C h e m i c a l s  
+w o r k s  t o  h e l p  y o u  f i n d  so l u t i o n s  t o  
+you r c h e m ical p ro b l e m s .  
+O n e  o f  o u r  j o b s  a s  t h e  c h e m i c a l  
+m a rket i n g  a r m  o f  Abbott Laborato ries 
+is t o  f i n d  i n d u s t r i a l  a p p l i c a t i o n s  fo r 
+m a n y  of t h e  1 0 0 0  c h e m i c a l s  A b b o tt 
+syn t h es izes each year. 
+To d o t h i s, we rely heavily o n  o u r  
+peo p l e .  T h e  J o h n  We l s h e s  w h o  h e l p  
+t h e i r c u stomers f i n d  s o l u t i o n s  t o  t h e i r 
+c h e m ical p ro b l e m s .  Who fi nd new uses 
+f o r o u r  e x i s t i n g  c h e m i c a l s .  W h o  
+u n cove r n e w  a p p l i c at i o n s  fo r n ev e r­
+befo re- u sed ch em icals. 
+In th e p rocess, we've d eve l oped a 
+series of eco n o m i ca l p o l y m e r  cata ly sts 
+u sed in  m a n ufactu r i n g  u rethane foa m s .  
+A 
+better a n t i o x i d a n t/ s ta b i l izer f o r  
+m i d d l e  d i sti l l ate fue l s . 
+A nd  a spec i a l  p o l y m e r  catalyst fo r 
+o v e r p r i n t  v a r n i s h e s  a n d  o t h e r  s p e ­
+c i a l ty coat i ngs. 
+H e l p i n g  s o l ve you r p ro b l e m s  i s  what 
+our p ro d u ct deve l o p m e n t  i s  a l l  about. 
+a
+· 
+N o rth Chicago, 1 1 1 . 60064 
+Mon trea l ,  P. Q . ,  Canada 
+Zurich, Switzerland 
+Cro n u  I la, Austral i a  
+B u e n o s  A i res, Argen t i n a  
+Abbott Chem ical P rod u cts D i v i s i o n  
+© 1970 SCIENTIFIC AMERICAN, INC
+cessor region have to be considered in 
+dealing with its successor regions. Thus 
+the number of surfaces to be considered 
+in each subregion becomes quite small 
+as the area of the subregion decreases. 
+If the situation in a subregion of the 
+smallest possible size is too complex, the 
+algorithm simply picks a shading rule 
+from the nearest adjacent surface, be­
+cause such a choice affects only a single 
+point on the display screen. 
+Many varieties of the Warnock algo­
+rithm are possible, depending on how 
+complex a situation the algorithm can 
+handle without having to subdivide, and 
+also on the method of subdivision. War­
+nock's own programs always divided re­
+gions into four equal parts and yielded 
+an output only when the en tire square 
+was the same shade. The subdivision of 
+such an algorithm is shown in the illus­
+tration at top left on page 8 1 .  A smarter 
+display program, which avoids subdivi­
+sion when there is only a single edge in 
+view, will produce the subdivision pat­
+tern shown in the adjacent illustration on 
+the same page. This program, of course, 
+requires slightly more time for the com­
+putation of each square. Thus there is a 
+trade-off between the complexity of the 
+display program and the number of sub­
+areas that need to be considered. We are 
+currently investigating this trade-off sta­
+tistically in an attempt to discover what 
+kind of algorithm may be the best. 
+The work of 
+Gary 
+vVatkins 
+and 
+Gordon Romney of the University of 
+Utah has developed some interesting 
+statistics about the pictures we are draw­
+ing. The most Significant and surprising 
+fact is that the sorting task in the hidden­
+surface problem is not complicated in 
+depth but is quite complicated laterally. 
+The pictures shown in this article, al­
+though complicated, are not very deep. 
+That is, if you penetrate the picture with 
+a ray at any particular position, you will 
+hit fewer than 10 surfaces in all but spe­
+cially contrived cases, and the average 
+number of surfaces struck is more nearly 
+three. We have concluded that the prob­
+lem in producing hidden-surface pic­
+tures of the type shown here is largely 
+the problem of sorting the pictures in the 
+x and y directions to discover those few 
+surfaces for which a depth computation 
+is required. 
+Once the hidden-surface problem is 
+solved, shading and color are relatively 
+easy to introduce. The hidden-surface 
+computation develops information to tell 
+which surface is visible at each point on 
+the screen. Since each surface in the 
+computer includes a color, as well as oth­
+er properties, the program can compute 
+precisely 
+what 
+hue, 
+saturation 
+and 
+a 
+2 
+c 
+x ,  
+X ,  
+X ,  
+I 
+I 
+I 
+I 
+J 
+J 
+J 
+J 
+I 
+10 
+3 
+4 
+1 2  
+1 1  
+4 
+6 
+2 
+5 
+Y, 
+Y, 
+Y, 
+I 
+I 
+I 
+I 
+b 
+8 
+12 
+9 
+8 
+CAPACITOR 
+9 
+6 
+TRANSISTOR A 
+IN MEMORY 
+POSITION, ] 
+SIZE, 
+A 
+CALL TRANSISTOR 
+POSITION, 
+SIZE, 
+CALL CAPACITOR 
+POSITION, 
+SIZE, 
+CALL TRA NSISTOR 
+I 
+I 
+J 
+10 
+7 
+8 
+9 
+IN MEMORY 
+1 
+2 
+4 
+4 
+4 
+5 
+9 
+1 1  
+2 
+3 
+7 
+8 
+5 
+6 
+10 
+12 
+TRANSISTOR B 
+TRANSISTOR 
+SUBROUTINE 
+1 
+2 
+2 
+3 
+4 
+7 
+4 
+8 
+4 
+5 
+6 
+9 
+10 
+1 1  
+1 2  
+END 
+CAPACITOR 
+SUBROUTINE 
+1 
+3 
+5 
+7 
+I 
+J 
+I 
+I 
+J 
+J 
+END 
+2 
+4 
+6 
+8 
+2 
+10 
+2 
+12 
+5 
+5 
+6 
+9 
+6 
+X ,  
+Y, 
+x ,  
+Y ,  
+X ,  
+Y ,  
+I 
+I 
+I 
+J 
+I 
+I 
+I 
+J 
+d 
+-
+A 
+I 
+• 
+C 
+B 
+IN MEM ORY 
+DO CROSSHATCH 
+SUBROUTINE 
+POSITION, ] A 
+SIZE, 
+HATCHING TYPE, 
+POSITION, ] 
+B 
+SIZE , 
+HATCHING TYPE, 
+POSITION, ] 
+C 
+SIZE, 
+HATCHING TYPE, 
+REPRESENTATION OF OBJECTS IN DATA BASE takes four principle forms. Line seg­
+ments can be represented either as strings of connected coordinates ( a )  or as sets of dis­
+joint lines, each connecting two coordinates ( b ) .  Once such linear displays have been 
+created they can be stored in the memory for recall at any future time. The representation 
+at the upper left in b is the symbol for a transistor. If point No. 4 were shifted downward 
+by changing Y4' all the lines terminating at No. 4 would be shifted simultaneously without, 
+however, destroying the topology. Another common representation ( c )  stores symbols of 
+fixed geometry, such as elements for designing circuits. These can be called to the screen, 
+placed in any desired location and scaled to any size. The record in the memory will then 
+list "Position," "Size" and a code for calling the subroutine that draws the device. If the 
+device is a transistor, the subroutine might read like the sequence of numbers in b. A capac­
+itor will be called by its own subroutine. Another representation scheme ( d )  defines a 
+class of objects that are similar in some simple but non geometric way, such as hatched boxes. 
+79 
+© 1970 SCIENTIFIC AMERICAN, INC
+BCZBNCB/SCDPB 
+A high- speed d igital MODEM transce iver -- one o f  the smalle s t ,  lightes t ,  mos t  
+versat i le i n  the defense c on:municat ions fie ld - - was .de l ivered to the U . S .  Ail:' 
+Force recently by Hughe s .  
+The 7 0 - lb .  MODEM (modulator -demodulator) , r e p lac e s  a 
+current 2S0- lb. dev ic e .  
+I t  transmits or rece ives 1200 or 2400 d igital b i t s  per 
+s ec ond in a nɉrrow frequency range over norma l te lephone c ircu i t s , and will be 
+u sed in conj unc t ion with military c omputers , teletypes , radars ,  and o ther s ens ors . 
+Switzerland ' s c ompu ter iz ed air de fense sys tem -- built in Cali fornia by Hughe s 
+but c ode -named "F lorida" by the Swi s s  - -
+has been accep ted and put in ope ra t ion. 
+It c ons i s t s  of several radar s tations that provide s imul taneous range , bearing , 
+and height data to the high-speed Hughes computer , nerve center of the sys tem. 
+Should a target be identified as an immed iate threa t ,  the c ommander c an r eque s t  
+all-weather aircraf t or sur fac e - t o-air mi s s i le s  to intercep t and de s tr oy .  
+New uses for lasers deve loped by Hughe s inc lude cutting c lo thing pat terns for 
+Gene sc o ,  Inc . , Nashvi l le garment manufac turer ; pro totype of the c omputer-c on­
+trol led system can cut d i fferent patterns s ing ly from a var iety of mater ial s  much 
+fas ter than a blade • • • •  and trimming thick or thin f i lm r e s i s tors wi th a laser 
+re s i s tor trimmer that can cut nichrome , gold , chromium, and tantalum f i lms as 
+well as s tandard inks ; 
+its s ingle Q - switched laser i s  split and d i s tribu ted to 
+as many as f our individual ly c ontrol led trimming s tations . 
+Three c us tom-des igned cal ibrat ion vans , fir s t  of their kind , have been del ivered 
+to the U. S . Navy by Hughe s .  
+The mob i le vans c onform to inters tate highway re­
+quirements and· will be driven to the dock to calibrate the Pac i f ic f l ee t f s e lec ­
+tronic and ordnanc e equ ipment - -
+eliminating the pre sent expense of remov ing 
+ship s · equipment to land -based labora t ories and s ubs tantially reduc ing d own- t ime . 
+Current programs at Hughes Re search Laboratories inc lude! 
+1) S tudy o f  the phy­
+s ic s  and app licat ions o f  low-vol tage gas d ischarge s . 
+2 )  S tudy o f  " d ouble s tream" 
+p lasma ins tabi l i t ie s , noise gene rat i on in plasmas , and behavior o f  p lasmas in 
+c ros s ed e lec tric and magnet ic f ie ld s . 
+Phy s ic i s t s  or e lec t r ical engineers wi th 
+experience in s o l i d - s tate microwave are needed . 
+Acc redi ted degree and U. S .  
+c i tizenship requ ired . 
+P lease wr i te :  
+Mr . A l  J .  S imone , Hughes Re search Labora­
+torie s ,  Ma l ibu , California 902 6 5 . 
+Hughe s  is an equal oppor tunity emp loye r . 
+Mi l l ime ter wave frequenc ies --
+which of fer gre at promise for fu ture spac e c om­
+munic a t ions and data l inks 
+-- wi ll be s tud ied in an experiment Hughes is bui ld ­
+ing for NASA f s ATS -F s a te l l i te . 
+Advantages inc l ud e :  
+wide bandwid th , p lasma pene ­
+t ra t ion , 
+reduc ed spec trum c rowd ing , reduc ed s ize and we i gh t  of c omponents . 
+The 
+Hughes -bui l t  equipment for the exper iment inc ludes the mi l l ime t e r -wave tube . 
+A new, al l - e lec tronic mas s  memory device deve loped by Hughe s promises to make 
+c ompute r informat i on proc e s s ing fas ter ,  s imp le r ,  and more e f fic ien t .  
+Trademarked 
+DYNABIT , 
+it s t ore s vas t quan t i t i e s  of informa t ion on magne t ic wire thinne r than a 
+human hair . 
+I t  has no moving par t s , c an wi ths tand severe env ironmental c ond i .. 
+tions , and c an be adap ted to new or exi s t ing c omputer appl ica tions . 
+Crealing a neW world wilh elecl(oniŶ 
+r ---- - - - - - - - - - -----, 
+I 
+I 
+! HUGHES ! 
+L _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _  J 
+H U G H E S  ,A I R C R A F T  C O M PA N Y  
+© 1970 SCIENTIFIC AMERICAN, INC
+HIDDEN·SURFACE PROBLEM has been solved by special algo· 
+rithms that answer the question : Which of several surfaces lies in 
+front of all the others ? It is no trick, for example, to have a com· 
+puter draw transparent structures such as that shown at top left on 
+page 56. The computer plots above represent algorithms for analyz· 
+ing such a structure and removing hidden lines. The approach at 
+the left, invented by John Warnock of the University of Utah, em· 
+ploys an algorithm that systematically divides the screen into sub· 
+regions (in this case units of four ) and applies a standard proce· 
+dure to each one. All the surfaces that occur in a given subregion 
+are sorted out and the subregion is divided, if necessary, to end up 
+with only a single surface that lies in front of all others. The meth· 
+od is described more fully in the text. A similar algorithm, which 
+often proves faster, is represented at the right. It avoids subdivi· 
+sion when only a single edge appears in any subregion. Improve· 
+ments on these algorithms led to the "solid" fi gures on page 56. 
+brightness to display. In the simplest pic­
+tures the surface is simply displayed in 
+its appropriate color. It is only slightly 
+more difficult to compute the shade, or 
+brightness level, based on a two-part re­
+flectance property: one part for diffuse 
+reflectance and the other for specular re-
+flectance. The photographic output rou­
+tines can also compensate for the color 
+sensitivity of the film used in photo­
+graphing the display, so that the result­
+ing prints come out exactly as desired. 
+As a surface of a given color becomes 
+more nearly perpendicular to the observ-
+er's line of sight, its specular reflectance 
+dominates its diffuse reflectance and it 
+becomes whiter as well as brighter. This 
+effect can give objects a shiny appear­
+ance if much specular reflection is in­
+cluded, or a dull appearance if only the 
+diffuse reflectance is used. 
+BELL LABORATORIES EXPERIMENT illustrates how a photo. 
+graph can be analyzed by computer and then redrawn with arbi· 
+trary symbols. In this case the Greek letter "alpha" was used as a 
+primary symbol to build up more complex patterns that range 
+from very light to very dense in terms of average density per unit 
+"cell." These cells were then assigned by a computer to match the 
+point·by·point reflectivity of the photograph. Leon D. Harmon and 
+Kenneth C. Knowlton did the experiment as a study in perception. 
+8 1  
+© 1970 SCIENTIFIC AMERICAN, INC

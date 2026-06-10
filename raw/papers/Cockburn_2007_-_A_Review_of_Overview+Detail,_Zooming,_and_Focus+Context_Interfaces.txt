@@ -1,0 +1,1652 @@
+A Review of Overview+Detail, Zooming, and 
+Focus+Context Interfaces 
+ANDY COCKBURN*, AMY KARLSON†, BENJAMIN B. BEDERSON† 
+________________________________________________________________________ 
+There are many interface schemes that allow users to work at, and move between, focused and contextual views 
+of a data set. We review and categorise these schemes according to the interface mechanisms used to separate 
+and blend views. The four approaches are overview+detail, which uses a spatial separation between focused and 
+contextual views; zooming, which uses a temporal separation; focus+context, which minimizes the seam 
+between views by displaying the focus within the context; and cue-based techniques which selectively highlight 
+or suppress items within the information space. Critical features of these categories, and empirical evidence of 
+their success, are discussed. The aim is to provide a succinct summary of the state-of-the-art, to illuminate 
+successful and unsuccessful interface strategies, and to identify potentially fruitful areas for further work.  
+ 
+Categories and Subject Descriptors: D.2.2 Design Tools and Techniques–User Interfaces; H.5.2 User 
+Interfaces–Graphical User Interfaces (GUI) 
+General Terms: Human Factors 
+Additional Key Words and Phrases: Information display, information visualization, focus+context, 
+overview+detail, zoomable user interfaces, fisheye views, review paper. 
+________________________________________________________________________ 
+ 
+1. INTRODUCTION  
+In most computer applications, users need to interact with more information and with 
+more interface components than can be conveniently displayed at one time on a single 
+screen. This need is dictated by pragmatic, technological, and human factors. The 
+pragmatic issues concern form-factors such as the size, weight, and fashion of displays 
+that are used for varied tasks in diverse locations, as well as the cost of construction. 
+Technological limitations constrain the ability of displays to match the breadth and acuity 
+of human vision. Humans, for instance, can see through a visual angle of approximately 
+200°×120° (without turning the eyes or head), while typical computer displays extend 
+approximately 50° horizontally and vertically when viewed from normal distances 
+(Woodson and Conover 1964). Similarly, the ‘resolution’ of the human eye, with 
+                                                 
+* Department of Computer Science and Software Engineering, University of Canterbury, 
+Christchurch, New Zealand, andy@cosc.canterbury.ac.nz 
+† Human-Computer Interaction Lab, Computer Science Department, Institute for 
+Advanced Computer Studies, University of Maryland, College Park, MD 20742, {akk; 
+bederson}@cs.umd.edu 
+ 
+Permission to make digital/hard copy of part of this work for personal or classroom use is 
+granted without fee provided that the copies are not made or distributed for profit or 
+commercial advantage, the copyright notice, the title of the publication, and its date of 
+appear, and notice is given that copying is by permission of the ACM, Inc. To copy 
+otherwise, to republish, to post on servers, or to redistribute to lists, requires prior specific 
+permission and/or a fee. 
+© 2007 ACM 1073-0516/01/0300-0034 $5.00 
+ 
+ 
+2
+approximately 180 cones-receptors per degree in the fovea (Ware 2004), can perceive 
+around 200 dots per cm (510 dots per inch) at a viewing distance of 50cm (20 inches) —
+far more than the typical display resolution of 40 dots per cm (100 dots per inch). Finally, 
+even if a ‘perfect’ display could be constructed, displaying all information simultaneously 
+is likely to hinder the user’s ability to distinguish between important and irrelevant 
+information.  
+The traditional interface mechanisms for dealing with these display trade-offs involve 
+allowing information to be moved (typically through paging, scrolling and panning) or 
+spatially partitioned (through windowing, menus, and so on). Although scrolling and 
+windowing are standard in almost all user interfaces, they introduce a discontinuity 
+between the information displayed at different times and places. This discontinuity can 
+cause cognitive and mechanical burdens for the user who must mentally assimilate the 
+overall structure of the information space and their location within it, and manipulate 
+controls in order to navigate through it. For example, Grudin (2001) reports that reducing 
+the discontinuity between views “reduces the cognitive load by allowing rapid glances to 
+check on information; for example between a bird’s-eye view of an entire graphical 
+object and a close-up of a detail.” 
+An alternative to moving or spatially partitioning the data space is to vary the scale at 
+which the data is displayed, enabling multiple views at varying levels of detail. Other 
+approaches involve broadening the user’s field of view to allow the natural processes of 
+human vision to determine focal and peripheral views, or systems can supplement the 
+information space with cues that highlight salient items within their context. All of these 
+schemes offer potential advantages derived from their ability to allow users to rapidly and 
+fluidly move between detailed views and broad overviews.  
+1.1 Road Map 
+The objective of this paper is to summarise the state of research on interfaces that allow 
+users to work at multiple levels of detail, and to identify effective and ineffective uses of 
+them. This review is motivated by two factors. First, advanced interaction techniques are 
+increasingly being deployed in desktop interfaces, yet research sometimes exists that can 
+advise developers about the techniques’ potential efficiency impacts. For example, Apple 
+released their Mac OS X Dock which allows items to dynamically enlarge as the cursor 
+approaches them, but research has now shown that the visual distortion of this fisheye 
+effect (described later) harms targeting performance. Second, although there have been 
+previous reviews of related work (Section 2), they are now dated and cover a subset of 
+research. In particular, they were published when the research focus was on developing 
+ 
+3
+new interaction techniques rather than on empirical analysis of their effectiveness. 
+Recently, however, many researchers have turned their attention to empirically assessing 
+the efficiency and effectiveness of their techniques. Through this review we aim to 
+provide a succinct summary of the state of the art in interfaces for working with focused 
+and contextual views, and in the understanding of their performance issues, as derived 
+from empirical studies.  
+Our review is organized into four categories which distinguish systems according to 
+their varying uses of space, time or visual effect. First, we describe work on 
+overview+detail interfaces, which use a spatial separation to partition contextual and 
+detailed information (see Figure 1a for an example). We then describe zooming 
+interfaces, which use a temporal separation between the views (Figure 1b). The third 
+category, called ‘focus+context’, eliminates the spatial and temporal separation by 
+displaying the focus within the context in a single continuous view (‘fisheye views’ are 
+one example, shown in Figure 1c). The final ‘cue’ category modifies the way in which 
+items are depicted in order to highlight, suppress, or contextualise them. For example, 
+search results can be highlighted, or non-results could be visually deemphasized, to draw 
+the user’s attention to elements of interest. The cue category depends on the availability 
+of semantic information about elements in the data set, and can be used to enhance any of 
+the other three techniques.  
+Within each category we review their features, foundations, and objectives, and we 
+identify commercial exemplars where they exist. We also review research systems that 
+demonstrate novel variations on the theme. After the description of the categories, we 
+summarise the empirical work that identifies the strengths and weaknesses of the 
+techniques, presented in two broad categories of user task: low-level mechanical tasks 
+such as target acquisition; and higher level cognitive tasks such as the user’s ability to 
+search or comprehend the information space. We finish the paper by presenting summary 
+guidelines and agendas for further research.  
+ 
+4
+ 
+(a) Google Maps – an example overview+detail display. The overview inset in the 
+bottom right hand corner of the display allows users to see the context of the detailed 
+region.  
+ 
+ 
+(b) Two views in a zooming interface. Detailed and contextual views are temporally 
+segregated within a single display. 
+ 
+(c) A fisheye view is one example of a focus+context interface. The focal region is 
+magnified and displayed within its surrounding context. 
+Figure 1: Example overview+detail, zooming, and focus+context interfaces. 
+2. PREVIOUS REVIEWS  
+There have been several previous reviews of interfaces supporting focused and contextual 
+views. Leung and Apperley (1994) provided the first comprehensive review of the set of 
+visualizations that visually distort the information space (called ‘distortion-oriented’ 
+techniques). They used a metaphor of a rubber sheet to unify the theoretical properties of 
+different methods that display the focal area within the surrounding context. The rubber-
+ 
+5
+sheet analogy had previously been used to describe visualisations by Tobler (1973), 
+Mackinlay, Robertson and Card (1991), and Sarkar, Snibbe and Reiss (1993). Keahey 
+(1998) further described the tools and techniques that can be used to achieve focus and 
+context through non-linear magnification. Subsequently, Carpendale and Montagnese 
+(2001) presented a mathematical framework, called the ‘Elastic Presentation Framework’ 
+that formalises the relationship between diverse visualisation schemes that present 
+regions at different scales within, or on top of, one another.  
+Reviews have also addressed different application domains. Plaisant, Carr and 
+Shneiderman (1995) describe user tasks for image browsing, considering alternative 
+interfaces for overview+detail, zooming, and focus+context approaches. Herman, 
+Melancon and Marshall (2000) review graph visualization and navigation schemes, 
+including focus+context views, with an emphasis on graph layout algorithms. In a side-
+bar to their paper, Kosara, Miksch and Hauser (2002) provide a three part taxonomy of 
+interface methods for focused and contextual views: spatial methods, dimensional 
+methods, and cue methods. Unfortunately, the side-bar presents only a few sentences on 
+each technique 
+Following the research emphasis of the time, the focus of these reviews has been on 
+describing the properties of the visualisations, rather than on empirically comparing their 
+effectiveness at supporting the users’ tasks. 
+In his enlightening recent paper, Furnas (2006) also unifies disparate interface 
+strategies for achieving focused and contextual views by revisiting the ‘fisheye’ degree of 
+interest function (FE-DOI, Section 5.1) that he originally proposed twenty years earlier 
+(Furnas 1986). A major theme of his new theoretical analysis is that many research 
+visualizations primarily address the representational issues of how information is 
+displayed, when the user’s primary concern is with what data is selected for display: he 
+contends that representation should be a secondary consideration to content. In earlier 
+work, Furnas (1997) also presented a theoretical analysis of the problem of effectively 
+navigating within information visualizations.  
+Several books on information visualization also cover overview+detail, zooming and 
+focus+context interfaces, notably the following: Ware (2004), which excels in the 
+psychological foundations of visualisation; Spence (2007), which provides a well 
+structured introduction to information visualization in a manner accessible to 
+undergraduates; Chen (2004), which provides a rich coverage and distillation of research 
+across the entire field; and Card, Mackinlay and Shneiderman (1999), which provides a 
+collation of the seminal research papers in information visualization. The goal of 
+ 
+6
+information visualization is to help users gain insight into the content of their data spaces, 
+and consequently all of these books cover a much broader range of topics than those 
+discussed in this paper. Due to their breadth, the books can only give limited direct 
+coverage of interfaces for, and empirical research on, strategies for helping users work 
+with focused and contextual views.  
+3. OVERVIEW+DETAIL — SPATIAL SEPARATION 
+An overview+detail interface design is characterized by the simultaneous display of both 
+an overview and detailed view of an information space, each in a distinct presentation 
+space. Google Maps, shown in Figure 1a, is a canonical example of an overview+detail 
+interface. Due to the physical separation of the two views, users interact with the views 
+separately, although actions in one are often immediately reflected in the other.  
+Many forms of overview+detail interfaces exist, both in the standard desktop 
+environment and in research systems, with important features including the ratio of scales 
+in the detail and overview regions, the relative size and positioning of the views, 
+mechanisms for navigation control, and the coupling between overview and detail 
+displays.    
+In the remainder of this section we describe exemplar overview+detail interfaces and 
+discuss the design issues involved in mapping their user-support to their discriminating 
+features.  
+3.1 Scrollbars, Embellished Scrollbars and Thumbnail Overviews 
+Scrollbars are a familiar component of graphical user interfaces, and each one can be 
+considered to provide a one dimensional overview of the document – the position of the 
+scroll thumb (also called the ‘knob’) within the scroll trough (also called the ‘gutter’) 
+portrays location in the document, and the length of the scroll thumb shows the 
+proportion of the document that is visible.  
+Although scrollbars typically encode only spatial information, several researchers 
+have experimented with variants that additionally portray semantic information. Value 
+bars (Chimera 1992) embellished the scroll trough with dashed lines, the thickness of 
+which depended on numerical values extracted from columns in formatted data files, to 
+depict the location of ‘interesting’ or outlier data. Hill and Hollan (1992) used similar 
+techniques to convey the read and edit history of document regions. Scroll troughs have 
+also been used to indicate document passages that best match search queries (1999) and 
+to provide awareness of other people’s locations and actions in real-time collaborative 
+tasks (Gutwin, Roseman and Greenberg 1996). 
+ 
+7
+As the level of detail presented in the scroll trough increases, the scrollbar becomes a 
+first-class overview window. Many everyday applications, such as Microsoft PowerPoint 
+and Adobe Reader, support ‘thumbnail’ document overviews that blur the boundary 
+between scrollbar and overview for navigation (Figure 2).  
+Designing thumbnail overview interfaces involves addressing a trade-off in scale 
+ratios: low scale ratios allow thumbnails that clearly represent the underlying dataset, but 
+at the cost of increased overview scrolling to access distant thumbnails, while high scale 
+ratios allow rapid access to more distant pages, but at the cost of visual clarity. Many 
+applications therefore allow users to directly control the size of the thumbnail region and 
+its scale factor (Figure 2 shows Microsoft PowerPoint with two overview-region sizes).  
+Although it seems natural that the thumbnails should allow shortcut navigation 
+(clicking on a thumbnail should cause that region of the information space to appear in 
+the detailed view), it is less clear whether the overview and detailed regions should be 
+synchronised so that they continually display corresponding locations. Synchronisation is 
+not likely to cause disorientation, but it is less powerful as it forbids independent 
+exploration of document regions in the two views. Many variant implementations are 
+possible: for example, Microsoft PowerPoint implements a one-way synchronisation in 
+which the overview is synchronised with the detail view (scrolling the detail causes 
+corresponding movement in the overview), while the detail is unsynchronised with the 
+overview (scrolling the overview has no side-effect on the detail).  
+3.2 Standard Overview+Detail Views 
+The first examples of overview+detail views (that we are aware of) are in computer 
+games of the early 1980s, such as Defender, which provided a broad overview of the 
+  
+ 
+ 
+ 
+(a) Five thumbnails in the overview. 
+(b) Ten thumbnails in the overview. 
+Figure 2: PowerPoint’s overview+detail interface. The scrollable thumbnail overview is 
+on the left-hand side of each window, and the thumbnails can be scaled by configuring 
+the width of the overview region. 
+ 
+8
+game’s information space at the bottom of the screen. They are now widely used in many 
+application areas, particularly mapping and image editing tools. Google Maps (Figure 
+1a), for example, has a small inset overview region which includes an interactive 
+rectangular sub-region that corresponds to the area shown in the detailed view. Panning 
+actions in the detail view are immediately reflected within the overview. However, 
+panning actions in the overview are less tightly coupled with the detail area; the detail 
+view is only updated to match actions in the overview when the user completes the 
+panning activity by releasing the mouse. This slight de-coupling allows users to explore 
+the overview without altering the information presented in the detail view, and at the 
+same time reduces computational and network load. 
+Given the wide variety of application areas for overview+detail interfaces, it is 
+unlikely that generic guidelines for the ‘right type’ of view coupling can be provided, but 
+we note that it is becoming standard practice to allow interactive exploration of the 
+overview without influencing the detail view, while manipulation of the detail view is 
+immediately reflected in the overview (e.g. Microsoft Word & PowerPoint, Adobe 
+Reader, and Google Maps all operate in this manner). We further note that it is common 
+to enable users to control whether the overview is visible, implying that designers believe 
+that overviews may not be useful to all users or for all tasks. More generally, however, 
+the visualization problem of coordinating multiple views is gaining increasing attention, 
+but reviewing it is beyond the scope of this paper: see Roberts (2007) for a recent review 
+of the state of the art.  
+3.3 Lenses and Z-separation 
+The systems and techniques described above all separate the overview and detail regions 
+on the x and y coordinates. Several systems, however, separate the views on the z-
+coordinate, with overviews overlaying or blended with the background detail.  
+Lenses are moveable display regions that overlay the default window. Although 
+lenses can be similar to ‘fisheye’ distortions (described later), we categorise them as 
+‘overview+detail’ because they separate (on the z-plane) the detail and overview. 
+Lenses have been used as a magnification metaphor in standard desktop environments 
+since the early 1990s: Figure 3 shows a magnification lens in the document previewer 
+‘Yap’: the magnified region follows the user’s cursor. Bier, Stone, Pier, Buxton, and 
+DeRose (1993) introduced Toolglass widgets and Magic Lenses together under the same 
+design philosophy. Toolglass widgets are resizable see-through windows, normally 
+controlled by the user’s non-dominant hand, that allow users to perform specialized 
+operations on the data space objects over which they are positioned. For example, to 
+ 
+9
+change the colour of an object in a drawing application the user would place the colour-
+selector toolglass over the target using their non-dominant hand, and then click-through 
+the toolglass using the dominant hand. Magic Lenses have the same form as Toolglass 
+widgets, but they transform the visualisation of the underlying objects to allow focused 
+viewing of specific attributes. 
+Although lenses are normally much smaller than the underlying detailed area, the lens 
+can be the same size as the detailed region, with transparency visually separating the 
+overview and detail ‘layers’. Display hardware is also available to implement the layered 
+separation. PureDepth† manufactures a dual-layer LCD screen, with a small (1-5cm) 
+separation between front and rear LCD layers. Images displayed on the front layer can 
+partially or entirely occlude those displayed on the rear layer. Claims that this technique 
+aids cognitive separation of data on different layers have not yet been supported by 
+experimental results (Aboelsaadat and Balakrishnan 2004).  
+4. ZOOMING — TEMPORAL SEPARATION 
+The second basic category of interfaces supporting both focused and contextual views is 
+based on zooming, which involves a temporal separation between views; users magnify 
+(zoom in to focus) or demagnify (zoom out for context) a data set in place rather than 
+seeing both views simultaneously. Naturally, zooming and overview+detail features can 
+be combined, but in this section we address the isolated issues of zooming. 
+Some of the design issues for zoomable interfaces that are discussed in this section 
+include the transition between zoom states (continuous or discrete zoom levels, and the 
+                                                 
+† www.puredepth.com 
+ 
+Figure 3: Z-based overview+detail separation. In the “Yap” dvi file previewer a 
+magnified detail region is shown in a lens that follows the user’s cursor. 
+ 
+10
+use of animation), the interaction controls for zooming in and out, the coupling between 
+controls for movement (panning) and zoom, and the use of semantic zooming to alter the 
+presentation of data items at different scale levels.  
+4.1 Standard desktop applications of zooming 
+Many standard desktop interfaces allow the user to zoom the data set. The controls for 
+zooming are commonly presented as toolbar widgets for specifying magnification as a 
+percentage of “normal”, or zoom selection dialog boxes. For applications that support a 
+“zoom mode” (e.g. Adobe Reader) all mouse clicks and drags are interpreted as zoom 
+actions while in that mode. Some interfaces, however, support zoom control through 
+specific interaction sequences using the mouse or keyboard (e.g., double clicking, 
+CTRL+‘+’, CTRL+scrollwheel), and thus have no visual representations. This approach 
+raises two potential problems: first, the user may not discover how to activate the zoom 
+functions; and second, they may be unable to reverse the action. For example, in an 
+informal study for this paper, only one of six computer scientists who were also 
+experienced Microsoft Word users had learned that holding the control key while using 
+the mouse scroll wheel was a shortcut for zoom; similarly, none of them realized that 
+double clicking with the left button is a zoom-in shortcut in Google Maps, and when 
+shown this feature it took most of them many attempts to determine how to reverse the 
+action without the widgets (double clicking the right button).  
+The problem of reversing zooming actions is exacerbated by the fact that undo, the 
+standard mechanism for action reversal, is normally reserved for actions that modify the 
+ 
+Figure 4: A space-scale diagram (Furnas and Bederson 1995). The viewing window 
+(a) is shifted rigidly around the 3D diagram to obtain all possible pan/zoom views of 
+the original 2D surface, e.g., (b) a zoomed in view of the circle overlap, (c) a zoomed 
+out view including the entire original picture, and (d) a shifted view of a part of the 
+picture. 
+ 
+11
+data-state and not for those that modify the view. Region-select for zoom-in should be 
+offered with caution (although powerful for appropriate uses) because there is no 
+equivalent action for zooming out.  
+4.2 Zooming toolkits and models 
+Many zoom-based research systems have been developed to demonstrate interaction and 
+visualization techniques (Card et al. 1999). The Pad system (Perlin and Fox 1993) was 
+the first fully zoomable desktop environment, and it introduced two important concepts:  
+semantic zooming, which allows objects to be represented differently at different scales; 
+and portals, which allow links between data objects and filters on their representations. 
+Pad prompted extensive further research on these and related topics, and toolkits were 
+developed to ease the implementation of zoomable interfaces, including Pad++ 
+(Bederson, Hollan, Perlin, Meyer, Bacon and Furnas 1996), Jazz (Bederson, Meyer and 
+Good 2000), Piccolo (Bederson, Grosjean and Meyer 2004), and ZVTM (Pietriga 2005). 
+Several application domains have been explored using these tookits, including drawing 
+tools for children (Druin, Stewart, Proft, Bederson and Hollan 1997), authoring tools 
+(Furnas and Zhang 1998), image browsers (Bederson 2001), and software visualization 
+(Summers, Goldsmith, Kubica and Caudell 2003).  
+The experience of building many zoomable applications across multiple domains 
+revealed domain independent design challenges, which Furnas and Bederson (1995) 
+addressed with Space-Scale diagrams, a framework for conceptualizing navigation using 
+zoom and pan. Figure 4 shows a space-scale diagram, with scale on the y-axis and space 
+on the x/z axes. The user’s viewport (Figure 4a), shown by the superimposed region, 
+remains a constant size during manipulation of scale and space. Clearly, as scale 
+increases (zooming in goes up the y-axis) the amount of panning required to traverse the 
+region also increases. Van Wijk and Nuij (2004) formalised the mathematics involved in 
+generating smooth and efficient animation trajectories in pan-zoom space (further 
+discussed below). Another general usability issue associated with zooming is ‘Desert 
+Fog’ (Jul and Furnas 1998), which captures navigation problems caused by an absence of 
+orienting features due to their increased separation at high zoom levels. To combat Desert 
+Fog, Jul and Furnas introduce ‘critical zones’ (a cue-based technique) to provide a visual 
+demarcation of regions that are guaranteed to yield further information when zoomed.  
+Alternatively, Bederson (2001) suggests designing the interaction to be closely linked to 
+the content so it is impossible to navigate to empty regions. 
+ 
+12
+4.3 Animation 
+Some methods for changing zoom scale, such as updating a magnification widget in a 
+toolbar, jump the user immediately to the new view. However, animation is frequently 
+used to help users assimilate the relationship between pre- and post-zoom states 
+(Bederson and Boltman 1999; Tversky, Morrison and Betrancourt 2002). Animation 
+causes a brief period of automatic zooming: rather than controlling the animation, the 
+user simply observes it.  
+Designing zoom-animations requires finding a suitable transition speed that reveals 
+the relationship between zoom states without slowing the user’s overall interaction: 
+research suggests values between 0.3 and 1.0 second are appropriate (Card, Robertson 
+and Mackinlay 1991; Bederson and Boltman 1999; Klein and Bederson 2005), depending 
+on the application domain and distance travelled. Sometimes, however, users need rich 
+cues to maintain comprehension and orientation throughout the animation, demanding 
+longer animated periods and more detailed representations throughout the transition. To 
+this end, van Wijk and Nuij (2004) developed a set of equations for reducing optical flow 
+during pan/zoom trajectories between two known points in a space-scale diagram (from 
+one point in space at one level of zoom to another point at a different level of zoom).  
+4.4 Automatic zooming and parallel zoom/pan control 
+Van Wijk and Nuij’s formulae calculate smooth and efficient trajectories for motion 
+between known points. Most information browsing, however, involves dynamic 
+modification of paths through space and scale in response to user feedback. Traditional 
+interfaces impose a temporal separation between users’ panning and zooming actions, but 
+two research threads are investigating concurrent control for motion and zoom.  
+First, several systems offer users explicit parallel control of movement and zoom. 
+Examples include bi-manual systems (Guiard 1987) that assign panning and zooming to 
+devices controlled in different hands (Bourgeois and Guiard 2002). OrthoZoom Scroller 
+(Appert and Fekete 2006) is a one-handed variant of this approach for one-dimensional 
+(vertical) scrolling. It maps vertical mouse actions to vertical panning and horizontal 
+mouse actions to zooming.  
+Second, some systems use an automatic connection between zooming and panning, 
+calculating one from the user’s manipulation of the other. Mackinlay, Card and 
+Robertson (1990) introduced the first related technique with their 3D Point of Interest 
+movement functions, which moved the view towards a specified point by a constant 
+percentage of the remaining distance in each animation cycle, thus producing slower 
+velocities and easier control in the latter stages of object approach (similar to zooming 
+ 
+13
+in). Addressing a similar problem in 3D worlds, Ware and Fleet (1997) introduced 
+“Depth Modulated Flying”, which automatically adapted the viewer’s velocity in ‘fly-by’ 
+visualizations in response to the user’s control of altitude (similar to zoom-level). Tan, 
+Robertson, and Czerwinski (2001) then inverted the speed/zoom binding with “speed-
+coupled flying with orbiting” in which the viewpoint altitude is automatically adjusted in 
+response to velocity. In more standard desktop applications Igarashi and Hinckley (2000) 
+implemented several ‘speed dependent automatic zooming’ (SDAZ) systems to reduce 
+disorientation when users scroll rapidly. By automatically zooming away from the 
+document as the scroll-rate increases, the pixel-rate of movement is kept within human 
+perceptual limits.  
+One potential limitation of combined zooming and panning is that it may impede 
+users in forming and exploiting a spatial understanding of the information space: the data 
+moves to different locations in the screen, dependent on space and scale settings. To 
+investigate whether stable spatial representations aided users’ ability to navigate in 
+documents Cockburn, Gutwin and Alexander (2006) designed a simple ‘Space-Filling 
+Thumbnails’ interface, which constrained the user to two temporally separated views: a 
+detailed view for reading the document, and a fully-zoomed out view in which all pages 
+are represented as tiled thumbnails within a single screen. Although highly constraining, 
+the interface ensured spatial stability within the window as scrolling and panning were 
+disabled.  
+Evaluations of these systems are described in Section 7. 
+5. FOCUS+CONTEXT — SEAMLESS FOCUS IN CONTEXT 
+The previous methods discussed for managing focused and contextual information have 
+separated the two views in either space (overview+detail) or time (zooming), leaving the 
+user to assimilate their global relationship. The third approach, called focus+context, 
+integrates focus and context into a single display where all parts are concurrently visible: 
+the focus is displayed seamlessly within its surrounding context. Research into “fisheye 
+view” interfaces, which diminish or suppress information that lies away from the focal 
+area, is particularly well represented in this category. Many focus+context interfaces, 
+including some fisheye views, use differential scale functions across the information 
+surface, leading to intentional distortion such as that shown in Figure 1c. Consequently, 
+the term ‘distortion-oriented view’ is also commonly applied in this category. By 
+presenting all regions in a single coherent display, focus+context systems aim to decrease 
+the short term memory load associated with assimilating distinct views of a system, and 
+thus potentially improve user ability to comprehend and manipulate the information. 
+ 
+14
+ 
+This section provides a brief review and introduction to the wide range of systems, 
+techniques and theories encapsulated within focus+context research. Recurring themes 
+include the following: selective presentation versus distortion of data items – several 
+systems calculate the user’s degree of interest in data items to determine which are 
+displayed, while others use the degree of interest value to change the position and scale of 
+their presentation; system- versus human-controlled focus+context – some systems 
+attempt to infer the user’s degree of interest through interaction behavior such as the 
+location of their cursor, while others defer to user manipulations of the focal region, or 
+simply exploit users’ natural capabilities for focused attention and peripheral awareness 
+(as with wide-screen displays); single versus multiple foci – while most systems only 
+support a single focal-point, some support an arbitrary number of concurrent focal points.  
+5.1 Visions and theoretical foundations 
+Spence and Apperley (1982) described the first focus+context visualisation, which they 
+named the “Bifocal Display”. It used a metaphor of paper stretched across four rollers, 
+with two foreground rollers giving a rectangular focal region, and two distant rollers on 
+either side giving receding side-plate displays. The user changed their focus by sliding 
+the paper in either direction across the frame. Nearly a decade later Mackinlay, Robertson 
+and Card (1991) implemented the concept in their Perspective Wall, shown in Figure 5. 
+The theoretical foundations for focus+context interfaces were established by Furnas 
+(1986), who described a “generalised fisheye view” formula for calculating the user’s 
+‘degree of interest’ (DOI) in objects in the data-space: DOI(x | y) = API(x) – D(x,y), 
+where x is a data element, y is the current focus, API(x) is the a priori interest in object x, 
+and D(x,y) is the spatial or semantic distance between x and y. Furnas described how his 
+formula could be applied to a variety of information domains, with data objects being 
+removed from the display when they fell below a threshold DOI value. While Furnas’s 
+DOI formula determines what information should be included in the display, much of the 
+ 
+ 
+ 
+(a) Birds-eye view 
+(b) Head-on view. 
+(c) The running system. 
+Figure 5. The Perspective Wall (Mackinlay, Robertson and Card 1991).  
+ 
+15
+subsequent research has primarily addressed the issue of how information is presented 
+(Furnas 2006).  
+Extending fisheye views, Sarkar and Brown (1992) presented geometric 
+transformations that produce visual distortions of graphs and maps, based on the 
+Euclidean distance between vertices or coordinates, and the user’s focal point. The 
+transformations determine each point’s size, position, and level of detail in the display 
+(see Figure 6). The Sarkar and Brown algorithm has been heavily used in fisheye 
+visualisations. Lamping, Rao and Pirolli (1995) present an alternative focus+context 
+transformation for hierarchical data structures based on hyperbolic geometry (Figure 7). 
+Several other systems also demonstrate focus+context techniques for tree visualization 
+including SpaceTree (Plaisant, Grosjean and Bederson 2002), which uses extensive 
+zooming animation to help users stay oriented within its focus+context tree presentation, 
+and the TreeJuxtaposer (Munzner, Guimbretiere, Tasiran, Zhang and Zhou 2003), which 
+uses focus+context methods to support comparisons across hierarchical datasets. 
+ 
+ 
+Figure 7: The Hyperbolic Tree Browser (Lamping et al. 1995). 
+ 
+(a) A Cartesian transformation of a graph  
+(b) A polar transformation of a map  
+ 
+of major US cities. 
+ 
+ 
+ 
+of the US. 
+ 
+Figure 6: Sarkar and Brown (1992) fisheye transformations. 
+ 
+16
+ 
+Two potential problems with fisheye views are first, misinterpretation of the 
+underlying data, and second, challenges in target acquisition, both of which are caused by 
+distortion of the information space. As Figure 1c shows, North/South and East/West 
+gridlines distort around the centre of a fisheye, leading to ambiguity regarding location 
+and direction within the lens. Zanella, Carpendale and Rounding (2002) propose using 
+grids and shading to alleviate misinterpretation. The fisheye target acquisition problem is 
+caused by the lens displacing items away from the actual screen location used to activate 
+them, as shown in Figure 8.  
+5.2 Sample applications 
+Many systems demonstrating focus+context have been developed. Empirical evidence of 
+focus+context success is presented in Section 7.  
+5.2.1 Fisheye Views for targeting in desktop applications 
+The Mac OS X Dock icon-panel (Figure 8a) incorporates the first large-scale deployment 
+of fisheye-style effects. Items in the icon-panel expand as the user’s cursor moves 
+towards them, providing a dynamic and rich visual effect that users may appreciate.  
+ 
+(a) The Mac Os X Dock icon-panel. 
+ 
+ 
+ 
+(b) Target movement caused by distortion. Items can be displayed at different 
+locations (middle rows) from the actual locations needed to select them (top and 
+bottom rows). 
+Figure 8: Fisheye distortion effects with icon-panels.
+ 
+17
+Theoretically similar to the icon-panel, Bederson (2000) developed fisheye menus to 
+help selecting items in long menus, for example, selecting a country-name from a combo-
+box. Each line of text in the fisheye menu is displayed in an extremely small font, with 
+the item- and font-size increasing as the cursor moves closer. To partially resolve the 
+problem of items moving as the cursor approaches users can ‘lock’ the lens dragging  into 
+a region to the right of the normal menu. 
+5.2.2 Fisheye documents 
+Furnas’s original description of the fisheye technique used computer programs as an 
+example: when the fisheye DOI formula calculated a low value for a program region, it 
+was removed from the display. Although manual controls for removing program block 
+statements and methods are now standard features of Integrated Development 
+Environments such as Microsoft Visual Studio 2005 and Netbeans (see Figure 9), 
+automatic expansion and contraction using the DOI algorithm remains largely confined to 
+research labs (the Mylar/Mylyn program visualization extension to the Eclipse IDE is one 
+example of wide-spread use of DOI (Kersten and Murphy 2005)). Everyday word-
+processors also include manual structure-based data-hiding capabilities such as the 
+“Outline View” of Microsoft Word, which allows successive folding and unfolding of 
+document sections. While systems such as these provide discrete visualization control, 
+where regions are either included or excluded, other systems such as the Document Lens 
+ 
+Figure 9. Netbeans IDE allows code detail to be removed from the display, allowing a 
+broader contextual view of the program code.  
+ 
+18
+(Robertson and Mackinlay 1993) use continuous functions to diminish document regions 
+with distance from the focus (Figure 10).  
+ 
+5.2.3 Fisheye tables 
+Furnas’s original paper also described how fisheye views could be applied to tabular data 
+such as calendar entries, with TableLens (Rao and Card 1994) providing the first 
+interactive demonstration (Figure 11). TableLens presents a compact overview of large 
+data sets, displaying all rows and columns simultaneously by encoding values as small 
+bars. Fisheye effects are available to selectively expand rows and columns to reveal the 
+attribute values of the associated data. Expansion can be applied independently to rows 
+and columns, allowing multiple focal points, but preserving the familiar rectangular 
+format of cells.  
+Bederson, Clamage, Czerwinski and Robertson (2004) applied concepts from 
+TableLens within the DateLens fisheye calendar tool (Figure 12). Designed with the 
+constrained display space of PDAs in mind, DateLens supports visualisation of different 
+ 
+Figure 10. The Document Lens (Robertson and Mackinlay 1993). 
+ 
+Figure 11. TableLens (Rao and Card 1994). 
+ 
+19
+time-spans (days, weeks, months) as well as a variety of search and presentation tools to 
+illuminate patterns and outliers.  
+5.2.4 Wide field-of-view systems 
+Another approach to providing concurrent focus+context is to increase the size and 
+resolution of the display, allowing natural human methods such as eye gaze direction, 
+peripheral vision, and control of proximity to the work surface.  
+Several display technologies can be used to produce a wide field of view: large low 
+resolution displays, multi-monitor environments, large high resolution displays, large 
+mixed resolution displays, and heads-up displays. Large low resolution displays simply 
+enlarge each pixel, which is useful for distant viewing, but offers little advantage for 
+close work due to low detail. Large high resolution displays are created either by placing 
+multiple monitors alongside one another (Grudin 2001), or by tiled projection to 
+minimize seams between the outputs from multiple graphics card heads (Robertson, 
+Czerwinski, Baudisch, Meyers, Robbins, Smith and Tan 2005).  
+Mixed resolution displays offer an inexpensive method for producing both a large 
+display surface area and a detailed focal region. Baudisch, Good, Bellotti and Schraedley 
+(2002) demonstrated the technique, using a small high-resolution display region 
+(1024x768 pixels, ~15inch flat-panel display) within a large 4x3ft, 1024x768 pixels 
+projected display (Figure 13). The images presented in the two displays were stitched 
+together in software to ensure that panning actions in one caused corresponding updates 
+to the other. This technology, however, is a stop-gap measure until high-resolution large 
+displays, such as the tiled wall displays by Guimbretiere, Stone and Winograd (2001), are 
+available at low cost.  
+ 
+ 
+ 
+ (a) Overview. 
+(b) One-day zoom. 
+(c) One-day focus. (d) Appointment focus. 
+Figure 12. The DateLens interface with the view configured to show 12 weeks at 
+consecutive levels of detail. All transitions between views are animated. 
+ 
+20
+ 
+Figure 13. A mixed resolution large display using a 1024x768 LCD panel focal area inset 
+within a 1024x768 projected contextual display (Baudisch et al. 2002). 
+Finally, heads-up displays can also emulate a wide field of view (Patrick, Cosgrove, 
+Slavkovic, Rode, Veratti and Chiselko 2000), but current devices are limited to relatively 
+low resolution, reducing their ability to support detailed views.  
+Lessons from empirical studies of large displays are presented in Section 7.   
+6. CUE-BASED TECHNIQUES 
+Almost all of the overview+detail, zooming and focus+context approaches described 
+above modify the size of objects in order to support both focused and contextual views. 
+These scale modifications can be applied purely to the graphical portrayal of objects or 
+semantically so that only objects with certain properties are scaled.  
+Cue-based techniques, on the other hand, modify how objects are rendered and can 
+introduce proxies for objects that might not be expected to appear in the display at all. 
+They can be used in conjunction with any of the schemes above, and are typically applied 
+in response to some search criteria. Data items satisfying the criteria are then displayed in 
+a modified form to alert the user to their presence. Strong consideration and support of 
+information scent – “the strength of local cues, such as text labels, in providing an 
+indication of the utility or relevance of a navigational path leading to some distal 
+information” (Pirolli, Card and Van Der Wege 2001), page 507 – is particularly 
+important in the design of cue-based techniques.  
+ 
+21
+Given this broad definition of cue-based techniques, much of the work on Information 
+Visualization could be included within this category. We confine ourselves to a few 
+examples that are particularly pertinent to the problems of focus and context. 
+6.1 Cue techniques for highlighting focal objects 
+Kosara et al. (2002) described a ‘semantic depth of field’ technique that provides a 
+natural interface for drawing the user’s attention to focal items. With this technique items 
+that satisfy search criteria are displayed in focus, while all others are slightly blurred (see 
+Figure 14a).  
+Several researchers have examined techniques for adding cues to the presence of 
+search terms in web pages: normal displays and overviews with the ‘Popout Prism’ (Suh, 
+Woodruff, Rosenholtz and Glass 2002); fisheye views with ‘Fishnet’ (Baudisch, Lee and 
+Hanna 2004); and mobile devices with ‘Summary Thumbnails’ (Lam and Baudisch 
+2005). Bederson et al. (2004) used visual demarcations in the scrollbar trough to convey 
+the presence of search matches across several months of appointment data in the PDA 
+calendar DateLens, and similar markings are used in the Netbeans IDE (right of Figure 9) 
+to convey where recent edits have taken place in program code.  
+6.2 Cue techniques for extending context beyond the window edge 
+Contextual cues about information lying outside the main display region can be added 
+with ‘decorations’. City Lights, developed by Zellwegger, Mackinlay, Good, Stefik, and 
+Baudisch (2002), used window-edge decorations to indicate the existence, size and/or 
+location of objects that lay beyond the window frame. In Halo (Figure 14b), a variation of 
+City Lights, Baudisch and Rosenholtz (2003) explored the use of arcs as decorators, as 
+     
+ 
+ 
+(a) Depth of focus ‘blurring’ 
+(b) Halo depicts items beyond the window 
+  
+(Kosara, Miksch and Hauser 2002) 
+edge (Baudisch and Rosenholtz 2003). 
+Figure 14: Two cue based techniques. 
+ 
+22
+though each off-screen object were a street lamp just tall enough to cast its circle of light 
+into the screen view-port. Nearby objects cast short, highly curved arcs, while far objects 
+cast long, subtly curved arcs. In this way, object direction and distance are encoded as arc 
+placement and curvature.  
+7. EMPIRICAL EVALUATIONS  
+Many overview+detail, zooming, and focus+context interfaces have been developed 
+since the 1980s, but until recently there was relatively little empirical evidence of their 
+success. We briefly review this empirical research, grouping the evaluations based on 
+whether they primarily address low-level aspects of interaction such as target acquisition, 
+or high-level user aspects such as the ability to comprehend the information space. This 
+summary of evaluative work largely excludes cue-based techniques: providing a cue to 
+highlight objects that match some semantic criteria will aid users in finding them. 
+7.1 Low-level evaluations 
+Most of the low-level evaluations, summarised in Table 1, each investigate only one 
+category of technique (overview+detail, zooming, or focus+context), either comparing 
+performance with and without that method or analysing its interaction characteristics.  
+The low level problem of target acquisition efficiency (the time taken to select items 
+of different sizes at different distances) is particularly well represented in this set of 
+studies. It is a well understood topic in HCI research, with an accurate and robust model 
+of performance called Fitts’ Law (Fitts 1954). Although Fitts’ Law is traditionally 
+applied to targets that are continuously visible, it also accurately models target 
+acquisition across large distances with many different styles of zooming interface 
+(Guiard, Bourgeois, Mottet and Beaudouin-Lafon 2001; Guiard, Beaudouin-Lafon, 
+Bastin, Pasveer and Zhai 2004; Guiard, Du and Chapuis 2007).  
+Target acquisition tasks are important in human-computer interaction research 
+because they largely isolate the mechanics of interface control from the context of use. 
+However, even in the constrained domain of target acquisition there are many 
+experimental variants that can influence results. Two important considerations are how 
+the targets are depicted at various scale levels, and whether each target is selected once or 
+multiple times. The target revisitation issue is important because some interfaces will 
+provide better support for the formation and exploitation of human spatial memory.  
+Recent research is investigating how to best operationalise, control, and automate the 
+methodology for evaluating multi-scale interfaces (Guiard et al. 2007; Mackay, Appert, 
+Beaudouin-Lafon, Chapuis, Du and Fekete 2007; Pietriga, Appert and Beaudouin-Lafon 
+2007).
+ 
+23
+Table 1. Low-level evaluations of mechanical manipulation and target acquisition. 
+Author and Year 
+O+D 
+Zoom 
+F+C 
+Description 
+Ramos et al. 2007 
+‹› 
+ 
+ 
+Target acquisition. Shows that pressure-activated lenses 
+can aid acquisition of small targets. 
+Cockburn et al. 2006 
+ 
+‹› 
+ 
+Document navigation. Thumbnail-enhanced scrollbars 
+(O+D) and several zooming variants are outperformed 
+by a zooming interface that presents all pages as a 
+stamp-sheet of page-thumbnails. 
+Gutwin and Skopik 
+2003 
+‹› 
+Steering tasks (dragging through a constrained path). 
+Results showed that O+D and pan+zoom were slow 
+compared to several fisheye variants.. 
+Pietriga 2007 
+‹› 
+Mechanical aspects of multi-scale searching. Compared 
+O+D, pan and zoom, fisheye F+C, and DragMag 
+interfaces for identifying abstract tasks. O+D performed 
+best, followed by DragMag, F+C, then pan and zoom.. 
+Shoemaker and 
+Gutwin 2007 
+ 
+‹› 
+Multi-point target acquisition. Compared pan, zoom, and 
+two fisheye techniques for selecting pairs of points. A 
+fisheye allowed fastest task completion. Combined 
+zooming and panning was not allowed.  
+Gutwin 2002 
+ 
+ 
+‹› 
+Target acquisition. Describes the fisheye moving target 
+problem, and proposes and evaluates ‘speed-coupled 
+flattening’ which eases it. 
+McGuffin and 
+Balakrishnan 2002; 
+Zhai et al. 2003  
+ 
+ 
+‹› 
+Target acquisition. Targets that maintain stationary 
+centres, but which expand in motor-space as the cursor 
+approaches are faster to acquire than static ones. 
+Hornbaek and 
+Hertzum 2007 
+ 
+ 
+‹› 
+Menu item acquisition. Analyses menu item selection 
+with fisheye menus. Demonstrates they are slower than 
+traditional hierarchical menus.  
+Guiard et al. 2001; 
+Guiard et al. 2004 
+ 
+‹› 
+ 
+Target acquisition. Careful analysis of zooming as a tool 
+for high index of difficulty pointing tasks. 
+Cockburn et al. 2005  
+ 
+‹› 
+ 
+Document navigation. Calibration of perceptual issues 
+of the relationship between scroll-speed and zoom, and 
+comparative evaluation of automatic zooming versus 
+traditional scrolling.  
+Ramos and 
+Balakrishnan 2005 
+ 
+‹› 
+ 
+Target acquisition. Compares parallel input mechanisms 
+for zooming and panning (aka zliding). Uni-manual 
+stylus ‘zliding’ (pressure for zooming and dragging for 
+sliding) beats bi-manual methods. 
+Appert and Fekete 
+2006; Mackay et al. 
+2007 
+ 
+‹› 
+ 
+Document navigation. Compares several zooming 
+variants, concluding that OrthoZoom’s concurrent uni-
+manual control for pan and zoom outperforms bimanual 
+controls and automatic zooming. 
+ 
+7.1.1 Linking of controls for pan and zoom 
+In investigating how best to manipulate the concurrent control of panning and zooming, 
+Ramos and Balakrishnan (2005) found that unimanual ‘zliding’ with a stylus, which used 
+pressure for zoom and dragging for pan, outperformed a variety of techniques that used 
+bimanual separation. Evaluations of OrthoZoom Scroller (Appert and Fekete 2006; 
+Mackay et al. 2007), Section 4.4, support this result that concurrent and unimanual 
+control of pan and zoom outperforms serial or bimanual separation. Speed-dependent 
+automatic zooming provides another mechanism for coupling movement and zoom level, 
+but while results show that it can offer improvements over traditional scrolling techniques 
+and over serial separation of pan and zoom (Tan et al. 2001; Cockburn, Savage and 
+ 
+24
+Wallace 2005), Appert et al.’s studies show it is inferior to OrthoZoom’s parallel and 
+manual control.  
+In certain contexts it is possible to remove panning altogether. The space filling 
+thumbnails system for document navigation (Section 4.4) demonstrates this approach by 
+constraining users to two views – a fully zoomed in view for reading, and a fully zoomed 
+out view that shows all document pages as tiled thumbnails at stable locations within one 
+window (Cockburn et al. 2006). Their evaluation demonstrated that it allowed users to 
+quickly form and exploit their spatial memory in aid of rapid navigation, significantly 
+outperforming other panning, zooming and overview+detail interfaces, particularly when 
+tasks involved revisiting previously seen pages.  
+7.1.2 Target acquisition with distortion-based views 
+When a visualization dynamically responds to the location of the cursor, as is common 
+with fisheye lens systems such as the Mac Os X dock (Figure 8a), then there can be a 
+disparity between the visual location of the item and the cursor location needed to acquire 
+it (see Figure 8b). Fisheye menus (Bederson 2000) exhibit this problem, and therefore 
+support a fisheye ‘lock’ to allow users to stabilise the focal region. Hornbaek and 
+Hertzum (2007) closely analysed interaction with fisheye menus, concluding that users 
+make little use of the non-focal display region and that performance with fisheye menus 
+is inferior to traditional hierarchical menus. Gutwin (2002) also studied the impact of 
+item movement with fisheyes, demonstrating that the problem can be eased through 
+“speed-coupled flattening”, which reduces the fisheye effect as the velocity of the cursor 
+increases. To avoid the “moving target” problem, an alternative solution is to delay 
+applying distortion until a focus object has been selected, as demonstrated by the 
+Hyperbolic Tree Browser (Lamping et al. 1995).  
+In related work on acquiring dynamic targets, McGuffin & Balakrishnan (2002) and 
+Zhai, Conversy, Beaudouin-Lafon, and Guiard (2003) showed that acquisition times are 
+reduced when discrete targets expand around their centre to fill an enlarged motor-space, 
+even when the expansion starts after 90% of the movement toward the target is complete. 
+Both sets of authors suggest modifications to the fisheye Mac Os X Dock that would 
+allow it to maintain the appealing visual effect, but without the adverse effects of target 
+movement.  
+Two studies of low level interaction have suggested tasks where distortion-oriented 
+fisheye views may provide an advantage over other techniques. First, in steering tasks, 
+where the user has to move the cursor through a constrained path, Gutwin and Skopik 
+(2003) demonstrated that three different fisheye distortion algorithms all outperformed 
+ 
+25
+panning, zooming, and an overview+detail view. Second, when the task involves 
+selecting two points that can only be selected at a high scale-ratio then multiple fisheye 
+views outperform interfaces that only permit panning at a constant high scale, or which 
+only permit zooming (Shoemaker and Gutwin 2007). The study did not include the ability 
+to use multiple overview+detail lenses. 
+7.1.3 Interface mechanics of visual search 
+Searching for a target is more demanding than mechanically acquiring one that is clearly 
+demarcated, and consequently most evaluations involving searching are presented in the 
+following section on high-level evaluations. However, in aiming to create objective 
+criteria for assessing visual search support Pietriga et al. (2007) developed a simple, 
+mechanical methodology for assessing the efficiency of interfaces for multi-scale search 
+using a grid of nine candidate rectangular targets to find the unique target with rounded 
+rather than square corners. The objects with round corners are only discriminable at a 
+high scale. They tested their methodology by comparing performance across four 
+interface types: pan and zoom, fisheye distortion lens, DragMag (Ware and Lewis 1995) 
+overview+detail lens, and an overview+detail system that supported zooming and 
+panning in both views in a manner that is similar to Google Maps. Results showed that 
+the overview+detail with pan and zoom interface was fastest, followed by the DragMag 
+overview+detail interface, then the fisheye lens, and the pan and zoom interface last.  
+This work is particularly interesting because it explicitly aims to remove the cognitive 
+skills that are normally involved in resolving search tasks, addressing instead motor and 
+perceptual skills. The results are also interesting because they clearly show that, in this 
+context, performance is best when overview+detail facilities are combined with zooming.  
+7.2 High-level evaluations 
+While the low-level evaluations focus on the mechanics of interface manipulation, the 
+high-level evaluations are diverse, examining a wide range of task domains, as 
+summarised in Table 2.  
+ 
+26
+Table 2. High-level evaluations including comprehension of information spaces. 
+Author and Year 
+O+D 
+Zoom 
+F+C 
+Description 
+North and 
+Shneiderman 2000 ‹› 
+ 
+ 
+Navigating textual census data. O+D interfaces work best 
+when actions in the overview and detail views are coordinated. 
+Coordinated views outperform detail alone. 
+Beard and Walker 
+1990 
+‹› 
+ 
+2D text-tree navigation. Overview allowed faster navigation 
+than scrollbar+resizing. Primarily, a test of O+D versus 
+traditional scrolling. 
+Ghosh and 
+Shneiderman 1999 
+‹› 
+ 
+Medical histories. The O+D interface to Lifelines (Plaisant, 
+Milash, Rose, Widoff and Shneiderman 1996) allowed tasks to 
+be completed more quickly than a zooming interface. 
+Plumlee and Ware 
+2002 
+‹› 
+ 
+Abstract graphical task. Evaluation confirms a theory that 
+zooming out-performs multiple O+D views when demands on 
+visual memory are low, but inverse when demands are high. 
+Hornbaek et al. 
+2002 
+‹› 
+ 
+Map navigation. Tests user performance using a zooming 
+interface with and without an overview. Finds some tasks are 
+faster without the overview due to cost of assimilating data.  
+Hornbaek and 
+Frokjaer 2003 
+‹› 
+ 
+‹› 
+Reading comprehension. Compared linear text with O+D and 
+fisheye text interfaces. Comprehension highest with O+D, 
+lowest with fisheye. Fisheye had fastest reading, O+D slowest. 
+Baudisch et al. 
+2004  
+‹› 
+ 
+‹› 
+Web browsers. Evaluates a cue-enhanced fisheye web browser 
+with and without an overview. Overview and fisheye 
+performed similarly. Overview was popular; fisheye less so. 
+Schaffer et al. 
+1996 
+ 
+‹› 
+Graph editing. Compared hierarchical zooming with a 
+continuous fisheye. Fisheye supported faster task completion. 
+Donskoy and 
+Kaptelinin 1997 
+ 
+‹› 
+Iconic file identification and drag-and-drop manipulation. 
+Zooming was faster and preferred to scrolling. Fisheye was 
+slowest and least preferred. Failed to demonstrate the value of 
+animation.  
+Gutwin and Fedak 
+2004 
+ 
+‹› 
+Various tasks on mobile devices. Panning vs two-level zoom 
+vs fisheye. Fisheye fastest for one task, zooming fastest for 
+one task. Panning slowest for all. 
+Bűring et al. 2006 
+ 
+‹› 
+Searching scatterplots on a mobile device. Zooming vs fisheye 
+distortion. No speed benefit was found for either technique, 
+but fisheye was significantly preferred.. 
+Baudisch et al. 
+2002.  
+‹›
+Static graph navigation and dynamic driving simulation tasks. 
+A mixed-resolution focus+context display outperforms 
+overview+detail screens and zooming. 
+Nekrasovski et al. 
+2006.  
+‹›
+Hierarchical navigation. A pan and zoom was faster than a 
+“rubber-sheet” fisheye technique. Overview provided no 
+benefit, but had some strong subjective ratings. 
+Pirolli et al. 2001; 
+Plaisant et al. 
+2002; Pirolli et al. 
+2003 
+ 
+ 
+‹› 
+Hierarchical navigation. Search strategies and performance 
+when using the Hyperbolic Tree Browser and SpaceTree 
+compared to Windows Explorer. Results depend on task 
+characteristics such as information scent and revisitation. 
+Zanella et al. 2002   
+ 
+‹› 
+Map interpretation. Grids help users interpret the effect of 
+fisheye distortion on spatial layout. Shading is less effective. 
+Cockburn and 
+Smith 2003; 
+Jakobsen and 
+Hornbaek 2006 
+ 
+ 
+‹› 
+Source code navigation. Investigates the value of manual 
+elision and DOI fisheye techniques over a traditional linear 
+representation of code. Fisheye techniques were generally no 
+worse and often better than flat code listings.  
+Bederson et al. 
+2004 
+ 
+ 
+‹› 
+Mobile calendars. Fisheye calendar allows complex tasks to be 
+completed more quickly. Fisheye was found easier to use than 
+a traditional alternative for most tasks, but somewhat less 
+preferred overall. 
+Bederson and 
+Boltman 1999 
+ 
+‹› 
+ 
+Spatial memory. Using animation in zooming helps users form 
+a spatial model of the information space. 
+ 
+7.2.1 Single versus multiple foci 
+Schaffer, Zuo, Greenberg, Bartram, Dill, Dubs, and Roseman (1996) conducted the first 
+high-level empirical study of focus+context techniques, comparing fisheye and full-zoom 
+ 
+27
+interfaces for navigation through 2D graphical networks. The participants’ tasks involved 
+finding and fixing ‘broken network connections’ in hierarchically organised network 
+diagrams. The fisheye view allowed multiple focal and contextual regions, while the 
+zooming condition did not. Participants completed tasks more quickly and with fewer 
+navigation actions when using the fisheye interface, but unfortunately, it remains unclear 
+what caused the improved performance—the fisheye or the multiple foci. Similar 
+concerns exist for Shoemaker and Gutwin’s (2007) positive results for multiple fisheye 
+lenses: their control interfaces did not allow multiple lenses. An experiment by Plumlee 
+and Ware (2002) highlights these concerns by showing that interfaces supporting 
+multiple overview+detail views outperform zooming interfaces when demands on visual 
+memory are high.  
+7.2.2 Understanding overview+detail 
+In directly comparing overview+detail and zooming interfaces, Ghosh and Shneiderman 
+(1999) analysed task completion times for tasks that involved extracting medical 
+information from two versions of the Lifelines system (Plaisant et al. 1996). The 
+overview+detail interface allowed tasks to be completed more quickly. However, it is 
+now common for desktop applications to include both overview+detail and zooming 
+capabilities. To better understand the contribution of each of these components to 
+interaction, Hornbaek, Bederson and Plaisant (2002) evaluated user performance in map 
+navigation tasks when using a zooming interface that either had or did not have an 
+additional overview+detail region. They also controlled whether the zooming functions 
+did or did not support semantic zooming – when semantic zooming was on, the labels in 
+the map were tailored to provide appropriate detail for that zoom level (similar to Google 
+Maps), but when semantic zooming was off the labels were only legible when the map 
+was zoomed in. Surprisingly, and contradicting Pietriga et al’s (2007) analysis of low 
+level interaction, their results showed that overview+detail regions increased task 
+completion times when semantic zooming was enabled, and they suggest that this cost is 
+due to the overview being made redundant by the semantic detail. When semantic 
+zooming was disabled there was no difference between performance with 
+overview+detail and zooming interfaces. The participants preferred the interface with the 
+overview despite their slower performance, stating that it helped them orient themselves 
+within the information space.  
+7.2.3 Impact on spatial memory 
+The study by Hornbaek, Bederson and Plaisant (2002) also produced results on the 
+impact that overview+detail interfaces have on spatial recollection, finding that recall was 
+ 
+28
+better after using the non-overview interface. With zooming interfaces, Bederson and 
+Boltman (1999) showed that animated zoom effects helped users form a spatial model of 
+their information space. This result supports those in non-zooming domains, which also 
+show that animation helps users comprehend display transitions (Gonzalez 1996; Klein 
+and Bederson 2005). While animation aids comprehension, there is no evidence that it 
+also aids task performance time. Chui and Dillon (1997) found no significant main effect 
+of animation in a hierarchical file-browsing task, although they suggest that users gain 
+benefits once accustomed to it. Similarly, Donskoy and Kaptelinin (1997) failed to show 
+task time benefits for animation when coupled with overview+detail, zooming, or fisheye 
+views.  
+Spatial comprehension remains a concern for fisheye lenses that distort the 
+information space (Carpendale and Cowperthwaite 1997). Zanella, Carpendale and 
+Rounding (2002) examined a variety of display enhancement schemes aimed at 
+enhancing users’ spatial comprehension of distorted space, concluding that simple 
+parallel grid lines best support comprehension. 
+7.2.4 Reading, editing, and text documents 
+Hornbaek and Frokjaer (2003) compared reading patterns and usability issues associated 
+with three forms of electronic document presentation: traditional ‘flat’ text, an 
+overview+detail interface that enhanced the flat-text view with thumbnails of each page 
+on the left-hand edge of the window, and a fisheye text view that displayed text regions 
+in different font sizes. In the fisheye view, headings and the first and last paragraphs of 
+each section were continually displayed in a normal-sized font, while other paragraphs 
+were diminished unless clicked on by the user. Their evaluation tasks involved reading 
+scientific documents using the different forms of presentation and then either writing 
+short summaries or answering questions about them. Their results showed that the fisheye 
+view encouraged faster reading, but that this speed was at the cost of comprehension. The 
+overview interface allowed participants to rapidly navigate through the document, and 
+although they spent more time reading, they scored better in comprehension tests. As in 
+other studies, the participants’ preference rankings favoured the overview+detail 
+interface. These results are supported by the findings of Baudisch, Lee and Hanna (2004) 
+who compared three forms of a cue-enhanced web browser (a traditional linear view, a 
+fisheye view, and an overview). Their participants generally preferred the 
+overview+detail interface, while the fisheye view polarised opinions. Their performance 
+data suggested that the benefits of fisheye views are strongly task dependent. 
+ 
+29
+7.2.5 Computer program navigation 
+Source code is a specialized class of structured text that has long been considered an 
+appropriate domain for the application of focus+context techniques (Furnas 1986). Many 
+commercial and open-source development environments now allow users to 
+collapse/restore the display of methods (for example, Netbeans, as shown in Figure 9), 
+yet until recently there was no empirical evidence of the effectiveness of this feature. 
+Cockburn and Smith (2003) compared user performance in source code navigation tasks 
+using traditional linear scrollable listings with two fisheye-based implementations that 
+miniaturized method contents. For most tasks, the reduced scrolling required with the 
+fisheye views resulted in faster task completion, but the study also raised questions about 
+the generalizabilty of the results to more complex tasks in which users would have to 
+continually manage the open/closed states of methods. Jakobsen and Hornbaek (2006) 
+avoided this last issue by developing a fisheye source code viewer that used a DOI 
+function to automatically display/suppress code blocks based on the user’s focal region. 
+The authors compared their fisheye viewer to a standard linear list view in performing 
+basic and advanced code navigation tasks. They not only found the fisheye viewer to 
+support significantly faster task times overall, but that it was also preferred to the linear 
+listing. While many studies have found fisheye implementations to be well-liked by 
+participants, this work stands out as one of the few for which a fisheye technique offers 
+users a performance benefit over the traditional alternative. 
+7.2.6 Searching and tree navigation studies  
+Section 7.1.3 described Pietriga et al’s (2007) recent work on operationalising the 
+evaluation of multi-scale interfaces for search. Their work explicitly eliminates cognitive 
+task components, yet it is reasonable to suspect that in real use cognitive aspects of tasks 
+may cause interaction effects between task type and interface type (examples below).  
+Beard and Walker (1990) conducted the first empirical comparison of 
+overview+detail and zooming techniques for hierarchical navigation; they also included a 
+scrolling interface as an experimental control. The overview+detail and zooming 
+interfaces both outperformed scrolling alone.  
+Interest in the efficiency of focus+context interfaces for search was stimulated by the 
+success of the hyperbolic tree browser (Lamping et al. 1995) during a ‘browse-off’ panel 
+session at ACM CHI’97 (Mullet, Fry and Schiano 1997) when a team using it 
+outperformed five other teams using competing browsers. Previous studies, however, had 
+failed to show significant advantages (Lamping et al. 1995; Czerwinski and Larson 
+1997). Pirolli et al (2001; 2003) ran a series of studies to scrutinize interaction with the 
+ 
+30
+hyperbolic tree browser (Figure 7) in comparison to the standard file browser of 
+Windows Explorer. Their studies demonstrated interaction effects between task and 
+interface factors, with the hyperbolic tree performing well on tasks with strong scent (i.e., 
+when nodes provided strong cues to the information content of further outlying nodes), 
+but that it performed poorly when scent was weak. Through analysis of eye-tracking data, 
+they demonstrate that the hyperbolic browser’s slower performance in low scent 
+conditions is due to impaired support for visual search in the high-density peripheral 
+views.  
+Plaisant, Grosjean and Bederson (2002) used the CHI’97 browse-off dataset to 
+compare performance in tree searching tasks using Windows Explorer, the hyperbolic 
+tree browser, and their own focus+context SpaceTree system. Again, their results varied 
+across tasks, with Windows Explorer outperforming the others for tasks that benefited 
+from multiple open branches (e.g. revisiting previously opened branches), and the 
+SpaceTree performing well for certain types of topological overview tasks (e.g. viewing 
+ancestors). 
+Nekrasovski et al. (2006) recently compared performance in hierarchical tree 
+browsing tasks using zooming and distortion-oriented focus+context techniques, both 
+with and without an overview. Contrary to their predictions, pan and zoom was 
+significantly faster than the focus+context technique. Although the presence of an 
+overview did not impact task times, subjective measures of physical demand and 
+enjoyment favored an overview, which are in agreement with the findings of Hornbaek, 
+Bederson and Plaisant (2002). Donskoy and Kaptelinin (1997) also showed that zooming 
+outperformed a fisheye view for tasks involving identification and drag-and-drop 
+manipulation of file icons.  
+In contrast to the above, the results of Bűring, Gerken and Reiterer (2006) were more 
+positive for fisheyes. They compared pan and zoom to a fisheye view for searching 
+scatterplot graphs on a mobile device, finding no significant difference in task times, but 
+subjective results strongly favored the fisheye view. The authors note that the preference 
+for fisheyes contradicts previous studies (Donskoy and Kaptelinin 1997; Hornbaek and 
+Frokjaer 2003; Baudisch et al. 2004; Gutwin and Fedak 2004), but they suggest it may be 
+due to the nature of their tasks, which did not require relative spatial judgments.  
+There have also been several evaluations of cue-based interfaces. Performance 
+benefits have been demonstrated for cue-based techniques that visually emphasize items 
+(Suh et al. 2002; Baudisch et al. 2004; Lam and Baudisch 2005) or group them (Dumais, 
+Cutrell and Chen 2001) in response to search criteria.  
+ 
+31
+7.2.7 Other evidence of task effects in cross-interface evaluations 
+The task-specific performance merits of fisheye views are also echoed in two studies on 
+the use of fisheye techniques on mobile devices. First, Gutwin and Fedak (2004) 
+compared a single-focus fisheye interface with two-level zoom and panning interfaces for 
+three tasks: image editing, web browsing, and network monitoring. The fisheye best 
+supported navigation; the zooming interface best supported monitoring; and the 
+traditional panning was slowest for all tasks. The fisheye problems with moving targets 
+may explain zooming’s success in the monitoring task. However, their limited support for 
+zooming (two levels only) may explain why it was outperformed by the fisheye in the 
+navigation task. Second, an evaluation of the fisheye calendar DateLens (Section 5.2.3) in 
+comparison to a standard commercial calendar for PDAs (Microsoft Pocket PC 2002) 
+showed that the fisheye allowed improved performance of complex tasks, but little 
+difference for simple ones (Bederson et al. 2004). And like other studies, user support of 
+the fisheye distortion was mixed; on a task-by-task basis, the fisheye approach was more 
+often found easier to use than the traditional interface, yet the traditional interface was 
+ultimately preferred by a slight majority of users. It remains unclear whether the modest 
+subjective preference ratings for fisheye views are due to their novelty or due to an 
+enduring distaste for their behaviour. 
+7.2.8 Wide field of view systems 
+There has been extensive design and evaluation research based on solving and easing 
+low-level interaction problems, such as selection, that arise when using multi-monitor 
+and wall-sized displays. Most of this work does not specifically address issues of working 
+with both focused and contextual views. Importantly, however, Czerwinski, Tan and 
+Robertson (2002) noted the potential benefits for women of working with wide field of 
+view systems, and Robertson et al. (2005) provided a review of the user experience of 
+working with large displays. 
+Baudisch et al. (2002) provided the only quantitative study (to our knowledge) of 
+focus and context issues with wide field of view systems. In the first of two experiments 
+they compared user performance using three interfaces (zooming, overview+detail, and 
+their mixed resolution focus+context display) in static graph navigation tasks using a map 
+of London and a circuit diagram. Their overview+detail condition was produced by using 
+two side-by-side monitors. The focus+context screen was faster (by up to 56%) in all 
+tasks, and they attributed the difference to the costs of switching between views when 
+using overview+detail or zooming. The second experiment involved a dynamic 
+visualization (a driving simulator) using the focus+context screen or the overview+detail 
+ 
+32
+display. Again, the split attention costs of the overview+detail screens resulted in 
+significantly worse performance.  
+8. SUMMARY  
+We have presented four interface approaches that allow users to attain both focused and 
+contextual views of their information spaces. Overview+detail systems allow concurrent 
+focus and context views that are spatially segregated in the x, y, or z dimensions. 
+Zooming systems allow the entire display space to be dedicated to either focused or 
+contextual views by temporally segregating their display. Focus+context systems present 
+both focus and context within a single display. This is achieved through a variety of 
+techniques, including selectively removing, diminishing or magnifying items, and various 
+displays supporting a wide field of view. Finally, cue-based systems modify the display 
+of items to highlight or suppress them, dependent on context or search criteria. Many 
+systems support combinations of these techniques. 
+None of these approaches is ideal. Spatial separation demands that users assimilate 
+the relationship between the concurrent displays of focus and context. Evidence that this 
+assimilation process hinders interaction is apparent in the experiments of Hornbaek et al 
+(2002), who note that “switching between the detail and the overview window required 
+mental effort and time”. Baudisch et al (2002) made similar observations of costs 
+associated with split attention with overview+detail interfaces. The temporal separation 
+of zooming also demands assimilation between pre- and post-zoom states. This difficulty 
+was observed by Cockburn and Savage (2003) in their evaluations, who note that “the 
+abrupt transitions between discrete zooming levels… meant that the participants had to 
+reorient themselves with each zoom action”. Animation can ease this problem (Bederson 
+and Boltman 1999), but it cannot be removed completely. Baudisch et al (2002) describe 
+how some users rapidly completed tasks using a zooming interface by first zooming out 
+and memorizing all target locations, but the burden of memorization is likely to be 
+ineffective for many tasks. Finally, many focus+context systems distort the information 
+space, which is likely to damage the user’s ability to correctly assess spatial properties 
+such as directions, distances and scales. Even in non-spatial domains, evaluations of 
+distortion-based techniques have largely failed to provide evidence of performance 
+enhancements, and several studies have shown that fisheye views can damage 
+fundamental components of interaction such as target acquisition. 
+Regardless of the usability challenges raised by each of the techniques, 
+overview+detail and zooming interfaces are now standard components of many desktop 
+graphical user interfaces. The usability benefits they can provide often outweigh their 
+ 
+33
+costs, as demonstrated by several evaluations. For example Hornbaek and Frokjaer 
+(2003) showed that when reading electronic documents, both overview+detail and 
+fisheye interfaces offer performance advantages over traditional ‘flat’ text interfaces. 
+Although rare, fisheye views are starting to appear in desktop components such as the 
+Mac OS X Dock. In this case the usability benefits are purely cosmetic, yet many users 
+are happy to trade off efficiency for fashion and design lustre, which is not surprising, 
+since aesthetics and enjoyment are essential aspects of the computer experience (Norman 
+2004). 
+It therefore seems clear that supporting both focused and contextual views can 
+improve interaction over constrained single view software. The question then becomes 
+which style of interface, or which combination of styles, offers the greatest performance 
+advantages, for what tasks, and under what conditions? The current state of research fails 
+to provide clear guidelines, despite a recent surge in empirical analysis of the techniques’ 
+effectiveness. Results to date have revealed that the efficiency of different techniques is 
+dependent on many factors, particularly the nature of the users’ task. For example, 
+Hornbaek et al. (2002) showed that fisheye text views allowed documents to be read 
+faster than overview+detail, but that participants understood documents better with 
+overview+detail; Schaffer et al. (1996) showed that hierarchical fisheye views 
+outperformed full-zoom techniques, but it remains unclear whether an alternative 
+implementation of zooming (continuous rather than full) would have defeated fisheye 
+views; Bederson et al. (2004) showed that a table-based fisheye interface for calendars on 
+PDAs outperformed a standard interface for complex tasks, but for simpler tasks, the 
+normal interface was more efficient and preferred.  
+We offer the following concluding comments and recommendations, with the 
+cautionary note that it is important for designers to use their own judgment as to which 
+approach to pursue. We also encourage researchers to continue to empirically analyze 
+these techniques to solidify our understanding of the trade-offs inherent in the different 
+approaches.  
+Overview+Detail. Several studies have found that overview+detail interfaces are 
+preferred to other techniques. For particular tasks, such as document comprehension, no 
+alternative has been found to be more effective. Notable disadvantages of 
+overview+detail are the additional use of screen real estate (which may be more 
+effectively used for details) and the mental effort and time required to integrate the 
+distinct views. The real estate issue can often be addressed by offering users control over 
+whether or not to display the overview. Even so, the time costs of this technique may 
+ 
+34
+make it sub-optimal for dynamic activities, as shown by Baudisch et al’s (2002) driving 
+simulation. For consistency with state of the art interfaces, users should be able to browse 
+the overview without influencing the detail view, but changes in the detail view should be 
+immediately reflected in the overview.  
+Zooming. Temporal separation of views can easily create substantial cognitive load for 
+users in assimilating the relationship between pre- and post-zoom states—zooming is 
+easy to do badly, as indicated by many studies in which it has performed poorly. 
+Animating the transition between zoom levels can dramatically reduce the cognitive load 
+(but fine-tuning the duration of the animation is important). There is also evidence that 
+users can optimize their performance with zooming interfaces when concurrent, 
+unimanual controls for pan and zoom are supported.  
+Focus+Context. There are several distinct strategies for displaying the focal region 
+within its surrounding context: removal of non-focal items from the display, distortion to 
+alter the scale of items according to a calculated interest value, and specialized wide field 
+of view displays. Most of the empirical research on focus+context interfaces has 
+investigated distortion-oriented visualizations. Results in favour of these techniques have 
+been produced for tasks that involve gaining a rapid overview of the data-space or 
+quickly following graph structures that have clear categories. However, distortion-
+oriented displays are likely to impair the user’s ability to make relative spatial judgments, 
+and they can cause target acquisition problems. Other empirical work on wide-screen 
+displays suggests that large high resolution displays will help users employ their natural 
+capabilities for focused visual attention and peripheral vision. 
+ACKNOWLEDGEMENTS 
+Many thanks to the anonymous reviewers for their extremely detailed and constructive 
+comments. This work was partially funded by New Zealand Royal Society Marsden 
+Grant 07-UOC-013. 
+REFERENCES 
+ABOELSAADAT, W. and BALAKRISHNAN, R. 2004. An Empirical Comparison of 
+Transparency on One and Two Layer Displays. People and Computers XVIII: 
+Proceedings of the British HCI Conference 2004, 53-67. 
+APPERT, C. and FEKETE, J. 2006. OrthoZoom Scroller: 1D Mutli-scale navigation. 
+Proceedings of CHI'06: ACM Conference on Human Factors in Computing Systems, 
+Montreal, Canada, ACM Press, 21-30. 
+BAUDISCH, P., GOOD, N., BELLOTTI, V. and SCHRAEDLEY, P. 2002. Keeping 
+Things in Context: A Comparative Evaluation of Focus Plus Context Screens, 
+ 
+35
+Overviews, and Zooming. Proceedings of CHI'02: ACM Conference on Human Factors 
+in Computing Systems, Minneapolis, Minnesota, 259-266. 
+BAUDISCH, P., LEE, B. and HANNA, L. 2004. Fishnet, a fisheye web browser with 
+search term popouts: a comparative evaluation with overview and linear view. 
+Proceedings of Advanced Visual Interfaces, AVI04, Gallipoli, Italy, ACM Press, 133-140. 
+BAUDISCH, P. and ROSENHOLTZ, R. 2003. Halo: A Technique for Visualizing Off-
+Screen Locations. Proceedings of CHI'2003 Conference on Human Factors in 
+Computing Systems, Fort Lauderdale, Florida, 481-488. 
+BEARD, D. and WALKER, J. 1990. Navigational Techniques to Improve the Display of 
+Large Two-Dimensional Spaces. Behavior and Information Technology 9(6): 451-466. 
+BEDERSON, B. 2000. Fisheye Menus. Proceedings of UIST'00: ACM Symposium on 
+User Interface Software and Technology, San Diego, California, ACM Press, 217-225. 
+BEDERSON, B. 2001. PhotoMesa: A Zoomable Image Browser Using Quantum 
+Treemaps and Bubblemaps. Proceedings of UIST01: ACM Symposium on User Interface 
+Software and Technology, Orlando, Florida, ACM Press, 71-80. 
+BEDERSON, B. and BOLTMAN, A. 1999. Does Animation Help Users Build Mental 
+Maps of Spatial Information? Proceedings of InfoVis99: IEEE Symposium on 
+Information Visualization, IEEE Computer Society, 28-35. 
+BEDERSON, B., GROSJEAN, J. and MEYER, J. 2004. Toolkit Design for Interactive 
+Structured Graphics. IEEE Transactions on Software Engineering 30(8): 535-546. 
+BEDERSON, B., HOLLAN, J., PERLIN, K., MEYER, J., BACON, D. and FURNAS, G. 
+1996. Pad++: A Zoomable Graphical Sketchpad for Exploring Alternate Interface 
+Physics. Journal of Visual Languages and Computing 7(1): 3-31. 
+BEDERSON, B. B., CLAMAGE, A., CZERWINSKI, M. P. and ROBERTSON, G. G. 
+2004. DateLens: A fisheye calendar interface for PDAs. ACM Transactions on 
+Computer-Human Interaction 11(1): 90-119. 
+BEDERSON, B. B., MEYER, J. and GOOD, L. 2000. Jazz: an extensible zoomable user 
+interface graphics toolkit in Java. Proceedings of UIST'00: ACM Symposium on User 
+Interface Software and  Technology. San Diego, California, United States, ACM Press: 
+171-180. 
+BIER, E. A., STONE, M. C., PIER, K., BUXTON, W. and DEROSE, T. D. 1993. 
+Toolglass and Magic Lenses: The See-Through Interface. Proceedings of ACM 
+SIGGRAPH'93. Anaheim, CA, ACM Press: 73-80. 
+BOURGEOIS, F. and GUIARD, Y. 2002. Multiscale Pointing: Facilitating Pan-Zoom 
+Coordination. Extended Abstracts of CHI02: ACM Conference on Human Factors in 
+Computer Systems, Minneapolis, Minnesota, USA, 758-759. 
+BŰRING, T., GERKEN, J. and REITERER, H. 2006. User Interaction with Scatterplots 
+on Small Screens – A Comparative Evaluation of Geometric-Semantic Zoom and Fisheye 
+Distortion. IEEE Transactions on Visualization and Computer Graphics 12(5): 829-836. 
+BYRD, D. 1999. A Scrollbar-based Visualization for Document Navigation. Proceedings 
+of Digital Libraries '99, Berkeley CA, 122-129. 
+CARD, S., MACKINLAY, J. and SHNEIDERMAN, B. 1999. Readings in Information 
+Visualization: Using Vision to Think. Morgan-Kaufmann,  
+ 
+36
+CARD, S. K., ROBERTSON, G. G. and MACKINLAY, J. D. 1991. The information 
+visualizer, an information workspace. Proceedings of CHI91: ACM Conference on 
+Human Factors in Computing Systems, New Orleans, Louisiana, ACM Press, 181-186. 
+CARPENDALE, M. and COWPERTHWAITE, D. 1997. Making Distortions 
+Comprehensible. Proceedings of VL'97: IEEE Symposium on Visual Languages, IEEE, 
+36-45. 
+CARPENDALE, M. and MONTAGNESE, C. 2001. A Framework for Unifying 
+Presentation Space. Proceedings of UIST'01: ACM Symposium on User Interface 
+Software and Technology, Orlando, Florida, ACM Press, 61-70. 
+CHEN, C. 2004. Information Visualization: Beyond the Horizon. Springer-Verlag, 
+London. 
+CHIMERA, R. 1992. ValueBars: An Information Visualization and Navigation Tool. 
+Proceedings of CHI'92: ACM Conference on Human Factors in Computing Systems, 
+Monterey, California, ACM Press, 293-294. 
+CHUI, M. and DILLON, A. 1997. Who's Zooming Whom? Attunement to Animation in 
+the Interface. Journal of the American Society for Information Sciences 48(11): 1067-
+1072. 
+COCKBURN, A., GUTWIN, C. and ALEXANDER, J. 2006. Faster Document 
+Navigation with Space-Filling Thumbnails. Proceedings of CHI'06 ACM Conference on 
+Human Factors in Computing Systems, Montreal, Canada, ACM Press, 1-10. 
+COCKBURN, A. and SAVAGE, J. 2003. Comparing Speed-Dependent Automatic 
+Zooming with Traditional Scroll, Pan and Zoom Methods. People and Computers XVII 
+(Proceedings of the 2003 British Computer Society Conference on Human-Computer 
+Interaction.), Bath, England, 87-102. 
+COCKBURN, A., SAVAGE, J. and WALLACE, A. 2005. Tuning and Testing Scrolling 
+Interfaces that Automatically Zoom. Proceedings of CHI'05: ACM Conference on 
+Human Factors in Computing Systems, Portland, Oregon, ACM Press, 71-80. 
+CZERWINSKI, M. and LARSON, K. 1997. The New Web Browsers: They're Cool but 
+are they Useful? People and Computers XII: Proceedings of the British HCI'97 
+Conference, Bristol, UK, Springer Verlag 
+CZERWINSKI, M., TAN, D. and ROBERTSON, G. 2002. Women Take a Wider View. 
+Proceedings of CHI'02: ACM Conference on Human Factors in Computing Systems, 
+Minneapolis, Minnesota, 195-202. 
+DONSKOY, M. and KAPTELININ, V. 1997. Window navigation with and without 
+animation: a comparison of scroll bars, zoom, and fisheye view. Companion Proceedings 
+of CHI'97: ACM Conference on Human Factors in Computing Systems, Atlanta, GA, 
+279-280. 
+DRUIN, A., STEWART, J., PROFT, D., BEDERSON, B. and HOLLAN, J. 1997. 
+KidPad: A Design Collaboration Between Children, Technologists, and  Educators. 
+Proceedings of CHI'97: ACM Conference on Human Factors in Computing Systems, 
+Atlanta, Georgia, 463-470. 
+DUMAIS, S., CUTRELL, E. and CHEN, H. 2001. Optimizing Search by Showing 
+Results in Context. Proceedings of CHI'01: ACM Conference on Human Factors in 
+Computing Systems, Seattle, Washington, 277-284. 
+ 
+37
+FITTS, P. 1954. The Information Capacity of the Human Motor System in Controlling 
+the Amplitude of Movement. Journal of Experimental Psychology 47: 381-391. 
+FURNAS, G. 1986. Generalized Fisheye Views. Proceedings of CHI'86: ACM 
+Conference on Human Factors in Computing Systems, Boston, MA, ACM Press, 16-23. 
+FURNAS, G. 1997. Effective View Navigation. Proceedings of CHI'97: ACM 
+Conference on Human Factors in Computing Systems, Atlanta, GA, ACM Press, 367-
+374. 
+FURNAS, G. 2006. A Fisheye Follow-up: Further Reflections on Focus+Context. 
+Proceedings of CHI'06 ACM Conference on Human Factors in Computing Systems, 
+Montreal, Canada, ACM Press, 999-1008. 
+FURNAS, G. and ZHANG, X. 1998. MuSE: A Multiscale Editor. Proceedings of 
+UIST'98: ACM Symposium on User Interface Software and Technology, San Francisco, 
+California, 107-116. 
+FURNAS, G. W. and BEDERSON, B. B. 1995. Space-Scale Diagrams: Understanding 
+Multiscale Interfaces. Proceedings of CHI'95: ACM Conference on Human Factors in 
+Computing Systems, Denver, Colorado, ACM Press, 234-241. 
+GHOSH, P. and SHNEIDERMAN, B. 1999. Zoom-Only Vs Overview-Detail Pair: A 
+Study in Browsing Techniques as Applied to Patient Histories, Technical report 99-12. 
+HCIL, University of Maryland, College Park. 99-12. 
+GONZALEZ, C. 1996. Does Animation in User Interfaces Improve Decision Making? 
+Proceedings of CHI'96: ACM Conference on Human Factors in Computing Systems, 
+Vancouver, BC, ACM Press, 27-34. 
+GRUDIN, J. 2001. Partitioning Digital Worlds: Focal and Peripheral Awareness in 
+Multiple Monitor Use. Proceedings of CHI'01: ACM Conference on Human Factors in 
+Computing Systems, Seattle, Washington, 458-465. 
+GUIARD, Y. 1987. Asymmetric Division of Labor in Human Skilled Bimanual Action: 
+The Kinematic Chain as a Model. Journal of Motor Behavior 19(4): 486--517. 
+GUIARD, Y., BEAUDOUIN-LAFON, M., BASTIN, J., PASVEER, D. and ZHAI, S. 
+2004. View Size and Pointing Difficulty in Multi-Scale Navigation. Proceedings of 
+AVI'04: ACM Working Conference on Advanced Visual Interfaces, Gallipoli, Italy, ACM 
+Press, 117-124. 
+GUIARD, Y., BOURGEOIS, F., MOTTET, D. and BEAUDOUIN-LAFON, M. 2001. 
+Beyond the 10-bit Barrier: Fitts' Law in Multi-Scale Electronic Worlds. People and 
+Computers XV: Proceedings of IHM-HCI 2001, Lille, France, 573-587. 
+GUIARD, Y., DU, Y. and CHAPUIS, O. 2007. Quantifying degree of goal directedness 
+in document navigation: application to the evaluation of the perspective-drag technique. 
+Proceedings of CHI'07: ACM Conference on Human Factors in Computing Systems, San 
+Jose, CA, ACM Press, 327-336. 
+GUIMBRETIERE, F., STONE, M. and WINOGRAD, T. 2001. Fluid interaction with 
+high-resolution wall-size displays. Proceedings of UIST'01: ACM Symposium on User 
+Interface Software and Technology, Orlando, Florida, ACM Press, 21-30. 
+GUTWIN, C. 2002. Improving Focus Targeting in Interactive Fisheye Views. 
+Proceedings of CHI'02: ACM Conference on Human Factors in Computing Systems, 
+Minneapolis, Minnesota, ACM Press, 267-274. 
+ 
+38
+GUTWIN, C. and FEDAK, C. 2004. Interacting with Big Interfaces on Small Screens: A 
+Comparison of Fisheye, Zoom, and Panning Techniques. Proceedings of Graphics 
+Interface 2006, Quebec City, Canada, Canadian Human-Computer Communications 
+Society, 213-220. 
+GUTWIN, C., ROSEMAN, M. and GREENBERG, S. 1996. A Usability Study of 
+Awareness Widgets in a Shared Workspace Groupware System. Proceedings of 
+CSCW'96: ACM Conference on Computer Supported Cooperative Work, Boston, 
+Massachusetts, 258-267. 
+GUTWIN, C. and SKOPIK, A. 2003. Fisheye Views are Good for Large Steering Tasks. 
+Proceedings of CHI'03: ACM Conference on Human Factors in Computing Systems, Fort 
+Lauderdale, Florida, 201-208. 
+HERMAN, I., MELANCON, G. and MARSHALL, M. 2000. Graph Visualization and 
+Navigation in Information Visualization: A Survey. IEEE Transactions on Visualization 
+and Computer Graphics 6(1): 24-43. 
+HILL, W., HOLLAN, J., WROBLEWSKI, D. and MCCANDLESS, T. 1992. Edit Wear 
+and Read Wear. Proceedings of CHI'92 ACM Conference on Human Factors in 
+Computing Systems, Monterey, California, 3-9. 
+HORNBAEK, K., BEDERSON, B. and PLAISANT, C. 2002. Navigation Patterns and 
+Usability of Zoomable User Interfaces with and without an Overview. ACM Transactions 
+on Computer-Human Interaction 9(4): 362-389. 
+HORNBAEK, K. and FROKJAER, E. 2003. Reading Patterns and Usability in 
+Visualizations of Electronic Documents. ACM Transactions on Computer Human 
+Interaction 10(2): 119-149. 
+HORNBAEK, K. and HERTZUM, M. 2007. Untangling the Usability of Fisheye Menus. 
+ACM Transactions on Computer-Human Interaction 14(2): 6. 
+IGARASHI, T. and HINCKLEY, K. 2000. Speed-dependent Automatic Zooming for 
+Browsing Large Documents. Proceedings of UIST'00 ACM Symposium on User Interface 
+Software and Technology, San Diego, California, 139-148. 
+JAKOBSEN, M. and HORNBAEK, K. 2006. Evaluating a fisheye view of source code. 
+Proceedings of CHI'06: ACM Conference on Human Factors in Computing Systems, 
+Montreal, Quebec, ACM Press, 377-386. 
+JUL, S. and FURNAS, G. 1998. Critical Zones in Desert Fog: Aids to Multiscale 
+Navigation. Proceedings of UIST'98: ACM Symposium on User Interface Software and 
+Technology, San Francisco, California, 97-106. 
+KEAHEY, T. 1998. The Generalized Detail-In-Context Problem. Proceedings of the 
+IEEE Symposium on Information Visualization, Research Triangle, CA, IEEE Press, 44-
+51. 
+KERSTEN, M. and MURPHY, G. 2005. Mylar: A degree-of-interest model for IDEs. 
+Proceedings of the 4th International Conference on Apect-Oriented Software 
+Development, Chicago, Illinois, ACM Press, 159-168. 
+KLEIN, C. and BEDERSON, B. 2005. Benefits of Animated Scrolling. Extended 
+Abstracts of CHI'05: ACM Conference on Human Factors in Computing Systems, 
+Portland, Oregon, ACM Press, 1965-1968. 
+KOSARA, R., MIKSCH, S. and HAUSER, H. 2002. Focus+Context Taken Literally. 
+IEEE Computer Graphics and Applications 22(1): 22-29. 
+ 
+39
+LAM, H. and BAUDISCH, P. 2005. Summary Thumbnails: Readable Overviews for 
+Small Screen Web Browsers. Proceedings of CHI'05: Conference on Human Factors in 
+Computing Systems, Portland, Oregon, 681-690. 
+LAMPING, J., RAO, R. and PIROLLI, P. 1995. A Focus+Context Technique Based on 
+Hyperbolic Geometry for Visualising Large Hierarchies. Proceedings of CHI'95: ACM 
+Conference on Human Factors in Computing Systems, Denver, Colorado, 401-408. 
+LEUNG, Y. and APPERLEY, M. 1994. A Review and Taxonomy of Distortion-Oriented 
+Presentation Techniques. ACM Transactions on Computer Human Interaction 1(2): 126-
+160. 
+MACKAY, W., APPERT, C., BEAUDOUIN-LAFON, M., CHAPUIS, O., DU, Y. and 
+FEKETE, J. 2007. Touchstone: Exploratory Design of Experiments. Proceedings of 
+CHI'07: ACM Conference on Human Factors in Computing Systems, San Jose, CA, 
+ACM Press, 1425-1434. 
+MACKINLAY, J., CARD, S. and ROBERTSON, G. 1990. Rapid Controlled Movement 
+Through a Virtual 3D Workspace. Proceedings of SIGGRAPH '90: Computer Graphics, 
+Dallas, Texas, ACM Press, 171-176. 
+MACKINLAY, J., ROBERTSON, G. and CARD, S. 1991. Perspective Wall: Detail and 
+Context Smoothly Integrated. Proceedings of CHI'91: ACM Conference on Human 
+Factors in Computing Systems, New Orleans, 173-179. 
+MCGUFFIN, M. and BALAKRISHNAN, R. 2002. Acquisition of Expanding Targets. 
+Proceedings of CHI'02: ACM Conference on Human Factors in Computing Systems, 
+Minneapolis, Minnesota, ACM Press, 57-64. 
+MULLET, K., FRY, C. and SCHIANO, D. 1997. On Your Marks, Get Set Browse! 
+Extended Abstracts of CHI'97: ACM Conference on Human Factors in Computer 
+Systems, Atlanta, Geogia, 113-114. 
+MUNZNER, T., GUIMBRETIERE, F., TASIRAN, S., ZHANG, L. and ZHOU, Y. 2003. 
+TreeJuxtaposer: Scalable Tree Comparison using Focus+Context with Guaranteed 
+Visibility. ACM Transactions on Graphics 22(3): 453-462. 
+NEKRASOVSKI, D., BODNAR, A., MCGRENERE, J., GUIMBRETIERE, F. and 
+MUNZNER, T. 2006. An evaluation of pan & zoom and rubber sheet navigation with 
+and without an overview. Proceedings of CHI'06: ACM Conference on Human Factors 
+in Computing Systems, Montreal, Quebec, ACM Press, 11-20. 
+NORMAN, D. 2004. Emotional Design: Why We Love (or Hate) Everyday Things. Basic 
+Books, New York, New York. 
+PATRICK, E., COSGROVE, D., SLAVKOVIC, A., RODE, J., VERATTI, T. and 
+CHISELKO, G. 2000. Using a Large Projection Screen as an Alternative to Head-
+Mounted Displays for Virtual Environments. Proceedings of CHI'00: ACM Conference 
+on Human Factors in Computing Systems, 478-485. 
+PERLIN, K. and FOX, D. 1993. Pad: An Alternative Approach to the Computer 
+Interface. Proceedings of the 20th annual conference on Computer graphics and 
+Interactive techniques, ACM Press, 57-64. 
+PIETRIGA, E. 2005. A Toolkit for Addressing HCI Issues in Visual Language 
+Environments. Proceedings of VL/HCC'05: IEEE Symposium on Visual Languages and 
+Human-Centric Computing, 145-152. 
+ 
+40
+PIETRIGA, E., APPERT, C. and BEAUDOUIN-LAFON, M. 2007. Pointing and 
+Beyond: An Operationalization and Preliminary Evaluation of Multi-Scale Searching. 
+Proceedings of CHI'07: ACM Conference on Human Factors in Computing Systems, San 
+Jose, California, ACM Press, 1215-1224. 
+PIROLLI, P., CARD, S. and VAN DER WEGE, M. 2001. Visual Information Foraging 
+in a Focus+Context Visualization. Proceedings of CHI '01: ACM Conference on Human 
+Factors in Computing Systems, Seattle, Washington, ACM Press, 506-513. 
+PIROLLI, P., CARD, S. and VAN DER WEGE, M. 2003. The Effects of Information 
+Scent on Visual Search in the Hyperbolic Tree Browser. ACM Transactions on 
+Computer-Human Interaction 10(1): 20-53. 
+PLAISANT, C., CARR, D. and SHNEIDERMAN, B. 1995. Image-Browser Taxonomy 
+and Guidelines for Designers. IEEE Software 12(2): 21-32. 
+PLAISANT, C., GROSJEAN, J. and BEDERSON, B. 2002. SpaceTree: Supporting 
+Exploration in Large Node Link Tree, Design Evolution and Empirical Evaluation. 
+Proceedings of InfoVis '02: The IEEE Symposium on Information Visualization, 57-64. 
+PLAISANT, C., MILASH, B., ROSE, A., WIDOFF, S. and SHNEIDERMAN, B. 1996. 
+LifeLines: Visualizing Personal Histories. Proceedings of CHI'96: ACM Conference on 
+Human Factors in Computing Systems, Vancouver, BC, 221-227. 
+PLUMLEE, M. and WARE, C. 2002. Modeling Performance for Zooming vs Multi-
+Window Interfaces Based on Visual Working Memory. Proceedings of AVI'02: ACM 
+Working Conference on Advanced Visual Interface, Trento, Italy, 59-68. 
+RAMOS, G. and BALAKRISHNAN, R. 2005. Zliding: Fluid Zooming and Sliding for 
+High Precision Parameter Manipulation. Proceedings of UIST'05: ACM Symposium on 
+User Interface Software and Technology, Seattle, Washington, ACM Press, 143-152. 
+RAO, R. and CARD, S. K. 1994. The Table Lens: Merging Graphical and Symbolic 
+Representations in an Interactive Focus+Context Visualization for Tabular Information 
+Proceedings of the CHI'94: ACM Conference on Human Factors in Computing Systems, 
+Boston, Massachusetts, ACM Press, 318-322. 
+ROBERTS, J. 2007. State of the Art: Coordinated and Multiple Views in Exploratory 
+Visualization. Coordinated and Multiple Views in Exploratory Visualization, ETH, 
+Switzerland, IEEE Press, 61-71. 
+ROBERTSON, G., CZERWINSKI, M., BAUDISCH, P., MEYERS, B., ROBBINS, D., 
+SMITH, G. and TAN, D. 2005. The Large-Display User Experience. IEEE Computer 
+Graphics and Applications 25(4): 44-51. 
+ROBERTSON, G. G. and MACKINLAY, J. D. 1993. The Document Lens. Proceedings 
+of UIST'93: ACM Symposium on User Interface Software and Technology. Atlanta, 
+Georgia, ACM Press: 101-108. 
+SARKAR, M. and BROWN, M. 1992. Graphical Fisheye Views of Graphs. Proceedings 
+of CHI'92: ACM Conference on Human Factors in Computing Systems, Monterey, CA, 
+ACM Press, 83-91. 
+SARKAR, M., SNIBBE, S. and REISS, S. 1993. Stretching the rubber sheet: A metaphor 
+for visualising large structure on small screen. UIST'93: Proceedings of the 16th annual 
+ACM symposium on User interface software and technology, Atlanta, Georgia, ACM 
+Press, 81-91. 
+ 
+41
+SCHAFFER, D., ZUO, Z., GREENBERG, S., BARTRAM, L., DILL, J., DUBS, S. and 
+ROSEMAN, M. 1996. Navigating Hierarchically Clustered Networks through Fisheye 
+and Full-Zoom Methods. ACM Transactions on Computer Human Interaction 3(2): 162-
+188. 
+SHOEMAKER, G. and GUTWIN, C. 2007. Supporting Multi-Point Interaction in Visual 
+Workspaces. Proceedings of CHI'07: ACM Conference on Human Factors in Computing 
+Systems, San Jose, California, ACM Press, 999-1008. 
+SPENCE, R. 2007. Information Visualization. Pearson Education Limited, Harlow. 
+SPENCE, R. and APPERLEY, M. 1982. Database Navigation: An Office Enironment for 
+the Professional. Behaviour and Information Technology 1(1): 43-54. 
+SUH, B., WOODRUFF, A., ROSENHOLTZ, R. and GLASS, A. 2002. Popout Prism: 
+Adding Perceptual Principles to Overview+Detail Document Interfaces. Proceedings of 
+CHI'02: ACM Conference on Human Factors in Computing Systems, Minneapolis, 
+Minnesota, 251-258. 
+SUMMERS, K., GOLDSMITH, T., KUBICA, S. and CAUDELL, T. 2003. An Empirical 
+Evaluation of Continuous Semantic Zooming in Program Visualization. Proceedings of 
+the IEEE Symposium on Information Visualization (Infovis 2003), Seattle, Washington, 
+155-162. 
+TAN, D., ROBERTSON, G. and CZERWINSKI, M. 2001. Exploring 3D Navigation: 
+Combining Speed-coupled Flying with Orbiting. Proceedings of CHI'01: ACM 
+Conference on Human Factors in Computing Systems, Seattle, Washington, 418-425. 
+TOBLER, W. 1973. A continuous transformation useful for districting. Annals of New 
+York Academy of Science 219: 215-220. 
+TVERSKY, B., MORRISON, J. and BETRANCOURT, M. 2002. Animation: Can It 
+Facilitate? International Journal of Human-Computer Studies 57: 247-262. 
+VAN WIJK, J. and NUIJ, W. 2004. A Model for Smooth Viewing and Navigation of 
+Large 2D Information Spaces. IEEE Transactions on Visualization and Computer 
+Graphics 10(4): 447-458. 
+WARE, C. 2004. Information Visualization: Perception for Design. Morgan Kaufmann, 
+San Francisco. 
+WARE, C. and FLEET, D. 1997. Context Sensitive Flying Interface. Proceedings of the 
+1997 Symposium on Interactive 3D Graphics, Providence, RI, 127-130. 
+WARE, C. and LEWIS, M. 1995. The DragMag Image Magnifier. Companion 
+Proceedings of CHI'95: ACM Conference on Human Factors in Computing Systems, 
+Denver, Colorado, ACM Press, 407-408. 
+WOODSON, W. and CONOVER, D. 1964. Human Engineering Guide for Equipment 
+Designers. University of California Press, Berkeley, California. 
+ZANELLA, A., CARPENDALE, S. and ROUNDING, M. 2002. On the Effects of 
+Viewing Cues in Comprehending Distortions. Proceedings of NordiCHI'02, Aarhus, 
+Denmark, 119-128. 
+ZELLWEGER, P., MACKINLAY, J., GOOD, L., STEFIK, M. and BAUDISCH, P. 
+2002. City Lights: Contextual Views in Minimal Space. Extended Abstracts of CHI '02: 
+ACM Conference on Human Factors in Computing Systems, Minneapolis, Minnesota, 
+838-839. 
+ 
+42
+ZHAI, S., CONVERSY, S., BEAUDOUIN-LAFON, M. and GUIARD, Y. 2003. Human 
+On-line Response to Target Expansion. Proceedings of CHI'03: ACM Conference on 
+Human Factors in Computing Systems, Fort Lauderdale, Florida, ACM Press, 177-184. 
+ 
+ 

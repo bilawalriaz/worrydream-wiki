@@ -1,0 +1,1097 @@
+A Personal View of APL 
+--b 3 K. E. Iverson 
+Toronto, Ontario 
+Copyright © 1991 by International Business Machines 
+Corporation. Reprinted with the permission of the IBM 
+Systems Journal, Vol. 30, No. 4. 
+Tkis essay portrays a personal view of the development of 
+several influential dialects of APL: APL2 and J. The 
+discussion traces the evolution of the treatment of arrays, 
+functions, and operators, as well as function definition, 
+grammar, terminology, and spelling. 
+I 
+T I8 NOW 35 YEARS since Professor Howard Aiken instituted 
+a computer science program at Harvard, a program that he 
+called Automatic Data Processing. It is almost that long 
+since I began to develop, for use in writing and teaching in that 
+program, the programming language that has come to be known 
+as APL. 
+Although I have consulted original papers and compared my 
+recollections with those of colleagues, this remains a personal 
+essay that traces the development of my own thinking about 
+notation. In particular, my citation of the work of others does not 
+imply that they agree with my present interpretation of their 
+contributions. In speaking of design decisions I use the word we 
+to refer to the small group associated with the early implementa- 
+tion, a group that included Adin Falkoff, Larry Breed, and Dick 
+Lathwell, and is identified in "The Design of APL ''1 and "The 
+Evolution of APL. ''2 These papers contain full treatments of 
+various aspects of the development of APL that are given scant 
+attention here. 
+Because my formal education was in mathematics, the funda- 
+mental notions in APL have been drawn largely from mathemat- 
+ics. In particular, the notions ofarrays, fixncfions, and operators 
+were adopted at the outset, as illustrated by the following excerpt 
+from A Programming Language. 3 
+An operation (such as summation) which is applied to all 
+components of a vector is called reduction .... Thus, +/x 
+is tim sum, ×ix is the product, and v/x is the logical 
+sun~ of the components of a vector x. 
+The phrase +/xalone illustrates the three aspects: a function 
+• 
+• 
+4 
++, an operator / (so named from the term used by Heavtslde for 
+an entity that applies to a function to produce a related derived 
+function), and an array x. 
+The present discussion is organized by topic, tracing the 
+evolution of the treatments of arrays, functions, and operators; as 
+well as that of other matters such as function definition, grammar, 
+terminology, and spelling (that is, the representation ofprimi- 
+fives). 
+As stated at the outset, the initial motive for developing APL 
+was to provide a tool for writing and teaching. Although APL has 
+been exploited mostly in commercial programming, I continue 
+to believe that its most important use remains to be exploited: as 
+a simple, precise, executable notation for the teaching of a wide 
+range of subjects. 
+When I retired from paid employment, I turned my attention 
+back to this matter and soon concluded that the essential tool 
+required was a dialect of APL that: 
+• 
+Is available as "shareware," and is inexpensive enough to 
+be acquired by students as well as by schools 
+• 
+Can be printed on standard printers 
+• 
+Runs on a wide variety of computers 
+• 
+Provides the simplicity and generality of the latest think- 
+ing in APL 
+The result has been.J, first reported in Reference 5. 
+Work began in the summer of 1989 when I first discussed my 
+desires with Arthur Whitney. He proposed the use of C for 
+implementation, and produced (on one page and in one after- 
+noon) a working fragment that provided only one function (+), 
+one operator (/), one-letter names, and arrays limited to ranks 0 
+and 1, but did provide for boxed arrays and for the use of the 
+copula for assigning names to any entity. 
+I showed this fragment to others in the hope of interesting 
+someone competent in both C and APL to take up the work, and 
+soon recruited Roger Hui, who was attracted in part by the 
+unusual style of C programming used by Arthur, a style that 
+made heavy use of preprocessing facilities to permit writing 
+further C in a distinctly APL style. 
+Roger and I then began a collaboration on the design and 
+implementation of a dialect of APL (later namedJ by Roger), first 
+• 
+- 
+g~ 
+- 
+- 
+,¢6 
+- 
+decxding to roughly follow A Dlcaonary of APL 
+and to Lm- 
+pose no requirement of compafihillty with any existing dialect. 
+We were assisted by suggestions from many sources, particularly 
+in the design of the spelling scheme (E. B. Iverson and A. T. 
+Whitney) and in the treatment of cells, items, and formatting (A. 
+T. Whitney, based on his work on SHARP/HP 7 and on the 
+dialect A reported at the APL89 conference in New York). 
+E. E. McDonnell of Reuters provided C programs for the 
+mathematical functions (which apply to complex numbers as well 
+as to real), D. L. Orth of IBM ported the system to the IBM 
+RISC System/6000* in time for the APL90 conference, and L. 
+J. Dickey of the University of Waterloo provided ass/stance in 
+porting the system to a number of other computers. 
+The features of J that distinguish it from most other APL 
+dialects include: 
+4 
+APL O~ote 
+l. A spelling scheme that uses ASCII characters in one- or 
+two-letter words 
+2. Convenient international use, provided by facilities for 
+alternative spellings for the national use characters of 
+ASCII, and by facilities to produce the error messages in 
+any desired Language 
+3. Emphasis on major cells or items; for example, reduction 
+(f/) applies f between items, and application off be- 
+tween cells of lesser rank is obtained by using the rank 
+operator 
+4. The function argument to scan ( \ ) is, like all functions, 
+ambivalent. Scan applies the monadic case of the function 
+rather than the dyadic. Thus, the traditional sum scan is 
+given by + / ~ a rather than by + \ a, and < \ a boxes the 
+partitions provided by the scan. 
+5. A number of other partitioning adverbs are provided, 
+including suffix scan (\.), windows ofwidth k (as in k 
+f \a), and oblique (/.). 
+6. Use of the hook and fork (discussed later) and various 
+new operators together with the use of the copula to 
+assign names to functions. These facilities permit the 
+extensive use of tacit programming in which the argu- 
+ments of a function are not explicitly referred to in its 
+definition, a form of programming that requires no 
+reparsing of the function on execution, and therefore 
+provides some of the efficiency of compilation. (See 
+Reference 8.) 
+7. An immediate and highly readable display of the defini- 
+tion of a function f obtained by simply entering f 
+Significant use of J in teaching will, of course, require the 
+development of textual material using it. Three steps have been, 
+taken toward this goal: 
+1. The dictionary of J includes 45 frames oftutorialmaterial 
+(suitable for slides) that are brief treatments inJ of topics 
+from a dozen different areas. 
+2. At the urging ofL. B. Moore ofI. P. Sharp Associates, I 
+prepared for distribution at APL89 a booklet called 
+Tangible Math, designed for independent study of ele- 
+mentary mathematics. It was based on the use of Sharp 9 
+shareware for the IBM PC, and required no reference to 
+an APL manual. I have since produced a J version of 
+Tangible Math. l° 
+3. At a four-hour hands-on workshop for teachers ofmathe- 
+matics organized by Anthony Camacho of I-APL n and 
+funded by the British APL Association, Anthony and I 
+used Tangible Math to expose the participants to the 
+advantages of executable mathematical notation. The 
+teachers left with a copy of J and with enough experience 
+to continue the use of J on their own. Such workshops 
+could be used to bring teachers to a point where they 
+could develop their own treatments of isolated topics, and 
+eventually of complete subjects, on their own. 
+In the three decades of APL development, many different 
+ideas have been proposed and explored, and many have been 
+abandoned. Those that survived have done so through incorpo- 
+ration in one or more implementations that define the many 
+dialects of APL. 
+These dialects fall into several families, two of which have 
+been partictdarly influential. I refer to them by the names oftheir 
+most recent exemplars--APL212 on the one hand, andJ on the 
+other--and sketch the development of these families in a later 
+section. 
+In the remainder of the essay 1 largely confine my remarks to 
+those dialects that have influenced, and been influenced by, my 
+own thinking. This emphasis is intended not to denigrate the 
+dialects not mentioned, but to keep the discussion focused and 
+to leave their exposition to others more conversant with them. 
+Although my motive for producing a new dialect was for use 
+in teaching, this dialect has led to much greater emphasis on a 
+13 
+style of programming calledfunctionalby Backus, and defined 
+inJ as tacit programming (because arguments are not referred to 
+explicitly). These matters are addressed in the section on tacit 
+programming. 
+Terminology 
+Although terminology was not among the matters given serious 
+attention at the outset, it will be helpful to adopt some of the later 
+terminology immediately. Because of our common mathematical 
+background, we initially chose mathematical terms. For example, 
+the sentence 
+b~(+\a)-.xa~2 3 5 7 
+illustrates certain parts of speech, for which we adopted the 
+mathematical terms shown on the left as follows: 
+Functions or operators 
++ 
+x 
+- 
+Verbs 
+Constant (vector) 
+2 3 S 7 
+Noun (fist) 
+Variables 
+a b 
+Pronouns 
+Operator 
+\ 
+Adverb 
+Operator 
+Conjunction 
+( 
+) 
+Punctuation 
+Copula 
+I now prefer terms drawn from natural Language, as illustrated 
+by the terms shown on the right. Not only are they familiar to a 
+broader audience, but they clarify the purposes of the parts of 
+speech and of certain relations among them: 
+MAnCH 200o -- VOLtr~E 30, Ntnaesa~ 3 
+5 
+1. A verb specifies an "action" upon a noun or nouns. 
+2. An adverb applies to a verb to produce ardated verb; 
+thus +\ is the verb "partial sums." 
+3. A conjunction applies to two verbs, in the manner of the 
+copulative conjunction and in the phrase "run and hide." 
+4. A name such as a or./9 behaves like a pronoun, serving as 
+a surrogate for any referent linked to it by a copula. The 
+mathematical term variable applied to a name x in the 
+identity (x+3_)x(x+3) equals xY+4x+3 serves to 
+emphasize that the relation holds for any value of x, but 
+the term is often inappropriate for pronouns used in 
+programming. 
+5. Although numeric lists and tables are commonly used to 
+represent the vectors and matrices of mathematics, the 
+terms list and table are much broader and simpler, and 
+suggest the essential notions better than do the mathemat- 
+ical terms. 
+6. To avoid ambiguity due to the two uses of the term opera- 
+tor in mathematics (for both a function and a Heaviside 
+operator) I usually use only the terms adverb and conjunc- 
+tion, but continue to use either function or verb, list or 
+vector, and table or matrix, as seems appropriate. 
+Spelling 
+In natural languages the many words used are commonly 
+represented (or spelled) in an alphabet of a small number of 
+characters. In programming languages the words or primitives of 
+the languages (such as sin and = : ) are commonly represented by 
+an expanded alphabet that includes a number of graphic symbols 
+such as + and =. 
+When we came to implement APL, the alphabet then widely 
+available on computers was extremely limited, and we decided to 
+exploit a feature of our company's newly-developed Selectric* 
+typewriter, whose changeable typing element allowed us to 
+design our own alphabet of 88 characters. By limiting the English 
+alphabet to one case (majuscules), and by using the backspace 
+key to produce composite characters, we were able to design a 
+spelling scheme that used only one-character words for primi- 
+tives. 
+Moreover, the spelling scheme was quite mnemonic in an 
+international sense, relying on the appearance of the symbols 
+rather than on names of the functions in any national language. 
+Thus the phrase k1"x takes k elements from x, and ,~ denotes 
+drop. 
+Because the use of the APL alphabet was relatively limited, it 
+was not included in the standard ASCII alphabet now widely 
+adopted. As a consequence, it was not available on most printers, 
+and the printing and publication of APL material became 
+onerous. Nevertheless, in spite of some experiments with 
+"reserved words" in the manner of other programming lan- 
+guages, the original APL alphabet has remained the standard for 
+APL systems. 
+The set of graphics in ASCII is much richer than the meager 
+set available when the APL alphabet was designed, and it can be 
+used in spelling schemes for APL primitives that still avoid the 
+adoption of reserved words. Such a scheme usingvariable-length 
+words was presented in Reference 6, and received limited use for 
+communicating APL programs using standard printers, but was 
+never adopted in any commercial implementation. A much 
+simpler scheme using words of one or two letters was adopted in 
+J, in a manner that largely retains, and sometimes enhances, the 
+international mnemonic character of APL words. 
+In a natural language such as English, the process of word 
+formation is clearly distinguished from parsing. In particular, 
+word formation is static, the rhematic rules applying to an entire 
+text quite independently of the meanings or grammatical classes 
+of the words produced. Parsing, on the other hand, is dynamic, 
+and proceeds according to the grammatical classes of phrases as 
+they evolve. This is reflected in the use of such terms as noun 
+phrase and verb phrase. 
+In programming languages this distinction is commonly 
+blurred by combining word formation and parsing in a single 
+process characterized as "syntax." In J, the word formation and 
+parsing are distinct. In its implementations, each process is 
+tabledriven; the parsing table being presented expficifly in the 
+dictionary of J, and the rhematic rules being discussed only 
+informally. 
+It is interesting to note that the words of early APL included 
+"composite characters" represented by two elements of the 
+underlying alphabet; these were mechanically superposed, 
+whereas inJ they appear side-by-side. 
+Functions 
+Functions were first adopted in the forms found in elementary 
+mathematics, having one argument (as in I bl and-b) or two (as in 
+a +b and a-b). In particular, each had an explicit result, so that 
+functions could be articulated to form sentences, as in la-bl+(a 
++b). 
+In mathematics, the symbol - is used to denote both the 
+dyadic function subtraction (as in a-b) and the monadic function 
+negation (as in -b). This ambivalent use of symbols was ex- 
+ploited systematically (as in ÷ for both division and reciprocal, 
+and * for both power and exponential) to provide mnemonic 
+links between related functions, and to economize on symbols. 
+The same motivations led us to adopt E. E. McDonnell's 
+proposal to treat the monadic trigonometric (or circular) 
+functions and related hyperbolic and pythagorean functions as a 
+single family of dyadic functions, denoted by a cirde. Thus sine 
+y and eosiney are denoted by lo.y and 2oy, the numeric left 
+argument being chosen so that its parity (even or odd) agrees 
+with the parity of the function denoted, and so that a negative 
+integer denotes the function inverse to that denoted by the 
+corresponding positive integer. This scheme was a matter of 
+following (with rather lessjustitication) the important inathemati- 
+6 
+APL Quote Quad 
+cal notion of treating the monadic functions square, cube, square 
+root, etc. as special cases of the single dyadic power function. 
+When the language was formalized and lineafized in APL\ 
+360, t4 anomalies such. as x ~ for power, x 3 for product, [Yl for 
+magnitude, and 21¢j for indexing were replaced by x*y and xx3r 
+and I Y and/~ [ i ; j ]. At the same time, function definition was 
+formalized, usinghead~rs of the form Z~-X F ~Y and Z÷F Y to 
+indicate the definition of a dyadic or a monadic function. This 
+form of header permitted the definition of functions having no 
+explicit result (as in X F Y), and so-called niladie functions (as 
+in Z~-F and F) having no explicit arguments. These forms were 
+adopted for their supposed convenience, but this adoption 
+introduced functions whose articulation in sentences was limited. 
+In most later dialects such niladic and resuldess functions 
+were also adopted as primitives. InJ they have been debarred 
+completely, to avoid the problem of articulation, to avoid 
+complications in the application of adverbs and conjunctions to 
+them, and to avoid the following problem with the copula: ifg is 
+a niladic function that yields the noun n, and if f~-g, then is f a 
+niladic function equivalent to g, or is it the noun n ? 
+In conventional mathematical notation, an expression such as 
+f(x,y,z) can be interpreted either as a function of three arguments, 
+or as a function of one argument, that is, of the vector formed by 
+the catenafion of x, 3, and z. Therefore the limitation of APL 
+functions to at most two formal arguments does not limit the 
+number of scalar arguments to which a function may apply. 
+Difficulties with nonscalar arguments first arose in indexing, 
+and the forms such as A[I;J;K] 
+and A[I; ;g] that were 
+adopted to deal with it introduced a "nonlocality" into the 
+language: a phrase within brackets had to he treated as a whole 
+rather than as the application of a sequence of functions whose 
+results could each be assigned a name or otherwise treated as a 
+normal result. Moreover, an index expression for an array A 
+could not be written without knowing the rank of A. 
+The introduction of a function to produce an atomic represen- 
+tation of a noun (known as enclose in NARS 1s'16 and APL2 as 
+box in SAX t7 and J, and discussed in the section on atomic 
+representations) makes it possible to box arguments of any rank 
+and assemble them into a single argument for any function. In 
+particular, it makes possible the use of such a boxed array as the 
+argument to an indexing function, adopted in SAX and J and 
+called from. 
+18 
+.
+.
+.
+.
+ 
+As may be seen, 
+the functmn rotate was mmally defined so 
+that the fight argument specified the amount of rotation. The 
+roles of the arguments were later reversed to accord with a 
+general mnemonic scheme in which a left argument a together 
+with a dyadic function f (denoted inJ by a& f ) would produce 
+a "meaningful" monadic function. Exceptions were, of course, 
+made for established functions such as divided by. The scheme 
+retains some mnemonic value, although the commute adverb (-) 
+provided inJ and in SAX makes either order convenient to use. 
+For example, 5 96- 3 would be read as 5 into 3. 
+In APL\360 it was impossible to define a new function within 
+a program. This was rectified in APLSV 19 by defining a canoni- 
+cal representation of a function (a matrix M whose first row was 
+a header, and whose succeeding rows were the sentences of the 
+definition); a fix function DFX such that DFX M yielded the 
+name of the function as an explicit result, and established the 
+function as a side effect; and an inverse function DCR, which 
+when applied to the name of a function produced its canonical 
+representation as an explicit result. The ability to define ambiva- 
+lent fimctions was added in a University of Massachusetts 
+system, 20 and was soon widely adopted. 
+The function DFX established a function only as a side effect, 
+but the scheme has been adapted toJ by providing a conjunction 
+( : ) such that ra : d produces an unnamed function that may 
+be applied directly, as in x m 
+: d 3r, or may be assigned a 
+name, as in f =. rn : d. See the section on name assignment. 
+Following an idea that Larry Breed picked up at a lecture by 
+the late Professor A. Perlis of Yale, we adopted a scheme of dy- 
+namic localization in which names localized in a function defini- 
+tion were known to further functions invoked within it. 
+This decision made it possible to pass any number of 
+parameters to subordinate fimcfions, and therefore circumvented 
+the limitation of at most two explicit arguments, but it did lead to 
+a sometimes confusing profusion of names localized at various 
+levels. The introduction of atomic representation (box and en- 
+close) has made it convenient to pass any number of parameters 
+as explicit arguments; in J this has been exploited to allow a 
+return to a simpler localization scheme in which any name is 
+either strictly local or strictly global. 
+Arrays 
+Perhaps because of the influence of a course in tensor analysis 
+taken as an undergraduate, I adopted the notion that every 
+function argument is an array, and that arrays may be classified 
+by their rank; a scalar is rank 0, a vector rank 1, a matrix rank 2, 
+arid so on. 
+The application of arithmetic (or scalar) function such as + 
+and x also followed tensor analysis; in particular the scalar 
+extension, which allowed two arguments to differ in rank if one 
+were a scalar. In defining other functions (such as reshape and 
+rotate), we attemp ted to make the behavior on higher-rank arrays 
+as systematic as possible, but failed to find a satisfying uniform 
+scheme. Such a uniform scheme (based on the notion of cells) is 
+defined in "A Dictionary of APL, ''6 and adopted in SAX and in 
+J. 
+MARCH ~.000 -- VOLUME 30, NUMBER 3 
+7 
+A rank-k cell of A is a subarray of A along k contiguous final 
+axes. For example, if'. 
+A 
+abcd 
+efgh 
+ijkl 
+mnop 
+qrst 
+uvwx 
+then the list abcd is a 1-cell of A~ the table from m to x is a 2-cell 
+of A, the atom g is a 0-cell of A, and A itself is a 3-cell of A. 
+Each primitive function has intrinsic ranks, and applies to 
+arrays as a collection of cells of the appropriate rank. For 
+example, matrix inverse has rank 2, and applies to an array of 
+shape 5 Lt 3 as a collection of five 4 by 3 matrices to produce 
+aresultofshape 5 3 4, acollectionoffive 5 by 4 inverses of the 
+4 by 3 cells. 
+Moreover, the rank conjunction (denoted inJ by ") produces 
+a function of specified rank. For example, the intrinsic rank of 
+ravel is unbounded and (using the shape 2 3 tt array A shown 
+above): 
+,A 
+abcdefghij 
+klmnopqrstuvwx 
+• "2 A 
+abcde f ghi j kl 
+mnopqr s t uvwx 
+Further discussion of cells and rank may be found in the section 
+on tacit programming, and in Reference 21. 
+The central idea behind the use of cells and a rank operator 
+was suggested to me at the 1982 APL conference in Heidelberg 
+by Arthur Whitney. In particular, Arthur showed that a reduc- 
+tion along any particular axis (+/[ / ] A) could be neatly handled 
+by a rank operator, as in + / " Z g. By further adopting the idea 
+that every primitive possessed intrinsic ranks (monadic, left, and 
+right) I was able, in Reference 6, to greatly simplify the definition 
+of primitives: each function need be defined only for cells having 
+the intrinsic ranks, and the extension to higher-rank arguments 
+is uniform for all functions. 
+Adverbs and conjunctions 
+Even after tasting the fruits of generalizing the ~ notation of 
+mathematics to the form f / that permitted the use of functions 
+other than addition, it took some time before I recognized the 
+advantages of a corresponding generalization of the inner or 
+matrix product to allow the use of functions other than addition 
+and multiplication. Moreover, I thought primarily ofthe derived 
+functions provided by these generalizations, and neither exam- 
+ined the nature of the slash itself nor recognized that it behaved 
+like a Heaviside operator. 
+However, when we came to linearize the notation in the 
+implementation of APL\360, the lineafizafion of the inner 
+product (which had been written as one function on top of the 
+other) forced the adoption of a symbol for the conjunction (as in 
+M +. x N). This focused attention on the adverbs and conjunc- 
+tions themselves, leading to a recognition of their role and to the 
+adoption of the term o,pergtors to refer to them. 
+In reviewing the syntax of operators we were disturbed to 
+realize that the slash used for reduction applied to the (function) 
+argument to its /eft, and even considered the possibility of 
+reversing the order to agree with the behavior of monadic 
+functions. However, Adin Falkoffsoon espoused the advantages 
+of the established scheme, pointing out that the adoption of a 
+"longleft scope" for operators would allow the writing of phrases 
+such as +. x/to denote the function"inner product reduction," 
+which might be applied to a rank-5 array. 
+We also realized that the use of the slash to denote compres- 
+sion (as in 1 0 1 0 1/' abcde ' to yield ' ace ' ) seemed 
+to imply that the slash was ambiguous, sometimes denoting an 
+operator, and sometimes a function. This view was adopted in 
+NARS and in the precursor to APL2. Alternatively, adverbs and 
+conjunctions could he assumed to apply to both nouns and 
+verbs, giving different classes of derived verbs in the different 
+cases. In this view, compression was not a dyadic function 
+denoted by the slash, but was rather the derived function 
+resulting from the application of the adverb / to a noun. 
+The application of adverbs and conjunctions to nouns was 
+adoptedin SHARP, 22 SHARP/HP, SAX, andJ, butwas resisted 
+in other dialects, in spite of the fact that the phrase qb [ B ] for 
+applying reversal on axis 3 furnished an example of such usage 
+in early APL, and in spite of the implied use of nouns in 
+Heaviside's notation D 2 f for the second derivative of f. 
+In calculus, the expression f+g is used to denote the sum of 
+functions f and g, thatis, (f+g) 
+xisdeffinedas (f x) 
++ 
+(g x). The utility ofsuch constructs as f+g and fxg was 
+clear, and I realized that they could be handled by operators 
+corresponding to the functions + and x. What appeared to be 
+needed was an adverb that would apply to a function to produce 
+a conjunction. However, I was reluctant to complicate the 
+grammar by introducing results other than functions from 
+adverbs, and I began by suggesting, in Reference 23, a limited 
+solution using composite symbols such as + overstruck by an 
+overbar. 
+Somewhat later I discussed this matter with Arthur Whitney, 
+and he qnicldy suggested an operator that we modified slightly 
+and presented as the til operator in Reference 24, using the 
+definition x 
+( f 
+t i 1 
+g) 
+y is ( g 
+y ) 
+f 
+x. The fork 
+discussed in the section on graxnxnar and order of execution now 
+provides a more convenient solution, using expressions such as 
+f+g and f×g. 
+8 
+~PL trot, Cb~Z 
+In mathematics, the notions of inner product and outer 
+product are used in rather limited areas. In APL systems, opera- 
+tors provide generalizations of them that not only broaden their 
+uses, but make them more readily comprehensible to non- 
+mathematicians. Much the same is true of"duals" in mathemat- 
+ics, but because the generalization of APL is not so widely known 
+or used, it merits some attention here. 
+It is useful to view almost any task as performed in three 
+phases: preparation, the main task, and undoing the preparation. 
+In programming terms this would appear as inversep 
+main 
+p argument. In other words, the main function is performed 
+under the preparation t3. 
+InJ the under conjunction is denoted by &. and is defined as 
+follows: 
+m&.p y is inversep 
+m p y 
+x m&.p y is inversep 
+(p x) m 
+(p y) 
+For example, since ^. denotes the natural logarithm inJ, the 
+expression a 
++&. ^ 
+b yields the product of a and b. The 
+under conjunction is commonly used with the function open 
+(whose inverse is box) discussed in the section on atomic repre- 
+sentations. 
+Name assignment 
+In mathematics, the symbol = is used to denote both a relation 
+and the copula in name assignment (as in "let x=3"). In APL, the 
+arrow was first used for the copula in Reference 18, and has been 
+used in all dialects until the adoption of =. and = : inJY 
+The use of the copula was initially restricted to nouns, and 
+names were assigned to user-defined functions by a different 
+mechanism in which the name of the function was incorporated 
+in the representation to which the function DEX was applied, as 
+discussed in the previous section on fimcfions. The use of the 
+copula for this purpose was proposed in Reference 23, imple- 
+mented in SHARP/HP, and later adopted in Dialog 25 and inJ. 
+These implementations provided for adverbs and conjunctions 
+in the same manner. However, this use of the copula has not 
+been adopted in other implementations, perhaps because the 
+representations used for fimctions make its adoption difficult. 
+Indirect assignment was first proposed in Reference 26, and 
+is implemented inJ and defined in Reference 21. Two copulas 
+are used in J, one for local assignment (=.), and one for global 
+(= : ) assignment. 
+Grammar and order of execution 
+Grammatical rules determine the order of execution of a sen- 
+tence, that is, the order in which the phrases are interpreted. In 
+Reference 3, the use of parentheses was adopted as in mathemat- 
+ics, together with the rule (Reference 5, page 8) that "The need 
+for parentheses will be reduced by assuming that compound 
+statements are, except for intervening parentheses, executed 
+from right to left." 
+In particular, this rule implies that there is no hierarchy 
+among functions (such as the rules in mathematics that power is 
+executed before multiplication before addition). Long familiarity 
+with this hierarchy occasioned a few lapses in my book, 3 but the 
+new rule was strictly adopted in the APL\360 implementation. 
+APL\360 also introduced a hierarchy, giving operators prece- 
+dence over functions. 
+The result was a simple grammar, complicated only by the 
+bracket-semicolon notation used for indexing. This was later 
+complicated by the adoption, in most systems, of the statement 
+separator (denoted by a diamond). The utility of the statement 
+separator was later vitiated in some systems (including SHARP, 
+SAX, and J) by the adoption of dyadic functions/ev and dex, 
+which yielded their left and right arguments, respectively. 
+The grammatical rules left certain phrases (such as a se- 
+quence of nouns) invalid. In NARS and in APL2 meanings were 
+assigned to a sequence of nouns: ffa and ]3 are the nouns "hold" 
+and "on," then the phrase a b yields the two-element list of 
+enclosed vectors. The adoption of such "strands" led to a 
+modification of the grammatical rules based upon left and right 
+"binding strengths" assigned to various parts of speech, as 
+discussed in References 27 and 28. In particular these rules 
+required that the phrase 2 
+3 
+5 [1] 
+be replaced by 
+(2 3 5)[I]. 
+Other changes in grammar were adopted in J: the bracket- 
+semicolon indexing was replaced by a normal dyadic verbfiom; 
+and any isolated sequence of verbs was assigned a meaning based 
+upon the hook and fork, first proposed in Reference 29 and 
+briefly explained next. The result is a strict grammar in which 
+each phrase for execution is chosen from the first four elements 
+of the execution stack, and eligibility for execution is determined 
+by comparison with a 14 by 4 parsing table as shown in Refer- 
+ence 21. 
+Because the hook and fork (as well as several other previously 
+invalid phrases) play a significant role in the tacit programming 
+discussed in a later section, they are further elaborated here. 
+Briefly, ff 
+mean=.+/%# 
+then 
+mean x 
+is equivalent to 
+(+/x) % (#x) 
+The dyadic case is defined analogously. If 
+diffsq=. 
++*- 
+MA~C~ ~ooo -- VOLt~E.~O, NUMBER 3 
+9 
+then 
+a diffsq b 
+is 
+(a+b) * (a-b) 
+The hook and the fork may be expressed graphically as 
+follows: 
+FO~ 
+HOOK 
+g 
+g 
+g 
+g 
+/\ 
+/\ 
+/\ 
+/\ 
+f 
+h 
+f 
+h 
+y 
+h 
+x 
+h 
+I 
+I / \ / \  
+I 
+I 
+y 
+y x y x y  
+y 
+y 
+Two further points should be noted: 
+. 
+. 
+A longer train of verbs will resolve into a sequence of 
+forks andhooks. For exarnple, taut=. 
+< : =<+. = is 
+equivalent to two forks, as in taut =. 
+< : = ( < +. = ), 
+and expresses the tautology that less than or equal (< : ) 
+eq~ (=) loss than (<) or (+.) eq~l (=). 
+In the expression (+/ 
+% #) 
+2 3 4 S to produce 
+the mean of the list 2 
+3 
+4 
+5, the parentheses are 
+clearly essential, since + / % # 2 3 4 5 would yield 
+0.2 5, the sum of the reciprocal of the number of items. 
+However, it must be emphasized that the parentheses 
+perform their normal function of grouping, and are not 
+needed to explicitly produce forks, as may be seen from 
+the earlier examples. 
+Atomic representations 
+It is commonplace that complex cons tructs may be conveniently 
+represented by arrays of simpler constructs: a word by a list of 
+letters, a sentence by a list of words, a complex number by a list 
+of two real mmabers, and the parameter of a rotation function by 
+a table of numbers, and so on. 
+However, it is much more convenient to use atomic represen- 
+tations, which have rank 0 and are therefore convenient to 
+combine into, and select from, arrays. For example, the represen- 
+tation 3 j 4 used for a complex number in APL systems is an 
+atom or scalar. 
+In Reference 30, Trenchard More proposed a representation 
+scheme in which an enclose function applied to an array pro- 
+duced a scalar representation of the argument. This notion was 
+adopted or adapted in a number of APL systems, beginning with 
+NAB.S, and soon followed by APL2. 
+A somewhat simpler scheme was adopted in SHARP in 
+1982, was presented in "A Dictionary ofAPL ''6 in 1987, and 
+later adopted in SAX and J: a function called box (and denoted 
+by <) applied to any noun produces an atomic representation of 
+the noun that can be "decoded" by the inverse function open 
+(denoted by >) to yield the original argument. 
+A desire for similar convenience in handling collections of 
+functions led Bemecky and others to propose (in References 31 
+and 32) the notion offiznction arra3s. These have been imple- 
+mented as gerunds in J by adopting atomic representations for 
+functions. 
+Implementations 
+Because of a healthy emphasis on standardization, many distinct 
+implementations differed slightly, fiat all, in the language features 
+implemented. For example, the IBM publication APLSV User's 
+Manual TM written originally for APLSV applied equally to VS 
+APL and the IBM 5100 computer. 
+Despite the present emphasis on the evolution of the lan- 
+guage itself, certain implementations merit mention: 
+1. The IBM 5100 mentioned above is noteworthy as one of 
+the early desktop computers, and as an implementation 
+based on an emulator of the IBM System/360* and a 
+read-only memory copy of APLSV. 
+2- The I-APL implementation provided the first shareware 
+version of APL, aimed at making APL widely available in 
+schools. 
+Implementations representing the two main lines of develop- 
+ment mentioned in the introduction are now discussed briefly. 
+The first is the nested array system NARS conceived and imple- 
+mented by Bob Smith of STSC and incorporating ideas due to 
+Trenchard More 3° andJ. A. Brown (Doctoral thesis, University 
+of Syracuse). In addition to the enclose and related facilities that 
+provide the nested arrays themselves, this implementation greatly 
+expanded the applicability of operators. In the APL2 implemen- 
+tation, Brown has followed this same line of development of 
+nested 
+arrays. 
+Somewhat after the advent of NARS, the SHARP APL 
+system was extended to provide boxed elements in arrays, as 
+reported in Reference 22. New operators (such as the rank) were 
+also added, but their utility was severely limited by the fact that 
+operators were not (as in NARS) extended to apply to user- 
+defined functions and derived functions. In the succeeding SAX 
+and J implementations such constraints have been removed. 
+Tacit programming 
+A tacit definition is one in which no explicit mention is made of 
+the arguments of the function being defined. For example: 
+sum=. +/ 
+mean=, 
+sum % # 
+listmean =. mean"l 
+[a=. 
+i. 5 
+0 1 2 3 4  
+sum a 
+10 
+mean 
+a 
+2 
+[table=. 
+i. 
+0 
+1 
+2 
+3 
+4 
+5 
+6 
+7 
+8 
+9 
+10 Ii 121314 
+35 
+mean 
+table 
+5 6 7 8 9  
+listmean 
+table 
+2712 
+By contrast, definition in most APL dialects makes explicit 
+mention of the argument(s): 
+DFX 27p'Z~SUM X Z*+/X' 
+SUM 
+Tacit programming offers several advantages, including the 
+following: 
+1. It is concise. 
+2. It allows significant formal manipulation of definitions. 
+3. It greatly simplifies the introduction of programming into 
+any topic. 
+Since the phrase +/produces a function, the potential for 
+tacit programming existed in the earliest APL; but the restric- 
+tions on the copula prevented assignment of a name to the 
+definition, and therefore prohibited tacit programming. 
+In any case, the paucity of operators and the restrictions that 
+permitted their application to (a subclass of) primitive functions 
+only, made serious use of tacit programming impossible. In later 
+dialects these restrictions have been removed, and the number of 
+operators has been increased. 
+I now provide a few examples of tacit programming in J, first 
+listing the main facilities to be exploited. The reader may wish to 
+compare such facilities in J with similar facilities defined by 
+33 
+) 
+. 
+Baekus 13 and by Curry. 
+For example, Curry s combmators W 
+(elementary duplicator) and C (commutator) are both repre- 
+sented by the adverb - in J, according to the following examples: 
+/ : -b 
+is 
+b/: b 
+(thatis, a sort of b) 
+a %-b 
+is 
+b%a 
+(thatis, aintob) 
+The facilities to be used in the examples include the hook, 
+fork, and - already defined, as we].[ as the following which, 
+although defined in terms of specific verbs, apply generally. It 
+may be necessary to consult Reference 21 for the meanings of 
+certain verbs, such as *: (square), %: (square root), and ^ 
+(log). Five examples follow. 
+1. 
+2 &^ y 
+is 
+2 ^ y 
+(Called currying) 
+2. 
+^ & 2 y 
+is 
+y^2 
+(Called currylng) 
+3. 
+- & ^ . y 
+is 
+- ^ 
+y 
+Composition 
+4. 
+x -& ^. 
+y 
+is 
+(^.x)- 
+(^.y) 
+Composition 
+5. 
+x -@ ^ y 
+is 
+- 
+x ^ y 
+Atop 
+Some examples from statistics are shown next. 
+sum=. 
++/ 
+mean=, 
+sum % # 
+norm=. - mean 
+std=.%: 
+& sum & * : & norm 
+Entry of a function alone causes a display of its definition, a 
+display that can be captured and manipulated as a straight- 
+foxwaard boxed array. Thus: 
+std 
+I 
+%: & sum 
+& norm 
+& *: 
+In fimcfion tables, the f outer product of APL is in J the 
+dyadic case of f/. For example: 
+[a=. b=. 
+i. 5 
+0 1 2 3 4  
+a+/b 
+0 1 2 3 4  
+1 2 3 4 5  
+2 3 4 5 6  
+3 4 5 6 7  
+4 5 6 7 8  
+a*/b 
+000 
+0 
+0 
+012 
+3 
+4 
+024 
+6 
+8 
+036 
+912 
+0481216 
+MARCH ~000 -- VOLUm ~0, N~REa ~ 
+I I 
+a!/b 
+l l l l l  
+0 1 2 3 4  
+0 0 1 3 6  
+0 0 0 1 4  
+0 0 0 0 1  
+Suclh a table can be made easier to interpret by displaying it 
+with appended arguments, using the following tacit definitions: 
+over=. ({., .@; ].)&" :8. 
+by=. 
+(,-"_i 
+' '&;&, .)- 
+a by b over a !/ b 
+0 1 2 3 4  
+0 1 1 1 1 1  
+1 0 1 2 3 4  
+2 0 0 1 3 6  
+3 0 0 0 1 4  
+4 0 0 0 0 1  
+Adverbs may be defined tacitly in a number of ways, as 
+follows: 
+sum \ a 
+0 " 3610 
+scan=. / \ 
++ scan a 
+0 1 3 6 1 0  
+- 
+scan a 
+0 _1 1 _2 2 
+table=. 
+/(['by'] 'over')\ 
+23 
+5 *table 
+1 2 3 4 5  
+1 
+2 
+3 
+4 
+5 
+22 
+4 
+6 
+810 
+33 
+6 
+91215 
+55 
+i0152025 
+a <table 
+b 
+0 1 2 3 4  
+0 0 1 1 1 1  
+i 0 0 1 1 1  
+2 0 0 0 1 1  
+3 0 0 0 0 1  
+4 0 0 0 0 0  
+Cited references and note 
+1. 
+A.D. Falkoff and ICE. Iverson, "The Design of APL," IBM 
+JournalofResearck andDe~elop~wnt 17, No. 4, 324-334 (1973) 
+2. 
+A.D. Falkoffand K. E. Iverson, "The Evolution ofAPL," ACM 
+SIGPLdN.N'otices 15, No. 8, 47 57 (1978) 
+3. 
+K.E. Iverson, A Programming Language, John Wiley &: Sons, 
+Inc., New York (1962), p. 16 
+4. 
+See the 1971 Chelsea edition of Heaviside's Electromagnetic 
+Theory and the article by P. Nahin in the June 1990 issue of 
+Sci~tific American 
+5. 
+R. K. W. Hui, K. E. Iverson, E. E. McDonndl, and A. T. 
+Whitney, "APL/?," APLgO Conference Proceedings, APL Quote 
+Quad 20, No. 4, ACM, New York (1990) 
+6. 
+K. E. Iverson, "A Dictionary of APL," APL87 Conference 
+Proceedings, APL Quote Quad 18, No. 1,202-211, ACM, New 
+York (1987) 
+7. 
+R_ Hodgkinson, "APL Procedures,"APL86 Conference Proceed- 
+lugs, APL Quote Quad 16, No. 4, ACM, New York (1986) 
+8. 
+R. IC W. Hui, ICE. Iverson, and E. E. McDonnell, "Tacit 
+Programming," APL91 Conference Proceedings, ~4PL Quote Quad 
+21, No. 4, ACM, New York (1991) 
+9. 
+P.C. Berry, Sharp APL Reference Manual, I. P. Sharp Associates, 
+Toronto, Canada (1979) 
+10. K.E. Iverson, Tangible Math, Iverson Software Inc., Toronto, 
+Canada (1990) 
+11. A. Camacho, "I-APL Status Report," Vector: The Journal of the 
+British APL Association 4, No. 3, 8-9 (1988) 
+12. APL2Programming:SystemServicesReference, SH20-9218,IBM 
+Corporation (1988); availahle through IBM branch offices 
+13. j. Backus, "Can Programming Be Liberated from the Von 
+Neumann Style? A Functional Style and Its Algebra of Programs," 
+Communications of the ACM 21, No. 8, 613-641, (1978) 
+14. A.D. Falkoffand K. E. Iverson, APL\360 User's Manual, IBM 
+Corporation (1966) 
+15. R. Smith, "Nested Arrays, Operators, and Functions," APL81 
+Conference Proceedings, APL Quote Quad 12, No. 1, ACM, New 
+York (1981) 
+12 
+aPL ¢,~0~ O,aa 
+16. C. M. Cheney, .Nested Arrays Reference Manual, STSC Inc., 
+Rockville, MD (1981) 
+17. SAXReference, 0982 8809 El, I. P. Sharp Associates, Toronto, 
+Canada (1986) 
+18. K. E. Iverson, "The Description of Finite Sequential Processes," 
+Proceedings of a Conference on Information Tkeory, C. Cherry and 
+W.Jackson, Editors, Imperial College, London (August 1960) 
+19. APLSV User's Manual, GC26-3847-3, IBM Corporation (1973) 
+20. C. Weidmann, APLUM Reference Manual, University of Massa- 
+chusetts (1975) 
+21. K. E. Iverson, The I81 Dictionary ofJ, Iverson Software Inc., 
+Toronto, Canada (1991) 
+22. IL Bernecky and K. E. Iverson, "Operators and Enclosed Arrays," 
+XPL User's Meeting, I. P. Sharp Associates, Toronto, Canada 
+(198o) 
+23. K. E. Iverson, Operators and Functions, Research Report 7091, 
+IBM ThomasJ. Watson Research Center, Yorktown Heights, NY 
+10598 (1978) 
+24. A.T. Whitney and IC E. Iverson, "Practical Uses of a Model of 
+APL," APL8£ Conference Proceedings, APL Quote Quad 13, No. 
+1, ACM, New York (1982) 
+25. D3alog APL Reference Manual, Dyadic Systems Ltd., Alton, 
+Hants, England (1982) 
+26- ICE. Iverson, "APL Syntax and Semantics," APL83 Conference 
+Proceedings, APL Quote Quad 15, No. 3,223-231, ACM, New 
+York (1983) 
+27. J. P. Benkard, "Valence and Precedence in A_PL Extensions," in 
+APL 8 5 Conference Proceedings,APL Quote Quad 13, No. 3, ACM, 
+New York (1983) 
+28. J.D. Bunch andJ. A. Gerth, "APL Two by Two-Syntax Analysis 
+by Pairwise Reduction," APL84 Conference Proceedings, APL 
+Quote Quad 14, No. 4, ACM, New York (1984) 
+29. ICE. Iverson and E. E. McDonnell, "Phrasal Forms," APL89 
+Conference Proceedings, APL Quote Quad 19, No. 4, ACM, New 
+York (1989) 
+50. T. More, Jr., "Axioms and Theorems for a Theory of Arrays," 
+IBM Journal of P~searck and Development 17, No. 2, 135-157 
+(1973) 
+31. 
+32. 
+33. 
+IL Bernecky, "Function Arrays,"APL84 Conference Proceedings, 
+XPL Quote Quad 14, No. 4, ACM, New York (1984) 
+J. A. Brown, "Function Assignment and Arrays of Functions," 
+APL 84 Conferenee Proceedings,dPL Quote Quad 14,No. 4,ACM, 
+New York (1984) 
+H. B. Curry and R. Feys, Combinatory Logic, Vol. 1, North 
+Holland Publishers, Amsterdam, Netherlands (1968) 
+Kenneth E. Iverson, 44 Cllarle~ St. West, Xo. 4709, Toronto, Ontario 
+M4Y 1R8, Canada. Dr. Iverson received a B.A. in mathematics and 
+physics from Queen's University, Kingston, Canada in 1950, an M.A. 
+in mathematics in 1951, and a Ph.D. in applied mathematics from 
+Harvard University. He was an assistant professor at Harvard from 
+1955 to 1960. From 1960 to 1980 he was employed by IBM Corpora- 
+tion's Research Division where he became an IBM Fellow in 1970. 
+After leaving IBM in 1980, Dr. Iverson was employed by I. P. Sharp 
+Associates until 1987. He has received many honors, in addition to 
+becoming an IBM Fellow, including the AFIPS Harry Goode Award 
+in 1975, the ACM Turing Award in 1979, and the IEEE Computer 
+Pioneer Award in 1982. He is a member of the National Academy of 
+Engineering in the United States. Currently he is working onJ and the 
+use of J in teaching. 
+Copyright © 1991 by International Business Machines Corporation. 
+Reprinted with the permission of the IBM Systems Tournal, Vol. 30, 
+No. 4. 
+Back issues of APL Quote Quad 
+Back issues of many of the issues of APL Quote Quad 
+are available; the single-copy price is $8 for members 
+and $12 for non-members for the non-Proceedings 
+issues. The Proceedings ofsoine APL conferences are 
+also available, with a discount for members. Request a 
+Publications Catalog or Order Form, or mail your order 
+with payment or purchase order, to: 
+ACM Order Department 
+P. O. Box 12114 
+Church Street S ration 
+New York, NY 10257 USA 
+Credit-card orders canbe processed by calling the ACM 
+Order Department at 1-800-342-6626 (or from outside 
+the U.S., call +1-212-626-0500). 
+• 
+ cu ooo-vo    o, N=m  
+13 

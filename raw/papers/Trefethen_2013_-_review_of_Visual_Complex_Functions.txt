@@ -1,0 +1,3046 @@
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Copyright © by SIAM. Unauthorized reproduction of this article is prohibited. 
+ 
+SIAM Review  Vol. 55, Issue 4 (December 2013) 
+ 
+Book Reviews 
+Introduction, 789 
+ 
+Featured Review: Visual Complex Functions: An Introduction with Phase Portraits (Elias Wegert), 
+Lloyd N. Trefethen, 791 
+ 
+Combinatorics of Permutations. Second Edition (Miklós Bóna), Michael Albert, 797 
+Quasi-Stationary Distributions: Markov Chains, Diffusions and Dynamical Systems (Pierre Collet, Servet 
+Martinez, and Jaime San Martín), Wael Bahsoun, 799 
+Continuous-Time Markov Chains and Applications: A Two-Time-Scale Approach. Second Edition (G. George 
+Yin and Qing Zhang), Vladimir Gaitsgory, 799 
+Improving Risk Analysis (Louis Anthony Cox, Jr.), Charles R. Hadlock, 801 
+Nonlinear Inclusions and Hemivariational Inequalities: Models and Analysis of Contact Problems (S. Migórski, 
+A. Ochal, and M. Sofonea), Weimin Han, 803 
+Invisible in the Storm: The Role of Mathematics in Understanding Weather (Ian Roulstone and John 
+Norbury), Robert E. O’Malley, Jr., 804 
+A Primer on Mathematical Models in Biology (Lee A. Segel and Leah Edelstein-Keshet), Robert E. O’Malley, Jr., 
+804 
+Differential-Algebraic Equations: A Projector Based Analysis (Rene Lamour, Roswitha Marz, and Caren 
+Tischendorf), Robert E. O’Malley, Jr., 805 
+The Divergence Theorem and Sets of Finite Perimeter (Washek F. Pfeffer), William P. Ziemer, 805 
+ 
+Downloaded 11/24/13 to 129.67.186.57. Redistribution subject to SIAM license or copyright; see http://www.siam.org/journals/ojsa.php
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Copyright © by SIAM. Unauthorized reproduction of this article is prohibited. 
+Nick Trefethen’s featured review of Elias Wegert’s Visual Complex Functions is both
+very enthusiastic and well illustrated.
+One knows that we must move away from
+Ahlfors, when we compare the tables of Abramovitz and Stegen and the richness found
+in its successor, the NIST Digital Library of Mathematical Functions.
+The other reviews in the issue treat combinatorics of permutations, quasi-
+stationary distributions, two-timing for Markov chains, risk analysis, contact problems,
+differential-algebraic equations, the history of weather forecasting, mathematical mod-
+eling for biologists, and the divergence theorem from the perspective of geometric
+measure theory.
+We’ll expect most of our readers will want to buy one or more of these recom-
+mended new publications.
+Bob O’Malley
+Section Editor
+bkreview@amath.washington.edu
+789
+Downloaded 11/24/13 to 129.67.186.57. Redistribution subject to SIAM license or copyright; see http://www.siam.org/journals/ojsa.php
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Copyright © by SIAM. Unauthorized reproduction of this article is prohibited. 
+SIAM REVIEW
+c⃝2013 Society for Industrial and Applied Mathematics
+Vol. 55, No. 4, pp. 791–809
+Book Reviews
+Edited by Robert E. O’Malley, Jr.
+Featured Review: Visual Complex Functions: An Introduction with Phase Por-
+traits. By Elias Wegert. Birkh¨auser/Springer Basel AG, Basel, 2012. $59.95. xiv+360 pp.,
+softcover. ISBN 978-3-0348-0179-9.
+I don’t read many mathematics books cover to cover, but I just ﬁnished Elias Wegert’s
+Visual Complex Functions. Four young colleagues and I studied it section by section
+over a period of a few months. What an experience! Anyone who works with complex
+variables should read this book.
+Wegert’s theme is that to understand functions in the complex plane, we should
+look at them. Now it is not news that complex analysis is a geometric subject, and in
+fact, Riemann’s investigations in this area played a role in the creation of the ﬁeld of
+topology. But when it comes to actually plotting a complex function f(z), the tradi-
+tion is sparse. Part of the problem is that since the domain and range spaces are each
+two-dimensional, the graph of f(z) is four-dimensional. So what exactly can we plot?
+There are some classic answers, like the beautiful ﬁgures in Tables of Functions
+with Formulae and Curves by Jahnke and Emde in 1909, which became the very ﬁrst
+book republished by Dover Publications after they set up operations in 1941. Figure 1
+shows Jahnke and Emde’s iconic image of the absolute value of the gamma function
+in the complex plane, produced in an era of hand calculations and expert technical
+artists.
+Fig. 1
+Gamma function from Jahnke and Emde.
+Times have changed, and computers with omnipotent color graphics are every-
+where.
+Wegert’s book is built on the idea of what he calls a phase portrait of a
+function. (He is not the ﬁrst to work with such plots, but has carried the idea the
+Publishers are invited to send books for review to Book Reviews Editor, SIAM, 3600 Market St.,
+6th Floor, Philadelphia, PA 19104-2688.
+791
+Downloaded 11/24/13 to 129.67.186.57. Redistribution subject to SIAM license or copyright; see http://www.siam.org/journals/ojsa.php
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Copyright © by SIAM. Unauthorized reproduction of this article is prohibited. 
+792
+BOOK REVIEWS
+Fig. 2
+Phase portraits of z and log(z).
+furthest.) This is a 2D plot in which the color at each point z shows the phase of
+f(z), that is, the number θ for which f(z) = r exp(iθ) with r > 0. To explain the
+code, Figure 2(left) depicts a phase portrait of f(z) = z. Red corresponds to values
+of f(z) that are positive real, light green to positive imaginary, cyan to negative real,
+and violet to negative imaginary.
+In Figure 2(right), we see the function f(z) = log(z). Note the zero at z = 1,
+with the same sequence of colors around it as for f(z) = z at z = 0. To the right
+the color is red, since log(z) is positive real for z > 1, and to the left it is cyan, since
+log(z) is negative real for 0 < z < 1. Further left we see the branch cut along (−∞, 0].
+Above the branch cut, the predominant color is green, indicating a phase in the upper
+half-plane, and below it is violet, showing a phase in the lower half-plane.
+After this warmup we can begin to make sense of more complicated functions,
+and my colleagues and I soon grew happily skilled at this. Consider, for example,
+the function f plotted in Figure 3(left). In the upper middle of the frame, f has a
+triple zero, that is, a zero of multiplicity 3. One sees this because the colors appear
+three times in sequence as one traces around the center point, with yellow to the left
+of red. In the right part of the frame it has a double pole, a pole of multiplicity
+2.
+This is apparent because the colors are traced out twice in the reverse order,
+with yellow to the right of red. Near the bottom, it has an essential singularity, an
+isolated point singularity that is not a pole. The function shown in Figure 3(right) is
+f(z) = exp(1/z), the simplest example of a function with an essential singularity. I
+remember as a graduate student sensing a deep mystery in Picard’s theorem, which
+asserts that all complex values except possibly one are attained in every neighborhood
+of an essential singularity. When you study ﬁgures like these, Picard’s theorem begins
+to seem less mysterious.
+Phase portraits don’t show magnitudes directly, but they show them indirectly.
+We know that if yellow is to the left of red, this signiﬁes a zero, implying that |f|
+grows as one moves away from the zero. This happens on the left of the origin in the
+plot of exp(1/z), indicating the growth of this function there from values near zero as
+z moves leftward. To the right of the origin, yellow is to the right of red, indicating
+the decay of the function from values near inﬁnity. Sometimes one might prefer to see
+the modulus directly, but Wegert makes a compelling case that there is usually more
+precise information in a phase portrait.
+Downloaded 11/24/13 to 129.67.186.57. Redistribution subject to SIAM license or copyright; see http://www.siam.org/journals/ojsa.php
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Copyright © by SIAM. Unauthorized reproduction of this article is prohibited. 
+BOOK REVIEWS
+793
+Fig. 3
+Poles, zeros, and essential singularities.
+In Figure 4(left), we see f(z) = sin(z).
+(This image is what Wegert calls an
+“enhanced phase portrait,” with additional shading to further mark phase and ampli-
+tude.) The 2π-periodicity in the complex plane is evident, and one is reminded that
+sin(z) maps half-strips to half-planes. The point z = 0 at the center of the plot, for
+example, lies at the bottom of a half-strip that maps to the upper half-plane, whose
+predominant colors are orange, yellow, and green. The experienced eye can also infer
+from the colors the exponential increase of | sin(z)| as one moves away from the real
+axis, since yellow lies to the left of red in each parallel channel.
+The right image in Figure 4 shows the Riemann zeta function ζ(z) in the region
+−40 < Rez < 10, −2 < Imz < 48. Notice that yellow is to the left of red at every
+rainbow point except one: these are the trivial zeros on the negative real axis and the
+nontrivial ones with Rez = 1
+2. The exceptional point has yellow to the right of red,
+and this is the simple pole of ζ(z) at z = 1. In the left half-plane we see exponential
+growth in modulus as one moves leftward, since yellow again lies to the left of red in
+each channel.
+Fig. 4
+sin(z) and ζ(z).
+Downloaded 11/24/13 to 129.67.186.57. Redistribution subject to SIAM license or copyright; see http://www.siam.org/journals/ojsa.php
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Copyright © by SIAM. Unauthorized reproduction of this article is prohibited. 
+794
+BOOK REVIEWS
+Portraits like these can give added depth to our understanding of many of the
+functions that have been studied by mathematicians in the past 200 years. Some of the
+functions explored in Wegert’s book, at his Phase Plot Gallery at www.visual.wegert.
+com, and in his annual calendars of “Complex Beauties” coauthored with Gunter
+Semmler, include Bessel, Neumann, and Airy functions; theta, Bernoulli, and Painlev´e
+functions; Fresnel integrals, elliptic functions, and continued fractions.
+But Wegert’s purpose is more than just the exploration of particular functions,
+for phase portraits can teach us fundamental principles of complex analysis. The two
+images shown in Figure 5 explore the idea of multivaluedness, on the left by following
+a chain of function elements twice around a square root singularity, and on the right
+with a 3D plot of the Riemann surface for the cube root. If you circle around twice
+on the left, or three times on the right, you return to your starting color.
+Fig. 5
+Multivalued functions z1/2 and z1/3.
+The plot in Figure 6(left) shows an analytic function f in the unit disk with a
+countably inﬁnite set of zeros lying along a curve that spirals out to the unit circle.
+This picture makes it easy to understand that the circle is a natural boundary for
+this function, meaning that f cannot be analytically continued anywhere outside.
+This function happens to be an inﬁnite Blaschke product, with constant modulus
+Fig. 6
+Blaschke products in the disk and on the Riemann sphere.
+Downloaded 11/24/13 to 129.67.186.57. Redistribution subject to SIAM license or copyright; see http://www.siam.org/journals/ojsa.php
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Copyright © by SIAM. Unauthorized reproduction of this article is prohibited. 
+BOOK REVIEWS
+795
+in the limit as |z| →1, as is reﬂected in the color boundaries meeting the circle at
+right angles. In Figure 6(right), a simpler Blaschke product is shown, a ﬁnite one,
+analytically continuable to a meromorphic function on the whole Riemann sphere,
+i.e., a rational function. One sees an elegant symmetry of zeros in one hemisphere,
+poles symmetrically located in the other.
+Phase portraits reveal fascinating properties of Taylor series as they converge to
+analytic functions.
+In Figure 7(left), f(z) is the degree 60 Taylor polynomial for
+1/(1 −z). Inside the unit circle, the series closely represents the limit function, but
+outside it becomes a circus tent growing at the rate |z|60 (yellow to the left of red
+in each channel). The transition from one behavior to the other is marked by a line
+of zeros that converges to the circle of convergence; this is Jentzsch’s theorem. In
+Figure 7(right), the middle of the image looks like exp(z): the stripes are 2πi-periodic
+and the growth is exactly exponential as one moves to the right, since the stripes
+are parallel with yellow to the left of red. Outside a certain curve of zeros, however,
+the behavior changes completely, and in fact, what is plotted here is not exp(z) but
+its Taylor polynomial of degree 60.
+Since exp(z) is entire, Jentzsch’s theorem is
+inapplicable, and the curve in question moves out to ∞as the degree increases. This
+curve was analyzed by Szeg˝o and later generalized for Pad´e rational approximations
+of exp(z) by Saﬀand Varga.
+Fig. 7
+Taylor polynomials of 1/(1 −z) and exp(z).
+One of the central techniques of complex variables is the construction of functions
+via Cauchy integrals. For example, suppose we consider a Cauchy integral deﬁned
+by integrating the constant function 1 over the unit interval [−1, 1]. The resulting
+function f(z), plotted in Figure 8(left), is a branch of log((z −1)/(z + 1))/2πi with a
+branch cut along [−1, 1]; the Plemelj–Sokhotsky jump relation tells us that f jumps
+by exactly 1 across the interval. What if the same function 1 is used along a diﬀerent
+contour? We get a less standard branch of log((z −1)/(z + 1))/2πi, as shown in
+Figure 8(right). Until I saw such pictures, Cauchy integrals never seemed so simple.
+For a numerical analyst like me, these ideas become especially intriguing when
+Cauchy integrals are combined with discretization. The plot shown in Figure 9(left)
+shows a certain Cauchy integral approximated by the 200-point trapezoid rule over a
+contour that winds around twice. The resulting function f(z) is a rational approx-
+imation to the function deﬁned by the exact Cauchy integral, with 200 poles along
+the contour and corresponding zeros lining up nearby outside. In Figure 9(right),
+Downloaded 11/24/13 to 129.67.186.57. Redistribution subject to SIAM license or copyright; see http://www.siam.org/journals/ojsa.php
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Copyright © by SIAM. Unauthorized reproduction of this article is prohibited. 
+796
+BOOK REVIEWS
+Fig. 8
+Two branches of log((z −1)/(z + 1))/2πi.
+Fig. 9
+Discretized Cauchy integrals.
+the number of quadrature points has increased to 800, and the pole-zero pairs have
+come closer together. In the limit they deﬁne a layer potential of the kind familiar
+in the ﬁeld of integral equations, and pictures like these reveal connections between
+integral equations, complex variables, quadrature theory, rational functions, potential
+theory, digital ﬁltering, the theory of hyperfunctions, . . . it is hard to know where to
+terminate the list!
+Visual Complex Functions is a beautiful and careful presentation of an entire
+advanced introduction to complex analysis based on phase portraits and, where ap-
+propriate, other kinds of computer-generated pictures. The book is mathematically
+complete, with theorems and proofs as well as pictures. It treats series, products,
+singularities, analytic continuation, conformal mapping, Riemann surfaces, and many
+other topics always from a fresh and compelling point of view. My understanding of
+many ideas and phenomena deepened through reading this book.
+Although Wegert’s aim was to produce a volume that could be used as a main or
+companion text for an introductory course, my colleagues and I felt that this aim is not
+realized. It is hard to imagine learning complex variables for the ﬁrst time with this
+book, for the treatment—however enlightening and exciting—is just too idiosyncratic.
+Downloaded 11/24/13 to 129.67.186.57. Redistribution subject to SIAM license or copyright; see http://www.siam.org/journals/ojsa.php
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Copyright © by SIAM. Unauthorized reproduction of this article is prohibited. 
+BOOK REVIEWS
+797
+A few of the deﬁnitions (for example, of paths, curves, arcs, and traces), while carefully
+thought through, seem not quite standard and potentially confusing for a beginner;
+occasionally one ﬁnds a term imperfectly translated from German, like ring instead
+of annulus or neutral element instead of identity. But for anyone who has already had
+a ﬁrst exposure to complex variables, this book oﬀers a thrilling second journey, or
+a third. Remarkably, despite 360 pages of beautiful glossy color, it sells for less than
+$50. An epilogue shows how to draw your own phase portraits, and MATLAB-based
+software is available at www.visual.wegert.com.
+I would like to thank my young colleagues for their contributions to this review:
+Anthony Austin, Mohsin Javed, Georges Klein, and Alex Townsend.
+When I went oﬀto graduate school in 1977, a good fraction of the way back to the
+era of Jahnke and Emde, I loved complex variables and wanted to work with them
+on the computer. Sometime during my ﬁrst semester a friend from undergraduate
+days wrote and asked, “Are you skiing on the complex functions yet?” With Wegert’s
+extraordinary book, at last I am skiing on the complex functions.
+LLOYD N. TREFETHEN
+University of Oxford
+Combinatorics of Permutations. Second
+Edition. By Mikl´os B´ona. CRC Press, Boca Ra-
+ton, FL, 2012. $89.95. xiv+458 pp., hardcover.
+ISBN 978-1-4398-5051-0.
+In a ﬁrst combinatorics or discrete mathe-
+matics course a student will learn the for-
+mula n! for the number of permutations
+of n objects. Aside from using this as an
+annoying correction factor in counting un-
+ordered arrangements of various types, the
+next and last exposure to the combinatorics
+of permutations will often be to the formula
+for the number of derangements presented
+as an illustration of the use of the princi-
+ple of inclusion-exclusion. This is a shame
+because the combinatorial theory of permu-
+tations contains a wealth of interesting and
+accessible results using methods from all the
+drawers of the combinatorial tool chest, and
+often suggesting surprising connections and
+relationships between apparently unrelated
+structures.
+This book attempts to ﬁll in some of
+those gaps while acknowledging that the
+area as a whole is still so broad that com-
+plete coverage is impossible. Of course this
+means that the selection of topics is some-
+what according to the author’s tastes, but
+certainly B´ona has done an excellent job of
+choosing a variety of areas to discuss. The
+introduction suggests that the material was
+developed for a graduate class in combina-
+torics, but it could just as easily be adapted
+to an advanced undergraduate course, or for
+independent study by a motivated student.
+Chapters 1 and 2 deal with permutations
+thought of as sequences from the ordered set
+1 < 2 < · · · < n. First, descents, i.e., ad-
+jacent inversions are discussed, and then
+inversions in general are considered. The re-
+sults discussed are largely enumerative, but
+the mix of techniques (surjections and bi-
+jections, generating functions, recurrences)
+already illustrates one of the main themes
+of the book. Chapter 3 turns to the familiar
+decomposition of permutations as products
+of cycles and investigates various questions
+one might ask about properties of such de-
+compositions, or the permutations whose
+representations are of a particular type. In
+particular we return to the derangements,
+but in a much more general setting which
+permits one to see striking results like Ex-
+ample 3.58, that the exponential generating
+function for permutations whose cycle de-
+composition consists of cycles of odd length
+only is
+
+(1 + x)/(1 −x).
+Chapters 4 and 5 (and the reviewer must
+declare an interest) turn to the less familiar
+area of pattern avoidance. This again deals
+with permutations thought of as sequences
+Downloaded 11/24/13 to 129.67.186.57. Redistribution subject to SIAM license or copyright; see http://www.siam.org/journals/ojsa.php
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Copyright © by SIAM. Unauthorized reproduction of this article is prohibited. 
+798
+BOOK REVIEWS
+from a linearly ordered set. In that context,
+any subsequence can also be thought of as a
+permutation in its own right based simply
+on the relative order of its elements. For
+instance, the subsequence 351 of the per-
+mutation 35421 contains the pattern 231
+since it begins with its middle element (by
+value), then its greatest element, and then
+its smallest element. This relationship gives
+a partial order on permutations, and the
+(initial) objects of study are the collections
+of permutations which avoid (i.e., do not
+contain) certain patterns. Beginning with
+a basic discussion of these ideas, and some
+early results, Chapter 4 culminates with the
+proof by Marcus and Tardos of the Stanley–
+Wilf conjecture, which states that there is
+an exponential bound on the number of per-
+mutations avoiding any single pattern. This
+proof, if not from “the book,” is from a very
+nearby shelf and illustrates beautifully how
+the right change of perspective, together
+with extremely clever but elementary ar-
+guments, can cut through some seemingly
+intractable combinatorial problems.
+Chapters 6 and 7 deal with random per-
+mutations and the algebraic combinatorics
+of permutations. As the author indicates in
+the preface these are two enormous areas of
+study, and to some extent these chapters can
+only skim the surface of some selected top-
+ics. The somewhat lighter Chapter 8 turns
+to algorithms for generating and sorting
+permutations (which has connections with
+the material on pattern avoidance). Finally
+Chapter 9 turns to an “application” of the
+combinatorics of permutations in certain
+(rather constrained and somewhat artiﬁ-
+cial) models of genome rearrangements.
+There are a few criticisms that can be
+made of this book.
+First, on the non-
+mathematical side, despite the fact that it is
+a second edition, a worryingly large number
+of typographical and similar errors remain
+which should have been caught by careful
+proofreading. The typographical ones are
+easily spotted by an experienced mathe-
+matician, but would be more confusing for
+a student. Others, such as the repetition of
+the deﬁnition of northeastern lattice path on
+page 17, are just annoying. The subject is
+one where proofs and examples are usefully
+supplemented by key diagrams, but in this
+book the quality of the typesetting of the di-
+agrams is quite poor—they look rather out
+of place in comparison with the main body
+of text. In a somewhat similar vein, the
+overall layout of the pages is very dense, and
+the frequent use of in-line formulas leads to
+some rather choppy line spacings and atten-
+dant diﬃculties in reading ﬂuidly. Finally,
+the index is rather sketchy (though on the
+other hand the references are excellent!). As
+regards the actual content, the only criti-
+cism is that there is a certain lack of ﬂow
+and development, either in terms of topics
+or diﬃculty. To some extent this is simply
+a consequence of the survey nature of the
+book as a whole, but already parts of Chap-
+ter 1 are quite dense and technical—this
+sort of take-no-prisoners approach might
+discourage a student. Beginning the book
+with the rather lighter material of the ﬁnal
+two chapters might have made a diﬀerence
+here. Of course this is something that an
+instructor can easily take into account as
+well.
+On the other hand, there are many, many
+positive things to be said.
+Its principle
+contribution is to provide an overview of
+(parts of) this rich area of combinatorial
+knowledge which has not been previously
+available in textbook form. The topics cho-
+sen form a good representation of starting
+points for further research in the area, and
+to some extent illustrate the interconnec-
+tions between them. There is a rich supply
+of interesting and well-chosen exercises. Of
+particular note are the “Problems Plus”
+sections, which provide a wealth of further
+topics to explore—often linking directly to
+the research literature. For an interested
+student, or as a source for ideas for presen-
+tations or essays (as opposed to the usual
+weekly exercise sheets), these are invalu-
+able.
+Overall, I think this is an excellent book
+and well worth considering for an appro-
+priate course, or as a recommendation to a
+student for independent study. It’s a shame
+that some rather minor technical issues de-
+tract from its attractiveness, but on the
+whole its positive aspects far outweigh the
+negative ones.
+MICHAEL ALBERT
+University of Otago
+Downloaded 11/24/13 to 129.67.186.57. Redistribution subject to SIAM license or copyright; see http://www.siam.org/journals/ojsa.php
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Copyright © by SIAM. Unauthorized reproduction of this article is prohibited. 
+BOOK REVIEWS
+799
+Quasi-Stationary Distributions:
+Markov
+Chains, Diffusions and Dynamical Sys-
+tems. By Pierre Collet, Servet Martinez, and
+Jaime San Mart´ın. Springer, New York, 2013.
+$129.00. xvi+280 pp., hardcover. ISBN 978-3-
+642-33130-5.
+This book is concerned with Markov pro-
+cesses and dynamical systems whose orbits
+get killed (or terminated) once they hit a
+trap. In the area of Markov process this
+topic has deep roots and goes back to Kol-
+mogorov’s work in 1938 (see the book under
+review and references therein). While in the
+area of dynamical systems, research on this
+topic started in the late 1970s [4]. In both
+areas this topic is currently one of the most
+active branches of research. This is in part
+due to its interesting applications in other
+sciences. In mathematical biology Markov
+processes and dynamical systems with a
+trap has applications in birth-death pro-
+cesses (see the book under review and ref-
+erences therein). In physics, among a vast
+literature on applications, it found applica-
+tions in transport in heat conduction [2]. It
+also plays an important role in astronomy
+[5]. More recently, this topic has provided
+insights into the study of metastable dynam-
+ical systems which behave approximately
+like a collection of dynamical systems with
+traps: the infrequent transitions between
+almost invariant regions in a metastable sys-
+tem are similar to infrequent escapes from
+associated systems with traps [3, 1].
+Over the last 20 years, the authors of the
+book have made remarkable contributions
+to this topic of research, and this book cul-
+tivates their work to date. The book starts
+by introducing the main tools needed to
+study the long-term behavior of Markov
+process and dynamical systems with traps.
+This is done by introducing the deﬁnition
+of the so-called quasi-invariant distribution
+(QSD) and its associated exponential rate
+of survival, which are indeed the main tools
+needed to describe the long-term statis-
+tics of a Markov process (and for dynam-
+ical systems) with a trap. Then the book
+presents results on the problem of existence
+of QSD and its associated exponential rate
+of survival in discrete-time Markov chains
+on a countable state space, N-dimensional
+Brownian motion, although, in the latter,
+more emphasis is put on the 1-dimensional
+case. Moreover, it brieﬂy touches on dy-
+namical systems, such as iterated maps and
+ﬂows, where the trap is often called in the
+dynamical systems literature a hole.
+The book under review is well written
+and to a certain extent is self-contained.
+The authors of the book are leading experts
+in the area, and they made all the eﬀort to
+make the book accessible to everyone, from
+graduate students to researchers, working
+in this area. Chapter 8 is the only place
+where I would have liked more material on
+dynamical systems with holes. Neverthe-
+less, this is an important, unique book. To
+the best of my knowledge I have never seen
+a book which is devoted only to the study of
+QSD and which covers both Markov process
+and dynamical systems.
+REFERENCES
+[1] W. Bahsoun and S. Vaienti, Escape rates
+formulae and metastability for ran-
+domly perturbed maps, Nonlinearity, 26
+(2013), pp. 1415–1438.
+[2] P. Gaspard and T. Gilbert, Heat conduc-
+tion and Fourier’s law by consecutive
+local mixing and thermalization, Phys.
+Rev. Lett., 101 (2008), 020601.
+[3] G. Keller and C. Liverani, Rare events,
+escape rates, quasistationarity: Some
+exact formulae, J. Stat. Phys., 135
+(2009), pp. 519–534.
+[4] G. Pianigiani and J. Yorke, Expanding
+maps on sets which are almost invari-
+ant: Decay and chaos, Trans. Amer.
+Math. Soc., 252 (1979), pp. 351–366.
+[5] H. Waalkens, A. Burbanks, and S. Wig-
+gins, Escape from planetary neighbour-
+hoods, Mon. Not. R. Astron. Soc., 361
+(2005), pp. 763–775.
+WAEL BAHSOUN
+Loughborough University
+Continuous-Time Markov Chains and Ap-
+plications: A Two-Time-Scale Approach.
+Second Edition. By G. George Yin and Qing
+Zhang. Springer, New York, 2013. $129.00.
+xxii+427 pp., hardcover.
+ISBN 978-1-4614-
+4345-2.
+Downloaded 11/24/13 to 129.67.186.57. Redistribution subject to SIAM license or copyright; see http://www.siam.org/journals/ojsa.php
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Copyright © by SIAM. Unauthorized reproduction of this article is prohibited. 
+800
+BOOK REVIEWS
+The book is devoted to a study of continu-
+ous time singularly perturbed (SP) Markov
+chains and their applications in problems of
+control and optimization.
+Singularly perturbed systems arise in
+modeling “real life” systems appearing in
+a variety of applications (physical, biolog-
+ical, and management sciences, electrical,
+chemical, and mechanical engineering, and
+others).
+Due to its importance for applications
+and due to the mathematical challenges it
+is presenting, singular perturbations theory
+has been studied intensively in the litera-
+ture. Numerous papers and a good number
+of books have been devoted to this topic
+over the years; see, e.g., Bensoussan [1],
+Dontchev [2], Kabanov and Pergamensh-
+chikov [3], Kokotovic, Khalil, and O’Reilly
+[4], Kushner [5], O’Malley [6], Pervozvan-
+ski and Gaitsgory [7], Plotnikov, Plotnikov,
+and Vituk [8], Vasil’eva and Butuzov [9],
+and Yin and Zhang [10].
+The distinctive feature of the book under
+review is that it is devoted exclusively to
+the in-depth study of SP continuous time
+Markov chains and their applications. This
+makes the book complementary to the ex-
+isting literature.
+SP Markov chains are characterized by
+the fact that their generators Qϵ depend
+on a small parameter ϵ > 0 in a “singular”
+way. Namely,
+Qϵ = 1
+ϵ
+˜Q + ˆQ,
+where ˜Q and ˆQ are generators themselves.
+The dynamics of the state probabilities vec-
+tor p(t) is described by the diﬀerential equa-
+tion
+dp(t)
+dt
+= (Qϵ)T p(t),
+with the presence of the small parameter
+implying that some linear combinations of
+the state probabilities vector may change
+their values with the rates of the order
+O( 1
+ϵ ), while the rates of changes of some
+other such combinations are of the order
+O(1). The decomposition of the state prob-
+abilities dynamics into fast (of the order
+O( 1
+ϵ )) and slow (of the order O(1)) parts is
+most distinctive in the case in which ˜Q has
+a block-diagonal structure,
+˜Q = diag( ˜Q1, ˜Q2, . . . , ˜Ql),
+where Qk, k = 1, . . . , l, are irreducible
+generators of suitable Markov chains. The
+block-diagonal structure of ˜Q implies that
+the set M of states of the corresponding
+Markov chain is decomposed into l subsets,
+M = M1 ∪· · · ∪Ml.
+The fast dynamics in this case is repre-
+sented by frequent transitions between the
+states within each subset Mi. These tran-
+sitions are governed by the Markov chain
+with the generator 1
+ϵ ˜Qi + O(1), and are re-
+sulted in that the probability distribution
+within Mi becomes approximately equal to
+the stationary distribution of the Markov
+chain with the generator ˜Qi (i = 1, . . . , l).
+The slow part of the dynamics is associ-
+ated with “rare” transitions between the
+states belonging to diﬀerent subsets. The
+process of moving from subset to subset
+is approximately described by the “aggre-
+gated” Markov chain, the elements of the
+generator of the latter being obtained via
+summing up appropriate elements of ˆQ with
+weights deﬁned as stationary distribution
+within the subsets.
+The book contains a number of exam-
+ples illustrating possible applications of SP
+Markov chains in control and optimization
+problems. One of these is the problem of
+minimization of the expected cost,
+min
+u(·) E
+ T
+0
+G(x(t), u(t), αϵ(t))dt,
+considered on the solutions of the system
+dx(t)
+dt
+= f(x(t), u(t), αϵ(t)),
+x(0) = x0,
+where x(t) is the state variable (or vector
+of state variables), u(t) is the control func-
+tion, and αϵ(t) represents random distur-
+bances, the latter being modeled by an SP
+Markov chain. Assuming that the generator
+of this Markov chain has a perturbed diag-
+onal structure (as in the example above),
+it is natural to conjecture that a near op-
+timal control can be found via solving an
+averaged optimal control problem, in which
+the SP Markov chain is replaced by the
+Markov chain with adequately aggregated
+states. The fact that the number of aggre-
+gated states is generally much less than the
+number of states in the original SP chain has
+a potential to greatly simplify the analysis.
+Downloaded 11/24/13 to 129.67.186.57. Redistribution subject to SIAM license or copyright; see http://www.siam.org/journals/ojsa.php
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Copyright © by SIAM. Unauthorized reproduction of this article is prohibited. 
+BOOK REVIEWS
+801
+The veriﬁcation of this and similar con-
+jectures about dynamical systems driven
+by SP Markov chains is based on in-depth
+understanding of asymptotic properties of
+such chains, the methodical study of which
+is the main focal point of the book.
+The book consists of three parts. Part I
+provides background material. It exposes,
+in particular, a number of models and ex-
+amples of Markov chains (including birth
+and death processes, queueing systems with
+ﬁnite capacities, optimal control of jump
+linear systems, and others). Part II is the
+largest of the three, and it is devoted to
+a thorough analysis of various asymptotic
+properties of SP Markov chains. Among
+the topics studied here are SP chains with
+recurrent states, SP chains having absorb-
+ing states, SP chains containing transient
+states, and SP chains with perturbed block-
+diagonal structure (the consideration in-
+cluding the case when the number of blocks
+is inﬁnite). Part III deals with some ap-
+plications including Markov decision pro-
+cesses, near optimal control of stochastic
+dynamical systems, numerical solutions of
+control and optimization of Markov chains,
+and hybrid two-time-scale LQG problems.
+The ﬁrst edition of the book was very
+well received by the research community.
+It has provided a valuable reference and
+stimulated research in the area. There is no
+doubt that this second, revised and updated
+edition will be also well received by the in-
+tended audience (researchers and graduate
+students in applied mathematics and con-
+trol engineering interested in modeling and
+optimization of complex stochastic systems)
+and will excite further interest to the topic.
+REFERENCES
+[1] A. Bensoussan, Perturbation Methods in
+Optimal Control, John Wiley, New
+York, 1989.
+[2] A. Dontchev, Perturbations, Approxi-
+mations, and Sensitivity Analysis of
+Optimal Control Systems, Springer,
+Berlin, 1983.
+[3] Y. Kabanov and S. Pergamenshchi-
+kov, Two-Scale Stochastic Systems,
+Springer, Berlin, Heidelberg, 2003.
+[4] P.
+Kokotovi´c,
+H.
+K.
+Khalil,
+and
+J. O’Reilly, Singular Perturbation
+Methods in Control: Analysis and De-
+sign, 2nd ed., Classics Appl. Math. 25,
+SIAM, Philadelphia, 1999.
+[5] H. J. Kushner, Weak Convergence Meth-
+ods and Singularly Perturbed Stochas-
+tic Control and Filtering Problems,
+Birkh¨auser Boston, Boston, 1990.
+[6] R. E. O’Malley, Jr., Introduction to Sin-
+gular Perturbations, Academic Press,
+New York, 1974.
+[7] A. A. Pervozvansky and V. Gaits-
+gory, Theory of Suboptimal Deci-
+sions, Kluwer Academic, Dordrecht,
+The Netherlands, 1988.
+[8] V. A. Plotnikov, A. V. Plotnikov,
+and A. N. Vituk, Diﬀerential Equa-
+tions with Multivalued Right-Hand
+Sides:
+Asymptotic Methods, Astro-
+Print, Odessa, 1999 (in Russian).
+[9] A. B. Vasil’eva and V. F. Butuzov,
+Asymptotic Expansions of Solutions
+of Singularly Perturbed Equations,
+Nauka, Moscow, 1973 (in Russian).
+[10] G. G. Yin and Q. Zhang,
+Discrete-
+Time Markov Chains:
+Two-Time-
+Scale
+Methods
+and
+Applications,
+Springer, New York, 2005
+VLADIMIR GAITSGORY
+Flinders University
+Improving Risk Analysis. By Louis Anthony
+Cox, Jr. Springer, New York, 2013. $179.00.
+xxvi+386 pp., hardcover. ISBN 978-1-4614-
+6057-2.
+This excellent book presents up-to-date ma-
+terial, various portions of which are sure
+to be of great interest to several distinct
+audiences. The primary focus is on sta-
+tistical issues and causality, with a sec-
+ondary emphasis on decision theory. But
+even teachers of game theory and ordinary
+diﬀerential equations are likely to ﬁnd in-
+teresting examples of methods and contexts
+that might ﬁt into their syllabi or make
+good case studies for their students to take
+on as projects. This diversity of subject
+matter should not be surprising since the
+wide range of societal decision problems
+involving risk includes ﬁelds as diverse as
+epidemiology, ﬁnance, industrial safety, de-
+fense, and others. Three unifying themes
+permeate the text: how statistical methods
+can be used and abused, how nonstatisti-
+cal methods can complement statistics in
+Downloaded 11/24/13 to 129.67.186.57. Redistribution subject to SIAM license or copyright; see http://www.siam.org/journals/ojsa.php
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Copyright © by SIAM. Unauthorized reproduction of this article is prohibited. 
+802
+BOOK REVIEWS
+understanding causality, and how analyti-
+cal decision support methods, if used cor-
+rectly, can enhance human decision making.
+The book is full of thorough but accessible
+examples and case studies with extensive
+references to the literature.
+First, let’s look at the big picture. We
+make individual and collective decisions
+constantly that involve considerations of
+risk: what to eat, where to invest, what
+to regulate, when to seek help, how strong
+to build buildings, how much to spend
+for public safety and defense. All of these
+decisions are based on information, and
+almost all of them take into account po-
+tentially conﬂicting information as well as
+multiple objectives, such as improving con-
+ditions and reducing costs. The fundamen-
+tal problem then is that of understanding
+the eﬀects of alternative decisions and iden-
+tifying an appropriate balance of such ef-
+fects. The results of possible decisions can
+be investigated by complementary statis-
+tical and nonstatistical models targeting
+causality, and this can all sometimes be put
+together by a formal decision process that is
+more eﬀective, eﬃcient, and objective than
+less structured individual or group decision
+making. After all, for the latter, just recall
+some recent market “ﬂash crashes” or large-
+scale power outages, where retrospective
+analyses clearly indicate human decision
+failures (sometimes implemented through
+software) in stressful situations, such as fast
+moving or unanticipated circumstances. In
+other cases, psychological biases or political
+pressures can have signiﬁcant negative ef-
+fects. The problem of good decision making
+is so challenging in the public arena, where
+some politicians are likely to fan the ﬂames
+of ignorance to their own advantage, that
+in more pessimistic moments one might be
+tempted to throw in the towel and set alter-
+native goals on the belief that ignorance can
+be bliss if the majority of people are content
+with it. But little by little, I believe our re-
+sponsibility as educators and scientists is to
+show people how to convert information to
+action in rational ways and to instill in the
+broader society a reasonable expectation
+and conﬁdence that our leaders can do this.
+There is much room for improvement here.
+This book begins with a wake-up call by
+showing in example after example how al-
+ternative conclusions have been drawn by
+supposed experts on the basis of statistical
+analyses of various datasets pertaining to
+the same decision problem. The emphasis
+here is on health impacts of environmental
+agents, such as particulate matter in the
+air or antibiotics used in the production of
+meat. It’s the repetition of the story we
+tell our students from the ﬁrst course in
+statistics: association is not causality. It’s
+the story they repeat back to us on case
+studies and ﬁnal examinations—but then
+they run oﬀand do it anyway after the
+course is over. That’s because the tempt-
+ing combination of statistical associations
+and plausible logic can weaken the search for
+alternative explanations and become a self-
+fulﬁlling prophecy. It doesn’t help objectiv-
+ity that there may also be intense pressures
+for publication or paying clients who like
+what they see. Cox rigorously keeps the
+focus on the decision problem: what will
+be the likely impact on future outcomes
+from alternative decisions about proposed
+actions. For this we need to structure the
+decision process in a framework that can get
+beyond associations and on to causality.
+Lots of progress on causality analysis has
+been made in the last twenty years, but it’s
+still a complex ﬁeld that requires cautious
+negotiation by professionals. Fortunately,
+some quite recent software packages can be
+used to facilitate this work. The author pro-
+vides a nice overview of various approaches
+(including some older ones): interrupted
+time series analysis, change point analy-
+sis, quasi-experimental designs, panel data
+analysis, Granger causality, conditional in-
+dependence tests,
+counterfactual regres-
+sion models, and graph-theoretic analysis
+(chains and networks). This last category,
+closely related to the groundbreaking work
+of Judah Pearl, is developed through causal
+chains, path analysis, structural equations,
+directed acyclic graphs, and Bayesian net-
+works. One would need to consult the ref-
+erences for details on the methods, but
+the overview and examples are excellent.
+Several very detailed case studies are pre-
+sented in later chapters. The complemen-
+tarity between statistical investigation and
+phenomenological models is shown with the
+use of ordinary diﬀerential equations to un-
+derstand certain processes as well as game
+Downloaded 11/24/13 to 129.67.186.57. Redistribution subject to SIAM license or copyright; see http://www.siam.org/journals/ojsa.php
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Copyright © by SIAM. Unauthorized reproduction of this article is prohibited. 
+BOOK REVIEWS
+803
+theoretic and optimization methods. These
+latter ﬁt into the picture because the focus
+is consistently on making decisions that will
+aﬀect the future, not just on interpreting
+data from the past.
+The Sarbanes–Oxley Act of 2002 has led
+to a greater focus on formal risk assessment
+within public companies and many other
+institutions as a component of responsi-
+ble management. This has given birth to
+a plethora of tools being marketed by con-
+sulting companies for the prioritization of
+risk reduction actions. My own experience
+suggests that these tools are hard for many
+clients to pick from, and those with the
+“slickest” human interface or ease of use
+may be selected more for that than for
+their technical merits. An important con-
+tribution of this book is to compare various
+approaches to making decisions about risk.
+The author shows, for example, the seri-
+ous suboptimality of typical risking scoring
+systems, which are so common. The chal-
+lenge I see is in bridging the gap between
+methods that an organization’s leadership
+or constituencies will be willing to rely on
+and those that derive from a more sophisti-
+cated perspective. He discusses some ways
+to manage this challenge with more ro-
+bust decision frameworks involving multiple
+models or adaptive decision stages.
+In summary, this is an important contri-
+bution to the literature in that it bridges
+the gap from theory to practice, includes
+many ﬁelds of application, and is accessible
+to a wide audience.
+CHARLES R. HADLOCK
+Bentley University
+Nonlinear Inclusions and Hemivariational
+Inequalities: Models and Analysis of Con-
+tact Problems.
+By S. Mig´orski,
+A. Ochal,
+and M. Sofonea. Springer, New York, 2013.
+$169.00. xvi+285 pp., hardcover. ISBN 978-1-
+4614-4231-8.
+Analysis of models from contact mechanics
+has a long history and has attracted much
+attention in the research community for over
+half a century. A contact problem is nonlin-
+ear, featured by its inequality form. When
+the problem has a convex structure, the
+inequality formulation is a variational in-
+equality, and there has been a large amount
+of publications devoted to modeling, mathe-
+matical analysis, numerical algorithms, and
+simulations of variational inequalities aris-
+ing in contact mechanics. Presence of a non-
+convex term in the problem leads to a hemi-
+variational inequality, which is in turn a
+nonlinear inclusion associated with a Clarke
+subdiﬀerential operator. It is more challeng-
+ing to study hemivariational inequalities,
+and the size of the literature on hemivaria-
+tional inequalities is much smaller than that
+on variational inequalities. The book under
+review presents a rigorous introduction to
+the theory of nonlinear inclusions and hemi-
+variational inequalities with applications to
+contact mechanics.
+The book consists of three parts. Part I
+reviews concisely basic notions and results
+from functional analysis that is needed later
+in the book. This part is intended to make
+the book as self-contained as possible. It
+covers materials on normed spaces, dual-
+ity, measure theory, function spaces, var-
+ious diﬀerentiation notions for nonsmooth
+functions, and single-valued and set-valued
+operators of monotone type. Most of the re-
+sults are stated without proof, but extensive
+references are provided for the proofs and
+for further discussions. The other two parts
+are based on the authors’ research work.
+Part II provides existence and uniqueness
+results for abstract nonlinear inclusions,
+both stationary and evolutionary, and ap-
+plies the results in the study of stationary
+and evolutionary hemivariational inequali-
+ties. Detailed proofs of the statements are
+given, based on techniques of monotonicity,
+compactness, and ﬁxed-point arguments.
+The theory developed in Part II is em-
+ployed in Part III to analyze some hemi-
+variational inequalities modeling static and
+dynamic frictional contact problems. The
+constitutive law is elastic, or piezoelectric,
+or viscoelastic with short-term or long-term
+memory. The contact condition is modeled
+with normal compliance or normal damped
+response, while the friction condition is
+modeled with variants or regularizations of
+Coulomb’s law. For each contact problem
+studied, a hemivariational inequality is de-
+rived, and solution existence or both exis-
+tence and uniqueness are shown.
+Downloaded 11/24/13 to 129.67.186.57. Redistribution subject to SIAM license or copyright; see http://www.siam.org/journals/ojsa.php
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Copyright © by SIAM. Unauthorized reproduction of this article is prohibited. 
+804
+BOOK REVIEWS
+The book is very well written. In addition
+to a rather comprehensive list of relevant
+references, the authors include several pages
+of bibliographical notes at the end of each
+part to aid the reader for references with
+additional information and further study.
+The book is highly recommended to re-
+searchers, graduate students included, who
+are interested in the mathematical theory of
+hemivariational inequalities and/or in the
+study of contact problems involving non-
+monotone and set-valued constitutive laws
+or boundary conditions.
+WEIMIN HAN
+University of Iowa
+Invisible in the Storm: The Role of Math-
+ematics in Understanding Weather. By Ian
+Roulstone and John Norbury. Princeton University
+Press, Princeton, NJ, 2013. $35.00. x+325 pp.,
+hardcover. ISBN 978-0-691-15272-1.
+This is a book about the history of mete-
+orology and the essential role mathematics
+and computing have played in it. It empha-
+sizes the people who developed the subject,
+illustrating the ideas with good graphics
+and the personalities with stories and de-
+scriptions of the work, carried out through
+international cooperation and accumulated
+understanding and capability throughout
+the last century.
+The authors convince the reader that the
+subject of climate is much more compli-
+cated than astronomy and more important
+than suggesting what clothes we should
+wear. The heroes include the Norwegian
+Vilhelm Bjerknes, the British Quaker Lewis
+Fry Richardson, the Swede Carl-Gustav
+Rossby, and the Americans Jule Charney
+and Edward Lorenz. The emphasis is nu-
+merical weather prediction, based on sim-
+plifying the physics, the global grid, and
+data assimilation.
+The basic hydrostatic
+and geostrophic balances are described, as
+is the chaotic behavior of the solutions to
+the three-dimensional nonlinear determin-
+istic model of Lorenz and the resulting need
+for ensemble forecasting. They accomplish
+all this with a minimum of technicality.
+Readers will realize that much better
+forecasting has resulted because of com-
+bined progress regarding computers, math-
+ematics, and the atmospheric sciences. We
+should expect accelerated continuing suc-
+cess, based on adequate funding and atten-
+tion by all.
+Roulstone and Norbury have done an out-
+standing job and provide readers a ﬁne bib-
+liography to continue their education on
+this fascinating topic.
+ROBERT E. O’MALLEY, JR.
+University of Washington
+A Primer on Mathematical Models in Bi-
+ology. By Lee A. Segel and Leah Edelstein-Keshet.
+SIAM, Philadelphia, 2013. $69.00. xxiv+424 pp.,
+softcover. ISBN 978-1-611972-49-8.
+Lee Segel (1932–2005) was a superb applied
+mathematician and gifted teacher and ex-
+positor who modeled problems in biology
+and other ﬁelds, and his former student
+Leah Edelstein-Keshet of the University of
+British Columbia has earned similar recog-
+nition. Both are authors of well-known and
+often-used textbooks in the SIAM Classics
+in Applied Mathematics series. We are very
+fortunate that Leah was able to retrieve
+Lee’s most recent lecture notes from the
+Weizmann Institute and modify and ex-
+tend them to provide us this extraordinary
+primer, aimed primarily at biology students.
+The presentation beneﬁts tremendously by
+its large number of illustrations, primarily
+generated using Bard Ermentrout’s XPP
+software (available online and described in
+his SIAM publication).
+The result, despite its low level of mathe-
+matical prerequisites, is very sophisticated.
+Readers really learn and appreciate phase
+plane analysis, as well as scaling, limit cy-
+cles, bifurcations, etc. Students will es-
+pecially be convinced that understanding
+solution behavior involves lots of simpliﬁ-
+cations and geometric interpretations of the
+dynamics. They’ll be provided exposure to
+analytical detail by working on the many bi-
+ologically meaningful exercises and projects
+and consulting the many references, both bi-
+ological and mathematical. Applications in-
+clude the spread of infections, the extensive
+treatment of the quasi-steady state hypoth-
+esis in biochemical kinetics, the FitzHugh–
+Downloaded 11/24/13 to 129.67.186.57. Redistribution subject to SIAM license or copyright; see http://www.siam.org/journals/ojsa.php
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Copyright © by SIAM. Unauthorized reproduction of this article is prohibited. 
+BOOK REVIEWS
+805
+Nagumo equations, and networks of genes
+and cells.
+The authors don’t preach but convinc-
+ingly demonstrate what successful model-
+ing is and how essential a role mathemat-
+ics (mostly systems of ordinary diﬀerential
+equations) plays in the process. They’ve
+provided us a new and unique classic!
+ROBERT E. O’MALLEY, JR.
+University of Washington
+Differential-Algebraic Equations: A Pro-
+jector Based Analysis.
+By Rene Lamour,
+Roswitha Marz, and Caren Tischendorf. Springer,
+Berlin, 2013. $149.00. xxviii+649 pp., soft-
+cover. ISBN 978-3-642-27554-8.
+How does one handle a system
+F(t, x, x′) = 0
+of diﬀerential equations when one cannot
+solve for the derivative? What initial con-
+ditions should be provided? One could pro-
+ceed geometrically or algebraically.
+Special cases abound, such as a diﬀeren-
+tial equation
+y′ = f(t, y, z)
+subject to the constraint
+0 = g(t, y, z).
+They are worthy of study because they are
+essential to important applications, such
+as circuit theory. Their algebraic analysis
+goes back to the work of Weierstrass and
+Kronecker on matrix pencils, so it’s ﬁt-
+ting that a foremost center for the study of
+diﬀerential-algebraic equations (DAEs) de-
+veloped at Humboldt University in Berlin,
+under the leadership of Roswitha Marz. In-
+deed, the 1986 book of Griepentrop and
+Marz on DAEs and their numerical treat-
+ment (Tuebner, Leipzig) has been very in-
+ﬂuential. This big new book brings scholars
+up to date on this school’s progress and initi-
+ates a Springer series Diﬀerential-Algebraic
+Equations Forum, with an international ed-
+itorial board.
+For linear equations, it’s natural to de-
+velop projector-based analyses and related
+numerical methods based on the underly-
+ing notion of index (related to diﬀerenti-
+ating the constraints a number of times,
+hoping to specify the solution). The au-
+thors present their ideas for a zoo of
+speciﬁc problems in detailed step-by-step
+fashion, with simple illustrative examples.
+Variable coeﬃcients and nonlinearity are
+considered, under various restrictive hy-
+potheses. Canonical forms, singular points,
+regularity, the pseudoinverse, and much new
+terminology come into play. A variety of nu-
+merical methods are presented, especially
+for index-1 problems. The ﬁnal chapter in-
+troduces abstract DAEs.
+Altogether, the book is well written and
+well motivated. Nonetheless, the presenta-
+tion is necessarily very technical and far
+from an easy read.
+ROBERT E. O’MALLEY, JR.
+University of Washington
+The Divergence Theorem and Sets of
+Finite
+Perimeter.
+By
+Washek
+F.
+Pfeffer.
+CRC Press, Boca Raton, FL, 2012. $99.95.
+xvi+243 pp.,
+hardcover.
+ISBN 978-1-4665-
+0719-7.
+This monograph is devoted to the detailed
+and comprehensive development of the most
+general form of the divergence theorem, a
+result of fundamental importance in mathe-
+matical analysis. In its simplest form, which
+is presented in most calculus books, it states
+the following: If f : E →Rn is a smooth
+vector ﬁeld deﬁned on a suitably simple set
+E ⊂Rn, then
+(1)
+
+E
+div f(x) dx =
+
+∂E
+f(y) · ν(y)d σ,
+where σ denotes surface measure. Research
+on the problem of ﬁnding the most natural
+and general form of the divergence theorem
+has been one of the successes of geomet-
+ric measure theory, by describing the most
+general form of the sets E for which (1)
+remains valid. Thus, in order to give the
+exposition the greatest clarity, the book is
+divided into 3 parts:
+1. Extending the family of vector ﬁelds
+for which the divergence theorem holds
+on simple sets.
+Downloaded 11/24/13 to 129.67.186.57. Redistribution subject to SIAM license or copyright; see http://www.siam.org/journals/ojsa.php
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Copyright © by SIAM. Unauthorized reproduction of this article is prohibited. 
+806
+BOOK REVIEWS
+2. Extending the family of sets for which
+the divergence theorem holds for Lip-
+schitz vector ﬁelds.
+3. Proving the divergence theorem when
+the vector ﬁelds and sets are extended
+simultaneously.
+Part 1 begins a review of some of the fun-
+damental facts of topology, including linear
+spaces and their duals as well as the weak*
+and strong topologies. All this is followed
+by a review of measure theory which in-
+cludes a discussion of Hausdorﬀmeasure
+and the theorems of Egoroﬀand Lusin and
+the Saks–Henstock lemma. The most im-
+portant portion of Part 1 deals with a proof
+of (1) in which the set E ⊂Rn is replaced
+by a ﬁnite union of dyadic cubes and where
+f is assumed to be diﬀerentiable on the in-
+terior of E with div f ∈L1(E). This result
+is important because of the simplicity of
+the proof, the fact that it will be used in
+establishing the general form of (1), and
+the fact that it can be used in the study
+of removable singularities of some classical
+diﬀerential equations. All the material in
+Part 1 should be accessible to a ﬁrst-year
+graduate student in analysis.
+The material of Part 2 is directed to
+the development of material which is nec-
+essary to understand the main results of
+the book. For this purpose the class of
+BV functions f : U →R1 such that the
+partial derivatives of f are totally ﬁnite
+measures in the sense of distributions are
+introduced, as well as their associated sets of
+ﬁnite perimeter. A measurable set is said to
+have ﬁnite perimeter, P(E) < ∞, if the in-
+dicator function χE is of bounded variation.
+This is the analytic formulation. There is
+also the measure-theoretic version, which is
+as follows: The measure-theoretic bound-
+ary of a measurable set E is the set of all
+x ∈Rn such that x is not a point of density
+of E and is not a point of density of the
+complement of E. The measure-theoretic
+boundary of E is denoted by ∂∗E. The
+fact that a set of ﬁnite perimeter is char-
+acterized by Hn−1(∂∗E) < ∞is one of the
+main results of this section. Related con-
+cepts to measure-theoretic boundary are
+the analogues of the topological bound-
+ary, namely, the sets ext∗E, int∗E, and
+cl∗E, which are, respectively, points of dis-
+persion of E, int∗E := ext∗Rn \ E, and
+cl∗E:=Rn \ ext∗E. In order to exploit the
+connection between sets of ﬁnite perime-
+ter and BV functions, the author proves
+the Fleming–Rishel co-area formula for BV
+functions [5]: If f ∈BV , then the set
+Et := {f > t} is of ﬁnite perimeter for
+almost all t ∈R and ∥Df∥=
+
+R(Et)dt,
+where ∥Df∥denotes the total variation of
+the gradient measure Df.
+The next big step in the development is
+the introduction of the reduced boundary of
+a set E, which is the set {x: x ∈spt(∥DχE∥)
+} such that |νE(x)| = 1 and
+(2)
+lim
+r→0
+1
+μE(B(x, r))
+
+B(x,r)
+νE(y) dμE(y)=νE(x),
+where νE(x) is the Radon–Nikod´ym deriva-
+tive of DχE with respect to
+DχE
+. The
+notion of reduced boundary is due to [2] and
+is denoted by ∂∗E. Note that ∂∗E ⊂∂∗E.
+Next, it is shown that ν(E, x) has a geo-
+metric meaning. Indeed, it is shown that if
+H±(E, x) are the two half-spaces that are
+determined by the hyperplane H(E, x) :=
+{y ∈Rn : ν(E, x) · (y −x) = 0}, then
+H(E, x) is tangent to E at x in the measure-
+theoretic sense:
+1. Θ(H+(E, x) ∩E, x) = Θ(H−(E, x) \
+E, x) = 0.
+2. Θν(E, x) = 1/2.
+Here, Θ(A, x) denotes the density of a set
+A ⊂Rn at x.
+These results are very satisfying intuitively,
+but their proofs are not easy. They are crit-
+ical in establishing the following result, due
+to Federer [3, 4].
+Theorem 1. If E is a set of ﬁnite perime-
+ter and v : Rn →Rn is Lipschitz, then
+
+E
+div (x) dx =
+
+∂∗E
+v(y)·ν(E, y) dHn−1(y).
+Part 3 is concerned with generalizing
+Theorem 1 for vector ﬁelds that are more
+general than being Lipschitz. The author
+considers vector ﬁelds in which each com-
+ponent of v ∈BV , and therefore the diver-
+gence of v is a signed measure. For such
+a vector ﬁeld and for Ω ⊂Rn, a Lipschitz
+domain, he proves that the trace of v,
+T v(x) = lim
+r→0
+1
+rn−1 ∥Dv∥(Ω ∩B(x, r)),
+Downloaded 11/24/13 to 129.67.186.57. Redistribution subject to SIAM license or copyright; see http://www.siam.org/journals/ojsa.php
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Copyright © by SIAM. Unauthorized reproduction of this article is prohibited. 
+BOOK REVIEWS
+807
+exists for Hn−1a.e. x ∈∂Ω. Furthermore,
+it is shown that whenever v ∈BV (Ω; Rn),
+and Ω is Lipschitz and compact, then there
+exists C > 0 such that
+∥T v∥L1(∂Ω,Hn−1) ≤C ∥v∥BV (Ω;Rn) .
+With this notion of trace, the following is
+proved.
+Theorem 2. If Ω is Lipschitz with com-
+pact boundary, then
+div W (Ω) =
+
+∂Ω
+(T w) · νΩ dHn−1,
+whenever w ∈BV (Ω; Rn).1
+Since, up to this point, the divergence
+theorem is known only for vector ﬁelds, v,
+for which div v = μ and for which v ∈L∞,
+the author investigates the situation where
+v is allowed to be unbounded near cer-
+tain singular sets, K. The growth of v
+near K is controlled by a suitable power
+of the distance from K. The power is de-
+termined by M ∗t(K), the upper Minkowski
+content of K of dimension t. A mapping
+v : E ⊂Rn →Rn is called bounded at
+x ∈clE, provided there is a neighborhood
+U of x such that
+sup{|v(y)| : y ∈E ∩U} < ∞.
+The set of x ∈E such that v is not bounded
+at x is denoted by E∞.
+Let A ⊂Rn be a bounded set of ﬁ-
+nite perimeter.
+It is shown that if v :
+clE →Rn, with compact sets Kj such that
+E∞=  Kj, for each j, there are numbers
+0 ≤tj < n−1 such that M∗tj(Kj) < ∞and
+M ∗tj(Kj, ∂∗A) < ∞, and if there are de-
+creasing, integrable functions βj : R1 →R1
+such that for w := v|∂∗A
+|w(x)| = O(1)βj[d(x, Kj)]d(x, Kj)t+2−n
+as x →Kj,
+(3)
+then under these conditions, it is shown that
+when div v is calculated relative to cl∗A it
+exists at almost all points of A. Further-
+more, if div cl∗A ∈L1(A), then
+
+A
+div cl∗Av(x) dx=
+
+∂∗A
+v(y)·νA(y)dHn−1(y).
+The author pursues another version of
+the divergence which may exist at x while
+the classical divergence may not. For this he
+considers the ﬂux, F, of v ∈L∞
+loc(Ω, Hn−1)
+which is deﬁned for all dyadic ﬁgures con-
+tained in the open set Ω, that is, for the
+ﬁnite union of dyadic cubes,
+F(A) :=
+
+∂A
+v · νA dHn−1.
+It turns out that F is an additive function.
+For a given set E ⊂Ω, and δ > 0, let
+VδF(E) := sup
+P
+p
+
+i=1
+|F(Ci)| ,
+where P is a δ-ﬁne partition of Ω. The
+critical variation of F is deﬁned as
+V F(E) := inf
+δ>0 VδF(E).
+Interestingly, the author shows that V F is
+a Borel measure on Ω. If the measure V F is
+absolutely continuous, it is then shown that
+the derivative F ′ exists a.e. in Ω, which is
+called the mean divergence of v at x. Fur-
+thermore, if F ′ ∈L1
+loc, then
+F(A) =
+
+A
+F ′(x) dx.
+Thus, we have the following theorem.
+Theorem 3. Suppose the ﬂux of v ∈
+L∞
+loc(Ω, Hn−1) is absolutely continuous on
+Ω. Then the mean divergence, div m, exists
+1The author notes here that this result has been extended to v ∈L∞(E), independently by [6]
+and [1]. The result states that for such a v with div (v) = μ, a signed measure, there is a trace
+operator, Tv : ∂∗E →Rn, Tv ∈L∞(∂∗E, Hn−1), which satisﬁes the equation
+
+E
+div v := μ(E) =
+
+∂∗E
+(Tv) · νE dHn−1.
+Downloaded 11/24/13 to 129.67.186.57. Redistribution subject to SIAM license or copyright; see http://www.siam.org/journals/ojsa.php
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Copyright © by SIAM. Unauthorized reproduction of this article is prohibited. 
+808
+BOOK REVIEWS
+a.e. in Ω, and if div m ∈L1
+lcc(Ω), then
+
+A
+div m(x) =
+
+∂A
+v · νA dHn−1.
+The author brings the book to a conclu-
+sion by considering the following question:
+How can one characterize those distribu-
+tions L for which the divergence equation
+div v = L?
+Depending on L, the answer is sought for
+ﬁnding a v that has some regularity such
+as boundedness or continuity, or both. He
+begins the discussion by considering the rel-
+atively easy case of when L ∈D′
+p(Ω), where
+D
+′
+p(Ω) := {L ∈D′(Ω) : ∥L∥p < ∞} and
+where
+∥Lp∥:= sup
+
+L(ϕ) := ϕ ∈D(Ω) and
+∥Dϕ∥Lp
+(Ω;Rn) ≤1
+	
+.
+Using the Hahn–Banach theorem, we obtain
+the following.
+Theorem 4.
+Let ∞= q > 1.
+The
+equation div v = L has a weak solution
+v ∈Lq(Ω; Rn) if and only if L ∈D
+′
+P (Ω).
+Moreover the solution v can be chosen so
+that ∥v∥Lq(Ω;Rn) = ∥L∥p. Here, 1
+q + 1
+p = 1.
+An
+application
+of
+the
+Gagliardo–
+Nirenberg–Sobolev inequality yields the fol-
+lowing.
+Theorem 5. For each f ∈Lp(Ω) with
+p ∈(1, n], there exists a weak solution
+v ∈Lp∗(Ω) to the equation div v = f such
+that
+∥v∥Lp∗(Ω;Rn) ≤κ ∥f∥Lp(Ω) .
+Here, p∗:=
+np
+n−p is the Sobolev conjugate of
+p.
+In order to discuss the harder case of ﬁnd-
+ing a continuous weak solution, the notion
+of a charge is introduced. A distribution
+F ∈D′(Ω) is called a charge if for each
+open set U compactly contained in Ω and
+ε > 0 there is θ > 0 such that
+F(ϕ) ≤θ ∥ϕ∥L1(U) + ε ∥Dϕ∥L1(U;Rn)
+for all test functions ϕ ∈D(Ω).
+It turns out that the notion of charge
+provides an elegant answer to the question
+of whether a continuous solution exists.
+Theorem 6. Let L ∈D
+′(Ω). Then the
+equation div v = L has a weak solution
+v ∈C(Ω; Rn) if and only if L is a charge in
+Ω.
+If f ∈Ln
+loc(Ω), then it’s an easy conse-
+quence of both H¨older’s and Sobolev’s in-
+equalities that f is a charge, and therefore
+the equation has continuous solutions. In
+view of Theorem 5, it has bounded solutions
+as well. A result due to T. Depauw shows
+that it has a solution that is both bounded
+and continuous simultaneously.
+Theorem 7. If f ∈Ln(Ω), then there
+exists a κ such that div v = f has weak
+solution v ∈C(Ω; Rn) with ∥v∥L∞
+loc(Ω) ≤
+κ ∥f∥Ln(Ω).
+In conclusion, this book has admirably
+accomplished its goal of the detailed and
+comprehensive development of the most
+general form of the divergence theorem.
+Though this development is necessarily
+technical and complex, the author has suc-
+ceeded in presenting the material in such a
+way as to make it accessible to a ﬁrst-year
+graduate student in analysis. This he has
+done by providing many examples and in
+presenting some of the material in small
+print, which may be considered marginal,
+but also as an enhancement of the text.
+Some of the small-print material would be
+of greater interest to the expert in that it
+represents mathematics at the frontiers. In
+general, because of the importance of the
+divergence theorem in mathematics, this
+book will appeal to a wide audience of
+mathematicians, even those whose primary
+interest is not in analysis. I believe this
+book will ﬁnd a secure place in virtually
+any mathematician’s personal library as an
+important reference book.
+REFERENCES
+[1] G.-Q. Chen,
+M. Torres,
+and W. P.
+Ziemer,
+Gauss-Green
+theorem
+for
+weakly diﬀerentiable vector ﬁelds, sets
+of ﬁnite perimeter, and balance laws,
+Comm. Pure Appl. Math., 62 (2009),
+pp. 242–304.
+[2] E. De Giorgi, Nuovi teoremi relativi alle
+misure (r −1)-dimensionali in uno
+spazio ad r dimensioni, Ricerche Mat.,
+4 (1955), pp. 95–113.
+[3] H. Federer, The Gauss-Green theorem,
+Trans. Amer. Math. Soc., 58 (1945),
+pp. 44–76.
+Downloaded 11/24/13 to 129.67.186.57. Redistribution subject to SIAM license or copyright; see http://www.siam.org/journals/ojsa.php
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Copyright © by SIAM. Unauthorized reproduction of this article is prohibited. 
+BOOK REVIEWS
+809
+[4] H. Federer, A note on the Gauss-Green
+theorem, Proc. Amer. Math. Soc., 9
+(1958), pp. 447–451.
+[5] W. H. Fleming and R. Rishel, An inte-
+gral formula for total gradient varia-
+tion, Arch. Math. (Basel), 11 (1960),
+pp. 218–222.
+[6] M. ˇSilhav´y Divergence measure ﬁelds and
+Cauchy’s stress theorem, Rend. Sem.
+Mat. Univ. Padova, 113 (2005), pp. 15–
+45.
+WILLIAM P. ZIEMER
+Indiana University
+Downloaded 11/24/13 to 129.67.186.57. Redistribution subject to SIAM license or copyright; see http://www.siam.org/journals/ojsa.php
