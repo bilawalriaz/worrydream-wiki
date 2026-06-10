@@ -1,0 +1,69 @@
+---
+title: Burnham 1970 - Software, Information Technology, Its New Meaning for Art
+created: 2026-06-10
+updated: 2026-06-10
+type: entity
+tags: [computing-history, hci, programming-languages, mathematics]
+sources: [raw/papers/Burnham_1970_-_Software,_Information_Technology,_Its_New_Meaning_for_Art.txt]
+confidence: high
+---
+
+# Burnham 1970 - Software, Information Technology, Its New Meaning for Art
+
+## Core Thesis
+Jack Burnham's 1970 essay, written for the exhibition catalog *Software: Information Technology—Its New Meaning for Art*, argues that the central artistic implication of the emerging digital age is not the production of novel visual objects (like computer graphics), but a fundamental shift in artistic focus toward **process, information systems, and human-machine interaction**. The thesis has two nuanced layers. First, it redefines the term "software" from a technical computer science concept to a broader cultural and artistic metaphor for the mutable, procedural, and informational aspects of systems—including human behavior and social organization. Second, it posits that art's new role is not to depict or represent, but to **intervene in and model the communication structures** that now govern society. Burnham contends that this move "aniconic" art—where the message or process is primary and visual appearance secondary—is the logical extension of Conceptual Art's interest in ideas over objects. The core provocation is that the most significant artistic medium of the late 20th century would be the invisible networks of information processing themselves.
+
+## Historical Context
+The essay emerged at a critical juncture. The "Age of Machines" (the Industrial Revolution and its mechanical art) was giving way to the "Age of Information." In 1970, mainframe computing was dominant, minicomputers were emerging, and the personal computer was a visionary dream. The art world had just absorbed the impact of Conceptual Art, which dematerialized the art object in favor of idea and process. Simultaneously, the field of cybernetics (coined in 1948) had matured from a scientific theory of control and communication into a broader cultural metaphor.
+
+Burnham explicitly positions the exhibition as a sequel and corrective to the Museum of Modern Art's 1968 show *The Machine as Seen at the End of the Mechanical Age*, which focused on the aesthetic of machines. He also uses the 1969 *Cybernetic Serendipity* exhibition as a "touchstone" and a boundary to avoid. That London show, he notes, was a comprehensive historical survey of computers used creatively. *Software*, by contrast, was meant to be an experiment *within* a museum environment, using communication technology to structure visitor interaction, thereby making the exhibition itself a demonstration of its thesis. The problem being solved was how to make art relevant to a society being reorganized by invisible information systems, moving beyond the "laymen vs. experts" communication gap that plagued early planning.
+
+## Key Contributions
+1.  **The "Software" Metaphor as Artistic Principle:** Burnham, with a key assist from Theodor Nelson's precise definitions, successfully translated a technical term into a powerful cultural and artistic paradigm. He established "software" (rules, procedures, behavior) as a distinct and vital artistic medium separate from "hardware" (objects, bodies, physical infrastructure).
+2.  **The "Aniconic" Turn in New Media Art:** He provided a critical theoretical framework that deliberately sidelined the most visible output of computers in art (graphics, animation) as "secondary or instructional." This elevated the interaction, the system design, and the informational content to primary status, anticipating interactive and networked art by decades.
+3.  **Art as Systems Intervention:** Burnham positioned the artist not as a creator of objects, but as a designer of "programmatic situations" and a investigator of the "underlying structures of communication." This framed art as a form of social and cognitive engineering, aligning it with the concerns of Systems Theory and Ecological Art.
+4.  **Demystification and Humanization of Technology:** The exhibition and essay aimed to translate the "communication obstacles" between computer specialists and the public. By framing technology through human factors (the "human environment," as the American Motors sponsor text echoes), Burnham sought to make information processing a subject for public discourse and personal response, not just expert control.
+5.  **Foreshadowing the Attention Economy & Social Media:** Burnham's note that "software" had been adopted in advertising to mean "environmental conditioning" and "the shaping of public opinion" is a remarkably early insight into the mechanisms of algorithmic media and the commodification of information flow.
+
+## Methodology
+Burnham's argument is primarily **theoretical and polemical**, structured as a curatorial manifesto. It blends:
+*   **Historical Analysis:** Tracing the evolution from cybernetics (Wiener) to the current "historical snapshot" of the field.
+*   **Conceptual Analysis:** Dissecting and expanding the definitions of "software" and "hardware," drawing on Marvin Minsky's mind/body duality to give it philosophical weight.
+*   **Exhibition as Method:** The show itself is the empirical proof of concept. The catalog describes interactive pieces (like *Labyrinth*, *Seek*, *Interactive Paper Systems*) that implement the thesis, forcing visitors to become users or participants in information systems. The methodology is therefore **performatively demonstrative**; the essay explains the theory, and the exhibition enacts it.
+
+## Influence
+While as an exhibition catalog its direct citation lineage may be less traceable than a journal article, its influence is diffuse but profound in the cultural history of new media art.
+*   **Direct Institutional Legacy:** The exhibition is a landmark event often cited in histories of digital art, interactive art, and the museum as a site of experience.
+*   **Theoretical Foundation for Interactive Art:** Burnham's framework provided critical legitimacy for artists moving beyond object-making. It helped establish a discourse where interaction, interface, and information flow became central artistic concerns, paving the way for artists like Jenny Holzer (using information systems as medium), Rafael Lozano-Hemmer (interactive installations), and later, net.art.
+*   **Precedent for Art & Tech Exhibitions:** It set a high bar for how museums could engage with technology not just as a topic, but as a integrated, experiential component of the exhibition itself.
+*   **Influence on Cultural Theory:** The ideas resonate with later media theorists like Lev Manovich (who discusses software culture) and the broader academic field of Science and Technology Studies (STS), which examines the social shaping of technology.
+
+## Connections to Other Papers in the Collection
+*   **Vannevar Bush 1945 (As We May Think):** Bush’s memex is a quintessential "software" system—a procedural apparatus for augmenting thought. Burnham’s vision expands Bush’s individual tool into a pervasive social environment and artistic medium.
+*   **Douglas Engelbart 1962 (Augmenting Human Intellect):** Engelbart’s "H-LAM/T" (Human using Language, Artefacts, Methodology, in which he is Trained) is a direct precursor to Burnham’s "programmatic situations." Both view technology as a system for restructuring human thought and activity. The *Software* exhibition’s interactive systems are primitive cousins of Engelbart’s oN-Line System (NLS).
+*   **Alan Kay 1972 (Personal Computer):** Kay’s vision of the personal computer as a "medium" for individual expression and thought is the technological fulfillment of Burnham’s artistic prophecy. Kay’s Dynabook concept embodies the "flexible, changeable" software ethos that Burnham celebrates.
+*   **John Backus 1978 (FP):** Backus’s argument for functional programming as a liberation from the "imperative" style of Fortran mirrors Burnham’s artistic argument. Both seek to move focus from low-level instructions (hardware/imperative steps) to the clear expression of higher-level structures and transformations (software/functional forms).
+*   **Marvin Minsky (cited in Burnham):** Minsky’s mind-body duality analogy for hardware/software is the philosophical core of the essay, directly linking computer architecture to questions of consciousness and anthropology.
+*   **Douglas Hofstadter 2001 (Analogy):** Hofstadter’s work on the mind as a pattern-recognition and analogy-making system provides a cognitive foundation for Burnham’s systems. If art is about revealing structures, and the mind works by mapping structures, then Burnham’s "software art" is fundamentally aimed at the core of human cognition.
+
+## Modern Relevance
+Burnham’s 1970 analysis is startlingly prescient for the 21st century:
+*   **AI and Generative Art:** The contemporary debate over whether AI art is the work of the "prompt engineer" (the software designer) or the machine (the hardware) directly engages Burnham’s distinction. The artist’s role as the designer of the generative system/process is a Burnhamite concept.
+*   **Social Media and the Algorithmic Feed:** Burnham’s recognition that "software" could mean "environmental conditioning" and "shaping of public opinion" predicts the algorithmic curation of our information environments. Our behavior (software) is constantly being shaped by the informational architecture (hardware/infrastructure) of platforms.
+*   **Interaction Design (IxD) and UX:** The entire field of user experience design is predicated on Burnham’s human-factors approach—designing the "programmatic situations" that users interact with, focusing on flow, procedure, and communication over mere visual appearance.
+*   **Knowledge Management & Hypermedia:** The exhibition’s attempts at interactive catalogs and information systems (like *Labyrinth*) are early prototypes of hypertext and modern knowledge bases. They embody the idea that information is not a static object but a navigable, structured space.
+*   **The "Dematerialization" of Culture:** The ongoing shift from physical media (CDs, DVDs, books) to streaming, cloud services, and subscription models is the ultimate realization of the "software" paradigm—where access to procedures and data streams supersedes ownership of physical hardware.
+
+## Key Quotes
+1.  > "Software makes no distinctions between art and non-art; the need to make such decisions is left to each visitor."
+    *   **Analysis:** This is a radical democratization and a dissolution of the curator’s traditional gatekeeping role. It frames the artwork as a set of possibilities to be activated by the user, prefiguring participatory and relational aesthetics.
+2.  > "Most importantly it provides the means by which the public can personally respond to programmatic situations structured by artists."
+    *   **Analysis:** This defines the new artistic medium as **interaction itself**. The artist’s work is the creation of a system with rules and variables; the viewer’s "response" completes the artwork. The locus of meaning shifts from the object to the event of engagement.
+3.  > "Our bodies are hardware, our behavior software."
+    *   **Analysis:** The most succinct and powerful distillation of the essay’s central metaphor. It bridges computer science, philosophy of mind, and anthropology, making the case that understanding information systems is key to understanding humanity.
+4.  > "In a limited sense it demonstrates the effects of contemporary control and communication techniques in the hands of artists."
+    *   **Analysis:** This subtly shifts agency. The technology is not a neutral tool but a set of "control and communication techniques" with inherent social implications. The artist’s role is to take control of these techniques, not just use them.
+5.  > "Thus it may not be, and probably is not, the province of computers... to produce art as we know it; but they will, in fact, be instrumental in redefining the entire area of esthetic awareness."
+    *   **Analysis:** A crucial and often overlooked nuance. Burnham does not predict computer-generated paintings or sculptures. He predicts that the *structures* of computation will redefine what we consider art and how we perceive the world aesthetically—a far more profound and accurate prediction.
+6.  > "Machines carry on brilliant dialogues with articulate human beings and very uninspired conversations with dull people."
+    *   **Analysis:** Attributed to Nelson, this quote injects a vital humanistic and critical element. It argues that the quality of human-machine interaction is a reflection of human clarity and purpose, placing responsibility on the user/designer to engage intelligently with the system.
