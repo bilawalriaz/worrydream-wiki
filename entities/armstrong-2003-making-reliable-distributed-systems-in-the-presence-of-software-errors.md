@@ -1,3 +1,10 @@
+---
+title: "Armstrong 2003 - Making reliable distributed systems in the presence of software errors"
+created: 2026-06-10
+updated: 2026-06-10
+type: entity
+---
+
 # Armstrong 2003 - Making reliable distributed systems in the presence of software errors
 
 ## Core Thesis

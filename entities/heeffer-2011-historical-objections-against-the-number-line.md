@@ -1,3 +1,10 @@
+---
+title: "Heeffer 2011 - Historical objections against the number line"
+created: 2026-06-10
+updated: 2026-06-10
+type: entity
+---
+
 ```markdown
 ---
 title: Heeffer 2011 - Historical objections against the number line

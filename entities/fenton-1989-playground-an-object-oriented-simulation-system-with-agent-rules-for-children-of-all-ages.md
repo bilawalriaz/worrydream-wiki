@@ -1,3 +1,10 @@
+---
+title: "Fenton 1989 - Playground, An Object Oriented Simulation System with Agent Rules for Children of All Ages"
+created: 2026-06-10
+updated: 2026-06-10
+type: entity
+---
+
 # Fenton 1989 - Playground, An Object Oriented Simulation System with Agent Rules for Children of All Ages
 
 ## Core Thesis

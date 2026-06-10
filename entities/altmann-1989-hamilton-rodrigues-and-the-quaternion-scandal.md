@@ -1,3 +1,10 @@
+---
+title: "Altmann 1989 - Hamilton, Rodrigues, and the Quaternion Scandal"
+created: 2026-06-10
+updated: 2026-06-10
+type: entity
+---
+
 # Altmann 1989 - Hamilton, Rodrigues, and the Quaternion Scandal
 
 ## Core Thesis

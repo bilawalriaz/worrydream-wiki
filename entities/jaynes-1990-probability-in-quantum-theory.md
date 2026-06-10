@@ -1,3 +1,10 @@
+---
+title: "Jaynes 1990 - Probability in Quantum Theory"
+created: 2026-06-10
+updated: 2026-06-10
+type: entity
+---
+
 # Jaynes 1990 - Probability in Quantum Theory
 
 ## Core Thesis

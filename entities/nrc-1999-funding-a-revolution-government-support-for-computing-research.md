@@ -1,3 +1,10 @@
+---
+title: "NRC 1999 - Funding a Revolution, Government Support for Computing Research"
+created: 2026-06-10
+updated: 2026-06-10
+type: entity
+---
+
 # NRC 1999 - Funding a Revolution, Government Support for Computing Research
 
 ## Core Thesis

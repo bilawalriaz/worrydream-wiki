@@ -1,3 +1,10 @@
+---
+title: "Tools for Thought: From Memex to AI"
+created: 2026-06-10
+updated: 2026-06-10
+type: concept
+---
+
 # Tools for Thought: From Memex to AI
 
 ## Definition

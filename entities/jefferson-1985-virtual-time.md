@@ -1,3 +1,10 @@
+---
+title: "Jefferson 1985 - Virtual Time"
+created: 2026-06-10
+updated: 2026-06-10
+type: entity
+---
+
 # Jefferson 1985 - Virtual Time
 
 ## Core Thesis

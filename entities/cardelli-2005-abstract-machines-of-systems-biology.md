@@ -1,3 +1,10 @@
+---
+title: "Cardelli 2005 - Abstract Machines of Systems Biology"
+created: 2026-06-10
+updated: 2026-06-10
+type: entity
+---
+
 # Cardelli 2005 - Abstract Machines of Systems Biology
 
 ## Core Thesis
