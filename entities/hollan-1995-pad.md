@@ -8,7 +8,7 @@ sources: [raw/papers/Hollan_1995_-_Pad++.txt]
 confidence: high
 ---
 
-# Hollan 1995 - Pad++
+# [[hollan-1992-beyond-being-there|Hollan]] 1995 - Pad++
 
 ## Core Thesis
 
@@ -18,11 +18,11 @@ The nuance lies in moving beyond mere zooming as a novelty. The paper frames zoo
 
 ## Historical Context
 
-Pad++ emerged in the mid-1990s at the tail end of a period dominated by the consolidation of the desktop metaphor born at Xerox PARC. By 1995, the GUI was ubiquitous (Windows 95, System 7), but its limitations were becoming apparent: screens were "cluttered," managing large information spaces was cumbersome, and the metaphor of discrete, overlapping windows poorly served tasks requiring an integrated, contextual overview.
+Pad++ emerged in the mid-1990s at the tail end of a period dominated by the consolidation of the desktop metaphor born at Xerox [[parc-1971-parc-papers-for-pendery-and-planning-purposes|PARC]]. By 1995, the GUI was ubiquitous (Windows 95, System 7), but its limitations were becoming apparent: screens were "cluttered," managing large information spaces was cumbersome, and the metaphor of discrete, overlapping windows poorly served tasks requiring an integrated, contextual overview.
 
 The problem being solved was twofold: the **information overload** problem (too much data for small, static screens) and the **interaction paradigm** problem (interfaces were not designed for the scale and fluidity of digital information). The authors explicitly reference earlier work that pointed toward solutions: Furnas's "degree-of-interest" functions (1986) for focus+context views, and the lens-based filtering of the HITS system from MCC. Pad++ synthesized these ideas into a coherent, zoomable substrate.
 
-Historically, Pad++ stands as a direct successor to the original "Pad" system and a contemporary to other zoomable research prototypes like ZOOPER. It was part of a broader movement in HCI—also seen in systems like the Information Visualizer at Xerox PARC—that sought to move beyond the desktop by drawing inspiration from architectural and spatial navigation rather than just office metaphors.
+Historically, Pad++ stands as a direct successor to the original "Pad" system and a contemporary to other zoomable research prototypes like ZOOPER. It was part of a broader movement in HCI—al[[parc-1971-parc-papers-for-pendery-and-planning-purposes|so s]]een in systems like the Information Visualizer at Xerox [[parc-1971-parc-papers-for-pendery-and-planning-purposes|PARC]]—that sought to move beyond the desktop by drawing inspiration from architectural and spatial navigation rather than just office metaphors.
 
 ## Key Contributions
 
@@ -34,7 +34,7 @@ Historically, Pad++ stands as a direct successor to the original "Pad" system an
 
 ## Methodology
 
-The methodology is **design-based research and theoretical polemic**. The argument is structured not as an empirical user study (though later work would include them) but as a **manifesto for a new design philosophy**. The authors:
+The methodology is **design-based research and theoretical polemic**. The argument is structured not as an empirical user study (though later work would include them) but as a **manifesto for a new [[clark-d-1988-the-design-philosophy-of-the-darpa-internet-protocols|design philosophy]]**. The authors:
 
 1.  **Critique the Status Quo:** They begin by diagnosing the limitations of current (1995) interface metaphors.
 2.  **Propose a New Framework:** They introduce the "informational physics" strategy as a solution.
@@ -45,7 +45,7 @@ The tone is aspirational and persuasive. The "evidence" is the elegance and pote
 
 ## Influence
 
-The influence of Pad++ is profound, particularly in the fields of **information visualization**, **interaction design**, and **user interface research**.
+The influence of Pad++ is profound, particularly in the fields of **information visualization**, **interaction design**, and **[[perkins-1997-inventing-the-lisa-user-interface|user interface]] research**.
 
 *   **Direct Technical Lineage:** It directly spawned commercial products like **Prezi** (the presentation software) and influenced the zoomable interface paradigm seen in early web mapping (e.g., the original Google Maps used a similar pan/zoom paradigm). Its concepts of semantic zooming and portals are visible in modern tools like **Figma** (for design) and **Miro** (for whiteboarding).
 *   **Academic Influence:** The paper is a cornerstone citation in HCI and information visualization literature. It significantly advanced research on focus+context visualization, multiscale interfaces, and the use of spatial navigation for information retrieval. The "informational physics" concept influenced how designers think about creating coherent, rule-based interactive systems.
@@ -53,11 +53,11 @@ The influence of Pad++ is profound, particularly in the fields of **information 
 
 ## Connections to Other Papers in the Collection
 
-*   **Bush 1945 (As We May Think):** Pad++ is a direct, modern response to Bush's "memex." Bush envisioned a desk with associative trails and enlarged microfilm. Pad++ implements a functional, digital equivalent: a vast, zoomable dataspace with portals (lenses) and hyperlinks, enabling associative exploration at a scale Bush could only imagine. It moves Bush's mechanical vision into the realm of "informational physics."
-*   **Engelbart 1962 (Augmenting Human Intellect):** Engelbart's "Augment" system shared the goal of augmenting human capability through a custom-designed symbolic environment. Pad++ can be seen as an evolution of this thought, moving beyond Engelbart's hierarchical "document" structure into a more fluid, spatial model. Both systems reject standard interfaces in favor of a crafted, systematic environment tailored to complex knowledge work.
-*   **Kay 1972 (Personal Computer / "A Personal Computer for Children of All Ages"):** Kay's Dynabook concept envisioned a portable, interactive medium for all. Pad++ explores the *interaction model* for such a medium when the information space becomes vast. It addresses the presentation and navigation problem that arises when the Dynabook's content is not a few books, but a library.
-*   **Anderson 1972 (More is Different):** This is a profound philosophical connection. Anderson argued that complex systems exhibit emergent properties at higher levels of organization. Pad++'s "informational physics" is a direct application of this principle to interface design. By defining rules (physics) at the level of informational objects, the authors hope for the emergence of cognitively useful behaviors at the level of the user's interaction with the dataspace.
-*   **Thurston 1994 (Proof and Progress):** Thurston discusses the human experience of mathematical understanding as something non-linear and deeply visual. Pad++ provides a tool and a metaphor perfectly suited to Thurston's description. Its zoomable, semantic nature allows for the kind of contextual, layered exploration of a mathematical (or any conceptual) landscape that Thurston values, moving beyond the linear constraints of traditional text or static diagrams.
+*   **[[bush-1945-as-we-may-think-with-engelbart-notes|Bush 1945]] (As We May Think):** Pad++ is a direct, modern response to [[vannevar-bush-symposium-1995-closing-panel|Bush]]'s "memex." [[bush-1931-the-differential-analyzer|Bush]] envisioned a desk with associative trails and enlarged microfilm. Pad++ implements a functional, digital equivalent: a vast, zoomable dataspace with portals (lenses) and hyperlink[[vannevar-bush-symposium-1995-closing-panel|s, e]]nabling associative exploration at a scale [[bush-1931-the-differential-analyzer|Bush]] could only imagine. It moves [[bush-1931-the-differential-analyzer|Bush]]'s mechanical vision into the realm of "informational physics."
+*   **[[engelbart-1962-augmenting-human-intellect-typeset|Engelbart 1962]] ([[engelbart-1962-augmenting-human-intellect|Augmenting Human]] Intellect):** En[[engelbart-1962-augmenting-human-intellect|gelbart's "Augme]]nt" system shared the goal of augmenting human capability through a custom-designed symbolic environment. Pad++ can be seen as an evolution of this thought, moving beyond [[engelbart-2003-improving-our-ability-to-improve|Engelbart]]'s hierarchical "document" structure into a more fluid, spatial model. Both systems reject standard interfaces in favor of a crafted, systematic environment tailored to complex knowledge work.
+*   **[[kay-1972-personal-computer-for-children|Kay 1972]] ([[kay-1972-a-personal-computer-for-children-of-all-ages|Personal Computer]] / "A Personal Computer for Children of All Ages"):** [[kay-2013-what-is-a-dynabook|Kay]]'s Dynabook concept envisioned a portable, interactive medium for all. Pad++ explores the *interaction model* for such a medium when the information space becomes vast. It addresses the presentation and navigation problem that arises when the Dynabook's content is not a few books, but a library.
+*   **[[anderson-1972-more-is-different|Anderson]] 1972 (More is Different):** This is a[[anderson-1972-more-is-different| profoun]]d philosophical connection. [[anderson-1972-more-is-different|Anderson]] argued that [[cook-2000-how-complex-systems-fail|complex systems]] exhibit emergent properties at higher levels of organization. Pad++'s "informational physics" is a direct application of this principle to interface design. By defining rules (physics) at the level of informational objects, the authors hope for the emergence of cognitively useful behaviors at the level of the user's interaction with the dataspace.
+*   **[[thurston-1994-on-proof-and-progress-in-mathematics|Thurston 1994]] (Proof and Progress):** [[thurston-1994-on-proof-and-progress-in-mathematics|Thurston]] discusses the human experience of mathematical understanding as something non-linear and deeply visual. Pa[[thurston-1994-on-proof-and-progress-in-mathematics|d++ prov]]ides a tool and a metaphor perfectly suited to [[thurston-1990-mathematical-education|Thurston]]'s description. Its zoomable, semantic natur[[thurston-1994-on-proof-and-progress-in-mathematics|e allows]] for the kind of contextual, layered exploration of a mathematical (or any conceptual) landscape that [[thurston-1990-mathematical-education|Thurston]] values, moving beyond the linear constraints of traditional text or static diagrams.
 
 ## Modern Relevance
 
@@ -66,7 +66,7 @@ Pad++'s ideas are more relevant than ever, though often invisibly so:
 *   **The Spatial Computing Paradigm:** Vision Pro, AR/VR, and the broader concept of spatial computing are building the "sheet of miraculous material" from Pad++'s introduction. They treat digital information as persistent entities in a 3D space, where "physics" of interaction (like gaze, grab, and spatial audio) are paramount.
 *   **AI and Knowledge Visualization:** As AI generates vast, interconnected knowledge graphs and multi-modal outputs, the challenge of presenting them coherently returns. The concept of semantic zooming is critical: an AI summary might be the "title" view, while drilling down reveals sources, related concepts, and reasoning traces. The "informational physics" framework is a useful lens for designing AI copilots that present information adaptively.
 *   **Critique of the Flatland:** Modern OS interfaces (desktops, mobile) are still largely composed of overlapping rectangles—a legacy Pad++ sought to overcome. The paper fuels ongoing debates about whether flatland is a necessary compromise or a stifling limitation, especially for creative and knowledge work.
-*   **Tool-Making in Education:** The paper's vision aligns with educational philosophies like Papert's (in *Mindstorms*) that advocate for children creating and interacting with their own computational worlds. Pad++'s substrate was designed for building tools, embodying the idea that the interface itself should be a malleable medium for thought.
+*   **Tool-Making in Education:** The paper's vision aligns with educational philosophies like [[papert-2000-whats-the-big-idea-toward-a-pedagogy-of-idea-power|Papert]]'s (in *Mindstorms*) that advocate for children creating and interacting with their own computational worlds. Pad++'s substrate was designed for building tools, embodying the idea that the interface itself should be a malleable medium for thought.
 
 ## Key Quotes
 

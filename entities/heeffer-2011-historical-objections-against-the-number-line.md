@@ -5,17 +5,6 @@ updated: 2026-06-10
 type: entity
 ---
 
-```markdown
----
-title: Heeffer 2011 - Historical objections against the number line
-created: 2026-06-10
-updated: 2026-06-10
-type: entity
-tags: [hci, mathematics, cognitive-science, education]
-sources: [raw/papers/Heeffer_2011_-_Historical_objections_against_the_number_line.txt]
-confidence: high
----
-
 # Heeffer 2011 - Historical objections against the number line
 
 ## Core Thesis
@@ -49,10 +38,10 @@ The paper's influence is primarily within the niche of **mathematics education r
 ## Connections to Other Papers in the Collection
 The paper connects to several themes in the WorryDream collection, particularly those concerning the tools we use to think and the barriers they can erect.
 
-*   **Engelbart 1962 (Augmenting Human Intellect) & Kay 1972 (Personal Computer):** Engelbart's framework for augmenting human intellect emphasizes choosing and designing symbols and representations that truly enhance our ability to manipulate concepts. The number line is a case study of a representation that *constrains* manipulation for certain concepts (negative operations). It's a cautionary tale about a tool that becomes so standard its limitations are ignored.
-*   **Papert 1980 (Mindstorms):** Papert's constructionist approach values tools that embody "powerful ideas" and allow for direct manipulation to build intuition. Heeffer argues the number line is *not* a good constructionist tool for negatives because it allows manipulation that produces correct but meaningless results (e.g., stepping left for subtraction works, but scaling by a negative does not). The algebraic rules Papert might champion are the historically hard-won "powerful ideas" for this domain.
-*   **Thurston 1994 (Proof and Progress):** Thurston argues mathematics is about human understanding, not just formal proofs. The historical debates Heeffer cites are precisely about human understanding. The "progress" from treating negatives as absurd to accepting them was a shift in conceptual understanding, not just symbol manipulation. The paper shows how a tool can hinder that deeper understanding.
-*   **Lockhart 2002 (Mathematician's Lament):** Lockhart decries the rote, ritualistic teaching of mathematics divorced from creative thought. Teaching "a minus times a minus is a plus" via a number line without understanding *why* can be seen as another form of the ritualistic curriculum Lockhart criticizes. The historical struggle reveals the rich, philosophical, and logical thinking that the shortcut of the number line suppresses.
+*   **[[engelbart-1962-augmenting-human-intellect-typeset|Engelbart]] 1962 (Augmenting Human Intellect) & [[kay-1968-flex-a-flexible-extendable-language|Kay]] 1972 (Personal Computer):** [[engelbart-1962-augmenting-human-intellect-typeset|Engelbart]]'s framework for augmenting human intellect emphasizes choosing and designing symbols and representations that truly enhance our ability to manipulate concepts. The number line is a case study of a representation that *constrains* manipulation for certain concepts (negative operations). It's a cautionary tale about a tool that becomes so standard its limitations are ignored.
+*   **[[papert-1980-mindstorms-1st-ed|Papert]] 1980 (Mindstorms):** [[papert-1980-mindstorms-1st-ed|Papert]]'s constructionist approach values tools that embody "powerful ideas" and allow for direct manipulation to build intuition. Heeffer argues the number line is *not* a good constructionist tool for negatives because it allows manipulation that produces correct but meaningless results (e.g., stepping left for subtraction works, but scaling by a negative does not). The algebraic rules [[papert-1980-mindstorms|Papert]] might champion are the historically hard-won "powerful ideas" for this domain.
+*   **[[thurston-1994-on-proof-and-progress-in-mathematics|Thurston]] 1994 (Proof and Progress):** [[thurston-1994-on-proof-and-progress-in-mathematics|Thurston]] argues mathematics is about human understanding, not just formal proofs. The historical debates Heeffer cites are precisely about human understanding. The "progress" from treating negatives as absurd to accepting them was a shift in conceptual understanding, not just symbol manipulation. The paper shows how a tool can hinder that deeper understanding.
+*   **[[lockhart-2002-a-mathematicians-lament|Lockhart]] 2002 (Mathematician's Lament):** [[lockhart-2002-a-mathematicians-lament|Lockhart]] decries the rote, ritualistic teaching of mathematics divorced from creative thought. Teaching "a minus times a minus is a plus" via a number line without understanding *why* can be seen as another form of the ritualistic curriculum [[lockhart-2002-a-mathematicians-lament|Lockhart]] criticizes. The historical struggle reveals the rich, philosophical, and logical thinking that the shortcut of the number line suppresses.
 
 ## Modern Relevance
 The paper's relevance extends beyond the classroom into how we model and interact with abstract concepts in technology and AI.
@@ -76,4 +65,3 @@ The paper's relevance extends beyond the classroom into how we model and interac
 
 5.  **"We share the view of some national education programs that the concept is best taught in secondary education and more specifically within an algebraic context."** (Section 1)
     *   *Analytical Commentary:* This moves from critique to prescription. It anchors the argument in real-world policy (Belgian education) and advocates for a return to a historical, algebraic approach, making the paper's implications concrete.
-```
