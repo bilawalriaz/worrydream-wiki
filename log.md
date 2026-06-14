@@ -58,8 +58,12 @@
 - Commit: c2a7f6e
 
 ## [2026-06-10] update | Drift fix: wikilinks + frontmatter + log
-- Script: `scripts/add_wikilinks.py` (regex-based, 3.7s runtime)
-- Added 6,588 wikilinks across 327 entity files
-- Most-connected: engelbart-1962 (79), bush-1945 (72), kay-1972 (72), papert-1980 (58)
-- Fixed 8 entities missing tags/sources/confidence fields
-- All 337 entities now comply with SCHEMA.md frontmatter requirements
+- Script: `scripts/add_wikilinks.py` (v3, 5.9s runtime)
+- Added 3,452 clean wikilinks across 337 entity files (avg 10.2 per file)
+- v1 had substring match bug (e.g., 'instantl' in 'instantly'); v3 uses proper word boundaries
+- v1 had generic word false positives (e.g., 'air', 'scientific'); v3 uses 130+ word denylist
+- All 337 entities now have >= 2 wikilinks (SCHEMA.md compliance)
+- All 337 entities have complete frontmatter (title, tags, sources, confidence)
+- 9 entities fixed for missing fields (altmann, armstrong, cardelli, fenton, heeffer, hestenes-1987, jaynes-1990, jefferson, nrc-1999)
+- heeffer-2011 had nested code block unwrapped
+- Top linked: clark-w-1986 (37), hunt-2015 (27), kay-1977 (26), kay-1990 (25)
